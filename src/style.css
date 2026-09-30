@@ -88,8 +88,7 @@ button:focus-visible { outline: 4px solid #fff; outline-offset: 3px; }
 .icon-btn svg { width: 26px; height: 26px; }
 
 .lang-toggle {
-  position: relative; flex: none;
-  display: grid; grid-template-columns: 1fr 1fr;
+  position: relative; flex: none; display: block;
   width: 104px; height: 48px;
   border-radius: 999px;
   background: #fff;
@@ -100,11 +99,13 @@ button:focus-visible { outline: 4px solid #fff; outline-offset: 3px; }
   overflow: hidden;
 }
 .lt-knob {
-  position: absolute; left: 3px; top: 3px; bottom: 3px; width: calc(50% - 3px);
+  position: absolute; left: 3px; top: 3px; width: calc(50% - 3px); height: calc(100% - 6px);
   border-radius: 999px; background: var(--red); border: 3px solid var(--ink);
 }
 .lang-toggle.is-th .lt-knob { background: var(--blue); }
-.lt-opt { position: relative; z-index: 1; display: grid; place-items: center; transition: color .2s; }
+.lt-opt { position: absolute; top: 0; bottom: 0; width: 50%; z-index: 1; display: flex; align-items: center; justify-content: center; padding-top: 1px; transition: color .2s; }
+.lt-opt[data-l='en'] { left: 0; }
+.lt-opt[data-l='th'] { right: 0; }
 .lang-toggle:not(.is-th) .lt-opt[data-l='en'], .lang-toggle.is-th .lt-opt[data-l='th'] { color: #fff; }
 
 .big-btn {
@@ -241,7 +242,12 @@ body.lang-th .seg-name { font-family: var(--f-thai); font-weight: 700; font-size
 .seg-opt.on .seg-name { -webkit-text-stroke: 4px var(--ink); paint-order: stroke fill; }
 .seg-desc { font-size: 11.5px; font-weight: 800; opacity: .85; text-align: center; }
 
-.level-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; overflow-y: auto; padding: 4px 4px 14px; margin: 0 -4px; }
+.level-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px; overflow-y: auto;
+  /* scroll right to the screen's bottom edge instead of clipping above the padding */
+  margin: 0 -4px calc(-14px - var(--safe-b));
+  padding: 4px 4px calc(28px + var(--safe-b));
+}
 .level-btn {
   --c: var(--green); --d: var(--green-d);
   position: relative;
