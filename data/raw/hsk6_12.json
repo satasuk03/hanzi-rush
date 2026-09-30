@@ -1,0 +1,1202 @@
+[
+ {
+  "h": "流通",
+  "p": "liú tōng",
+  "en": "to circulate",
+  "th": "หมุนเวียน",
+  "ex": {
+   "zh": "货币需要在市场上流通。",
+   "py": "Huòbì xūyào zài shìchǎng shàng liútōng.",
+   "en": "Money needs to circulate in the market.",
+   "th": "เงินตราต้องหมุนเวียนในตลาด"
+  }
+ },
+ {
+  "h": "留恋",
+  "p": "liú liàn",
+  "en": "reluctant to leave",
+  "th": "อาลัยอาวรณ์",
+  "ex": {
+   "zh": "他很留恋这座小城。",
+   "py": "Tā hěn liúliàn zhè zuò xiǎo chéng.",
+   "en": "He is reluctant to leave this small town.",
+   "th": "เขาอาลัยอาวรณ์เมืองเล็กแห่งนี้"
+  }
+ },
+ {
+  "h": "留念",
+  "p": "liú niàn",
+  "en": "to keep as souvenir",
+  "th": "เก็บไว้เป็นที่ระลึก",
+  "ex": {
+   "zh": "我们合影留念吧。",
+   "py": "Wǒmen héyǐng liúniàn ba.",
+   "en": "Let's take a group photo as a keepsake.",
+   "th": "เรามาถ่ายรูปหมู่เก็บไว้เป็นที่ระลึกกันเถอะ"
+  }
+ },
+ {
+  "h": "留神",
+  "p": "liú shén",
+  "en": "to be careful",
+  "th": "ระวัง",
+  "ex": {
+   "zh": "过马路要留神车辆。",
+   "py": "Guò mǎlù yào liúshén chēliàng.",
+   "en": "Watch out for cars when crossing the road.",
+   "th": "ข้ามถนนต้องระวังรถ"
+  }
+ },
+ {
+  "h": "笼罩",
+  "p": "lǒng zhào",
+  "en": "to shroud",
+  "th": "ปกคลุม",
+  "ex": {
+   "zh": "山谷被大雾笼罩着。",
+   "py": "Shāngǔ bèi dàwù lǒngzhào zhe.",
+   "en": "The valley is shrouded in thick fog.",
+   "th": "หุบเขาถูกหมอกหนาปกคลุม"
+  }
+ },
+ {
+  "h": "聋哑",
+  "p": "lóng yǎ",
+  "en": "deaf and mute",
+  "th": "หูหนวกและเป็นใบ้",
+  "ex": {
+   "zh": "这所学校专门教聋哑儿童。",
+   "py": "Zhè suǒ xuéxiào zhuānmén jiāo lóngyǎ értóng.",
+   "en": "This school specializes in teaching deaf-mute children.",
+   "th": "โรงเรียนนี้สอนเด็กหูหนวกและเป็นใบ้โดยเฉพาะ"
+  }
+ },
+ {
+  "h": "隆重",
+  "p": "lóng zhòng",
+  "en": "grand",
+  "th": "ยิ่งใหญ่ตระการตา",
+  "ex": {
+   "zh": "婚礼办得很隆重。",
+   "py": "Hūnlǐ bàn de hěn lóngzhòng.",
+   "en": "The wedding was held in grand style.",
+   "th": "งานแต่งจัดอย่างยิ่งใหญ่"
+  }
+ },
+ {
+  "h": "垄断",
+  "p": "lǒng duàn",
+  "en": "to monopolize",
+  "th": "ผูกขาด",
+  "ex": {
+   "zh": "这家公司垄断了市场。",
+   "py": "Zhè jiā gōngsī lǒngduànle shìchǎng.",
+   "en": "This company has monopolized the market.",
+   "th": "บริษัทนี้ผูกขาดตลาด"
+  }
+ },
+ {
+  "h": "搂",
+  "p": "lōu",
+  "en": "to hug",
+  "th": "กอด",
+  "ex": {
+   "zh": "妈妈搂着孩子睡觉。",
+   "py": "Māma lǒu zhe háizi shuìjiào.",
+   "en": "Mom sleeps holding her child in her arms.",
+   "th": "แม่กอดลูกนอน"
+  }
+ },
+ {
+  "h": "炉灶",
+  "p": "lú zào",
+  "en": "stove",
+  "th": "เตา",
+  "ex": {
+   "zh": "厨房里有一个新炉灶。",
+   "py": "Chúfáng lǐ yǒu yī gè xīn lúzào.",
+   "en": "There is a new stove in the kitchen.",
+   "th": "ในครัวมีเตาใหม่หนึ่งเตา"
+  }
+ },
+ {
+  "h": "屡次",
+  "p": "lǚ cì",
+  "en": "repeatedly",
+  "th": "ซ้ำแล้วซ้ำเล่า",
+  "ex": {
+   "zh": "他屡次迟到。",
+   "py": "Tā lǚcì chídào.",
+   "en": "He has been late repeatedly.",
+   "th": "เขามาสายซ้ำแล้วซ้ำเล่า"
+  }
+ },
+ {
+  "h": "履行",
+  "p": "lǚ xíng",
+  "en": "to fulfill",
+  "th": "ปฏิบัติตาม",
+  "ex": {
+   "zh": "你必须履行合同。",
+   "py": "Nǐ bìxū lǚxíng hétong.",
+   "en": "You must fulfill the contract.",
+   "th": "คุณต้องปฏิบัติตามสัญญา"
+  }
+ },
+ {
+  "h": "率领",
+  "p": "shuài lǐng",
+  "en": "to lead",
+  "th": "นำ",
+  "ex": {
+   "zh": "老师率领学生去参观。",
+   "py": "Lǎoshī shuàilǐng xuéshēng qù cānguān.",
+   "en": "The teacher led the students on a visit.",
+   "th": "ครูนำนักเรียนไปทัศนศึกษา"
+  }
+ },
+ {
+  "h": "轮船",
+  "p": "lún chuán",
+  "en": "steamship",
+  "th": "เรือกลไฟ",
+  "ex": {
+   "zh": "我们坐轮船过江。",
+   "py": "Wǒmen zuò lúnchuán guò jiāng.",
+   "en": "We crossed the river by steamer.",
+   "th": "พวกเราข้ามแม่น้ำด้วยเรือกลไฟ"
+  }
+ },
+ {
+  "h": "轮廓",
+  "p": "lún kuò",
+  "en": "outline",
+  "th": "โครงร่าง",
+  "ex": {
+   "zh": "远处山的轮廓很清楚。",
+   "py": "Yuǎnchù shān de lúnkuò hěn qīngchu.",
+   "en": "The outline of the distant mountain is very clear.",
+   "th": "โครงร่างของภูเขาไกลๆ ชัดเจนมาก"
+  }
+ },
+ {
+  "h": "轮胎",
+  "p": "lún tāi",
+  "en": "tire",
+  "th": "ยางรถ",
+  "ex": {
+   "zh": "我的车轮胎没气了。",
+   "py": "Wǒ de chē lúntāi méi qì le.",
+   "en": "My car tire is flat.",
+   "th": "ยางรถของฉันแบน"
+  }
+ },
+ {
+  "h": "论坛",
+  "p": "lùn tán",
+  "en": "forum",
+  "th": "เวทีเสวนา",
+  "ex": {
+   "zh": "他在论坛上发了一篇文章。",
+   "py": "Tā zài lùntán shàng fāle yī piān wénzhāng.",
+   "en": "He posted an article on the forum.",
+   "th": "เขาโพสต์บทความหนึ่งในเว็บบอร์ด"
+  }
+ },
+ {
+  "h": "论证",
+  "p": "lùn zhèng",
+  "en": "to demonstrate",
+  "th": "พิสูจน์",
+  "ex": {
+   "zh": "作者用数据论证了观点。",
+   "py": "Zuòzhě yòng shùjù lùnzhèngle guāndiǎn.",
+   "en": "The author demonstrated the point with data.",
+   "th": "ผู้เขียนใช้ข้อมูลพิสูจน์ความคิดเห็น"
+  }
+ },
+ {
+  "h": "啰唆",
+  "p": "luō suo",
+  "en": "long-winded",
+  "th": "พูดวกวน",
+  "ex": {
+   "zh": "他说话太啰唆了。",
+   "py": "Tā shuōhuà tài luōsuo le.",
+   "en": "He is too long-winded.",
+   "th": "เขาพูดวกวนมากเกินไป"
+  }
+ },
+ {
+  "h": "螺丝钉",
+  "p": "luó sī dīng",
+  "en": "screw",
+  "th": "สกรู",
+  "ex": {
+   "zh": "请给我几个螺丝钉。",
+   "py": "Qǐng gěi wǒ jǐ gè luósīdīng.",
+   "en": "Please give me a few screws.",
+   "th": "ขอสกรูสองสามตัวหน่อย"
+  }
+ },
+ {
+  "h": "络绎不绝",
+  "p": "luò yì bù jué",
+  "en": "in an endless stream",
+  "th": "ต่อเนื่องไม่ขาดสาย",
+  "ex": {
+   "zh": "游客络绎不绝地来到这里。",
+   "py": "Yóukè luòyìbùjué de lái dào zhèlǐ.",
+   "en": "Tourists come here in an endless stream.",
+   "th": "นักท่องเที่ยวมาที่นี่ไม่ขาดสาย"
+  }
+ },
+ {
+  "h": "落成",
+  "p": "luò chéng",
+  "en": "to be completed",
+  "th": "สร้างเสร็จ",
+  "ex": {
+   "zh": "新体育馆下个月落成。",
+   "py": "Xīn tǐyùguǎn xià gè yuè luòchéng.",
+   "en": "The new gym will be completed next month.",
+   "th": "สนามกีฬาใหม่จะสร้างเสร็จเดือนหน้า"
+  }
+ },
+ {
+  "h": "落实",
+  "p": "luò shí",
+  "en": "to implement",
+  "th": "ดำเนินการให้เป็นจริง",
+  "ex": {
+   "zh": "这个计划已经落实了。",
+   "py": "Zhège jìhuà yǐjīng luòshí le.",
+   "en": "This plan has been carried out.",
+   "th": "แผนนี้ได้ดำเนินการแล้ว"
+  }
+ },
+ {
+  "h": "麻痹",
+  "p": "má bì",
+  "en": "paralysis",
+  "th": "อัมพาต",
+  "ex": {
+   "zh": "他的右手有些麻痹。",
+   "py": "Tā de yòushǒu yǒuxiē mábì.",
+   "en": "His right hand is somewhat paralyzed.",
+   "th": "มือขวาของเขาชาเป็นอัมพาตเล็กน้อย"
+  }
+ },
+ {
+  "h": "麻木",
+  "p": "má mù",
+  "en": "numb",
+  "th": "ชา",
+  "ex": {
+   "zh": "我的脚冻得麻木了。",
+   "py": "Wǒ de jiǎo dòng de mámù le.",
+   "en": "My feet are numb from the cold.",
+   "th": "เท้าของฉันหนาวจนชา"
+  }
+ },
+ {
+  "h": "麻醉",
+  "p": "má zuì",
+  "en": "anesthesia",
+  "th": "การวางยาสลบ",
+  "ex": {
+   "zh": "手术前要先麻醉。",
+   "py": "Shǒushù qián yào xiān mázuì.",
+   "en": "Anesthesia is given before surgery.",
+   "th": "ก่อนผ่าตัดต้องวางยาสลบก่อน"
+  }
+ },
+ {
+  "h": "码头",
+  "p": "mǎ tóu",
+  "en": "dock",
+  "th": "ท่าเรือ",
+  "ex": {
+   "zh": "我们在码头等船。",
+   "py": "Wǒmen zài mǎtou děng chuán.",
+   "en": "We are waiting for the boat at the pier.",
+   "th": "พวกเรารอเรืออยู่ที่ท่าเรือ"
+  }
+ },
+ {
+  "h": "嘛",
+  "p": "má",
+  "en": "particle \"ma\"",
+  "th": "คำลงท้าย \"嘛\"",
+  "ex": {
+   "zh": "这本来就很简单嘛。",
+   "py": "Zhè běnlái jiù hěn jiǎndān ma.",
+   "en": "It's simple to begin with, you know.",
+   "th": "ก็มันง่ายอยู่แล้วนี่นา"
+  }
+ },
+ {
+  "h": "埋伏",
+  "p": "mái fú",
+  "en": "to ambush",
+  "th": "ซุ่มโจมตี",
+  "ex": {
+   "zh": "警察在门口埋伏。",
+   "py": "Jǐngchá zài ménkǒu máifú.",
+   "en": "The police lay in ambush at the entrance.",
+   "th": "ตำรวจซุ่มอยู่ที่หน้าประตู"
+  }
+ },
+ {
+  "h": "埋没",
+  "p": "mái mò",
+  "en": "to bury",
+  "th": "ฝังกลบ",
+  "ex": {
+   "zh": "他的才华被埋没了。",
+   "py": "Tā de cáihuá bèi máimò le.",
+   "en": "His talent has been buried.",
+   "th": "พรสวรรค์ของเขาถูกฝังกลบ"
+  }
+ },
+ {
+  "h": "埋怨",
+  "p": "mán yuàn",
+  "en": "to complain",
+  "th": "ตำหนิบ่น",
+  "ex": {
+   "zh": "别总是埋怨别人。",
+   "py": "Bié zǒngshì mányuàn biérén.",
+   "en": "Don't always blame others.",
+   "th": "อย่าเอาแต่ตำหนิคนอื่น"
+  }
+ },
+ {
+  "h": "埋葬",
+  "p": "mái zàng",
+  "en": "to bury",
+  "th": "ฝังศพ",
+  "ex": {
+   "zh": "他们把老人埋葬在山上。",
+   "py": "Tāmen bǎ lǎorén máizàng zài shān shàng.",
+   "en": "They buried the old man on the hill.",
+   "th": "พวกเขาฝังศพผู้เฒ่าไว้บนภูเขา"
+  }
+ },
+ {
+  "h": "迈",
+  "p": "mài",
+  "en": "to stride",
+  "th": "ก้าว",
+  "ex": {
+   "zh": "他迈出了第一步。",
+   "py": "Tā màichūle dì yī bù.",
+   "en": "He took the first step.",
+   "th": "เขาก้าวเท้าออกไปก้าวแรก"
+  }
+ },
+ {
+  "h": "脉搏",
+  "p": "mài bó",
+  "en": "pulse",
+  "th": "ชีพจร",
+  "ex": {
+   "zh": "医生摸了摸他的脉搏。",
+   "py": "Yīshēng mō le mō tā de màibó.",
+   "en": "The doctor felt his pulse.",
+   "th": "หมอจับชีพจรของเขา"
+  }
+ },
+ {
+  "h": "慢性",
+  "p": "màn xìng",
+  "en": "chronic",
+  "th": "เรื้อรัง",
+  "ex": {
+   "zh": "他有慢性胃病。",
+   "py": "Tā yǒu mànxìng wèibìng.",
+   "en": "He has a chronic stomach illness.",
+   "th": "เขาเป็นโรคกระเพาะเรื้อรัง"
+  }
+ },
+ {
+  "h": "漫画",
+  "p": "màn huà",
+  "en": "comic",
+  "th": "การ์ตูน",
+  "ex": {
+   "zh": "我喜欢看日本漫画。",
+   "py": "Wǒ xǐhuan kàn Rìběn mànhuà.",
+   "en": "I like reading Japanese manga.",
+   "th": "ฉันชอบอ่านการ์ตูนญี่ปุ่น"
+  }
+ },
+ {
+  "h": "漫长",
+  "p": "màn cháng",
+  "en": "very long",
+  "th": "ยาวนาน",
+  "ex": {
+   "zh": "这是一个漫长的夜晚。",
+   "py": "Zhè shì yī gè màncháng de yèwǎn.",
+   "en": "This is a very long night.",
+   "th": "นี่เป็นค่ำคืนที่ยาวนาน"
+  }
+ },
+ {
+  "h": "蔓延",
+  "p": "màn yán",
+  "en": "to spread",
+  "th": "ลุกลาม",
+  "ex": {
+   "zh": "大火迅速蔓延开来。",
+   "py": "Dàhuǒ xùnsù mànyán kāilái.",
+   "en": "The fire spread rapidly.",
+   "th": "ไฟลุกลามอย่างรวดเร็ว"
+  }
+ },
+ {
+  "h": "忙碌",
+  "p": "máng lù",
+  "en": "busy",
+  "th": "ยุ่ง",
+  "ex": {
+   "zh": "他每天都很忙碌。",
+   "py": "Tā měi tiān dōu hěn mánglù.",
+   "en": "He is busy every day.",
+   "th": "เขายุ่งทุกวัน"
+  }
+ },
+ {
+  "h": "盲目",
+  "p": "máng mù",
+  "en": "blind",
+  "th": "สุ่มสี่สุ่มห้า",
+  "ex": {
+   "zh": "不要盲目跟风。",
+   "py": "Bùyào mángmù gēnfēng.",
+   "en": "Don't blindly follow the trend.",
+   "th": "อย่าตามกระแสอย่างไม่ลืมหูลืมตา"
+  }
+ },
+ {
+  "h": "茫茫",
+  "p": "máng máng",
+  "en": "boundless",
+  "th": "กว้างใหญ่ไร้ขอบเขต",
+  "ex": {
+   "zh": "茫茫大海一望无际。",
+   "py": "Mángmáng dàhǎi yī wàng wú jì.",
+   "en": "The boundless sea stretches as far as the eye can see.",
+   "th": "ทะเลกว้างใหญ่สุดลูกหูลูกตา"
+  }
+ },
+ {
+  "h": "茫然",
+  "p": "máng rán",
+  "en": "at a loss",
+  "th": "งงงวย",
+  "ex": {
+   "zh": "他茫然地看着四周。",
+   "py": "Tā mángrán de kànzhe sìzhōu.",
+   "en": "He looked around blankly.",
+   "th": "เขามองรอบๆ อย่างงงงวย"
+  }
+ },
+ {
+  "h": "茂盛",
+  "p": "mào shèng",
+  "en": "lush",
+  "th": "เขียวชอุ่ม",
+  "ex": {
+   "zh": "院子里的树很茂盛。",
+   "py": "Yuànzi lǐ de shù hěn màoshèng.",
+   "en": "The trees in the yard are lush.",
+   "th": "ต้นไม้ในลานบ้านเขียวชอุ่มมาก"
+  }
+ },
+ {
+  "h": "冒充",
+  "p": "mào chōng",
+  "en": "to pass off as",
+  "th": "แอบอ้าง",
+  "ex": {
+   "zh": "有人冒充警察骗钱。",
+   "py": "Yǒu rén màochōng jǐngchá piànqián.",
+   "en": "Someone posed as a police officer to swindle money.",
+   "th": "มีคนแอบอ้างเป็นตำรวจเพื่อหลอกเอาเงิน"
+  }
+ },
+ {
+  "h": "没辙",
+  "p": "méi zhé",
+  "en": "at a loss",
+  "th": "จนปัญญา",
+  "ex": {
+   "zh": "这件事我真没辙了。",
+   "py": "Zhè jiàn shì wǒ zhēn méizhé le.",
+   "en": "I'm really at my wit's end with this.",
+   "th": "เรื่องนี้ฉันจนปัญญาจริงๆ"
+  }
+ },
+ {
+  "h": "枚",
+  "p": "Méi",
+  "en": "Mei (surname)",
+  "th": "เหมย (นามสกุล)",
+  "ex": {
+   "zh": "枚先生是我们的邻居。",
+   "py": "Méi xiānsheng shì wǒmen de línjū.",
+   "en": "Mr. Mei is our neighbor.",
+   "th": "คุณเหมยเป็นเพื่อนบ้านของเรา"
+  }
+ },
+ {
+  "h": "媒介",
+  "p": "méi jiè",
+  "en": "medium",
+  "th": "สื่อกลาง",
+  "ex": {
+   "zh": "蚊子是传播疾病的媒介。",
+   "py": "Wénzi shì chuánbō jíbìng de méijiè.",
+   "en": "Mosquitoes are a medium for spreading disease.",
+   "th": "ยุงเป็นพาหะแพร่โรค"
+  }
+ },
+ {
+  "h": "媒体",
+  "p": "méi tǐ",
+  "en": "media",
+  "th": "สื่อมวลชน",
+  "ex": {
+   "zh": "媒体报道了这件事。",
+   "py": "Méitǐ bàodàole zhè jiàn shì.",
+   "en": "The media reported on this matter.",
+   "th": "สื่อมวลชนรายงานเรื่องนี้"
+  }
+ },
+ {
+  "h": "美观",
+  "p": "měi guān",
+  "en": "attractive",
+  "th": "สวยงาม",
+  "ex": {
+   "zh": "这个设计既美观又实用。",
+   "py": "Zhège shèjì jì měiguān yòu shíyòng.",
+   "en": "This design is both attractive and practical.",
+   "th": "ดีไซน์นี้ทั้งสวยงามและใช้งานได้จริง"
+  }
+ },
+ {
+  "h": "美满",
+  "p": "měi mǎn",
+  "en": "happy",
+  "th": "สมบูรณ์พูนสุข",
+  "ex": {
+   "zh": "祝你们婚姻美满。",
+   "py": "Zhù nǐmen hūnyīn měimǎn.",
+   "en": "I wish you a happy marriage.",
+   "th": "ขอให้ชีวิตคู่ของพวกคุณสมบูรณ์พูนสุข"
+  }
+ },
+ {
+  "h": "美妙",
+  "p": "měi miào",
+  "en": "wonderful",
+  "th": "วิเศษ",
+  "ex": {
+   "zh": "她的歌声非常美妙。",
+   "py": "Tā de gēshēng fēicháng měimiào.",
+   "en": "Her singing voice is wonderful.",
+   "th": "เสียงร้องของเธอไพเราะวิเศษมาก"
+  }
+ },
+ {
+  "h": "门诊",
+  "p": "mén zhěn",
+  "en": "outpatient clinic",
+  "th": "แผนกผู้ป่วยนอก",
+  "ex": {
+   "zh": "门诊部下午两点开门。",
+   "py": "Ménzhěnbù xiàwǔ liǎng diǎn kāimén.",
+   "en": "The outpatient department opens at two p.m.",
+   "th": "แผนกผู้ป่วยนอกเปิดตอนบ่ายสองโมง"
+  }
+ },
+ {
+  "h": "萌芽",
+  "p": "méng yá",
+  "en": "to sprout",
+  "th": "งอก",
+  "ex": {
+   "zh": "春天，种子开始萌芽。",
+   "py": "Chūntiān, zhǒngzi kāishǐ méngyá.",
+   "en": "In spring, the seeds begin to sprout.",
+   "th": "ฤดูใบไม้ผลิ เมล็ดพันธุ์เริ่มงอก"
+  }
+ },
+ {
+  "h": "蒙",
+  "p": "méng",
+  "en": "drizzle",
+  "th": "ฝนตกปรอยๆ",
+  "ex": {
+   "zh": "外面下着蒙蒙细雨。",
+   "py": "Wàimiàn xiàzhe méngmeng xìyǔ.",
+   "en": "A fine drizzle is falling outside.",
+   "th": "ข้างนอกฝนตกปรอยๆ"
+  }
+ },
+ {
+  "h": "猛烈",
+  "p": "měng liè",
+  "en": "fierce",
+  "th": "รุนแรง",
+  "ex": {
+   "zh": "外面刮着猛烈的大风。",
+   "py": "Wàimiàn guāzhe měngliè de dàfēng.",
+   "en": "A fierce wind is blowing outside.",
+   "th": "ข้างนอกลมพัดแรงมาก"
+  }
+ },
+ {
+  "h": "梦想",
+  "p": "mèng xiǎng",
+  "en": "dream",
+  "th": "ความฝัน",
+  "ex": {
+   "zh": "我的梦想是当医生。",
+   "py": "Wǒ de mèngxiǎng shì dāng yīshēng.",
+   "en": "My dream is to become a doctor.",
+   "th": "ความฝันของฉันคืออยากเป็นหมอ"
+  }
+ },
+ {
+  "h": "眯",
+  "p": "mí",
+  "en": "to squint",
+  "th": "หรี่ตา",
+  "ex": {
+   "zh": "阳光太强，他眯起了眼睛。",
+   "py": "Yángguāng tài qiáng, tā mīqǐle yǎnjing.",
+   "en": "The sunlight was so strong that he squinted.",
+   "th": "แดดแรงเกินไป เขาจึงหรี่ตา"
+  }
+ },
+ {
+  "h": "弥补",
+  "p": "mí bǔ",
+  "en": "to make up for",
+  "th": "ชดเชย",
+  "ex": {
+   "zh": "我想弥补自己的错误。",
+   "py": "Wǒ xiǎng míbǔ zìjǐ de cuòwù.",
+   "en": "I want to make up for my mistake.",
+   "th": "ฉันอยากชดเชยความผิดพลาดของตัวเอง"
+  }
+ },
+ {
+  "h": "弥漫",
+  "p": "mí màn",
+  "en": "to permeate",
+  "th": "อบอวลไปทั่ว",
+  "ex": {
+   "zh": "房间里弥漫着花香。",
+   "py": "Fángjiān lǐ mímàn zhe huāxiāng.",
+   "en": "The scent of flowers fills the room.",
+   "th": "ในห้องอบอวลไปด้วยกลิ่นดอกไม้"
+  }
+ },
+ {
+  "h": "迷惑",
+  "p": "mí huo",
+  "en": "to confuse",
+  "th": "ทำให้สับสน",
+  "ex": {
+   "zh": "他的话让我很迷惑。",
+   "py": "Tā de huà ràng wǒ hěn míhuo.",
+   "en": "His words confused me.",
+   "th": "คำพูดของเขาทำให้ฉันสับสนมาก"
+  }
+ },
+ {
+  "h": "迷人",
+  "p": "mí rén",
+  "en": "charming",
+  "th": "น่าหลงใหล",
+  "ex": {
+   "zh": "这里的风景很迷人。",
+   "py": "Zhèlǐ de fēngjǐng hěn mírén.",
+   "en": "The scenery here is charming.",
+   "th": "ทิวทัศน์ที่นี่น่าหลงใหลมาก"
+  }
+ },
+ {
+  "h": "迷失",
+  "p": "mí shī",
+  "en": "to lose one's way",
+  "th": "หลงทาง",
+  "ex": {
+   "zh": "他在森林里迷失了方向。",
+   "py": "Tā zài sēnlín lǐ míshīle fāngxiàng.",
+   "en": "He lost his way in the forest.",
+   "th": "เขาหลงทางในป่า"
+  }
+ },
+ {
+  "h": "迷信",
+  "p": "mí xìn",
+  "en": "superstition",
+  "th": "ความเชื่องมงาย",
+  "ex": {
+   "zh": "我们不能相信迷信。",
+   "py": "Wǒmen bù néng xiāngxìn míxìn.",
+   "en": "We can't believe in superstition.",
+   "th": "เราไม่ควรเชื่อเรื่องงมงาย"
+  }
+ },
+ {
+  "h": "密度",
+  "p": "mì dù",
+  "en": "density",
+  "th": "ความหนาแน่น",
+  "ex": {
+   "zh": "这个城市人口密度很高。",
+   "py": "Zhège chéngshì rénkǒu mìdù hěn gāo.",
+   "en": "This city has a high population density.",
+   "th": "เมืองนี้มีความหนาแน่นของประชากรสูง"
+  }
+ },
+ {
+  "h": "密封",
+  "p": "mì fēng",
+  "en": "to seal",
+  "th": "ปิดผนึก",
+  "ex": {
+   "zh": "请把盒子密封好。",
+   "py": "Qǐng bǎ hézi mìfēng hǎo.",
+   "en": "Please seal the box tightly.",
+   "th": "กรุณาปิดผนึกกล่องให้แน่น"
+  }
+ },
+ {
+  "h": "免得",
+  "p": "miǎn de",
+  "en": "so as not to",
+  "th": "จะได้ไม่",
+  "ex": {
+   "zh": "早点走，免得迟到。",
+   "py": "Zǎodiǎn zǒu, miǎnde chídào.",
+   "en": "Leave early so you won't be late.",
+   "th": "ออกเร็วหน่อย จะได้ไม่สาย"
+  }
+ },
+ {
+  "h": "免疫",
+  "p": "miǎn yì",
+  "en": "immunity",
+  "th": "ภูมิคุ้มกัน",
+  "ex": {
+   "zh": "接种疫苗可以增强免疫力。",
+   "py": "Jiēzhòng yìmiáo kěyǐ zēngqiáng miǎnyìlì.",
+   "en": "Vaccination can boost immunity.",
+   "th": "การฉีดวัคซีนช่วยเสริมภูมิคุ้มกันได้"
+  }
+ },
+ {
+  "h": "勉励",
+  "p": "miǎn lì",
+  "en": "to encourage",
+  "th": "ให้กำลังใจ",
+  "ex": {
+   "zh": "老师勉励我们努力学习。",
+   "py": "Lǎoshī miǎnlì wǒmen nǔlì xuéxí.",
+   "en": "The teacher encouraged us to study hard.",
+   "th": "ครูให้กำลังใจพวกเราให้ตั้งใจเรียน"
+  }
+ },
+ {
+  "h": "勉强",
+  "p": "miǎn qiǎng",
+  "en": "reluctant",
+  "th": "ฝืนใจ",
+  "ex": {
+   "zh": "他勉强答应了。",
+   "py": "Tā miǎnqiǎng dāying le.",
+   "en": "He agreed reluctantly.",
+   "th": "เขารับปากอย่างฝืนใจ"
+  }
+ },
+ {
+  "h": "面貌",
+  "p": "miàn mào",
+  "en": "appearance",
+  "th": "โฉมหน้า",
+  "ex": {
+   "zh": "这座城市的面貌变了。",
+   "py": "Zhè zuò chéngshì de miànmào biàn le.",
+   "en": "The appearance of this city has changed.",
+   "th": "โฉมหน้าของเมืองนี้เปลี่ยนไป"
+  }
+ },
+ {
+  "h": "面子",
+  "p": "miàn zi",
+  "en": "face",
+  "th": "หน้าตา",
+  "ex": {
+   "zh": "他很爱面子。",
+   "py": "Tā hěn ài miànzi.",
+   "en": "He cares a lot about saving face.",
+   "th": "เขารักษาหน้ามาก"
+  }
+ },
+ {
+  "h": "描绘",
+  "p": "miáo huì",
+  "en": "to depict",
+  "th": "พรรณนา",
+  "ex": {
+   "zh": "作者描绘了乡村的生活。",
+   "py": "Zuòzhě miáohuìle xiāngcūn de shēnghuó.",
+   "en": "The author depicted village life.",
+   "th": "ผู้เขียนพรรณนาชีวิตในชนบท"
+  }
+ },
+ {
+  "h": "渺小",
+  "p": "miǎo xiǎo",
+  "en": "tiny",
+  "th": "เล็กจิ๋ว",
+  "ex": {
+   "zh": "在大自然面前，人很渺小。",
+   "py": "Zài dàzìrán miànqián, rén hěn miǎoxiǎo.",
+   "en": "Before nature, humans are tiny.",
+   "th": "ต่อหน้าธรรมชาติ มนุษย์ช่างเล็กจิ๋ว"
+  }
+ },
+ {
+  "h": "灭亡",
+  "p": "miè wáng",
+  "en": "to perish",
+  "th": "ล่มสลาย",
+  "ex": {
+   "zh": "那个王朝很快灭亡了。",
+   "py": "Nàge wángcháo hěn kuài mièwáng le.",
+   "en": "That dynasty soon perished.",
+   "th": "ราชวงศ์นั้นล่มสลายอย่างรวดเร็ว"
+  }
+ },
+ {
+  "h": "蔑视",
+  "p": "miè shì",
+  "en": "to despise",
+  "th": "ดูหมิ่น",
+  "ex": {
+   "zh": "他蔑视一切规则。",
+   "py": "Tā mièshì yīqiè guīzé.",
+   "en": "He despises all rules.",
+   "th": "เขาดูหมิ่นกฎทุกอย่าง"
+  }
+ },
+ {
+  "h": "民间",
+  "p": "mín jiān",
+  "en": "folk",
+  "th": "พื้นบ้าน",
+  "ex": {
+   "zh": "这是一个民间故事。",
+   "py": "Zhè shì yī gè mínjiān gùshi.",
+   "en": "This is a folk tale.",
+   "th": "นี่คือนิทานพื้นบ้าน"
+  }
+ },
+ {
+  "h": "民用",
+  "p": "mín yòng",
+  "en": "civilian use",
+  "th": "ใช้ในภาคพลเรือน",
+  "ex": {
+   "zh": "这架飞机是民用的。",
+   "py": "Zhè jià fēijī shì mínyòng de.",
+   "en": "This aircraft is for civilian use.",
+   "th": "เครื่องบินลำนี้ใช้ในภาคพลเรือน"
+  }
+ },
+ {
+  "h": "敏感",
+  "p": "mǐn gǎn",
+  "en": "sensitive",
+  "th": "ไวต่อความรู้สึก",
+  "ex": {
+   "zh": "她的皮肤很敏感。",
+   "py": "Tā de pífū hěn mǐngǎn.",
+   "en": "Her skin is very sensitive.",
+   "th": "ผิวของเธอบอบบางแพ้ง่าย"
+  }
+ },
+ {
+  "h": "敏捷",
+  "p": "mǐn jié",
+  "en": "agile",
+  "th": "ว่องไว",
+  "ex": {
+   "zh": "猫的动作很敏捷。",
+   "py": "Māo de dòngzuò hěn mǐnjié.",
+   "en": "Cats move very nimbly.",
+   "th": "แมวเคลื่อนไหวว่องไวมาก"
+  }
+ },
+ {
+  "h": "敏锐",
+  "p": "mǐn ruì",
+  "en": "keen",
+  "th": "เฉียบแหลม",
+  "ex": {
+   "zh": "他有敏锐的观察力。",
+   "py": "Tā yǒu mǐnruì de guānchálì.",
+   "en": "He has keen powers of observation.",
+   "th": "เขามีสายตาสังเกตที่เฉียบแหลม"
+  }
+ },
+ {
+  "h": "名次",
+  "p": "míng cì",
+  "en": "ranking",
+  "th": "อันดับ",
+  "ex": {
+   "zh": "他在比赛中取得了好名次。",
+   "py": "Tā zài bǐsài zhōng qǔdéle hǎo míngcì.",
+   "en": "He achieved a good ranking in the competition.",
+   "th": "เขาได้อันดับที่ดีในการแข่งขัน"
+  }
+ },
+ {
+  "h": "名额",
+  "p": "míng é",
+  "en": "quota",
+  "th": "โควตา",
+  "ex": {
+   "zh": "这次只有两个名额。",
+   "py": "Zhè cì zhǐyǒu liǎng gè míng'é.",
+   "en": "There are only two places this time.",
+   "th": "ครั้งนี้มีโควตาเพียงสองที่"
+  }
+ },
+ {
+  "h": "名副其实",
+  "p": "míng fù qí shí",
+  "en": "living up to its name",
+  "th": "สมกับชื่อ",
+  "ex": {
+   "zh": "他是名副其实的专家。",
+   "py": "Tā shì míngfùqíshí de zhuānjiā.",
+   "en": "He is an expert in the true sense.",
+   "th": "เขาเป็นผู้เชี่ยวชาญที่สมกับชื่อ"
+  }
+ },
+ {
+  "h": "名誉",
+  "p": "míng yù",
+  "en": "reputation",
+  "th": "ชื่อเสียง",
+  "ex": {
+   "zh": "他很注重自己的名誉。",
+   "py": "Tā hěn zhùzhòng zìjǐ de míngyù.",
+   "en": "He cares a lot about his reputation.",
+   "th": "เขาให้ความสำคัญกับชื่อเสียงของตัวเองมาก"
+  }
+ },
+ {
+  "h": "明明",
+  "p": "míng míng",
+  "en": "obviously",
+  "th": "ชัดๆ",
+  "ex": {
+   "zh": "我明明告诉过你了。",
+   "py": "Wǒ míngmíng gàosuguo nǐ le.",
+   "en": "I clearly told you already.",
+   "th": "ฉันบอกคุณไปแล้วชัดๆ"
+  }
+ },
+ {
+  "h": "命名",
+  "p": "mìng míng",
+  "en": "to name",
+  "th": "ตั้งชื่อ",
+  "ex": {
+   "zh": "他们把新产品命名为\"星光\"。",
+   "py": "Tāmen bǎ xīn chǎnpǐn mìngmíng wèi \"Xīngguāng\".",
+   "en": "They named the new product \"Starlight\".",
+   "th": "พวกเขาตั้งชื่อผลิตภัณฑ์ใหม่ว่า \"สตาร์ไลต์\""
+  }
+ },
+ {
+  "h": "摸索",
+  "p": "mō suo",
+  "en": "to grope",
+  "th": "คลำหา",
+  "ex": {
+   "zh": "他在黑暗中摸索着前进。",
+   "py": "Tā zài hēi'àn zhōng mōsuo zhe qiánjìn.",
+   "en": "He groped his way forward in the dark.",
+   "th": "เขาคลำทางไปข้างหน้าในความมืด"
+  }
+ },
+ {
+  "h": "模范",
+  "p": "mó fàn",
+  "en": "role model",
+  "th": "แบบอย่างที่ดี",
+  "ex": {
+   "zh": "她是我们学校的模范学生。",
+   "py": "Tā shì wǒmen xuéxiào de mófàn xuésheng.",
+   "en": "She is a model student at our school.",
+   "th": "เธอเป็นนักเรียนตัวอย่างของโรงเรียนเรา"
+  }
+ },
+ {
+  "h": "模式",
+  "p": "mó shì",
+  "en": "pattern",
+  "th": "รูปแบบ",
+  "ex": {
+   "zh": "我们需要新的工作模式。",
+   "py": "Wǒmen xūyào xīn de gōngzuò móshì.",
+   "en": "We need a new working model.",
+   "th": "เราต้องการรูปแบบการทำงานใหม่"
+  }
+ },
+ {
+  "h": "模型",
+  "p": "mó xíng",
+  "en": "model",
+  "th": "แบบจำลอง",
+  "ex": {
+   "zh": "他做了一个飞机模型。",
+   "py": "Tā zuòle yī gè fēijī móxíng.",
+   "en": "He made a model airplane.",
+   "th": "เขาทำแบบจำลองเครื่องบินหนึ่งลำ"
+  }
+ },
+ {
+  "h": "模样",
+  "p": "mú yàng",
+  "en": "appearance",
+  "th": "หน้าตา",
+  "ex": {
+   "zh": "她长得一副可爱的模样。",
+   "py": "Tā zhǎng de yī fù kě'ài de múyàng.",
+   "en": "She has a cute look.",
+   "th": "เธอมีหน้าตาน่ารัก"
+  }
+ },
+ {
+  "h": "膜",
+  "p": "mó",
+  "en": "membrane",
+  "th": "เยื่อ",
+  "ex": {
+   "zh": "这层薄膜很透明。",
+   "py": "Zhè céng báomó hěn tòumíng.",
+   "en": "This thin film is very transparent.",
+   "th": "ฟิล์มบางชั้นนี้โปร่งใสมาก"
+  }
+ },
+ {
+  "h": "摩擦",
+  "p": "mó cā",
+  "en": "friction",
+  "th": "แรงเสียดทาน",
+  "ex": {
+   "zh": "冬天摩擦双手会变暖。",
+   "py": "Dōngtiān mócā shuāngshǒu huì biàn nuǎn.",
+   "en": "Rubbing your hands together warms them in winter.",
+   "th": "หน้าหนาวถูมือแล้วจะอุ่นขึ้น"
+  }
+ },
+ {
+  "h": "磨合",
+  "p": "mó hé",
+  "en": "to break in",
+  "th": "ปรับตัวเข้าหากัน",
+  "ex": {
+   "zh": "新同事需要时间磨合。",
+   "py": "Xīn tóngshì xūyào shíjiān móhé.",
+   "en": "New colleagues need time to adjust to one another.",
+   "th": "เพื่อนร่วมงานใหม่ต้องใช้เวลาปรับตัวเข้าหากัน"
+  }
+ },
+ {
+  "h": "魔鬼",
+  "p": "mó guǐ",
+  "en": "devil",
+  "th": "ปีศาจ",
+  "ex": {
+   "zh": "故事里有一个魔鬼。",
+   "py": "Gùshi lǐ yǒu yī gè móguǐ.",
+   "en": "There is a devil in the story.",
+   "th": "ในเรื่องมีปีศาจตนหนึ่ง"
+  }
+ },
+ {
+  "h": "魔术",
+  "p": "mó shù",
+  "en": "magic",
+  "th": "มายากล",
+  "ex": {
+   "zh": "他会变魔术。",
+   "py": "Tā huì biàn móshù.",
+   "en": "He can do magic tricks.",
+   "th": "เขาเล่นมายากลได้"
+  }
+ },
+ {
+  "h": "抹杀",
+  "p": "mǒ shā",
+  "en": "to obliterate",
+  "th": "ลบล้าง",
+  "ex": {
+   "zh": "不能抹杀他的功劳。",
+   "py": "Bù néng mǒshā tā de gōngláo.",
+   "en": "We can't erase his contributions.",
+   "th": "ไม่อาจลบล้างความดีความชอบของเขาได้"
+  }
+ },
+ {
+  "h": "莫名其妙",
+  "p": "mò míng qí miào",
+  "en": "baffling",
+  "th": "งงไม่รู้เรื่อง",
+  "ex": {
+   "zh": "他莫名其妙地生气了。",
+   "py": "Tā mòmíngqímiào de shēngqì le.",
+   "en": "He got angry for no apparent reason.",
+   "th": "เขาโกรธขึ้นมาโดยไม่รู้สาเหตุ"
+  }
+ },
+ {
+  "h": "墨水儿",
+  "p": "mò shuǐ r",
+  "en": "ink",
+  "th": "หมึก",
+  "ex": {
+   "zh": "钢笔里没有墨水儿了。",
+   "py": "Gāngbǐ lǐ méiyǒu mòshuǐr le.",
+   "en": "The pen has run out of ink.",
+   "th": "ปากกาหมึกซึมหมึกหมดแล้ว"
+  }
+ },
+ {
+  "h": "默默",
+  "p": "mò mò",
+  "en": "silently",
+  "th": "เงียบๆ",
+  "ex": {
+   "zh": "她默默地流下了眼泪。",
+   "py": "Tā mòmò de liúxiàle yǎnlèi.",
+   "en": "She shed tears silently.",
+   "th": "เธอน้ำตาไหลออกมาอย่างเงียบๆ"
+  }
+ }
+]

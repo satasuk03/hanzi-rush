@@ -1,0 +1,1202 @@
+[
+ {
+  "h": "寂静",
+  "p": "jì jìng",
+  "en": "quiet",
+  "th": "เงียบสงบ",
+  "ex": {
+   "zh": "深夜的街道十分寂静。",
+   "py": "Shēnyè de jiēdào shífēn jìjìng.",
+   "en": "The street is very quiet late at night.",
+   "th": "ถนนตอนดึกเงียบสงบมาก"
+  }
+ },
+ {
+  "h": "寄托",
+  "p": "jì tuō",
+  "en": "to place (hope) on",
+  "th": "ฝากความหวัง",
+  "ex": {
+   "zh": "他把希望寄托在孩子身上。",
+   "py": "Tā bǎ xīwàng jìtuō zài háizi shēnshang.",
+   "en": "He places his hopes on his child.",
+   "th": "เขาฝากความหวังไว้กับลูก"
+  }
+ },
+ {
+  "h": "加工",
+  "p": "jiā gōng",
+  "en": "to process",
+  "th": "แปรรูป",
+  "ex": {
+   "zh": "这家工厂加工食品。",
+   "py": "Zhè jiā gōngchǎng jiāgōng shípǐn.",
+   "en": "This factory processes food.",
+   "th": "โรงงานนี้แปรรูปอาหาร"
+  }
+ },
+ {
+  "h": "加剧",
+  "p": "jiā jù",
+  "en": "to intensify",
+  "th": "รุนแรงขึ้น",
+  "ex": {
+   "zh": "矛盾进一步加剧了。",
+   "py": "Máodùn jìnyíbù jiājù le.",
+   "en": "The conflict intensified further.",
+   "th": "ความขัดแย้งรุนแรงขึ้นอีก"
+  }
+ },
+ {
+  "h": "夹杂",
+  "p": "jiā zá",
+  "en": "to be mixed with",
+  "th": "ปะปน",
+  "ex": {
+   "zh": "他的话里夹杂着方言。",
+   "py": "Tā de huà lǐ jiāzá zhe fāngyán.",
+   "en": "His speech is mixed with dialect.",
+   "th": "คำพูดของเขามีภาษาถิ่นปะปนอยู่"
+  }
+ },
+ {
+  "h": "佳肴",
+  "p": "jiā yáo",
+  "en": "delicacy",
+  "th": "อาหารอันโอชะ",
+  "ex": {
+   "zh": "桌上摆满了佳肴。",
+   "py": "Zhuō shàng bǎi mǎn le jiāyáo.",
+   "en": "The table was full of delicacies.",
+   "th": "บนโต๊ะเต็มไปด้วยอาหารเลิศรส"
+  }
+ },
+ {
+  "h": "家常",
+  "p": "jiā cháng",
+  "en": "home-style",
+  "th": "แบบบ้านๆ",
+  "ex": {
+   "zh": "我喜欢吃妈妈做的家常菜。",
+   "py": "Wǒ xǐhuan chī māma zuò de jiācháng cài.",
+   "en": "I like eating my mom's home-cooked dishes.",
+   "th": "ฉันชอบกินอาหารบ้านๆ ที่แม่ทำ"
+  }
+ },
+ {
+  "h": "家伙",
+  "p": "jiā huo",
+  "en": "guy",
+  "th": "หมอนี่",
+  "ex": {
+   "zh": "他是个有趣的家伙。",
+   "py": "Tā shì ge yǒuqù de jiāhuo.",
+   "en": "He is an interesting guy.",
+   "th": "เขาเป็นหมอนี่ที่น่าสนุก"
+  }
+ },
+ {
+  "h": "家属",
+  "p": "jiā shǔ",
+  "en": "family member",
+  "th": "ญาติ",
+  "ex": {
+   "zh": "请家属在外面等候。",
+   "py": "Qǐng jiāshǔ zài wàimiàn děnghòu.",
+   "en": "Family members, please wait outside.",
+   "th": "ขอให้ญาติรออยู่ข้างนอก"
+  }
+ },
+ {
+  "h": "家喻户晓",
+  "p": "jiā yù hù xiǎo",
+  "en": "known to all",
+  "th": "ใครๆ ก็รู้จัก",
+  "ex": {
+   "zh": "这个故事家喻户晓。",
+   "py": "Zhège gùshi jiāyù hùxiǎo.",
+   "en": "This story is known to everyone.",
+   "th": "เรื่องนี้ใครๆ ก็รู้จัก"
+  }
+ },
+ {
+  "h": "假设",
+  "p": "jiǎ shè",
+  "en": "to suppose",
+  "th": "สมมติ",
+  "ex": {
+   "zh": "假设你有一百万,你会做什么?",
+   "py": "Jiǎshè nǐ yǒu yì bǎi wàn, nǐ huì zuò shénme?",
+   "en": "Suppose you had a million, what would you do?",
+   "th": "สมมติว่าคุณมีหนึ่งล้าน คุณจะทำอะไร"
+  }
+ },
+ {
+  "h": "假使",
+  "p": "jiǎ shǐ",
+  "en": "supposing",
+  "th": "ถ้าหาก",
+  "ex": {
+   "zh": "假使明天下雨,我们就不去。",
+   "py": "Jiǎshǐ míngtiān xiàyǔ, wǒmen jiù bú qù.",
+   "en": "If it rains tomorrow, we won't go.",
+   "th": "ถ้าพรุ่งนี้ฝนตก เราก็ไม่ไป"
+  }
+ },
+ {
+  "h": "尖端",
+  "p": "jiān duān",
+  "en": "cutting-edge",
+  "th": "ล้ำสมัย",
+  "ex": {
+   "zh": "这是一项尖端技术。",
+   "py": "Zhè shì yí xiàng jiānduān jìshù.",
+   "en": "This is a cutting-edge technology.",
+   "th": "นี่เป็นเทคโนโลยีล้ำสมัย"
+  }
+ },
+ {
+  "h": "坚定",
+  "p": "jiān dìng",
+  "en": "firm",
+  "th": "แน่วแน่",
+  "ex": {
+   "zh": "他态度很坚定。",
+   "py": "Tā tàidù hěn jiāndìng.",
+   "en": "His attitude is very firm.",
+   "th": "ท่าทีของเขาแน่วแน่มาก"
+  }
+ },
+ {
+  "h": "坚固",
+  "p": "jiān gù",
+  "en": "sturdy",
+  "th": "แข็งแรงทนทาน",
+  "ex": {
+   "zh": "这座桥修得很坚固。",
+   "py": "Zhè zuò qiáo xiū de hěn jiāngù.",
+   "en": "This bridge was built very sturdy.",
+   "th": "สะพานนี้สร้างมาแข็งแรงมาก"
+  }
+ },
+ {
+  "h": "坚韧",
+  "p": "jiān rèn",
+  "en": "tenacious",
+  "th": "ทรหดอดทน",
+  "ex": {
+   "zh": "这种植物生命力很坚韧。",
+   "py": "Zhè zhǒng zhíwù shēngmìnglì hěn jiānrèn.",
+   "en": "This plant is very tenacious.",
+   "th": "พืชชนิดนี้มีชีวิตชีวาทรหดอดทน"
+  }
+ },
+ {
+  "h": "坚实",
+  "p": "jiān shí",
+  "en": "solid",
+  "th": "มั่นคง",
+  "ex": {
+   "zh": "他为工作打下了坚实的基础。",
+   "py": "Tā wèi gōngzuò dǎ xià le jiānshí de jīchǔ.",
+   "en": "He laid a solid foundation for his work.",
+   "th": "เขาวางรากฐานที่มั่นคงให้แก่งาน"
+  }
+ },
+ {
+  "h": "坚硬",
+  "p": "jiān yìng",
+  "en": "hard",
+  "th": "แข็ง",
+  "ex": {
+   "zh": "这块石头非常坚硬。",
+   "py": "Zhè kuài shítou fēicháng jiānyìng.",
+   "en": "This stone is extremely hard.",
+   "th": "ก้อนหินนี้แข็งมาก"
+  }
+ },
+ {
+  "h": "间谍",
+  "p": "jiàn dié",
+  "en": "spy",
+  "th": "สายลับ",
+  "ex": {
+   "zh": "他被怀疑是间谍。",
+   "py": "Tā bèi huáiyí shì jiàndié.",
+   "en": "He is suspected of being a spy.",
+   "th": "เขาถูกสงสัยว่าเป็นสายลับ"
+  }
+ },
+ {
+  "h": "间隔",
+  "p": "jiàn gé",
+  "en": "interval",
+  "th": "ช่วงห่าง",
+  "ex": {
+   "zh": "车和车之间要保持间隔。",
+   "py": "Chē hé chē zhījiān yào bǎochí jiàngé.",
+   "en": "Cars must keep a gap between them.",
+   "th": "รถต้องเว้นระยะห่างจากกัน"
+  }
+ },
+ {
+  "h": "间接",
+  "p": "jiàn jiē",
+  "en": "indirect",
+  "th": "ทางอ้อม",
+  "ex": {
+   "zh": "他间接地告诉了我这件事。",
+   "py": "Tā jiànjiē de gàosù le wǒ zhè jiàn shì.",
+   "en": "He told me this indirectly.",
+   "th": "เขาบอกเรื่องนี้กับฉันทางอ้อม"
+  }
+ },
+ {
+  "h": "艰难",
+  "p": "jiān nán",
+  "en": "difficult",
+  "th": "ยากลำบาก",
+  "ex": {
+   "zh": "他们的生活很艰难。",
+   "py": "Tāmen de shēnghuó hěn jiānnán.",
+   "en": "Their life is very hard.",
+   "th": "ชีวิตของพวกเขายากลำบากมาก"
+  }
+ },
+ {
+  "h": "兼职",
+  "p": "jiān zhí",
+  "en": "part-time job",
+  "th": "งานพาร์ตไทม์",
+  "ex": {
+   "zh": "大学生常常做兼职。",
+   "py": "Dàxuéshēng chángcháng zuò jiānzhí.",
+   "en": "College students often do part-time jobs.",
+   "th": "นักศึกษามหาวิทยาลัยมักทำงานพาร์ตไทม์"
+  }
+ },
+ {
+  "h": "监督",
+  "p": "jiān dū",
+  "en": "to supervise",
+  "th": "กำกับดูแล",
+  "ex": {
+   "zh": "政府监督食品安全。",
+   "py": "Zhèngfǔ jiāndū shípǐn ānquán.",
+   "en": "The government supervises food safety.",
+   "th": "รัฐบาลกำกับดูแลความปลอดภัยของอาหาร"
+  }
+ },
+ {
+  "h": "监视",
+  "p": "jiān shì",
+  "en": "to monitor",
+  "th": "เฝ้าดู",
+  "ex": {
+   "zh": "警察一直在监视他。",
+   "py": "Jǐngchá yìzhí zài jiānshì tā.",
+   "en": "The police have been watching him.",
+   "th": "ตำรวจเฝ้าติดตามเขามาตลอด"
+  }
+ },
+ {
+  "h": "监狱",
+  "p": "jiān yù",
+  "en": "prison",
+  "th": "คุก",
+  "ex": {
+   "zh": "他因偷东西进了监狱。",
+   "py": "Tā yīn tōu dōngxi jìn le jiānyù.",
+   "en": "He went to prison for stealing.",
+   "th": "เขาติดคุกเพราะขโมยของ"
+  }
+ },
+ {
+  "h": "拣",
+  "p": "jiǎn",
+  "en": "to pick",
+  "th": "เลือกเก็บ",
+  "ex": {
+   "zh": "请把好的水果拣出来。",
+   "py": "Qǐng bǎ hǎo de shuǐguǒ jiǎn chūlái.",
+   "en": "Please pick out the good fruit.",
+   "th": "กรุณาเลือกผลไม้ดีๆ ออกมา"
+  }
+ },
+ {
+  "h": "剪彩",
+  "p": "jiǎn cǎi",
+  "en": "to cut the ribbon",
+  "th": "ตัดริบบิ้น",
+  "ex": {
+   "zh": "市长为新商场剪彩。",
+   "py": "Shìzhǎng wèi xīn shāngchǎng jiǎncǎi.",
+   "en": "The mayor cut the ribbon for the new mall.",
+   "th": "นายกเทศมนตรีตัดริบบิ้นเปิดห้างใหม่"
+  }
+ },
+ {
+  "h": "检讨",
+  "p": "jiǎn tǎo",
+  "en": "self-criticism",
+  "th": "ทบทวนข้อผิดพลาด",
+  "ex": {
+   "zh": "他写了一份检讨。",
+   "py": "Tā xiě le yí fèn jiǎntǎo.",
+   "en": "He wrote a self-criticism.",
+   "th": "เขาเขียนบันทึกทบทวนความผิดของตน"
+  }
+ },
+ {
+  "h": "检验",
+  "p": "jiǎn yàn",
+  "en": "to inspect",
+  "th": "ตรวจสอบ",
+  "ex": {
+   "zh": "工人检验产品质量。",
+   "py": "Gōngrén jiǎnyàn chǎnpǐn zhìliàng.",
+   "en": "Workers inspect the product quality.",
+   "th": "คนงานตรวจสอบคุณภาพสินค้า"
+  }
+ },
+ {
+  "h": "简化",
+  "p": "jiǎn huà",
+  "en": "to simplify",
+  "th": "ทำให้ง่ายขึ้น",
+  "ex": {
+   "zh": "请简化这个流程。",
+   "py": "Qǐng jiǎnhuà zhège liúchéng.",
+   "en": "Please simplify this process.",
+   "th": "กรุณาทำให้ขั้นตอนนี้ง่ายขึ้น"
+  }
+ },
+ {
+  "h": "简陋",
+  "p": "jiǎn lòu",
+  "en": "crude",
+  "th": "ซอมซ่อ",
+  "ex": {
+   "zh": "这间房子很简陋。",
+   "py": "Zhè jiān fángzi hěn jiǎnlòu.",
+   "en": "This house is very simple and crude.",
+   "th": "บ้านหลังนี้เรียบง่ายและซอมซ่อมาก"
+  }
+ },
+ {
+  "h": "简体字",
+  "p": "jiǎn tǐ zì",
+  "en": "simplified characters",
+  "th": "อักษรจีนตัวย่อ",
+  "ex": {
+   "zh": "中国大陆使用简体字。",
+   "py": "Zhōngguó dàlù shǐyòng jiǎntǐzì.",
+   "en": "Mainland China uses simplified characters.",
+   "th": "จีนแผ่นดินใหญ่ใช้อักษรจีนตัวย่อ"
+  }
+ },
+ {
+  "h": "简要",
+  "p": "jiǎn yào",
+  "en": "concise",
+  "th": "กระชับ",
+  "ex": {
+   "zh": "请简要地介绍一下。",
+   "py": "Qǐng jiǎnyào de jièshào yíxià.",
+   "en": "Please introduce it briefly.",
+   "th": "กรุณาแนะนำโดยสังเขป"
+  }
+ },
+ {
+  "h": "见多识广",
+  "p": "jiàn duō shí guǎng",
+  "en": "worldly-wise",
+  "th": "ประสบการณ์มาก",
+  "ex": {
+   "zh": "他见多识广,什么都懂。",
+   "py": "Tā jiàn duō shí guǎng, shénme dōu dǒng.",
+   "en": "He is experienced and knows everything.",
+   "th": "เขามีประสบการณ์กว้างขวาง รู้ทุกเรื่อง"
+  }
+ },
+ {
+  "h": "见解",
+  "p": "jiàn jiě",
+  "en": "opinion",
+  "th": "ความคิดเห็น",
+  "ex": {
+   "zh": "他对这件事有独特的见解。",
+   "py": "Tā duì zhè jiàn shì yǒu dútè de jiànjiě.",
+   "en": "He has a unique view on this matter.",
+   "th": "เขามีความเห็นที่โดดเด่นต่อเรื่องนี้"
+  }
+ },
+ {
+  "h": "见闻",
+  "p": "jiàn wén",
+  "en": "what one has seen",
+  "th": "ประสบการณ์",
+  "ex": {
+   "zh": "旅行增长了我的见闻。",
+   "py": "Lǚxíng zēngzhǎng le wǒ de jiànwén.",
+   "en": "Traveling broadened my knowledge.",
+   "th": "การท่องเที่ยวทำให้ฉันมีประสบการณ์มากขึ้น"
+  }
+ },
+ {
+  "h": "见义勇为",
+  "p": "jiàn yì yǒng wéi",
+  "en": "to act bravely for a just cause",
+  "th": "กล้าทำความดี",
+  "ex": {
+   "zh": "他见义勇为,救了一个孩子。",
+   "py": "Tā jiànyì yǒngwéi, jiù le yí ge háizi.",
+   "en": "He bravely intervened and saved a child.",
+   "th": "เขากล้าช่วยเหลือผู้อื่นและช่วยเด็กคนหนึ่งไว้"
+  }
+ },
+ {
+  "h": "健全",
+  "p": "jiàn quán",
+  "en": "sound",
+  "th": "สมบูรณ์",
+  "ex": {
+   "zh": "我们要建立健全的制度。",
+   "py": "Wǒmen yào jiànlì jiànquán de zhìdù.",
+   "en": "We need to establish a sound system.",
+   "th": "เราต้องสร้างระบบที่สมบูรณ์รัดกุม"
+  }
+ },
+ {
+  "h": "舰艇",
+  "p": "jiàn tǐng",
+  "en": "warship",
+  "th": "เรือรบ",
+  "ex": {
+   "zh": "海军的舰艇停在港口。",
+   "py": "Hǎijūn de jiàntǐng tíng zài gǎngkǒu.",
+   "en": "Naval vessels are docked at the port.",
+   "th": "เรือของกองทัพเรือจอดอยู่ที่ท่าเรือ"
+  }
+ },
+ {
+  "h": "溅",
+  "p": "jiàn",
+  "en": "to splash",
+  "th": "กระเซ็น",
+  "ex": {
+   "zh": "水溅到了我的衣服上。",
+   "py": "Shuǐ jiàn dào le wǒ de yīfu shàng.",
+   "en": "Water splashed onto my clothes.",
+   "th": "น้ำกระเซ็นโดนเสื้อผ้าฉัน"
+  }
+ },
+ {
+  "h": "践踏",
+  "p": "jiàn tà",
+  "en": "to trample",
+  "th": "เหยียบย่ำ",
+  "ex": {
+   "zh": "请不要践踏草地。",
+   "py": "Qǐng bú yào jiàntà cǎodì.",
+   "en": "Please don't trample on the grass.",
+   "th": "กรุณาอย่าเหยียบย่ำสนามหญ้า"
+  }
+ },
+ {
+  "h": "鉴别",
+  "p": "jiàn bié",
+  "en": "to distinguish",
+  "th": "จำแนก",
+  "ex": {
+   "zh": "专家能鉴别真假。",
+   "py": "Zhuānjiā néng jiànbié zhēnjiǎ.",
+   "en": "Experts can tell real from fake.",
+   "th": "ผู้เชี่ยวชาญสามารถจำแนกของจริงกับของปลอมได้"
+  }
+ },
+ {
+  "h": "鉴定",
+  "p": "jiàn dìng",
+  "en": "to appraise",
+  "th": "ตรวจประเมิน",
+  "ex": {
+   "zh": "专家鉴定这幅画是真的。",
+   "py": "Zhuānjiā jiàndìng zhè fú huà shì zhēn de.",
+   "en": "Experts authenticated this painting as genuine.",
+   "th": "ผู้เชี่ยวชาญตรวจสอบแล้วว่าภาพนี้เป็นของแท้"
+  }
+ },
+ {
+  "h": "鉴于",
+  "p": "jiàn yú",
+  "en": "in view of",
+  "th": "เนื่องจาก",
+  "ex": {
+   "zh": "鉴于天气不好,比赛取消了。",
+   "py": "Jiànyú tiānqì bù hǎo, bǐsài qǔxiāo le.",
+   "en": "In view of the bad weather, the match was canceled.",
+   "th": "เนื่องจากอากาศไม่ดี การแข่งขันจึงถูกยกเลิก"
+  }
+ },
+ {
+  "h": "将近",
+  "p": "jiāng jìn",
+  "en": "nearly",
+  "th": "เกือบ",
+  "ex": {
+   "zh": "他等了将近一个小时。",
+   "py": "Tā děng le jiāngjìn yí ge xiǎoshí.",
+   "en": "He waited nearly an hour.",
+   "th": "เขารอเกือบหนึ่งชั่วโมง"
+  }
+ },
+ {
+  "h": "将军",
+  "p": "Jiāng jūn",
+  "en": "general",
+  "th": "นายพล",
+  "ex": {
+   "zh": "将军带领士兵冲锋。",
+   "py": "Jiāngjūn dàilǐng shìbīng chōngfēng.",
+   "en": "The general led the soldiers in a charge.",
+   "th": "นายพลนำทหารบุกไปข้างหน้า"
+  }
+ },
+ {
+  "h": "僵硬",
+  "p": "jiāng yìng",
+  "en": "stiff",
+  "th": "แข็งทื่อ",
+  "ex": {
+   "zh": "他的手冻得很僵硬。",
+   "py": "Tā de shǒu dòng de hěn jiāngyìng.",
+   "en": "His hands are stiff from the cold.",
+   "th": "มือของเขาแข็งทื่อเพราะความหนาว"
+  }
+ },
+ {
+  "h": "奖励",
+  "p": "jiǎng lì",
+  "en": "to reward",
+  "th": "ให้รางวัล",
+  "ex": {
+   "zh": "公司奖励优秀员工。",
+   "py": "Gōngsī jiǎnglì yōuxiù yuángōng.",
+   "en": "The company rewards outstanding employees.",
+   "th": "บริษัทให้รางวัลพนักงานดีเด่น"
+  }
+ },
+ {
+  "h": "奖赏",
+  "p": "jiǎng shǎng",
+  "en": "prize",
+  "th": "รางวัล",
+  "ex": {
+   "zh": "老师给了他一个奖赏。",
+   "py": "Lǎoshī gěi le tā yí ge jiǎngshǎng.",
+   "en": "The teacher gave him a reward.",
+   "th": "ครูมอบรางวัลให้เขา"
+  }
+ },
+ {
+  "h": "桨",
+  "p": "jiǎng",
+  "en": "oar",
+  "th": "พาย",
+  "ex": {
+   "zh": "他划着船桨过河。",
+   "py": "Tā huá zhe chuánjiǎng guò hé.",
+   "en": "He rowed across the river with an oar.",
+   "th": "เขาพายไม้พายข้ามแม่น้ำ"
+  }
+ },
+ {
+  "h": "降临",
+  "p": "jiàng lín",
+  "en": "to descend",
+  "th": "มาถึง",
+  "ex": {
+   "zh": "夜幕降临了。",
+   "py": "Yèmù jiànglín le.",
+   "en": "Night has fallen.",
+   "th": "ค่ำคืนมาเยือนแล้ว"
+  }
+ },
+ {
+  "h": "交叉",
+  "p": "jiāo chā",
+  "en": "to intersect",
+  "th": "ตัดกัน",
+  "ex": {
+   "zh": "两条路在这里交叉。",
+   "py": "Liǎng tiáo lù zài zhèlǐ jiāochā.",
+   "en": "The two roads intersect here.",
+   "th": "ถนนสองสายตัดกันที่นี่"
+  }
+ },
+ {
+  "h": "交代",
+  "p": "jiāo dài",
+  "en": "to hand over",
+  "th": "ชี้แจง",
+  "ex": {
+   "zh": "老师交代了作业。",
+   "py": "Lǎoshī jiāodài le zuòyè.",
+   "en": "The teacher explained the homework.",
+   "th": "ครูสั่งการบ้านไว้"
+  }
+ },
+ {
+  "h": "交涉",
+  "p": "jiāo shè",
+  "en": "to negotiate",
+  "th": "เจรจา",
+  "ex": {
+   "zh": "我们和对方交涉了很久。",
+   "py": "Wǒmen hé duìfāng jiāoshè le hěn jiǔ.",
+   "en": "We negotiated with the other side for a long time.",
+   "th": "เราเจรจากับอีกฝ่ายมานาน"
+  }
+ },
+ {
+  "h": "交往",
+  "p": "jiāo wǎng",
+  "en": "to associate with",
+  "th": "คบหา",
+  "ex": {
+   "zh": "他不喜欢和陌生人交往。",
+   "py": "Tā bù xǐhuan hé mòshēngrén jiāowǎng.",
+   "en": "He doesn't like associating with strangers.",
+   "th": "เขาไม่ชอบคบหากับคนแปลกหน้า"
+  }
+ },
+ {
+  "h": "交易",
+  "p": "jiāo yì",
+  "en": "transaction",
+  "th": "การซื้อขาย",
+  "ex": {
+   "zh": "这笔交易很顺利。",
+   "py": "Zhè bǐ jiāoyì hěn shùnlì.",
+   "en": "This deal went smoothly.",
+   "th": "การซื้อขายครั้งนี้ราบรื่นดี"
+  }
+ },
+ {
+  "h": "娇气",
+  "p": "jiāo qì",
+  "en": "delicate",
+  "th": "บอบบาง",
+  "ex": {
+   "zh": "这孩子从小就很娇气。",
+   "py": "Zhè háizi cóng xiǎo jiù hěn jiāoqì.",
+   "en": "This child has been delicate since childhood.",
+   "th": "เด็กคนนี้บอบบางขี้แยมาตั้งแต่เล็ก"
+  }
+ },
+ {
+  "h": "焦点",
+  "p": "jiāo diǎn",
+  "en": "focal point",
+  "th": "จุดสนใจ",
+  "ex": {
+   "zh": "他是大家关注的焦点。",
+   "py": "Tā shì dàjiā guānzhù de jiāodiǎn.",
+   "en": "He is the focus of everyone's attention.",
+   "th": "เขาเป็นจุดสนใจของทุกคน"
+  }
+ },
+ {
+  "h": "焦急",
+  "p": "jiāo jí",
+  "en": "anxious",
+  "th": "กระวนกระวายใจ",
+  "ex": {
+   "zh": "妈妈焦急地等着他。",
+   "py": "Māma jiāojí de děng zhe tā.",
+   "en": "Mom waited for him anxiously.",
+   "th": "แม่รอเขาอย่างกระวนกระวายใจ"
+  }
+ },
+ {
+  "h": "角落",
+  "p": "jiǎo luò",
+  "en": "corner",
+  "th": "มุม",
+  "ex": {
+   "zh": "猫躲在角落里。",
+   "py": "Māo duǒ zài jiǎoluò lǐ.",
+   "en": "The cat hides in the corner.",
+   "th": "แมวหลบอยู่ตรงมุม"
+  }
+ },
+ {
+  "h": "搅拌",
+  "p": "jiǎo bàn",
+  "en": "to stir",
+  "th": "คน",
+  "ex": {
+   "zh": "请把汤搅拌一下。",
+   "py": "Qǐng bǎ tāng jiǎobàn yíxià.",
+   "en": "Please stir the soup.",
+   "th": "กรุณาคนซุปหน่อย"
+  }
+ },
+ {
+  "h": "缴纳",
+  "p": "jiǎo nà",
+  "en": "to pay (taxes)",
+  "th": "ชำระ",
+  "ex": {
+   "zh": "公民要按时缴纳税款。",
+   "py": "Gōngmín yào ànshí jiǎonà shuìkuǎn.",
+   "en": "Citizens must pay taxes on time.",
+   "th": "พลเมืองต้องชำระภาษีตามกำหนด"
+  }
+ },
+ {
+  "h": "较量",
+  "p": "jiào liàng",
+  "en": "to compete",
+  "th": "วัดฝีมือ",
+  "ex": {
+   "zh": "两队将进行一场较量。",
+   "py": "Liǎng duì jiāng jìnxíng yì chǎng jiàoliàng.",
+   "en": "The two teams will have a contest.",
+   "th": "สองทีมจะประลองฝีมือกัน"
+  }
+ },
+ {
+  "h": "教养",
+  "p": "jiào yǎng",
+  "en": "upbringing",
+  "th": "การอบรมเลี้ยงดู",
+  "ex": {
+   "zh": "他很有教养。",
+   "py": "Tā hěn yǒu jiàoyǎng.",
+   "en": "He is well brought up.",
+   "th": "เขาได้รับการอบรมมาดี"
+  }
+ },
+ {
+  "h": "阶层",
+  "p": "jiē céng",
+  "en": "social class",
+  "th": "ชนชั้น",
+  "ex": {
+   "zh": "社会有不同的阶层。",
+   "py": "Shèhuì yǒu bù tóng de jiēcéng.",
+   "en": "Society has different classes.",
+   "th": "สังคมมีชนชั้นต่างกัน"
+  }
+ },
+ {
+  "h": "皆",
+  "p": "jiē",
+  "en": "all",
+  "th": "ทั้งหมด",
+  "ex": {
+   "zh": "大家皆大欢喜。",
+   "py": "Dàjiā jiē dà huānxǐ.",
+   "en": "Everyone is happy.",
+   "th": "ทุกคนต่างยินดี"
+  }
+ },
+ {
+  "h": "接连",
+  "p": "jiē lián",
+  "en": "in a row",
+  "th": "ติดต่อกัน",
+  "ex": {
+   "zh": "他接连赢了三场比赛。",
+   "py": "Tā jiēlián yíng le sān chǎng bǐsài.",
+   "en": "He won three matches in a row.",
+   "th": "เขาชนะติดต่อกันสามแมตช์"
+  }
+ },
+ {
+  "h": "揭发",
+  "p": "jiē fā",
+  "en": "to expose",
+  "th": "เปิดโปง",
+  "ex": {
+   "zh": "记者揭发了他的丑事。",
+   "py": "Jìzhě jiēfā le tā de chǒushì.",
+   "en": "The reporter exposed his scandal.",
+   "th": "นักข่าวเปิดโปงเรื่องอื้อฉาวของเขา"
+  }
+ },
+ {
+  "h": "揭露",
+  "p": "jiē lù",
+  "en": "to unmask",
+  "th": "เปิดเผย",
+  "ex": {
+   "zh": "文章揭露了社会问题。",
+   "py": "Wénzhāng jiēlù le shèhuì wèntí.",
+   "en": "The article exposed social problems.",
+   "th": "บทความเปิดเผยปัญหาสังคม"
+  }
+ },
+ {
+  "h": "节奏",
+  "p": "jié zòu",
+  "en": "rhythm",
+  "th": "จังหวะ",
+  "ex": {
+   "zh": "这首歌的节奏很快。",
+   "py": "Zhè shǒu gē de jiézòu hěn kuài.",
+   "en": "This song has a fast rhythm.",
+   "th": "เพลงนี้จังหวะเร็วมาก"
+  }
+ },
+ {
+  "h": "杰出",
+  "p": "jié chū",
+  "en": "outstanding",
+  "th": "โดดเด่น",
+  "ex": {
+   "zh": "他是一位杰出的科学家。",
+   "py": "Tā shì yí wèi jiéchū de kēxuéjiā.",
+   "en": "He is an outstanding scientist.",
+   "th": "เขาเป็นนักวิทยาศาสตร์ที่โดดเด่น"
+  }
+ },
+ {
+  "h": "结晶",
+  "p": "jié jīng",
+  "en": "crystallization",
+  "th": "ผลึก",
+  "ex": {
+   "zh": "这本书是他多年的结晶。",
+   "py": "Zhè běn shū shì tā duō nián de jiéjīng.",
+   "en": "This book is the fruit of his many years of work.",
+   "th": "หนังสือเล่มนี้เป็นผลผลิตจากหลายปีของเขา"
+  }
+ },
+ {
+  "h": "结局",
+  "p": "jié jú",
+  "en": "ending",
+  "th": "ตอนจบ",
+  "ex": {
+   "zh": "电影的结局很感人。",
+   "py": "Diànyǐng de jiéjú hěn gǎnrén.",
+   "en": "The movie's ending is touching.",
+   "th": "ตอนจบของหนังซึ้งมาก"
+  }
+ },
+ {
+  "h": "结算",
+  "p": "jié suàn",
+  "en": "to settle accounts",
+  "th": "ชำระบัญชี",
+  "ex": {
+   "zh": "月底公司要结算工资。",
+   "py": "Yuèdǐ gōngsī yào jiésuàn gōngzī.",
+   "en": "The company settles wages at month end.",
+   "th": "สิ้นเดือนบริษัทจะคำนวณจ่ายเงินเดือน"
+  }
+ },
+ {
+  "h": "截至",
+  "p": "jié zhì",
+  "en": "up to",
+  "th": "จนถึง",
+  "ex": {
+   "zh": "报名截至明天中午。",
+   "py": "Bàomíng jiézhì míngtiān zhōngwǔ.",
+   "en": "Registration closes at noon tomorrow.",
+   "th": "การสมัครปิดรับถึงเที่ยงวันพรุ่งนี้"
+  }
+ },
+ {
+  "h": "竭尽全力",
+  "p": "jié jìn quán lì",
+  "en": "to spare no effort",
+  "th": "ทุ่มสุดตัว",
+  "ex": {
+   "zh": "他竭尽全力帮助大家。",
+   "py": "Tā jiéjìn quánlì bāngzhù dàjiā.",
+   "en": "He does his utmost to help everyone.",
+   "th": "เขาทุ่มสุดตัวเพื่อช่วยทุกคน"
+  }
+ },
+ {
+  "h": "解除",
+  "p": "jiě chú",
+  "en": "to remove",
+  "th": "ยกเลิก",
+  "ex": {
+   "zh": "双方解除了合同。",
+   "py": "Shuāngfāng jiěchú le hétong.",
+   "en": "Both parties terminated the contract.",
+   "th": "ทั้งสองฝ่ายยกเลิกสัญญา"
+  }
+ },
+ {
+  "h": "解雇",
+  "p": "jiě gù",
+  "en": "to fire",
+  "th": "ไล่ออก",
+  "ex": {
+   "zh": "老板解雇了他。",
+   "py": "Lǎobǎn jiěgù le tā.",
+   "en": "The boss fired him.",
+   "th": "เจ้านายไล่เขาออก"
+  }
+ },
+ {
+  "h": "解剖",
+  "p": "jiě pōu",
+  "en": "to dissect",
+  "th": "ผ่าตัดชำแหละ",
+  "ex": {
+   "zh": "学生在课上解剖青蛙。",
+   "py": "Xuésheng zài kè shàng jiěpōu qīngwā.",
+   "en": "Students dissect frogs in class.",
+   "th": "นักเรียนผ่าตัดกบในชั้นเรียน"
+  }
+ },
+ {
+  "h": "解散",
+  "p": "jiě sàn",
+  "en": "to disband",
+  "th": "ยุบ",
+  "ex": {
+   "zh": "公司决定解散这个部门。",
+   "py": "Gōngsī juédìng jiěsàn zhège bùmén.",
+   "en": "The company decided to disband this department.",
+   "th": "บริษัทตัดสินใจยุบแผนกนี้"
+  }
+ },
+ {
+  "h": "解体",
+  "p": "jiě tǐ",
+  "en": "to disintegrate",
+  "th": "สลายตัว",
+  "ex": {
+   "zh": "这个国家最终解体了。",
+   "py": "Zhège guójiā zuìzhōng jiětǐ le.",
+   "en": "This country eventually disintegrated.",
+   "th": "ประเทศนี้ล่มสลายในที่สุด"
+  }
+ },
+ {
+  "h": "戒备",
+  "p": "jiè bèi",
+  "en": "to be on guard",
+  "th": "ระแวดระวัง",
+  "ex": {
+   "zh": "警察加强了戒备。",
+   "py": "Jǐngchá jiāqiáng le jièbèi.",
+   "en": "The police stepped up their guard.",
+   "th": "ตำรวจเพิ่มการเฝ้าระวัง"
+  }
+ },
+ {
+  "h": "界限",
+  "p": "jiè xiàn",
+  "en": "boundary",
+  "th": "ขอบเขต",
+  "ex": {
+   "zh": "好坏之间没有明确的界限。",
+   "py": "Hǎo huài zhījiān méiyǒu míngquè de jièxiàn.",
+   "en": "There is no clear boundary between good and bad.",
+   "th": "ระหว่างดีกับไม่ดีไม่มีขอบเขตที่ชัดเจน"
+  }
+ },
+ {
+  "h": "借鉴",
+  "p": "jiè jiàn",
+  "en": "to draw lessons from",
+  "th": "เรียนรู้จาก",
+  "ex": {
+   "zh": "我们要借鉴别人的经验。",
+   "py": "Wǒmen yào jièjiàn biéren de jīngyàn.",
+   "en": "We should learn from others' experience.",
+   "th": "เราควรเรียนรู้จากประสบการณ์ของผู้อื่น"
+  }
+ },
+ {
+  "h": "借助",
+  "p": "jiè zhù",
+  "en": "with the help of",
+  "th": "อาศัย",
+  "ex": {
+   "zh": "他借助字典读懂了文章。",
+   "py": "Tā jièzhù zìdiǎn dúdǒng le wénzhāng.",
+   "en": "He understood the article with the help of a dictionary.",
+   "th": "เขาอาศัยพจนานุกรมอ่านบทความเข้าใจ"
+  }
+ },
+ {
+  "h": "金融",
+  "p": "jīn róng",
+  "en": "finance",
+  "th": "การเงิน",
+  "ex": {
+   "zh": "他在金融公司工作。",
+   "py": "Tā zài jīnróng gōngsī gōngzuò.",
+   "en": "He works at a financial company.",
+   "th": "เขาทำงานในบริษัทการเงิน"
+  }
+ },
+ {
+  "h": "津津有味",
+  "p": "jīn jīn yǒu wèi",
+  "en": "with great relish",
+  "th": "เพลิดเพลิน",
+  "ex": {
+   "zh": "孩子津津有味地吃着冰淇淋。",
+   "py": "Háizi jīnjīn yǒuwèi de chī zhe bīngqílín.",
+   "en": "The child eats ice cream with great relish.",
+   "th": "เด็กกินไอศกรีมอย่างเอร็ดอร่อย"
+  }
+ },
+ {
+  "h": "尽快",
+  "p": "jǐn kuài",
+  "en": "as soon as possible",
+  "th": "โดยเร็วที่สุด",
+  "ex": {
+   "zh": "请你尽快回复我。",
+   "py": "Qǐng nǐ jǐnkuài huífù wǒ.",
+   "en": "Please reply to me as soon as possible.",
+   "th": "กรุณาตอบกลับฉันโดยเร็วที่สุด"
+  }
+ },
+ {
+  "h": "紧密",
+  "p": "jǐn mì",
+  "en": "close",
+  "th": "แนบแน่น",
+  "ex": {
+   "zh": "两国的关系很紧密。",
+   "py": "Liǎng guó de guānxi hěn jǐnmì.",
+   "en": "The relationship between the two countries is close.",
+   "th": "ความสัมพันธ์ของสองประเทศแนบแน่นมาก"
+  }
+ },
+ {
+  "h": "紧迫",
+  "p": "jǐn pò",
+  "en": "urgent",
+  "th": "เร่งด่วน",
+  "ex": {
+   "zh": "时间很紧迫,我们快走吧。",
+   "py": "Shíjiān hěn jǐnpò, wǒmen kuài zǒu ba.",
+   "en": "Time is pressing; let's go quickly.",
+   "th": "เวลาเร่งด่วนมาก เรารีบไปกันเถอะ"
+  }
+ },
+ {
+  "h": "锦绣前程",
+  "p": "jǐn xiù qián chéng",
+  "en": "bright future",
+  "th": "อนาคตสดใส",
+  "ex": {
+   "zh": "祝你锦绣前程!",
+   "py": "Zhù nǐ jǐnxiù qiánchéng!",
+   "en": "Wishing you a bright future!",
+   "th": "ขอให้อนาคตของคุณสดใสรุ่งเรือง"
+  }
+ },
+ {
+  "h": "劲头",
+  "p": "jìn tóu",
+  "en": "enthusiasm",
+  "th": "พลัง",
+  "ex": {
+   "zh": "他今天学习劲头很足。",
+   "py": "Tā jīntiān xuéxí jìntóu hěn zú.",
+   "en": "He is very energetic in his studies today.",
+   "th": "วันนี้เขาเรียนอย่างมีพลังมาก"
+  }
+ },
+ {
+  "h": "近来",
+  "p": "jìn lái",
+  "en": "recently",
+  "th": "เมื่อไม่นานมานี้",
+  "ex": {
+   "zh": "他近来身体不太好。",
+   "py": "Tā jìnlái shēntǐ bú tài hǎo.",
+   "en": "He hasn't been in good health lately.",
+   "th": "ช่วงนี้เขาสุขภาพไม่ค่อยดี"
+  }
+ },
+ {
+  "h": "近视",
+  "p": "jìn shì",
+  "en": "nearsighted",
+  "th": "สายตาสั้น",
+  "ex": {
+   "zh": "我近视,需要戴眼镜。",
+   "py": "Wǒ jìnshì, xūyào dài yǎnjìng.",
+   "en": "I am nearsighted and need glasses.",
+   "th": "ฉันสายตาสั้น ต้องใส่แว่น"
+  }
+ },
+ {
+  "h": "进而",
+  "p": "jìn ér",
+  "en": "and then",
+  "th": "แล้วต่อไป",
+  "ex": {
+   "zh": "我们先了解情况,进而想办法。",
+   "py": "Wǒmen xiān liǎojiě qíngkuàng, jìn'ér xiǎng bànfǎ.",
+   "en": "We first understand the situation, then find a solution.",
+   "th": "เราทำความเข้าใจสถานการณ์ก่อน แล้วค่อยหาทางแก้"
+  }
+ },
+ {
+  "h": "进攻",
+  "p": "jìn gōng",
+  "en": "to attack",
+  "th": "บุกโจมตี",
+  "ex": {
+   "zh": "军队向敌人发起进攻。",
+   "py": "Jūnduì xiàng dírén fāqǐ jìngōng.",
+   "en": "The army launched an attack on the enemy.",
+   "th": "กองทัพบุกโจมตีศัตรู"
+  }
+ },
+ {
+  "h": "进化",
+  "p": "jìn huà",
+  "en": "evolution",
+  "th": "วิวัฒนาการ",
+  "ex": {
+   "zh": "生物是不断进化的。",
+   "py": "Shēngwù shì búduàn jìnhuà de.",
+   "en": "Living things keep evolving.",
+   "th": "สิ่งมีชีวิตวิวัฒนาการอยู่เสมอ"
+  }
+ },
+ {
+  "h": "进展",
+  "p": "jìn zhǎn",
+  "en": "progress",
+  "th": "ความคืบหน้า",
+  "ex": {
+   "zh": "工作进展很顺利。",
+   "py": "Gōngzuò jìnzhǎn hěn shùnlì.",
+   "en": "Work is progressing smoothly.",
+   "th": "งานคืบหน้าไปด้วยดี"
+  }
+ },
+ {
+  "h": "晋升",
+  "p": "jìn shēng",
+  "en": "to be promoted",
+  "th": "เลื่อนตำแหน่ง",
+  "ex": {
+   "zh": "他晋升为部门经理。",
+   "py": "Tā jìnshēng wéi bùmén jīnglǐ.",
+   "en": "He was promoted to department manager.",
+   "th": "เขาได้เลื่อนตำแหน่งเป็นผู้จัดการแผนก"
+  }
+ }
+]

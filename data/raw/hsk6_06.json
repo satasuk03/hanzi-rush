@@ -1,0 +1,1202 @@
+[
+ {
+  "h": "奉献",
+  "p": "fèng xiàn",
+  "en": "to dedicate",
+  "th": "อุทิศ",
+  "ex": {
+   "zh": "她把一生奉献给了教育。",
+   "py": "Tā bǎ yìshēng fèngxiàn gěi le jiàoyù.",
+   "en": "She devoted her whole life to education.",
+   "th": "เธออุทิศชีวิตทั้งหมดให้กับการศึกษา"
+  }
+ },
+ {
+  "h": "否决",
+  "p": "fǒu jué",
+  "en": "to veto",
+  "th": "ยับยั้ง",
+  "ex": {
+   "zh": "董事会否决了这个方案。",
+   "py": "Dǒngshìhuì fǒujué le zhège fāng'àn.",
+   "en": "The board vetoed this plan.",
+   "th": "คณะกรรมการบริษัทยับยั้งแผนนี้"
+  }
+ },
+ {
+  "h": "敷衍",
+  "p": "fū yǎn",
+  "en": "to be perfunctory",
+  "th": "ทำเอาส่งๆ",
+  "ex": {
+   "zh": "你不要敷衍我。",
+   "py": "Nǐ bú yào fūyǎn wǒ.",
+   "en": "Don't brush me off.",
+   "th": "อย่ามาทำเอาส่งๆ กับฉัน"
+  }
+ },
+ {
+  "h": "服气",
+  "p": "fú qì",
+  "en": "to be convinced",
+  "th": "ยอมรับ",
+  "ex": {
+   "zh": "他的实力让我服气。",
+   "py": "Tā de shílì ràng wǒ fúqì.",
+   "en": "His ability really convinces me.",
+   "th": "ฝีมือของเขาทำให้ฉันยอมรับ"
+  }
+ },
+ {
+  "h": "俘虏",
+  "p": "fú lǔ",
+  "en": "captive",
+  "th": "เชลย",
+  "ex": {
+   "zh": "敌军的俘虏被释放了。",
+   "py": "Díjūn de fúlǔ bèi shìfàng le.",
+   "en": "The enemy captives were released.",
+   "th": "เชลยศึกของฝ่ายศัตรูถูกปล่อยตัว"
+  }
+ },
+ {
+  "h": "符号",
+  "p": "fú hào",
+  "en": "symbol",
+  "th": "สัญลักษณ์",
+  "ex": {
+   "zh": "这个符号是什么意思?",
+   "py": "Zhège fúhào shì shénme yìsi?",
+   "en": "What does this symbol mean?",
+   "th": "สัญลักษณ์นี้หมายถึงอะไร"
+  }
+ },
+ {
+  "h": "幅度",
+  "p": "fú dù",
+  "en": "range",
+  "th": "ช่วง",
+  "ex": {
+   "zh": "物价上涨的幅度很大。",
+   "py": "Wùjià shàngzhǎng de fúdù hěn dà.",
+   "en": "Prices rose by a large margin.",
+   "th": "ราคาสินค้าขึ้นในอัตราสูงมาก"
+  }
+ },
+ {
+  "h": "福利",
+  "p": "fú lì",
+  "en": "benefits",
+  "th": "สวัสดิการ",
+  "ex": {
+   "zh": "这家公司的福利很好。",
+   "py": "Zhè jiā gōngsī de fúlì hěn hǎo.",
+   "en": "This company has great benefits.",
+   "th": "บริษัทนี้มีสวัสดิการดีมาก"
+  }
+ },
+ {
+  "h": "福气",
+  "p": "fú qi",
+  "en": "good fortune",
+  "th": "โชคดี",
+  "ex": {
+   "zh": "你有福气,孩子很孝顺。",
+   "py": "Nǐ yǒu fúqi, háizi hěn xiàoshùn.",
+   "en": "You are blessed to have such a filial child.",
+   "th": "คุณโชคดีที่มีลูกกตัญญู"
+  }
+ },
+ {
+  "h": "辐射",
+  "p": "fú shè",
+  "en": "radiation",
+  "th": "รังสี",
+  "ex": {
+   "zh": "手机也有一点辐射。",
+   "py": "Shǒujī yě yǒu yìdiǎn fúshè.",
+   "en": "Cell phones also give off a little radiation.",
+   "th": "โทรศัพท์มือถือก็มีรังสีเล็กน้อย"
+  }
+ },
+ {
+  "h": "抚养",
+  "p": "fǔ yǎng",
+  "en": "to raise",
+  "th": "เลี้ยงดู",
+  "ex": {
+   "zh": "奶奶把我抚养长大。",
+   "py": "Nǎinai bǎ wǒ fǔyǎng zhǎngdà.",
+   "en": "Grandma raised me.",
+   "th": "ยายเลี้ยงฉันมาจนโต"
+  }
+ },
+ {
+  "h": "俯仰",
+  "p": "fǔ yǎng",
+  "en": "up and down",
+  "th": "เงยขึ้นก้มลง",
+  "ex": {
+   "zh": "他俯仰之间就完成了动作。",
+   "py": "Tā fǔyǎng zhījiān jiù wánchéng le dòngzuò.",
+   "en": "He finished the move in the blink of an eye.",
+   "th": "เขาทำท่านั้นเสร็จในพริบตา"
+  }
+ },
+ {
+  "h": "辅助",
+  "p": "fǔ zhù",
+  "en": "to assist",
+  "th": "ช่วยเหลือ",
+  "ex": {
+   "zh": "电脑可以辅助我们学习。",
+   "py": "Diànnǎo kěyǐ fǔzhù wǒmen xuéxí.",
+   "en": "Computers can assist our study.",
+   "th": "คอมพิวเตอร์ช่วยเราเรียนรู้ได้"
+  }
+ },
+ {
+  "h": "腐败",
+  "p": "fǔ bài",
+  "en": "corruption",
+  "th": "การทุจริต",
+  "ex": {
+   "zh": "政府正在打击腐败。",
+   "py": "Zhèngfǔ zhèngzài dǎjī fǔbài.",
+   "en": "The government is cracking down on corruption.",
+   "th": "รัฐบาลกำลังปราบปรามการทุจริต"
+  }
+ },
+ {
+  "h": "腐烂",
+  "p": "fǔ làn",
+  "en": "to rot",
+  "th": "เน่าเปื่อย",
+  "ex": {
+   "zh": "水果放久了会腐烂。",
+   "py": "Shuǐguǒ fàng jiǔ le huì fǔlàn.",
+   "en": "Fruit rots if left too long.",
+   "th": "ผลไม้ถ้าวางไว้นานจะเน่า"
+  }
+ },
+ {
+  "h": "腐蚀",
+  "p": "fǔ shí",
+  "en": "to corrode",
+  "th": "กัดกร่อน",
+  "ex": {
+   "zh": "铁在潮湿的地方容易腐蚀。",
+   "py": "Tiě zài cháoshī de dìfang róngyì fǔshí.",
+   "en": "Iron corrodes easily in damp places.",
+   "th": "เหล็กกัดกร่อนง่ายในที่ชื้น"
+  }
+ },
+ {
+  "h": "腐朽",
+  "p": "fǔ xiǔ",
+  "en": "decadent",
+  "th": "เสื่อมโทรม",
+  "ex": {
+   "zh": "那是一种腐朽的生活方式。",
+   "py": "Nà shì yì zhǒng fǔxiǔ de shēnghuó fāngshì.",
+   "en": "That is a decadent way of life.",
+   "th": "นั่นเป็นวิถีชีวิตที่เสื่อมโทรม"
+  }
+ },
+ {
+  "h": "负担",
+  "p": "fù dān",
+  "en": "to bear",
+  "th": "แบกรับ",
+  "ex": {
+   "zh": "他一个人负担全家的开销。",
+   "py": "Tā yí ge rén fùdān quánjiā de kāixiāo.",
+   "en": "He alone bears the family's expenses.",
+   "th": "เขาแบกรับค่าใช้จ่ายของทั้งครอบครัวคนเดียว"
+  }
+ },
+ {
+  "h": "附和",
+  "p": "fù hè",
+  "en": "to echo",
+  "th": "เห็นด้วยตาม",
+  "ex": {
+   "zh": "他总是附和领导的意见。",
+   "py": "Tā zǒngshì fùhè lǐngdǎo de yìjiàn.",
+   "en": "He always echoes the boss's opinions.",
+   "th": "เขามักคล้อยตามความเห็นของหัวหน้า"
+  }
+ },
+ {
+  "h": "附件",
+  "p": "fù jiàn",
+  "en": "attachment",
+  "th": "ไฟล์แนบ",
+  "ex": {
+   "zh": "请查看邮件附件。",
+   "py": "Qǐng chákàn yóujiàn fùjiàn.",
+   "en": "Please check the email attachment.",
+   "th": "กรุณาดูไฟล์แนบในอีเมล"
+  }
+ },
+ {
+  "h": "附属",
+  "p": "fù shǔ",
+  "en": "affiliated",
+  "th": "ในเครือ",
+  "ex": {
+   "zh": "他在大学附属医院工作。",
+   "py": "Tā zài dàxué fùshǔ yīyuàn gōngzuò.",
+   "en": "He works at the university affiliated hospital.",
+   "th": "เขาทำงานที่โรงพยาบาลในเครือมหาวิทยาลัย"
+  }
+ },
+ {
+  "h": "复活",
+  "p": "fù huó",
+  "en": "to revive",
+  "th": "ฟื้นคืนชีพ",
+  "ex": {
+   "zh": "他相信死人不能复活。",
+   "py": "Tā xiāngxìn sǐrén bù néng fùhuó.",
+   "en": "He believes the dead cannot come back to life.",
+   "th": "เขาเชื่อว่าคนตายฟื้นคืนชีพไม่ได้"
+  }
+ },
+ {
+  "h": "复兴",
+  "p": "Fù xīng",
+  "en": "revival",
+  "th": "ฟื้นฟู",
+  "ex": {
+   "zh": "国家正在走向复兴。",
+   "py": "Guójiā zhèngzài zǒuxiàng fùxīng.",
+   "en": "The nation is moving toward revival.",
+   "th": "ประเทศกำลังมุ่งสู่การฟื้นฟู"
+  }
+ },
+ {
+  "h": "副",
+  "p": "fù",
+  "en": "deputy",
+  "th": "รอง",
+  "ex": {
+   "zh": "他是公司的副经理。",
+   "py": "Tā shì gōngsī de fù jīnglǐ.",
+   "en": "He is the deputy manager of the company.",
+   "th": "เขาเป็นรองผู้จัดการของบริษัท"
+  }
+ },
+ {
+  "h": "副作用",
+  "p": "fù zuò yòng",
+  "en": "side effect",
+  "th": "ผลข้างเคียง",
+  "ex": {
+   "zh": "这种药有副作用。",
+   "py": "Zhè zhǒng yào yǒu fùzuòyòng.",
+   "en": "This medicine has side effects.",
+   "th": "ยานี้มีผลข้างเคียง"
+  }
+ },
+ {
+  "h": "富裕",
+  "p": "Fù yù",
+  "en": "well-off",
+  "th": "มั่งคั่ง",
+  "ex": {
+   "zh": "他们的生活很富裕。",
+   "py": "Tāmen de shēnghuó hěn fùyù.",
+   "en": "Their life is quite well-off.",
+   "th": "ชีวิตของพวกเขามั่งคั่งสุขสบาย"
+  }
+ },
+ {
+  "h": "赋予",
+  "p": "fù yǔ",
+  "en": "to endow",
+  "th": "มอบให้",
+  "ex": {
+   "zh": "大自然赋予人类智慧。",
+   "py": "Dàzìrán fùyǔ rénlèi zhìhuì.",
+   "en": "Nature has endowed humans with wisdom.",
+   "th": "ธรรมชาติมอบปัญญาให้แก่มนุษย์"
+  }
+ },
+ {
+  "h": "腹泻",
+  "p": "fù xiè",
+  "en": "diarrhea",
+  "th": "ท้องเสีย",
+  "ex": {
+   "zh": "吃坏东西会引起腹泻。",
+   "py": "Chī huài dōngxi huì yǐnqǐ fùxiè.",
+   "en": "Eating spoiled food can cause diarrhea.",
+   "th": "กินของเสียทำให้ท้องเสีย"
+  }
+ },
+ {
+  "h": "覆盖",
+  "p": "fù gài",
+  "en": "to cover",
+  "th": "ปกคลุม",
+  "ex": {
+   "zh": "大雪覆盖了整个城市。",
+   "py": "Dàxuě fùgài le zhěnggè chéngshì.",
+   "en": "Heavy snow covered the whole city.",
+   "th": "หิมะหนาปกคลุมทั่วเมือง"
+  }
+ },
+ {
+  "h": "夫妇",
+  "p": "fū fù",
+  "en": "married couple",
+  "th": "สามีภรรยา",
+  "ex": {
+   "zh": "这对夫妇结婚三十年了。",
+   "py": "Zhè duì fūfù jiéhūn sānshí nián le.",
+   "en": "This couple has been married thirty years.",
+   "th": "คู่สามีภรรยานี้แต่งงานกันมาสามสิบปีแล้ว"
+  }
+ },
+ {
+  "h": "夫人",
+  "p": "fū ren",
+  "en": "madam",
+  "th": "คุณผู้หญิง",
+  "ex": {
+   "zh": "王夫人今天没来。",
+   "py": "Wáng fūren jīntiān méi lái.",
+   "en": "Madam Wang did not come today.",
+   "th": "คุณนายหวังวันนี้ไม่ได้มา"
+  }
+ },
+ {
+  "h": "改良",
+  "p": "gǎi liáng",
+  "en": "to improve",
+  "th": "ปรับปรุง",
+  "ex": {
+   "zh": "农民改良了土壤。",
+   "py": "Nóngmín gǎiliáng le tǔrǎng.",
+   "en": "The farmers improved the soil.",
+   "th": "ชาวนาปรับปรุงคุณภาพดิน"
+  }
+ },
+ {
+  "h": "盖章",
+  "p": "gài zhāng",
+  "en": "to stamp",
+  "th": "ประทับตรา",
+  "ex": {
+   "zh": "合同上需要盖章。",
+   "py": "Hétong shàng xūyào gàizhāng.",
+   "en": "The contract needs to be stamped.",
+   "th": "สัญญาต้องประทับตรา"
+  }
+ },
+ {
+  "h": "甘心",
+  "p": "gān xīn",
+  "en": "to be willing",
+  "th": "ยอมใจ",
+  "ex": {
+   "zh": "他不甘心就这样失败。",
+   "py": "Tā bù gānxīn jiù zhèyàng shībài.",
+   "en": "He is unwilling to accept failure like this.",
+   "th": "เขาไม่ยอมแพ้แบบนี้"
+  }
+ },
+ {
+  "h": "尴尬",
+  "p": "gān gà",
+  "en": "awkward",
+  "th": "น่าอึดอัด",
+  "ex": {
+   "zh": "遇到前男友,气氛很尴尬。",
+   "py": "Yùdào qián nányǒu, qìfēn hěn gāngà.",
+   "en": "Running into my ex made the mood awkward.",
+   "th": "เจอแฟนเก่า บรรยากาศน่าอึดอัดมาก"
+  }
+ },
+ {
+  "h": "感慨",
+  "p": "gǎn kǎi",
+  "en": "to sigh with emotion",
+  "th": "ถอนหายใจด้วยความรู้สึก",
+  "ex": {
+   "zh": "他感慨时间过得真快。",
+   "py": "Tā gǎnkǎi shíjiān guò de zhēn kuài.",
+   "en": "He sighed at how fast time flies.",
+   "th": "เขาอุทานถึงว่าเวลาผ่านไปเร็วจริงๆ"
+  }
+ },
+ {
+  "h": "感染",
+  "p": "gǎn rǎn",
+  "en": "to infect",
+  "th": "ติดเชื้อ",
+  "ex": {
+   "zh": "他不小心被感染了。",
+   "py": "Tā bù xiǎoxīn bèi gǎnrǎn le.",
+   "en": "He accidentally got infected.",
+   "th": "เขาติดเชื้อโดยไม่ตั้งใจ"
+  }
+ },
+ {
+  "h": "干旱",
+  "p": "gān hàn",
+  "en": "drought",
+  "th": "ภัยแล้ง",
+  "ex": {
+   "zh": "今年夏天发生了干旱。",
+   "py": "Jīnnián xiàtiān fāshēng le gānhàn.",
+   "en": "There was a drought this summer.",
+   "th": "ฤดูร้อนปีนี้เกิดภัยแล้ง"
+  }
+ },
+ {
+  "h": "干劲",
+  "p": "gàn jìn",
+  "en": "drive",
+  "th": "ความกระตือรือร้น",
+  "ex": {
+   "zh": "他工作很有干劲。",
+   "py": "Tā gōngzuò hěn yǒu gànjìn.",
+   "en": "He works with great drive.",
+   "th": "เขาทำงานด้วยความกระตือรือร้น"
+  }
+ },
+ {
+  "h": "干扰",
+  "p": "gān rǎo",
+  "en": "to disturb",
+  "th": "รบกวน",
+  "ex": {
+   "zh": "请不要干扰别人学习。",
+   "py": "Qǐng bú yào gānrǎo biéren xuéxí.",
+   "en": "Please don't disturb others' studying.",
+   "th": "กรุณาอย่ารบกวนคนอื่นที่กำลังเรียน"
+  }
+ },
+ {
+  "h": "干涉",
+  "p": "gān shè",
+  "en": "to interfere",
+  "th": "ก้าวก่าย",
+  "ex": {
+   "zh": "父母不该干涉孩子的选择。",
+   "py": "Fùmǔ bù gāi gānshè háizi de xuǎnzé.",
+   "en": "Parents shouldn't interfere with their children's choices.",
+   "th": "พ่อแม่ไม่ควรก้าวก่ายการตัดสินใจของลูก"
+  }
+ },
+ {
+  "h": "干预",
+  "p": "gān yù",
+  "en": "to intervene",
+  "th": "แทรกแซง",
+  "ex": {
+   "zh": "政府干预了市场价格。",
+   "py": "Zhèngfǔ gānyù le shìchǎng jiàgé.",
+   "en": "The government intervened in market prices.",
+   "th": "รัฐบาลแทรกแซงราคาตลาด"
+  }
+ },
+ {
+  "h": "杠杆",
+  "p": "gàng gǎn",
+  "en": "lever",
+  "th": "คาน",
+  "ex": {
+   "zh": "他用杠杆撬起了石头。",
+   "py": "Tā yòng gànggǎn qiào qǐ le shítou.",
+   "en": "He pried the rock up with a lever.",
+   "th": "เขาใช้คานงัดก้อนหินขึ้นมา"
+  }
+ },
+ {
+  "h": "纲领",
+  "p": "gāng lǐng",
+  "en": "guiding principle",
+  "th": "แนวทางหลัก",
+  "ex": {
+   "zh": "这份纲领指导我们的行动。",
+   "py": "Zhè fèn gānglǐng zhǐdǎo wǒmen de xíngdòng.",
+   "en": "This program guides our actions.",
+   "th": "แนวทางหลักนี้ชี้นำการกระทำของเรา"
+  }
+ },
+ {
+  "h": "岗位",
+  "p": "gǎng wèi",
+  "en": "post",
+  "th": "ตำแหน่งงาน",
+  "ex": {
+   "zh": "他在自己的岗位上很努力。",
+   "py": "Tā zài zìjǐ de gǎngwèi shàng hěn nǔlì.",
+   "en": "He works hard at his post.",
+   "th": "เขาทุ่มเทกับตำแหน่งงานของตน"
+  }
+ },
+ {
+  "h": "港口",
+  "p": "gǎng kǒu",
+  "en": "port",
+  "th": "ท่าเรือ",
+  "ex": {
+   "zh": "这个港口每天都很忙。",
+   "py": "Zhège gǎngkǒu měitiān dōu hěn máng.",
+   "en": "This port is busy every day.",
+   "th": "ท่าเรือนี้ยุ่งทุกวัน"
+  }
+ },
+ {
+  "h": "港湾",
+  "p": "gǎng wān",
+  "en": "harbor",
+  "th": "อ่าว",
+  "ex": {
+   "zh": "渔船停在港湾里。",
+   "py": "Yúchuán tíng zài gǎngwān lǐ.",
+   "en": "Fishing boats are docked in the harbor.",
+   "th": "เรือประมงจอดอยู่ในอ่าว"
+  }
+ },
+ {
+  "h": "高超",
+  "p": "gāo chāo",
+  "en": "superb",
+  "th": "ยอดเยี่ยม",
+  "ex": {
+   "zh": "他的技术非常高超。",
+   "py": "Tā de jìshù fēicháng gāochāo.",
+   "en": "His skills are superb.",
+   "th": "ฝีมือของเขายอดเยี่ยมมาก"
+  }
+ },
+ {
+  "h": "高潮",
+  "p": "gāo cháo",
+  "en": "climax",
+  "th": "จุดสูงสุด",
+  "ex": {
+   "zh": "电影的高潮很精彩。",
+   "py": "Diànyǐng de gāocháo hěn jīngcǎi.",
+   "en": "The climax of the movie is great.",
+   "th": "จุดไคลแมกซ์ของหนังยอดเยี่ยม"
+  }
+ },
+ {
+  "h": "高峰",
+  "p": "gāo fēng",
+  "en": "peak",
+  "th": "ช่วงเร่งด่วน",
+  "ex": {
+   "zh": "早高峰时路上很堵。",
+   "py": "Zǎo gāofēng shí lùshang hěn dǔ.",
+   "en": "The road is jammed during morning rush hour.",
+   "th": "ช่วงเร่งด่วนตอนเช้ารถติดมาก"
+  }
+ },
+ {
+  "h": "高考",
+  "p": "gāo kǎo",
+  "en": "college entrance exam",
+  "th": "สอบเข้ามหาวิทยาลัย",
+  "ex": {
+   "zh": "高考是学生的大事。",
+   "py": "Gāokǎo shì xuésheng de dàshì.",
+   "en": "The gaokao is a big event for students.",
+   "th": "การสอบเข้ามหาวิทยาลัยเป็นเรื่องใหญ่ของนักเรียน"
+  }
+ },
+ {
+  "h": "高明",
+  "p": "Gāo míng",
+  "en": "wise",
+  "th": "ฉลาดหลักแหลม",
+  "ex": {
+   "zh": "这个办法很高明。",
+   "py": "Zhège bànfǎ hěn gāomíng.",
+   "en": "This method is very clever.",
+   "th": "วิธีนี้ชาญฉลาดมาก"
+  }
+ },
+ {
+  "h": "高尚",
+  "p": "gāo shàng",
+  "en": "noble",
+  "th": "สูงส่ง",
+  "ex": {
+   "zh": "他有高尚的品德。",
+   "py": "Tā yǒu gāoshàng de pǐndé.",
+   "en": "He has noble character.",
+   "th": "เขามีคุณธรรมอันสูงส่ง"
+  }
+ },
+ {
+  "h": "高涨",
+  "p": "gāo zhǎng",
+  "en": "to surge",
+  "th": "พุ่งสูง",
+  "ex": {
+   "zh": "大家的热情很高涨。",
+   "py": "Dàjiā de rèqíng hěn gāozhǎng.",
+   "en": "Everyone's enthusiasm is running high.",
+   "th": "ความกระตือรือร้นของทุกคนพุ่งสูง"
+  }
+ },
+ {
+  "h": "稿件",
+  "p": "gǎo jiàn",
+  "en": "manuscript",
+  "th": "ต้นฉบับ",
+  "ex": {
+   "zh": "编辑正在审阅稿件。",
+   "py": "Biānjí zhèngzài shěnyuè gǎojiàn.",
+   "en": "The editor is reviewing the manuscript.",
+   "th": "บรรณาธิการกำลังตรวจต้นฉบับ"
+  }
+ },
+ {
+  "h": "告辞",
+  "p": "gào cí",
+  "en": "to take leave",
+  "th": "กล่าวลา",
+  "ex": {
+   "zh": "时间不早了,我该告辞了。",
+   "py": "Shíjiān bù zǎo le, wǒ gāi gàocí le.",
+   "en": "It's late; I should take my leave.",
+   "th": "ดึกแล้ว ฉันขอลาก่อน"
+  }
+ },
+ {
+  "h": "告诫",
+  "p": "gào jiè",
+  "en": "to warn",
+  "th": "เตือน",
+  "ex": {
+   "zh": "医生告诫他不要抽烟。",
+   "py": "Yīshēng gàojiè tā bú yào chōuyān.",
+   "en": "The doctor warned him not to smoke.",
+   "th": "หมอเตือนเขาไม่ให้สูบบุหรี่"
+  }
+ },
+ {
+  "h": "疙瘩",
+  "p": "gē da",
+  "en": "pimple",
+  "th": "ตุ่ม",
+  "ex": {
+   "zh": "他脸上长了个疙瘩。",
+   "py": "Tā liǎn shàng zhǎng le ge gēda.",
+   "en": "He has a pimple on his face.",
+   "th": "บนหน้าของเขามีตุ่มขึ้น"
+  }
+ },
+ {
+  "h": "割",
+  "p": "gē",
+  "en": "to cut",
+  "th": "ตัด",
+  "ex": {
+   "zh": "她用刀割了一块肉。",
+   "py": "Tā yòng dāo gē le yí kuài ròu.",
+   "en": "She cut a piece of meat with a knife.",
+   "th": "เธอใช้มีดหั่นเนื้อชิ้นหนึ่ง"
+  }
+ },
+ {
+  "h": "搁",
+  "p": "gē",
+  "en": "to put down",
+  "th": "วางไว้",
+  "ex": {
+   "zh": "把书搁在桌子上。",
+   "py": "Bǎ shū gē zài zhuōzi shàng.",
+   "en": "Put the book on the table.",
+   "th": "วางหนังสือไว้บนโต๊ะ"
+  }
+ },
+ {
+  "h": "歌颂",
+  "p": "gē sòng",
+  "en": "to praise",
+  "th": "ยกย่อง",
+  "ex": {
+   "zh": "这首歌歌颂了祖国。",
+   "py": "Zhè shǒu gē gēsòngle zǔguó.",
+   "en": "This song praises the motherland.",
+   "th": "เพลงนี้สรรเสริญมาตุภูมิ"
+  }
+ },
+ {
+  "h": "格局",
+  "p": "gé jú",
+  "en": "layout",
+  "th": "โครงสร้าง",
+  "ex": {
+   "zh": "这个房子的格局很好。",
+   "py": "Zhège fángzi de géjú hěn hǎo.",
+   "en": "This house has a good layout.",
+   "th": "บ้านหลังนี้มีผังที่ดี"
+  }
+ },
+ {
+  "h": "格式",
+  "p": "gé shì",
+  "en": "format",
+  "th": "รูปแบบ",
+  "ex": {
+   "zh": "请按这个格式填写。",
+   "py": "Qǐng àn zhège géshì tiánxiě.",
+   "en": "Please fill it in using this format.",
+   "th": "กรุณากรอกตามรูปแบบนี้"
+  }
+ },
+ {
+  "h": "隔阂",
+  "p": "gé hé",
+  "en": "estrangement",
+  "th": "ความห่างเหิน",
+  "ex": {
+   "zh": "误会造成了他们的隔阂。",
+   "py": "Wùhuì zàochéng le tāmen de géhé.",
+   "en": "The misunderstanding caused estrangement between them.",
+   "th": "ความเข้าใจผิดทำให้พวกเขาห่างเหินกัน"
+  }
+ },
+ {
+  "h": "隔离",
+  "p": "gé lí",
+  "en": "to isolate",
+  "th": "แยกกัก",
+  "ex": {
+   "zh": "病人需要隔离。",
+   "py": "Bìngrén xūyào gélí.",
+   "en": "The patient needs to be isolated.",
+   "th": "ผู้ป่วยต้องถูกแยกกัก"
+  }
+ },
+ {
+  "h": "个体",
+  "p": "gè tǐ",
+  "en": "individual",
+  "th": "บุคคล",
+  "ex": {
+   "zh": "每个个体都不一样。",
+   "py": "Měi ge gètǐ dōu bù yíyàng.",
+   "en": "Every individual is different.",
+   "th": "แต่ละบุคคลไม่เหมือนกัน"
+  }
+ },
+ {
+  "h": "各抒己见",
+  "p": "gè shū jǐ jiàn",
+  "en": "everyone airs views",
+  "th": "ต่างคนต่างแสดงความเห็น",
+  "ex": {
+   "zh": "会上大家各抒己见。",
+   "py": "Huì shàng dàjiā gè shū jǐ jiàn.",
+   "en": "At the meeting everyone voiced their own views.",
+   "th": "ในที่ประชุมทุกคนต่างแสดงความเห็นของตน"
+  }
+ },
+ {
+  "h": "给予",
+  "p": "jǐ yǔ",
+  "en": "to give",
+  "th": "มอบให้",
+  "ex": {
+   "zh": "老师给予我很大的帮助。",
+   "py": "Lǎoshī jǐyǔ wǒ hěn dà de bāngzhù.",
+   "en": "The teacher gave me a lot of help.",
+   "th": "ครูให้ความช่วยเหลือฉันมาก"
+  }
+ },
+ {
+  "h": "根深蒂固",
+  "p": "gēn shēn dì gù",
+  "en": "deep-rooted",
+  "th": "ฝังรากลึก",
+  "ex": {
+   "zh": "这种偏见根深蒂固。",
+   "py": "Zhè zhǒng piānjiàn gēn shēn dì gù.",
+   "en": "This prejudice is deeply rooted.",
+   "th": "อคติแบบนี้ฝังรากลึก"
+  }
+ },
+ {
+  "h": "根源",
+  "p": "gēn yuán",
+  "en": "root cause",
+  "th": "ต้นตอ",
+  "ex": {
+   "zh": "我们要找到问题的根源。",
+   "py": "Wǒmen yào zhǎodào wèntí de gēnyuán.",
+   "en": "We need to find the root cause of the problem.",
+   "th": "เราต้องหาต้นตอของปัญหา"
+  }
+ },
+ {
+  "h": "跟前",
+  "p": "gēn qián",
+  "en": "in front of",
+  "th": "ตรงหน้า",
+  "ex": {
+   "zh": "孩子跑到妈妈跟前。",
+   "py": "Háizi pǎo dào māma gēnqián.",
+   "en": "The child ran up to his mother.",
+   "th": "เด็กวิ่งมาอยู่ตรงหน้าแม่"
+  }
+ },
+ {
+  "h": "跟随",
+  "p": "gēn suí",
+  "en": "to follow",
+  "th": "ตามไป",
+  "ex": {
+   "zh": "小狗一直跟随着主人。",
+   "py": "Xiǎogǒu yìzhí gēnsuí zhe zhǔrén.",
+   "en": "The puppy keeps following its owner.",
+   "th": "ลูกสุนัขเดินตามเจ้าของไปตลอด"
+  }
+ },
+ {
+  "h": "跟踪",
+  "p": "gēn zōng",
+  "en": "to track",
+  "th": "ติดตาม",
+  "ex": {
+   "zh": "警察一直在跟踪他。",
+   "py": "Jǐngchá yìzhí zài gēnzōng tā.",
+   "en": "The police have been tailing him.",
+   "th": "ตำรวจติดตามเขามาตลอด"
+  }
+ },
+ {
+  "h": "耕地",
+  "p": "gēng dì",
+  "en": "farmland",
+  "th": "ที่ดินทำการเกษตร",
+  "ex": {
+   "zh": "这里的耕地越来越少。",
+   "py": "Zhèlǐ de gēngdì yuèláiyuè shǎo.",
+   "en": "There is less and less farmland here.",
+   "th": "ที่ดินทำการเกษตรที่นี่มีน้อยลงเรื่อยๆ"
+  }
+ },
+ {
+  "h": "更新",
+  "p": "gēng xīn",
+  "en": "to update",
+  "th": "อัปเดต",
+  "ex": {
+   "zh": "软件需要定期更新。",
+   "py": "Ruǎnjiàn xūyào dìngqī gēngxīn.",
+   "en": "Software needs regular updates.",
+   "th": "ซอฟต์แวร์ต้องอัปเดตเป็นประจำ"
+  }
+ },
+ {
+  "h": "更正",
+  "p": "gēng zhèng",
+  "en": "to correct",
+  "th": "แก้ไขให้ถูก",
+  "ex": {
+   "zh": "报纸更正了错误的消息。",
+   "py": "Bàozhǐ gēngzhèng le cuòwù de xiāoxi.",
+   "en": "The newspaper corrected the false report.",
+   "th": "หนังสือพิมพ์แก้ไขข่าวที่ผิดพลาด"
+  }
+ },
+ {
+  "h": "工夫",
+  "p": "gōng fū",
+  "en": "time",
+  "th": "เวลาว่าง",
+  "ex": {
+   "zh": "我今天没工夫去看电影。",
+   "py": "Wǒ jīntiān méi gōngfu qù kàn diànyǐng.",
+   "en": "I have no time to see a movie today.",
+   "th": "วันนี้ฉันไม่มีเวลาไปดูหนัง"
+  }
+ },
+ {
+  "h": "工艺品",
+  "p": "gōng yì pǐn",
+  "en": "handicraft",
+  "th": "งานหัตถกรรม",
+  "ex": {
+   "zh": "这家店卖各种工艺品。",
+   "py": "Zhè jiā diàn mài gèzhǒng gōngyìpǐn.",
+   "en": "This shop sells all kinds of handicrafts.",
+   "th": "ร้านนี้ขายงานหัตถกรรมหลายชนิด"
+  }
+ },
+ {
+  "h": "公安局",
+  "p": "gōng ān jú",
+  "en": "police station",
+  "th": "สำนักงานตำรวจ",
+  "ex": {
+   "zh": "他去公安局办身份证。",
+   "py": "Tā qù gōng'ānjú bàn shēnfènzhèng.",
+   "en": "He went to the public security bureau to get an ID.",
+   "th": "เขาไปสำนักงานตำรวจเพื่อทำบัตรประชาชน"
+  }
+ },
+ {
+  "h": "公道",
+  "p": "gōng dào",
+  "en": "fairness",
+  "th": "ความยุติธรรม",
+  "ex": {
+   "zh": "大家都要求公道。",
+   "py": "Dàjiā dōu yāoqiú gōngdào.",
+   "en": "Everyone demands fairness.",
+   "th": "ทุกคนเรียกร้องความยุติธรรม"
+  }
+ },
+ {
+  "h": "公告",
+  "p": "gōng gào",
+  "en": "announcement",
+  "th": "ประกาศ",
+  "ex": {
+   "zh": "墙上贴着一张公告。",
+   "py": "Qiáng shàng tiē zhe yì zhāng gōnggào.",
+   "en": "A notice is posted on the wall.",
+   "th": "มีประกาศติดอยู่บนกำแพง"
+  }
+ },
+ {
+  "h": "公关",
+  "p": "gōng guān",
+  "en": "public relations",
+  "th": "ประชาสัมพันธ์",
+  "ex": {
+   "zh": "她在公司做公关工作。",
+   "py": "Tā zài gōngsī zuò gōngguān gōngzuò.",
+   "en": "She does public relations work at the company.",
+   "th": "เธอทำงานประชาสัมพันธ์ในบริษัท"
+  }
+ },
+ {
+  "h": "公民",
+  "p": "gōng mín",
+  "en": "citizen",
+  "th": "พลเมือง",
+  "ex": {
+   "zh": "每个公民都要遵守法律。",
+   "py": "Měi ge gōngmín dōu yào zūnshǒu fǎlǜ.",
+   "en": "Every citizen must obey the law.",
+   "th": "พลเมืองทุกคนต้องปฏิบัติตามกฎหมาย"
+  }
+ },
+ {
+  "h": "公婆",
+  "p": "gōng pó",
+  "en": "parents-in-law",
+  "th": "พ่อแม่สามี",
+  "ex": {
+   "zh": "她和公婆住在一起。",
+   "py": "Tā hé gōngpó zhù zài yìqǐ.",
+   "en": "She lives with her parents-in-law.",
+   "th": "เธออาศัยอยู่กับพ่อแม่สามี"
+  }
+ },
+ {
+  "h": "公然",
+  "p": "gōng rán",
+  "en": "openly",
+  "th": "อย่างเปิดเผย",
+  "ex": {
+   "zh": "他公然违反规定。",
+   "py": "Tā gōngrán wéifǎn guīdìng.",
+   "en": "He openly broke the rules.",
+   "th": "เขาฝ่าฝืนกฎอย่างโจ่งแจ้ง"
+  }
+ },
+ {
+  "h": "公认",
+  "p": "gōng rèn",
+  "en": "generally acknowledged",
+  "th": "เป็นที่ยอมรับ",
+  "ex": {
+   "zh": "他是公认的好老师。",
+   "py": "Tā shì gōngrèn de hǎo lǎoshī.",
+   "en": "He is a widely acknowledged good teacher.",
+   "th": "เขาเป็นครูที่ดีเป็นที่ยอมรับของทุกคน"
+  }
+ },
+ {
+  "h": "公式",
+  "p": "gōng shì",
+  "en": "formula",
+  "th": "สูตร",
+  "ex": {
+   "zh": "请背下这个数学公式。",
+   "py": "Qǐng bèi xià zhège shùxué gōngshì.",
+   "en": "Please memorize this math formula.",
+   "th": "กรุณาท่องสูตรคณิตศาสตร์นี้"
+  }
+ },
+ {
+  "h": "公务",
+  "p": "gōng wù",
+  "en": "official business",
+  "th": "ราชการ",
+  "ex": {
+   "zh": "他出差是为了公务。",
+   "py": "Tā chūchāi shì wèile gōngwù.",
+   "en": "He is traveling on official business.",
+   "th": "เขาเดินทางไปทำงานราชการ"
+  }
+ },
+ {
+  "h": "公正",
+  "p": "gōng zhèng",
+  "en": "fair",
+  "th": "เที่ยงธรรม",
+  "ex": {
+   "zh": "法官的判决很公正。",
+   "py": "Fǎguān de pànjué hěn gōngzhèng.",
+   "en": "The judge's ruling was fair.",
+   "th": "คำพิพากษาของผู้พิพากษาเที่ยงธรรม"
+  }
+ },
+ {
+  "h": "公证",
+  "p": "gōng zhèng",
+  "en": "notarization",
+  "th": "รับรองโดยโนตารี",
+  "ex": {
+   "zh": "这份文件需要公证。",
+   "py": "Zhè fèn wénjiàn xūyào gōngzhèng.",
+   "en": "This document needs to be notarized.",
+   "th": "เอกสารฉบับนี้ต้องรับรองโดยโนตารี"
+  }
+ },
+ {
+  "h": "功课",
+  "p": "gōng kè",
+  "en": "homework",
+  "th": "การบ้าน",
+  "ex": {
+   "zh": "我还没做完功课。",
+   "py": "Wǒ hái méi zuò wán gōngkè.",
+   "en": "I haven't finished my homework yet.",
+   "th": "ฉันยังทำการบ้านไม่เสร็จ"
+  }
+ },
+ {
+  "h": "功劳",
+  "p": "gōng láo",
+  "en": "contribution",
+  "th": "ผลงาน",
+  "ex": {
+   "zh": "这次成功有你的功劳。",
+   "py": "Zhè cì chénggōng yǒu nǐ de gōngláo.",
+   "en": "You deserve credit for this success.",
+   "th": "ความสำเร็จครั้งนี้มีผลงานของคุณ"
+  }
+ },
+ {
+  "h": "功效",
+  "p": "gōng xiào",
+  "en": "efficacy",
+  "th": "สรรพคุณ",
+  "ex": {
+   "zh": "这种药的功效很好。",
+   "py": "Zhè zhǒng yào de gōngxiào hěn hǎo.",
+   "en": "This medicine is very effective.",
+   "th": "ยานี้มีสรรพคุณดีมาก"
+  }
+ },
+ {
+  "h": "攻击",
+  "p": "gōng jī",
+  "en": "to attack",
+  "th": "โจมตี",
+  "ex": {
+   "zh": "敌人向我们发起攻击。",
+   "py": "Dírén xiàng wǒmen fāqǐ gōngjī.",
+   "en": "The enemy launched an attack on us.",
+   "th": "ศัตรูเปิดฉากโจมตีเรา"
+  }
+ },
+ {
+  "h": "攻克",
+  "p": "gōng kè",
+  "en": "to overcome",
+  "th": "พิชิต",
+  "ex": {
+   "zh": "科学家攻克了这道难题。",
+   "py": "Kēxuéjiā gōngkè le zhè dào nántí.",
+   "en": "Scientists overcame this difficult problem.",
+   "th": "นักวิทยาศาสตร์แก้ปัญหายากข้อนี้ได้สำเร็จ"
+  }
+ },
+ {
+  "h": "供不应求",
+  "p": "gōng bù yìng qiú",
+  "en": "demand exceeds supply",
+  "th": "ของไม่พอขาย",
+  "ex": {
+   "zh": "这种产品供不应求。",
+   "py": "Zhè zhǒng chǎnpǐn gōng bù yìng qiú.",
+   "en": "This product is in short supply.",
+   "th": "สินค้านี้มีไม่พอกับความต้องการ"
+  }
+ },
+ {
+  "h": "供给",
+  "p": "gōng jǐ",
+  "en": "to supply",
+  "th": "จัดหา",
+  "ex": {
+   "zh": "水库给城市供给用水。",
+   "py": "Shuǐkù gěi chéngshì gōngjǐ yòngshuǐ.",
+   "en": "The reservoir supplies water to the city.",
+   "th": "อ่างเก็บน้ำจัดหาน้ำให้เมือง"
+  }
+ },
+ {
+  "h": "宫殿",
+  "p": "gōng diàn",
+  "en": "palace",
+  "th": "พระราชวัง",
+  "ex": {
+   "zh": "我们参观了古代宫殿。",
+   "py": "Wǒmen cānguān le gǔdài gōngdiàn.",
+   "en": "We visited an ancient palace.",
+   "th": "เราไปเยี่ยมชมพระราชวังโบราณ"
+  }
+ },
+ {
+  "h": "恭敬",
+  "p": "gōng jìng",
+  "en": "respectful",
+  "th": "นอบน้อม",
+  "ex": {
+   "zh": "他恭敬地向老师鞠躬。",
+   "py": "Tā gōngjìng de xiàng lǎoshī jūgōng.",
+   "en": "He bowed respectfully to the teacher.",
+   "th": "เขาโค้งคำนับครูอย่างนอบน้อม"
+  }
+ },
+ {
+  "h": "巩固",
+  "p": "gǒng gù",
+  "en": "to consolidate",
+  "th": "ทำให้มั่นคง",
+  "ex": {
+   "zh": "每天复习可以巩固知识。",
+   "py": "Měitiān fùxí kěyǐ gǒnggù zhīshi.",
+   "en": "Reviewing daily helps consolidate knowledge.",
+   "th": "การทบทวนทุกวันช่วยให้ความรู้แน่นขึ้น"
+  }
+ }
+]

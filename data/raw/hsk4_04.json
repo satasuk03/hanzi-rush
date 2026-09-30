@@ -1,0 +1,1202 @@
+[
+ {
+  "h": "顺利",
+  "p": "shùn lì",
+  "en": "smoothly",
+  "th": "ราบรื่น",
+  "ex": {
+   "zh": "希望你的工作一切顺利。",
+   "py": "Xīwàng nǐ de gōngzuò yíqiè shùnlì.",
+   "en": "I hope everything goes smoothly at work.",
+   "th": "ขอให้งานของคุณราบรื่นทุกอย่าง"
+  }
+ },
+ {
+  "h": "顺序",
+  "p": "shùn xù",
+  "en": "order; sequence",
+  "th": "ลำดับ",
+  "ex": {
+   "zh": "请按顺序排队。",
+   "py": "Qǐng àn shùnxù páiduì.",
+   "en": "Please line up in order.",
+   "th": "กรุณาเข้าแถวตามลำดับ"
+  }
+ },
+ {
+  "h": "说明",
+  "p": "shuō míng",
+  "en": "to explain; instructions",
+  "th": "อธิบาย, คำอธิบาย",
+  "ex": {
+   "zh": "这张表说明了问题。",
+   "py": "Zhè zhāng biǎo shuōmíng le wèntí.",
+   "en": "This chart illustrates the problem.",
+   "th": "ตารางนี้อธิบายปัญหาได้"
+  }
+ },
+ {
+  "h": "硕士",
+  "p": "shuò shì",
+  "en": "master's degree",
+  "th": "ปริญญาโท",
+  "ex": {
+   "zh": "她正在读硕士。",
+   "py": "Tā zhèngzài dú shuòshì.",
+   "en": "She is studying for a master's degree.",
+   "th": "เธอกำลังเรียนปริญญาโท"
+  }
+ },
+ {
+  "h": "死",
+  "p": "sǐ",
+  "en": "to die",
+  "th": "ตาย",
+  "ex": {
+   "zh": "这棵树已经死了。",
+   "py": "Zhè kē shù yǐjīng sǐ le.",
+   "en": "This tree has already died.",
+   "th": "ต้นไม้ต้นนี้ตายแล้ว"
+  }
+ },
+ {
+  "h": "速度",
+  "p": "sù dù",
+  "en": "speed",
+  "th": "ความเร็ว",
+  "ex": {
+   "zh": "这辆车的速度很快。",
+   "py": "Zhè liàng chē de sùdù hěn kuài.",
+   "en": "This car goes very fast.",
+   "th": "รถคันนี้ความเร็วสูงมาก"
+  }
+ },
+ {
+  "h": "塑料袋",
+  "p": "sù liào dài",
+  "en": "plastic bag",
+  "th": "ถุงพลาสติก",
+  "ex": {
+   "zh": "请少用塑料袋。",
+   "py": "Qǐng shǎo yòng sùliàodài.",
+   "en": "Please use fewer plastic bags.",
+   "th": "กรุณาใช้ถุงพลาสติกให้น้อยลง"
+  }
+ },
+ {
+  "h": "酸",
+  "p": "suān",
+  "en": "sour",
+  "th": "เปรี้ยว",
+  "ex": {
+   "zh": "这个橘子太酸了。",
+   "py": "Zhège júzi tài suān le.",
+   "en": "This orange is too sour.",
+   "th": "ส้มลูกนี้เปรี้ยวเกินไป"
+  }
+ },
+ {
+  "h": "算",
+  "p": "suàn",
+  "en": "to count as; to calculate",
+  "th": "นับ, คำนวณ",
+  "ex": {
+   "zh": "这样也算成功。",
+   "py": "Zhèyàng yě suàn chénggōng.",
+   "en": "This counts as success too.",
+   "th": "แบบนี้ก็นับว่าสำเร็จ"
+  }
+ },
+ {
+  "h": "随便",
+  "p": "suí biàn",
+  "en": "casual; as you like",
+  "th": "ตามสบาย, ตามใจ",
+  "ex": {
+   "zh": "你随便坐,别客气。",
+   "py": "Nǐ suíbiàn zuò, bié kèqi.",
+   "en": "Sit wherever you like, make yourself at home.",
+   "th": "นั่งตามสบายเลย ไม่ต้องเกรงใจ"
+  }
+ },
+ {
+  "h": "随着",
+  "p": "suí zhe",
+  "en": "along with",
+  "th": "พร้อมกับ, ตามมาด้วย",
+  "ex": {
+   "zh": "随着时间过去,他慢慢忘了。",
+   "py": "Suízhe shíjiān guòqù, tā mànmàn wàng le.",
+   "en": "As time passed, he gradually forgot.",
+   "th": "เมื่อเวลาผ่านไป เขาก็ค่อยๆ ลืม"
+  }
+ },
+ {
+  "h": "孙子",
+  "p": "Sūn zǐ",
+  "en": "grandson",
+  "th": "หลานชาย (ลูกของลูกชาย)",
+  "ex": {
+   "zh": "爷爷很爱他的孙子。",
+   "py": "Yéye hěn ài tā de sūnzi.",
+   "en": "Grandpa loves his grandson very much.",
+   "th": "คุณปู่รักหลานชายมาก"
+  }
+ },
+ {
+  "h": "所有",
+  "p": "suǒ yǒu",
+  "en": "all",
+  "th": "ทั้งหมด",
+  "ex": {
+   "zh": "所有的学生都到了。",
+   "py": "Suǒyǒu de xuésheng dōu dào le.",
+   "en": "All the students have arrived.",
+   "th": "นักเรียนทั้งหมดมาถึงแล้ว"
+  }
+ },
+ {
+  "h": "台",
+  "p": "Tái",
+  "en": "stage; platform",
+  "th": "เวที, แท่น",
+  "ex": {
+   "zh": "他走上了台。",
+   "py": "Tā zǒu shàng le tái.",
+   "en": "He walked up onto the stage.",
+   "th": "เขาเดินขึ้นเวที"
+  }
+ },
+ {
+  "h": "抬",
+  "p": "tái",
+  "en": "to lift",
+  "th": "ยก",
+  "ex": {
+   "zh": "请帮我抬一下这张桌子。",
+   "py": "Qǐng bāng wǒ tái yíxià zhè zhāng zhuōzi.",
+   "en": "Please help me lift this table.",
+   "th": "กรุณาช่วยฉันยกโต๊ะตัวนี้"
+  }
+ },
+ {
+  "h": "态度",
+  "p": "tài du",
+  "en": "attitude",
+  "th": "ทัศนคติ, ท่าที",
+  "ex": {
+   "zh": "他的态度很好。",
+   "py": "Tā de tàidu hěn hǎo.",
+   "en": "He has a good attitude.",
+   "th": "เขามีทัศนคติที่ดี"
+  }
+ },
+ {
+  "h": "谈",
+  "p": "Tán",
+  "en": "to talk",
+  "th": "คุย, พูดคุย",
+  "ex": {
+   "zh": "我们谈一谈这个问题。",
+   "py": "Wǒmen tán yi tán zhège wèntí.",
+   "en": "Let's talk about this problem.",
+   "th": "เรามาคุยเรื่องนี้กันหน่อย"
+  }
+ },
+ {
+  "h": "汤",
+  "p": "Tāng",
+  "en": "soup",
+  "th": "ซุป, น้ำแกง",
+  "ex": {
+   "zh": "妈妈做的汤很好喝。",
+   "py": "Māma zuò de tāng hěn hǎohē.",
+   "en": "The soup mom makes is delicious.",
+   "th": "ซุปที่แม่ทำอร่อยมาก"
+  }
+ },
+ {
+  "h": "躺",
+  "p": "tǎng",
+  "en": "to lie down",
+  "th": "นอน, เอนตัว",
+  "ex": {
+   "zh": "他躺在床上看书。",
+   "py": "Tā tǎng zài chuáng shang kàn shū.",
+   "en": "He lies in bed reading.",
+   "th": "เขานอนอ่านหนังสืออยู่บนเตียง"
+  }
+ },
+ {
+  "h": "趟",
+  "p": "tāng",
+  "en": "trip (classifier)",
+  "th": "เที่ยว, รอบ (ลักษณนาม)",
+  "ex": {
+   "zh": "我去了一趟北京。",
+   "py": "Wǒ qù le yí tàng Běijīng.",
+   "en": "I made a trip to Beijing.",
+   "th": "ฉันไปปักกิ่งมาหนึ่งเที่ยว"
+  }
+ },
+ {
+  "h": "讨论",
+  "p": "tǎo lùn",
+  "en": "to discuss",
+  "th": "อภิปราย, ถกเถียง",
+  "ex": {
+   "zh": "大家正在讨论这个问题。",
+   "py": "Dàjiā zhèngzài tǎolùn zhège wèntí.",
+   "en": "Everyone is discussing this problem.",
+   "th": "ทุกคนกำลังอภิปรายปัญหานี้"
+  }
+ },
+ {
+  "h": "讨厌",
+  "p": "tǎo yàn",
+  "en": "to dislike",
+  "th": "เกลียด, รำคาญ",
+  "ex": {
+   "zh": "我很讨厌下雨天。",
+   "py": "Wǒ hěn tǎoyàn xià yǔ tiān.",
+   "en": "I really dislike rainy days.",
+   "th": "ฉันเกลียดวันที่ฝนตกมาก"
+  }
+ },
+ {
+  "h": "特点",
+  "p": "tè diǎn",
+  "en": "characteristic",
+  "th": "ลักษณะเด่น, จุดเด่น",
+  "ex": {
+   "zh": "这个城市有什么特点?",
+   "py": "Zhège chéngshì yǒu shénme tèdiǎn?",
+   "en": "What are the characteristics of this city?",
+   "th": "เมืองนี้มีลักษณะเด่นอะไรบ้าง"
+  }
+ },
+ {
+  "h": "提供",
+  "p": "tí gōng",
+  "en": "to provide",
+  "th": "จัดหาให้, ให้บริการ",
+  "ex": {
+   "zh": "酒店提供免费早餐。",
+   "py": "Jiǔdiàn tígōng miǎnfèi zǎocān.",
+   "en": "The hotel provides free breakfast.",
+   "th": "โรงแรมมีอาหารเช้าฟรีให้"
+  }
+ },
+ {
+  "h": "提前",
+  "p": "tí qián",
+  "en": "in advance",
+  "th": "ล่วงหน้า",
+  "ex": {
+   "zh": "请提前十分钟到。",
+   "py": "Qǐng tíqián shí fēnzhōng dào.",
+   "en": "Please arrive ten minutes early.",
+   "th": "กรุณามาถึงก่อนสิบนาที"
+  }
+ },
+ {
+  "h": "提醒",
+  "p": "tí xǐng",
+  "en": "to remind",
+  "th": "เตือน",
+  "ex": {
+   "zh": "请提醒我明天开会。",
+   "py": "Qǐng tíxǐng wǒ míngtiān kāihuì.",
+   "en": "Please remind me about the meeting tomorrow.",
+   "th": "กรุณาเตือนฉันเรื่องประชุมพรุ่งนี้"
+  }
+ },
+ {
+  "h": "填空",
+  "p": "tián kòng",
+  "en": "fill in the blank",
+  "th": "เติมคำในช่องว่าง",
+  "ex": {
+   "zh": "这道题是填空题。",
+   "py": "Zhè dào tí shì tiánkòng tí.",
+   "en": "This question is a fill-in-the-blank.",
+   "th": "ข้อนี้เป็นข้อสอบเติมคำ"
+  }
+ },
+ {
+  "h": "条件",
+  "p": "tiáo jiàn",
+  "en": "condition",
+  "th": "เงื่อนไข, คุณสมบัติ",
+  "ex": {
+   "zh": "这个工作的条件很好。",
+   "py": "Zhège gōngzuò de tiáojiàn hěn hǎo.",
+   "en": "The conditions of this job are very good.",
+   "th": "เงื่อนไขของงานนี้ดีมาก"
+  }
+ },
+ {
+  "h": "停止",
+  "p": "tíng zhǐ",
+  "en": "to stop",
+  "th": "หยุด",
+  "ex": {
+   "zh": "雨已经停止了。",
+   "py": "Yǔ yǐjīng tíngzhǐ le.",
+   "en": "The rain has already stopped.",
+   "th": "ฝนหยุดแล้ว"
+  }
+ },
+ {
+  "h": "挺",
+  "p": "tǐng",
+  "en": "quite",
+  "th": "ค่อนข้าง",
+  "ex": {
+   "zh": "这个电影挺好看的。",
+   "py": "Zhège diànyǐng tǐng hǎokàn de.",
+   "en": "This movie is quite good.",
+   "th": "หนังเรื่องนี้ค่อนข้างสนุก"
+  }
+ },
+ {
+  "h": "通过",
+  "p": "tōng guò",
+  "en": "to pass through; via",
+  "th": "ผ่าน, โดยทาง",
+  "ex": {
+   "zh": "我通过了考试。",
+   "py": "Wǒ tōngguò le kǎoshì.",
+   "en": "I passed the exam.",
+   "th": "ฉันสอบผ่านแล้ว"
+  }
+ },
+ {
+  "h": "通知",
+  "p": "tōng zhī",
+  "en": "notice; to notify",
+  "th": "แจ้ง, ประกาศ",
+  "ex": {
+   "zh": "学校发了一个通知。",
+   "py": "Xuéxiào fā le yí ge tōngzhī.",
+   "en": "The school issued a notice.",
+   "th": "โรงเรียนออกประกาศฉบับหนึ่ง"
+  }
+ },
+ {
+  "h": "同情",
+  "p": "tóng qíng",
+  "en": "sympathy",
+  "th": "เห็นใจ",
+  "ex": {
+   "zh": "我很同情他的遭遇。",
+   "py": "Wǒ hěn tóngqíng tā de zāoyù.",
+   "en": "I sympathize with what he went through.",
+   "th": "ฉันเห็นใจสิ่งที่เขาต้องเจอ"
+  }
+ },
+ {
+  "h": "推",
+  "p": "tuī",
+  "en": "to push",
+  "th": "ผลัก, ดัน",
+  "ex": {
+   "zh": "请推开这扇门。",
+   "py": "Qǐng tuīkāi zhè shàn mén.",
+   "en": "Please push this door open.",
+   "th": "กรุณาผลักประตูบานนี้"
+  }
+ },
+ {
+  "h": "推迟",
+  "p": "tuī chí",
+  "en": "to postpone",
+  "th": "เลื่อน",
+  "ex": {
+   "zh": "会议推迟到明天了。",
+   "py": "Huìyì tuīchí dào míngtiān le.",
+   "en": "The meeting was postponed until tomorrow.",
+   "th": "การประชุมเลื่อนไปเป็นพรุ่งนี้"
+  }
+ },
+ {
+  "h": "脱",
+  "p": "tuō",
+  "en": "to take off",
+  "th": "ถอด",
+  "ex": {
+   "zh": "进门请脱鞋。",
+   "py": "Jìn mén qǐng tuō xié.",
+   "en": "Please take off your shoes when entering.",
+   "th": "เข้าบ้านกรุณาถอดรองเท้า"
+  }
+ },
+ {
+  "h": "袜子",
+  "p": "wà zi",
+  "en": "socks",
+  "th": "ถุงเท้า",
+  "ex": {
+   "zh": "我的袜子破了一个洞。",
+   "py": "Wǒ de wàzi pò le yí ge dòng.",
+   "en": "My socks have a hole.",
+   "th": "ถุงเท้าของฉันเป็นรู"
+  }
+ },
+ {
+  "h": "完全",
+  "p": "wán quán",
+  "en": "completely",
+  "th": "ทั้งหมด, อย่างสิ้นเชิง",
+  "ex": {
+   "zh": "我完全同意你的看法。",
+   "py": "Wǒ wánquán tóngyì nǐ de kànfǎ.",
+   "en": "I completely agree with your view.",
+   "th": "ฉันเห็นด้วยกับความเห็นของคุณทั้งหมด"
+  }
+ },
+ {
+  "h": "网球",
+  "p": "wǎng qiú",
+  "en": "tennis",
+  "th": "เทนนิส",
+  "ex": {
+   "zh": "周末我们去打网球。",
+   "py": "Zhōumò wǒmen qù dǎ wǎngqiú.",
+   "en": "We're going to play tennis this weekend.",
+   "th": "สุดสัปดาห์เราไปเล่นเทนนิสกัน"
+  }
+ },
+ {
+  "h": "网站",
+  "p": "wǎng zhàn",
+  "en": "website",
+  "th": "เว็บไซต์",
+  "ex": {
+   "zh": "这个网站很有用。",
+   "py": "Zhège wǎngzhàn hěn yǒuyòng.",
+   "en": "This website is very useful.",
+   "th": "เว็บไซต์นี้มีประโยชน์มาก"
+  }
+ },
+ {
+  "h": "往",
+  "p": "wǎng",
+  "en": "toward",
+  "th": "ไปทาง, มุ่งสู่",
+  "ex": {
+   "zh": "请往前走,然后往右拐。",
+   "py": "Qǐng wǎng qián zǒu, ránhòu wǎng yòu guǎi.",
+   "en": "Please go straight, then turn right.",
+   "th": "กรุณาเดินตรงไป แล้วเลี้ยวขวา"
+  }
+ },
+ {
+  "h": "往往",
+  "p": "wǎng wǎng",
+  "en": "often; tend to",
+  "th": "มักจะ",
+  "ex": {
+   "zh": "周末他往往在家休息。",
+   "py": "Zhōumò tā wǎngwǎng zài jiā xiūxi.",
+   "en": "On weekends he tends to rest at home.",
+   "th": "สุดสัปดาห์เขามักจะพักผ่อนอยู่บ้าน"
+  }
+ },
+ {
+  "h": "危险",
+  "p": "wēi xiǎn",
+  "en": "dangerous",
+  "th": "อันตราย",
+  "ex": {
+   "zh": "这条路很危险。",
+   "py": "Zhè tiáo lù hěn wēixiǎn.",
+   "en": "This road is very dangerous.",
+   "th": "ถนนเส้นนี้อันตรายมาก"
+  }
+ },
+ {
+  "h": "味道",
+  "p": "wèi dao",
+  "en": "taste",
+  "th": "รสชาติ",
+  "ex": {
+   "zh": "这个菜味道很好。",
+   "py": "Zhège cài wèidao hěn hǎo.",
+   "en": "This dish tastes very good.",
+   "th": "อาหารจานนี้รสชาติดีมาก"
+  }
+ },
+ {
+  "h": "温度",
+  "p": "wēn dù",
+  "en": "temperature",
+  "th": "อุณหภูมิ",
+  "ex": {
+   "zh": "今天的温度是三十度。",
+   "py": "Jīntiān de wēndù shì sānshí dù.",
+   "en": "Today's temperature is thirty degrees.",
+   "th": "อุณหภูมิวันนี้สามสิบองศา"
+  }
+ },
+ {
+  "h": "文章",
+  "p": "wén zhāng",
+  "en": "article",
+  "th": "บทความ",
+  "ex": {
+   "zh": "我读了一篇有意思的文章。",
+   "py": "Wǒ dú le yì piān yǒuyìsi de wénzhāng.",
+   "en": "I read an interesting article.",
+   "th": "ฉันอ่านบทความที่น่าสนใจเรื่องหนึ่ง"
+  }
+ },
+ {
+  "h": "握手",
+  "p": "wò shǒu",
+  "en": "to shake hands",
+  "th": "จับมือ",
+  "ex": {
+   "zh": "他们微笑着握手。",
+   "py": "Tāmen wēixiào zhe wòshǒu.",
+   "en": "They shook hands smiling.",
+   "th": "พวกเขายิ้มแล้วจับมือกัน"
+  }
+ },
+ {
+  "h": "污染",
+  "p": "wū rǎn",
+  "en": "pollution",
+  "th": "มลพิษ",
+  "ex": {
+   "zh": "空气污染越来越严重。",
+   "py": "Kōngqì wūrǎn yuèláiyuè yánzhòng.",
+   "en": "Air pollution is getting worse and worse.",
+   "th": "มลพิษทางอากาศรุนแรงขึ้นเรื่อยๆ"
+  }
+ },
+ {
+  "h": "无",
+  "p": "wú",
+  "en": "without; none",
+  "th": "ไม่มี",
+  "ex": {
+   "zh": "这个问题无法解决。",
+   "py": "Zhège wèntí wúfǎ jiějué.",
+   "en": "This problem cannot be solved.",
+   "th": "ปัญหานี้แก้ไขไม่ได้"
+  }
+ },
+ {
+  "h": "无聊",
+  "p": "wú liáo",
+  "en": "boring",
+  "th": "น่าเบื่อ",
+  "ex": {
+   "zh": "一个人在家很无聊。",
+   "py": "Yí ge rén zài jiā hěn wúliáo.",
+   "en": "It's boring being home alone.",
+   "th": "อยู่บ้านคนเดียวน่าเบื่อมาก"
+  }
+ },
+ {
+  "h": "无论",
+  "p": "wú lùn",
+  "en": "no matter",
+  "th": "ไม่ว่า",
+  "ex": {
+   "zh": "无论天气怎么样,我都去跑步。",
+   "py": "Wúlùn tiānqì zěnmeyàng, wǒ dōu qù pǎobù.",
+   "en": "No matter the weather, I go running.",
+   "th": "ไม่ว่าอากาศจะเป็นอย่างไร ฉันก็ไปวิ่ง"
+  }
+ },
+ {
+  "h": "误会",
+  "p": "wù huì",
+  "en": "misunderstanding",
+  "th": "เข้าใจผิด",
+  "ex": {
+   "zh": "对不起,这是个误会。",
+   "py": "Duìbuqǐ, zhè shì ge wùhuì.",
+   "en": "Sorry, this is a misunderstanding.",
+   "th": "ขอโทษ นี่เป็นความเข้าใจผิด"
+  }
+ },
+ {
+  "h": "吸引",
+  "p": "xī yǐn",
+  "en": "to attract",
+  "th": "ดึงดูด",
+  "ex": {
+   "zh": "这里的风景吸引了很多游客。",
+   "py": "Zhèlǐ de fēngjǐng xīyǐn le hěn duō yóukè.",
+   "en": "The scenery here attracts many tourists.",
+   "th": "วิวที่นี่ดึงดูดนักท่องเที่ยวมากมาย"
+  }
+ },
+ {
+  "h": "洗衣机",
+  "p": "xǐ yī jī",
+  "en": "washing machine",
+  "th": "เครื่องซักผ้า",
+  "ex": {
+   "zh": "我家的洗衣机坏了。",
+   "py": "Wǒ jiā de xǐyījī huài le.",
+   "en": "Our washing machine is broken.",
+   "th": "เครื่องซักผ้าที่บ้านฉันเสีย"
+  }
+ },
+ {
+  "h": "西红柿",
+  "p": "xī hóng shì",
+  "en": "tomato",
+  "th": "มะเขือเทศ",
+  "ex": {
+   "zh": "我喜欢吃西红柿炒鸡蛋。",
+   "py": "Wǒ xǐhuan chī xīhóngshì chǎo jīdàn.",
+   "en": "I like tomato and scrambled eggs.",
+   "th": "ฉันชอบกินไข่เจียวมะเขือเทศผัด"
+  }
+ },
+ {
+  "h": "咸",
+  "p": "Xián",
+  "en": "salty",
+  "th": "เค็ม",
+  "ex": {
+   "zh": "这个汤有点儿咸。",
+   "py": "Zhège tāng yǒudiǎnr xián.",
+   "en": "This soup is a bit salty.",
+   "th": "ซุปนี้เค็มไปหน่อย"
+  }
+ },
+ {
+  "h": "现代",
+  "p": "Xiàn dài",
+  "en": "modern",
+  "th": "สมัยใหม่",
+  "ex": {
+   "zh": "这是一座现代化的城市。",
+   "py": "Zhè shì yí zuò xiàndàihuà de chéngshì.",
+   "en": "This is a modern city.",
+   "th": "นี่เป็นเมืองที่ทันสมัย"
+  }
+ },
+ {
+  "h": "限制",
+  "p": "xiàn zhì",
+  "en": "to restrict",
+  "th": "จำกัด, ข้อจำกัด",
+  "ex": {
+   "zh": "这里对车速有限制。",
+   "py": "Zhèlǐ duì chēsù yǒu xiànzhì.",
+   "en": "There is a speed limit here.",
+   "th": "ที่นี่มีการจำกัดความเร็วรถ"
+  }
+ },
+ {
+  "h": "羡慕",
+  "p": "xiàn mù",
+  "en": "to envy",
+  "th": "อิจฉา, ชื่นชม",
+  "ex": {
+   "zh": "我很羡慕你的好成绩。",
+   "py": "Wǒ hěn xiànmù nǐ de hǎo chéngjì.",
+   "en": "I really envy your good grades.",
+   "th": "ฉันอิจฉาคะแนนดีๆ ของคุณมาก"
+  }
+ },
+ {
+  "h": "相反",
+  "p": "xiāng fǎn",
+  "en": "opposite",
+  "th": "ตรงกันข้าม",
+  "ex": {
+   "zh": "事实正好相反。",
+   "py": "Shìshí zhènghǎo xiāngfǎn.",
+   "en": "The facts are exactly the opposite.",
+   "th": "ความจริงตรงกันข้ามพอดี"
+  }
+ },
+ {
+  "h": "香",
+  "p": "xiāng",
+  "en": "fragrant",
+  "th": "หอม",
+  "ex": {
+   "zh": "花园里的花很香。",
+   "py": "Huāyuán lǐ de huā hěn xiāng.",
+   "en": "The flowers in the garden smell nice.",
+   "th": "ดอกไม้ในสวนหอมมาก"
+  }
+ },
+ {
+  "h": "详细",
+  "p": "xiáng xì",
+  "en": "detailed",
+  "th": "ละเอียด",
+  "ex": {
+   "zh": "请详细说明一下。",
+   "py": "Qǐng xiángxì shuōmíng yíxià.",
+   "en": "Please explain in detail.",
+   "th": "กรุณาอธิบายให้ละเอียด"
+  }
+ },
+ {
+  "h": "响",
+  "p": "xiǎng",
+  "en": "to make a sound",
+  "th": "ดัง, ส่งเสียง",
+  "ex": {
+   "zh": "电话响了。",
+   "py": "Diànhuà xiǎng le.",
+   "en": "The phone rang.",
+   "th": "โทรศัพท์ดังแล้ว"
+  }
+ },
+ {
+  "h": "消息",
+  "p": "xiāo xi",
+  "en": "news",
+  "th": "ข่าว",
+  "ex": {
+   "zh": "你听到这个消息了吗?",
+   "py": "Nǐ tīngdào zhège xiāoxi le ma?",
+   "en": "Have you heard this news?",
+   "th": "คุณได้ยินข่าวนี้หรือยัง"
+  }
+ },
+ {
+  "h": "小说",
+  "p": "xiǎo shuō",
+  "en": "novel",
+  "th": "นิยาย",
+  "ex": {
+   "zh": "我喜欢看中文小说。",
+   "py": "Wǒ xǐhuan kàn Zhōngwén xiǎoshuō.",
+   "en": "I like reading Chinese novels.",
+   "th": "ฉันชอบอ่านนิยายภาษาจีน"
+  }
+ },
+ {
+  "h": "效果",
+  "p": "xiào guǒ",
+  "en": "effect",
+  "th": "ผลลัพธ์, ประสิทธิผล",
+  "ex": {
+   "zh": "这种药的效果很好。",
+   "py": "Zhè zhǒng yào de xiàoguǒ hěn hǎo.",
+   "en": "This medicine works very well.",
+   "th": "ยานี้ได้ผลดีมาก"
+  }
+ },
+ {
+  "h": "笑话",
+  "p": "xiào hua",
+  "en": "joke",
+  "th": "มุกตลก",
+  "ex": {
+   "zh": "他讲了一个笑话。",
+   "py": "Tā jiǎng le yí ge xiàohua.",
+   "en": "He told a joke.",
+   "th": "เขาเล่ามุกตลกหนึ่งมุก"
+  }
+ },
+ {
+  "h": "心情",
+  "p": "xīn qíng",
+  "en": "mood",
+  "th": "อารมณ์, ความรู้สึก",
+  "ex": {
+   "zh": "今天我的心情很好。",
+   "py": "Jīntiān wǒ de xīnqíng hěn hǎo.",
+   "en": "I'm in a great mood today.",
+   "th": "วันนี้อารมณ์ฉันดีมาก"
+  }
+ },
+ {
+  "h": "辛苦",
+  "p": "xīn kǔ",
+  "en": "hard; tiring",
+  "th": "เหนื่อย, ลำบาก",
+  "ex": {
+   "zh": "你们辛苦了!",
+   "py": "Nǐmen xīnkǔ le!",
+   "en": "Thank you for your hard work!",
+   "th": "ขอบคุณที่เหนื่อยกันมานะ"
+  }
+ },
+ {
+  "h": "信任",
+  "p": "xìn rèn",
+  "en": "to trust",
+  "th": "ไว้ใจ, เชื่อใจ",
+  "ex": {
+   "zh": "我很信任我的朋友。",
+   "py": "Wǒ hěn xìnrèn wǒ de péngyou.",
+   "en": "I trust my friends a lot.",
+   "th": "ฉันไว้ใจเพื่อนของฉันมาก"
+  }
+ },
+ {
+  "h": "信心",
+  "p": "xìn xīn",
+  "en": "confidence",
+  "th": "ความมั่นใจ",
+  "ex": {
+   "zh": "我对这次考试有信心。",
+   "py": "Wǒ duì zhè cì kǎoshì yǒu xìnxīn.",
+   "en": "I'm confident about this exam.",
+   "th": "ฉันมั่นใจกับการสอบครั้งนี้"
+  }
+ },
+ {
+  "h": "信用卡",
+  "p": "xìn yòng kǎ",
+  "en": "credit card",
+  "th": "บัตรเครดิต",
+  "ex": {
+   "zh": "这里可以刷信用卡吗?",
+   "py": "Zhèlǐ kěyǐ shuā xìnyòngkǎ ma?",
+   "en": "Can I pay by credit card here?",
+   "th": "ที่นี่รูดบัตรเครดิตได้ไหม"
+  }
+ },
+ {
+  "h": "行",
+  "p": "háng",
+  "en": "to be OK",
+  "th": "ได้, ใช้ได้",
+  "ex": {
+   "zh": "明天去,行吗?",
+   "py": "Míngtiān qù, xíng ma?",
+   "en": "Is it OK to go tomorrow?",
+   "th": "ไปพรุ่งนี้ได้ไหม"
+  }
+ },
+ {
+  "h": "醒",
+  "p": "xǐng",
+  "en": "to wake up",
+  "th": "ตื่น",
+  "ex": {
+   "zh": "我今天六点就醒了。",
+   "py": "Wǒ jīntiān liù diǎn jiù xǐng le.",
+   "en": "I woke up at six today.",
+   "th": "วันนี้ฉันตื่นตั้งแต่หกโมง"
+  }
+ },
+ {
+  "h": "兴奋",
+  "p": "xīng fèn",
+  "en": "excited",
+  "th": "ตื่นเต้น, กระตือรือร้น",
+  "ex": {
+   "zh": "明天去旅行,我很兴奋。",
+   "py": "Míngtiān qù lǚxíng, wǒ hěn xīngfèn.",
+   "en": "I'm excited about traveling tomorrow.",
+   "th": "พรุ่งนี้จะไปเที่ยว ฉันตื่นเต้นมาก"
+  }
+ },
+ {
+  "h": "幸福",
+  "p": "xìng fú",
+  "en": "happiness",
+  "th": "ความสุข",
+  "ex": {
+   "zh": "祝你们幸福!",
+   "py": "Zhù nǐmen xìngfú!",
+   "en": "Wishing you happiness!",
+   "th": "ขอให้พวกคุณมีความสุข"
+  }
+ },
+ {
+  "h": "性别",
+  "p": "xìng bié",
+  "en": "gender",
+  "th": "เพศ",
+  "ex": {
+   "zh": "请填写你的性别。",
+   "py": "Qǐng tiánxiě nǐ de xìngbié.",
+   "en": "Please fill in your gender.",
+   "th": "กรุณากรอกเพศของคุณ"
+  }
+ },
+ {
+  "h": "性格",
+  "p": "xìng gé",
+  "en": "personality",
+  "th": "นิสัย, บุคลิก",
+  "ex": {
+   "zh": "她的性格很开朗。",
+   "py": "Tā de xìnggé hěn kāilǎng.",
+   "en": "She has a cheerful personality.",
+   "th": "เธอมีนิสัยร่าเริง"
+  }
+ },
+ {
+  "h": "修",
+  "p": "Xiū",
+  "en": "to repair",
+  "th": "ซ่อม",
+  "ex": {
+   "zh": "我的自行车要修一下。",
+   "py": "Wǒ de zìxíngchē yào xiū yíxià.",
+   "en": "My bicycle needs repairing.",
+   "th": "จักรยานของฉันต้องซ่อมหน่อย"
+  }
+ },
+ {
+  "h": "许多",
+  "p": "xǔ duō",
+  "en": "many",
+  "th": "มากมาย",
+  "ex": {
+   "zh": "这里有许多游客。",
+   "py": "Zhèlǐ yǒu xǔduō yóukè.",
+   "en": "There are many tourists here.",
+   "th": "ที่นี่มีนักท่องเที่ยวมากมาย"
+  }
+ },
+ {
+  "h": "血",
+  "p": "xuè",
+  "en": "blood",
+  "th": "เลือด",
+  "ex": {
+   "zh": "他的手在流血。",
+   "py": "Tā de shǒu zài liúxuè.",
+   "en": "His hand is bleeding.",
+   "th": "มือของเขาเลือดออก"
+  }
+ },
+ {
+  "h": "压力",
+  "p": "yā lì",
+  "en": "pressure; stress",
+  "th": "ความเครียด, แรงกดดัน",
+  "ex": {
+   "zh": "工作压力太大了。",
+   "py": "Gōngzuò yālì tài dà le.",
+   "en": "Work stress is too great.",
+   "th": "ความเครียดจากงานมากเกินไป"
+  }
+ },
+ {
+  "h": "牙膏",
+  "p": "yá gāo",
+  "en": "toothpaste",
+  "th": "ยาสีฟัน",
+  "ex": {
+   "zh": "牙膏用完了,要买新的。",
+   "py": "Yágāo yòng wán le, yào mǎi xīn de.",
+   "en": "We ran out of toothpaste; need to buy more.",
+   "th": "ยาสีฟันหมดแล้ว ต้องซื้ออันใหม่"
+  }
+ },
+ {
+  "h": "亚洲",
+  "p": "Yà zhōu",
+  "en": "Asia",
+  "th": "เอเชีย",
+  "ex": {
+   "zh": "泰国在亚洲。",
+   "py": "Tàiguó zài Yàzhōu.",
+   "en": "Thailand is in Asia.",
+   "th": "ประเทศไทยอยู่ในทวีปเอเชีย"
+  }
+ },
+ {
+  "h": "呀",
+  "p": "ya",
+  "en": "(particle: softening tone)",
+  "th": "คำลงท้ายเสียงอ่อน",
+  "ex": {
+   "zh": "你怎么才来呀?",
+   "py": "Nǐ zěnme cái lái ya?",
+   "en": "Why did you only just arrive?",
+   "th": "ทำไมเพิ่งมาล่ะ"
+  }
+ },
+ {
+  "h": "严格",
+  "p": "yán gé",
+  "en": "strict",
+  "th": "เข้มงวด",
+  "ex": {
+   "zh": "我们的老师很严格。",
+   "py": "Wǒmen de lǎoshī hěn yángé.",
+   "en": "Our teacher is very strict.",
+   "th": "ครูของเราเข้มงวดมาก"
+  }
+ },
+ {
+  "h": "严重",
+  "p": "yán zhòng",
+  "en": "serious",
+  "th": "ร้ายแรง",
+  "ex": {
+   "zh": "他的病很严重。",
+   "py": "Tā de bìng hěn yánzhòng.",
+   "en": "His illness is very serious.",
+   "th": "โรคของเขาร้ายแรงมาก"
+  }
+ },
+ {
+  "h": "研究生",
+  "p": "yán jiū shēng",
+  "en": "graduate student",
+  "th": "นักศึกษาปริญญาโท",
+  "ex": {
+   "zh": "她是一名研究生。",
+   "py": "Tā shì yì míng yánjiūshēng.",
+   "en": "She is a graduate student.",
+   "th": "เธอเป็นนักศึกษาระดับบัณฑิตศึกษา"
+  }
+ },
+ {
+  "h": "盐",
+  "p": "yán",
+  "en": "salt",
+  "th": "เกลือ",
+  "ex": {
+   "zh": "汤里再放一点儿盐。",
+   "py": "Tāng lǐ zài fàng yìdiǎnr yán.",
+   "en": "Add a little more salt to the soup.",
+   "th": "ใส่เกลือลงในซุปอีกนิดหน่อย"
+  }
+ },
+ {
+  "h": "演出",
+  "p": "yǎn chū",
+  "en": "performance",
+  "th": "การแสดง",
+  "ex": {
+   "zh": "今晚有一场演出。",
+   "py": "Jīnwǎn yǒu yì chǎng yǎnchū.",
+   "en": "There is a performance tonight.",
+   "th": "คืนนี้มีการแสดงรอบหนึ่ง"
+  }
+ },
+ {
+  "h": "演员",
+  "p": "yǎn yuán",
+  "en": "actor",
+  "th": "นักแสดง",
+  "ex": {
+   "zh": "她是一名有名的演员。",
+   "py": "Tā shì yì míng yǒumíng de yǎnyuán.",
+   "en": "She is a famous actress.",
+   "th": "เธอเป็นนักแสดงที่มีชื่อเสียง"
+  }
+ },
+ {
+  "h": "阳光",
+  "p": "yáng guāng",
+  "en": "sunshine",
+  "th": "แสงแดด",
+  "ex": {
+   "zh": "阳光照进房间。",
+   "py": "Yángguāng zhào jìn fángjiān.",
+   "en": "Sunshine shines into the room.",
+   "th": "แสงแดดส่องเข้ามาในห้อง"
+  }
+ },
+ {
+  "h": "养成",
+  "p": "yǎng chéng",
+  "en": "to form (a habit)",
+  "th": "สร้าง (นิสัย)",
+  "ex": {
+   "zh": "要养成早睡的好习惯。",
+   "py": "Yào yǎngchéng zǎo shuì de hǎo xíguàn.",
+   "en": "You should form the good habit of sleeping early.",
+   "th": "ควรสร้างนิสัยที่ดีคือนอนเร็ว"
+  }
+ },
+ {
+  "h": "样子",
+  "p": "yàng zi",
+  "en": "appearance",
+  "th": "รูปร่างหน้าตา, ท่าทาง",
+  "ex": {
+   "zh": "他生气的样子很可怕。",
+   "py": "Tā shēngqì de yàngzi hěn kěpà.",
+   "en": "He looks scary when he's angry.",
+   "th": "ท่าทางตอนโกรธของเขาน่ากลัว"
+  }
+ },
+ {
+  "h": "邀请",
+  "p": "yāo qǐng",
+  "en": "to invite",
+  "th": "เชิญ",
+  "ex": {
+   "zh": "他邀请我参加婚礼。",
+   "py": "Tā yāoqǐng wǒ cānjiā hūnlǐ.",
+   "en": "He invited me to his wedding.",
+   "th": "เขาเชิญฉันไปร่วมงานแต่งงาน"
+  }
+ },
+ {
+  "h": "钥匙",
+  "p": "yào shi",
+  "en": "key",
+  "th": "กุญแจ",
+  "ex": {
+   "zh": "我找不到我的钥匙了。",
+   "py": "Wǒ zhǎo bú dào wǒ de yàoshi le.",
+   "en": "I can't find my keys.",
+   "th": "ฉันหากุญแจของฉันไม่เจอ"
+  }
+ },
+ {
+  "h": "也许",
+  "p": "yě xǔ",
+  "en": "maybe",
+  "th": "บางที",
+  "ex": {
+   "zh": "也许明天会下雨。",
+   "py": "Yěxǔ míngtiān huì xià yǔ.",
+   "en": "Maybe it will rain tomorrow.",
+   "th": "บางทีพรุ่งนี้ฝนอาจจะตก"
+  }
+ },
+ {
+  "h": "叶子",
+  "p": "yè zi",
+  "en": "leaf",
+  "th": "ใบไม้",
+  "ex": {
+   "zh": "秋天树叶子变黄了。",
+   "py": "Qiūtiān shù yèzi biàn huáng le.",
+   "en": "In autumn the tree leaves turn yellow.",
+   "th": "ฤดูใบไม้ร่วงใบไม้เปลี่ยนเป็นสีเหลือง"
+  }
+ },
+ {
+  "h": "页",
+  "p": "xié",
+  "en": "page",
+  "th": "หน้า (กระดาษ)",
+  "ex": {
+   "zh": "请翻到第十页。",
+   "py": "Qǐng fāndào dì shí yè.",
+   "en": "Please turn to page ten.",
+   "th": "กรุณาเปิดไปหน้าสิบ"
+  }
+ },
+ {
+  "h": "一切",
+  "p": "yī qiè",
+  "en": "everything",
+  "th": "ทุกอย่าง",
+  "ex": {
+   "zh": "一切都会好起来的。",
+   "py": "Yíqiè dōu huì hǎo qǐlái de.",
+   "en": "Everything will be fine.",
+   "th": "ทุกอย่างจะดีขึ้นเอง"
+  }
+ }
+]

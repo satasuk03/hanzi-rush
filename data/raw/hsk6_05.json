@@ -1,0 +1,1202 @@
+[
+ {
+  "h": "顿时",
+  "p": "dùn shí",
+  "en": "immediately",
+  "th": "ทันที",
+  "ex": {
+   "zh": "听到消息,他顿时愣住了。",
+   "py": "Tīngdào xiāoxi, tā dùnshí lèngzhù le.",
+   "en": "Hearing the news, he froze immediately.",
+   "th": "พอได้ยินข่าว เขาก็ตะลึงไปทันที"
+  }
+ },
+ {
+  "h": "多元化",
+  "p": "duō yuán huà",
+  "en": "diversification",
+  "th": "ความหลากหลาย",
+  "ex": {
+   "zh": "公司正在推动业务多元化。",
+   "py": "Gōngsī zhèngzài tuīdòng yèwù duōyuánhuà.",
+   "en": "The company is pushing for business diversification.",
+   "th": "บริษัทกำลังผลักดันให้ธุรกิจมีความหลากหลาย"
+  }
+ },
+ {
+  "h": "哆嗦",
+  "p": "duō suo",
+  "en": "to tremble",
+  "th": "สั่น",
+  "ex": {
+   "zh": "他冷得直哆嗦。",
+   "py": "Tā lěng de zhí duōsuo.",
+   "en": "He was trembling with cold.",
+   "th": "เขาหนาวจนตัวสั่น"
+  }
+ },
+ {
+  "h": "堕落",
+  "p": "duò luò",
+  "en": "to degenerate",
+  "th": "เสื่อมทราม",
+  "ex": {
+   "zh": "他因为赌博而堕落了。",
+   "py": "Tā yīnwèi dǔbó ér duòluò le.",
+   "en": "He degenerated because of gambling.",
+   "th": "เขาเสื่อมทรามเพราะการพนัน"
+  }
+ },
+ {
+  "h": "额外",
+  "p": "é wài",
+  "en": "extra",
+  "th": "เพิ่มเติม",
+  "ex": {
+   "zh": "这项服务需要额外收费。",
+   "py": "Zhè xiàng fúwù xūyào éwài shōufèi.",
+   "en": "This service requires an extra charge.",
+   "th": "บริการนี้ต้องเสียค่าใช้จ่ายเพิ่มเติม"
+  }
+ },
+ {
+  "h": "恶化",
+  "p": "è huà",
+  "en": "to worsen",
+  "th": "แย่ลง",
+  "ex": {
+   "zh": "他的病情突然恶化了。",
+   "py": "Tā de bìngqíng tūrán èhuà le.",
+   "en": "His condition suddenly worsened.",
+   "th": "อาการป่วยของเขาแย่ลงกะทันหัน"
+  }
+ },
+ {
+  "h": "恶心",
+  "p": "ě xīn",
+  "en": "nauseous",
+  "th": "คลื่นไส้",
+  "ex": {
+   "zh": "坐船让我觉得恶心。",
+   "py": "Zuò chuán ràng wǒ juéde ěxīn.",
+   "en": "Traveling by boat makes me feel nauseous.",
+   "th": "นั่งเรือทำให้ฉันรู้สึกคลื่นไส้"
+  }
+ },
+ {
+  "h": "掠夺",
+  "p": "lüè duó",
+  "en": "to plunder",
+  "th": "ปล้นสะดม",
+  "ex": {
+   "zh": "强盗掠夺了村里的财物。",
+   "py": "Qiángdào lüèduó le cūn lǐ de cáiwù.",
+   "en": "The bandits plundered the village's belongings.",
+   "th": "โจรปล้นสะดมทรัพย์สินในหมู่บ้าน"
+  }
+ },
+ {
+  "h": "略微",
+  "p": "lüè wēi",
+  "en": "slightly",
+  "th": "เล็กน้อย",
+  "ex": {
+   "zh": "他略微笑了一下。",
+   "py": "Tā lüèwēi xiào le yíxià.",
+   "en": "He smiled slightly.",
+   "th": "เขายิ้มเล็กน้อย"
+  }
+ },
+ {
+  "h": "遏制",
+  "p": "è zhì",
+  "en": "to contain",
+  "th": "ควบคุม",
+  "ex": {
+   "zh": "政府努力遏制疫情扩散。",
+   "py": "Zhèngfǔ nǔlì èzhì yìqíng kuòsàn.",
+   "en": "The government is trying to contain the spread of the epidemic.",
+   "th": "รัฐบาลพยายามควบคุมการแพร่ระบาดของโรค"
+  }
+ },
+ {
+  "h": "恩怨",
+  "p": "ēn yuàn",
+  "en": "grudges",
+  "th": "ความแค้น",
+  "ex": {
+   "zh": "他们之间有多年的恩怨。",
+   "py": "Tāmen zhījiān yǒu duō nián de ēnyuàn.",
+   "en": "There have been grudges between them for years.",
+   "th": "ระหว่างพวกเขามีความแค้นกันมาหลายปี"
+  }
+ },
+ {
+  "h": "而已",
+  "p": "ér yǐ",
+  "en": "that's all",
+  "th": "เท่านั้นเอง",
+  "ex": {
+   "zh": "我只是开个玩笑而已。",
+   "py": "Wǒ zhǐshì kāi ge wánxiào éryǐ.",
+   "en": "I was just joking, that's all.",
+   "th": "ฉันแค่พูดเล่นเท่านั้นเอง"
+  }
+ },
+ {
+  "h": "耳环",
+  "p": "ěr huán",
+  "en": "earring",
+  "th": "ต่างหู",
+  "ex": {
+   "zh": "她戴了一对漂亮的耳环。",
+   "py": "Tā dài le yí duì piàoliang de ěrhuán.",
+   "en": "She is wearing a pair of pretty earrings.",
+   "th": "เธอสวมต่างหูคู่สวย"
+  }
+ },
+ {
+  "h": "二氧化碳",
+  "p": "èr yǎng huà tàn",
+  "en": "carbon dioxide",
+  "th": "คาร์บอนไดออกไซด์",
+  "ex": {
+   "zh": "植物吸收二氧化碳。",
+   "py": "Zhíwù xīshōu èryǎnghuàtàn.",
+   "en": "Plants absorb carbon dioxide.",
+   "th": "พืชดูดซับคาร์บอนไดออกไซด์"
+  }
+ },
+ {
+  "h": "发布",
+  "p": "fā bù",
+  "en": "to release",
+  "th": "ประกาศ",
+  "ex": {
+   "zh": "公司明天发布新产品。",
+   "py": "Gōngsī míngtiān fābù xīn chǎnpǐn.",
+   "en": "The company will release a new product tomorrow.",
+   "th": "บริษัทจะเปิดตัวผลิตภัณฑ์ใหม่พรุ่งนี้"
+  }
+ },
+ {
+  "h": "发财",
+  "p": "fā cái",
+  "en": "to get rich",
+  "th": "รวย",
+  "ex": {
+   "zh": "祝你新年发财!",
+   "py": "Zhù nǐ xīnnián fācái!",
+   "en": "Wishing you wealth in the new year!",
+   "th": "ขอให้ปีใหม่ร่ำรวยนะ"
+  }
+ },
+ {
+  "h": "发呆",
+  "p": "fā dāi",
+  "en": "to stare blankly",
+  "th": "เหม่อลอย",
+  "ex": {
+   "zh": "他坐在窗边发呆。",
+   "py": "Tā zuò zài chuāng biān fādāi.",
+   "en": "He sat by the window, staring blankly.",
+   "th": "เขานั่งเหม่อลอยอยู่ริมหน้าต่าง"
+  }
+ },
+ {
+  "h": "发动",
+  "p": "fā dòng",
+  "en": "to launch",
+  "th": "เริ่ม",
+  "ex": {
+   "zh": "他们发动了一场新的活动。",
+   "py": "Tāmen fādòng le yì chǎng xīn de huódòng.",
+   "en": "They launched a new campaign.",
+   "th": "พวกเขาเริ่มกิจกรรมใหม่"
+  }
+ },
+ {
+  "h": "发火",
+  "p": "fā huǒ",
+  "en": "to get angry",
+  "th": "โมโห",
+  "ex": {
+   "zh": "别发火,慢慢说。",
+   "py": "Bié fāhuǒ, mànmàn shuō.",
+   "en": "Don't get angry, speak slowly.",
+   "th": "อย่าโมโห ค่อยๆ พูด"
+  }
+ },
+ {
+  "h": "发觉",
+  "p": "fā jué",
+  "en": "to realize",
+  "th": "รู้สึกตัว",
+  "ex": {
+   "zh": "他发觉钱包不见了。",
+   "py": "Tā fājué qiánbāo bú jiàn le.",
+   "en": "He realized his wallet was missing.",
+   "th": "เขาสังเกตเห็นว่ากระเป๋าสตางค์หายไป"
+  }
+ },
+ {
+  "h": "发射",
+  "p": "fā shè",
+  "en": "to launch",
+  "th": "ยิง",
+  "ex": {
+   "zh": "火箭成功发射了。",
+   "py": "Huǒjiàn chénggōng fāshè le.",
+   "en": "The rocket was launched successfully.",
+   "th": "จรวดถูกยิงขึ้นสำเร็จ"
+  }
+ },
+ {
+  "h": "发誓",
+  "p": "fā shì",
+  "en": "to vow",
+  "th": "สาบาน",
+  "ex": {
+   "zh": "他发誓再也不迟到了。",
+   "py": "Tā fāshì zài yě bù chídào le.",
+   "en": "He swore never to be late again.",
+   "th": "เขาสาบานว่าจะไม่มาสายอีก"
+  }
+ },
+ {
+  "h": "发行",
+  "p": "fā xíng",
+  "en": "to issue",
+  "th": "ออกจำหน่าย",
+  "ex": {
+   "zh": "这本书明年发行。",
+   "py": "Zhè běn shū míngnián fāxíng.",
+   "en": "This book will be published next year.",
+   "th": "หนังสือเล่มนี้จะออกจำหน่ายปีหน้า"
+  }
+ },
+ {
+  "h": "发炎",
+  "p": "fā yán",
+  "en": "inflammation",
+  "th": "อักเสบ",
+  "ex": {
+   "zh": "伤口发炎了。",
+   "py": "Shāngkǒu fāyán le.",
+   "en": "The wound became inflamed.",
+   "th": "แผลอักเสบ"
+  }
+ },
+ {
+  "h": "发扬",
+  "p": "fā yáng",
+  "en": "to carry forward",
+  "th": "สืบสาน",
+  "ex": {
+   "zh": "我们要发扬优良传统。",
+   "py": "Wǒmen yào fāyáng yōuliáng chuántǒng.",
+   "en": "We should carry forward fine traditions.",
+   "th": "เราต้องสืบสานประเพณีที่ดีงาม"
+  }
+ },
+ {
+  "h": "发育",
+  "p": "fā yù",
+  "en": "to develop",
+  "th": "เจริญเติบโต",
+  "ex": {
+   "zh": "孩子正在长身体,发育很快。",
+   "py": "Háizi zhèngzài zhǎng shēntǐ, fāyù hěn kuài.",
+   "en": "The child is growing and developing quickly.",
+   "th": "เด็กกำลังโต เติบโตเร็วมาก"
+  }
+ },
+ {
+  "h": "法人",
+  "p": "fǎ rén",
+  "en": "legal person",
+  "th": "นิติบุคคล",
+  "ex": {
+   "zh": "公司是一个法人。",
+   "py": "Gōngsī shì yí ge fǎrén.",
+   "en": "A company is a legal person.",
+   "th": "บริษัทเป็นนิติบุคคล"
+  }
+ },
+ {
+  "h": "番",
+  "p": "Pān",
+  "en": "Pan (surname)",
+  "th": "แซ่ผาน",
+  "ex": {
+   "zh": "他姓番,是少见的姓。",
+   "py": "Tā xìng Pān, shì shǎojiàn de xìng.",
+   "en": "His surname is Pan, a rare surname.",
+   "th": "เขาแซ่ผาน ซึ่งเป็นแซ่ที่หายาก"
+  }
+ },
+ {
+  "h": "繁华",
+  "p": "fán huá",
+  "en": "bustling",
+  "th": "เจริญรุ่งเรือง",
+  "ex": {
+   "zh": "上海是一座繁华的城市。",
+   "py": "Shànghǎi shì yí zuò fánhuá de chéngshì.",
+   "en": "Shanghai is a bustling city.",
+   "th": "เซี่ยงไฮ้เป็นเมืองที่เจริญรุ่งเรือง"
+  }
+ },
+ {
+  "h": "繁忙",
+  "p": "fán máng",
+  "en": "busy",
+  "th": "ยุ่งมาก",
+  "ex": {
+   "zh": "最近工作很繁忙。",
+   "py": "Zuìjìn gōngzuò hěn fánmáng.",
+   "en": "Work has been very busy lately.",
+   "th": "dช่วงนี้งานยุ่งมาก"
+  }
+ },
+ {
+  "h": "繁体字",
+  "p": "fán tǐ zì",
+  "en": "traditional characters",
+  "th": "อักษรจีนตัวเต็ม",
+  "ex": {
+   "zh": "台湾使用繁体字。",
+   "py": "Táiwān shǐyòng fántǐzì.",
+   "en": "Taiwan uses traditional characters.",
+   "th": "ไต้หวันใช้อักษรจีนตัวเต็ม"
+  }
+ },
+ {
+  "h": "繁殖",
+  "p": "fán zhí",
+  "en": "to breed",
+  "th": "ขยายพันธุ์",
+  "ex": {
+   "zh": "兔子繁殖得很快。",
+   "py": "Tùzi fánzhí de hěn kuài.",
+   "en": "Rabbits breed very quickly.",
+   "th": "กระต่ายขยายพันธุ์เร็วมาก"
+  }
+ },
+ {
+  "h": "反驳",
+  "p": "fǎn bó",
+  "en": "to refute",
+  "th": "โต้แย้ง",
+  "ex": {
+   "zh": "他无法反驳我的观点。",
+   "py": "Tā wúfǎ fǎnbó wǒ de guāndiǎn.",
+   "en": "He could not refute my point.",
+   "th": "เขาไม่สามารถโต้แย้งความคิดเห็นของฉันได้"
+  }
+ },
+ {
+  "h": "反常",
+  "p": "fǎn cháng",
+  "en": "abnormal",
+  "th": "ผิดปกติ",
+  "ex": {
+   "zh": "今年的天气很反常。",
+   "py": "Jīnnián de tiānqì hěn fǎncháng.",
+   "en": "This year's weather is abnormal.",
+   "th": "อากาศปีนี้ผิดปกติมาก"
+  }
+ },
+ {
+  "h": "反倒",
+  "p": "fǎn dào",
+  "en": "on the contrary",
+  "th": "กลับ",
+  "ex": {
+   "zh": "我批评他,他反倒笑了。",
+   "py": "Wǒ pīpíng tā, tā fǎndào xiào le.",
+   "en": "I criticized him, but on the contrary he laughed.",
+   "th": "ฉันตำหนิเขา เขากลับหัวเราะ"
+  }
+ },
+ {
+  "h": "反动",
+  "p": "fǎn dòng",
+  "en": "reactionary",
+  "th": "ล้าหลัง",
+  "ex": {
+   "zh": "那是一种反动的思想。",
+   "py": "Nà shì yì zhǒng fǎndòng de sīxiǎng.",
+   "en": "That is a reactionary ideology.",
+   "th": "นั่นเป็นความคิดที่ล้าหลัง"
+  }
+ },
+ {
+  "h": "反感",
+  "p": "fǎn gǎn",
+  "en": "to dislike",
+  "th": "ไม่ชอบ",
+  "ex": {
+   "zh": "我对他的态度很反感。",
+   "py": "Wǒ duì tā de tàidù hěn fǎngǎn.",
+   "en": "I really dislike his attitude.",
+   "th": "ฉันไม่ชอบท่าทีของเขามาก"
+  }
+ },
+ {
+  "h": "反抗",
+  "p": "fǎn kàng",
+  "en": "to resist",
+  "th": "ต่อต้าน",
+  "ex": {
+   "zh": "人民起来反抗压迫。",
+   "py": "Rénmín qǐlái fǎnkàng yāpò.",
+   "en": "The people rose up to resist oppression.",
+   "th": "ประชาชนลุกขึ้นต่อต้านการกดขี่"
+  }
+ },
+ {
+  "h": "反馈",
+  "p": "fǎn kuì",
+  "en": "feedback",
+  "th": "ข้อเสนอแนะ",
+  "ex": {
+   "zh": "请给我们一些反馈。",
+   "py": "Qǐng gěi wǒmen yìxiē fǎnkuì.",
+   "en": "Please give us some feedback.",
+   "th": "กรุณาให้ข้อเสนอแนะแก่เราหน่อย"
+  }
+ },
+ {
+  "h": "反面",
+  "p": "fǎn miàn",
+  "en": "reverse side",
+  "th": "ด้านตรงข้าม",
+  "ex": {
+   "zh": "纸的反面有字。",
+   "py": "Zhǐ de fǎnmiàn yǒu zì.",
+   "en": "There is writing on the back of the paper.",
+   "th": "ด้านหลังของกระดาษมีตัวหนังสือ"
+  }
+ },
+ {
+  "h": "反射",
+  "p": "fǎn shè",
+  "en": "to reflect",
+  "th": "สะท้อน",
+  "ex": {
+   "zh": "镜子会反射光线。",
+   "py": "Jìngzi huì fǎnshè guāngxiàn.",
+   "en": "Mirrors reflect light.",
+   "th": "กระจกสะท้อนแสง"
+  }
+ },
+ {
+  "h": "反思",
+  "p": "fǎn sī",
+  "en": "to reflect on",
+  "th": "ทบทวนตนเอง",
+  "ex": {
+   "zh": "失败后,他认真反思。",
+   "py": "Shībài hòu, tā rènzhēn fǎnsī.",
+   "en": "After failing, he reflected seriously.",
+   "th": "หลังจากล้มเหลว เขาทบทวนตัวเองอย่างจริงจัง"
+  }
+ },
+ {
+  "h": "反问",
+  "p": "fǎn wèn",
+  "en": "to ask in reply",
+  "th": "ย้อนถาม",
+  "ex": {
+   "zh": "老师反问了我一个问题。",
+   "py": "Lǎoshī fǎnwèn le wǒ yí ge wèntí.",
+   "en": "The teacher asked me a question in return.",
+   "th": "ครูย้อนถามฉันหนึ่งคำถาม"
+  }
+ },
+ {
+  "h": "反之",
+  "p": "fǎn zhī",
+  "en": "conversely",
+  "th": "ในทางกลับกัน",
+  "ex": {
+   "zh": "努力会成功,反之会失败。",
+   "py": "Nǔlì huì chénggōng, fǎnzhī huì shībài.",
+   "en": "Effort brings success; conversely, you will fail.",
+   "th": "ความพยายามนำไปสู่ความสำเร็จ ในทางกลับกันจะล้มเหลว"
+  }
+ },
+ {
+  "h": "泛滥",
+  "p": "fàn làn",
+  "en": "to flood",
+  "th": "ท่วม",
+  "ex": {
+   "zh": "大雨使河水泛滥。",
+   "py": "Dàyǔ shǐ héshuǐ fànlàn.",
+   "en": "Heavy rain caused the river to flood.",
+   "th": "ฝนตกหนักทำให้แม่น้ำล้นตลิ่ง"
+  }
+ },
+ {
+  "h": "范畴",
+  "p": "fàn chóu",
+  "en": "category",
+  "th": "หมวดหมู่",
+  "ex": {
+   "zh": "这属于哲学范畴。",
+   "py": "Zhè shǔyú zhéxué fànchóu.",
+   "en": "This belongs to the category of philosophy.",
+   "th": "สิ่งนี้อยู่ในหมวดปรัชญา"
+  }
+ },
+ {
+  "h": "贩卖",
+  "p": "fàn mài",
+  "en": "to sell",
+  "th": "ขาย",
+  "ex": {
+   "zh": "他在街上贩卖水果。",
+   "py": "Tā zài jiē shàng fànmài shuǐguǒ.",
+   "en": "He sells fruit on the street.",
+   "th": "เขาขายผลไม้ริมถนน"
+  }
+ },
+ {
+  "h": "方位",
+  "p": "fāng wèi",
+  "en": "direction",
+  "th": "ทิศทาง",
+  "ex": {
+   "zh": "我分不清东南西北的方位。",
+   "py": "Wǒ fēn bù qīng dōng nán xī běi de fāngwèi.",
+   "en": "I can't tell which direction is which.",
+   "th": "ฉันแยกทิศเหนือใต้ออกตะวันไม่ออก"
+  }
+ },
+ {
+  "h": "方言",
+  "p": "Fāng yán",
+  "en": "dialect",
+  "th": "ภาษาถิ่น",
+  "ex": {
+   "zh": "他会说四川方言。",
+   "py": "Tā huì shuō Sìchuān fāngyán.",
+   "en": "He can speak the Sichuan dialect.",
+   "th": "เขาพูดภาษาถิ่นเสฉวนได้"
+  }
+ },
+ {
+  "h": "方针",
+  "p": "fāng zhēn",
+  "en": "policy",
+  "th": "แนวนโยบาย",
+  "ex": {
+   "zh": "这是国家的基本方针。",
+   "py": "Zhè shì guójiā de jīběn fāngzhēn.",
+   "en": "This is the country's basic policy.",
+   "th": "นี่คือแนวนโยบายพื้นฐานของประเทศ"
+  }
+ },
+ {
+  "h": "防守",
+  "p": "fáng shǒu",
+  "en": "to defend",
+  "th": "ป้องกัน",
+  "ex": {
+   "zh": "球队采取了防守战术。",
+   "py": "Qiúduì cǎiqǔ le fángshǒu zhànshù.",
+   "en": "The team adopted defensive tactics.",
+   "th": "ทีมใช้กลยุทธ์เน้นการป้องกัน"
+  }
+ },
+ {
+  "h": "防疫",
+  "p": "fáng yì",
+  "en": "epidemic prevention",
+  "th": "ป้องกันโรคระบาด",
+  "ex": {
+   "zh": "医院做好了防疫工作。",
+   "py": "Yīyuàn zuòhǎo le fángyì gōngzuò.",
+   "en": "The hospital has done its epidemic prevention work well.",
+   "th": "โรงพยาบาลเตรียมงานป้องกันโรคระบาดไว้ดีแล้ว"
+  }
+ },
+ {
+  "h": "防御",
+  "p": "fáng yù",
+  "en": "defense",
+  "th": "การป้องกัน",
+  "ex": {
+   "zh": "这个国家加强了防御。",
+   "py": "Zhège guójiā jiāqiáng le fángyù.",
+   "en": "This country strengthened its defense.",
+   "th": "ประเทศนี้เสริมการป้องกันให้แข็งแกร่ง"
+  }
+ },
+ {
+  "h": "防止",
+  "p": "fáng zhǐ",
+  "en": "to prevent",
+  "th": "ป้องกัน",
+  "ex": {
+   "zh": "我们要防止火灾发生。",
+   "py": "Wǒmen yào fángzhǐ huǒzāi fāshēng.",
+   "en": "We must prevent fires from occurring.",
+   "th": "เราต้องป้องกันไม่ให้เกิดไฟไหม้"
+  }
+ },
+ {
+  "h": "防治",
+  "p": "fáng zhì",
+  "en": "prevention and treatment",
+  "th": "ป้องกันและรักษา",
+  "ex": {
+   "zh": "政府重视疾病的防治。",
+   "py": "Zhèngfǔ zhòngshì jíbìng de fángzhì.",
+   "en": "The government values disease prevention and treatment.",
+   "th": "รัฐบาลให้ความสำคัญกับการป้องกันและรักษาโรค"
+  }
+ },
+ {
+  "h": "纺织",
+  "p": "fǎng zhī",
+  "en": "textile",
+  "th": "สิ่งทอ",
+  "ex": {
+   "zh": "这个城市的纺织业很发达。",
+   "py": "Zhège chéngshì de fǎngzhīyè hěn fādá.",
+   "en": "This city has a well-developed textile industry.",
+   "th": "เมืองนี้มีอุตสาหกรรมสิ่งทอที่เจริญมาก"
+  }
+ },
+ {
+  "h": "放大",
+  "p": "fàng dà",
+  "en": "to enlarge",
+  "th": "ขยาย",
+  "ex": {
+   "zh": "请把这张照片放大。",
+   "py": "Qǐng bǎ zhè zhāng zhàopiàn fàngdà.",
+   "en": "Please enlarge this photo.",
+   "th": "กรุณาขยายรูปนี้ให้ใหญ่ขึ้น"
+  }
+ },
+ {
+  "h": "放射",
+  "p": "fàng shè",
+  "en": "to radiate",
+  "th": "แผ่รังสี",
+  "ex": {
+   "zh": "这种物质会放射出热量。",
+   "py": "Zhè zhǒng wùzhì huì fàngshè chū rèliàng.",
+   "en": "This substance radiates heat.",
+   "th": "สารนี้แผ่ความร้อนออกมา"
+  }
+ },
+ {
+  "h": "放手",
+  "p": "fàng shǒu",
+  "en": "to let go",
+  "th": "ปล่อยมือ",
+  "ex": {
+   "zh": "你放手,让他自己试试。",
+   "py": "Nǐ fàngshǒu, ràng tā zìjǐ shìshi.",
+   "en": "Let go and let him try it himself.",
+   "th": "คุณปล่อยมือ ให้เขาลองทำเอง"
+  }
+ },
+ {
+  "h": "飞禽走兽",
+  "p": "fēi qín zǒu shòu",
+  "en": "birds and beasts",
+  "th": "นกและสัตว์ป่า",
+  "ex": {
+   "zh": "森林里有各种飞禽走兽。",
+   "py": "Sēnlín lǐ yǒu gèzhǒng fēiqín zǒushòu.",
+   "en": "The forest has all kinds of birds and beasts.",
+   "th": "ในป่ามีนกและสัตว์ป่านานาชนิด"
+  }
+ },
+ {
+  "h": "飞翔",
+  "p": "fēi xiáng",
+  "en": "to soar",
+  "th": "บินร่อน",
+  "ex": {
+   "zh": "老鹰在天空飞翔。",
+   "py": "Lǎoyīng zài tiānkōng fēixiáng.",
+   "en": "The eagle soars in the sky.",
+   "th": "เหยี่ยวบินร่อนอยู่บนท้องฟ้า"
+  }
+ },
+ {
+  "h": "飞跃",
+  "p": "fēi yuè",
+  "en": "to leap",
+  "th": "ก้าวกระโดด",
+  "ex": {
+   "zh": "这是科学上的一次飞跃。",
+   "py": "Zhè shì kēxué shàng de yí cì fēiyuè.",
+   "en": "This is a leap forward in science.",
+   "th": "นี่คือก้าวกระโดดครั้งสำคัญของวิทยาศาสตร์"
+  }
+ },
+ {
+  "h": "非法",
+  "p": "fēi fǎ",
+  "en": "illegal",
+  "th": "ผิดกฎหมาย",
+  "ex": {
+   "zh": "非法停车会被罚款。",
+   "py": "Fēifǎ tíngchē huì bèi fákuǎn.",
+   "en": "Parking illegally will get you fined.",
+   "th": "จอดรถผิดกฎหมายจะถูกปรับ"
+  }
+ },
+ {
+  "h": "肥沃",
+  "p": "féi wò",
+  "en": "fertile",
+  "th": "อุดมสมบูรณ์",
+  "ex": {
+   "zh": "这里的土地很肥沃。",
+   "py": "Zhèlǐ de tǔdì hěn féiwò.",
+   "en": "The land here is very fertile.",
+   "th": "ดินที่นี่อุดมสมบูรณ์มาก"
+  }
+ },
+ {
+  "h": "匪徒",
+  "p": "fěi tú",
+  "en": "gangster",
+  "th": "อันธพาล",
+  "ex": {
+   "zh": "警察抓住了那些匪徒。",
+   "py": "Jǐngchá zhuāzhù le nàxiē fěitú.",
+   "en": "The police caught those gangsters.",
+   "th": "ตำรวจจับกุมพวกอันธพาลเหล่านั้นได้"
+  }
+ },
+ {
+  "h": "诽谤",
+  "p": "fěi bàng",
+  "en": "to slander",
+  "th": "ใส่ร้าย",
+  "ex": {
+   "zh": "他诽谤别人,被起诉了。",
+   "py": "Tā fěibàng biéren, bèi qǐsù le.",
+   "en": "He slandered others and was sued.",
+   "th": "เขาใส่ร้ายผู้อื่นจึงถูกฟ้อง"
+  }
+ },
+ {
+  "h": "废除",
+  "p": "fèi chú",
+  "en": "to abolish",
+  "th": "ยกเลิก",
+  "ex": {
+   "zh": "这项旧制度已经被废除了。",
+   "py": "Zhè xiàng jiù zhìdù yǐjīng bèi fèichú le.",
+   "en": "This old system has been abolished.",
+   "th": "ระบบเก่านี้ถูกยกเลิกไปแล้ว"
+  }
+ },
+ {
+  "h": "废墟",
+  "p": "fèi xū",
+  "en": "ruins",
+  "th": "ซากปรักหักพัง",
+  "ex": {
+   "zh": "地震后城市变成了废墟。",
+   "py": "Dìzhèn hòu chéngshì biànchéng le fèixū.",
+   "en": "After the earthquake the city became ruins.",
+   "th": "หลังแผ่นดินไหว เมืองกลายเป็นซากปรักหักพัง"
+  }
+ },
+ {
+  "h": "沸腾",
+  "p": "fèi téng",
+  "en": "to boil",
+  "th": "เดือด",
+  "ex": {
+   "zh": "水已经沸腾了。",
+   "py": "Shuǐ yǐjīng fèiténg le.",
+   "en": "The water is already boiling.",
+   "th": "น้ำเดือดแล้ว"
+  }
+ },
+ {
+  "h": "分辨",
+  "p": "fēn biàn",
+  "en": "to distinguish",
+  "th": "แยกแยะ",
+  "ex": {
+   "zh": "我分辨不出真假。",
+   "py": "Wǒ fēnbiàn bù chū zhēnjiǎ.",
+   "en": "I can't tell real from fake.",
+   "th": "ฉันแยกไม่ออกว่าจริงหรือปลอม"
+  }
+ },
+ {
+  "h": "分寸",
+  "p": "fēn cun",
+  "en": "sense of propriety",
+  "th": "ความเหมาะสม",
+  "ex": {
+   "zh": "他说话很有分寸。",
+   "py": "Tā shuōhuà hěn yǒu fēncun.",
+   "en": "He speaks with a good sense of propriety.",
+   "th": "เขาพูดจาได้เหมาะสมรู้ที่ควรไม่ควร"
+  }
+ },
+ {
+  "h": "分红",
+  "p": "fēn hóng",
+  "en": "dividend",
+  "th": "เงินปันผล",
+  "ex": {
+   "zh": "年底股东可以分红。",
+   "py": "Niándǐ gǔdōng kěyǐ fēnhóng.",
+   "en": "Shareholders can receive dividends at year end.",
+   "th": "ปลายปีผู้ถือหุ้นจะได้รับเงินปันผล"
+  }
+ },
+ {
+  "h": "分解",
+  "p": "fēn jiě",
+  "en": "to decompose",
+  "th": "ย่อยสลาย",
+  "ex": {
+   "zh": "细菌可以分解垃圾。",
+   "py": "Xìjūn kěyǐ fēnjiě lājī.",
+   "en": "Bacteria can break down garbage.",
+   "th": "แบคทีเรียย่อยสลายขยะได้"
+  }
+ },
+ {
+  "h": "分量",
+  "p": "fēn liàng",
+  "en": "weight",
+  "th": "น้ำหนัก",
+  "ex": {
+   "zh": "他在公司说话很有分量。",
+   "py": "Tā zài gōngsī shuōhuà hěn yǒu fènliàng.",
+   "en": "His words carry a lot of weight in the company.",
+   "th": "คำพูดของเขาในบริษัทมีน้ำหนักมาก"
+  }
+ },
+ {
+  "h": "分裂",
+  "p": "fēn liè",
+  "en": "to split",
+  "th": "แตกแยก",
+  "ex": {
+   "zh": "这个国家后来分裂了。",
+   "py": "Zhège guójiā hòulái fēnliè le.",
+   "en": "This country later split apart.",
+   "th": "ประเทศนี้แตกแยกในเวลาต่อมา"
+  }
+ },
+ {
+  "h": "分泌",
+  "p": "fēn mì",
+  "en": "to secrete",
+  "th": "หลั่ง",
+  "ex": {
+   "zh": "胃会分泌胃酸。",
+   "py": "Wèi huì fēnmì wèisuān.",
+   "en": "The stomach secretes gastric acid.",
+   "th": "กระเพาะอาหารหลั่งกรดออกมา"
+  }
+ },
+ {
+  "h": "分明",
+  "p": "fēn míng",
+  "en": "clearly",
+  "th": "ชัดเจน",
+  "ex": {
+   "zh": "他分明说过要来。",
+   "py": "Tā fēnmíng shuō guo yào lái.",
+   "en": "He clearly said he would come.",
+   "th": "เขาพูดชัดเจนว่าจะมา"
+  }
+ },
+ {
+  "h": "分歧",
+  "p": "fēn qí",
+  "en": "disagreement",
+  "th": "ความเห็นต่าง",
+  "ex": {
+   "zh": "双方在价格上有分歧。",
+   "py": "Shuāngfāng zài jiàgé shàng yǒu fēnqí.",
+   "en": "The two sides disagree on the price.",
+   "th": "ทั้งสองฝ่ายมีความเห็นต่างเรื่องราคา"
+  }
+ },
+ {
+  "h": "分散",
+  "p": "fēn sàn",
+  "en": "to scatter",
+  "th": "กระจาย",
+  "ex": {
+   "zh": "人群慢慢分散了。",
+   "py": "Rénqún mànmàn fēnsàn le.",
+   "en": "The crowd slowly dispersed.",
+   "th": "ฝูงชนค่อยๆ กระจายตัว"
+  }
+ },
+ {
+  "h": "分手",
+  "p": "fēn shǒu",
+  "en": "to break up",
+  "th": "เลิกกัน",
+  "ex": {
+   "zh": "他们上个月分手了。",
+   "py": "Tāmen shàng ge yuè fēnshǒu le.",
+   "en": "They broke up last month.",
+   "th": "พวกเขาเลิกกันเมื่อเดือนที่แล้ว"
+  }
+ },
+ {
+  "h": "吩咐",
+  "p": "fēn fù",
+  "en": "to instruct",
+  "th": "สั่งการ",
+  "ex": {
+   "zh": "妈妈吩咐我早点回家。",
+   "py": "Māma fēnfù wǒ zǎodiǎn huíjiā.",
+   "en": "Mom told me to come home early.",
+   "th": "แม่สั่งให้ฉันกลับบ้านเร็วๆ"
+  }
+ },
+ {
+  "h": "坟墓",
+  "p": "fén mù",
+  "en": "tomb",
+  "th": "สุสาน",
+  "ex": {
+   "zh": "清明节人们去扫坟墓。",
+   "py": "Qīngmíngjié rénmen qù sǎo fénmù.",
+   "en": "On Qingming people go to sweep the tombs.",
+   "th": "วันเช็งเม้งผู้คนไปทำความสะอาดสุสาน"
+  }
+ },
+ {
+  "h": "粉末",
+  "p": "fěn mò",
+  "en": "powder",
+  "th": "ผง",
+  "ex": {
+   "zh": "把药片磨成粉末。",
+   "py": "Bǎ yàopiàn mó chéng fěnmò.",
+   "en": "Grind the pill into powder.",
+   "th": "บดยาเม็ดให้เป็นผง"
+  }
+ },
+ {
+  "h": "粉色",
+  "p": "fěn sè",
+  "en": "pink",
+  "th": "สีชมพู",
+  "ex": {
+   "zh": "她穿了一件粉色的裙子。",
+   "py": "Tā chuān le yí jiàn fěnsè de qúnzi.",
+   "en": "She wore a pink dress.",
+   "th": "เธอสวมกระโปรงสีชมพู"
+  }
+ },
+ {
+  "h": "粉碎",
+  "p": "fěn suì",
+  "en": "to smash",
+  "th": "บดขยี้",
+  "ex": {
+   "zh": "花瓶掉在地上摔得粉碎。",
+   "py": "Huāpíng diào zài dìshàng shuāi de fěnsuì.",
+   "en": "The vase fell and shattered to pieces.",
+   "th": "แจกันตกพื้นแตกละเอียด"
+  }
+ },
+ {
+  "h": "丰满",
+  "p": "Fēng mǎn",
+  "en": "plump",
+  "th": "อวบอิ่ม",
+  "ex": {
+   "zh": "这个婴儿长得很丰满。",
+   "py": "Zhège yīng'ér zhǎng de hěn fēngmǎn.",
+   "en": "This baby is nice and plump.",
+   "th": "เด็กทารกคนนี้อวบอิ่มน่ารัก"
+  }
+ },
+ {
+  "h": "丰盛",
+  "p": "fēng shèng",
+  "en": "sumptuous",
+  "th": "เลิศรส",
+  "ex": {
+   "zh": "妈妈准备了丰盛的晚餐。",
+   "py": "Māma zhǔnbèi le fēngshèng de wǎncān.",
+   "en": "Mom prepared a sumptuous dinner.",
+   "th": "แม่เตรียมอาหารเย็นมื้อใหญ่"
+  }
+ },
+ {
+  "h": "丰收",
+  "p": "fēng shōu",
+  "en": "bumper harvest",
+  "th": "เก็บเกี่ยวได้ผลดี",
+  "ex": {
+   "zh": "今年农民喜获丰收。",
+   "py": "Jīnnián nóngmín xǐ huò fēngshōu.",
+   "en": "Farmers happily had a bumper harvest this year.",
+   "th": "ปีนี้ชาวนาเก็บเกี่ยวผลผลิตได้อย่างล้นหลาม"
+  }
+ },
+ {
+  "h": "风暴",
+  "p": "fēng bào",
+  "en": "storm",
+  "th": "พายุ",
+  "ex": {
+   "zh": "海上刮起了风暴。",
+   "py": "Hǎishàng guā qǐ le fēngbào.",
+   "en": "A storm rose over the sea.",
+   "th": "เกิดพายุขึ้นกลางทะเล"
+  }
+ },
+ {
+  "h": "风度",
+  "p": "fēng dù",
+  "en": "elegant demeanor",
+  "th": "บุคลิกสง่างาม",
+  "ex": {
+   "zh": "他很有绅士风度。",
+   "py": "Tā hěn yǒu shēnshì fēngdù.",
+   "en": "He has a gentlemanly demeanor.",
+   "th": "เขามีบุคลิกสง่างามแบบสุภาพบุรุษ"
+  }
+ },
+ {
+  "h": "风光",
+  "p": "fēng guāng",
+  "en": "scenery",
+  "th": "ทิวทัศน์",
+  "ex": {
+   "zh": "这里的风光十分秀丽。",
+   "py": "Zhèlǐ de fēngguāng shífēn xiùlì.",
+   "en": "The scenery here is extremely beautiful.",
+   "th": "ทิวทัศน์ที่นี่งดงามมาก"
+  }
+ },
+ {
+  "h": "风气",
+  "p": "fēng qì",
+  "en": "social trend",
+  "th": "ค่านิยมทางสังคม",
+  "ex": {
+   "zh": "我们要培养良好的社会风气。",
+   "py": "Wǒmen yào péiyǎng liánghǎo de shèhuì fēngqì.",
+   "en": "We should foster a good social atmosphere.",
+   "th": "เราต้องส่งเสริมค่านิยมที่ดีของสังคม"
+  }
+ },
+ {
+  "h": "风趣",
+  "p": "fēng qù",
+  "en": "humorous",
+  "th": "ตลกขบขัน",
+  "ex": {
+   "zh": "他说话很风趣。",
+   "py": "Tā shuōhuà hěn fēngqù.",
+   "en": "He is very witty when he talks.",
+   "th": "เขาพูดจาตลกมีอารมณ์ขัน"
+  }
+ },
+ {
+  "h": "风土人情",
+  "p": "fēng tǔ rén qíng",
+  "en": "local customs",
+  "th": "ประเพณีท้องถิ่น",
+  "ex": {
+   "zh": "旅行可以了解各地风土人情。",
+   "py": "Lǚxíng kěyǐ liǎojiě gèdì fēngtǔ rénqíng.",
+   "en": "Traveling lets you learn local customs everywhere.",
+   "th": "การท่องเที่ยวทำให้เรารู้จักประเพณีท้องถิ่น"
+  }
+ },
+ {
+  "h": "风味",
+  "p": "fēng wèi",
+  "en": "distinctive flavor",
+  "th": "รสชาติเฉพาะถิ่น",
+  "ex": {
+   "zh": "这道菜很有地方风味。",
+   "py": "Zhè dào cài hěn yǒu dìfāng fēngwèi.",
+   "en": "This dish has a distinct local flavor.",
+   "th": "อาหารจานนี้มีรสชาติเฉพาะถิ่น"
+  }
+ },
+ {
+  "h": "封闭",
+  "p": "fēng bì",
+  "en": "to seal off",
+  "th": "ปิด",
+  "ex": {
+   "zh": "因为疫情,小区被封闭了。",
+   "py": "Yīnwèi yìqíng, xiǎoqū bèi fēngbì le.",
+   "en": "The neighborhood was sealed off because of the epidemic.",
+   "th": "ชุมชนถูกปิดเพราะโรคระบาด"
+  }
+ },
+ {
+  "h": "封建",
+  "p": "fēng jiàn",
+  "en": "feudal",
+  "th": "ศักดินา",
+  "ex": {
+   "zh": "封建社会持续了两千多年。",
+   "py": "Fēngjiàn shèhuì chíxù le liǎng qiān duō nián.",
+   "en": "Feudal society lasted over two thousand years.",
+   "th": "สังคมศักดินายืนยาวกว่าสองพันปี"
+  }
+ },
+ {
+  "h": "封锁",
+  "p": "fēng suǒ",
+  "en": "to blockade",
+  "th": "ปิดล้อม",
+  "ex": {
+   "zh": "军队封锁了边境。",
+   "py": "Jūnduì fēngsuǒ le biānjìng.",
+   "en": "The army blockaded the border.",
+   "th": "กองทัพปิดล้อมชายแดน"
+  }
+ },
+ {
+  "h": "锋利",
+  "p": "fēng lì",
+  "en": "sharp",
+  "th": "คม",
+  "ex": {
+   "zh": "这把刀非常锋利。",
+   "py": "Zhè bǎ dāo fēicháng fēnglì.",
+   "en": "This knife is very sharp.",
+   "th": "มีดเล่มนี้คมมาก"
+  }
+ },
+ {
+  "h": "逢",
+  "p": "féng",
+  "en": "to encounter",
+  "th": "พบเจอ",
+  "ex": {
+   "zh": "每逢过年,我都回老家。",
+   "py": "Měi féng guònián, wǒ dōu huí lǎojiā.",
+   "en": "Every New Year I go back to my hometown.",
+   "th": "ทุกครั้งที่ถึงตรุษจีน ฉันจะกลับบ้านเกิด"
+  }
+ }
+]

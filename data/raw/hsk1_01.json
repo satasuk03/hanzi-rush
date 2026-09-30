@@ -1,0 +1,602 @@
+[
+ {
+  "h": "睡觉",
+  "p": "shuìjiào",
+  "en": "to sleep",
+  "th": "นอน",
+  "ex": {
+   "zh": "我晚上十点睡觉。",
+   "py": "Wǒ wǎnshang shí diǎn shuìjiào.",
+   "en": "I go to sleep at ten at night.",
+   "th": "ฉันนอนตอนสี่ทุ่ม"
+  }
+ },
+ {
+  "h": "说话",
+  "p": "shuōhuà",
+  "en": "to speak; to talk",
+  "th": "พูด",
+  "ex": {
+   "zh": "请不要在这里说话。",
+   "py": "Qǐng búyào zài zhèlǐ shuōhuà.",
+   "en": "Please don't talk here.",
+   "th": "กรุณาอย่าพูดที่นี่"
+  }
+ },
+ {
+  "h": "四",
+  "p": "sì",
+  "en": "four",
+  "th": "สี่",
+  "ex": {
+   "zh": "我们家有四口人。",
+   "py": "Wǒmen jiā yǒu sì kǒu rén.",
+   "en": "There are four people in our family.",
+   "th": "ครอบครัวเรามีสี่คน"
+  }
+ },
+ {
+  "h": "岁",
+  "p": "suì",
+  "en": "years old",
+  "th": "ขวบ / ปี (อายุ)",
+  "ex": {
+   "zh": "我儿子今年五岁。",
+   "py": "Wǒ érzi jīnnián wǔ suì.",
+   "en": "My son is five years old this year.",
+   "th": "ลูกชายของฉันอายุห้าขวบปีนี้"
+  }
+ },
+ {
+  "h": "他",
+  "p": "tā",
+  "en": "he; him",
+  "th": "เขา (ผู้ชาย)",
+  "ex": {
+   "zh": "他是我的同学。",
+   "py": "Tā shì wǒ de tóngxué.",
+   "en": "He is my classmate.",
+   "th": "เขาเป็นเพื่อนร่วมชั้นของฉัน"
+  }
+ },
+ {
+  "h": "她",
+  "p": "tā",
+  "en": "she; her",
+  "th": "เธอ (ผู้หญิง)",
+  "ex": {
+   "zh": "她是我的老师。",
+   "py": "Tā shì wǒ de lǎoshī.",
+   "en": "She is my teacher.",
+   "th": "เธอเป็นครูของฉัน"
+  }
+ },
+ {
+  "h": "太",
+  "p": "tài",
+  "en": "too; extremely",
+  "th": "เกินไป / มาก",
+  "ex": {
+   "zh": "这个太贵了。",
+   "py": "Zhège tài guì le.",
+   "en": "This is too expensive.",
+   "th": "อันนี้แพงเกินไป"
+  }
+ },
+ {
+  "h": "天气",
+  "p": "tiānqì",
+  "en": "weather",
+  "th": "อากาศ",
+  "ex": {
+   "zh": "今天天气很好。",
+   "py": "Jīntiān tiānqì hěn hǎo.",
+   "en": "The weather is nice today.",
+   "th": "วันนี้อากาศดีมาก"
+  }
+ },
+ {
+  "h": "听",
+  "p": "tīng",
+  "en": "to listen",
+  "th": "ฟัง",
+  "ex": {
+   "zh": "我喜欢听音乐。",
+   "py": "Wǒ xǐhuan tīng yīnyuè.",
+   "en": "I like listening to music.",
+   "th": "ฉันชอบฟังเพลง"
+  }
+ },
+ {
+  "h": "同学",
+  "p": "tóngxué",
+  "en": "classmate",
+  "th": "เพื่อนร่วมชั้น",
+  "ex": {
+   "zh": "他是我的同学。",
+   "py": "Tā shì wǒ de tóngxué.",
+   "en": "He is my classmate.",
+   "th": "เขาเป็นเพื่อนร่วมชั้นของฉัน"
+  }
+ },
+ {
+  "h": "喂",
+  "p": "wéi",
+  "en": "hello (on the phone)",
+  "th": "ฮัลโหล",
+  "ex": {
+   "zh": "喂，你好！",
+   "py": "Wéi, nǐ hǎo!",
+   "en": "Hello, hi!",
+   "th": "ฮัลโหล สวัสดี"
+  }
+ },
+ {
+  "h": "我",
+  "p": "wǒ",
+  "en": "I; me",
+  "th": "ฉัน",
+  "ex": {
+   "zh": "我是学生。",
+   "py": "Wǒ shì xuésheng.",
+   "en": "I am a student.",
+   "th": "ฉันเป็นนักเรียน"
+  }
+ },
+ {
+  "h": "我们",
+  "p": "wǒmen",
+  "en": "we; us",
+  "th": "พวกเรา",
+  "ex": {
+   "zh": "我们都爱吃米饭。",
+   "py": "Wǒmen dōu ài chī mǐfàn.",
+   "en": "We all love eating rice.",
+   "th": "พวกเราทุกคนชอบกินข้าว"
+  }
+ },
+ {
+  "h": "五",
+  "p": "wǔ",
+  "en": "five",
+  "th": "ห้า",
+  "ex": {
+   "zh": "我有五个朋友。",
+   "py": "Wǒ yǒu wǔ gè péngyou.",
+   "en": "I have five friends.",
+   "th": "ฉันมีเพื่อนห้าคน"
+  }
+ },
+ {
+  "h": "喜欢",
+  "p": "xǐhuan",
+  "en": "to like",
+  "th": "ชอบ",
+  "ex": {
+   "zh": "我喜欢小狗。",
+   "py": "Wǒ xǐhuan xiǎo gǒu.",
+   "en": "I like puppies.",
+   "th": "ฉันชอบลูกสุนัข"
+  }
+ },
+ {
+  "h": "下",
+  "p": "xià",
+  "en": "down; below",
+  "th": "ล่าง / ลง",
+  "ex": {
+   "zh": "书在桌子下面。",
+   "py": "Shū zài zhuōzi xiàmiàn.",
+   "en": "The book is under the table.",
+   "th": "หนังสืออยู่ใต้โต๊ะ"
+  }
+ },
+ {
+  "h": "下午",
+  "p": "xiàwǔ",
+  "en": "afternoon",
+  "th": "ช่วงบ่าย",
+  "ex": {
+   "zh": "我下午去商店。",
+   "py": "Wǒ xiàwǔ qù shāngdiàn.",
+   "en": "I go to the shop in the afternoon.",
+   "th": "ตอนบ่ายฉันไปร้านค้า"
+  }
+ },
+ {
+  "h": "下雨",
+  "p": "xiàyǔ",
+  "en": "to rain",
+  "th": "ฝนตก",
+  "ex": {
+   "zh": "今天下雨了。",
+   "py": "Jīntiān xiàyǔ le.",
+   "en": "It is raining today.",
+   "th": "วันนี้ฝนตก"
+  }
+ },
+ {
+  "h": "先生",
+  "p": "xiānsheng",
+  "en": "Mr.; sir",
+  "th": "คุณ (ผู้ชาย) / สุภาพบุรุษ",
+  "ex": {
+   "zh": "王先生在家吗？",
+   "py": "Wáng xiānsheng zài jiā ma?",
+   "en": "Is Mr. Wang at home?",
+   "th": "คุณหวังอยู่บ้านไหม"
+  }
+ },
+ {
+  "h": "现在",
+  "p": "xiànzài",
+  "en": "now",
+  "th": "ตอนนี้",
+  "ex": {
+   "zh": "现在几点？",
+   "py": "Xiànzài jǐ diǎn?",
+   "en": "What time is it now?",
+   "th": "ตอนนี้กี่โมง"
+  }
+ },
+ {
+  "h": "想",
+  "p": "xiǎng",
+  "en": "to want; to think",
+  "th": "อยาก / คิด",
+  "ex": {
+   "zh": "我想喝茶。",
+   "py": "Wǒ xiǎng hē chá.",
+   "en": "I want to drink tea.",
+   "th": "ฉันอยากดื่มชา"
+  }
+ },
+ {
+  "h": "小",
+  "p": "xiǎo",
+  "en": "small",
+  "th": "เล็ก",
+  "ex": {
+   "zh": "这只猫很小。",
+   "py": "Zhè zhī māo hěn xiǎo.",
+   "en": "This cat is very small.",
+   "th": "แมวตัวนี้เล็กมาก"
+  }
+ },
+ {
+  "h": "小姐",
+  "p": "xiǎojie",
+  "en": "Miss; young lady",
+  "th": "คุณ (ผู้หญิง) / นางสาว",
+  "ex": {
+   "zh": "李小姐是我的老师。",
+   "py": "Lǐ xiǎojie shì wǒ de lǎoshī.",
+   "en": "Miss Li is my teacher.",
+   "th": "คุณหลี่เป็นครูของฉัน"
+  }
+ },
+ {
+  "h": "些",
+  "p": "xiē",
+  "en": "some; a few",
+  "th": "บาง / ไม่กี่",
+  "ex": {
+   "zh": "我买了一些水果。",
+   "py": "Wǒ mǎile yìxiē shuǐguǒ.",
+   "en": "I bought some fruit.",
+   "th": "ฉันซื้อผลไม้มาบ้าง"
+  }
+ },
+ {
+  "h": "写",
+  "p": "xiě",
+  "en": "to write",
+  "th": "เขียน",
+  "ex": {
+   "zh": "请写你的名字。",
+   "py": "Qǐng xiě nǐ de míngzi.",
+   "en": "Please write your name.",
+   "th": "กรุณาเขียนชื่อของคุณ"
+  }
+ },
+ {
+  "h": "谢谢",
+  "p": "xièxie",
+  "en": "thank you",
+  "th": "ขอบคุณ",
+  "ex": {
+   "zh": "谢谢你的帮助。",
+   "py": "Xièxie nǐ de bāngzhù.",
+   "en": "Thank you for your help.",
+   "th": "ขอบคุณสำหรับความช่วยเหลือ"
+  }
+ },
+ {
+  "h": "星期",
+  "p": "xīngqī",
+  "en": "week; day of the week",
+  "th": "สัปดาห์ / วัน (ในสัปดาห์)",
+  "ex": {
+   "zh": "今天星期几？",
+   "py": "Jīntiān xīngqī jǐ?",
+   "en": "What day of the week is it today?",
+   "th": "วันนี้วันอะไร"
+  }
+ },
+ {
+  "h": "学生",
+  "p": "xuésheng",
+  "en": "student",
+  "th": "นักเรียน",
+  "ex": {
+   "zh": "这个学生很聪明。",
+   "py": "Zhège xuésheng hěn cōngming.",
+   "en": "This student is very smart.",
+   "th": "นักเรียนคนนี้ฉลาดมาก"
+  }
+ },
+ {
+  "h": "学习",
+  "p": "xuéxí",
+  "en": "to study; to learn",
+  "th": "เรียน / ศึกษา",
+  "ex": {
+   "zh": "我每天学习汉语。",
+   "py": "Wǒ měi tiān xuéxí Hànyǔ.",
+   "en": "I study Chinese every day.",
+   "th": "ฉันเรียนภาษาจีนทุกวัน"
+  }
+ },
+ {
+  "h": "学校",
+  "p": "xuéxiào",
+  "en": "school",
+  "th": "โรงเรียน",
+  "ex": {
+   "zh": "我的学校很大。",
+   "py": "Wǒ de xuéxiào hěn dà.",
+   "en": "My school is very big.",
+   "th": "โรงเรียนของฉันใหญ่มาก"
+  }
+ },
+ {
+  "h": "一",
+  "p": "yī",
+  "en": "one",
+  "th": "หนึ่ง",
+  "ex": {
+   "zh": "我有一个哥哥。",
+   "py": "Wǒ yǒu yí gè gēge.",
+   "en": "I have one older brother.",
+   "th": "ฉันมีพี่ชายหนึ่งคน"
+  }
+ },
+ {
+  "h": "衣服",
+  "p": "yīfu",
+  "en": "clothes",
+  "th": "เสื้อผ้า",
+  "ex": {
+   "zh": "这件衣服很漂亮。",
+   "py": "Zhè jiàn yīfu hěn piàoliang.",
+   "en": "This piece of clothing is very pretty.",
+   "th": "เสื้อผ้าตัวนี้สวยมาก"
+  }
+ },
+ {
+  "h": "医生",
+  "p": "yīshēng",
+  "en": "doctor",
+  "th": "หมอ",
+  "ex": {
+   "zh": "我爸爸是医生。",
+   "py": "Wǒ bàba shì yīshēng.",
+   "en": "My dad is a doctor.",
+   "th": "พ่อของฉันเป็นหมอ"
+  }
+ },
+ {
+  "h": "医院",
+  "p": "yīyuàn",
+  "en": "hospital",
+  "th": "โรงพยาบาล",
+  "ex": {
+   "zh": "医院在学校后面。",
+   "py": "Yīyuàn zài xuéxiào hòumian.",
+   "en": "The hospital is behind the school.",
+   "th": "โรงพยาบาลอยู่ข้างหลังโรงเรียน"
+  }
+ },
+ {
+  "h": "椅子",
+  "p": "yǐzi",
+  "en": "chair",
+  "th": "เก้าอี้",
+  "ex": {
+   "zh": "请坐这把椅子。",
+   "py": "Qǐng zuò zhè bǎ yǐzi.",
+   "en": "Please sit on this chair.",
+   "th": "เชิญนั่งเก้าอี้ตัวนี้"
+  }
+ },
+ {
+  "h": "有",
+  "p": "yǒu",
+  "en": "to have",
+  "th": "มี",
+  "ex": {
+   "zh": "我有一只猫。",
+   "py": "Wǒ yǒu yì zhī māo.",
+   "en": "I have a cat.",
+   "th": "ฉันมีแมวหนึ่งตัว"
+  }
+ },
+ {
+  "h": "月",
+  "p": "yuè",
+  "en": "month; moon",
+  "th": "เดือน / พระจันทร์",
+  "ex": {
+   "zh": "现在是十月。",
+   "py": "Xiànzài shì shí yuè.",
+   "en": "It is October now.",
+   "th": "ตอนนี้เป็นเดือนตุลาคม"
+  }
+ },
+ {
+  "h": "再见",
+  "p": "zàijiàn",
+  "en": "goodbye",
+  "th": "ลาก่อน",
+  "ex": {
+   "zh": "老师，再见！",
+   "py": "Lǎoshī, zàijiàn!",
+   "en": "Goodbye, teacher!",
+   "th": "ลาก่อนครับ/ค่ะ คุณครู"
+  }
+ },
+ {
+  "h": "在",
+  "p": "zài",
+  "en": "to be at; in; at",
+  "th": "อยู่ / ที่",
+  "ex": {
+   "zh": "我在家。",
+   "py": "Wǒ zài jiā.",
+   "en": "I am at home.",
+   "th": "ฉันอยู่บ้าน"
+  }
+ },
+ {
+  "h": "怎么",
+  "p": "zěnme",
+  "en": "how",
+  "th": "อย่างไร",
+  "ex": {
+   "zh": "这个字怎么读？",
+   "py": "Zhège zì zěnme dú?",
+   "en": "How do you read this character?",
+   "th": "ตัวอักษรนี้อ่านอย่างไร"
+  }
+ },
+ {
+  "h": "怎么样",
+  "p": "zěnmeyàng",
+  "en": "how about; how is it",
+  "th": "เป็นอย่างไรบ้าง",
+  "ex": {
+   "zh": "今天天气怎么样？",
+   "py": "Jīntiān tiānqì zěnmeyàng?",
+   "en": "How is the weather today?",
+   "th": "วันนี้อากาศเป็นอย่างไรบ้าง"
+  }
+ },
+ {
+  "h": "这",
+  "p": "zhè",
+  "en": "this",
+  "th": "นี้",
+  "ex": {
+   "zh": "这是我的手机。",
+   "py": "Zhè shì wǒ de shǒujī.",
+   "en": "This is my cell phone.",
+   "th": "นี่คือโทรศัพท์มือถือของฉัน"
+  }
+ },
+ {
+  "h": "中国",
+  "p": "Zhōngguó",
+  "en": "China",
+  "th": "ประเทศจีน",
+  "ex": {
+   "zh": "我想去中国旅行。",
+   "py": "Wǒ xiǎng qù Zhōngguó lǚxíng.",
+   "en": "I want to travel to China.",
+   "th": "ฉันอยากไปเที่ยวประเทศจีน"
+  }
+ },
+ {
+  "h": "中午",
+  "p": "zhōngwǔ",
+  "en": "noon",
+  "th": "เที่ยง",
+  "ex": {
+   "zh": "我中午吃米饭。",
+   "py": "Wǒ zhōngwǔ chī mǐfàn.",
+   "en": "I eat rice at noon.",
+   "th": "ตอนเที่ยงฉันกินข้าว"
+  }
+ },
+ {
+  "h": "住",
+  "p": "zhù",
+  "en": "to live; to stay",
+  "th": "อาศัยอยู่ / พัก",
+  "ex": {
+   "zh": "我住在北京。",
+   "py": "Wǒ zhù zài Běijīng.",
+   "en": "I live in Beijing.",
+   "th": "ฉันอาศัยอยู่ที่ปักกิ่ง"
+  }
+ },
+ {
+  "h": "桌子",
+  "p": "zhuōzi",
+  "en": "table; desk",
+  "th": "โต๊ะ",
+  "ex": {
+   "zh": "桌子上有一本书。",
+   "py": "Zhuōzi shàng yǒu yì běn shū.",
+   "en": "There is a book on the table.",
+   "th": "บนโต๊ะมีหนังสือหนึ่งเล่ม"
+  }
+ },
+ {
+  "h": "字",
+  "p": "zì",
+  "en": "character; word",
+  "th": "ตัวอักษร",
+  "ex": {
+   "zh": "这个字怎么写？",
+   "py": "Zhège zì zěnme xiě?",
+   "en": "How do you write this character?",
+   "th": "ตัวอักษรนี้เขียนอย่างไร"
+  }
+ },
+ {
+  "h": "昨天",
+  "p": "zuótiān",
+  "en": "yesterday",
+  "th": "เมื่อวานนี้",
+  "ex": {
+   "zh": "昨天我去了商店。",
+   "py": "Zuótiān wǒ qùle shāngdiàn.",
+   "en": "Yesterday I went to the shop.",
+   "th": "เมื่อวานฉันไปร้านค้า"
+  }
+ },
+ {
+  "h": "坐",
+  "p": "zuò",
+  "en": "to sit; to take (transport)",
+  "th": "นั่ง",
+  "ex": {
+   "zh": "请坐！",
+   "py": "Qǐng zuò!",
+   "en": "Please sit!",
+   "th": "เชิญนั่ง"
+  }
+ },
+ {
+  "h": "做",
+  "p": "zuò",
+  "en": "to do; to make",
+  "th": "ทำ",
+  "ex": {
+   "zh": "我在做饭。",
+   "py": "Wǒ zài zuòfàn.",
+   "en": "I am cooking.",
+   "th": "ฉันกำลังทำอาหาร"
+  }
+ }
+]

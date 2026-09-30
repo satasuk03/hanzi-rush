@@ -1,0 +1,1202 @@
+[
+ {
+  "h": "演讲",
+  "p": "yǎn jiǎng",
+  "en": "speech",
+  "th": "การกล่าวสุนทรพจน์",
+  "ex": {
+   "zh": "他的演讲很精彩。",
+   "py": "Tā de yǎnjiǎng hěn jīngcǎi.",
+   "en": "His speech was wonderful.",
+   "th": "สุนทรพจน์ของเขายอดเยี่ยมมาก"
+  }
+ },
+ {
+  "h": "演习",
+  "p": "yǎn xí",
+  "en": "drill",
+  "th": "การซ้อมรบ",
+  "ex": {
+   "zh": "军队正在进行演习。",
+   "py": "Jūnduì zhèngzài jìnxíng yǎnxí.",
+   "en": "The army is conducting a drill.",
+   "th": "กองทัพกำลังซ้อมรบ"
+  }
+ },
+ {
+  "h": "演绎",
+  "p": "yǎn yì",
+  "en": "to interpret",
+  "th": "ตีความ, แสดง",
+  "ex": {
+   "zh": "她演绎了一个感人的角色。",
+   "py": "Tā yǎnyì le yí ge gǎnrén de juésè.",
+   "en": "She portrayed a moving character.",
+   "th": "เธอแสดงตัวละครที่ซาบซึ้งใจ"
+  }
+ },
+ {
+  "h": "演奏",
+  "p": "yǎn zòu",
+  "en": "to perform music",
+  "th": "บรรเลง",
+  "ex": {
+   "zh": "他在音乐会上演奏钢琴。",
+   "py": "Tā zài yīnyuèhuì shàng yǎnzòu gāngqín.",
+   "en": "He played the piano at the concert.",
+   "th": "เขาบรรเลงเปียโนในคอนเสิร์ต"
+  }
+ },
+ {
+  "h": "厌恶",
+  "p": "yàn wù",
+  "en": "to loathe",
+  "th": "รังเกียจ",
+  "ex": {
+   "zh": "我很厌恶说谎的人。",
+   "py": "Wǒ hěn yànwù shuōhuǎng de rén.",
+   "en": "I really loathe people who lie.",
+   "th": "ฉันรังเกียจคนโกหกมาก"
+  }
+ },
+ {
+  "h": "验收",
+  "p": "yàn shōu",
+  "en": "to inspect and accept",
+  "th": "ตรวจรับ",
+  "ex": {
+   "zh": "新房子已经验收了。",
+   "py": "Xīn fángzi yǐjīng yànshōu le.",
+   "en": "The new house has been inspected and accepted.",
+   "th": "บ้านใหม่ตรวจรับเรียบร้อยแล้ว"
+  }
+ },
+ {
+  "h": "验证",
+  "p": "yàn zhèng",
+  "en": "to verify",
+  "th": "ตรวจสอบยืนยัน",
+  "ex": {
+   "zh": "科学家验证了这个结果。",
+   "py": "Kēxuéjiā yànzhèng le zhège jiéguǒ.",
+   "en": "The scientists verified this result.",
+   "th": "นักวิทยาศาสตร์ตรวจสอบผลลัพธ์นี้แล้ว"
+  }
+ },
+ {
+  "h": "氧气",
+  "p": "yǎng qì",
+  "en": "oxygen",
+  "th": "ออกซิเจน",
+  "ex": {
+   "zh": "山上的氧气比较少。",
+   "py": "Shān shàng de yǎngqì bǐjiào shǎo.",
+   "en": "There is less oxygen up on the mountain.",
+   "th": "บนภูเขามีออกซิเจนน้อยกว่า"
+  }
+ },
+ {
+  "h": "样品",
+  "p": "yàng pǐn",
+  "en": "sample",
+  "th": "ตัวอย่างสินค้า",
+  "ex": {
+   "zh": "商店送了我一个样品。",
+   "py": "Shāngdiàn sòng le wǒ yí ge yàngpǐn.",
+   "en": "The store gave me a sample.",
+   "th": "ร้านแถมตัวอย่างสินค้าให้ฉันหนึ่งชิ้น"
+  }
+ },
+ {
+  "h": "谣言",
+  "p": "yáo yán",
+  "en": "rumor",
+  "th": "ข่าวลือ",
+  "ex": {
+   "zh": "不要相信这些谣言。",
+   "py": "Búyào xiāngxìn zhèxiē yáoyán.",
+   "en": "Don't believe these rumors.",
+   "th": "อย่าเชื่อข่าวลือเหล่านี้"
+  }
+ },
+ {
+  "h": "摇摆",
+  "p": "yáo bǎi",
+  "en": "to sway",
+  "th": "โยกไปมา",
+  "ex": {
+   "zh": "树枝在风中摇摆。",
+   "py": "Shùzhī zài fēng zhōng yáobǎi.",
+   "en": "The branches sway in the wind.",
+   "th": "กิ่งไม้แกว่งไกวตามลม"
+  }
+ },
+ {
+  "h": "摇滚",
+  "p": "yáo gǔn",
+  "en": "rock music",
+  "th": "ดนตรีร็อก",
+  "ex": {
+   "zh": "他喜欢听摇滚。",
+   "py": "Tā xǐhuan tīng yáogǔn.",
+   "en": "He likes listening to rock music.",
+   "th": "เขาชอบฟังเพลงร็อก"
+  }
+ },
+ {
+  "h": "摇晃",
+  "p": "yáo huàng",
+  "en": "to shake",
+  "th": "โยก, สั่น",
+  "ex": {
+   "zh": "船在海上摇晃。",
+   "py": "Chuán zài hǎi shàng yáohuàng.",
+   "en": "The boat rocks on the sea.",
+   "th": "เรือโคลงเคลงในทะเล"
+  }
+ },
+ {
+  "h": "遥控",
+  "p": "yáo kòng",
+  "en": "remote control",
+  "th": "ควบคุมระยะไกล",
+  "ex": {
+   "zh": "我用遥控开电视。",
+   "py": "Wǒ yòng yáokòng kāi diànshì.",
+   "en": "I turn on the TV with the remote control.",
+   "th": "ฉันใช้รีโมตเปิดทีวี"
+  }
+ },
+ {
+  "h": "遥远",
+  "p": "yáo yuǎn",
+  "en": "distant",
+  "th": "ไกลลิบ",
+  "ex": {
+   "zh": "那是一个遥远的国家。",
+   "py": "Nà shì yí ge yáoyuǎn de guójiā.",
+   "en": "That is a distant country.",
+   "th": "นั่นคือประเทศที่อยู่ไกลแสนไกล"
+  }
+ },
+ {
+  "h": "咬牙切齿",
+  "p": "yǎo yá qiè chǐ",
+  "en": "to grind teeth in rage",
+  "th": "กัดฟันด้วยความโกรธ",
+  "ex": {
+   "zh": "他咬牙切齿地看着对手。",
+   "py": "Tā yǎoyá-qièchǐ de kànzhe duìshǒu.",
+   "en": "He glared at his opponent, gnashing his teeth.",
+   "th": "เขามองคู่ต่อสู้ด้วยความแค้นจนกัดฟัน"
+  }
+ },
+ {
+  "h": "要不然",
+  "p": "yào bù rán",
+  "en": "otherwise",
+  "th": "ไม่อย่างนั้น",
+  "ex": {
+   "zh": "快走吧，要不然会迟到。",
+   "py": "Kuài zǒu ba, yàobùrán huì chídào.",
+   "en": "Hurry up, otherwise we will be late.",
+   "th": "รีบไปเถอะ ไม่อย่างนั้นจะสาย"
+  }
+ },
+ {
+  "h": "要点",
+  "p": "yào diǎn",
+  "en": "main point",
+  "th": "ประเด็นสำคัญ",
+  "ex": {
+   "zh": "请说一下这篇文章的要点。",
+   "py": "Qǐng shuō yíxià zhè piān wénzhāng de yàodiǎn.",
+   "en": "Please tell me the main points of this article.",
+   "th": "ช่วยบอกประเด็นสำคัญของบทความนี้หน่อย"
+  }
+ },
+ {
+  "h": "要命",
+  "p": "yào mìng",
+  "en": "extremely",
+  "th": "แย่เหลือเกิน",
+  "ex": {
+   "zh": "我今天累得要命。",
+   "py": "Wǒ jīntiān lèi de yàomìng.",
+   "en": "I am dead tired today.",
+   "th": "วันนี้ฉันเหนื่อยแทบตาย"
+  }
+ },
+ {
+  "h": "要素",
+  "p": "yào sù",
+  "en": "key factor",
+  "th": "องค์ประกอบสำคัญ",
+  "ex": {
+   "zh": "健康是幸福的重要要素。",
+   "py": "Jiànkāng shì xìngfú de zhòngyào yàosù.",
+   "en": "Health is an important element of happiness.",
+   "th": "สุขภาพเป็นองค์ประกอบสำคัญของความสุข"
+  }
+ },
+ {
+  "h": "耀眼",
+  "p": "yào yǎn",
+  "en": "dazzling",
+  "th": "ส่องตาสว่างจ้า",
+  "ex": {
+   "zh": "阳光很耀眼。",
+   "py": "Yángguāng hěn yàoyǎn.",
+   "en": "The sunlight is dazzling.",
+   "th": "แสงแดดจ้าจนแสบตา"
+  }
+ },
+ {
+  "h": "野蛮",
+  "p": "yě mán",
+  "en": "barbaric",
+  "th": "ป่าเถื่อน",
+  "ex": {
+   "zh": "这种做法太野蛮了。",
+   "py": "Zhè zhǒng zuòfǎ tài yěmán le.",
+   "en": "This way of doing things is too barbaric.",
+   "th": "วิธีแบบนี้ป่าเถื่อนเกินไป"
+  }
+ },
+ {
+  "h": "野心",
+  "p": "yě xīn",
+  "en": "ambition",
+  "th": "ความทะเยอทะยาน",
+  "ex": {
+   "zh": "他是个有野心的人。",
+   "py": "Tā shì ge yǒu yěxīn de rén.",
+   "en": "He is an ambitious person.",
+   "th": "เขาเป็นคนทะเยอทะยาน"
+  }
+ },
+ {
+  "h": "一度",
+  "p": "yī dù",
+  "en": "for a time",
+  "th": "ครั้งหนึ่ง",
+  "ex": {
+   "zh": "他一度想放弃。",
+   "py": "Tā yídù xiǎng fàngqì.",
+   "en": "He once wanted to give up.",
+   "th": "ครั้งหนึ่งเขาเคยอยากยอมแพ้"
+  }
+ },
+ {
+  "h": "一帆风顺",
+  "p": "yī fān fēng shùn",
+  "en": "smooth sailing",
+  "th": "ราบรื่น",
+  "ex": {
+   "zh": "祝你一帆风顺！",
+   "py": "Zhù nǐ yìfān-fēngshùn!",
+   "en": "Wishing you smooth sailing!",
+   "th": "ขอให้เธอราบรื่นตลอดรอดฝั่ง"
+  }
+ },
+ {
+  "h": "一贯",
+  "p": "yī guàn",
+  "en": "consistent",
+  "th": "สม่ำเสมอ",
+  "ex": {
+   "zh": "他一贯守时。",
+   "py": "Tā yíguàn shǒushí.",
+   "en": "He has always been punctual.",
+   "th": "เขาตรงต่อเวลามาตลอด"
+  }
+ },
+ {
+  "h": "一举两得",
+  "p": "yī jǔ liǎng dé",
+  "en": "two birds, one stone",
+  "th": "ได้ประโยชน์สองต่อ",
+  "ex": {
+   "zh": "这样做一举两得。",
+   "py": "Zhèyàng zuò yìjǔ-liǎngdé.",
+   "en": "Doing it this way kills two birds with one stone.",
+   "th": "ทำแบบนี้ได้ประโยชน์สองต่อ"
+  }
+ },
+ {
+  "h": "一流",
+  "p": "yī liú",
+  "en": "first-class",
+  "th": "ชั้นนำ",
+  "ex": {
+   "zh": "这家酒店是一流的。",
+   "py": "Zhè jiā jiǔdiàn shì yīliú de.",
+   "en": "This hotel is first-class.",
+   "th": "โรงแรมนี้ระดับชั้นนำ"
+  }
+ },
+ {
+  "h": "一律",
+  "p": "yī lǜ",
+  "en": "uniformly",
+  "th": "เหมือนกันหมด",
+  "ex": {
+   "zh": "学生一律穿校服。",
+   "py": "Xuésheng yílǜ chuān xiàofú.",
+   "en": "Students all wear school uniforms.",
+   "th": "นักเรียนทุกคนต้องใส่ชุดนักเรียนเหมือนกัน"
+  }
+ },
+ {
+  "h": "一目了然",
+  "p": "yī mù liǎo rán",
+  "en": "obvious at a glance",
+  "th": "เห็นได้ชัดในพริบตา",
+  "ex": {
+   "zh": "答案一目了然。",
+   "py": "Dá'àn yímù-liǎorán.",
+   "en": "The answer is clear at a glance.",
+   "th": "คำตอบเห็นได้ชัดในพริบตา"
+  }
+ },
+ {
+  "h": "一如既往",
+  "p": "yī rú jì wǎng",
+  "en": "as always",
+  "th": "เหมือนเดิมเสมอ",
+  "ex": {
+   "zh": "他一如既往地支持我。",
+   "py": "Tā yìrújìwǎng de zhīchí wǒ.",
+   "en": "He supports me just as always.",
+   "th": "เขาสนับสนุนฉันเหมือนเดิมเสมอ"
+  }
+ },
+ {
+  "h": "一丝不苟",
+  "p": "yī sī bù gǒu",
+  "en": "meticulous",
+  "th": "พิถีพิถัน",
+  "ex": {
+   "zh": "她做事一丝不苟。",
+   "py": "Tā zuòshì yìsī-bùgǒu.",
+   "en": "She works meticulously.",
+   "th": "เธอทำงานพิถีพิถันไม่ให้ผิดพลาด"
+  }
+ },
+ {
+  "h": "一向",
+  "p": "yī xiàng",
+  "en": "all along",
+  "th": "ตลอดมา",
+  "ex": {
+   "zh": "他一向很努力。",
+   "py": "Tā yíxiàng hěn nǔlì.",
+   "en": "He has always worked hard.",
+   "th": "เขาขยันมาโดยตลอด"
+  }
+ },
+ {
+  "h": "一再",
+  "p": "yī zài",
+  "en": "repeatedly",
+  "th": "ซ้ำแล้วซ้ำอีก",
+  "ex": {
+   "zh": "老师一再提醒我们。",
+   "py": "Lǎoshī yízài tíxǐng wǒmen.",
+   "en": "The teacher reminded us again and again.",
+   "th": "ครูเตือนพวกเราซ้ำแล้วซ้ำอีก"
+  }
+ },
+ {
+  "h": "衣裳",
+  "p": "yī shang",
+  "en": "clothes",
+  "th": "เสื้อผ้า",
+  "ex": {
+   "zh": "她换了一件衣裳。",
+   "py": "Tā huàn le yí jiàn yīshang.",
+   "en": "She changed into another outfit.",
+   "th": "เธอเปลี่ยนเสื้อผ้าชุดใหม่"
+  }
+ },
+ {
+  "h": "依次",
+  "p": "yī cì",
+  "en": "in order",
+  "th": "ตามลำดับ",
+  "ex": {
+   "zh": "请大家依次进场。",
+   "py": "Qǐng dàjiā yīcì jìnchǎng.",
+   "en": "Please enter one after another.",
+   "th": "ขอให้ทุกคนเข้าไปตามลำดับ"
+  }
+ },
+ {
+  "h": "依旧",
+  "p": "yī jiù",
+  "en": "still as before",
+  "th": "เหมือนเดิม",
+  "ex": {
+   "zh": "这里依旧那么安静。",
+   "py": "Zhèlǐ yījiù nàme ānjìng.",
+   "en": "It is still as quiet here as before.",
+   "th": "ที่นี่ยังคงเงียบสงบเหมือนเดิม"
+  }
+ },
+ {
+  "h": "依据",
+  "p": "yī jù",
+  "en": "basis",
+  "th": "หลักฐานอ้างอิง",
+  "ex": {
+   "zh": "判断要有依据。",
+   "py": "Pànduàn yào yǒu yījù.",
+   "en": "Judgments need a basis.",
+   "th": "การตัดสินต้องมีหลักฐานอ้างอิง"
+  }
+ },
+ {
+  "h": "依靠",
+  "p": "yī kào",
+  "en": "to rely on",
+  "th": "พึ่งพา",
+  "ex": {
+   "zh": "他一个人依靠自己生活。",
+   "py": "Tā yí ge rén yīkào zìjǐ shēnghuó.",
+   "en": "He lives on his own by relying on himself.",
+   "th": "เขาอยู่ด้วยตัวเองโดยพึ่งพาตนเอง"
+  }
+ },
+ {
+  "h": "依赖",
+  "p": "yī lài",
+  "en": "to depend on",
+  "th": "พึ่งพิง",
+  "ex": {
+   "zh": "孩子太依赖父母了。",
+   "py": "Háizi tài yīlài fùmǔ le.",
+   "en": "The child depends too much on his parents.",
+   "th": "เด็กพึ่งพิงพ่อแม่มากเกินไป"
+  }
+ },
+ {
+  "h": "依托",
+  "p": "yī tuō",
+  "en": "to rely on",
+  "th": "อาศัย",
+  "ex": {
+   "zh": "这个村子依托大山发展旅游。",
+   "py": "Zhège cūnzi yītuō dàshān fāzhǎn lǚyóu.",
+   "en": "This village relies on the mountains to develop tourism.",
+   "th": "หมู่บ้านนี้อาศัยภูเขาพัฒนาการท่องเที่ยว"
+  }
+ },
+ {
+  "h": "仪器",
+  "p": "yí qì",
+  "en": "instrument",
+  "th": "เครื่องมือ",
+  "ex": {
+   "zh": "实验室里有很多仪器。",
+   "py": "Shíyànshì lǐ yǒu hěn duō yíqì.",
+   "en": "The lab has many instruments.",
+   "th": "ในห้องทดลองมีเครื่องมือมากมาย"
+  }
+ },
+ {
+  "h": "仪式",
+  "p": "yí shì",
+  "en": "ceremony",
+  "th": "พิธี",
+  "ex": {
+   "zh": "毕业仪式很隆重。",
+   "py": "Bìyè yíshì hěn lóngzhòng.",
+   "en": "The graduation ceremony was grand.",
+   "th": "พิธีจบการศึกษาจัดอย่างยิ่งใหญ่"
+  }
+ },
+ {
+  "h": "遗产",
+  "p": "yí chǎn",
+  "en": "heritage",
+  "th": "มรดก",
+  "ex": {
+   "zh": "长城是重要的文化遗产。",
+   "py": "Chángchéng shì zhòngyào de wénhuà yíchǎn.",
+   "en": "The Great Wall is an important cultural heritage.",
+   "th": "กำแพงเมืองจีนเป็นมรดกทางวัฒนธรรมที่สำคัญ"
+  }
+ },
+ {
+  "h": "遗传",
+  "p": "yí chuán",
+  "en": "heredity",
+  "th": "พันธุกรรม",
+  "ex": {
+   "zh": "眼睛的颜色是遗传的。",
+   "py": "Yǎnjing de yánsè shì yíchuán de.",
+   "en": "Eye color is inherited.",
+   "th": "สีตาถ่ายทอดทางพันธุกรรม"
+  }
+ },
+ {
+  "h": "遗留",
+  "p": "yí liú",
+  "en": "to leave behind",
+  "th": "ตกค้าง",
+  "ex": {
+   "zh": "这个问题是历史遗留的。",
+   "py": "Zhège wèntí shì lìshǐ yíliú de.",
+   "en": "This problem is left over from history.",
+   "th": "ปัญหานี้เป็นปัญหาตกค้างจากอดีต"
+  }
+ },
+ {
+  "h": "遗失",
+  "p": "yí shī",
+  "en": "to lose",
+  "th": "ทำหาย",
+  "ex": {
+   "zh": "我的钱包遗失了。",
+   "py": "Wǒ de qiánbāo yíshī le.",
+   "en": "My wallet has been lost.",
+   "th": "กระเป๋าสตางค์ของฉันหาย"
+  }
+ },
+ {
+  "h": "疑惑",
+  "p": "yí huò",
+  "en": "doubt",
+  "th": "ข้องใจ",
+  "ex": {
+   "zh": "他疑惑地看着我。",
+   "py": "Tā yíhuò de kànzhe wǒ.",
+   "en": "He looked at me in confusion.",
+   "th": "เขามองฉันอย่างข้องใจ"
+  }
+ },
+ {
+  "h": "以便",
+  "p": "yǐ biàn",
+  "en": "so that",
+  "th": "เพื่อที่จะ",
+  "ex": {
+   "zh": "请留个电话，以便联系。",
+   "py": "Qǐng liú ge diànhuà, yǐbiàn liánxì.",
+   "en": "Please leave a phone number so that we can contact you.",
+   "th": "กรุณาทิ้งเบอร์โทรไว้ เพื่อที่จะติดต่อได้"
+  }
+ },
+ {
+  "h": "以免",
+  "p": "yǐ miǎn",
+  "en": "so as to avoid",
+  "th": "เพื่อไม่ให้",
+  "ex": {
+   "zh": "早点出门，以免迟到。",
+   "py": "Zǎodiǎn chūmén, yǐmiǎn chídào.",
+   "en": "Leave early so as not to be late.",
+   "th": "ออกจากบ้านเร็วหน่อย จะได้ไม่สาย"
+  }
+ },
+ {
+  "h": "以往",
+  "p": "yǐ wǎng",
+  "en": "in the past",
+  "th": "ในอดีต",
+  "ex": {
+   "zh": "以往我常去那家店。",
+   "py": "Yǐwǎng wǒ cháng qù nà jiā diàn.",
+   "en": "In the past I often went to that shop.",
+   "th": "ในอดีตฉันมักไปร้านนั้น"
+  }
+ },
+ {
+  "h": "以至",
+  "p": "yǐ zhì",
+  "en": "to such an extent that",
+  "th": "จนถึงขั้น",
+  "ex": {
+   "zh": "他忙得以至忘了吃饭。",
+   "py": "Tā máng de yǐzhì wàng le chī fàn.",
+   "en": "He was so busy that he even forgot to eat.",
+   "th": "เขายุ่งจนถึงกับลืมกินข้าว"
+  }
+ },
+ {
+  "h": "以致",
+  "p": "yǐ zhì",
+  "en": "resulting in",
+  "th": "ส่งผลให้",
+  "ex": {
+   "zh": "大雨致使航班取消。",
+   "py": "Dàyǔ zhìshǐ hángbān qǔxiāo.",
+   "en": "Heavy rain caused flights to be canceled.",
+   "th": "ฝนตกหนักส่งผลให้เที่ยวบินถูกยกเลิก"
+  }
+ },
+ {
+  "h": "亦",
+  "p": "yì",
+  "en": "also",
+  "th": "ก็เช่นกัน",
+  "ex": {
+   "zh": "此事亦不容易。",
+   "py": "Cǐ shì yì bù róngyì.",
+   "en": "This matter is also not easy.",
+   "th": "เรื่องนี้ก็ไม่ง่ายเช่นกัน"
+  }
+ },
+ {
+  "h": "异常",
+  "p": "yì cháng",
+  "en": "unusual",
+  "th": "ผิดปกติ",
+  "ex": {
+   "zh": "今天的天气异常热。",
+   "py": "Jīntiān de tiānqì yìcháng rè.",
+   "en": "The weather today is exceptionally hot.",
+   "th": "อากาศวันนี้ร้อนผิดปกติ"
+  }
+ },
+ {
+  "h": "抑制",
+  "p": "yì zhì",
+  "en": "to suppress",
+  "th": "ยับยั้ง",
+  "ex": {
+   "zh": "药物可以抑制疼痛。",
+   "py": "Yàowù kěyǐ yìzhì téngtòng.",
+   "en": "Medicine can suppress pain.",
+   "th": "ยาสามารถระงับความเจ็บปวดได้"
+  }
+ },
+ {
+  "h": "意料",
+  "p": "yì liào",
+  "en": "to expect",
+  "th": "คาดคิด",
+  "ex": {
+   "zh": "结果出乎意料。",
+   "py": "Jiéguǒ chūhū yìliào.",
+   "en": "The result was unexpected.",
+   "th": "ผลลัพธ์เกินความคาดหมาย"
+  }
+ },
+ {
+  "h": "意识",
+  "p": "yì shí",
+  "en": "awareness",
+  "th": "จิตสำนึก",
+  "ex": {
+   "zh": "我们要有环保意识。",
+   "py": "Wǒmen yào yǒu huánbǎo yìshí.",
+   "en": "We should be environmentally aware.",
+   "th": "เราต้องมีจิตสำนึกในการรักษาสิ่งแวดล้อม"
+  }
+ },
+ {
+  "h": "意图",
+  "p": "yì tú",
+  "en": "intention",
+  "th": "เจตนา",
+  "ex": {
+   "zh": "我不明白他的意图。",
+   "py": "Wǒ bù míngbai tā de yìtú.",
+   "en": "I don't understand his intention.",
+   "th": "ฉันไม่เข้าใจเจตนาของเขา"
+  }
+ },
+ {
+  "h": "意味着",
+  "p": "yì wèi zhe",
+  "en": "to mean",
+  "th": "หมายความว่า",
+  "ex": {
+   "zh": "这个信号意味着危险。",
+   "py": "Zhège xìnhào yìwèizhe wēixiǎn.",
+   "en": "This signal means danger.",
+   "th": "สัญญาณนี้หมายถึงอันตราย"
+  }
+ },
+ {
+  "h": "意向",
+  "p": "yì xiàng",
+  "en": "intention",
+  "th": "ความตั้งใจ",
+  "ex": {
+   "zh": "两家公司有合作意向。",
+   "py": "Liǎng jiā gōngsī yǒu hézuò yìxiàng.",
+   "en": "The two companies intend to cooperate.",
+   "th": "สองบริษัทมีความตั้งใจจะร่วมมือกัน"
+  }
+ },
+ {
+  "h": "意志",
+  "p": "yì zhì",
+  "en": "willpower",
+  "th": "เจตจำนง",
+  "ex": {
+   "zh": "他有很强的意志。",
+   "py": "Tā yǒu hěn qiáng de yìzhì.",
+   "en": "He has strong willpower.",
+   "th": "เขามีเจตจำนงแรงกล้า"
+  }
+ },
+ {
+  "h": "毅力",
+  "p": "yì lì",
+  "en": "perseverance",
+  "th": "ความอุตสาหะ",
+  "ex": {
+   "zh": "学外语需要毅力。",
+   "py": "Xué wàiyǔ xūyào yìlì.",
+   "en": "Learning a foreign language takes perseverance.",
+   "th": "การเรียนภาษาต่างประเทศต้องใช้ความอุตสาหะ"
+  }
+ },
+ {
+  "h": "毅然",
+  "p": "yì rán",
+  "en": "resolutely",
+  "th": "อย่างเด็ดเดี่ยว",
+  "ex": {
+   "zh": "他毅然辞去了工作。",
+   "py": "Tā yìrán cíqù le gōngzuò.",
+   "en": "He resolutely quit his job.",
+   "th": "เขาลาออกจากงานอย่างเด็ดเดี่ยว"
+  }
+ },
+ {
+  "h": "翼",
+  "p": "yì",
+  "en": "wing",
+  "th": "ปีก",
+  "ex": {
+   "zh": "飞机的机翼很长。",
+   "py": "Fēijī de jīyì hěn cháng.",
+   "en": "The airplane wings are very long.",
+   "th": "ปีกเครื่องบินยาวมาก"
+  }
+ },
+ {
+  "h": "阴谋",
+  "p": "yīn móu",
+  "en": "plot",
+  "th": "แผนร้าย",
+  "ex": {
+   "zh": "警察发现了一个阴谋。",
+   "py": "Jǐngchá fāxiàn le yí ge yīnmóu.",
+   "en": "The police discovered a plot.",
+   "th": "ตำรวจค้นพบแผนร้าย"
+  }
+ },
+ {
+  "h": "音响",
+  "p": "yīn xiǎng",
+  "en": "audio system",
+  "th": "ระบบเสียง",
+  "ex": {
+   "zh": "这套音响效果很好。",
+   "py": "Zhè tào yīnxiǎng xiàoguǒ hěn hǎo.",
+   "en": "This sound system works very well.",
+   "th": "ระบบเสียงชุดนี้เสียงดีมาก"
+  }
+ },
+ {
+  "h": "引导",
+  "p": "yǐn dǎo",
+  "en": "to guide",
+  "th": "นำทาง",
+  "ex": {
+   "zh": "老师引导学生思考。",
+   "py": "Lǎoshī yǐndǎo xuésheng sīkǎo.",
+   "en": "The teacher guides students to think.",
+   "th": "ครูแนะนำให้นักเรียนคิด"
+  }
+ },
+ {
+  "h": "引擎",
+  "p": "yǐn qíng",
+  "en": "engine",
+  "th": "เครื่องยนต์",
+  "ex": {
+   "zh": "这辆车的引擎很安静。",
+   "py": "Zhè liàng chē de yǐnqíng hěn ānjìng.",
+   "en": "This car's engine is very quiet.",
+   "th": "เครื่องยนต์ของรถคันนี้เงียบมาก"
+  }
+ },
+ {
+  "h": "引用",
+  "p": "yǐn yòng",
+  "en": "to quote",
+  "th": "อ้างอิง",
+  "ex": {
+   "zh": "他引用了一句名言。",
+   "py": "Tā yǐnyòng le yí jù míngyán.",
+   "en": "He quoted a famous saying.",
+   "th": "เขาอ้างถึงคำพูดที่มีชื่อเสียง"
+  }
+ },
+ {
+  "h": "饮食",
+  "p": "yǐn shí",
+  "en": "diet",
+  "th": "อาหารการกิน",
+  "ex": {
+   "zh": "健康的饮食很重要。",
+   "py": "Jiànkāng de yǐnshí hěn zhòngyào.",
+   "en": "A healthy diet is important.",
+   "th": "การกินอาหารเพื่อสุขภาพเป็นเรื่องสำคัญ"
+  }
+ },
+ {
+  "h": "隐蔽",
+  "p": "yǐn bì",
+  "en": "concealed",
+  "th": "ซ่อนเร้น",
+  "ex": {
+   "zh": "士兵隐蔽在树林里。",
+   "py": "Shìbīng yǐnbì zài shùlín lǐ.",
+   "en": "The soldiers hid in the woods.",
+   "th": "ทหารซ่อนตัวอยู่ในป่า"
+  }
+ },
+ {
+  "h": "隐患",
+  "p": "yǐn huàn",
+  "en": "hidden danger",
+  "th": "อันตรายแฝง",
+  "ex": {
+   "zh": "这里有安全隐患。",
+   "py": "Zhèlǐ yǒu ānquán yǐnhuàn.",
+   "en": "There is a hidden safety hazard here.",
+   "th": "ที่นี่มีอันตรายแฝงอยู่"
+  }
+ },
+ {
+  "h": "隐瞒",
+  "p": "yǐn mán",
+  "en": "to conceal",
+  "th": "ปิดบัง",
+  "ex": {
+   "zh": "他隐瞒了真相。",
+   "py": "Tā yǐnmán le zhēnxiàng.",
+   "en": "He concealed the truth.",
+   "th": "เขาปิดบังความจริง"
+  }
+ },
+ {
+  "h": "隐私",
+  "p": "yǐn sī",
+  "en": "privacy",
+  "th": "ความเป็นส่วนตัว",
+  "ex": {
+   "zh": "请尊重别人的隐私。",
+   "py": "Qǐng zūnzhòng biéren de yǐnsī.",
+   "en": "Please respect others' privacy.",
+   "th": "กรุณาเคารพความเป็นส่วนตัวของผู้อื่น"
+  }
+ },
+ {
+  "h": "隐约",
+  "p": "yǐn yuē",
+  "en": "faint",
+  "th": "เลือนราง",
+  "ex": {
+   "zh": "我隐约听到有人在哭。",
+   "py": "Wǒ yǐnyuē tīngdào yǒurén zài kū.",
+   "en": "I faintly heard someone crying.",
+   "th": "ฉันได้ยินเสียงใครร้องไห้เลือนราง"
+  }
+ },
+ {
+  "h": "印刷",
+  "p": "yìn shuā",
+  "en": "to print",
+  "th": "พิมพ์",
+  "ex": {
+   "zh": "这本书印刷得很清楚。",
+   "py": "Zhè běn shū yìnshuā de hěn qīngchu.",
+   "en": "This book is printed very clearly.",
+   "th": "หนังสือเล่มนี้พิมพ์ชัดเจนมาก"
+  }
+ },
+ {
+  "h": "应酬",
+  "p": "yìng chou",
+  "en": "social engagements",
+  "th": "การเข้าสังคม",
+  "ex": {
+   "zh": "他今晚有一个应酬。",
+   "py": "Tā jīnwǎn yǒu yí ge yìngchou.",
+   "en": "He has a social engagement tonight.",
+   "th": "คืนนี้เขามีงานสังสรรค์"
+  }
+ },
+ {
+  "h": "应邀",
+  "p": "yìng yāo",
+  "en": "by invitation",
+  "th": "ตามคำเชิญ",
+  "ex": {
+   "zh": "她应邀参加了会议。",
+   "py": "Tā yìngyāo cānjiā le huìyì.",
+   "en": "She attended the meeting at their invitation.",
+   "th": "เธอเข้าร่วมประชุมตามคำเชิญ"
+  }
+ },
+ {
+  "h": "英明",
+  "p": "yīng míng",
+  "en": "wise",
+  "th": "ชาญฉลาด",
+  "ex": {
+   "zh": "这是一个英明的决定。",
+   "py": "Zhè shì yí ge yīngmíng de juédìng.",
+   "en": "This is a wise decision.",
+   "th": "นี่เป็นการตัดสินใจที่ชาญฉลาด"
+  }
+ },
+ {
+  "h": "英勇",
+  "p": "yīng yǒng",
+  "en": "heroic",
+  "th": "กล้าหาญ",
+  "ex": {
+   "zh": "消防员英勇地救出了孩子。",
+   "py": "Xiāofángyuán yīngyǒng de jiùchū le háizi.",
+   "en": "The firefighter bravely rescued the child.",
+   "th": "นักดับเพลิงช่วยเด็กออกมาอย่างกล้าหาญ"
+  }
+ },
+ {
+  "h": "婴儿",
+  "p": "yīng ér",
+  "en": "infant",
+  "th": "ทารก",
+  "ex": {
+   "zh": "婴儿睡着了。",
+   "py": "Yīng'ér shuìzháo le.",
+   "en": "The baby fell asleep.",
+   "th": "ทารกหลับไปแล้ว"
+  }
+ },
+ {
+  "h": "迎面",
+  "p": "yíng miàn",
+  "en": "head-on",
+  "th": "ประจันหน้า",
+  "ex": {
+   "zh": "一阵风迎面吹来。",
+   "py": "Yí zhèn fēng yíngmiàn chuī lái.",
+   "en": "A gust of wind blew in my face.",
+   "th": "ลมพัดปะทะหน้ามา"
+  }
+ },
+ {
+  "h": "盈利",
+  "p": "yíng lì",
+  "en": "profit",
+  "th": "กำไร",
+  "ex": {
+   "zh": "公司今年开始盈利。",
+   "py": "Gōngsī jīnnián kāishǐ yínglì.",
+   "en": "The company began to make a profit this year.",
+   "th": "บริษัทเริ่มมีกำไรในปีนี้"
+  }
+ },
+ {
+  "h": "荧屏",
+  "p": "yíng píng",
+  "en": "TV screen",
+  "th": "จอโทรทัศน์",
+  "ex": {
+   "zh": "他出现在荧屏上。",
+   "py": "Tā chūxiàn zài yíngpíng shàng.",
+   "en": "He appeared on the TV screen.",
+   "th": "เขาปรากฏตัวบนจอโทรทัศน์"
+  }
+ },
+ {
+  "h": "拥护",
+  "p": "yōng hù",
+  "en": "to support",
+  "th": "สนับสนุน",
+  "ex": {
+   "zh": "大家都拥护这个决定。",
+   "py": "Dàjiā dōu yōnghù zhège juédìng.",
+   "en": "Everyone supports this decision.",
+   "th": "ทุกคนสนับสนุนการตัดสินใจนี้"
+  }
+ },
+ {
+  "h": "拥有",
+  "p": "yōng yǒu",
+  "en": "to possess",
+  "th": "มี, ครอบครอง",
+  "ex": {
+   "zh": "他拥有一家公司。",
+   "py": "Tā yōngyǒu yì jiā gōngsī.",
+   "en": "He owns a company.",
+   "th": "เขาเป็นเจ้าของบริษัทแห่งหนึ่ง"
+  }
+ },
+ {
+  "h": "庸俗",
+  "p": "yōng sú",
+  "en": "vulgar",
+  "th": "หยาบคาย",
+  "ex": {
+   "zh": "这部电视剧太庸俗了。",
+   "py": "Zhè bù diànshìjù tài yōngsú le.",
+   "en": "This TV drama is too vulgar.",
+   "th": "ละครทีวีเรื่องนี้หยาบโลนเกินไป"
+  }
+ },
+ {
+  "h": "永恒",
+  "p": "yǒng héng",
+  "en": "eternal",
+  "th": "นิรันดร์",
+  "ex": {
+   "zh": "他们的爱情是永恒的。",
+   "py": "Tāmen de àiqíng shì yǒnghéng de.",
+   "en": "Their love is eternal.",
+   "th": "ความรักของพวกเขาเป็นนิรันดร์"
+  }
+ },
+ {
+  "h": "勇于",
+  "p": "yǒng yú",
+  "en": "to dare to",
+  "th": "กล้าที่จะ",
+  "ex": {
+   "zh": "我们要勇于尝试。",
+   "py": "Wǒmen yào yǒngyú chángshì.",
+   "en": "We should dare to try.",
+   "th": "เราต้องกล้าที่จะลอง"
+  }
+ },
+ {
+  "h": "涌现",
+  "p": "yǒng xiàn",
+  "en": "to emerge",
+  "th": "เกิดขึ้นมากมาย",
+  "ex": {
+   "zh": "市场上涌现出很多新产品。",
+   "py": "Shìchǎng shàng yǒngxiàn chū hěn duō xīn chǎnpǐn.",
+   "en": "Many new products have emerged on the market.",
+   "th": "ในตลาดมีสินค้าใหม่ผุดขึ้นมากมาย"
+  }
+ },
+ {
+  "h": "踊跃",
+  "p": "yǒng yuè",
+  "en": "eager",
+  "th": "กระตือรือร้น",
+  "ex": {
+   "zh": "同学们踊跃发言。",
+   "py": "Tóngxuémen yǒngyuè fāyán.",
+   "en": "Classmates eagerly spoke up.",
+   "th": "เพื่อนๆ พากันยกมือพูดอย่างกระตือรือร้น"
+  }
+ },
+ {
+  "h": "用功",
+  "p": "yòng gōng",
+  "en": "diligent",
+  "th": "ขยันหมั่นเพียร",
+  "ex": {
+   "zh": "他学习很用功。",
+   "py": "Tā xuéxí hěn yònggōng.",
+   "en": "He studies very diligently.",
+   "th": "เขาเรียนอย่างขยันหมั่นเพียร"
+  }
+ },
+ {
+  "h": "用户",
+  "p": "yòng hù",
+  "en": "user",
+  "th": "ผู้ใช้",
+  "ex": {
+   "zh": "这个软件有一亿用户。",
+   "py": "Zhège ruǎnjiàn yǒu yí yì yònghù.",
+   "en": "This software has 100 million users.",
+   "th": "ซอฟต์แวร์นี้มีผู้ใช้หนึ่งร้อยล้านคน"
+  }
+ },
+ {
+  "h": "优胜劣汰",
+  "p": "yōu shèng liè tài",
+  "en": "survival of the fittest",
+  "th": "ผู้แข็งแรงอยู่รอด",
+  "ex": {
+   "zh": "自然界优胜劣汰。",
+   "py": "Zìránjiè yōushèng-liètài.",
+   "en": "In nature, the fittest survive.",
+   "th": "ในธรรมชาติ ผู้แข็งแรงเท่านั้นที่อยู่รอด"
+  }
+ },
+ {
+  "h": "优先",
+  "p": "yōu xiān",
+  "en": "to take priority",
+  "th": "มาก่อน",
+  "ex": {
+   "zh": "安全应该优先。",
+   "py": "Ānquán yīnggāi yōuxiān.",
+   "en": "Safety should come first.",
+   "th": "ความปลอดภัยควรมาก่อน"
+  }
+ },
+ {
+  "h": "优异",
+  "p": "yōu yì",
+  "en": "outstanding",
+  "th": "ยอดเยี่ยม",
+  "ex": {
+   "zh": "她的成绩非常优异。",
+   "py": "Tā de chéngjì fēicháng yōuyì.",
+   "en": "Her grades are outstanding.",
+   "th": "ผลการเรียนของเธอยอดเยี่ยมมาก"
+  }
+ },
+ {
+  "h": "优越",
+  "p": "yōu yuè",
+  "en": "superior",
+  "th": "เหนือกว่า",
+  "ex": {
+   "zh": "这里有优越的自然条件。",
+   "py": "Zhèlǐ yǒu yōuyuè de zìrán tiáojiàn.",
+   "en": "This place has superior natural conditions.",
+   "th": "ที่นี่มีสภาพธรรมชาติที่เหนือกว่า"
+  }
+ },
+ {
+  "h": "忧郁",
+  "p": "yōu yù",
+  "en": "melancholy",
+  "th": "ซึมเศร้า",
+  "ex": {
+   "zh": "他的眼神有点忧郁。",
+   "py": "Tā de yǎnshén yǒudiǎn yōuyù.",
+   "en": "His eyes look a bit melancholy.",
+   "th": "แววตาของเขาดูเศร้าซึมนิดหน่อย"
+  }
+ },
+ {
+  "h": "犹如",
+  "p": "yóu rú",
+  "en": "just like",
+  "th": "ราวกับ",
+  "ex": {
+   "zh": "时间犹如流水。",
+   "py": "Shíjiān yóurú liúshuǐ.",
+   "en": "Time is like flowing water.",
+   "th": "เวลาเปรียบเสมือนสายน้ำไหล"
+  }
+ }
+]

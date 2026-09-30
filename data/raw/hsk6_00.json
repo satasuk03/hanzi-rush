@@ -1,0 +1,1202 @@
+[
+ {
+  "h": "呵",
+  "p": "ā",
+  "en": "ha (laughter)",
+  "th": "ฮ่า",
+  "ex": {
+   "zh": "他呵呵地笑了。",
+   "py": "Tā hēhē de xiào le.",
+   "en": "He laughed \"haha\".",
+   "th": "เขาหัวเราะฮ่าๆ"
+  }
+ },
+ {
+  "h": "哎哟",
+  "p": "āi yō",
+  "en": "ouch",
+  "th": "โอ๊ย",
+  "ex": {
+   "zh": "哎哟，我的脚好疼！",
+   "py": "Āiyō, wǒ de jiǎo hǎo téng!",
+   "en": "Ouch, my foot hurts a lot!",
+   "th": "โอ๊ย เท้าฉันเจ็บมากเลย"
+  }
+ },
+ {
+  "h": "挨",
+  "p": "āi",
+  "en": "to be close to",
+  "th": "อยู่ชิด",
+  "ex": {
+   "zh": "我家挨着一所小学。",
+   "py": "Wǒ jiā āizhe yī suǒ xiǎoxué.",
+   "en": "My house is right next to a primary school.",
+   "th": "บ้านฉันอยู่ติดกับโรงเรียนประถม"
+  }
+ },
+ {
+  "h": "癌症",
+  "p": "ái zhèng",
+  "en": "cancer",
+  "th": "มะเร็ง",
+  "ex": {
+   "zh": "早期发现癌症很重要。",
+   "py": "Zǎoqī fāxiàn áizhèng hěn zhòngyào.",
+   "en": "Detecting cancer early is very important.",
+   "th": "การพบมะเร็งตั้งแต่ระยะแรกสำคัญมาก"
+  }
+ },
+ {
+  "h": "爱不释手",
+  "p": "ài bù shì shǒu",
+  "en": "to be unable to put down",
+  "th": "รักจนวางไม่ลง",
+  "ex": {
+   "zh": "这本书我爱不释手。",
+   "py": "Zhè běn shū wǒ ài bù shì shǒu.",
+   "en": "I love this book too much to put it down.",
+   "th": "หนังสือเล่มนี้ฉันวางไม่ลงเลย"
+  }
+ },
+ {
+  "h": "爱戴",
+  "p": "ài dài",
+  "en": "to love and respect",
+  "th": "เคารพรัก",
+  "ex": {
+   "zh": "学生们都很爱戴这位老师。",
+   "py": "Xuéshengmen dōu hěn àidài zhè wèi lǎoshī.",
+   "en": "The students all love and respect this teacher.",
+   "th": "นักเรียนทุกคนเคารพรักครูท่านนี้"
+  }
+ },
+ {
+  "h": "暧昧",
+  "p": "ài mèi",
+  "en": "ambiguous",
+  "th": "กำกวม",
+  "ex": {
+   "zh": "他们的关系有点暧昧。",
+   "py": "Tāmen de guānxi yǒudiǎn àimèi.",
+   "en": "Their relationship is a bit ambiguous.",
+   "th": "ความสัมพันธ์ของพวกเขาค่อนข้างกำกวม"
+  }
+ },
+ {
+  "h": "安居乐业",
+  "p": "ān jū lè yè",
+  "en": "to live and work in peace",
+  "th": "อยู่เย็นเป็นสุข",
+  "ex": {
+   "zh": "人们希望安居乐业。",
+   "py": "Rénmen xīwàng ānjū lèyè.",
+   "en": "People hope to live and work in peace.",
+   "th": "ผู้คนหวังจะอยู่เย็นเป็นสุขและมีงานทำ"
+  }
+ },
+ {
+  "h": "安宁",
+  "p": "Ān níng",
+  "en": "peaceful",
+  "th": "สงบสุข",
+  "ex": {
+   "zh": "这里的夜晚很安宁。",
+   "py": "Zhèlǐ de yèwǎn hěn ānníng.",
+   "en": "The nights here are very peaceful.",
+   "th": "ตอนกลางคืนที่นี่สงบสุขมาก"
+  }
+ },
+ {
+  "h": "安详",
+  "p": "ān xiáng",
+  "en": "serene",
+  "th": "สงบเยือกเย็น",
+  "ex": {
+   "zh": "老人安详地坐在椅子上。",
+   "py": "Lǎorén ānxiáng de zuò zài yǐzi shàng.",
+   "en": "The old man sat serenely in the chair.",
+   "th": "ชายชรานั่งอยู่บนเก้าอี้อย่างสงบ"
+  }
+ },
+ {
+  "h": "安置",
+  "p": "ān zhì",
+  "en": "to settle in place",
+  "th": "จัดให้อยู่",
+  "ex": {
+   "zh": "政府安置了受灾的居民。",
+   "py": "Zhèngfǔ ānzhì le shòuzāi de jūmín.",
+   "en": "The government resettled the disaster victims.",
+   "th": "รัฐบาลจัดที่อยู่ให้ชาวบ้านที่ประสบภัย"
+  }
+ },
+ {
+  "h": "按摩",
+  "p": "àn mó",
+  "en": "massage",
+  "th": "นวด",
+  "ex": {
+   "zh": "工作一天后我想去按摩。",
+   "py": "Gōngzuò yī tiān hòu wǒ xiǎng qù ànmó.",
+   "en": "After a day of work I want to get a massage.",
+   "th": "หลังทำงานทั้งวันฉันอยากไปนวด"
+  }
+ },
+ {
+  "h": "案件",
+  "p": "àn jiàn",
+  "en": "legal case",
+  "th": "คดี",
+  "ex": {
+   "zh": "警察正在调查这个案件。",
+   "py": "Jǐngchá zhèngzài diàochá zhège ànjiàn.",
+   "en": "The police are investigating this case.",
+   "th": "ตำรวจกำลังสืบสวนคดีนี้"
+  }
+ },
+ {
+  "h": "案例",
+  "p": "àn lì",
+  "en": "case example",
+  "th": "กรณีตัวอย่าง",
+  "ex": {
+   "zh": "老师用一个案例解释了这个问题。",
+   "py": "Lǎoshī yòng yī gè ànlì jiěshì le zhège wèntí.",
+   "en": "The teacher explained the issue with a case example.",
+   "th": "ครูอธิบายปัญหานี้ด้วยกรณีตัวอย่างหนึ่ง"
+  }
+ },
+ {
+  "h": "暗示",
+  "p": "àn shì",
+  "en": "to hint",
+  "th": "บอกใบ้",
+  "ex": {
+   "zh": "他暗示我早点离开。",
+   "py": "Tā ànshì wǒ zǎodiǎn líkāi.",
+   "en": "He hinted that I should leave early.",
+   "th": "เขาบอกใบ้ให้ฉันไปเร็วหน่อย"
+  }
+ },
+ {
+  "h": "昂贵",
+  "p": "áng guì",
+  "en": "expensive",
+  "th": "แพงมาก",
+  "ex": {
+   "zh": "这件外套太昂贵了。",
+   "py": "Zhè jiàn wàitào tài ángguì le.",
+   "en": "This coat is far too expensive.",
+   "th": "เสื้อโค้ตตัวนี้แพงเกินไป"
+  }
+ },
+ {
+  "h": "凹凸",
+  "p": "āo tū",
+  "en": "bumpy",
+  "th": "ขรุขระ",
+  "ex": {
+   "zh": "这条路凹凸不平。",
+   "py": "Zhè tiáo lù āotū bù píng.",
+   "en": "This road is bumpy and uneven.",
+   "th": "ถนนเส้นนี้ขรุขระไม่เรียบ"
+  }
+ },
+ {
+  "h": "熬",
+  "p": "āo",
+  "en": "to simmer",
+  "th": "เคี่ยว",
+  "ex": {
+   "zh": "妈妈在熬粥。",
+   "py": "Māma zài āo zhōu.",
+   "en": "Mom is simmering congee.",
+   "th": "แม่กำลังเคี่ยวข้าวต้ม"
+  }
+ },
+ {
+  "h": "奥秘",
+  "p": "ào mì",
+  "en": "mystery",
+  "th": "ความลับลึกลับ",
+  "ex": {
+   "zh": "科学家想揭开宇宙的奥秘。",
+   "py": "Kēxuéjiā xiǎng jiēkāi yǔzhòu de àomì.",
+   "en": "Scientists want to uncover the mysteries of the universe.",
+   "th": "นักวิทยาศาสตร์อยากไขความลับของจักรวาล"
+  }
+ },
+ {
+  "h": "扒",
+  "p": "bā",
+  "en": "to dig up",
+  "th": "คุ้ย",
+  "ex": {
+   "zh": "小狗在地上扒土。",
+   "py": "Xiǎogǒu zài dìshang bā tǔ.",
+   "en": "The puppy is digging at the dirt.",
+   "th": "ลูกสุนัขกำลังคุ้ยดินอยู่บนพื้น"
+  }
+ },
+ {
+  "h": "疤",
+  "p": "bā",
+  "en": "scar",
+  "th": "แผลเป็น",
+  "ex": {
+   "zh": "他的手上有一道疤。",
+   "py": "Tā de shǒu shàng yǒu yī dào bā.",
+   "en": "He has a scar on his hand.",
+   "th": "เขามีแผลเป็นที่มือ"
+  }
+ },
+ {
+  "h": "拔苗助长",
+  "p": "bá miáo zhù zhǎng",
+  "en": "to spoil by rushing",
+  "th": "เร่งจนเสียเรื่อง",
+  "ex": {
+   "zh": "教育孩子不能拔苗助长。",
+   "py": "Jiàoyù háizi bù néng bámiáo zhùzhǎng.",
+   "en": "You can't rush a child's education.",
+   "th": "การสอนเด็กจะเร่งรัดเกินไปไม่ได้"
+  }
+ },
+ {
+  "h": "把关",
+  "p": "bǎ guān",
+  "en": "to check quality",
+  "th": "ตรวจสอบคุณภาพ",
+  "ex": {
+   "zh": "经理负责为产品质量把关。",
+   "py": "Jīnglǐ fùzé wèi chǎnpǐn zhìliàng bǎguān.",
+   "en": "The manager is responsible for checking product quality.",
+   "th": "ผู้จัดการรับผิดชอบตรวจสอบคุณภาพสินค้า"
+  }
+ },
+ {
+  "h": "把手",
+  "p": "bǎ shǒu",
+  "en": "handle",
+  "th": "ที่จับ",
+  "ex": {
+   "zh": "门把手坏了。",
+   "py": "Mén bǎshou huài le.",
+   "en": "The door handle is broken.",
+   "th": "ที่จับประตูเสียแล้ว"
+  }
+ },
+ {
+  "h": "把戏",
+  "p": "bǎ xì",
+  "en": "trick",
+  "th": "กลเม็ด",
+  "ex": {
+   "zh": "别再耍把戏了。",
+   "py": "Bié zài shuǎ bǎxì le.",
+   "en": "Stop playing tricks.",
+   "th": "เลิกเล่นกลได้แล้ว"
+  }
+ },
+ {
+  "h": "霸道",
+  "p": "bà dào",
+  "en": "overbearing",
+  "th": "เจ้ากี้เจ้าการ",
+  "ex": {
+   "zh": "他做事很霸道。",
+   "py": "Tā zuòshì hěn bàdào.",
+   "en": "He is very overbearing in the way he does things.",
+   "th": "เขาทำอะไรเจ้ากี้เจ้าการมาก"
+  }
+ },
+ {
+  "h": "巴不得",
+  "p": "bā bu de",
+  "en": "to be eager to",
+  "th": "อยากจะ",
+  "ex": {
+   "zh": "我巴不得明天就放假。",
+   "py": "Wǒ bābude míngtiān jiù fàngjià.",
+   "en": "I can't wait for the holiday to start tomorrow.",
+   "th": "ฉันอยากให้พรุ่งนี้หยุดเลย"
+  }
+ },
+ {
+  "h": "巴结",
+  "p": "bā jie",
+  "en": "to curry favor with",
+  "th": "ประจบ",
+  "ex": {
+   "zh": "他总是巴结老板。",
+   "py": "Tā zǒngshì bājie lǎobǎn.",
+   "en": "He is always sucking up to the boss.",
+   "th": "เขาประจบเจ้านายอยู่เสมอ"
+  }
+ },
+ {
+  "h": "罢工",
+  "p": "bà gōng",
+  "en": "to strike (work)",
+  "th": "หยุดงานประท้วง",
+  "ex": {
+   "zh": "工人们决定罢工。",
+   "py": "Gōngrénmen juédìng bàgōng.",
+   "en": "The workers decided to go on strike.",
+   "th": "คนงานตัดสินใจหยุดงานประท้วง"
+  }
+ },
+ {
+  "h": "掰",
+  "p": "bāi",
+  "en": "to break off",
+  "th": "หัก",
+  "ex": {
+   "zh": "他把面包掰成两半。",
+   "py": "Tā bǎ miànbāo bāi chéng liǎng bàn.",
+   "en": "He broke the bread in half.",
+   "th": "เขาหักขนมปังออกเป็นสองส่วน"
+  }
+ },
+ {
+  "h": "百分点",
+  "p": "bǎi fēn diǎn",
+  "en": "percentage point",
+  "th": "จุดเปอร์เซ็นต์",
+  "ex": {
+   "zh": "失业率下降了两个百分点。",
+   "py": "Shīyèlǜ xiàjiàng le liǎng gè bǎifēndiǎn.",
+   "en": "The unemployment rate fell by two percentage points.",
+   "th": "อัตราว่างงานลดลงสองจุดเปอร์เซ็นต์"
+  }
+ },
+ {
+  "h": "摆脱",
+  "p": "bǎi tuō",
+  "en": "to get rid of",
+  "th": "หลุดพ้น",
+  "ex": {
+   "zh": "他想摆脱这种生活。",
+   "py": "Tā xiǎng bǎituō zhè zhǒng shēnghuó.",
+   "en": "He wants to break free from this way of life.",
+   "th": "เขาอยากหลุดพ้นจากชีวิตแบบนี้"
+  }
+ },
+ {
+  "h": "败坏",
+  "p": "bài huài",
+  "en": "to corrupt",
+  "th": "ทำให้เสื่อมเสีย",
+  "ex": {
+   "zh": "这种行为败坏了公司的名声。",
+   "py": "Zhè zhǒng xíngwéi bàihuài le gōngsī de míngshēng.",
+   "en": "This behavior ruined the company's reputation.",
+   "th": "พฤติกรรมแบบนี้ทำให้ชื่อเสียงบริษัทเสื่อมเสีย"
+  }
+ },
+ {
+  "h": "拜访",
+  "p": "bài fǎng",
+  "en": "to pay a visit",
+  "th": "เยี่ยมเยือน",
+  "ex": {
+   "zh": "周末我要去拜访老师。",
+   "py": "Zhōumò wǒ yào qù bàifǎng lǎoshī.",
+   "en": "This weekend I'm going to visit my teacher.",
+   "th": "สุดสัปดาห์นี้ฉันจะไปเยี่ยมครู"
+  }
+ },
+ {
+  "h": "拜年",
+  "p": "bài nián",
+  "en": "to pay New Year call",
+  "th": "อวยพรตรุษจีน",
+  "ex": {
+   "zh": "春节我们去亲戚家拜年。",
+   "py": "Chūnjié wǒmen qù qīnqi jiā bàinián.",
+   "en": "At Spring Festival we visit relatives to give New Year greetings.",
+   "th": "ตรุษจีนเราไปอวยพรปีใหม่ที่บ้านญาติ"
+  }
+ },
+ {
+  "h": "拜托",
+  "p": "bài tuō",
+  "en": "to ask a favor",
+  "th": "ขอร้อง",
+  "ex": {
+   "zh": "拜托你帮我拿一下包。",
+   "py": "Bàituō nǐ bāng wǒ ná yīxià bāo.",
+   "en": "Please, could you hold my bag for me?",
+   "th": "รบกวนช่วยถือกระเป๋าให้ฉันหน่อย"
+  }
+ },
+ {
+  "h": "颁布",
+  "p": "bān bù",
+  "en": "to promulgate",
+  "th": "ประกาศใช้",
+  "ex": {
+   "zh": "政府颁布了新的法律。",
+   "py": "Zhèngfǔ bānbù le xīn de fǎlǜ.",
+   "en": "The government promulgated a new law.",
+   "th": "รัฐบาลประกาศใช้กฎหมายฉบับใหม่"
+  }
+ },
+ {
+  "h": "颁发",
+  "p": "bān fā",
+  "en": "to award",
+  "th": "มอบ",
+  "ex": {
+   "zh": "校长给获奖学生颁发证书。",
+   "py": "Xiàozhǎng gěi huòjiǎng xuésheng bānfā zhèngshū.",
+   "en": "The principal presented certificates to the award-winning students.",
+   "th": "ผู้อำนวยการมอบประกาศนียบัตรให้นักเรียนที่ได้รับรางวัล"
+  }
+ },
+ {
+  "h": "斑纹",
+  "p": "bān wén",
+  "en": "stripes",
+  "th": "ลายทาง",
+  "ex": {
+   "zh": "老虎身上有黑色的斑纹。",
+   "py": "Lǎohǔ shēnshang yǒu hēisè de bānwén.",
+   "en": "Tigers have black stripes on their bodies.",
+   "th": "เสือมีลายทางสีดำบนตัว"
+  }
+ },
+ {
+  "h": "版本",
+  "p": "bǎn běn",
+  "en": "version",
+  "th": "เวอร์ชัน",
+  "ex": {
+   "zh": "请下载最新版本。",
+   "py": "Qǐng xiàzài zuìxīn bǎnběn.",
+   "en": "Please download the latest version.",
+   "th": "กรุณาดาวน์โหลดเวอร์ชันล่าสุด"
+  }
+ },
+ {
+  "h": "半途而废",
+  "p": "bàn tú ér fèi",
+  "en": "to give up halfway",
+  "th": "ทำครึ่งๆ กลางๆ",
+  "ex": {
+   "zh": "学习不能半途而废。",
+   "py": "Xuéxí bù néng bàntú ér fèi.",
+   "en": "You shouldn't give up halfway in your studies.",
+   "th": "เรียนหนังสือต้องไม่ล้มเลิกกลางคัน"
+  }
+ },
+ {
+  "h": "伴侣",
+  "p": "bàn lǚ",
+  "en": "partner",
+  "th": "คู่ชีวิต",
+  "ex": {
+   "zh": "他终于找到了人生伴侣。",
+   "py": "Tā zhōngyú zhǎodào le rénshēng bànlǚ.",
+   "en": "He finally found his life partner.",
+   "th": "ในที่สุดเขาก็พบคู่ชีวิต"
+  }
+ },
+ {
+  "h": "伴随",
+  "p": "bàn suí",
+  "en": "to accompany",
+  "th": "มาพร้อมกับ",
+  "ex": {
+   "zh": "快乐伴随着我们长大。",
+   "py": "Kuàilè bànsuí zhe wǒmen zhǎngdà.",
+   "en": "Happiness accompanies us as we grow up.",
+   "th": "ความสุขอยู่เคียงข้างเราตลอดการเติบโต"
+  }
+ },
+ {
+  "h": "扮演",
+  "p": "bàn yǎn",
+  "en": "to play (a role)",
+  "th": "แสดงเป็น",
+  "ex": {
+   "zh": "他在电影里扮演警察。",
+   "py": "Tā zài diànyǐng lǐ bànyǎn jǐngchá.",
+   "en": "He plays a police officer in the movie.",
+   "th": "เขาแสดงเป็นตำรวจในภาพยนตร์"
+  }
+ },
+ {
+  "h": "绑架",
+  "p": "bǎng jià",
+  "en": "to kidnap",
+  "th": "ลักพาตัว",
+  "ex": {
+   "zh": "孩子被坏人绑架了。",
+   "py": "Háizi bèi huàirén bǎngjià le.",
+   "en": "The child was kidnapped by bad people.",
+   "th": "เด็กถูกคนร้ายลักพาตัว"
+  }
+ },
+ {
+  "h": "榜样",
+  "p": "bǎng yàng",
+  "en": "role model",
+  "th": "แบบอย่าง",
+  "ex": {
+   "zh": "哥哥是我的好榜样。",
+   "py": "Gēge shì wǒ de hǎo bǎngyàng.",
+   "en": "My older brother is a good role model for me.",
+   "th": "พี่ชายเป็นแบบอย่างที่ดีของฉัน"
+  }
+ },
+ {
+  "h": "磅",
+  "p": "bàng",
+  "en": "pound (weight)",
+  "th": "ปอนด์",
+  "ex": {
+   "zh": "这个西瓜有十磅重。",
+   "py": "Zhège xīguā yǒu shí bàng zhòng.",
+   "en": "This watermelon weighs ten pounds.",
+   "th": "แตงโมลูกนี้หนักสิบปอนด์"
+  }
+ },
+ {
+  "h": "包庇",
+  "p": "bāo bì",
+  "en": "to shield (a criminal)",
+  "th": "ปกป้องคนผิด",
+  "ex": {
+   "zh": "他因包庇罪犯被抓了。",
+   "py": "Tā yīn bāobì zuìfàn bèi zhuā le.",
+   "en": "He was arrested for shielding a criminal.",
+   "th": "เขาถูกจับเพราะปกป้องอาชญากร"
+  }
+ },
+ {
+  "h": "包袱",
+  "p": "bāo fu",
+  "en": "burden",
+  "th": "ภาระ",
+  "ex": {
+   "zh": "不要背太重的思想包袱。",
+   "py": "Bùyào bēi tài zhòng de sīxiǎng bāofu.",
+   "en": "Don't carry too heavy a mental burden.",
+   "th": "อย่าแบกภาระทางใจหนักเกินไป"
+  }
+ },
+ {
+  "h": "包围",
+  "p": "bāo wéi",
+  "en": "to surround",
+  "th": "ล้อม",
+  "ex": {
+   "zh": "警察包围了那座房子。",
+   "py": "Jǐngchá bāowéi le nà zuò fángzi.",
+   "en": "The police surrounded the house.",
+   "th": "ตำรวจล้อมบ้านหลังนั้นไว้"
+  }
+ },
+ {
+  "h": "包装",
+  "p": "bāo zhuāng",
+  "en": "to package",
+  "th": "บรรจุหีบห่อ",
+  "ex": {
+   "zh": "这份礼物包装得很漂亮。",
+   "py": "Zhè fèn lǐwù bāozhuāng de hěn piàoliang.",
+   "en": "This gift is beautifully packaged.",
+   "th": "ของขวัญชิ้นนี้ห่อได้สวยมาก"
+  }
+ },
+ {
+  "h": "薄弱",
+  "p": "bó ruò",
+  "en": "weak",
+  "th": "อ่อนแอ",
+  "ex": {
+   "zh": "他的英语基础比较薄弱。",
+   "py": "Tā de Yīngyǔ jīchǔ bǐjiào bóruò.",
+   "en": "His English foundation is rather weak.",
+   "th": "พื้นฐานภาษาอังกฤษของเขาค่อนข้างอ่อน"
+  }
+ },
+ {
+  "h": "饱和",
+  "p": "bǎo hé",
+  "en": "saturated",
+  "th": "อิ่มตัว",
+  "ex": {
+   "zh": "这个市场已经饱和了。",
+   "py": "Zhège shìchǎng yǐjīng bǎohé le.",
+   "en": "This market is already saturated.",
+   "th": "ตลาดนี้อิ่มตัวแล้ว"
+  }
+ },
+ {
+  "h": "饱经沧桑",
+  "p": "bǎo jīng cāng sāng",
+  "en": "worn by hardship",
+  "th": "ผ่านร้อนผ่านหนาว",
+  "ex": {
+   "zh": "老人的脸上饱经沧桑。",
+   "py": "Lǎorén de liǎn shàng bǎojīng cāngsāng.",
+   "en": "The old man's face shows a life of hardship.",
+   "th": "ใบหน้าของชายชราผ่านร้อนผ่านหนาวมามาก"
+  }
+ },
+ {
+  "h": "保管",
+  "p": "bǎo guǎn",
+  "en": "to keep safe",
+  "th": "เก็บรักษา",
+  "ex": {
+   "zh": "请替我保管这些文件。",
+   "py": "Qǐng tì wǒ bǎoguǎn zhèxiē wénjiàn.",
+   "en": "Please keep these documents safe for me.",
+   "th": "กรุณาเก็บรักษาเอกสารเหล่านี้ให้ฉัน"
+  }
+ },
+ {
+  "h": "保密",
+  "p": "bǎo mì",
+  "en": "to keep secret",
+  "th": "เก็บเป็นความลับ",
+  "ex": {
+   "zh": "这件事请你一定保密。",
+   "py": "Zhè jiàn shì qǐng nǐ yīdìng bǎomì.",
+   "en": "Please be sure to keep this matter secret.",
+   "th": "เรื่องนี้ขอให้คุณเก็บเป็นความลับ"
+  }
+ },
+ {
+  "h": "保姆",
+  "p": "bǎo mǔ",
+  "en": "nanny",
+  "th": "พี่เลี้ยง",
+  "ex": {
+   "zh": "我们请了一位保姆照顾孩子。",
+   "py": "Wǒmen qǐng le yī wèi bǎomǔ zhàogù háizi.",
+   "en": "We hired a nanny to look after the child.",
+   "th": "เราจ้างพี่เลี้ยงมาดูแลลูก"
+  }
+ },
+ {
+  "h": "保守",
+  "p": "bǎo shǒu",
+  "en": "conservative",
+  "th": "อนุรักษ์นิยม",
+  "ex": {
+   "zh": "他的想法比较保守。",
+   "py": "Tā de xiǎngfǎ bǐjiào bǎoshǒu.",
+   "en": "His way of thinking is rather conservative.",
+   "th": "ความคิดของเขาค่อนข้างอนุรักษ์นิยม"
+  }
+ },
+ {
+  "h": "保卫",
+  "p": "bǎo wèi",
+  "en": "to defend",
+  "th": "ปกป้อง",
+  "ex": {
+   "zh": "战士们保卫着自己的国家。",
+   "py": "Zhànshìmen bǎowèi zhe zìjǐ de guójiā.",
+   "en": "The soldiers defend their country.",
+   "th": "ทหารปกป้องประเทศของตน"
+  }
+ },
+ {
+  "h": "保养",
+  "p": "bǎo yǎng",
+  "en": "to maintain",
+  "th": "บำรุงรักษา",
+  "ex": {
+   "zh": "汽车需要定期保养。",
+   "py": "Qìchē xūyào dìngqī bǎoyǎng.",
+   "en": "Cars need regular maintenance.",
+   "th": "รถยนต์ต้องบำรุงรักษาเป็นประจำ"
+  }
+ },
+ {
+  "h": "保障",
+  "p": "bǎo zhàng",
+  "en": "to guarantee",
+  "th": "รับรอง",
+  "ex": {
+   "zh": "法律保障公民的权利。",
+   "py": "Fǎlǜ bǎozhàng gōngmín de quánlì.",
+   "en": "The law guarantees citizens' rights.",
+   "th": "กฎหมายรับรองสิทธิของประชาชน"
+  }
+ },
+ {
+  "h": "保重",
+  "p": "bǎo zhòng",
+  "en": "to take care",
+  "th": "ดูแลตัวเอง",
+  "ex": {
+   "zh": "天冷了，请多保重。",
+   "py": "Tiān lěng le, qǐng duō bǎozhòng.",
+   "en": "It's getting cold, please take good care of yourself.",
+   "th": "อากาศหนาวแล้ว ดูแลตัวเองด้วยนะ"
+  }
+ },
+ {
+  "h": "报仇",
+  "p": "bào chóu",
+  "en": "to take revenge",
+  "th": "แก้แค้น",
+  "ex": {
+   "zh": "他一心想为父亲报仇。",
+   "py": "Tā yīxīn xiǎng wèi fùqin bàochóu.",
+   "en": "He is set on avenging his father.",
+   "th": "เขามุ่งมั่นจะแก้แค้นให้พ่อ"
+  }
+ },
+ {
+  "h": "报酬",
+  "p": "bào chou",
+  "en": "payment",
+  "th": "ค่าตอบแทน",
+  "ex": {
+   "zh": "这份工作的报酬很高。",
+   "py": "Zhè fèn gōngzuò de bàochou hěn gāo.",
+   "en": "The pay for this job is very high.",
+   "th": "งานนี้ค่าตอบแทนสูงมาก"
+  }
+ },
+ {
+  "h": "报答",
+  "p": "bào dá",
+  "en": "to repay (kindness)",
+  "th": "ตอบแทนบุญคุณ",
+  "ex": {
+   "zh": "我一定要报答父母的恩情。",
+   "py": "Wǒ yīdìng yào bàodá fùmǔ de ēnqíng.",
+   "en": "I must repay my parents' kindness.",
+   "th": "ฉันต้องตอบแทนบุญคุณพ่อแม่ให้ได้"
+  }
+ },
+ {
+  "h": "报到",
+  "p": "bào dào",
+  "en": "to check in",
+  "th": "รายงานตัว",
+  "ex": {
+   "zh": "新生今天来学校报到。",
+   "py": "Xīnshēng jīntiān lái xuéxiào bàodào.",
+   "en": "New students are coming to register at school today.",
+   "th": "นักเรียนใหม่มารายงานตัวที่โรงเรียนวันนี้"
+  }
+ },
+ {
+  "h": "报复",
+  "p": "bào fù",
+  "en": "to retaliate",
+  "th": "แก้แค้นตอบโต้",
+  "ex": {
+   "zh": "他担心对方会报复他。",
+   "py": "Tā dānxīn duìfāng huì bàofù tā.",
+   "en": "He worries the other side will retaliate against him.",
+   "th": "เขากลัวว่าอีกฝ่ายจะแก้แค้นเขา"
+  }
+ },
+ {
+  "h": "报社",
+  "p": "bào shè",
+  "en": "newspaper office",
+  "th": "สำนักพิมพ์หนังสือพิมพ์",
+  "ex": {
+   "zh": "他在一家报社当记者。",
+   "py": "Tā zài yī jiā bàoshè dāng jìzhě.",
+   "en": "He works as a reporter at a newspaper.",
+   "th": "เขาเป็นนักข่าวที่สำนักพิมพ์หนังสือพิมพ์แห่งหนึ่ง"
+  }
+ },
+ {
+  "h": "报销",
+  "p": "bào xiāo",
+  "en": "to claim expenses",
+  "th": "เบิกค่าใช้จ่าย",
+  "ex": {
+   "zh": "出差的费用可以报销。",
+   "py": "Chūchāi de fèiyong kěyǐ bàoxiāo.",
+   "en": "Business trip expenses can be reimbursed.",
+   "th": "ค่าใช้จ่ายในการเดินทางไปทำงานเบิกได้"
+  }
+ },
+ {
+  "h": "抱负",
+  "p": "bào fù",
+  "en": "ambition",
+  "th": "ความทะเยอทะยาน",
+  "ex": {
+   "zh": "他是个有抱负的年轻人。",
+   "py": "Tā shì gè yǒu bàofù de niánqīngrén.",
+   "en": "He is an ambitious young man.",
+   "th": "เขาเป็นหนุ่มที่มีความทะเยอทะยาน"
+  }
+ },
+ {
+  "h": "抱怨",
+  "p": "bào yuàn",
+  "en": "to complain",
+  "th": "บ่น",
+  "ex": {
+   "zh": "别总是抱怨工作太累。",
+   "py": "Bié zǒngshì bàoyuàn gōngzuò tài lèi.",
+   "en": "Don't always complain that work is too tiring.",
+   "th": "อย่าบ่นว่างานเหนื่อยเกินไปอยู่เรื่อย"
+  }
+ },
+ {
+  "h": "暴力",
+  "p": "bào lì",
+  "en": "violence",
+  "th": "ความรุนแรง",
+  "ex": {
+   "zh": "我们反对一切暴力行为。",
+   "py": "Wǒmen fǎnduì yīqiè bàolì xíngwéi.",
+   "en": "We oppose all acts of violence.",
+   "th": "เราต่อต้านการใช้ความรุนแรงทุกรูปแบบ"
+  }
+ },
+ {
+  "h": "暴露",
+  "p": "bào lù",
+  "en": "to expose",
+  "th": "เปิดเผย",
+  "ex": {
+   "zh": "这次事故暴露了很多问题。",
+   "py": "Zhè cì shìgù bàolù le hěn duō wèntí.",
+   "en": "This accident exposed many problems.",
+   "th": "อุบัติเหตุครั้งนี้เปิดเผยปัญหามากมาย"
+  }
+ },
+ {
+  "h": "爆发",
+  "p": "bào fā",
+  "en": "to erupt",
+  "th": "ปะทุ",
+  "ex": {
+   "zh": "火山突然爆发了。",
+   "py": "Huǒshān tūrán bàofā le.",
+   "en": "The volcano suddenly erupted.",
+   "th": "ภูเขาไฟปะทุขึ้นมาอย่างกะทันหัน"
+  }
+ },
+ {
+  "h": "爆炸",
+  "p": "bào zhà",
+  "en": "to explode",
+  "th": "ระเบิด",
+  "ex": {
+   "zh": "工厂里发生了爆炸。",
+   "py": "Gōngchǎng lǐ fāshēng le bàozhà.",
+   "en": "An explosion happened in the factory.",
+   "th": "เกิดการระเบิดขึ้นในโรงงาน"
+  }
+ },
+ {
+  "h": "卑鄙",
+  "p": "bēi bǐ",
+  "en": "despicable",
+  "th": "ต่ำช้า",
+  "ex": {
+   "zh": "他的做法真卑鄙。",
+   "py": "Tā de zuòfǎ zhēn bēibǐ.",
+   "en": "What he did is truly despicable.",
+   "th": "วิธีที่เขาทำช่างต่ำช้าจริงๆ"
+  }
+ },
+ {
+  "h": "悲哀",
+  "p": "bēi āi",
+  "en": "sorrowful",
+  "th": "โศกเศร้า",
+  "ex": {
+   "zh": "听到这个消息，他感到很悲哀。",
+   "py": "Tīngdào zhège xiāoxi, tā gǎndào hěn bēiāi.",
+   "en": "Hearing this news, he felt deeply sorrowful.",
+   "th": "ได้ยินข่าวนี้ เขารู้สึกโศกเศร้ามาก"
+  }
+ },
+ {
+  "h": "悲惨",
+  "p": "bēi cǎn",
+  "en": "tragic",
+  "th": "น่าสงสาร",
+  "ex": {
+   "zh": "他的童年过得很悲惨。",
+   "py": "Tā de tóngnián guò de hěn bēicǎn.",
+   "en": "He had a tragic childhood.",
+   "th": "วัยเด็กของเขาน่าสงสารมาก"
+  }
+ },
+ {
+  "h": "北极",
+  "p": "běi jí",
+  "en": "North Pole",
+  "th": "ขั้วโลกเหนือ",
+  "ex": {
+   "zh": "北极的冬天非常寒冷。",
+   "py": "Běijí de dōngtiān fēicháng hánlěng.",
+   "en": "Winter in the Arctic is extremely cold.",
+   "th": "ฤดูหนาวที่ขั้วโลกเหนือหนาวมาก"
+  }
+ },
+ {
+  "h": "贝壳",
+  "p": "bèi ké",
+  "en": "seashell",
+  "th": "เปลือกหอย",
+  "ex": {
+   "zh": "孩子们在海边捡贝壳。",
+   "py": "Háizimen zài hǎibiān jiǎn bèiké.",
+   "en": "The kids are collecting seashells by the sea.",
+   "th": "เด็กๆ เก็บเปลือกหอยที่ชายทะเล"
+  }
+ },
+ {
+  "h": "备份",
+  "p": "bèi fèn",
+  "en": "backup",
+  "th": "สำรองข้อมูล",
+  "ex": {
+   "zh": "重要文件一定要备份。",
+   "py": "Zhòngyào wénjiàn yīdìng yào bèifèn.",
+   "en": "You must back up important files.",
+   "th": "ไฟล์สำคัญต้องสำรองข้อมูลไว้เสมอ"
+  }
+ },
+ {
+  "h": "备忘录",
+  "p": "bèi wàng lù",
+  "en": "memo",
+  "th": "บันทึกช่วยจำ",
+  "ex": {
+   "zh": "我在手机上写了一条备忘录。",
+   "py": "Wǒ zài shǒujī shàng xiě le yī tiáo bèiwànglù.",
+   "en": "I wrote a memo on my phone.",
+   "th": "ฉันเขียนบันทึกช่วยจำไว้ในโทรศัพท์"
+  }
+ },
+ {
+  "h": "背叛",
+  "p": "bèi pàn",
+  "en": "to betray",
+  "th": "ทรยศ",
+  "ex": {
+   "zh": "他背叛了自己的朋友。",
+   "py": "Tā bèipàn le zìjǐ de péngyou.",
+   "en": "He betrayed his friend.",
+   "th": "เขาทรยศเพื่อนของตัวเอง"
+  }
+ },
+ {
+  "h": "背诵",
+  "p": "bèi sòng",
+  "en": "to recite",
+  "th": "ท่องจำ",
+  "ex": {
+   "zh": "老师让我们背诵这首诗。",
+   "py": "Lǎoshī ràng wǒmen bèisòng zhè shǒu shī.",
+   "en": "The teacher made us recite this poem from memory.",
+   "th": "ครูให้เราท่องจำบทกวีบทนี้"
+  }
+ },
+ {
+  "h": "被动",
+  "p": "bèi dòng",
+  "en": "passive",
+  "th": "เชิงรับ",
+  "ex": {
+   "zh": "你不能总是这么被动。",
+   "py": "Nǐ bù néng zǒngshì zhème bèidòng.",
+   "en": "You can't always be this passive.",
+   "th": "คุณจะเป็นฝ่ายรับอยู่ตลอดไม่ได้"
+  }
+ },
+ {
+  "h": "被告",
+  "p": "bèi gào",
+  "en": "defendant",
+  "th": "จำเลย",
+  "ex": {
+   "zh": "被告在法庭上承认了错误。",
+   "py": "Bèigào zài fǎtíng shàng chéngrèn le cuòwù.",
+   "en": "The defendant admitted the mistake in court.",
+   "th": "จำเลยยอมรับผิดในศาล"
+  }
+ },
+ {
+  "h": "奔波",
+  "p": "bēn bō",
+  "en": "to rush about",
+  "th": "วิ่งวุ่น",
+  "ex": {
+   "zh": "他每天为生活奔波。",
+   "py": "Tā měitiān wèi shēnghuó bēnbō.",
+   "en": "He rushes around every day to make a living.",
+   "th": "เขาวิ่งวุ่นหาเลี้ยงชีพทุกวัน"
+  }
+ },
+ {
+  "h": "奔驰",
+  "p": "Bēn chí",
+  "en": "Mercedes-Benz",
+  "th": "เมอร์เซเดส-เบนซ์",
+  "ex": {
+   "zh": "他开着一辆奔驰。",
+   "py": "Tā kāizhe yī liàng Bēnchí.",
+   "en": "He drives a Mercedes-Benz.",
+   "th": "เขาขับรถเมอร์เซเดส-เบนซ์"
+  }
+ },
+ {
+  "h": "本能",
+  "p": "běn néng",
+  "en": "instinct",
+  "th": "สัญชาตญาณ",
+  "ex": {
+   "zh": "保护孩子是母亲的本能。",
+   "py": "Bǎohù háizi shì mǔqin de běnnéng.",
+   "en": "Protecting her child is a mother's instinct.",
+   "th": "การปกป้องลูกคือสัญชาตญาณของแม่"
+  }
+ },
+ {
+  "h": "本钱",
+  "p": "běn qián",
+  "en": "capital",
+  "th": "ทุนตั้งต้น",
+  "ex": {
+   "zh": "做生意需要一些本钱。",
+   "py": "Zuò shēngyi xūyào yīxiē běnqián.",
+   "en": "Doing business requires some capital.",
+   "th": "ทำธุรกิจต้องมีทุนตั้งต้นสักหน่อย"
+  }
+ },
+ {
+  "h": "本人",
+  "p": "běn rén",
+  "en": "oneself",
+  "th": "ตัวเอง",
+  "ex": {
+   "zh": "请本人携带身份证来办理。",
+   "py": "Qǐng běnrén xiédài shēnfènzhèng lái bànlǐ.",
+   "en": "Please come in person with your ID to handle this.",
+   "th": "กรุณามาด้วยตนเองพร้อมบัตรประชาชน"
+  }
+ },
+ {
+  "h": "本身",
+  "p": "běn shēn",
+  "en": "itself",
+  "th": "ตัวมันเอง",
+  "ex": {
+   "zh": "问题本身并不复杂。",
+   "py": "Wèntí běnshēn bìng bù fùzá.",
+   "en": "The problem itself is not complicated.",
+   "th": "ตัวปัญหาเองไม่ซับซ้อน"
+  }
+ },
+ {
+  "h": "本事",
+  "p": "běn shì",
+  "en": "skill",
+  "th": "ความสามารถ",
+  "ex": {
+   "zh": "他很有本事，什么都会修。",
+   "py": "Tā hěn yǒu běnshi, shénme dōu huì xiū.",
+   "en": "He is very capable and can fix anything.",
+   "th": "เขามีความสามารถมาก ซ่อมได้ทุกอย่าง"
+  }
+ },
+ {
+  "h": "本着",
+  "p": "běn zhe",
+  "en": "in line with",
+  "th": "ตามหลัก",
+  "ex": {
+   "zh": "我们本着诚信的原则合作。",
+   "py": "Wǒmen běnzhe chéngxìn de yuánzé hézuò.",
+   "en": "We cooperate on the principle of good faith.",
+   "th": "เราร่วมมือกันตามหลักความซื่อสัตย์"
+  }
+ },
+ {
+  "h": "笨拙",
+  "p": "bèn zhuō",
+  "en": "clumsy",
+  "th": "เงอะงะ",
+  "ex": {
+   "zh": "他的动作有点笨拙。",
+   "py": "Tā de dòngzuò yǒudiǎn bènzhuō.",
+   "en": "His movements are a bit clumsy.",
+   "th": "ท่าทางของเขาค่อนข้างเงอะงะ"
+  }
+ },
+ {
+  "h": "崩溃",
+  "p": "bēng kuì",
+  "en": "to collapse",
+  "th": "พังทลาย",
+  "ex": {
+   "zh": "他压力太大，快要崩溃了。",
+   "py": "Tā yālì tài dà, kuàiyào bēngkuì le.",
+   "en": "The pressure is so great he is about to break down.",
+   "th": "เขากดดันมาก ใกล้จะพังทลายแล้ว"
+  }
+ },
+ {
+  "h": "甭",
+  "p": "béng",
+  "en": "need not",
+  "th": "ไม่ต้อง",
+  "ex": {
+   "zh": "你甭担心，我会处理的。",
+   "py": "Nǐ béng dānxīn, wǒ huì chǔlǐ de.",
+   "en": "Don't worry, I'll take care of it.",
+   "th": "ไม่ต้องห่วง ฉันจะจัดการเอง"
+  }
+ },
+ {
+  "h": "迸发",
+  "p": "bèng fā",
+  "en": "to burst forth",
+  "th": "พุ่งพล่าน",
+  "ex": {
+   "zh": "观众迸发出热烈的掌声。",
+   "py": "Guānzhòng bèngfā chū rèliè de zhǎngshēng.",
+   "en": "The audience burst into enthusiastic applause.",
+   "th": "ผู้ชมปรบมือกึกก้องขึ้นมา"
+  }
+ },
+ {
+  "h": "蹦",
+  "p": "bèng",
+  "en": "to jump",
+  "th": "กระโดด",
+  "ex": {
+   "zh": "孩子们在草地上蹦蹦跳跳。",
+   "py": "Háizimen zài cǎodì shàng bèngbèng tiàotiào.",
+   "en": "The kids are hopping around on the grass.",
+   "th": "เด็กๆ กระโดดโลดเต้นบนสนามหญ้า"
+  }
+ },
+ {
+  "h": "逼迫",
+  "p": "bī pò",
+  "en": "to force",
+  "th": "บีบบังคับ",
+  "ex": {
+   "zh": "生活逼迫他去打工。",
+   "py": "Shēnghuó bīpò tā qù dǎgōng.",
+   "en": "Life forced him to take a job.",
+   "th": "ชีวิตบีบให้เขาต้องไปทำงานรับจ้าง"
+  }
+ }
+]

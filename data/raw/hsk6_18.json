@@ -1,0 +1,1202 @@
+[
+ {
+  "h": "通货",
+  "p": "tōng huò",
+  "en": "currency",
+  "th": "เงินตรา",
+  "ex": {
+   "zh": "通货膨胀影响每个人。",
+   "py": "Tōnghuò péngzhàng yǐngxiǎng měi ge rén.",
+   "en": "Inflation affects everyone.",
+   "th": "เงินเฟ้อส่งผลกระทบต่อทุกคน"
+  }
+ },
+ {
+  "h": "通俗",
+  "p": "tōng sú",
+  "en": "popular",
+  "th": "เข้าใจง่าย",
+  "ex": {
+   "zh": "这本书写得很通俗。",
+   "py": "Zhè běn shū xiě de hěn tōngsú.",
+   "en": "This book is written in an easy, popular style.",
+   "th": "หนังสือเล่มนี้เขียนด้วยภาษาเข้าใจง่ายมาก"
+  }
+ },
+ {
+  "h": "通用",
+  "p": "tōng yòng",
+  "en": "universal",
+  "th": "ใช้ได้ทั่วไป",
+  "ex": {
+   "zh": "这种卡在全国通用。",
+   "py": "Zhè zhǒng kǎ zài quánguó tōngyòng.",
+   "en": "This card is valid nationwide.",
+   "th": "บัตรชนิดนี้ใช้ได้ทั่วประเทศ"
+  }
+ },
+ {
+  "h": "同胞",
+  "p": "tóng bāo",
+  "en": "fellow countryman",
+  "th": "ร่วมชาติ",
+  "ex": {
+   "zh": "海外同胞都回来过年了。",
+   "py": "Hǎiwài tóngbāo dōu huílái guònián le.",
+   "en": "Overseas compatriots all came home for the New Year.",
+   "th": "ชาวจีนโพ้นทะเลกลับมาฉลองปีใหม่กันหมด"
+  }
+ },
+ {
+  "h": "同志",
+  "p": "tóng zhì",
+  "en": "comrade",
+  "th": "สหาย",
+  "ex": {
+   "zh": "同志们，大家好！",
+   "py": "Tóngzhìmen, dàjiā hǎo!",
+   "en": "Comrades, hello everyone!",
+   "th": "สหายทั้งหลาย สวัสดีทุกคน"
+  }
+ },
+ {
+  "h": "铜矿",
+  "p": "tóng kuàng",
+  "en": "copper mine",
+  "th": "เหมืองทองแดง",
+  "ex": {
+   "zh": "这里有一座大铜矿。",
+   "py": "Zhèlǐ yǒu yí zuò dà tóngkuàng.",
+   "en": "There is a large copper mine here.",
+   "th": "ที่นี่มีเหมืองทองแดงขนาดใหญ่"
+  }
+ },
+ {
+  "h": "童话",
+  "p": "tóng huà",
+  "en": "fairy tale",
+  "th": "เทพนิยาย",
+  "ex": {
+   "zh": "孩子们爱听童话故事。",
+   "py": "Háizimen ài tīng tónghuà gùshi.",
+   "en": "Children love listening to fairy tales.",
+   "th": "เด็ก ๆ ชอบฟังนิทานเทพนิยาย"
+  }
+ },
+ {
+  "h": "统筹兼顾",
+  "p": "tǒng chóu jiān gù",
+  "en": "overall planning",
+  "th": "วางแผนรอบด้าน",
+  "ex": {
+   "zh": "做事要统筹兼顾。",
+   "py": "Zuòshì yào tǒngchóujiāngù.",
+   "en": "Plan overall and take all factors into account.",
+   "th": "ทำงานต้องวางแผนให้รอบด้าน"
+  }
+ },
+ {
+  "h": "统计",
+  "p": "tǒng jì",
+  "en": "statistics",
+  "th": "สถิติ",
+  "ex": {
+   "zh": "我在统计今天的销量。",
+   "py": "Wǒ zài tǒngjì jīntiān de xiāoliàng.",
+   "en": "I am tallying today's sales.",
+   "th": "ฉันกำลังรวบรวมสถิติยอดขายวันนี้"
+  }
+ },
+ {
+  "h": "统统",
+  "p": "tǒng tǒng",
+  "en": "all",
+  "th": "ทั้งหมด",
+  "ex": {
+   "zh": "这些东西统统拿走吧。",
+   "py": "Zhèxiē dōngxi tǒngtǒng ná zǒu ba.",
+   "en": "Take all of these things away.",
+   "th": "เอาของพวกนี้ไปให้หมดเลย"
+  }
+ },
+ {
+  "h": "投机",
+  "p": "tóu jī",
+  "en": "to speculate",
+  "th": "เก็งกำไร",
+  "ex": {
+   "zh": "他靠投机赚了不少钱。",
+   "py": "Tā kào tóujī zhuàn le bù shǎo qián.",
+   "en": "He made a lot of money from speculation.",
+   "th": "เขาเก็งกำไรจนได้เงินมาไม่น้อย"
+  }
+ },
+ {
+  "h": "投降",
+  "p": "tóu xiáng",
+  "en": "to surrender",
+  "th": "ยอมแพ้",
+  "ex": {
+   "zh": "敌人终于投降了。",
+   "py": "Dírén zhōngyú tóuxiáng le.",
+   "en": "The enemy finally surrendered.",
+   "th": "ศัตรูยอมแพ้ในที่สุด"
+  }
+ },
+ {
+  "h": "投票",
+  "p": "tóu piào",
+  "en": "to vote",
+  "th": "ลงคะแนน",
+  "ex": {
+   "zh": "大家一起投票决定。",
+   "py": "Dàjiā yìqǐ tóupiào juédìng.",
+   "en": "Everyone votes together to decide.",
+   "th": "ทุกคนลงคะแนนร่วมกันเพื่อตัดสิน"
+  }
+ },
+ {
+  "h": "投掷",
+  "p": "tóu zhì",
+  "en": "to throw",
+  "th": "ขว้าง",
+  "ex": {
+   "zh": "他擅长投掷标枪。",
+   "py": "Tā shàncháng tóuzhì biāoqiāng.",
+   "en": "He is good at throwing the javelin.",
+   "th": "เขาเก่งเรื่องขว้างหอก"
+  }
+ },
+ {
+  "h": "秃",
+  "p": "tū",
+  "en": "bald",
+  "th": "หัวล้าน",
+  "ex": {
+   "zh": "爸爸的头发有点秃了。",
+   "py": "Bàba de tóufa yǒudiǎn tū le.",
+   "en": "Dad's hair is thinning a bit.",
+   "th": "ผมของพ่อเริ่มล้านนิดหน่อย"
+  }
+ },
+ {
+  "h": "突破",
+  "p": "tū pò",
+  "en": "to break through",
+  "th": "ทะลวง",
+  "ex": {
+   "zh": "他们在技术上有了突破。",
+   "py": "Tāmen zài jìshù shàng yǒu le tūpò.",
+   "en": "They made a breakthrough in technology.",
+   "th": "พวกเขาก้าวข้ามขีดจำกัดทางเทคโนโลยี"
+  }
+ },
+ {
+  "h": "图案",
+  "p": "tú àn",
+  "en": "pattern",
+  "th": "ลวดลาย",
+  "ex": {
+   "zh": "这条裙子的图案很漂亮。",
+   "py": "Zhè tiáo qúnzi de tú'àn hěn piàoliang.",
+   "en": "The pattern on this skirt is pretty.",
+   "th": "ลวดลายของกระโปรงนี้สวยมาก"
+  }
+ },
+ {
+  "h": "徒弟",
+  "p": "tú dì",
+  "en": "apprentice",
+  "th": "ลูกศิษย์",
+  "ex": {
+   "zh": "师傅收了一个徒弟。",
+   "py": "Shīfu shōu le yí ge túdì.",
+   "en": "The master took on an apprentice.",
+   "th": "อาจารย์รับลูกศิษย์คนหนึ่ง"
+  }
+ },
+ {
+  "h": "途径",
+  "p": "tú jìng",
+  "en": "way",
+  "th": "หนทาง",
+  "ex": {
+   "zh": "读书是获得知识的途径。",
+   "py": "Dúshū shì huòdé zhīshi de tújìng.",
+   "en": "Reading is a way to gain knowledge.",
+   "th": "การอ่านหนังสือเป็นหนทางแสวงหาความรู้"
+  }
+ },
+ {
+  "h": "土壤",
+  "p": "tǔ rǎng",
+  "en": "soil",
+  "th": "ดิน",
+  "ex": {
+   "zh": "这里的土壤很肥沃。",
+   "py": "Zhèlǐ de tǔrǎng hěn féiwò.",
+   "en": "The soil here is very fertile.",
+   "th": "ดินที่นี่อุดมสมบูรณ์มาก"
+  }
+ },
+ {
+  "h": "涂抹",
+  "p": "tú mǒ",
+  "en": "to smear",
+  "th": "ทา",
+  "ex": {
+   "zh": "她在脸上涂抹面霜。",
+   "py": "Tā zài liǎn shàng túmǒ miànshuāng.",
+   "en": "She applies face cream on her face.",
+   "th": "เธอทาครีมบำรุงที่ใบหน้า"
+  }
+ },
+ {
+  "h": "团结",
+  "p": "tuán jié",
+  "en": "to unite",
+  "th": "สามัคคี",
+  "ex": {
+   "zh": "大家要团结一致。",
+   "py": "Dàjiā yào tuánjié yízhì.",
+   "en": "Everyone must be united.",
+   "th": "ทุกคนต้องสามัคคีกัน"
+  }
+ },
+ {
+  "h": "团体",
+  "p": "tuán tǐ",
+  "en": "group",
+  "th": "กลุ่มองค์กร",
+  "ex": {
+   "zh": "我们参加了这个团体。",
+   "py": "Wǒmen cānjiā le zhège tuántǐ.",
+   "en": "We joined this organization.",
+   "th": "เราเข้าร่วมกลุ่มนี้"
+  }
+ },
+ {
+  "h": "团圆",
+  "p": "tuán yuán",
+  "en": "reunion",
+  "th": "พร้อมหน้าพร้อมตา",
+  "ex": {
+   "zh": "春节全家人团圆了。",
+   "py": "Chūnjié quánjiā rén tuányuán le.",
+   "en": "The whole family reunited at Spring Festival.",
+   "th": "เทศกาลตรุษจีนทั้งครอบครัวมาพร้อมหน้ากัน"
+  }
+ },
+ {
+  "h": "推测",
+  "p": "tuī cè",
+  "en": "to speculate",
+  "th": "คาดเดา",
+  "ex": {
+   "zh": "我们只能推测原因。",
+   "py": "Wǒmen zhǐ néng tuīcè yuányīn.",
+   "en": "We can only speculate on the cause.",
+   "th": "เราทำได้แค่คาดเดาสาเหตุ"
+  }
+ },
+ {
+  "h": "推翻",
+  "p": "tuī fān",
+  "en": "to overthrow",
+  "th": "โค่นล้ม",
+  "ex": {
+   "zh": "人民推翻了旧政府。",
+   "py": "Rénmín tuīfān le jiù zhèngfǔ.",
+   "en": "The people overthrew the old government.",
+   "th": "ประชาชนโค่นล้มรัฐบาลเก่า"
+  }
+ },
+ {
+  "h": "推理",
+  "p": "tuī lǐ",
+  "en": "reasoning",
+  "th": "การอนุมาน",
+  "ex": {
+   "zh": "他喜欢看推理小说。",
+   "py": "Tā xǐhuan kàn tuīlǐ xiǎoshuō.",
+   "en": "He likes reading detective novels.",
+   "th": "เขาชอบอ่านนิยายสืบสวน"
+  }
+ },
+ {
+  "h": "推论",
+  "p": "tuī lùn",
+  "en": "to infer",
+  "th": "อนุมาน",
+  "ex": {
+   "zh": "从这些数据可以推论出结果。",
+   "py": "Cóng zhèxiē shùjù kěyǐ tuīlùn chū jiéguǒ.",
+   "en": "A result can be inferred from these data.",
+   "th": "จากข้อมูลเหล่านี้สามารถอนุมานผลลัพธ์ได้"
+  }
+ },
+ {
+  "h": "推销",
+  "p": "tuī xiāo",
+  "en": "to promote sales",
+  "th": "ขายสินค้า",
+  "ex": {
+   "zh": "他上门推销新产品。",
+   "py": "Tā shàngmén tuīxiāo xīn chǎnpǐn.",
+   "en": "He goes door to door selling new products.",
+   "th": "เขาไปเคาะประตูบ้านเพื่อขายสินค้าใหม่"
+  }
+ },
+ {
+  "h": "吞咽",
+  "p": "tūn yàn",
+  "en": "to swallow",
+  "th": "กลืน",
+  "ex": {
+   "zh": "他喉咙痛，吞咽困难。",
+   "py": "Tā hóulóng tòng, tūnyàn kùnnan.",
+   "en": "His throat hurts and he has trouble swallowing.",
+   "th": "เขาเจ็บคอ กลืนลำบาก"
+  }
+ },
+ {
+  "h": "托运",
+  "p": "tuō yùn",
+  "en": "to check in",
+  "th": "ฝากขนส่ง",
+  "ex": {
+   "zh": "我要托运一件行李。",
+   "py": "Wǒ yào tuōyùn yí jiàn xíngli.",
+   "en": "I want to check in a piece of luggage.",
+   "th": "ฉันต้องการเช็กอินกระเป๋าใบหนึ่ง"
+  }
+ },
+ {
+  "h": "拖延",
+  "p": "tuō yán",
+  "en": "to procrastinate",
+  "th": "ผัดวันประกันพรุ่ง",
+  "ex": {
+   "zh": "别再拖延了，快做吧。",
+   "py": "Bié zài tuōyán le, kuài zuò ba.",
+   "en": "Stop procrastinating and do it.",
+   "th": "เลิกผัดวันประกันพรุ่งได้แล้ว รีบทำเถอะ"
+  }
+ },
+ {
+  "h": "脱离",
+  "p": "tuō lí",
+  "en": "to break away",
+  "th": "แยกตัวออก",
+  "ex": {
+   "zh": "他脱离了危险。",
+   "py": "Tā tuōlí le wēixiǎn.",
+   "en": "He is out of danger.",
+   "th": "เขาพ้นจากอันตรายแล้ว"
+  }
+ },
+ {
+  "h": "妥当",
+  "p": "tuǒ dang",
+  "en": "appropriate",
+  "th": "เหมาะสม",
+  "ex": {
+   "zh": "事情已经安排妥当了。",
+   "py": "Shìqing yǐjīng ānpái tuǒdang le.",
+   "en": "Everything has been arranged properly.",
+   "th": "เรื่องต่าง ๆ จัดการเรียบร้อยแล้ว"
+  }
+ },
+ {
+  "h": "妥善",
+  "p": "tuǒ shàn",
+  "en": "proper",
+  "th": "เหมาะสมรอบคอบ",
+  "ex": {
+   "zh": "请妥善保管好证件。",
+   "py": "Qǐng tuǒshàn bǎoguǎn hǎo zhèngjiàn.",
+   "en": "Please keep your documents safe.",
+   "th": "กรุณาเก็บเอกสารให้ดี"
+  }
+ },
+ {
+  "h": "妥协",
+  "p": "tuǒ xié",
+  "en": "to compromise",
+  "th": "ประนีประนอม",
+  "ex": {
+   "zh": "双方最后达成了妥协。",
+   "py": "Shuāngfāng zuìhòu dáchéng le tuǒxié.",
+   "en": "The two sides finally reached a compromise.",
+   "th": "สองฝ่ายประนีประนอมกันได้ในที่สุด"
+  }
+ },
+ {
+  "h": "椭圆",
+  "p": "tuǒ yuán",
+  "en": "oval",
+  "th": "วงรี",
+  "ex": {
+   "zh": "桌子是椭圆形的。",
+   "py": "Zhuōzi shì tuǒyuánxíng de.",
+   "en": "The table is oval-shaped.",
+   "th": "โต๊ะเป็นทรงวงรี"
+  }
+ },
+ {
+  "h": "唾沫",
+  "p": "tuò mo",
+  "en": "saliva",
+  "th": "น้ำลาย",
+  "ex": {
+   "zh": "他咽了一口唾沫。",
+   "py": "Tā yàn le yì kǒu tuòmo.",
+   "en": "He swallowed his saliva.",
+   "th": "เขากลืนน้ำลายลงคอ"
+  }
+ },
+ {
+  "h": "挖掘",
+  "p": "wā jué",
+  "en": "to excavate",
+  "th": "ขุด",
+  "ex": {
+   "zh": "考古学家在挖掘古墓。",
+   "py": "Kǎogǔ xuéjiā zài wājué gǔmù.",
+   "en": "Archaeologists are excavating an ancient tomb.",
+   "th": "นักโบราณคดีกำลังขุดสุสานโบราณ"
+  }
+ },
+ {
+  "h": "娃娃",
+  "p": "wá wa",
+  "en": "baby",
+  "th": "เด็กน้อย",
+  "ex": {
+   "zh": "这个娃娃真可爱。",
+   "py": "Zhège wáwa zhēn kě'ài.",
+   "en": "This little baby is so cute.",
+   "th": "เด็กน้อยคนนี้น่ารักจริง ๆ"
+  }
+ },
+ {
+  "h": "瓦解",
+  "p": "wǎ jiě",
+  "en": "to collapse",
+  "th": "ล่มสลาย",
+  "ex": {
+   "zh": "敌人的阵线瓦解了。",
+   "py": "Dírén de zhènxiàn wǎjiě le.",
+   "en": "The enemy's front collapsed.",
+   "th": "แนวรบของศัตรูล่มสลาย"
+  }
+ },
+ {
+  "h": "哇",
+  "p": "wā",
+  "en": "wow",
+  "th": "ว้าว",
+  "ex": {
+   "zh": "哇，这里好漂亮！",
+   "py": "Wā, zhèlǐ hǎo piàoliang!",
+   "en": "Wow, this place is so beautiful!",
+   "th": "ว้าว ที่นี่สวยจัง"
+  }
+ },
+ {
+  "h": "歪曲",
+  "p": "wāi qū",
+  "en": "to distort",
+  "th": "บิดเบือน",
+  "ex": {
+   "zh": "不要歪曲事实。",
+   "py": "Bú yào wāiqū shìshí.",
+   "en": "Don't distort the facts.",
+   "th": "อย่าบิดเบือนความจริง"
+  }
+ },
+ {
+  "h": "外表",
+  "p": "wài biǎo",
+  "en": "appearance",
+  "th": "รูปลักษณ์ภายนอก",
+  "ex": {
+   "zh": "不要只看外表。",
+   "py": "Bú yào zhǐ kàn wàibiǎo.",
+   "en": "Don't judge only by appearance.",
+   "th": "อย่ามองแค่รูปลักษณ์ภายนอก"
+  }
+ },
+ {
+  "h": "外界",
+  "p": "wài jiè",
+  "en": "outside world",
+  "th": "โลกภายนอก",
+  "ex": {
+   "zh": "他很少与外界联系。",
+   "py": "Tā hěn shǎo yǔ wàijiè liánxì.",
+   "en": "He rarely contacts the outside world.",
+   "th": "เขาแทบไม่ติดต่อกับโลกภายนอก"
+  }
+ },
+ {
+  "h": "外向",
+  "p": "wài xiàng",
+  "en": "outgoing",
+  "th": "เปิดเผยชอบเข้าสังคม",
+  "ex": {
+   "zh": "她的性格很外向。",
+   "py": "Tā de xìnggé hěn wàixiàng.",
+   "en": "She has an outgoing personality.",
+   "th": "เธอมีนิสัยเปิดเผยชอบเข้าสังคม"
+  }
+ },
+ {
+  "h": "外行",
+  "p": "wài háng",
+  "en": "layman",
+  "th": "มือสมัครเล่น",
+  "ex": {
+   "zh": "我对电脑是外行。",
+   "py": "Wǒ duì diànnǎo shì wàiháng.",
+   "en": "I am a layman when it comes to computers.",
+   "th": "ฉันเป็นมือใหม่เรื่องคอมพิวเตอร์"
+  }
+ },
+ {
+  "h": "丸",
+  "p": "wán",
+  "en": "pill",
+  "th": "เม็ดกลม",
+  "ex": {
+   "zh": "医生给我开了几粒药丸。",
+   "py": "Yīshēng gěi wǒ kāi le jǐ lì yàowán.",
+   "en": "The doctor prescribed me some pills.",
+   "th": "หมอสั่งยาเม็ดให้ฉันหลายเม็ด"
+  }
+ },
+ {
+  "h": "完备",
+  "p": "wán bèi",
+  "en": "complete",
+  "th": "ครบถ้วน",
+  "ex": {
+   "zh": "这里的设备很完备。",
+   "py": "Zhèlǐ de shèbèi hěn wánbèi.",
+   "en": "The equipment here is complete.",
+   "th": "อุปกรณ์ที่นี่ครบครัน"
+  }
+ },
+ {
+  "h": "完毕",
+  "p": "wán bì",
+  "en": "to finish",
+  "th": "เสร็จสิ้น",
+  "ex": {
+   "zh": "检查完毕，一切正常。",
+   "py": "Jiǎnchá wánbì, yíqiè zhèngcháng.",
+   "en": "The inspection is finished; all is normal.",
+   "th": "ตรวจเสร็จสิ้น ทุกอย่างปกติ"
+  }
+ },
+ {
+  "h": "玩弄",
+  "p": "wán nòng",
+  "en": "to play with",
+  "th": "เล่นสนุกกับ",
+  "ex": {
+   "zh": "不要玩弄别人的感情。",
+   "py": "Bú yào wánnòng biérén de gǎnqíng.",
+   "en": "Don't toy with other people's feelings.",
+   "th": "อย่าเล่นกับความรู้สึกของคนอื่น"
+  }
+ },
+ {
+  "h": "玩意儿",
+  "p": "wán yì r",
+  "en": "thing",
+  "th": "ของเล่น",
+  "ex": {
+   "zh": "这是什么玩意儿？",
+   "py": "Zhè shì shénme wányìr?",
+   "en": "What is this thing?",
+   "th": "นี่มันอะไรกัน"
+  }
+ },
+ {
+  "h": "顽固",
+  "p": "wán gù",
+  "en": "stubborn",
+  "th": "ดื้อรั้น",
+  "ex": {
+   "zh": "爷爷的脾气很顽固。",
+   "py": "Yéye de píqi hěn wángù.",
+   "en": "Grandpa has a stubborn temper.",
+   "th": "คุณปู่นิสัยดื้อรั้นมาก"
+  }
+ },
+ {
+  "h": "顽强",
+  "p": "wán qiáng",
+  "en": "tenacious",
+  "th": "ไม่ย่อท้อ",
+  "ex": {
+   "zh": "他顽强地战胜了病魔。",
+   "py": "Tā wánqiáng de zhànshèng le bìngmó.",
+   "en": "He tenaciously overcame his illness.",
+   "th": "เขาต่อสู้เอาชนะโรคร้ายอย่างไม่ย่อท้อ"
+  }
+ },
+ {
+  "h": "挽回",
+  "p": "wǎn huí",
+  "en": "to retrieve",
+  "th": "กอบกู้",
+  "ex": {
+   "zh": "他想挽回失去的机会。",
+   "py": "Tā xiǎng wǎnhuí shīqù de jīhuì.",
+   "en": "He wants to regain the lost opportunity.",
+   "th": "เขาอยากกอบกู้โอกาสที่เสียไป"
+  }
+ },
+ {
+  "h": "挽救",
+  "p": "wǎn jiù",
+  "en": "to save",
+  "th": "ช่วยชีวิต",
+  "ex": {
+   "zh": "医生挽救了他的生命。",
+   "py": "Yīshēng wǎnjiù le tā de shēngmìng.",
+   "en": "The doctor saved his life.",
+   "th": "หมอช่วยชีวิตเขาไว้ได้"
+  }
+ },
+ {
+  "h": "惋惜",
+  "p": "wǎn xī",
+  "en": "to feel sorry",
+  "th": "เสียดาย",
+  "ex": {
+   "zh": "大家都为他感到惋惜。",
+   "py": "Dàjiā dōu wèi tā gǎndào wǎnxī.",
+   "en": "Everyone feels sorry for him.",
+   "th": "ทุกคนรู้สึกเสียดายแทนเขา"
+  }
+ },
+ {
+  "h": "万分",
+  "p": "wàn fēn",
+  "en": "extremely",
+  "th": "อย่างยิ่ง",
+  "ex": {
+   "zh": "我万分感谢你的帮助。",
+   "py": "Wǒ wànfēn gǎnxiè nǐ de bāngzhù.",
+   "en": "I am extremely grateful for your help.",
+   "th": "ฉันขอบคุณความช่วยเหลือของคุณอย่างยิ่ง"
+  }
+ },
+ {
+  "h": "网络",
+  "p": "Wǎng luò",
+  "en": "network",
+  "th": "เครือข่าย",
+  "ex": {
+   "zh": "这里的网络很快。",
+   "py": "Zhèlǐ de wǎngluò hěn kuài.",
+   "en": "The network here is very fast.",
+   "th": "เครือข่ายที่นี่เร็วมาก"
+  }
+ },
+ {
+  "h": "往常",
+  "p": "wǎng cháng",
+  "en": "usual",
+  "th": "ตามปกติ",
+  "ex": {
+   "zh": "他比往常起得早。",
+   "py": "Tā bǐ wǎngcháng qǐ de zǎo.",
+   "en": "He got up earlier than usual.",
+   "th": "เขาตื่นเช้ากว่าปกติ"
+  }
+ },
+ {
+  "h": "往事",
+  "p": "wǎng shì",
+  "en": "past events",
+  "th": "เรื่องในอดีต",
+  "ex": {
+   "zh": "他常常回忆往事。",
+   "py": "Tā chángcháng huíyì wǎngshì.",
+   "en": "He often recalls past events.",
+   "th": "เขามักหวนนึกถึงเรื่องในอดีต"
+  }
+ },
+ {
+  "h": "妄想",
+  "p": "wàng xiǎng",
+  "en": "delusion",
+  "th": "ความหลงผิด",
+  "ex": {
+   "zh": "别妄想一夜成名。",
+   "py": "Bié wàngxiǎng yí yè chéngmíng.",
+   "en": "Don't fantasize about becoming famous overnight.",
+   "th": "อย่าฝันเฟื่องว่าจะดังในชั่วข้ามคืน"
+  }
+ },
+ {
+  "h": "危机",
+  "p": "wēi jī",
+  "en": "crisis",
+  "th": "วิกฤต",
+  "ex": {
+   "zh": "公司遇到了危机。",
+   "py": "Gōngsī yùdào le wēijī.",
+   "en": "The company has run into a crisis.",
+   "th": "บริษัทเผชิญวิกฤต"
+  }
+ },
+ {
+  "h": "威风",
+  "p": "wēi fēng",
+  "en": "impressive",
+  "th": "น่าเกรงขาม",
+  "ex": {
+   "zh": "他穿上军装很威风。",
+   "py": "Tā chuān shàng jūnzhuāng hěn wēifēng.",
+   "en": "He looks impressive in a military uniform.",
+   "th": "เขาสวมเครื่องแบบทหารดูน่าเกรงขาม"
+  }
+ },
+ {
+  "h": "威力",
+  "p": "wēi lì",
+  "en": "power",
+  "th": "อานุภาพ",
+  "ex": {
+   "zh": "这种武器威力很大。",
+   "py": "Zhè zhǒng wǔqì wēilì hěn dà.",
+   "en": "This weapon is very powerful.",
+   "th": "อาวุธชนิดนี้มีอานุภาพร้ายแรง"
+  }
+ },
+ {
+  "h": "威望",
+  "p": "wēi wàng",
+  "en": "prestige",
+  "th": "บารมี",
+  "ex": {
+   "zh": "他在村里很有威望。",
+   "py": "Tā zài cūn lǐ hěn yǒu wēiwàng.",
+   "en": "He has great prestige in the village.",
+   "th": "เขามีบารมีมากในหมู่บ้าน"
+  }
+ },
+ {
+  "h": "威信",
+  "p": "Wēi xìn",
+  "en": "credibility",
+  "th": "ความน่าเชื่อถือ",
+  "ex": {
+   "zh": "老师在学生中很有威信。",
+   "py": "Lǎoshī zài xuésheng zhōng hěn yǒu wēixìn.",
+   "en": "The teacher has great authority among students.",
+   "th": "ครูมีความน่าเชื่อถือในหมู่นักเรียน"
+  }
+ },
+ {
+  "h": "微不足道",
+  "p": "wēi bù zú dào",
+  "en": "insignificant",
+  "th": "ไม่สำคัญเลย",
+  "ex": {
+   "zh": "这点小事微不足道。",
+   "py": "Zhè diǎn xiǎoshì wēibùzúdào.",
+   "en": "This small matter is insignificant.",
+   "th": "เรื่องเล็กน้อยนี้ไม่มีความสำคัญเลย"
+  }
+ },
+ {
+  "h": "微观",
+  "p": "wēi guān",
+  "en": "microscopic",
+  "th": "ระดับจุลภาค",
+  "ex": {
+   "zh": "科学家研究微观世界。",
+   "py": "Kēxuéjiā yánjiū wēiguān shìjiè.",
+   "en": "Scientists study the microscopic world.",
+   "th": "นักวิทยาศาสตร์ศึกษาโลกระดับจุลภาค"
+  }
+ },
+ {
+  "h": "违背",
+  "p": "wéi bèi",
+  "en": "to violate",
+  "th": "ขัดต่อ",
+  "ex": {
+   "zh": "这违背了我们的原则。",
+   "py": "Zhè wéibèi le wǒmen de yuánzé.",
+   "en": "This goes against our principles.",
+   "th": "สิ่งนี้ขัดต่อหลักการของเรา"
+  }
+ },
+ {
+  "h": "唯独",
+  "p": "wéi dú",
+  "en": "only",
+  "th": "เพียงคนเดียว",
+  "ex": {
+   "zh": "大家都来了，唯独他没来。",
+   "py": "Dàjiā dōu lái le, wéidú tā méi lái.",
+   "en": "Everyone came except him.",
+   "th": "ทุกคนมาหมด ยกเว้นเขาคนเดียว"
+  }
+ },
+ {
+  "h": "维持",
+  "p": "wéi chí",
+  "en": "to maintain",
+  "th": "รักษาไว้",
+  "ex": {
+   "zh": "他靠打工维持生活。",
+   "py": "Tā kào dǎgōng wéichí shēnghuó.",
+   "en": "He makes a living by working part-time.",
+   "th": "เขาหาเลี้ยงชีพด้วยการทำงานพิเศษ"
+  }
+ },
+ {
+  "h": "维生素",
+  "p": "wéi shēng sù",
+  "en": "vitamin",
+  "th": "วิตามิน",
+  "ex": {
+   "zh": "水果里有很多维生素。",
+   "py": "Shuǐguǒ lǐ yǒu hěn duō wéishēngsù.",
+   "en": "Fruit contains a lot of vitamins.",
+   "th": "ผลไม้มีวิตามินมากมาย"
+  }
+ },
+ {
+  "h": "维修",
+  "p": "wéi xiū",
+  "en": "to repair",
+  "th": "ซ่อมบำรุง",
+  "ex": {
+   "zh": "电梯正在维修。",
+   "py": "Diàntī zhèngzài wéixiū.",
+   "en": "The elevator is under repair.",
+   "th": "ลิฟต์กำลังซ่อมบำรุง"
+  }
+ },
+ {
+  "h": "伪造",
+  "p": "wěi zào",
+  "en": "to forge",
+  "th": "ปลอมแปลง",
+  "ex": {
+   "zh": "他伪造了一份文件。",
+   "py": "Tā wěizào le yí fèn wénjiàn.",
+   "en": "He forged a document.",
+   "th": "เขาปลอมแปลงเอกสารฉบับหนึ่ง"
+  }
+ },
+ {
+  "h": "委员",
+  "p": "wěi yuán",
+  "en": "committee member",
+  "th": "กรรมการ",
+  "ex": {
+   "zh": "他是学校的委员。",
+   "py": "Tā shì xuéxiào de wěiyuán.",
+   "en": "He is a member of the school committee.",
+   "th": "เขาเป็นกรรมการของโรงเรียน"
+  }
+ },
+ {
+  "h": "卫星",
+  "p": "wèi xīng",
+  "en": "satellite",
+  "th": "ดาวเทียม",
+  "ex": {
+   "zh": "卫星正在绕地球转。",
+   "py": "Wèixīng zhèngzài rào dìqiú zhuàn.",
+   "en": "The satellite is orbiting the Earth.",
+   "th": "ดาวเทียมกำลังโคจรรอบโลก"
+  }
+ },
+ {
+  "h": "为难",
+  "p": "wéi nán",
+  "en": "to embarrass",
+  "th": "ลำบากใจ",
+  "ex": {
+   "zh": "请别为难我。",
+   "py": "Qǐng bié wéinán wǒ.",
+   "en": "Please don't put me in a difficult position.",
+   "th": "ได้โปรดอย่าทำให้ฉันลำบากใจ"
+  }
+ },
+ {
+  "h": "为期",
+  "p": "wéi qī",
+  "en": "lasting",
+  "th": "มีกำหนดเวลา",
+  "ex": {
+   "zh": "培训为期一周。",
+   "py": "Péixùn wéiqī yì zhōu.",
+   "en": "The training lasts one week.",
+   "th": "การอบรมมีกำหนดหนึ่งสัปดาห์"
+  }
+ },
+ {
+  "h": "为首",
+  "p": "wéi shǒu",
+  "en": "headed by",
+  "th": "นำโดย",
+  "ex": {
+   "zh": "以他为首的代表团来了。",
+   "py": "Yǐ tā wéishǒu de dàibiǎotuán lái le.",
+   "en": "A delegation headed by him has arrived.",
+   "th": "คณะผู้แทนที่มีเขาเป็นผู้นำมาถึงแล้ว"
+  }
+ },
+ {
+  "h": "未免",
+  "p": "wèi miǎn",
+  "en": "rather",
+  "th": "ก็เกินไปหน่อย",
+  "ex": {
+   "zh": "你这样做未免太过分了。",
+   "py": "Nǐ zhèyàng zuò wèimiǎn tài guòfèn le.",
+   "en": "Doing this is really going too far.",
+   "th": "คุณทำแบบนี้ก็เกินไปหน่อย"
+  }
+ },
+ {
+  "h": "位于",
+  "p": "wèi yú",
+  "en": "to be located at",
+  "th": "ตั้งอยู่ที่",
+  "ex": {
+   "zh": "学校位于市中心。",
+   "py": "Xuéxiào wèiyú shì zhōngxīn.",
+   "en": "The school is located in the city center.",
+   "th": "โรงเรียนตั้งอยู่กลางเมือง"
+  }
+ },
+ {
+  "h": "畏惧",
+  "p": "wèi jù",
+  "en": "to fear",
+  "th": "เกรงกลัว",
+  "ex": {
+   "zh": "他从不畏惧困难。",
+   "py": "Tā cóng bú wèijù kùnnan.",
+   "en": "He never fears difficulties.",
+   "th": "เขาไม่เคยเกรงกลัวความยากลำบาก"
+  }
+ },
+ {
+  "h": "胃口",
+  "p": "wèi kǒu",
+  "en": "appetite",
+  "th": "เจริญอาหาร",
+  "ex": {
+   "zh": "我今天没有胃口。",
+   "py": "Wǒ jīntiān méiyǒu wèikǒu.",
+   "en": "I have no appetite today.",
+   "th": "วันนี้ฉันไม่อยากอาหาร"
+  }
+ },
+ {
+  "h": "慰问",
+  "p": "wèi wèn",
+  "en": "to express sympathy",
+  "th": "เยี่ยมให้กำลังใจ",
+  "ex": {
+   "zh": "领导去医院慰问病人。",
+   "py": "Lǐngdǎo qù yīyuàn wèiwèn bìngrén.",
+   "en": "The leader went to the hospital to visit patients.",
+   "th": "ผู้นำไปโรงพยาบาลเยี่ยมให้กำลังใจผู้ป่วย"
+  }
+ },
+ {
+  "h": "温带",
+  "p": "wēn dài",
+  "en": "temperate zone",
+  "th": "เขตอบอุ่น",
+  "ex": {
+   "zh": "中国大部分地区在温带。",
+   "py": "Zhōngguó dà bùfen dìqū zài wēndài.",
+   "en": "Most of China lies in the temperate zone.",
+   "th": "พื้นที่ส่วนใหญ่ของจีนอยู่ในเขตอบอุ่น"
+  }
+ },
+ {
+  "h": "温和",
+  "p": "wēn hé",
+  "en": "mild",
+  "th": "อ่อนโยน",
+  "ex": {
+   "zh": "他的性格很温和。",
+   "py": "Tā de xìnggé hěn wēnhé.",
+   "en": "He has a gentle personality.",
+   "th": "เขานิสัยอ่อนโยนมาก"
+  }
+ },
+ {
+  "h": "文凭",
+  "p": "wén píng",
+  "en": "diploma",
+  "th": "ประกาศนียบัตร",
+  "ex": {
+   "zh": "他拿到了大学文凭。",
+   "py": "Tā nádào le dàxué wénpíng.",
+   "en": "He got his university diploma.",
+   "th": "เขาได้รับประกาศนียบัตรมหาวิทยาลัย"
+  }
+ },
+ {
+  "h": "文物",
+  "p": "wén wù",
+  "en": "cultural relic",
+  "th": "โบราณวัตถุ",
+  "ex": {
+   "zh": "博物馆里有很多文物。",
+   "py": "Bówùguǎn lǐ yǒu hěn duō wénwù.",
+   "en": "The museum has many cultural relics.",
+   "th": "พิพิธภัณฑ์มีโบราณวัตถุมากมาย"
+  }
+ },
+ {
+  "h": "文献",
+  "p": "wén xiàn",
+  "en": "literature",
+  "th": "เอกสารอ้างอิง",
+  "ex": {
+   "zh": "他查阅了很多文献。",
+   "py": "Tā cháyuè le hěn duō wénxiàn.",
+   "en": "He consulted a lot of literature.",
+   "th": "เขาค้นคว้าเอกสารมากมาย"
+  }
+ },
+ {
+  "h": "文雅",
+  "p": "wén yǎ",
+  "en": "refined",
+  "th": "สุภาพมีวัฒนธรรม",
+  "ex": {
+   "zh": "她说话举止很文雅。",
+   "py": "Tā shuōhuà jǔzhǐ hěn wényǎ.",
+   "en": "Her speech and manner are very refined.",
+   "th": "คำพูดและกิริยาของเธอสุภาพมีวัฒนธรรม"
+  }
+ },
+ {
+  "h": "文艺",
+  "p": "wén yì",
+  "en": "literature and art",
+  "th": "วรรณกรรมและศิลปะ",
+  "ex": {
+   "zh": "她喜欢文艺活动。",
+   "py": "Tā xǐhuan wényì huódòng.",
+   "en": "She likes literary and art activities.",
+   "th": "เธอชอบกิจกรรมด้านวรรณกรรมและศิลปะ"
+  }
+ },
+ {
+  "h": "问世",
+  "p": "wèn shì",
+  "en": "to come out",
+  "th": "ออกสู่สาธารณะ",
+  "ex": {
+   "zh": "这本新书刚刚问世。",
+   "py": "Zhè běn xīn shū gānggāng wènshì.",
+   "en": "This new book has just come out.",
+   "th": "หนังสือเล่มใหม่นี้เพิ่งออกวางจำหน่าย"
+  }
+ },
+ {
+  "h": "窝",
+  "p": "wō",
+  "en": "nest",
+  "th": "รัง",
+  "ex": {
+   "zh": "树上有一个鸟窝。",
+   "py": "Shù shàng yǒu yí ge niǎowō.",
+   "en": "There is a bird's nest in the tree.",
+   "th": "บนต้นไม้มีรังนกอยู่หนึ่งรัง"
+  }
+ },
+ {
+  "h": "乌黑",
+  "p": "wū hēi",
+  "en": "jet-black",
+  "th": "ดำสนิท",
+  "ex": {
+   "zh": "她有一头乌黑的长发。",
+   "py": "Tā yǒu yì tóu wūhēi de chángfà.",
+   "en": "She has jet-black long hair.",
+   "th": "เธอมีผมยาวสีดำขลับ"
+  }
+ },
+ {
+  "h": "污蔑",
+  "p": "wū miè",
+  "en": "to slander",
+  "th": "ใส่ร้าย",
+  "ex": {
+   "zh": "你这是在污蔑我。",
+   "py": "Nǐ zhè shì zài wūmiè wǒ.",
+   "en": "You are slandering me.",
+   "th": "คุณกำลังใส่ร้ายฉัน"
+  }
+ },
+ {
+  "h": "诬陷",
+  "p": "wū xiàn",
+  "en": "to frame",
+  "th": "ใส่ร้ายป้ายสี",
+  "ex": {
+   "zh": "他被人诬陷了。",
+   "py": "Tā bèi rén wūxiàn le.",
+   "en": "He was framed by someone.",
+   "th": "เขาถูกคนใส่ร้ายป้ายสี"
+  }
+ },
+ {
+  "h": "无比",
+  "p": "wú bǐ",
+  "en": "incomparable",
+  "th": "หาที่เปรียบไม่ได้",
+  "ex": {
+   "zh": "我心里无比高兴。",
+   "py": "Wǒ xīn lǐ wúbǐ gāoxìng.",
+   "en": "I am extremely happy.",
+   "th": "ฉันดีใจอย่างหาที่เปรียบไม่ได้"
+  }
+ },
+ {
+  "h": "无偿",
+  "p": "wú cháng",
+  "en": "free of charge",
+  "th": "ไม่คิดค่าตอบแทน",
+  "ex": {
+   "zh": "他无偿帮助了很多人。",
+   "py": "Tā wúcháng bāngzhù le hěn duō rén.",
+   "en": "He helped many people free of charge.",
+   "th": "เขาช่วยเหลือผู้คนมากมายโดยไม่คิดค่าตอบแทน"
+  }
+ },
+ {
+  "h": "无耻",
+  "p": "wú chǐ",
+  "en": "shameless",
+  "th": "ไร้ยางอาย",
+  "ex": {
+   "zh": "这种行为太无耻了。",
+   "py": "Zhè zhǒng xíngwéi tài wúchǐ le.",
+   "en": "This kind of behavior is shameless.",
+   "th": "พฤติกรรมแบบนี้ไร้ยางอายเกินไป"
+  }
+ }
+]

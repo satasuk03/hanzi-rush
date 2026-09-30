@@ -1,0 +1,1202 @@
+[
+ {
+  "h": "鼻涕",
+  "p": "bí tì",
+  "en": "snot",
+  "th": "น้ำมูก",
+  "ex": {
+   "zh": "他感冒了，一直流鼻涕。",
+   "py": "Tā gǎnmào le, yīzhí liú bítì.",
+   "en": "He has a cold and keeps having a runny nose.",
+   "th": "เขาเป็นหวัด น้ำมูกไหลตลอด"
+  }
+ },
+ {
+  "h": "比方",
+  "p": "bǐ fang",
+  "en": "example",
+  "th": "ตัวอย่าง",
+  "ex": {
+   "zh": "比方说，你想去哪个国家？",
+   "py": "Bǐfang shuō, nǐ xiǎng qù nǎge guójiā?",
+   "en": "For example, which country would you like to go to?",
+   "th": "ยกตัวอย่างเช่น คุณอยากไปประเทศไหน"
+  }
+ },
+ {
+  "h": "比喻",
+  "p": "bǐ yù",
+  "en": "metaphor",
+  "th": "อุปมา",
+  "ex": {
+   "zh": "这个比喻很生动。",
+   "py": "Zhège bǐyù hěn shēngdòng.",
+   "en": "This metaphor is very vivid.",
+   "th": "อุปมาอันนี้เห็นภาพชัดมาก"
+  }
+ },
+ {
+  "h": "比重",
+  "p": "bǐ zhòng",
+  "en": "proportion",
+  "th": "สัดส่วน",
+  "ex": {
+   "zh": "农业在经济中的比重下降了。",
+   "py": "Nóngyè zài jīngjì zhōng de bǐzhòng xiàjiàng le.",
+   "en": "The share of agriculture in the economy has dropped.",
+   "th": "สัดส่วนของเกษตรกรรมในเศรษฐกิจลดลง"
+  }
+ },
+ {
+  "h": "必定",
+  "p": "bì dìng",
+  "en": "surely",
+  "th": "ต้องแน่นอน",
+  "ex": {
+   "zh": "他这么努力，必定会成功。",
+   "py": "Tā zhème nǔlì, bìdìng huì chénggōng.",
+   "en": "He works so hard that he will surely succeed.",
+   "th": "เขาขยันขนาดนี้ ต้องสำเร็จแน่นอน"
+  }
+ },
+ {
+  "h": "闭塞",
+  "p": "bì sè",
+  "en": "remote and isolated",
+  "th": "ห่างไกลปิดกั้น",
+  "ex": {
+   "zh": "那个山村交通很闭塞。",
+   "py": "Nàge shāncūn jiāotōng hěn bìsè.",
+   "en": "That mountain village is poorly connected by transport.",
+   "th": "หมู่บ้านบนเขานั้นการคมนาคมลำบากมาก"
+  }
+ },
+ {
+  "h": "弊病",
+  "p": "bì bìng",
+  "en": "flaw",
+  "th": "ข้อเสีย",
+  "ex": {
+   "zh": "这个制度有不少弊病。",
+   "py": "Zhège zhìdù yǒu bù shǎo bìbìng.",
+   "en": "This system has quite a few flaws.",
+   "th": "ระบบนี้มีข้อเสียอยู่หลายอย่าง"
+  }
+ },
+ {
+  "h": "弊端",
+  "p": "bì duān",
+  "en": "drawback",
+  "th": "ข้อบกพร่อง",
+  "ex": {
+   "zh": "过度依赖手机有很多弊端。",
+   "py": "Guòdù yīlài shǒujī yǒu hěn duō bìduān.",
+   "en": "Over-relying on phones has many drawbacks.",
+   "th": "การพึ่งพาโทรศัพท์มากเกินไปมีข้อเสียมากมาย"
+  }
+ },
+ {
+  "h": "碧玉",
+  "p": "bì yù",
+  "en": "jasper",
+  "th": "หยกสีเขียว",
+  "ex": {
+   "zh": "她戴着一只碧玉手镯。",
+   "py": "Tā dàizhe yī zhī bìyù shǒuzhuó.",
+   "en": "She is wearing a jasper bracelet.",
+   "th": "เธอสวมกำไลหยกสีเขียว"
+  }
+ },
+ {
+  "h": "臂",
+  "p": "bì",
+  "en": "arm",
+  "th": "แขน",
+  "ex": {
+   "zh": "他的右臂受伤了。",
+   "py": "Tā de yòu bì shòushāng le.",
+   "en": "His right arm is injured.",
+   "th": "แขนขวาของเขาบาดเจ็บ"
+  }
+ },
+ {
+  "h": "边疆",
+  "p": "biān jiāng",
+  "en": "border region",
+  "th": "ชายแดน",
+  "ex": {
+   "zh": "他年轻时在边疆工作过。",
+   "py": "Tā niánqīng shí zài biānjiāng gōngzuò guo.",
+   "en": "He worked in the frontier region when he was young.",
+   "th": "ตอนหนุ่มเขาเคยทำงานที่ชายแดน"
+  }
+ },
+ {
+  "h": "边界",
+  "p": "biān jiè",
+  "en": "border",
+  "th": "เขตแดน",
+  "ex": {
+   "zh": "河流是两国的边界。",
+   "py": "Héliú shì liǎng guó de biānjiè.",
+   "en": "The river is the border between the two countries.",
+   "th": "แม่น้ำคือเขตแดนของสองประเทศ"
+  }
+ },
+ {
+  "h": "边境",
+  "p": "biān jìng",
+  "en": "frontier",
+  "th": "ชายแดน",
+  "ex": {
+   "zh": "边境的检查很严格。",
+   "py": "Biānjìng de jiǎnchá hěn yángé.",
+   "en": "Inspections at the border are very strict.",
+   "th": "การตรวจที่ชายแดนเข้มงวดมาก"
+  }
+ },
+ {
+  "h": "边缘",
+  "p": "biān yuán",
+  "en": "edge",
+  "th": "ขอบ",
+  "ex": {
+   "zh": "别站在悬崖的边缘。",
+   "py": "Bié zhàn zài xuányá de biānyuán.",
+   "en": "Don't stand at the edge of the cliff.",
+   "th": "อย่ายืนที่ขอบหน้าผา"
+  }
+ },
+ {
+  "h": "编织",
+  "p": "biān zhī",
+  "en": "to weave",
+  "th": "ถัก",
+  "ex": {
+   "zh": "奶奶在编织一条围巾。",
+   "py": "Nǎinai zài biānzhī yī tiáo wéijīn.",
+   "en": "Grandma is knitting a scarf.",
+   "th": "คุณยายกำลังถักผ้าพันคอ"
+  }
+ },
+ {
+  "h": "鞭策",
+  "p": "biān cè",
+  "en": "to spur on",
+  "th": "กระตุ้นให้พยายาม",
+  "ex": {
+   "zh": "老师的话时刻鞭策着我。",
+   "py": "Lǎoshī de huà shíkè biāncè zhe wǒ.",
+   "en": "My teacher's words constantly spur me on.",
+   "th": "คำพูดของครูคอยกระตุ้นให้ฉันพยายามตลอดเวลา"
+  }
+ },
+ {
+  "h": "贬低",
+  "p": "biǎn dī",
+  "en": "to belittle",
+  "th": "ดูถูก",
+  "ex": {
+   "zh": "不要贬低别人的努力。",
+   "py": "Bùyào biǎndī biéren de nǔlì.",
+   "en": "Don't belittle other people's efforts.",
+   "th": "อย่าดูถูกความพยายามของผู้อื่น"
+  }
+ },
+ {
+  "h": "贬义",
+  "p": "biǎn yì",
+  "en": "derogatory sense",
+  "th": "ความหมายเชิงลบ",
+  "ex": {
+   "zh": "这个词带有贬义。",
+   "py": "Zhège cí dàiyǒu biǎnyì.",
+   "en": "This word has a negative connotation.",
+   "th": "คำนี้มีความหมายเชิงลบ"
+  }
+ },
+ {
+  "h": "扁",
+  "p": "Piān",
+  "en": "flat",
+  "th": "แบน",
+  "ex": {
+   "zh": "轮胎被扎扁了。",
+   "py": "Lúntāi bèi zhā biǎn le.",
+   "en": "The tire got a puncture and went flat.",
+   "th": "ยางรถถูกแทงจนแบน"
+  }
+ },
+ {
+  "h": "变故",
+  "p": "biàn gù",
+  "en": "misfortune",
+  "th": "เหตุการณ์ไม่คาดฝัน",
+  "ex": {
+   "zh": "家里突然发生了变故。",
+   "py": "Jiālǐ tūrán fāshēng le biàngù.",
+   "en": "A sudden misfortune struck the family.",
+   "th": "ครอบครัวเกิดเหตุไม่คาดฝันขึ้นมากะทันหัน"
+  }
+ },
+ {
+  "h": "变迁",
+  "p": "biàn qiān",
+  "en": "change over time",
+  "th": "การเปลี่ยนแปลง",
+  "ex": {
+   "zh": "这座城市经历了很大的变迁。",
+   "py": "Zhè zuò chéngshì jīnglì le hěn dà de biànqiān.",
+   "en": "This city has gone through great changes.",
+   "th": "เมืองนี้ผ่านการเปลี่ยนแปลงครั้งใหญ่"
+  }
+ },
+ {
+  "h": "变质",
+  "p": "biàn zhì",
+  "en": "to go bad",
+  "th": "เสื่อมคุณภาพ",
+  "ex": {
+   "zh": "牛奶放久了会变质。",
+   "py": "Niúnǎi fàng jiǔ le huì biànzhì.",
+   "en": "Milk goes bad if left too long.",
+   "th": "นมวางไว้นานจะเสีย"
+  }
+ },
+ {
+  "h": "便利",
+  "p": "biàn lì",
+  "en": "convenient",
+  "th": "สะดวก",
+  "ex": {
+   "zh": "这里的交通很便利。",
+   "py": "Zhèlǐ de jiāotōng hěn biànlì.",
+   "en": "Transportation here is very convenient.",
+   "th": "การเดินทางที่นี่สะดวกมาก"
+  }
+ },
+ {
+  "h": "便条",
+  "p": "biàn tiáo",
+  "en": "note",
+  "th": "โน้ตสั้นๆ",
+  "ex": {
+   "zh": "我给他留了一张便条。",
+   "py": "Wǒ gěi tā liú le yī zhāng biàntiáo.",
+   "en": "I left him a note.",
+   "th": "ฉันทิ้งโน้ตไว้ให้เขาหนึ่งใบ"
+  }
+ },
+ {
+  "h": "便于",
+  "p": "biàn yú",
+  "en": "easy to",
+  "th": "สะดวกต่อการ",
+  "ex": {
+   "zh": "这个设计便于携带。",
+   "py": "Zhège shèjì biànyú xiédài.",
+   "en": "This design is easy to carry.",
+   "th": "ดีไซน์นี้สะดวกต่อการพกพา"
+  }
+ },
+ {
+  "h": "遍布",
+  "p": "biàn bù",
+  "en": "to be found everywhere",
+  "th": "กระจายทั่ว",
+  "ex": {
+   "zh": "他的朋友遍布世界各地。",
+   "py": "Tā de péngyou biànbù shìjiè gèdì.",
+   "en": "His friends are spread all over the world.",
+   "th": "เพื่อนของเขากระจายอยู่ทั่วโลก"
+  }
+ },
+ {
+  "h": "辨认",
+  "p": "biàn rèn",
+  "en": "to identify",
+  "th": "จำแนก",
+  "ex": {
+   "zh": "我没办法辨认这个字。",
+   "py": "Wǒ méi bànfǎ biànrèn zhège zì.",
+   "en": "I can't make out this character.",
+   "th": "ฉันแยกไม่ออกว่าคือตัวอักษรอะไร"
+  }
+ },
+ {
+  "h": "辩护",
+  "p": "biàn hù",
+  "en": "to defend (argue for)",
+  "th": "แก้ต่าง",
+  "ex": {
+   "zh": "律师为他辩护。",
+   "py": "Lǜshī wèi tā biànhù.",
+   "en": "The lawyer defended him.",
+   "th": "ทนายความแก้ต่างให้เขา"
+  }
+ },
+ {
+  "h": "辩解",
+  "p": "biàn jiě",
+  "en": "to justify oneself",
+  "th": "แก้ตัว",
+  "ex": {
+   "zh": "他总是为自己的错误辩解。",
+   "py": "Tā zǒngshì wèi zìjǐ de cuòwù biànjiě.",
+   "en": "He always makes excuses for his mistakes.",
+   "th": "เขาแก้ตัวให้ความผิดของตัวเองเสมอ"
+  }
+ },
+ {
+  "h": "辩证",
+  "p": "biàn zhèng",
+  "en": "dialectical",
+  "th": "วิภาษวิธี",
+  "ex": {
+   "zh": "我们要辩证地看问题。",
+   "py": "Wǒmen yào biànzhèng de kàn wèntí.",
+   "en": "We should look at problems dialectically.",
+   "th": "เราต้องมองปัญหาแบบวิภาษวิธี"
+  }
+ },
+ {
+  "h": "辫子",
+  "p": "biàn zi",
+  "en": "braid",
+  "th": "เปียผม",
+  "ex": {
+   "zh": "小女孩梳着两条辫子。",
+   "py": "Xiǎo nǚhái shūzhe liǎng tiáo biànzi.",
+   "en": "The little girl has her hair in two braids.",
+   "th": "เด็กหญิงถักเปียสองข้าง"
+  }
+ },
+ {
+  "h": "标本",
+  "p": "biāo běn",
+  "en": "specimen",
+  "th": "ตัวอย่างสต๊าฟ",
+  "ex": {
+   "zh": "博物馆里有很多动物标本。",
+   "py": "Bówùguǎn lǐ yǒu hěn duō dòngwù biāoběn.",
+   "en": "The museum has many animal specimens.",
+   "th": "พิพิธภัณฑ์มีตัวอย่างสัตว์สต๊าฟมากมาย"
+  }
+ },
+ {
+  "h": "标记",
+  "p": "biāo jì",
+  "en": "mark",
+  "th": "เครื่องหมาย",
+  "ex": {
+   "zh": "请在错误的地方做个标记。",
+   "py": "Qǐng zài cuòwù de dìfang zuò gè biāojì.",
+   "en": "Please put a mark where the mistakes are.",
+   "th": "กรุณาทำเครื่องหมายตรงจุดที่ผิด"
+  }
+ },
+ {
+  "h": "标题",
+  "p": "biāo tí",
+  "en": "title",
+  "th": "หัวข้อ",
+  "ex": {
+   "zh": "这篇文章的标题很吸引人。",
+   "py": "Zhè piān wénzhāng de biāotí hěn xīyǐn rén.",
+   "en": "The title of this article is very eye-catching.",
+   "th": "หัวข้อของบทความนี้ดึงดูดใจมาก"
+  }
+ },
+ {
+  "h": "飙升",
+  "p": "biāo shēng",
+  "en": "to soar",
+  "th": "พุ่งสูง",
+  "ex": {
+   "zh": "最近房价飙升。",
+   "py": "Zuìjìn fángjià biāoshēng.",
+   "en": "House prices have soared recently.",
+   "th": "ช่วงนี้ราคาบ้านพุ่งสูงขึ้น"
+  }
+ },
+ {
+  "h": "表决",
+  "p": "biǎo jué",
+  "en": "to vote",
+  "th": "ลงมติ",
+  "ex": {
+   "zh": "大家举手表决吧。",
+   "py": "Dàjiā jǔshǒu biǎojué ba.",
+   "en": "Let's all vote by raising hands.",
+   "th": "ทุกคนยกมือลงมติกันเถอะ"
+  }
+ },
+ {
+  "h": "表态",
+  "p": "biǎo tài",
+  "en": "to state one's position",
+  "th": "แสดงจุดยืน",
+  "ex": {
+   "zh": "经理还没有表态。",
+   "py": "Jīnglǐ hái méiyǒu biǎotài.",
+   "en": "The manager hasn't stated his position yet.",
+   "th": "ผู้จัดการยังไม่แสดงจุดยืน"
+  }
+ },
+ {
+  "h": "表彰",
+  "p": "biǎo zhāng",
+  "en": "to commend",
+  "th": "ยกย่อง",
+  "ex": {
+   "zh": "公司表彰了优秀员工。",
+   "py": "Gōngsī biǎozhāng le yōuxiù yuángōng.",
+   "en": "The company commended its outstanding employees.",
+   "th": "บริษัทยกย่องพนักงานดีเด่น"
+  }
+ },
+ {
+  "h": "憋",
+  "p": "biē",
+  "en": "to hold back",
+  "th": "กลั้น",
+  "ex": {
+   "zh": "我憋了一肚子话想说。",
+   "py": "Wǒ biē le yī dùzi huà xiǎng shuō.",
+   "en": "I have been holding back so much I want to say.",
+   "th": "ฉันกลั้นคำพูดไว้เต็มท้องอยากจะพูด"
+  }
+ },
+ {
+  "h": "别扭",
+  "p": "biè niu",
+  "en": "awkward",
+  "th": "อึดอัดขัดใจ",
+  "ex": {
+   "zh": "我们吵架后一直很别扭。",
+   "py": "Wǒmen chǎojià hòu yīzhí hěn bièniu.",
+   "en": "Things have been awkward between us since our fight.",
+   "th": "หลังทะเลาะกัน เราก็อึดอัดใจกันมาตลอด"
+  }
+ },
+ {
+  "h": "别墅",
+  "p": "bié shù",
+  "en": "villa",
+  "th": "วิลล่า",
+  "ex": {
+   "zh": "他们在海边买了一栋别墅。",
+   "py": "Tāmen zài hǎibiān mǎi le yī dòng biéshù.",
+   "en": "They bought a villa by the sea.",
+   "th": "พวกเขาซื้อวิลล่าริมทะเลหลังหนึ่ง"
+  }
+ },
+ {
+  "h": "别致",
+  "p": "bié zhì",
+  "en": "unique in style",
+  "th": "แปลกตาน่ารัก",
+  "ex": {
+   "zh": "这家咖啡店的装修很别致。",
+   "py": "Zhè jiā kāfēidiàn de zhuāngxiū hěn biézhì.",
+   "en": "This café has a very distinctive decor.",
+   "th": "ร้านกาแฟนี้ตกแต่งได้แปลกตาน่ารัก"
+  }
+ },
+ {
+  "h": "濒临",
+  "p": "bīn lín",
+  "en": "to be on the verge of",
+  "th": "ใกล้จะ",
+  "ex": {
+   "zh": "这种动物濒临灭绝。",
+   "py": "Zhè zhǒng dòngwù bīnlín mièjué.",
+   "en": "This animal is on the verge of extinction.",
+   "th": "สัตว์ชนิดนี้ใกล้จะสูญพันธุ์"
+  }
+ },
+ {
+  "h": "冰雹",
+  "p": "bīng báo",
+  "en": "hail",
+  "th": "ลูกเห็บ",
+  "ex": {
+   "zh": "昨天下了一场冰雹。",
+   "py": "Zuótiān xià le yī chǎng bīngbáo.",
+   "en": "There was a hailstorm yesterday.",
+   "th": "เมื่อวานมีลูกเห็บตก"
+  }
+ },
+ {
+  "h": "并存",
+  "p": "bìng cún",
+  "en": "to coexist",
+  "th": "อยู่ร่วมกัน",
+  "ex": {
+   "zh": "机会和挑战并存。",
+   "py": "Jīhuì hé tiǎozhàn bìngcún.",
+   "en": "Opportunities and challenges coexist.",
+   "th": "โอกาสและความท้าทายมีอยู่ควบคู่กัน"
+  }
+ },
+ {
+  "h": "并非",
+  "p": "bìng fēi",
+  "en": "to be not (really)",
+  "th": "ไม่ใช่ว่า",
+  "ex": {
+   "zh": "事情并非你想的那样。",
+   "py": "Shìqing bìngfēi nǐ xiǎng de nàyàng.",
+   "en": "Things are not what you think.",
+   "th": "เรื่องไม่ได้เป็นอย่างที่คุณคิด"
+  }
+ },
+ {
+  "h": "并列",
+  "p": "bìng liè",
+  "en": "to be side by side",
+  "th": "เรียงคู่กัน",
+  "ex": {
+   "zh": "两个学生并列第一名。",
+   "py": "Liǎng gè xuésheng bìngliè dì-yī míng.",
+   "en": "Two students tied for first place.",
+   "th": "นักเรียนสองคนได้ที่หนึ่งร่วมกัน"
+  }
+ },
+ {
+  "h": "拨打",
+  "p": "bō dǎ",
+  "en": "to dial",
+  "th": "โทรออก",
+  "ex": {
+   "zh": "请拨打这个电话号码。",
+   "py": "Qǐng bōdǎ zhège diànhuà hàomǎ.",
+   "en": "Please dial this phone number.",
+   "th": "กรุณาโทรไปที่หมายเลขนี้"
+  }
+ },
+ {
+  "h": "波浪",
+  "p": "bō làng",
+  "en": "wave",
+  "th": "คลื่น",
+  "ex": {
+   "zh": "海上的波浪很大。",
+   "py": "Hǎishàng de bōlàng hěn dà.",
+   "en": "The waves at sea are big.",
+   "th": "คลื่นในทะเลใหญ่มาก"
+  }
+ },
+ {
+  "h": "波涛汹涌",
+  "p": "bō tāo xiōng yǒng",
+  "en": "surging waves",
+  "th": "คลื่นซัดโหมกระหน่ำ",
+  "ex": {
+   "zh": "台风来了，海面波涛汹涌。",
+   "py": "Táifēng lái le, hǎimiàn bōtāo xiōngyǒng.",
+   "en": "The typhoon arrived and the sea is surging.",
+   "th": "พายุไต้ฝุ่นมา ทะเลคลื่นซัดโหมกระหน่ำ"
+  }
+ },
+ {
+  "h": "剥削",
+  "p": "bō xuē",
+  "en": "to exploit",
+  "th": "เอารัดเอาเปรียบ",
+  "ex": {
+   "zh": "他们剥削工人的劳动。",
+   "py": "Tāmen bōxuē gōngrén de láodòng.",
+   "en": "They exploit the workers' labor.",
+   "th": "พวกเขาเอาเปรียบแรงงานของคนงาน"
+  }
+ },
+ {
+  "h": "播放",
+  "p": "bō fàng",
+  "en": "to play (media)",
+  "th": "เล่น (สื่อ)",
+  "ex": {
+   "zh": "电视台正在播放新闻。",
+   "py": "Diànshìtái zhèngzài bōfàng xīnwén.",
+   "en": "The TV station is broadcasting the news.",
+   "th": "สถานีโทรทัศน์กำลังออกอากาศข่าว"
+  }
+ },
+ {
+  "h": "播种",
+  "p": "bō zhǒng",
+  "en": "to sow seeds",
+  "th": "หว่านเมล็ดพันธุ์",
+  "ex": {
+   "zh": "农民春天忙着播种。",
+   "py": "Nóngmín chūntiān mángzhe bōzhǒng.",
+   "en": "Farmers are busy sowing seeds in spring.",
+   "th": "ชาวนายุ่งกับการหว่านเมล็ดในฤดูใบไม้ผลิ"
+  }
+ },
+ {
+  "h": "伯母",
+  "p": "bó mǔ",
+  "en": "aunt (father's brother's wife)",
+  "th": "ป้า (ภรรยาลุง)",
+  "ex": {
+   "zh": "伯母做的菜特别好吃。",
+   "py": "Bómǔ zuò de cài tèbié hǎochī.",
+   "en": "The dishes my aunt makes are especially delicious.",
+   "th": "อาหารที่ป้าทำอร่อยเป็นพิเศษ"
+  }
+ },
+ {
+  "h": "博大精深",
+  "p": "bó dà jīng shēn",
+  "en": "broad and profound",
+  "th": "กว้างขวางลึกซึ้ง",
+  "ex": {
+   "zh": "中国文化博大精深。",
+   "py": "Zhōngguó wénhuà bódà jīngshēn.",
+   "en": "Chinese culture is broad and profound.",
+   "th": "วัฒนธรรมจีนกว้างขวางลึกซึ้ง"
+  }
+ },
+ {
+  "h": "博览会",
+  "p": "bó lǎn huì",
+  "en": "expo",
+  "th": "งานเอ็กซ์โป",
+  "ex": {
+   "zh": "我们去参观了汽车博览会。",
+   "py": "Wǒmen qù cānguān le qìchē bólǎnhuì.",
+   "en": "We went to visit the auto expo.",
+   "th": "เราไปชมงานมหกรรมรถยนต์"
+  }
+ },
+ {
+  "h": "搏斗",
+  "p": "bó dòu",
+  "en": "to struggle physically",
+  "th": "ต่อสู้",
+  "ex": {
+   "zh": "他和小偷搏斗起来。",
+   "py": "Tā hé xiǎotōu bódòu qǐlai.",
+   "en": "He got into a struggle with the thief.",
+   "th": "เขาต่อสู้กับขโมย"
+  }
+ },
+ {
+  "h": "补偿",
+  "p": "bǔ cháng",
+  "en": "to compensate",
+  "th": "ชดเชย",
+  "ex": {
+   "zh": "公司补偿了他的损失。",
+   "py": "Gōngsī bǔcháng le tā de sǔnshī.",
+   "en": "The company compensated him for his loss.",
+   "th": "บริษัทชดเชยความสูญเสียให้เขา"
+  }
+ },
+ {
+  "h": "补救",
+  "p": "bǔ jiù",
+  "en": "to remedy",
+  "th": "แก้ไข",
+  "ex": {
+   "zh": "现在补救还来得及。",
+   "py": "Xiànzài bǔjiù hái láidejí.",
+   "en": "It's still not too late to fix it now.",
+   "th": "ตอนนี้แก้ไขยังทัน"
+  }
+ },
+ {
+  "h": "补贴",
+  "p": "bǔ tiē",
+  "en": "subsidy",
+  "th": "เงินอุดหนุน",
+  "ex": {
+   "zh": "政府给农民发放补贴。",
+   "py": "Zhèngfǔ gěi nóngmín fāfàng bǔtiē.",
+   "en": "The government gives subsidies to farmers.",
+   "th": "รัฐบาลให้เงินอุดหนุนแก่เกษตรกร"
+  }
+ },
+ {
+  "h": "哺乳",
+  "p": "bǔ rǔ",
+  "en": "to breastfeed",
+  "th": "ให้นมลูก",
+  "ex": {
+   "zh": "妈妈正在哺乳。",
+   "py": "Māma zhèngzài bǔrǔ.",
+   "en": "The mother is breastfeeding.",
+   "th": "แม่กำลังให้นมลูก"
+  }
+ },
+ {
+  "h": "捕捉",
+  "p": "bǔ zhuō",
+  "en": "to catch",
+  "th": "จับ",
+  "ex": {
+   "zh": "摄影师捕捉到了精彩的一刻。",
+   "py": "Shèyǐngshī bǔzhuō dào le jīngcǎi de yī kè.",
+   "en": "The photographer captured a wonderful moment.",
+   "th": "ช่างภาพจับภาพช่วงเวลาที่ยอดเยี่ยมไว้ได้"
+  }
+ },
+ {
+  "h": "不得已",
+  "p": "bù dé yǐ",
+  "en": "to have no choice",
+  "th": "จำใจ",
+  "ex": {
+   "zh": "我是不得已才这么做的。",
+   "py": "Wǒ shì bùdéyǐ cái zhème zuò de.",
+   "en": "I only did this because I had no choice.",
+   "th": "ฉันทำแบบนี้เพราะจำใจจริงๆ"
+  }
+ },
+ {
+  "h": "不妨",
+  "p": "bù fáng",
+  "en": "might as well",
+  "th": "ลองก็ได้",
+  "ex": {
+   "zh": "你不妨试试这个方法。",
+   "py": "Nǐ bùfáng shìshi zhège fāngfǎ.",
+   "en": "You might as well try this method.",
+   "th": "คุณลองใช้วิธีนี้ดูก็ได้นะ"
+  }
+ },
+ {
+  "h": "不敢当",
+  "p": "bù gǎn dāng",
+  "en": "I don't deserve it",
+  "th": "ไม่กล้ารับ",
+  "ex": {
+   "zh": "您过奖了，我不敢当。",
+   "py": "Nín guòjiǎng le, wǒ bù gǎndāng.",
+   "en": "You flatter me, I don't deserve such praise.",
+   "th": "ท่านชมเกินไปแล้ว ผมไม่กล้ารับ"
+  }
+ },
+ {
+  "h": "不顾",
+  "p": "bù gù",
+  "en": "to disregard",
+  "th": "ไม่สนใจ",
+  "ex": {
+   "zh": "他不顾危险冲进了火场。",
+   "py": "Tā bùgù wēixiǎn chōng jìn le huǒchǎng.",
+   "en": "Disregarding the danger, he rushed into the fire.",
+   "th": "เขาไม่สนอันตรายวิ่งเข้าไปในกองไฟ"
+  }
+ },
+ {
+  "h": "不禁",
+  "p": "bù jīn",
+  "en": "can't help",
+  "th": "อดไม่ได้",
+  "ex": {
+   "zh": "听到这个笑话，我不禁笑了。",
+   "py": "Tīngdào zhège xiàohua, wǒ bùjīn xiào le.",
+   "en": "Hearing this joke, I couldn't help laughing.",
+   "th": "ได้ยินมุกนี้แล้วฉันอดหัวเราะไม่ได้"
+  }
+ },
+ {
+  "h": "不堪",
+  "p": "bù kān",
+  "en": "unbearable",
+  "th": "ทนไม่ไหว",
+  "ex": {
+   "zh": "他被工作压得疲惫不堪。",
+   "py": "Tā bèi gōngzuò yā de píbèi bùkān.",
+   "en": "He is utterly exhausted by work.",
+   "th": "เขาเหนื่อยแทบทนไม่ไหวเพราะงาน"
+  }
+ },
+ {
+  "h": "不可思议",
+  "p": "bù kě sī yì",
+  "en": "unbelievable",
+  "th": "เหลือเชื่อ",
+  "ex": {
+   "zh": "这件事真是不可思议。",
+   "py": "Zhè jiàn shì zhēn shì bùkě sīyì.",
+   "en": "This is truly unbelievable.",
+   "th": "เรื่องนี้เหลือเชื่อจริงๆ"
+  }
+ },
+ {
+  "h": "不愧",
+  "p": "bù kuì",
+  "en": "to be worthy of",
+  "th": "สมกับ",
+  "ex": {
+   "zh": "你不愧是冠军。",
+   "py": "Nǐ búkuì shì guànjūn.",
+   "en": "You are truly worthy of being a champion.",
+   "th": "คุณสมกับเป็นแชมป์จริงๆ"
+  }
+ },
+ {
+  "h": "不料",
+  "p": "bù liào",
+  "en": "unexpectedly",
+  "th": "ไม่นึกว่า",
+  "ex": {
+   "zh": "我本想早点到，不料堵车了。",
+   "py": "Wǒ běn xiǎng zǎodiǎn dào, búliào dǔchē le.",
+   "en": "I meant to arrive early, but unexpectedly there was a traffic jam.",
+   "th": "ฉันตั้งใจไปถึงเร็ว แต่ไม่นึกว่ารถจะติด"
+  }
+ },
+ {
+  "h": "不时",
+  "p": "bù shí",
+  "en": "from time to time",
+  "th": "เป็นระยะๆ",
+  "ex": {
+   "zh": "他不时看一下手表。",
+   "py": "Tā bùshí kàn yīxià shǒubiǎo.",
+   "en": "He glances at his watch from time to time.",
+   "th": "เขาชำเลืองดูนาฬิกาเป็นระยะๆ"
+  }
+ },
+ {
+  "h": "不惜",
+  "p": "bù xī",
+  "en": "to spare no effort",
+  "th": "ไม่ยั้ง",
+  "ex": {
+   "zh": "他不惜一切代价救孩子。",
+   "py": "Tā bùxī yīqiè dàijià jiù háizi.",
+   "en": "He would pay any price to save the child.",
+   "th": "เขายอมทุกอย่างเพื่อช่วยเด็ก"
+  }
+ },
+ {
+  "h": "不相上下",
+  "p": "bù xiāng shàng xià",
+  "en": "about equal",
+  "th": "สูสีกัน",
+  "ex": {
+   "zh": "两队的实力不相上下。",
+   "py": "Liǎng duì de shílì bùxiāng shàngxià.",
+   "en": "The two teams are about equally strong.",
+   "th": "ทั้งสองทีมมีฝีมือสูสีกัน"
+  }
+ },
+ {
+  "h": "不像话",
+  "p": "bù xiàng huà",
+  "en": "outrageous",
+  "th": "ไม่สมควร",
+  "ex": {
+   "zh": "你这样做太不像话了。",
+   "py": "Nǐ zhèyàng zuò tài bù xiànghuà le.",
+   "en": "What you did is outrageous.",
+   "th": "ที่คุณทำแบบนี้มันไม่สมควรเลย"
+  }
+ },
+ {
+  "h": "不屑一顾",
+  "p": "bù xiè yī gù",
+  "en": "to disdain",
+  "th": "ไม่แยแส",
+  "ex": {
+   "zh": "他对这些建议不屑一顾。",
+   "py": "Tā duì zhèxiē jiànyì bùxiè yī gù.",
+   "en": "He treats these suggestions with disdain.",
+   "th": "เขาไม่แยแสต่อคำแนะนำเหล่านี้"
+  }
+ },
+ {
+  "h": "不言而喻",
+  "p": "bù yán ér yù",
+  "en": "self-evident",
+  "th": "เห็นได้ชัดอยู่แล้ว",
+  "ex": {
+   "zh": "健康的重要性不言而喻。",
+   "py": "Jiànkāng de zhòngyàoxìng bùyán éryù.",
+   "en": "The importance of health is self-evident.",
+   "th": "ความสำคัญของสุขภาพเป็นที่รู้กันอยู่แล้ว"
+  }
+ },
+ {
+  "h": "不由得",
+  "p": "bù yóu de",
+  "en": "can't help but",
+  "th": "อดไม่ได้ที่จะ",
+  "ex": {
+   "zh": "看到照片，他不由得笑了。",
+   "py": "Kàndào zhàopiàn, tā bùyóude xiào le.",
+   "en": "Seeing the photo, he couldn't help but smile.",
+   "th": "เห็นรูปแล้วเขาอดยิ้มไม่ได้"
+  }
+ },
+ {
+  "h": "不择手段",
+  "p": "bù zé shǒu duàn",
+  "en": "by any means",
+  "th": "ไม่เลือกวิธีการ",
+  "ex": {
+   "zh": "他为了成功不择手段。",
+   "py": "Tā wèile chénggōng bùzé shǒuduàn.",
+   "en": "He will use any means to succeed.",
+   "th": "เขาทำทุกวิถีทางเพื่อความสำเร็จ"
+  }
+ },
+ {
+  "h": "不止",
+  "p": "bù zhǐ",
+  "en": "more than",
+  "th": "มากกว่า",
+  "ex": {
+   "zh": "他不止一次迟到了。",
+   "py": "Tā bùzhǐ yī cì chídào le.",
+   "en": "He has been late more than once.",
+   "th": "เขามาสายไม่ใช่แค่ครั้งเดียว"
+  }
+ },
+ {
+  "h": "布告",
+  "p": "bù gào",
+  "en": "notice",
+  "th": "ประกาศ",
+  "ex": {
+   "zh": "墙上贴着一张布告。",
+   "py": "Qiáng shàng tiēzhe yī zhāng bùgào.",
+   "en": "A notice is posted on the wall.",
+   "th": "มีประกาศติดอยู่บนกำแพงแผ่นหนึ่ง"
+  }
+ },
+ {
+  "h": "布局",
+  "p": "bù jú",
+  "en": "layout",
+  "th": "การจัดวาง",
+  "ex": {
+   "zh": "这个房间的布局很合理。",
+   "py": "Zhège fángjiān de bùjú hěn hélǐ.",
+   "en": "The layout of this room is very reasonable.",
+   "th": "การจัดวางของห้องนี้สมเหตุสมผลมาก"
+  }
+ },
+ {
+  "h": "布置",
+  "p": "bù zhì",
+  "en": "to arrange",
+  "th": "จัดตกแต่ง",
+  "ex": {
+   "zh": "我们把教室布置得很漂亮。",
+   "py": "Wǒmen bǎ jiàoshì bùzhì de hěn piàoliang.",
+   "en": "We decorated the classroom beautifully.",
+   "th": "เราจัดตกแต่งห้องเรียนได้สวยมาก"
+  }
+ },
+ {
+  "h": "步伐",
+  "p": "bù fá",
+  "en": "pace",
+  "th": "ก้าวเดิน",
+  "ex": {
+   "zh": "他加快了前进的步伐。",
+   "py": "Tā jiākuài le qiánjìn de bùfá.",
+   "en": "He quickened his pace forward.",
+   "th": "เขาเร่งก้าวเดินไปข้างหน้า"
+  }
+ },
+ {
+  "h": "部署",
+  "p": "bù shǔ",
+  "en": "to deploy",
+  "th": "วางแผนจัดกำลัง",
+  "ex": {
+   "zh": "经理部署了下周的工作。",
+   "py": "Jīnglǐ bùshǔ le xià zhōu de gōngzuò.",
+   "en": "The manager laid out the work plan for next week.",
+   "th": "ผู้จัดการวางแผนงานของสัปดาห์หน้า"
+  }
+ },
+ {
+  "h": "部位",
+  "p": "bù wèi",
+  "en": "body part",
+  "th": "ส่วนของร่างกาย",
+  "ex": {
+   "zh": "请指出疼痛的部位。",
+   "py": "Qǐng zhǐchū téngtòng de bùwèi.",
+   "en": "Please point out where it hurts.",
+   "th": "กรุณาชี้ตำแหน่งที่เจ็บ"
+  }
+ },
+ {
+  "h": "才干",
+  "p": "cái gàn",
+  "en": "ability",
+  "th": "ความสามารถ",
+  "ex": {
+   "zh": "他很有才干，很快就升职了。",
+   "py": "Tā hěn yǒu cáigàn, hěn kuài jiù shēngzhí le.",
+   "en": "He is very capable and was promoted quickly.",
+   "th": "เขามีความสามารถมาก จึงได้เลื่อนตำแหน่งเร็ว"
+  }
+ },
+ {
+  "h": "财富",
+  "p": "cái fù",
+  "en": "wealth",
+  "th": "ความมั่งคั่ง",
+  "ex": {
+   "zh": "健康比财富更重要。",
+   "py": "Jiànkāng bǐ cáifù gèng zhòngyào.",
+   "en": "Health is more important than wealth.",
+   "th": "สุขภาพสำคัญกว่าความมั่งคั่ง"
+  }
+ },
+ {
+  "h": "财务",
+  "p": "cái wù",
+  "en": "finance (affairs)",
+  "th": "การเงิน",
+  "ex": {
+   "zh": "她在公司负责财务工作。",
+   "py": "Tā zài gōngsī fùzé cáiwù gōngzuò.",
+   "en": "She handles financial work at the company.",
+   "th": "เธอรับผิดชอบงานการเงินของบริษัท"
+  }
+ },
+ {
+  "h": "财政",
+  "p": "cái zhèng",
+  "en": "public finance",
+  "th": "การคลัง",
+  "ex": {
+   "zh": "国家的财政收入增加了。",
+   "py": "Guójiā de cáizhèng shōurù zēngjiā le.",
+   "en": "The national fiscal revenue has increased.",
+   "th": "รายได้ทางการคลังของประเทศเพิ่มขึ้น"
+  }
+ },
+ {
+  "h": "裁缝",
+  "p": "cái féng",
+  "en": "tailor",
+  "th": "ช่างตัดเสื้อ",
+  "ex": {
+   "zh": "这位裁缝手艺很好。",
+   "py": "Zhè wèi cáifeng shǒuyì hěn hǎo.",
+   "en": "This tailor is very skilled.",
+   "th": "ช่างตัดเสื้อคนนี้ฝีมือดีมาก"
+  }
+ },
+ {
+  "h": "裁判",
+  "p": "cái pàn",
+  "en": "referee",
+  "th": "ผู้ตัดสิน",
+  "ex": {
+   "zh": "裁判吹响了哨子。",
+   "py": "Cáipàn chuīxiǎng le shàozi.",
+   "en": "The referee blew the whistle.",
+   "th": "ผู้ตัดสินเป่านกหวีด"
+  }
+ },
+ {
+  "h": "裁员",
+  "p": "cái yuán",
+  "en": "to lay off staff",
+  "th": "ปลดพนักงาน",
+  "ex": {
+   "zh": "公司决定裁员一百人。",
+   "py": "Gōngsī juédìng cáiyuán yībǎi rén.",
+   "en": "The company decided to lay off a hundred people.",
+   "th": "บริษัทตัดสินใจปลดพนักงานร้อยคน"
+  }
+ },
+ {
+  "h": "采购",
+  "p": "cǎi gòu",
+  "en": "to purchase",
+  "th": "จัดซื้อ",
+  "ex": {
+   "zh": "公司正在采购新设备。",
+   "py": "Gōngsī zhèngzài cǎigòu xīn shèbèi.",
+   "en": "The company is purchasing new equipment.",
+   "th": "บริษัทกำลังจัดซื้ออุปกรณ์ใหม่"
+  }
+ },
+ {
+  "h": "采集",
+  "p": "cǎi jí",
+  "en": "to collect",
+  "th": "เก็บรวบรวม",
+  "ex": {
+   "zh": "他们在山上采集草药。",
+   "py": "Tāmen zài shān shàng cǎijí cǎoyào.",
+   "en": "They gather medicinal herbs in the mountains.",
+   "th": "พวกเขาเก็บสมุนไพรบนภูเขา"
+  }
+ },
+ {
+  "h": "采纳",
+  "p": "cǎi nà",
+  "en": "to adopt (advice)",
+  "th": "รับไว้พิจารณา",
+  "ex": {
+   "zh": "经理采纳了我的建议。",
+   "py": "Jīnglǐ cǎinà le wǒ de jiànyì.",
+   "en": "The manager adopted my suggestion.",
+   "th": "ผู้จัดการรับข้อเสนอของฉันไปใช้"
+  }
+ },
+ {
+  "h": "彩票",
+  "p": "cǎi piào",
+  "en": "lottery ticket",
+  "th": "ลอตเตอรี่",
+  "ex": {
+   "zh": "他买了一张彩票。",
+   "py": "Tā mǎi le yī zhāng cǎipiào.",
+   "en": "He bought a lottery ticket.",
+   "th": "เขาซื้อลอตเตอรี่หนึ่งใบ"
+  }
+ },
+ {
+  "h": "参谋",
+  "p": "cān móu",
+  "en": "to advise",
+  "th": "ให้คำปรึกษา",
+  "ex": {
+   "zh": "你帮我参谋一下买哪件衣服。",
+   "py": "Nǐ bāng wǒ cānmóu yīxià mǎi nǎ jiàn yīfu.",
+   "en": "Help me decide which piece of clothing to buy.",
+   "th": "ช่วยแนะนำฉันหน่อยว่าควรซื้อเสื้อตัวไหน"
+  }
+ },
+ {
+  "h": "参照",
+  "p": "cān zhào",
+  "en": "to refer to",
+  "th": "อ้างอิง",
+  "ex": {
+   "zh": "请参照说明书操作。",
+   "py": "Qǐng cānzhào shuōmíngshū cāozuò.",
+   "en": "Please follow the instruction manual.",
+   "th": "กรุณาทำตามคู่มืออ้างอิง"
+  }
+ },
+ {
+  "h": "残酷",
+  "p": "cán kù",
+  "en": "cruel",
+  "th": "โหดร้าย",
+  "ex": {
+   "zh": "战争是残酷的。",
+   "py": "Zhànzhēng shì cánkù de.",
+   "en": "War is cruel.",
+   "th": "สงครามนั้นโหดร้าย"
+  }
+ }
+]

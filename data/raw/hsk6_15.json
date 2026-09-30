@@ -1,0 +1,1202 @@
+[
+ {
+  "h": "曲子",
+  "p": "qǔ zi",
+  "en": "tune",
+  "th": "ทำนองเพลง",
+  "ex": {
+   "zh": "这首曲子真好听。",
+   "py": "Zhè shǒu qǔzi zhēn hǎotīng.",
+   "en": "This tune sounds really nice.",
+   "th": "ทำนองเพลงนี้ไพเราะมาก"
+  }
+ },
+ {
+  "h": "驱逐",
+  "p": "qū zhú",
+  "en": "to expel",
+  "th": "ขับไล่",
+  "ex": {
+   "zh": "他被驱逐出境了。",
+   "py": "Tā bèi qūzhú chūjìng le.",
+   "en": "He was deported from the country.",
+   "th": "เขาถูกเนรเทศออกนอกประเทศ"
+  }
+ },
+ {
+  "h": "屈服",
+  "p": "qū fú",
+  "en": "to give in",
+  "th": "ยอมจำนน",
+  "ex": {
+   "zh": "他不肯向困难屈服。",
+   "py": "Tā bù kěn xiàng kùnnan qūfú.",
+   "en": "He refuses to give in to difficulties.",
+   "th": "เขาไม่ยอมจำนนต่อความยากลำบาก"
+  }
+ },
+ {
+  "h": "渠道",
+  "p": "qú dào",
+  "en": "channel",
+  "th": "ช่องทาง",
+  "ex": {
+   "zh": "你从什么渠道知道的？",
+   "py": "Nǐ cóng shénme qúdào zhīdào de?",
+   "en": "Through what channel did you find out?",
+   "th": "คุณรู้มาจากช่องทางไหน"
+  }
+ },
+ {
+  "h": "取缔",
+  "p": "qǔ dì",
+  "en": "to ban",
+  "th": "สั่งห้าม",
+  "ex": {
+   "zh": "政府取缔了非法市场。",
+   "py": "Zhèngfǔ qǔdì le fēifǎ shìchǎng.",
+   "en": "The government banned the illegal market.",
+   "th": "รัฐบาลสั่งห้ามตลาดผิดกฎหมาย"
+  }
+ },
+ {
+  "h": "趣味",
+  "p": "qù wèi",
+  "en": "interest",
+  "th": "ความสนุก",
+  "ex": {
+   "zh": "这本书很有趣味。",
+   "py": "Zhè běn shū hěn yǒu qùwèi.",
+   "en": "This book is very interesting.",
+   "th": "หนังสือเล่มนี้น่าสนใจมาก"
+  }
+ },
+ {
+  "h": "圈套",
+  "p": "quān tào",
+  "en": "trap",
+  "th": "กับดัก",
+  "ex": {
+   "zh": "他中了别人的圈套。",
+   "py": "Tā zhòng le biérén de quāntào.",
+   "en": "He fell into someone else's trap.",
+   "th": "เขาติดกับดักของคนอื่น"
+  }
+ },
+ {
+  "h": "全局",
+  "p": "quán jú",
+  "en": "overall situation",
+  "th": "ภาพรวม",
+  "ex": {
+   "zh": "我们要考虑全局。",
+   "py": "Wǒmen yào kǎolǜ quánjú.",
+   "en": "We need to consider the overall situation.",
+   "th": "เราต้องคำนึงถึงภาพรวม"
+  }
+ },
+ {
+  "h": "全力以赴",
+  "p": "quán lì yǐ fù",
+  "en": "to go all out",
+  "th": "ทุ่มเทเต็มที่",
+  "ex": {
+   "zh": "我们要全力以赴完成任务。",
+   "py": "Wǒmen yào quánlìyǐfù wánchéng rènwu.",
+   "en": "We must go all out to finish the task.",
+   "th": "เราต้องทุ่มเทเต็มที่เพื่อทำงานให้สำเร็จ"
+  }
+ },
+ {
+  "h": "权衡",
+  "p": "quán héng",
+  "en": "to weigh up",
+  "th": "ชั่งน้ำหนัก",
+  "ex": {
+   "zh": "你要权衡利弊再决定。",
+   "py": "Nǐ yào quánhéng lìbì zài juédìng.",
+   "en": "Weigh the pros and cons before deciding.",
+   "th": "คุณต้องชั่งน้ำหนักข้อดีข้อเสียก่อนตัดสินใจ"
+  }
+ },
+ {
+  "h": "权威",
+  "p": "quán wēi",
+  "en": "authority",
+  "th": "ผู้มีอำนาจ",
+  "ex": {
+   "zh": "他是这个领域的权威。",
+   "py": "Tā shì zhège lǐngyù de quánwēi.",
+   "en": "He is an authority in this field.",
+   "th": "เขาเป็นผู้เชี่ยวชาญในสาขานี้"
+  }
+ },
+ {
+  "h": "权益",
+  "p": "quán yì",
+  "en": "rights and interests",
+  "th": "สิทธิประโยชน์",
+  "ex": {
+   "zh": "法律保护消费者的权益。",
+   "py": "Fǎlǜ bǎohù xiāofèizhě de quányì.",
+   "en": "The law protects consumers' rights.",
+   "th": "กฎหมายคุ้มครองสิทธิประโยชน์ของผู้บริโภค"
+  }
+ },
+ {
+  "h": "拳头",
+  "p": "quán tou",
+  "en": "fist",
+  "th": "กำปั้น",
+  "ex": {
+   "zh": "他握紧了拳头。",
+   "py": "Tā wò jǐn le quántou.",
+   "en": "He clenched his fist.",
+   "th": "เขากำหมัดแน่น"
+  }
+ },
+ {
+  "h": "犬",
+  "p": "quǎn",
+  "en": "dog",
+  "th": "สุนัข",
+  "ex": {
+   "zh": "这是一只警犬。",
+   "py": "Zhè shì yì zhī jǐngquǎn.",
+   "en": "This is a police dog.",
+   "th": "นี่คือสุนัขตำรวจ"
+  }
+ },
+ {
+  "h": "缺口",
+  "p": "quē kǒu",
+  "en": "gap",
+  "th": "ช่องว่าง",
+  "ex": {
+   "zh": "墙上有一个缺口。",
+   "py": "Qiáng shàng yǒu yí ge quēkǒu.",
+   "en": "There is a gap in the wall.",
+   "th": "มีช่องโหว่ที่กำแพง"
+  }
+ },
+ {
+  "h": "缺席",
+  "p": "quē xí",
+  "en": "to be absent",
+  "th": "ขาดประชุม",
+  "ex": {
+   "zh": "他今天缺席了会议。",
+   "py": "Tā jīntiān quēxí le huìyì.",
+   "en": "He was absent from the meeting today.",
+   "th": "วันนี้เขาไม่เข้าร่วมประชุม"
+  }
+ },
+ {
+  "h": "缺陷",
+  "p": "quē xiàn",
+  "en": "defect",
+  "th": "ข้อบกพร่อง",
+  "ex": {
+   "zh": "这个产品有缺陷。",
+   "py": "Zhège chǎnpǐn yǒu quēxiàn.",
+   "en": "This product has a defect.",
+   "th": "ผลิตภัณฑ์นี้มีข้อบกพร่อง"
+  }
+ },
+ {
+  "h": "瘸",
+  "p": "qué",
+  "en": "lame",
+  "th": "ขาเป๋",
+  "ex": {
+   "zh": "他的腿瘸了。",
+   "py": "Tā de tuǐ qué le.",
+   "en": "His leg is lame.",
+   "th": "ขาของเขาเป๋"
+  }
+ },
+ {
+  "h": "确保",
+  "p": "què bǎo",
+  "en": "to ensure",
+  "th": "รับรอง",
+  "ex": {
+   "zh": "我们要确保安全。",
+   "py": "Wǒmen yào quèbǎo ānquán.",
+   "en": "We must ensure safety.",
+   "th": "เราต้องรับรองความปลอดภัย"
+  }
+ },
+ {
+  "h": "确立",
+  "p": "què lì",
+  "en": "to establish",
+  "th": "สถาปนา",
+  "ex": {
+   "zh": "他确立了自己的目标。",
+   "py": "Tā quèlì le zìjǐ de mùbiāo.",
+   "en": "He established his own goal.",
+   "th": "เขากำหนดเป้าหมายของตัวเองอย่างชัดเจน"
+  }
+ },
+ {
+  "h": "确切",
+  "p": "què qiè",
+  "en": "exact",
+  "th": "แน่ชัด",
+  "ex": {
+   "zh": "我不知道确切的时间。",
+   "py": "Wǒ bù zhīdào quèqiè de shíjiān.",
+   "en": "I don't know the exact time.",
+   "th": "ฉันไม่รู้เวลาที่แน่ชัด"
+  }
+ },
+ {
+  "h": "确信",
+  "p": "què xìn",
+  "en": "to be convinced",
+  "th": "เชื่อมั่น",
+  "ex": {
+   "zh": "我确信他会成功。",
+   "py": "Wǒ quèxìn tā huì chénggōng.",
+   "en": "I am convinced he will succeed.",
+   "th": "ฉันเชื่อมั่นว่าเขาจะสำเร็จ"
+  }
+ },
+ {
+  "h": "群众",
+  "p": "qún zhòng",
+  "en": "the masses",
+  "th": "ประชาชน",
+  "ex": {
+   "zh": "群众都支持这个决定。",
+   "py": "Qúnzhòng dōu zhīchí zhège juédìng.",
+   "en": "The masses all support this decision.",
+   "th": "ประชาชนทุกคนสนับสนุนการตัดสินใจนี้"
+  }
+ },
+ {
+  "h": "染",
+  "p": "rǎn",
+  "en": "to dye",
+  "th": "ย้อม",
+  "ex": {
+   "zh": "她把头发染成了黄色。",
+   "py": "Tā bǎ tóufa rǎn chéng le huángsè.",
+   "en": "She dyed her hair blonde.",
+   "th": "เธอย้อมผมเป็นสีบลอนด์"
+  }
+ },
+ {
+  "h": "让步",
+  "p": "ràng bù",
+  "en": "to concede",
+  "th": "ยอมอ่อนข้อ",
+  "ex": {
+   "zh": "双方都不肯让步。",
+   "py": "Shuāngfāng dōu bù kěn ràngbù.",
+   "en": "Neither side is willing to concede.",
+   "th": "ทั้งสองฝ่ายไม่ยอมอ่อนข้อ"
+  }
+ },
+ {
+  "h": "饶恕",
+  "p": "ráo shù",
+  "en": "to forgive",
+  "th": "ให้อภัย",
+  "ex": {
+   "zh": "请饶恕我这一次吧。",
+   "py": "Qǐng ráoshù wǒ zhè yí cì ba.",
+   "en": "Please forgive me just this once.",
+   "th": "ได้โปรดให้อภัยฉันสักครั้งเถอะ"
+  }
+ },
+ {
+  "h": "扰乱",
+  "p": "rǎo luàn",
+  "en": "to disturb",
+  "th": "รบกวน",
+  "ex": {
+   "zh": "请不要扰乱课堂秩序。",
+   "py": "Qǐng bú yào rǎoluàn kètáng zhìxù.",
+   "en": "Please don't disrupt order in class.",
+   "th": "กรุณาอย่ารบกวนความเรียบร้อยในห้องเรียน"
+  }
+ },
+ {
+  "h": "惹祸",
+  "p": "rě huò",
+  "en": "to cause trouble",
+  "th": "ก่อเรื่อง",
+  "ex": {
+   "zh": "这孩子又惹祸了。",
+   "py": "Zhè háizi yòu rěhuò le.",
+   "en": "This child has caused trouble again.",
+   "th": "เด็กคนนี้ก่อเรื่องอีกแล้ว"
+  }
+ },
+ {
+  "h": "热泪盈眶",
+  "p": "rè lèi yíng kuàng",
+  "en": "eyes filled with tears",
+  "th": "น้ำตาคลอเบ้า",
+  "ex": {
+   "zh": "他感动得热泪盈眶。",
+   "py": "Tā gǎndòng de rèlèiyíngkuàng.",
+   "en": "He was so moved his eyes filled with tears.",
+   "th": "เขาซาบซึ้งจนน้ำตาคลอเบ้า"
+  }
+ },
+ {
+  "h": "热门",
+  "p": "rè mén",
+  "en": "popular",
+  "th": "ยอดนิยม",
+  "ex": {
+   "zh": "这是今年的热门专业。",
+   "py": "Zhè shì jīnnián de rèmén zhuānyè.",
+   "en": "This is a popular major this year.",
+   "th": "นี่คือสาขาวิชายอดนิยมของปีนี้"
+  }
+ },
+ {
+  "h": "人道",
+  "p": "rén dào",
+  "en": "humane",
+  "th": "มนุษยธรรม",
+  "ex": {
+   "zh": "我们应该人道地对待俘虏。",
+   "py": "Wǒmen yīnggāi réndào de duìdài fúlǔ.",
+   "en": "We should treat prisoners humanely.",
+   "th": "เราควรปฏิบัติต่อเชลยอย่างมีมนุษยธรรม"
+  }
+ },
+ {
+  "h": "人格",
+  "p": "rén gé",
+  "en": "character",
+  "th": "บุคลิกภาพ",
+  "ex": {
+   "zh": "他的人格很高尚。",
+   "py": "Tā de réngé hěn gāoshàng.",
+   "en": "He has a noble character.",
+   "th": "บุคลิกภาพของเขาสูงส่งมาก"
+  }
+ },
+ {
+  "h": "人工",
+  "p": "rén gōng",
+  "en": "artificial",
+  "th": "ประดิษฐ์",
+  "ex": {
+   "zh": "这个湖是人工湖。",
+   "py": "Zhège hú shì réngōng hú.",
+   "en": "This lake is an artificial lake.",
+   "th": "ทะเลสาบนี้เป็นทะเลสาบประดิษฐ์"
+  }
+ },
+ {
+  "h": "人家",
+  "p": "rén jiā",
+  "en": "other people",
+  "th": "คนอื่น",
+  "ex": {
+   "zh": "人家都走了，你还不走？",
+   "py": "Rénjia dōu zǒu le, nǐ hái bù zǒu?",
+   "en": "Everyone else has left, why haven't you?",
+   "th": "คนอื่นไปกันหมดแล้ว ทำไมคุณยังไม่ไป"
+  }
+ },
+ {
+  "h": "人间",
+  "p": "rén jiān",
+  "en": "the human world",
+  "th": "โลกมนุษย์",
+  "ex": {
+   "zh": "这里的风景像人间仙境。",
+   "py": "Zhèlǐ de fēngjǐng xiàng rénjiān xiānjìng.",
+   "en": "The scenery here is like a fairyland on earth.",
+   "th": "วิวที่นี่ราวกับดินแดนสวรรค์บนโลกมนุษย์"
+  }
+ },
+ {
+  "h": "人士",
+  "p": "rén shì",
+  "en": "person",
+  "th": "บุคคล",
+  "ex": {
+   "zh": "他是知名人士。",
+   "py": "Tā shì zhīmíng rénshì.",
+   "en": "He is a well-known figure.",
+   "th": "เขาเป็นบุคคลที่มีชื่อเสียง"
+  }
+ },
+ {
+  "h": "人为",
+  "p": "rén wéi",
+  "en": "man-made",
+  "th": "มนุษย์สร้างขึ้น",
+  "ex": {
+   "zh": "这次事故是人为造成的。",
+   "py": "Zhè cì shìgù shì rénwéi zàochéng de.",
+   "en": "This accident was caused by humans.",
+   "th": "อุบัติเหตุครั้งนี้เกิดจากฝีมือมนุษย์"
+  }
+ },
+ {
+  "h": "人性",
+  "p": "rén xìng",
+  "en": "human nature",
+  "th": "ธรรมชาติมนุษย์",
+  "ex": {
+   "zh": "这部电影探讨了人性。",
+   "py": "Zhè bù diànyǐng tàntǎo le rénxìng.",
+   "en": "This film explores human nature.",
+   "th": "ภาพยนตร์เรื่องนี้สำรวจธรรมชาติของมนุษย์"
+  }
+ },
+ {
+  "h": "人质",
+  "p": "rén zhì",
+  "en": "hostage",
+  "th": "ตัวประกัน",
+  "ex": {
+   "zh": "警察救出了人质。",
+   "py": "Jǐngchá jiùchū le rénzhì.",
+   "en": "The police rescued the hostages.",
+   "th": "ตำรวจช่วยตัวประกันออกมาได้"
+  }
+ },
+ {
+  "h": "仁慈",
+  "p": "rén cí",
+  "en": "kind",
+  "th": "ใจดีเมตตา",
+  "ex": {
+   "zh": "老板对员工很仁慈。",
+   "py": "Lǎobǎn duì yuángōng hěn réncí.",
+   "en": "The boss is very kind to his employees.",
+   "th": "เจ้านายเมตตาลูกจ้างมาก"
+  }
+ },
+ {
+  "h": "忍耐",
+  "p": "rěn nài",
+  "en": "to endure",
+  "th": "อดทน",
+  "ex": {
+   "zh": "你要学会忍耐。",
+   "py": "Nǐ yào xuéhuì rěnnài.",
+   "en": "You need to learn patience.",
+   "th": "คุณต้องเรียนรู้ที่จะอดทน"
+  }
+ },
+ {
+  "h": "忍受",
+  "p": "rěn shòu",
+  "en": "to bear",
+  "th": "ทนได้",
+  "ex": {
+   "zh": "我无法忍受这种噪音。",
+   "py": "Wǒ wúfǎ rěnshòu zhè zhǒng zàoyīn.",
+   "en": "I can't bear this kind of noise.",
+   "th": "ฉันทนเสียงดังแบบนี้ไม่ได้"
+  }
+ },
+ {
+  "h": "认定",
+  "p": "rèn dìng",
+  "en": "to be convinced",
+  "th": "ยืนยันว่า",
+  "ex": {
+   "zh": "他认定我在说谎。",
+   "py": "Tā rèndìng wǒ zài shuōhuǎng.",
+   "en": "He is convinced that I am lying.",
+   "th": "เขาเชื่อแน่ว่าฉันกำลังโกหก"
+  }
+ },
+ {
+  "h": "认可",
+  "p": "rèn kě",
+  "en": "to approve",
+  "th": "เห็นชอบ",
+  "ex": {
+   "zh": "这个方案得到了大家的认可。",
+   "py": "Zhège fāng'àn dédào le dàjiā de rènkě.",
+   "en": "This plan won everyone's approval.",
+   "th": "แผนนี้ได้รับความเห็นชอบจากทุกคน"
+  }
+ },
+ {
+  "h": "任命",
+  "p": "rèn mìng",
+  "en": "to appoint",
+  "th": "แต่งตั้ง",
+  "ex": {
+   "zh": "他被任命为经理。",
+   "py": "Tā bèi rènmìng wéi jīnglǐ.",
+   "en": "He was appointed as manager.",
+   "th": "เขาได้รับการแต่งตั้งเป็นผู้จัดการ"
+  }
+ },
+ {
+  "h": "任性",
+  "p": "rèn xìng",
+  "en": "willful",
+  "th": "เอาแต่ใจ",
+  "ex": {
+   "zh": "她从小就很任性。",
+   "py": "Tā cóngxiǎo jiù hěn rènxìng.",
+   "en": "She has been willful since childhood.",
+   "th": "เธอเอาแต่ใจมาตั้งแต่เด็ก"
+  }
+ },
+ {
+  "h": "任意",
+  "p": "rèn yì",
+  "en": "arbitrary",
+  "th": "ตามใจชอบ",
+  "ex": {
+   "zh": "你可以任意选择一个。",
+   "py": "Nǐ kěyǐ rènyì xuǎnzé yí ge.",
+   "en": "You can choose any one you like.",
+   "th": "คุณเลือกอันไหนก็ได้ตามใจชอบ"
+  }
+ },
+ {
+  "h": "任重道远",
+  "p": "rèn zhòng dào yuǎn",
+  "en": "heavy responsibility",
+  "th": "ภารกิจหนักและยาวไกล",
+  "ex": {
+   "zh": "改革任重道远。",
+   "py": "Gǎigé rènzhòngdàoyuǎn.",
+   "en": "Reform is a heavy responsibility with a long road ahead.",
+   "th": "การปฏิรูปเป็นภารกิจหนักและยาวไกล"
+  }
+ },
+ {
+  "h": "仍旧",
+  "p": "réng jiù",
+  "en": "still",
+  "th": "ยังคง",
+  "ex": {
+   "zh": "他仍旧住在老房子里。",
+   "py": "Tā réngjiù zhù zài lǎo fángzi lǐ.",
+   "en": "He still lives in the old house.",
+   "th": "เขายังคงอาศัยอยู่ในบ้านหลังเก่า"
+  }
+ },
+ {
+  "h": "日新月异",
+  "p": "rì xīn yuè yì",
+  "en": "changing daily",
+  "th": "เปลี่ยนแปลงทุกวัน",
+  "ex": {
+   "zh": "科技发展日新月异。",
+   "py": "Kējì fāzhǎn rìxīnyuèyì.",
+   "en": "Technology develops with changes every day.",
+   "th": "เทคโนโลยีพัฒนาเปลี่ยนแปลงทุกวัน"
+  }
+ },
+ {
+  "h": "日益",
+  "p": "rì yì",
+  "en": "increasingly",
+  "th": "ทวีขึ้นทุกวัน",
+  "ex": {
+   "zh": "竞争日益激烈。",
+   "py": "Jìngzhēng rìyì jīliè.",
+   "en": "Competition is becoming increasingly fierce.",
+   "th": "การแข่งขันรุนแรงขึ้นทุกวัน"
+  }
+ },
+ {
+  "h": "容貌",
+  "p": "róng mào",
+  "en": "looks",
+  "th": "รูปโฉม",
+  "ex": {
+   "zh": "她的容貌很秀丽。",
+   "py": "Tā de róngmào hěn xiùlì.",
+   "en": "She has lovely looks.",
+   "th": "เธอมีรูปโฉมงดงาม"
+  }
+ },
+ {
+  "h": "容纳",
+  "p": "róng nà",
+  "en": "to hold",
+  "th": "จุ",
+  "ex": {
+   "zh": "这个体育馆能容纳一万人。",
+   "py": "Zhège tǐyùguǎn néng róngnà yí wàn rén.",
+   "en": "This stadium can hold ten thousand people.",
+   "th": "สนามกีฬานี้จุคนได้หนึ่งหมื่นคน"
+  }
+ },
+ {
+  "h": "容器",
+  "p": "róng qì",
+  "en": "container",
+  "th": "ภาชนะ",
+  "ex": {
+   "zh": "请把水倒进这个容器里。",
+   "py": "Qǐng bǎ shuǐ dào jìn zhège róngqì lǐ.",
+   "en": "Please pour the water into this container.",
+   "th": "กรุณาเทน้ำลงในภาชนะนี้"
+  }
+ },
+ {
+  "h": "容忍",
+  "p": "róng rěn",
+  "en": "to tolerate",
+  "th": "อดกลั้น",
+  "ex": {
+   "zh": "我不能容忍这种行为。",
+   "py": "Wǒ bù néng róngrěn zhè zhǒng xíngwéi.",
+   "en": "I can't tolerate this kind of behavior.",
+   "th": "ฉันทนพฤติกรรมแบบนี้ไม่ได้"
+  }
+ },
+ {
+  "h": "溶解",
+  "p": "róng jiě",
+  "en": "to dissolve",
+  "th": "ละลาย",
+  "ex": {
+   "zh": "糖在水里很快就溶解了。",
+   "py": "Táng zài shuǐ lǐ hěn kuài jiù róngjiě le.",
+   "en": "Sugar dissolves quickly in water.",
+   "th": "น้ำตาลละลายในน้ำอย่างรวดเร็ว"
+  }
+ },
+ {
+  "h": "融洽",
+  "p": "róng qià",
+  "en": "harmonious",
+  "th": "กลมเกลียว",
+  "ex": {
+   "zh": "同事之间关系很融洽。",
+   "py": "Tóngshì zhījiān guānxi hěn róngqià.",
+   "en": "Relations among colleagues are very harmonious.",
+   "th": "ความสัมพันธ์ระหว่างเพื่อนร่วมงานกลมเกลียวดี"
+  }
+ },
+ {
+  "h": "柔和",
+  "p": "róu hé",
+  "en": "gentle",
+  "th": "อ่อนโยน",
+  "ex": {
+   "zh": "这盏灯的光很柔和。",
+   "py": "Zhè zhǎn dēng de guāng hěn róuhé.",
+   "en": "The light of this lamp is soft.",
+   "th": "แสงของโคมไฟนี้นุ่มนวลมาก"
+  }
+ },
+ {
+  "h": "揉",
+  "p": "róu",
+  "en": "to knead",
+  "th": "นวด",
+  "ex": {
+   "zh": "妈妈在揉面团。",
+   "py": "Māma zài róu miàntuán.",
+   "en": "Mom is kneading dough.",
+   "th": "แม่กำลังนวดแป้ง"
+  }
+ },
+ {
+  "h": "若干",
+  "p": "ruò gān",
+  "en": "several",
+  "th": "หลาย ๆ",
+  "ex": {
+   "zh": "会上讨论了若干问题。",
+   "py": "Huì shàng tǎolùn le ruògān wèntí.",
+   "en": "Several issues were discussed at the meeting.",
+   "th": "ที่ประชุมได้หารือปัญหาหลายข้อ"
+  }
+ },
+ {
+  "h": "弱点",
+  "p": "ruò diǎn",
+  "en": "weak point",
+  "th": "จุดอ่อน",
+  "ex": {
+   "zh": "每个人都有自己的弱点。",
+   "py": "Měi ge rén dōu yǒu zìjǐ de ruòdiǎn.",
+   "en": "Everyone has their own weak points.",
+   "th": "ทุกคนมีจุดอ่อนของตัวเอง"
+  }
+ },
+ {
+  "h": "撒谎",
+  "p": "sā huǎng",
+  "en": "to lie",
+  "th": "โกหก",
+  "ex": {
+   "zh": "小孩不应该撒谎。",
+   "py": "Xiǎohái bù yīnggāi sāhuǎng.",
+   "en": "Children should not lie.",
+   "th": "เด็กไม่ควรโกหก"
+  }
+ },
+ {
+  "h": "腮",
+  "p": "sāi",
+  "en": "cheek",
+  "th": "แก้ม",
+  "ex": {
+   "zh": "他的腮帮子鼓鼓的。",
+   "py": "Tā de sāibāngzi gǔgǔ de.",
+   "en": "His cheeks are puffed out.",
+   "th": "แก้มของเขาป่องออกมา"
+  }
+ },
+ {
+  "h": "三角",
+  "p": "sān jiǎo",
+  "en": "triangle",
+  "th": "สามเหลี่ยม",
+  "ex": {
+   "zh": "这是一个三角形。",
+   "py": "Zhè shì yí ge sānjiǎoxíng.",
+   "en": "This is a triangle.",
+   "th": "นี่คือรูปสามเหลี่ยม"
+  }
+ },
+ {
+  "h": "散布",
+  "p": "sàn bù",
+  "en": "to spread",
+  "th": "เผยแพร่",
+  "ex": {
+   "zh": "不要散布谣言。",
+   "py": "Bú yào sànbù yáoyán.",
+   "en": "Don't spread rumors.",
+   "th": "อย่าเผยแพร่ข่าวลือ"
+  }
+ },
+ {
+  "h": "散发",
+  "p": "sàn fā",
+  "en": "to give off",
+  "th": "ส่งกลิ่น",
+  "ex": {
+   "zh": "花儿散发着香味。",
+   "py": "Huār sànfā zhe xiāngwèi.",
+   "en": "The flowers give off a fragrance.",
+   "th": "ดอกไม้ส่งกลิ่นหอม"
+  }
+ },
+ {
+  "h": "散文",
+  "p": "sǎn wén",
+  "en": "prose",
+  "th": "ร้อยแก้ว",
+  "ex": {
+   "zh": "她喜欢读散文。",
+   "py": "Tā xǐhuan dú sǎnwén.",
+   "en": "She likes reading prose.",
+   "th": "เธอชอบอ่านร้อยแก้ว"
+  }
+ },
+ {
+  "h": "丧失",
+  "p": "sàng shī",
+  "en": "to lose",
+  "th": "สูญเสีย",
+  "ex": {
+   "zh": "他丧失了信心。",
+   "py": "Tā sàngshī le xìnxīn.",
+   "en": "He lost his confidence.",
+   "th": "เขาสูญเสียความมั่นใจ"
+  }
+ },
+ {
+  "h": "嫂子",
+  "p": "sǎo zi",
+  "en": "sister-in-law",
+  "th": "พี่สะใภ้",
+  "ex": {
+   "zh": "嫂子做的菜很好吃。",
+   "py": "Sǎozi zuò de cài hěn hǎochī.",
+   "en": "The food my sister-in-law makes is delicious.",
+   "th": "อาหารที่พี่สะใภ้ทำอร่อยมาก"
+  }
+ },
+ {
+  "h": "色彩",
+  "p": "sè cǎi",
+  "en": "color",
+  "th": "สีสัน",
+  "ex": {
+   "zh": "这幅画的色彩很丰富。",
+   "py": "Zhè fú huà de sècǎi hěn fēngfù.",
+   "en": "This painting is rich in color.",
+   "th": "ภาพนี้มีสีสันสดใสหลากหลาย"
+  }
+ },
+ {
+  "h": "刹车",
+  "p": "shā chē",
+  "en": "to brake",
+  "th": "เบรก",
+  "ex": {
+   "zh": "他及时刹车了。",
+   "py": "Tā jíshí shāchē le.",
+   "en": "He braked in time.",
+   "th": "เขาเบรกทันเวลา"
+  }
+ },
+ {
+  "h": "刹那",
+  "p": "chà nà",
+  "en": "instant",
+  "th": "ชั่วพริบตา",
+  "ex": {
+   "zh": "那一刹那，我愣住了。",
+   "py": "Nà yí chànà, wǒ lèngzhù le.",
+   "en": "In that instant, I froze.",
+   "th": "ชั่วพริบตานั้น ฉันตะลึงงัน"
+  }
+ },
+ {
+  "h": "啥",
+  "p": "shá",
+  "en": "what",
+  "th": "อะไร",
+  "ex": {
+   "zh": "你在说啥？",
+   "py": "Nǐ zài shuō shá?",
+   "en": "What are you saying?",
+   "th": "คุณพูดอะไรอยู่"
+  }
+ },
+ {
+  "h": "筛选",
+  "p": "shāi xuǎn",
+  "en": "to screen",
+  "th": "คัดกรอง",
+  "ex": {
+   "zh": "我们要筛选合适的人选。",
+   "py": "Wǒmen yào shāixuǎn héshì de rénxuǎn.",
+   "en": "We need to screen for suitable candidates.",
+   "th": "เราต้องคัดกรองผู้สมัครที่เหมาะสม"
+  }
+ },
+ {
+  "h": "山脉",
+  "p": "shān mài",
+  "en": "mountain range",
+  "th": "เทือกเขา",
+  "ex": {
+   "zh": "喜马拉雅山脉很壮观。",
+   "py": "Xǐmǎlāyǎ shānmài hěn zhuàngguān.",
+   "en": "The Himalayan mountain range is magnificent.",
+   "th": "เทือกเขาหิมาลัยยิ่งใหญ่ตระการตา"
+  }
+ },
+ {
+  "h": "闪烁",
+  "p": "shǎn shuò",
+  "en": "to twinkle",
+  "th": "ระยิบระยับ",
+  "ex": {
+   "zh": "星星在夜空中闪烁。",
+   "py": "Xīngxing zài yèkōng zhōng shǎnshuò.",
+   "en": "Stars twinkle in the night sky.",
+   "th": "ดวงดาวส่องระยิบระยับบนท้องฟ้ายามค่ำคืน"
+  }
+ },
+ {
+  "h": "擅长",
+  "p": "shàn cháng",
+  "en": "to be good at",
+  "th": "เชี่ยวชาญ",
+  "ex": {
+   "zh": "她擅长唱歌。",
+   "py": "Tā shàncháng chànggē.",
+   "en": "She is good at singing.",
+   "th": "เธอเก่งเรื่องร้องเพลง"
+  }
+ },
+ {
+  "h": "擅自",
+  "p": "shàn zì",
+  "en": "without permission",
+  "th": "ทำโดยพลการ",
+  "ex": {
+   "zh": "你不能擅自离开。",
+   "py": "Nǐ bù néng shànzì líkāi.",
+   "en": "You can't leave without permission.",
+   "th": "คุณห้ามจากไปโดยพลการ"
+  }
+ },
+ {
+  "h": "伤脑筋",
+  "p": "shāng nǎo jīn",
+  "en": "troublesome",
+  "th": "ปวดหัว",
+  "ex": {
+   "zh": "这个问题真伤脑筋。",
+   "py": "Zhège wèntí zhēn shāng nǎojīn.",
+   "en": "This problem is a real headache.",
+   "th": "ปัญหานี้ทำให้ปวดหัวจริง ๆ"
+  }
+ },
+ {
+  "h": "商标",
+  "p": "shāng biāo",
+  "en": "trademark",
+  "th": "เครื่องหมายการค้า",
+  "ex": {
+   "zh": "这个商标很有名。",
+   "py": "Zhège shāngbiāo hěn yǒumíng.",
+   "en": "This trademark is very famous.",
+   "th": "เครื่องหมายการค้านี้มีชื่อเสียงมาก"
+  }
+ },
+ {
+  "h": "上级",
+  "p": "shàng jí",
+  "en": "superior",
+  "th": "ผู้บังคับบัญชา",
+  "ex": {
+   "zh": "我要向上级汇报。",
+   "py": "Wǒ yào xiàng shàngjí huìbào.",
+   "en": "I need to report to my superior.",
+   "th": "ฉันต้องรายงานต่อผู้บังคับบัญชา"
+  }
+ },
+ {
+  "h": "上进心",
+  "p": "shàng jìn xīn",
+  "en": "ambition",
+  "th": "ความก้าวหน้า",
+  "ex": {
+   "zh": "他很有上进心。",
+   "py": "Tā hěn yǒu shàngjìnxīn.",
+   "en": "He is very ambitious.",
+   "th": "เขามีความมุ่งมั่นที่จะก้าวหน้ามาก"
+  }
+ },
+ {
+  "h": "上任",
+  "p": "shàng rèn",
+  "en": "to take office",
+  "th": "เข้ารับตำแหน่ง",
+  "ex": {
+   "zh": "新经理下周上任。",
+   "py": "Xīn jīnglǐ xià zhōu shàngrèn.",
+   "en": "The new manager takes office next week.",
+   "th": "ผู้จัดการคนใหม่จะเข้ารับตำแหน่งสัปดาห์หน้า"
+  }
+ },
+ {
+  "h": "上瘾",
+  "p": "shàng yǐn",
+  "en": "to get addicted",
+  "th": "ติด",
+  "ex": {
+   "zh": "他玩游戏上瘾了。",
+   "py": "Tā wán yóuxì shàngyǐn le.",
+   "en": "He is addicted to playing games.",
+   "th": "เขาติดเล่นเกม"
+  }
+ },
+ {
+  "h": "上游",
+  "p": "shàng yóu",
+  "en": "upper reaches",
+  "th": "ต้นน้ำ",
+  "ex": {
+   "zh": "这条河的上游很干净。",
+   "py": "Zhè tiáo hé de shàngyóu hěn gānjìng.",
+   "en": "The upper reaches of this river are very clean.",
+   "th": "ต้นน้ำของแม่น้ำสายนี้สะอาดมาก"
+  }
+ },
+ {
+  "h": "捎",
+  "p": "shāo",
+  "en": "to take along",
+  "th": "ฝากไปให้",
+  "ex": {
+   "zh": "请帮我捎个口信。",
+   "py": "Qǐng bāng wǒ shāo ge kǒuxìn.",
+   "en": "Please pass on a message for me.",
+   "th": "ช่วยฝากข้อความไปให้ฉันหน่อย"
+  }
+ },
+ {
+  "h": "梢",
+  "p": "shāo",
+  "en": "tip of a branch",
+  "th": "ปลายกิ่ง",
+  "ex": {
+   "zh": "鸟儿站在树梢上。",
+   "py": "Niǎor zhàn zài shùshāo shàng.",
+   "en": "A bird is perched on the treetop.",
+   "th": "นกเกาะอยู่บนยอดไม้"
+  }
+ },
+ {
+  "h": "哨",
+  "p": "shào",
+  "en": "whistle",
+  "th": "นกหวีด",
+  "ex": {
+   "zh": "裁判吹响了哨子。",
+   "py": "Cáipàn chuīxiǎng le shàozi.",
+   "en": "The referee blew the whistle.",
+   "th": "ผู้ตัดสินเป่านกหวีด"
+  }
+ },
+ {
+  "h": "奢侈",
+  "p": "shē chǐ",
+  "en": "luxurious",
+  "th": "หรูหราฟุ่มเฟือย",
+  "ex": {
+   "zh": "他过着奢侈的生活。",
+   "py": "Tā guò zhe shēchǐ de shēnghuó.",
+   "en": "He lives a luxurious life.",
+   "th": "เขาใช้ชีวิตอย่างหรูหราฟุ่มเฟือย"
+  }
+ },
+ {
+  "h": "设立",
+  "p": "shè lì",
+  "en": "to set up",
+  "th": "ก่อตั้ง",
+  "ex": {
+   "zh": "学校设立了新的奖学金。",
+   "py": "Xuéxiào shèlì le xīn de jiǎngxuéjīn.",
+   "en": "The school set up a new scholarship.",
+   "th": "โรงเรียนก่อตั้งทุนการศึกษาใหม่"
+  }
+ },
+ {
+  "h": "设想",
+  "p": "shè xiǎng",
+  "en": "to imagine",
+  "th": "จินตนาการ",
+  "ex": {
+   "zh": "你能设想未来的生活吗？",
+   "py": "Nǐ néng shèxiǎng wèilái de shēnghuó ma?",
+   "en": "Can you imagine life in the future?",
+   "th": "คุณจินตนาการชีวิตในอนาคตได้ไหม"
+  }
+ },
+ {
+  "h": "设置",
+  "p": "shè zhì",
+  "en": "to set up",
+  "th": "ตั้งค่า",
+  "ex": {
+   "zh": "请设置一个新密码。",
+   "py": "Qǐng shèzhì yí ge xīn mìmǎ.",
+   "en": "Please set a new password.",
+   "th": "กรุณาตั้งรหัสผ่านใหม่"
+  }
+ },
+ {
+  "h": "社区",
+  "p": "shè qū",
+  "en": "community",
+  "th": "ชุมชน",
+  "ex": {
+   "zh": "我们社区很安静。",
+   "py": "Wǒmen shèqū hěn ānjìng.",
+   "en": "Our community is very quiet.",
+   "th": "ชุมชนของเราเงียบสงบมาก"
+  }
+ },
+ {
+  "h": "涉及",
+  "p": "shè jí",
+  "en": "to involve",
+  "th": "เกี่ยวข้องกับ",
+  "ex": {
+   "zh": "这件事涉及很多人。",
+   "py": "Zhè jiàn shì shèjí hěn duō rén.",
+   "en": "This matter involves many people.",
+   "th": "เรื่องนี้เกี่ยวข้องกับคนมากมาย"
+  }
+ },
+ {
+  "h": "摄取",
+  "p": "shè qǔ",
+  "en": "to take in",
+  "th": "ดูดซึม",
+  "ex": {
+   "zh": "我们每天要摄取足够的营养。",
+   "py": "Wǒmen měitiān yào shèqǔ zúgòu de yíngyǎng.",
+   "en": "We need to take in enough nutrition every day.",
+   "th": "เราต้องได้รับสารอาหารที่เพียงพอทุกวัน"
+  }
+ },
+ {
+  "h": "摄氏度",
+  "p": "Shè shì dù",
+  "en": "degrees Celsius",
+  "th": "องศาเซลเซียส",
+  "ex": {
+   "zh": "今天气温三十摄氏度。",
+   "py": "Jīntiān qìwēn sānshí shèshìdù.",
+   "en": "Today's temperature is thirty degrees Celsius.",
+   "th": "วันนี้อุณหภูมิสามสิบองศาเซลเซียส"
+  }
+ },
+ {
+  "h": "申报",
+  "p": "shēn bào",
+  "en": "to declare",
+  "th": "แจ้ง",
+  "ex": {
+   "zh": "入境时要申报物品。",
+   "py": "Rùjìng shí yào shēnbào wùpǐn.",
+   "en": "You must declare items when entering the country.",
+   "th": "ต้องแจ้งสิ่งของเมื่อเข้าประเทศ"
+  }
+ },
+ {
+  "h": "呻吟",
+  "p": "shēn yín",
+  "en": "to groan",
+  "th": "ครวญคราง",
+  "ex": {
+   "zh": "病人痛得呻吟起来。",
+   "py": "Bìngrén tòng de shēnyín qǐlai.",
+   "en": "The patient groaned in pain.",
+   "th": "ผู้ป่วยเจ็บจนครางออกมา"
+  }
+ },
+ {
+  "h": "绅士",
+  "p": "shēn shì",
+  "en": "gentleman",
+  "th": "สุภาพบุรุษ",
+  "ex": {
+   "zh": "他是一位真正的绅士。",
+   "py": "Tā shì yí wèi zhēnzhèng de shēnshì.",
+   "en": "He is a true gentleman.",
+   "th": "เขาเป็นสุภาพบุรุษที่แท้จริง"
+  }
+ },
+ {
+  "h": "深奥",
+  "p": "shēn ào",
+  "en": "profound",
+  "th": "ลึกซึ้ง",
+  "ex": {
+   "zh": "这本书的内容很深奥。",
+   "py": "Zhè běn shū de nèiróng hěn shēn'ào.",
+   "en": "The content of this book is very profound.",
+   "th": "เนื้อหาของหนังสือเล่มนี้ลึกซึ้งมาก"
+  }
+ }
+]

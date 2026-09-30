@@ -1,0 +1,1202 @@
+[
+ {
+  "h": "吼",
+  "p": "hǒu",
+  "en": "to roar",
+  "th": "คำราม",
+  "ex": {
+   "zh": "老虎发出愤怒的吼声。",
+   "py": "Lǎohǔ fāchū fènnù de hǒushēng.",
+   "en": "The tiger let out an angry roar.",
+   "th": "เสือคำรามอย่างโกรธเกรี้ยว"
+  }
+ },
+ {
+  "h": "后代",
+  "p": "hòu dài",
+  "en": "descendants",
+  "th": "ลูกหลาน",
+  "ex": {
+   "zh": "我们要为后代保护环境。",
+   "py": "Wǒmen yào wèi hòudài bǎohù huánjìng.",
+   "en": "We must protect the environment for future generations.",
+   "th": "เราต้องรักษาสิ่งแวดล้อมเพื่อลูกหลาน"
+  }
+ },
+ {
+  "h": "后顾之忧",
+  "p": "hòu gù zhī yōu",
+  "en": "lingering worries",
+  "th": "ความกังวลใจ",
+  "ex": {
+   "zh": "有了保险,他没有后顾之忧。",
+   "py": "Yǒu le bǎoxiǎn, tā méiyǒu hòugù zhī yōu.",
+   "en": "With insurance, he has nothing to worry about.",
+   "th": "มีประกันแล้ว เขาก็ไม่ต้องห่วงกังวล"
+  }
+ },
+ {
+  "h": "后勤",
+  "p": "hòu qín",
+  "en": "logistics",
+  "th": "ฝ่ายส่งกำลังบำรุง",
+  "ex": {
+   "zh": "他在学校后勤部门工作。",
+   "py": "Tā zài xuéxiào hòuqín bùmén gōngzuò.",
+   "en": "He works in the school's logistics department.",
+   "th": "เขาทำงานในฝ่ายบริการของโรงเรียน"
+  }
+ },
+ {
+  "h": "候选",
+  "p": "hòu xuǎn",
+  "en": "candidate",
+  "th": "ผู้สมัครรับเลือก",
+  "ex": {
+   "zh": "三位候选人参加了辩论。",
+   "py": "Sān wèi hòuxuǎnrén cānjiā le biànlùn.",
+   "en": "Three candidates took part in the debate.",
+   "th": "ผู้สมัครสามคนเข้าร่วมการโต้วาที"
+  }
+ },
+ {
+  "h": "呼啸",
+  "p": "hū xiào",
+  "en": "to whistle",
+  "th": "ส่งเสียงหวีดหวิว",
+  "ex": {
+   "zh": "北风在窗外呼啸。",
+   "py": "Běifēng zài chuāng wài hūxiào.",
+   "en": "The north wind howls outside the window.",
+   "th": "ลมเหนือหวีดหวิวอยู่นอกหน้าต่าง"
+  }
+ },
+ {
+  "h": "呼吁",
+  "p": "hū yù",
+  "en": "to appeal",
+  "th": "เรียกร้อง",
+  "ex": {
+   "zh": "专家呼吁大家少用塑料。",
+   "py": "Zhuānjiā hūyù dàjiā shǎo yòng sùliào.",
+   "en": "Experts appeal to everyone to use less plastic.",
+   "th": "ผู้เชี่ยวชาญเรียกร้องให้ทุกคนใช้พลาสติกให้น้อยลง"
+  }
+ },
+ {
+  "h": "忽略",
+  "p": "hū lüè",
+  "en": "to overlook",
+  "th": "มองข้าม",
+  "ex": {
+   "zh": "我们不能忽略这个问题。",
+   "py": "Wǒmen bù néng hūlüè zhège wèntí.",
+   "en": "We cannot overlook this problem.",
+   "th": "เราจะมองข้ามปัญหานี้ไม่ได้"
+  }
+ },
+ {
+  "h": "胡乱",
+  "p": "hú luàn",
+  "en": "carelessly",
+  "th": "มั่วๆ",
+  "ex": {
+   "zh": "别胡乱吃药。",
+   "py": "Bié húluàn chī yào.",
+   "en": "Don't take medicine carelessly.",
+   "th": "อย่ากินยามั่วๆ"
+  }
+ },
+ {
+  "h": "湖泊",
+  "p": "hú pō",
+  "en": "lake",
+  "th": "ทะเลสาบ",
+  "ex": {
+   "zh": "这个湖泊非常美丽。",
+   "py": "Zhège húpō fēicháng měilì.",
+   "en": "This lake is very beautiful.",
+   "th": "ทะเลสาบแห่งนี้สวยงามมาก"
+  }
+ },
+ {
+  "h": "互联网",
+  "p": "Hù lián wǎng",
+  "en": "the Internet",
+  "th": "อินเทอร์เน็ต",
+  "ex": {
+   "zh": "互联网改变了我们的生活。",
+   "py": "Hùliánwǎng gǎibiàn le wǒmen de shēnghuó.",
+   "en": "The Internet has changed our lives.",
+   "th": "อินเทอร์เน็ตเปลี่ยนชีวิตของเรา"
+  }
+ },
+ {
+  "h": "花瓣",
+  "p": "huā bàn",
+  "en": "petal",
+  "th": "กลีบดอกไม้",
+  "ex": {
+   "zh": "地上落满了花瓣。",
+   "py": "Dìshàng luò mǎn le huābàn.",
+   "en": "The ground was covered with petals.",
+   "th": "พื้นเต็มไปด้วยกลีบดอกไม้"
+  }
+ },
+ {
+  "h": "华丽",
+  "p": "huá lì",
+  "en": "gorgeous",
+  "th": "หรูหรา",
+  "ex": {
+   "zh": "她穿着一件华丽的礼服。",
+   "py": "Tā chuān zhe yí jiàn huálì de lǐfú.",
+   "en": "She is wearing a gorgeous gown.",
+   "th": "เธอสวมชุดราตรีอันหรูหรา"
+  }
+ },
+ {
+  "h": "华侨",
+  "p": "Huá qiáo",
+  "en": "overseas Chinese",
+  "th": "ชาวจีนโพ้นทะเล",
+  "ex": {
+   "zh": "他是一位著名的华侨。",
+   "py": "Tā shì yí wèi zhùmíng de huáqiáo.",
+   "en": "He is a famous overseas Chinese.",
+   "th": "เขาเป็นชาวจีนโพ้นทะเลผู้มีชื่อเสียง"
+  }
+ },
+ {
+  "h": "化肥",
+  "p": "huà féi",
+  "en": "fertilizer",
+  "th": "ปุ๋ยเคมี",
+  "ex": {
+   "zh": "农民给田里施化肥。",
+   "py": "Nóngmín gěi tián lǐ shī huàféi.",
+   "en": "Farmers apply fertilizer to the fields.",
+   "th": "ชาวนาใส่ปุ๋ยเคมีในนา"
+  }
+ },
+ {
+  "h": "化石",
+  "p": "huà shí",
+  "en": "fossil",
+  "th": "ฟอสซิล",
+  "ex": {
+   "zh": "博物馆里有恐龙化石。",
+   "py": "Bówùguǎn lǐ yǒu kǒnglóng huàshí.",
+   "en": "The museum has dinosaur fossils.",
+   "th": "ในพิพิธภัณฑ์มีฟอสซิลไดโนเสาร์"
+  }
+ },
+ {
+  "h": "化验",
+  "p": "huà yàn",
+  "en": "lab test",
+  "th": "ตรวจทางห้องปฏิบัติการ",
+  "ex": {
+   "zh": "医生让我去化验血。",
+   "py": "Yīshēng ràng wǒ qù huàyàn xuè.",
+   "en": "The doctor told me to get a blood test.",
+   "th": "หมอให้ฉันไปตรวจเลือด"
+  }
+ },
+ {
+  "h": "化妆",
+  "p": "huà zhuāng",
+  "en": "to put on makeup",
+  "th": "แต่งหน้า",
+  "ex": {
+   "zh": "她每天早上化妆。",
+   "py": "Tā měitiān zǎoshang huàzhuāng.",
+   "en": "She puts on makeup every morning.",
+   "th": "เธอแต่งหน้าทุกเช้า"
+  }
+ },
+ {
+  "h": "划分",
+  "p": "huà fēn",
+  "en": "to divide",
+  "th": "แบ่ง",
+  "ex": {
+   "zh": "课文可以划分为三部分。",
+   "py": "Kèwén kěyǐ huàfēn wéi sān bùfen.",
+   "en": "The text can be divided into three parts.",
+   "th": "บทเรียนแบ่งเป็นสามส่วนได้"
+  }
+ },
+ {
+  "h": "画蛇添足",
+  "p": "huà shé tiān zú",
+  "en": "to overdo it",
+  "th": "ทำเกินจำเป็น",
+  "ex": {
+   "zh": "画蛇添足反而不好看。",
+   "py": "Huà shé tiān zú fǎn'ér bù hǎokàn.",
+   "en": "Overdoing it just makes it look worse.",
+   "th": "ทำเกินจำเป็นกลับดูไม่ดี"
+  }
+ },
+ {
+  "h": "话筒",
+  "p": "huà tǒng",
+  "en": "microphone",
+  "th": "ไมโครโฟน",
+  "ex": {
+   "zh": "请把话筒递给我。",
+   "py": "Qǐng bǎ huàtǒng dì gěi wǒ.",
+   "en": "Please hand me the microphone.",
+   "th": "กรุณาส่งไมโครโฟนให้ฉันหน่อย"
+  }
+ },
+ {
+  "h": "怀孕",
+  "p": "huái yùn",
+  "en": "pregnant",
+  "th": "ตั้งครรภ์",
+  "ex": {
+   "zh": "她怀孕三个月了。",
+   "py": "Tā huáiyùn sān ge yuè le.",
+   "en": "She is three months pregnant.",
+   "th": "เธอตั้งครรภ์ได้สามเดือนแล้ว"
+  }
+ },
+ {
+  "h": "环节",
+  "p": "huán jié",
+  "en": "link",
+  "th": "ขั้นตอน",
+  "ex": {
+   "zh": "每个环节都不能出错。",
+   "py": "Měi ge huánjié dōu bù néng chūcuò.",
+   "en": "No step can go wrong.",
+   "th": "ทุกขั้นตอนห้ามผิดพลาด"
+  }
+ },
+ {
+  "h": "缓和",
+  "p": "huǎn hé",
+  "en": "to ease",
+  "th": "ผ่อนคลาย",
+  "ex": {
+   "zh": "谈话缓和了紧张的气氛。",
+   "py": "Tánhuà huǎnhé le jǐnzhāng de qìfēn.",
+   "en": "The talk eased the tense atmosphere.",
+   "th": "การสนทนาช่วยคลายบรรยากาศตึงเครียด"
+  }
+ },
+ {
+  "h": "患者",
+  "p": "huàn zhě",
+  "en": "patient",
+  "th": "ผู้ป่วย",
+  "ex": {
+   "zh": "医院里有很多患者。",
+   "py": "Yīyuàn lǐ yǒu hěn duō huànzhě.",
+   "en": "There are many patients in the hospital.",
+   "th": "ในโรงพยาบาลมีผู้ป่วยมากมาย"
+  }
+ },
+ {
+  "h": "欢乐",
+  "p": "huān lè",
+  "en": "joy",
+  "th": "ความสนุกสนาน",
+  "ex": {
+   "zh": "节日里到处是欢乐的笑声。",
+   "py": "Jiérì lǐ dàochù shì huānlè de xiàoshēng.",
+   "en": "Joyful laughter is everywhere during the festival.",
+   "th": "ช่วงเทศกาลมีเสียงหัวเราะสนุกสนานทุกที่"
+  }
+ },
+ {
+  "h": "荒凉",
+  "p": "huāng liáng",
+  "en": "desolate",
+  "th": "ร้างเปล่า",
+  "ex": {
+   "zh": "这片沙漠十分荒凉。",
+   "py": "Zhè piàn shāmò shífēn huāngliáng.",
+   "en": "This desert is extremely desolate.",
+   "th": "ทะเลทรายแห่งนี้เวิ้งว้างร้างผู้คน"
+  }
+ },
+ {
+  "h": "荒谬",
+  "p": "huāng miù",
+  "en": "absurd",
+  "th": "ไร้สาระ",
+  "ex": {
+   "zh": "这个想法太荒谬了。",
+   "py": "Zhège xiǎngfǎ tài huāngmiù le.",
+   "en": "This idea is too absurd.",
+   "th": "ความคิดนี้ไร้สาระเกินไป"
+  }
+ },
+ {
+  "h": "荒唐",
+  "p": "huāng táng",
+  "en": "preposterous",
+  "th": "เหลวไหล",
+  "ex": {
+   "zh": "他做了一件荒唐的事。",
+   "py": "Tā zuò le yí jiàn huāngtáng de shì.",
+   "en": "He did something ridiculous.",
+   "th": "เขาทำเรื่องเหลวไหลอย่างหนึ่ง"
+  }
+ },
+ {
+  "h": "慌忙",
+  "p": "huāng máng",
+  "en": "in a hurry",
+  "th": "รีบร้อน",
+  "ex": {
+   "zh": "他慌忙跑出了门。",
+   "py": "Tā huāngmáng pǎo chū le mén.",
+   "en": "He rushed out of the door in a hurry.",
+   "th": "เขารีบวิ่งออกจากประตูไป"
+  }
+ },
+ {
+  "h": "黄昏",
+  "p": "huáng hūn",
+  "en": "dusk",
+  "th": "พลบค่ำ",
+  "ex": {
+   "zh": "黄昏时天空变成了红色。",
+   "py": "Huánghūn shí tiānkōng biànchéng le hóngsè.",
+   "en": "At dusk the sky turned red.",
+   "th": "ตอนพลบค่ำท้องฟ้าเปลี่ยนเป็นสีแดง"
+  }
+ },
+ {
+  "h": "恍然大悟",
+  "p": "huǎng rán dà wù",
+  "en": "to suddenly understand",
+  "th": "ตาสว่างทันที",
+  "ex": {
+   "zh": "听完解释,我恍然大悟。",
+   "py": "Tīng wán jiěshì, wǒ huǎngrán dàwù.",
+   "en": "After hearing the explanation, I suddenly understood.",
+   "th": "ฟังคำอธิบายจบ ฉันก็เข้าใจขึ้นมาทันที"
+  }
+ },
+ {
+  "h": "挥霍",
+  "p": "huī huò",
+  "en": "to squander",
+  "th": "ผลาญเงิน",
+  "ex": {
+   "zh": "他挥霍了父母留下的钱。",
+   "py": "Tā huīhuò le fùmǔ liú xià de qián.",
+   "en": "He squandered the money his parents left.",
+   "th": "เขาผลาญเงินที่พ่อแม่ทิ้งไว้ให้"
+  }
+ },
+ {
+  "h": "辉煌",
+  "p": "huī huáng",
+  "en": "splendid",
+  "th": "รุ่งโรจน์",
+  "ex": {
+   "zh": "这支球队有辉煌的历史。",
+   "py": "Zhè zhī qiúduì yǒu huīhuáng de lìshǐ.",
+   "en": "This team has a glorious history.",
+   "th": "ทีมนี้มีประวัติศาสตร์อันรุ่งโรจน์"
+  }
+ },
+ {
+  "h": "回报",
+  "p": "huí bào",
+  "en": "return",
+  "th": "ผลตอบแทน",
+  "ex": {
+   "zh": "努力工作会有回报。",
+   "py": "Nǔlì gōngzuò huì yǒu huíbào.",
+   "en": "Hard work will pay off.",
+   "th": "การทำงานหนักจะได้รับผลตอบแทน"
+  }
+ },
+ {
+  "h": "回避",
+  "p": "huí bì",
+  "en": "to avoid",
+  "th": "หลีกเลี่ยง",
+  "ex": {
+   "zh": "他回避了这个问题。",
+   "py": "Tā huíbì le zhège wèntí.",
+   "en": "He avoided this question.",
+   "th": "เขาหลีกเลี่ยงคำถามนี้"
+  }
+ },
+ {
+  "h": "回顾",
+  "p": "huí gù",
+  "en": "to look back",
+  "th": "ทบทวนอดีต",
+  "ex": {
+   "zh": "回顾过去,我们收获很多。",
+   "py": "Huígù guòqù, wǒmen shōuhuò hěn duō.",
+   "en": "Looking back, we gained a lot.",
+   "th": "มองย้อนอดีต เราได้รับอะไรมากมาย"
+  }
+ },
+ {
+  "h": "回收",
+  "p": "huí shōu",
+  "en": "to recycle",
+  "th": "รีไซเคิล",
+  "ex": {
+   "zh": "旧衣服可以回收。",
+   "py": "Jiù yīfu kěyǐ huíshōu.",
+   "en": "Old clothes can be recycled.",
+   "th": "เสื้อผ้าเก่ารีไซเคิลได้"
+  }
+ },
+ {
+  "h": "悔恨",
+  "p": "huǐ hèn",
+  "en": "remorse",
+  "th": "ความเสียใจ",
+  "ex": {
+   "zh": "他对自己的错误很悔恨。",
+   "py": "Tā duì zìjǐ de cuòwù hěn huǐhèn.",
+   "en": "He feels great remorse for his mistake.",
+   "th": "เขาเสียใจอย่างสุดซึ้งต่อความผิดของตน"
+  }
+ },
+ {
+  "h": "毁灭",
+  "p": "huǐ miè",
+  "en": "to destroy",
+  "th": "ทำลายล้าง",
+  "ex": {
+   "zh": "战争毁灭了这座城市。",
+   "py": "Zhànzhēng huǐmiè le zhè zuò chéngshì.",
+   "en": "The war destroyed this city.",
+   "th": "สงครามทำลายเมืองนี้จนสิ้น"
+  }
+ },
+ {
+  "h": "汇报",
+  "p": "huì bào",
+  "en": "to report",
+  "th": "รายงาน",
+  "ex": {
+   "zh": "我要向经理汇报工作。",
+   "py": "Wǒ yào xiàng jīnglǐ huìbào gōngzuò.",
+   "en": "I need to report my work to the manager.",
+   "th": "ฉันต้องไปรายงานงานให้ผู้จัดการ"
+  }
+ },
+ {
+  "h": "会晤",
+  "p": "huì wù",
+  "en": "to meet",
+  "th": "พบปะ",
+  "ex": {
+   "zh": "两国领导人将会晤。",
+   "py": "Liǎng guó lǐngdǎorén jiāng huìwù.",
+   "en": "The leaders of the two countries will meet.",
+   "th": "ผู้นำสองประเทศจะพบปะกัน"
+  }
+ },
+ {
+  "h": "贿赂",
+  "p": "huì lù",
+  "en": "to bribe",
+  "th": "ติดสินบน",
+  "ex": {
+   "zh": "他想贿赂官员。",
+   "py": "Tā xiǎng huìlù guānyuán.",
+   "en": "He tried to bribe an official.",
+   "th": "เขาพยายามติดสินบนเจ้าหน้าที่"
+  }
+ },
+ {
+  "h": "昏迷",
+  "p": "hūn mí",
+  "en": "to be in a coma",
+  "th": "หมดสติ",
+  "ex": {
+   "zh": "他昏迷了三天。",
+   "py": "Tā hūnmí le sān tiān.",
+   "en": "He was in a coma for three days.",
+   "th": "เขาหมดสติไปสามวัน"
+  }
+ },
+ {
+  "h": "浑身",
+  "p": "hún shēn",
+  "en": "all over",
+  "th": "ทั่วตัว",
+  "ex": {
+   "zh": "他浑身都是汗。",
+   "py": "Tā húnshēn dōu shì hàn.",
+   "en": "He is sweating all over.",
+   "th": "เขาเหงื่อโชกทั้งตัว"
+  }
+ },
+ {
+  "h": "混合",
+  "p": "hùn hé",
+  "en": "to mix",
+  "th": "ผสม",
+  "ex": {
+   "zh": "把红色和黄色混合起来。",
+   "py": "Bǎ hóngsè hé huángsè hùnhé qǐlái.",
+   "en": "Mix red and yellow together.",
+   "th": "ผสมสีแดงกับสีเหลืองเข้าด้วยกัน"
+  }
+ },
+ {
+  "h": "混乱",
+  "p": "hùn luàn",
+  "en": "chaos",
+  "th": "ความวุ่นวาย",
+  "ex": {
+   "zh": "现场一片混乱。",
+   "py": "Xiànchǎng yí piàn hùnluàn.",
+   "en": "The scene was in chaos.",
+   "th": "ที่เกิดเหตุวุ่นวายไปหมด"
+  }
+ },
+ {
+  "h": "混淆",
+  "p": "hùn xiáo",
+  "en": "to confuse",
+  "th": "สับสน",
+  "ex": {
+   "zh": "这两个词很容易混淆。",
+   "py": "Zhè liǎng ge cí hěn róngyì hùnxiáo.",
+   "en": "These two words are easily confused.",
+   "th": "สองคำนี้สับสนกันง่ายมาก"
+  }
+ },
+ {
+  "h": "混浊",
+  "p": "hùn zhuó",
+  "en": "turbid",
+  "th": "ขุ่น",
+  "ex": {
+   "zh": "河水变得很混浊。",
+   "py": "Héshuǐ biàn de hěn hùnzhuó.",
+   "en": "The river water became very muddy.",
+   "th": "น้ำในแม่น้ำกลายเป็นขุ่นมาก"
+  }
+ },
+ {
+  "h": "活该",
+  "p": "huó gāi",
+  "en": "serves you right",
+  "th": "สมน้ำหน้า",
+  "ex": {
+   "zh": "你不听劝,活该!",
+   "py": "Nǐ bù tīng quàn, huógāi!",
+   "en": "You didn't listen to advice, serves you right!",
+   "th": "ไม่ฟังคำเตือน สมน้ำหน้า"
+  }
+ },
+ {
+  "h": "活力",
+  "p": "huó lì",
+  "en": "vitality",
+  "th": "พลังชีวิต",
+  "ex": {
+   "zh": "孩子们充满了活力。",
+   "py": "Háizimen chōngmǎn le huólì.",
+   "en": "The children are full of energy.",
+   "th": "เด็กๆ เต็มไปด้วยพลังชีวิต"
+  }
+ },
+ {
+  "h": "火箭",
+  "p": "huǒ jiàn",
+  "en": "rocket",
+  "th": "จรวด",
+  "ex": {
+   "zh": "火箭飞向了太空。",
+   "py": "Huǒjiàn fēi xiàng le tàikōng.",
+   "en": "The rocket flew into space.",
+   "th": "จรวดพุ่งขึ้นสู่อวกาศ"
+  }
+ },
+ {
+  "h": "火焰",
+  "p": "huǒ yàn",
+  "en": "flame",
+  "th": "เปลวไฟ",
+  "ex": {
+   "zh": "火焰越烧越旺。",
+   "py": "Huǒyàn yuè shāo yuè wàng.",
+   "en": "The flames grew stronger and stronger.",
+   "th": "เปลวไฟยิ่งลุกโชนขึ้นเรื่อยๆ"
+  }
+ },
+ {
+  "h": "火药",
+  "p": "huǒ yào",
+  "en": "gunpowder",
+  "th": "ดินปืน",
+  "ex": {
+   "zh": "火药是中国的发明。",
+   "py": "Huǒyào shì Zhōngguó de fāmíng.",
+   "en": "Gunpowder was a Chinese invention.",
+   "th": "ดินปืนเป็นสิ่งประดิษฐ์ของจีน"
+  }
+ },
+ {
+  "h": "或许",
+  "p": "huò xǔ",
+  "en": "perhaps",
+  "th": "บางที",
+  "ex": {
+   "zh": "他或许已经回家了。",
+   "py": "Tā huòxǔ yǐjīng huíjiā le.",
+   "en": "Perhaps he has already gone home.",
+   "th": "บางทีเขาอาจกลับบ้านไปแล้ว"
+  }
+ },
+ {
+  "h": "货币",
+  "p": "huò bì",
+  "en": "currency",
+  "th": "สกุลเงิน",
+  "ex": {
+   "zh": "各国使用不同的货币。",
+   "py": "Gèguó shǐyòng bù tóng de huòbì.",
+   "en": "Different countries use different currencies.",
+   "th": "แต่ละประเทศใช้สกุลเงินต่างกัน"
+  }
+ },
+ {
+  "h": "讥笑",
+  "p": "jī xiào",
+  "en": "to sneer",
+  "th": "เยาะเย้ย",
+  "ex": {
+   "zh": "别人讥笑他的口音。",
+   "py": "Biéren jīxiào tā de kǒuyīn.",
+   "en": "Others sneered at his accent.",
+   "th": "คนอื่นเยาะเย้ยสำเนียงของเขา"
+  }
+ },
+ {
+  "h": "饥饿",
+  "p": "jī è",
+  "en": "hunger",
+  "th": "ความหิว",
+  "ex": {
+   "zh": "饥饿让他无法入睡。",
+   "py": "Jī'è ràng tā wúfǎ rùshuì.",
+   "en": "Hunger kept him from sleeping.",
+   "th": "ความหิวทำให้เขานอนไม่หลับ"
+  }
+ },
+ {
+  "h": "机动",
+  "p": "jī dòng",
+  "en": "motorized",
+  "th": "ใช้เครื่องยนต์",
+  "ex": {
+   "zh": "机动车不能走人行道。",
+   "py": "Jīdòngchē bù néng zǒu rénxíngdào.",
+   "en": "Motor vehicles may not use the sidewalk.",
+   "th": "ยานยนต์ห้ามขึ้นทางเท้า"
+  }
+ },
+ {
+  "h": "机构",
+  "p": "jī gòu",
+  "en": "organization",
+  "th": "องค์กร",
+  "ex": {
+   "zh": "他在一家研究机构工作。",
+   "py": "Tā zài yì jiā yánjiū jīgòu gōngzuò.",
+   "en": "He works at a research institution.",
+   "th": "เขาทำงานที่สถาบันวิจัยแห่งหนึ่ง"
+  }
+ },
+ {
+  "h": "机关",
+  "p": "jī guān",
+  "en": "government office",
+  "th": "หน่วยงาน",
+  "ex": {
+   "zh": "他在政府机关工作。",
+   "py": "Tā zài zhèngfǔ jīguān gōngzuò.",
+   "en": "He works in a government agency.",
+   "th": "เขาทำงานในหน่วยงานราชการ"
+  }
+ },
+ {
+  "h": "机灵",
+  "p": "jī ling",
+  "en": "smart",
+  "th": "ฉลาดเฉลียว",
+  "ex": {
+   "zh": "这个孩子很机灵。",
+   "py": "Zhège háizi hěn jīling.",
+   "en": "This child is very clever.",
+   "th": "เด็กคนนี้ฉลาดเฉลียวมาก"
+  }
+ },
+ {
+  "h": "机密",
+  "p": "jī mì",
+  "en": "confidential",
+  "th": "ความลับ",
+  "ex": {
+   "zh": "这是公司的机密文件。",
+   "py": "Zhè shì gōngsī de jīmì wénjiàn.",
+   "en": "This is a confidential company document.",
+   "th": "นี่เป็นเอกสารลับของบริษัท"
+  }
+ },
+ {
+  "h": "机械",
+  "p": "jī xiè",
+  "en": "machinery",
+  "th": "เครื่องจักร",
+  "ex": {
+   "zh": "工厂里有很多机械。",
+   "py": "Gōngchǎng lǐ yǒu hěn duō jīxiè.",
+   "en": "There is a lot of machinery in the factory.",
+   "th": "ในโรงงานมีเครื่องจักรมากมาย"
+  }
+ },
+ {
+  "h": "机遇",
+  "p": "jī yù",
+  "en": "opportunity",
+  "th": "โอกาส",
+  "ex": {
+   "zh": "这是一个难得的机遇。",
+   "py": "Zhè shì yí ge nándé de jīyù.",
+   "en": "This is a rare opportunity.",
+   "th": "นี่เป็นโอกาสที่หาได้ยาก"
+  }
+ },
+ {
+  "h": "机智",
+  "p": "jī zhì",
+  "en": "quick-witted",
+  "th": "ไหวพริบดี",
+  "ex": {
+   "zh": "他机智地解决了问题。",
+   "py": "Tā jīzhì de jiějué le wèntí.",
+   "en": "He resolved the problem with quick wit.",
+   "th": "เขาแก้ปัญหาอย่างมีไหวพริบ"
+  }
+ },
+ {
+  "h": "迹象",
+  "p": "jì xiàng",
+  "en": "sign",
+  "th": "ร่องรอย",
+  "ex": {
+   "zh": "天空有下雨的迹象。",
+   "py": "Tiānkōng yǒu xiàyǔ de jìxiàng.",
+   "en": "There are signs of rain in the sky.",
+   "th": "ท้องฟ้ามีสัญญาณว่าฝนจะตก"
+  }
+ },
+ {
+  "h": "基地",
+  "p": "jī dì",
+  "en": "base",
+  "th": "ฐานทัพ",
+  "ex": {
+   "zh": "这是一个军事基地。",
+   "py": "Zhè shì yí ge jūnshì jīdì.",
+   "en": "This is a military base.",
+   "th": "นี่คือฐานทัพทหาร"
+  }
+ },
+ {
+  "h": "基金",
+  "p": "jī jīn",
+  "en": "fund",
+  "th": "กองทุน",
+  "ex": {
+   "zh": "他买了一只基金。",
+   "py": "Tā mǎi le yì zhī jījīn.",
+   "en": "He bought a fund.",
+   "th": "เขาซื้อกองทุนตัวหนึ่ง"
+  }
+ },
+ {
+  "h": "基因",
+  "p": "jī yīn",
+  "en": "gene",
+  "th": "ยีน",
+  "ex": {
+   "zh": "基因决定了我们的特征。",
+   "py": "Jīyīn juédìng le wǒmen de tèzhēng.",
+   "en": "Genes determine our characteristics.",
+   "th": "ยีนกำหนดลักษณะของเรา"
+  }
+ },
+ {
+  "h": "激发",
+  "p": "jī fā",
+  "en": "to stimulate",
+  "th": "กระตุ้น",
+  "ex": {
+   "zh": "老师激发了学生的兴趣。",
+   "py": "Lǎoshī jīfā le xuésheng de xìngqù.",
+   "en": "The teacher stimulated the students' interest.",
+   "th": "ครูกระตุ้นความสนใจของนักเรียน"
+  }
+ },
+ {
+  "h": "激励",
+  "p": "jī lì",
+  "en": "to motivate",
+  "th": "ให้กำลังใจ",
+  "ex": {
+   "zh": "奖金能激励员工。",
+   "py": "Jiǎngjīn néng jīlì yuángōng.",
+   "en": "Bonuses can motivate employees.",
+   "th": "เงินโบนัสช่วยกระตุ้นพนักงานได้"
+  }
+ },
+ {
+  "h": "激情",
+  "p": "jī qíng",
+  "en": "passion",
+  "th": "ความหลงใหล",
+  "ex": {
+   "zh": "他对音乐充满激情。",
+   "py": "Tā duì yīnyuè chōngmǎn jīqíng.",
+   "en": "He is full of passion for music.",
+   "th": "เขาเต็มไปด้วยความหลงใหลในดนตรี"
+  }
+ },
+ {
+  "h": "及早",
+  "p": "jí zǎo",
+  "en": "as early as possible",
+  "th": "โดยเร็วที่สุด",
+  "ex": {
+   "zh": "生病要及早治疗。",
+   "py": "Shēngbìng yào jízǎo zhìliáo.",
+   "en": "When ill, get treatment as early as possible.",
+   "th": "ถ้าป่วยต้องรีบรักษาแต่เนิ่นๆ"
+  }
+ },
+ {
+  "h": "吉祥",
+  "p": "jí xiáng",
+  "en": "auspicious",
+  "th": "มงคล",
+  "ex": {
+   "zh": "\"吉祥如意\"是新年祝福。",
+   "py": "\"Jíxiáng rúyì\" shì xīnnián zhùfú.",
+   "en": "\"Auspicious and as you wish\" is a New Year blessing.",
+   "th": "\"มงคลสมปรารถนา\"เป็นคำอวยพรปีใหม่"
+  }
+ },
+ {
+  "h": "级别",
+  "p": "jí bié",
+  "en": "grade",
+  "th": "ระดับ",
+  "ex": {
+   "zh": "这个班的级别很高。",
+   "py": "Zhège bān de jíbié hěn gāo.",
+   "en": "This class is of a high level.",
+   "th": "ห้องเรียนนี้มีระดับสูง"
+  }
+ },
+ {
+  "h": "即便",
+  "p": "jí biàn",
+  "en": "even if",
+  "th": "ต่อให้",
+  "ex": {
+   "zh": "即便下雨,我们也要去。",
+   "py": "Jíbiàn xià yǔ, wǒmen yě yào qù.",
+   "en": "Even if it rains, we will still go.",
+   "th": "ต่อให้ฝนตก เราก็จะไป"
+  }
+ },
+ {
+  "h": "即将",
+  "p": "jí jiāng",
+  "en": "about to",
+  "th": "กำลังจะ",
+  "ex": {
+   "zh": "飞机即将起飞。",
+   "py": "Fēijī jíjiāng qǐfēi.",
+   "en": "The plane is about to take off.",
+   "th": "เครื่องบินกำลังจะขึ้นบิน"
+  }
+ },
+ {
+  "h": "极端",
+  "p": "jí duān",
+  "en": "extreme",
+  "th": "สุดโต่ง",
+  "ex": {
+   "zh": "他的想法太极端了。",
+   "py": "Tā de xiǎngfǎ tài jíduān le.",
+   "en": "His ideas are too extreme.",
+   "th": "ความคิดของเขาสุดโต่งเกินไป"
+  }
+ },
+ {
+  "h": "极限",
+  "p": "jí xiàn",
+  "en": "limit",
+  "th": "ขีดจำกัด",
+  "ex": {
+   "zh": "人的体力有极限。",
+   "py": "Rén de tǐlì yǒu jíxiàn.",
+   "en": "Human strength has limits.",
+   "th": "กำลังกายของคนมีขีดจำกัด"
+  }
+ },
+ {
+  "h": "急功近利",
+  "p": "jí gōng jìn lì",
+  "en": "short-sighted greed",
+  "th": "ใจร้อนเอาแต่ผลเร็ว",
+  "ex": {
+   "zh": "做事不能急功近利。",
+   "py": "Zuòshì bù néng jígōng jìnlì.",
+   "en": "Don't chase quick gains when doing things.",
+   "th": "ทำงานอย่าใจร้อนหวังผลเร็ว"
+  }
+ },
+ {
+  "h": "急剧",
+  "p": "jí jù",
+  "en": "rapid",
+  "th": "รวดเร็ว",
+  "ex": {
+   "zh": "气温急剧下降。",
+   "py": "Qìwēn jíjù xiàjiàng.",
+   "en": "The temperature dropped sharply.",
+   "th": "อุณหภูมิลดลงอย่างรวดเร็ว"
+  }
+ },
+ {
+  "h": "急切",
+  "p": "jí qiè",
+  "en": "eager",
+  "th": "กระวนกระวาย",
+  "ex": {
+   "zh": "他急切地等着消息。",
+   "py": "Tā jíqiè de děng zhe xiāoxi.",
+   "en": "He is anxiously waiting for news.",
+   "th": "เขารอข่าวอย่างร้อนใจ"
+  }
+ },
+ {
+  "h": "急于求成",
+  "p": "jí yú qiú chéng",
+  "en": "to be too hasty",
+  "th": "รีบร้อนหวังผลสำเร็จ",
+  "ex": {
+   "zh": "学习不能急于求成。",
+   "py": "Xuéxí bù néng jí yú qiú chéng.",
+   "en": "Learning cannot be rushed for quick results.",
+   "th": "การเรียนรู้จะรีบร้อนหวังผลเร็วไม่ได้"
+  }
+ },
+ {
+  "h": "急躁",
+  "p": "jí zào",
+  "en": "irritable",
+  "th": "หงุดหงิด",
+  "ex": {
+   "zh": "他最近脾气很急躁。",
+   "py": "Tā zuìjìn píqi hěn jízào.",
+   "en": "He has been very irritable lately.",
+   "th": "ช่วงนี้เขาอารมณ์ร้อนหงุดหงิดง่าย"
+  }
+ },
+ {
+  "h": "疾病",
+  "p": "jí bìng",
+  "en": "disease",
+  "th": "โรค",
+  "ex": {
+   "zh": "运动可以预防疾病。",
+   "py": "Yùndòng kěyǐ yùfáng jíbìng.",
+   "en": "Exercise can prevent disease.",
+   "th": "การออกกำลังกายช่วยป้องกันโรคได้"
+  }
+ },
+ {
+  "h": "集团",
+  "p": "jí tuán",
+  "en": "group",
+  "th": "กลุ่มบริษัท",
+  "ex": {
+   "zh": "他在一家大集团工作。",
+   "py": "Tā zài yì jiā dà jítuán gōngzuò.",
+   "en": "He works for a large corporation.",
+   "th": "เขาทำงานในกลุ่มบริษัทขนาดใหญ่"
+  }
+ },
+ {
+  "h": "嫉妒",
+  "p": "jí dù",
+  "en": "to be jealous",
+  "th": "อิจฉา",
+  "ex": {
+   "zh": "她嫉妒同事的成绩。",
+   "py": "Tā jídù tóngshì de chéngjì.",
+   "en": "She is jealous of her colleague's achievements.",
+   "th": "เธออิจฉาความสำเร็จของเพื่อนร่วมงาน"
+  }
+ },
+ {
+  "h": "籍贯",
+  "p": "jí guàn",
+  "en": "native place",
+  "th": "ภูมิลำเนา",
+  "ex": {
+   "zh": "请在表格上写籍贯。",
+   "py": "Qǐng zài biǎogé shàng xiě jíguàn.",
+   "en": "Please write your native place on the form.",
+   "th": "กรุณากรอกภูมิลำเนาในแบบฟอร์ม"
+  }
+ },
+ {
+  "h": "计较",
+  "p": "jì jiào",
+  "en": "to haggle",
+  "th": "ถือสา",
+  "ex": {
+   "zh": "别为小事计较。",
+   "py": "Bié wèi xiǎoshì jìjiào.",
+   "en": "Don't fuss over small matters.",
+   "th": "อย่าไปถือสากับเรื่องเล็กน้อย"
+  }
+ },
+ {
+  "h": "记性",
+  "p": "jì xing",
+  "en": "memory",
+  "th": "ความจำ",
+  "ex": {
+   "zh": "奶奶的记性很好。",
+   "py": "Nǎinai de jìxing hěn hǎo.",
+   "en": "Grandma has a good memory.",
+   "th": "ความจำของยายดีมาก"
+  }
+ },
+ {
+  "h": "记载",
+  "p": "jì zǎi",
+  "en": "to record",
+  "th": "บันทึก",
+  "ex": {
+   "zh": "历史书记载了这件事。",
+   "py": "Lìshǐ shū jìzǎi le zhè jiàn shì.",
+   "en": "History books record this matter.",
+   "th": "หนังสือประวัติศาสตร์บันทึกเรื่องนี้ไว้"
+  }
+ },
+ {
+  "h": "纪要",
+  "p": "jì yào",
+  "en": "minutes",
+  "th": "สรุปการประชุม",
+  "ex": {
+   "zh": "秘书写了会议纪要。",
+   "py": "Mìshū xiě le huìyì jìyào.",
+   "en": "The secretary wrote the meeting minutes.",
+   "th": "เลขานุการเขียนสรุปการประชุม"
+  }
+ },
+ {
+  "h": "忌讳",
+  "p": "jì huì",
+  "en": "taboo",
+  "th": "ข้อห้าม",
+  "ex": {
+   "zh": "这句话是他的忌讳。",
+   "py": "Zhè jù huà shì tā de jìhuì.",
+   "en": "This sentence is taboo for him.",
+   "th": "ประโยคนี้เป็นเรื่องต้องห้ามสำหรับเขา"
+  }
+ },
+ {
+  "h": "技能",
+  "p": "jì néng",
+  "en": "skill",
+  "th": "ทักษะ",
+  "ex": {
+   "zh": "他掌握了新的技能。",
+   "py": "Tā zhǎngwò le xīn de jìnéng.",
+   "en": "He has mastered a new skill.",
+   "th": "เขาเรียนรู้ทักษะใหม่ได้"
+  }
+ },
+ {
+  "h": "技巧",
+  "p": "jì qiǎo",
+  "en": "technique",
+  "th": "เทคนิค",
+  "ex": {
+   "zh": "做菜需要一些技巧。",
+   "py": "Zuòcài xūyào yìxiē jìqiǎo.",
+   "en": "Cooking requires some technique.",
+   "th": "การทำอาหารต้องอาศัยเทคนิคบางอย่าง"
+  }
+ },
+ {
+  "h": "季度",
+  "p": "jì dù",
+  "en": "quarter",
+  "th": "ไตรมาส",
+  "ex": {
+   "zh": "第一季度公司赚了钱。",
+   "py": "Dì-yī jìdù gōngsī zhuàn le qián.",
+   "en": "The company made money in the first quarter.",
+   "th": "ไตรมาสแรกบริษัทมีกำไร"
+  }
+ },
+ {
+  "h": "季军",
+  "p": "jì jūn",
+  "en": "third place",
+  "th": "อันดับสาม",
+  "ex": {
+   "zh": "他获得了比赛的季军。",
+   "py": "Tā huòdé le bǐsài de jìjūn.",
+   "en": "He won third place in the competition.",
+   "th": "เขาได้อันดับสามในการแข่งขัน"
+  }
+ },
+ {
+  "h": "继承",
+  "p": "jì chéng",
+  "en": "to inherit",
+  "th": "สืบทอด",
+  "ex": {
+   "zh": "他继承了父亲的公司。",
+   "py": "Tā jìchéng le fùqīn de gōngsī.",
+   "en": "He inherited his father's company.",
+   "th": "เขาสืบทอดบริษัทของพ่อ"
+  }
+ },
+ {
+  "h": "继往开来",
+  "p": "jì wǎng kāi lái",
+  "en": "to carry on",
+  "th": "สืบสานอดีตเปิดอนาคต",
+  "ex": {
+   "zh": "我们要继往开来,不断创新。",
+   "py": "Wǒmen yào jì wǎng kāi lái, búduàn chuàngxīn.",
+   "en": "We must carry on the past and open up the future through innovation.",
+   "th": "เราต้องสืบสานอดีตและเปิดอนาคตด้วยนวัตกรรม"
+  }
+ }
+]

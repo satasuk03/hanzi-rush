@@ -1,0 +1,1202 @@
+[
+ {
+  "h": "心态",
+  "p": "xīn tài",
+  "en": "mindset",
+  "th": "ทัศนคติ",
+  "ex": {
+   "zh": "保持好心态很重要。",
+   "py": "Bǎochí hǎo xīntài hěn zhòngyào.",
+   "en": "It is important to keep a good mindset.",
+   "th": "การรักษาทัศนคติที่ดีเป็นเรื่องสำคัญ"
+  }
+ },
+ {
+  "h": "心疼",
+  "p": "xīn téng",
+  "en": "to feel sorry for",
+  "th": "สงสาร",
+  "ex": {
+   "zh": "看到孩子生病，妈妈很心疼。",
+   "py": "Kàndào háizi shēngbìng, māma hěn xīnténg.",
+   "en": "Seeing her child sick, the mother felt heartbroken.",
+   "th": "เห็นลูกป่วย แม่รู้สึกสงสารมาก"
+  }
+ },
+ {
+  "h": "心血",
+  "p": "xīn xuè",
+  "en": "painstaking effort",
+  "th": "หยาดเหงื่อแรงกาย",
+  "ex": {
+   "zh": "这本书花了他很多心血。",
+   "py": "Zhè běn shū huā le tā hěn duō xīnxuè.",
+   "en": "He put a lot of effort into this book.",
+   "th": "หนังสือเล่มนี้เขาทุ่มเทแรงกายแรงใจไปมาก"
+  }
+ },
+ {
+  "h": "心眼儿",
+  "p": "xīn yǎn r",
+  "en": "petty mind",
+  "th": "ความคิดจุกจิก",
+  "ex": {
+   "zh": "他心眼儿小，爱生气。",
+   "py": "Tā xīnyǎnr xiǎo, ài shēngqì.",
+   "en": "He is petty and easily gets angry.",
+   "th": "เขาใจแคบ โกรธง่าย"
+  }
+ },
+ {
+  "h": "辛勤",
+  "p": "xīn qín",
+  "en": "hardworking",
+  "th": "ขยันขันแข็ง",
+  "ex": {
+   "zh": "农民们辛勤地工作。",
+   "py": "Nóngmínmen xīnqín de gōngzuò.",
+   "en": "The farmers work industriously.",
+   "th": "ชาวนาทำงานอย่างขยันขันแข็ง"
+  }
+ },
+ {
+  "h": "欣慰",
+  "p": "xīn wèi",
+  "en": "gratified",
+  "th": "ปลื้มใจ",
+  "ex": {
+   "zh": "看到你进步，我很欣慰。",
+   "py": "Kàndào nǐ jìnbù, wǒ hěn xīnwèi.",
+   "en": "I am gratified to see you improving.",
+   "th": "เห็นเธอพัฒนาขึ้น ฉันรู้สึกปลื้มใจมาก"
+  }
+ },
+ {
+  "h": "欣欣向荣",
+  "p": "xīn xīn xiàng róng",
+  "en": "thriving",
+  "th": "เจริญรุ่งเรือง",
+  "ex": {
+   "zh": "这座城市欣欣向荣。",
+   "py": "Zhè zuò chéngshì xīnxīn-xiàngróng.",
+   "en": "This city is thriving.",
+   "th": "เมืองนี้เจริญรุ่งเรือง"
+  }
+ },
+ {
+  "h": "新陈代谢",
+  "p": "xīn chén dài xiè",
+  "en": "metabolism",
+  "th": "เมแทบอลิซึม",
+  "ex": {
+   "zh": "运动能加快新陈代谢。",
+   "py": "Yùndòng néng jiākuài xīnchén-dàixiè.",
+   "en": "Exercise can speed up metabolism.",
+   "th": "การออกกำลังกายช่วยเร่งการเผาผลาญ"
+  }
+ },
+ {
+  "h": "新郎",
+  "p": "xīn láng",
+  "en": "groom",
+  "th": "เจ้าบ่าว",
+  "ex": {
+   "zh": "新郎穿着黑色的西装。",
+   "py": "Xīnláng chuānzhe hēisè de xīzhuāng.",
+   "en": "The groom wore a black suit.",
+   "th": "เจ้าบ่าวสวมสูทสีดำ"
+  }
+ },
+ {
+  "h": "新娘",
+  "p": "xīn niáng",
+  "en": "bride",
+  "th": "เจ้าสาว",
+  "ex": {
+   "zh": "新娘今天特别漂亮。",
+   "py": "Xīnniáng jīntiān tèbié piàoliang.",
+   "en": "The bride looks especially beautiful today.",
+   "th": "วันนี้เจ้าสาวสวยเป็นพิเศษ"
+  }
+ },
+ {
+  "h": "新颖",
+  "p": "xīn yǐng",
+  "en": "novel",
+  "th": "แปลกใหม่",
+  "ex": {
+   "zh": "这个设计很新颖。",
+   "py": "Zhège shèjì hěn xīnyǐng.",
+   "en": "This design is very novel.",
+   "th": "การออกแบบนี้แปลกใหม่มาก"
+  }
+ },
+ {
+  "h": "薪水",
+  "p": "xīn shuǐ",
+  "en": "salary",
+  "th": "เงินเดือน",
+  "ex": {
+   "zh": "他的薪水不太高。",
+   "py": "Tā de xīnshuǐ bú tài gāo.",
+   "en": "His salary is not very high.",
+   "th": "เงินเดือนของเขาไม่สูงนัก"
+  }
+ },
+ {
+  "h": "信赖",
+  "p": "xìn lài",
+  "en": "to trust",
+  "th": "ไว้วางใจ",
+  "ex": {
+   "zh": "孩子们都很信赖老师。",
+   "py": "Háizimen dōu hěn xìnlài lǎoshī.",
+   "en": "The children all trust their teacher.",
+   "th": "เด็กๆ ไว้วางใจครูมาก"
+  }
+ },
+ {
+  "h": "信念",
+  "p": "xìn niàn",
+  "en": "belief",
+  "th": "ความเชื่อมั่น",
+  "ex": {
+   "zh": "他有坚定的信念。",
+   "py": "Tā yǒu jiāndìng de xìnniàn.",
+   "en": "He has firm convictions.",
+   "th": "เขามีความเชื่อมั่นที่แน่วแน่"
+  }
+ },
+ {
+  "h": "信仰",
+  "p": "xìn yǎng",
+  "en": "faith",
+  "th": "ความเชื่อศรัทธา",
+  "ex": {
+   "zh": "每个人都有信仰自由。",
+   "py": "Měi ge rén dōu yǒu xìnyǎng zìyóu.",
+   "en": "Everyone has freedom of belief.",
+   "th": "ทุกคนมีเสรีภาพในการนับถือศาสนา"
+  }
+ },
+ {
+  "h": "信誉",
+  "p": "xìn yù",
+  "en": "reputation",
+  "th": "ชื่อเสียง",
+  "ex": {
+   "zh": "这家公司的信誉很好。",
+   "py": "Zhè jiā gōngsī de xìnyù hěn hǎo.",
+   "en": "This company has a good reputation.",
+   "th": "บริษัทนี้มีชื่อเสียงดี"
+  }
+ },
+ {
+  "h": "腥",
+  "p": "xīng",
+  "en": "fishy",
+  "th": "คาว",
+  "ex": {
+   "zh": "这条鱼有点腥。",
+   "py": "Zhè tiáo yú yǒudiǎn xīng.",
+   "en": "This fish smells a bit fishy.",
+   "th": "ปลาตัวนี้คาวนิดหน่อย"
+  }
+ },
+ {
+  "h": "刑事",
+  "p": "xíng shì",
+  "en": "criminal",
+  "th": "เกี่ยวกับคดีอาญา",
+  "ex": {
+   "zh": "他犯了刑事罪。",
+   "py": "Tā fàn le xíngshì zuì.",
+   "en": "He committed a criminal offense.",
+   "th": "เขาก่ออาชญากรรมทางอาญา"
+  }
+ },
+ {
+  "h": "行列",
+  "p": "háng liè",
+  "en": "ranks",
+  "th": "แถว, ขบวน",
+  "ex": {
+   "zh": "他加入了志愿者的行列。",
+   "py": "Tā jiārù le zhìyuànzhě de hángliè.",
+   "en": "He joined the ranks of the volunteers.",
+   "th": "เขาเข้าร่วมกลุ่มอาสาสมัคร"
+  }
+ },
+ {
+  "h": "行政",
+  "p": "xíng zhèng",
+  "en": "administrative",
+  "th": "เกี่ยวกับการบริหาร",
+  "ex": {
+   "zh": "她在公司做行政工作。",
+   "py": "Tā zài gōngsī zuò xíngzhèng gōngzuò.",
+   "en": "She does administrative work at the company.",
+   "th": "เธอทำงานธุรการที่บริษัท"
+  }
+ },
+ {
+  "h": "形态",
+  "p": "xíng tài",
+  "en": "form",
+  "th": "รูปแบบ",
+  "ex": {
+   "zh": "水有三种形态。",
+   "py": "Shuǐ yǒu sān zhǒng xíngtài.",
+   "en": "Water has three forms.",
+   "th": "น้ำมีสามสถานะ"
+  }
+ },
+ {
+  "h": "兴高采烈",
+  "p": "xìng gāo cǎi liè",
+  "en": "elated",
+  "th": "ดีใจร่าเริง",
+  "ex": {
+   "zh": "孩子们兴高采烈地出发了。",
+   "py": "Háizimen xìnggāo-cǎiliè de chūfā le.",
+   "en": "The children set off in high spirits.",
+   "th": "เด็กๆ ออกเดินทางอย่างร่าเริงดีใจ"
+  }
+ },
+ {
+  "h": "兴隆",
+  "p": "Xīnglóng",
+  "en": "prosperous",
+  "th": "เฟื่องฟู",
+  "ex": {
+   "zh": "他的生意越来越兴隆。",
+   "py": "Tā de shēngyi yuè lái yuè xīnglóng.",
+   "en": "His business is getting more and more prosperous.",
+   "th": "ธุรกิจของเขาเฟื่องฟูขึ้นเรื่อยๆ"
+  }
+ },
+ {
+  "h": "兴旺",
+  "p": "xīng wàng",
+  "en": "prosperous",
+  "th": "รุ่งเรือง",
+  "ex": {
+   "zh": "这个地方的经济很兴旺。",
+   "py": "Zhège dìfang de jīngjì hěn xīngwàng.",
+   "en": "The economy of this place is prosperous.",
+   "th": "เศรษฐกิจของที่นี่รุ่งเรืองมาก"
+  }
+ },
+ {
+  "h": "兴致勃勃",
+  "p": "xìng zhì bó bó",
+  "en": "full of zest",
+  "th": "กระตือรือร้น",
+  "ex": {
+   "zh": "他兴致勃勃地讲着故事。",
+   "py": "Tā xìngzhì-bóbó de jiǎngzhe gùshi.",
+   "en": "He told the story with great zest.",
+   "th": "เขาเล่าเรื่องอย่างกระตือรือร้น"
+  }
+ },
+ {
+  "h": "幸好",
+  "p": "xìng hǎo",
+  "en": "fortunately",
+  "th": "โชคดีที่",
+  "ex": {
+   "zh": "幸好你带了伞。",
+   "py": "Xìnghǎo nǐ dài le sǎn.",
+   "en": "Fortunately you brought an umbrella.",
+   "th": "โชคดีที่เธอเอาร่มมา"
+  }
+ },
+ {
+  "h": "性感",
+  "p": "xìng gǎn",
+  "en": "sexy",
+  "th": "เซ็กซี่",
+  "ex": {
+   "zh": "这条裙子很性感。",
+   "py": "Zhè tiáo qúnzi hěn xìnggǎn.",
+   "en": "This dress is very sexy.",
+   "th": "กระโปรงตัวนี้เซ็กซี่มาก"
+  }
+ },
+ {
+  "h": "性命",
+  "p": "xìng mìng",
+  "en": "life",
+  "th": "ชีวิต",
+  "ex": {
+   "zh": "医生救了他的性命。",
+   "py": "Yīshēng jiù le tā de xìngmìng.",
+   "en": "The doctor saved his life.",
+   "th": "หมอช่วยชีวิตเขาไว้"
+  }
+ },
+ {
+  "h": "性能",
+  "p": "xìng néng",
+  "en": "performance",
+  "th": "สมรรถนะ",
+  "ex": {
+   "zh": "这台电脑性能很好。",
+   "py": "Zhè tái diànnǎo xìngnéng hěn hǎo.",
+   "en": "This computer has great performance.",
+   "th": "คอมพิวเตอร์เครื่องนี้สมรรถนะดีมาก"
+  }
+ },
+ {
+  "h": "性情",
+  "p": "xìng qíng",
+  "en": "temperament",
+  "th": "นิสัยใจคอ",
+  "ex": {
+   "zh": "她性情温和。",
+   "py": "Tā xìngqíng wēnhé.",
+   "en": "She has a gentle temperament.",
+   "th": "เธอมีนิสัยอ่อนโยน"
+  }
+ },
+ {
+  "h": "凶恶",
+  "p": "xiōng è",
+  "en": "fierce",
+  "th": "ดุร้าย",
+  "ex": {
+   "zh": "那只狗看起来很凶恶。",
+   "py": "Nà zhī gǒu kàn qǐlái hěn xiōng'è.",
+   "en": "That dog looks fierce.",
+   "th": "สุนัขตัวนั้นดูดุร้าย"
+  }
+ },
+ {
+  "h": "凶手",
+  "p": "xiōng shǒu",
+  "en": "murderer",
+  "th": "ฆาตกร",
+  "ex": {
+   "zh": "警察抓住了凶手。",
+   "py": "Jǐngchá zhuāzhù le xiōngshǒu.",
+   "en": "The police caught the murderer.",
+   "th": "ตำรวจจับตัวฆาตกรได้"
+  }
+ },
+ {
+  "h": "胸怀",
+  "p": "xiōng huái",
+  "en": "mind, bosom",
+  "th": "จิตใจ, ความกว้างขวาง",
+  "ex": {
+   "zh": "他有宽广的胸怀。",
+   "py": "Tā yǒu kuānguǎng de xiōnghuái.",
+   "en": "He has a broad mind.",
+   "th": "เขามีจิตใจที่กว้างขวาง"
+  }
+ },
+ {
+  "h": "胸膛",
+  "p": "xiōng táng",
+  "en": "chest",
+  "th": "ทรวงอก",
+  "ex": {
+   "zh": "他挺起胸膛走上台。",
+   "py": "Tā tǐngqǐ xiōngtáng zǒushàng tái.",
+   "en": "He puffed out his chest and walked onto the stage.",
+   "th": "เขาแอ่นอกเดินขึ้นเวที"
+  }
+ },
+ {
+  "h": "雄厚",
+  "p": "xióng hòu",
+  "en": "abundant",
+  "th": "มั่งคั่ง",
+  "ex": {
+   "zh": "这家公司实力雄厚。",
+   "py": "Zhè jiā gōngsī shílì xiónghòu.",
+   "en": "This company has substantial strength.",
+   "th": "บริษัทนี้มีศักยภาพแข็งแกร่ง"
+  }
+ },
+ {
+  "h": "休养",
+  "p": "xiū yǎng",
+  "en": "to recuperate",
+  "th": "พักฟื้น",
+  "ex": {
+   "zh": "他在家休养了一个月。",
+   "py": "Tā zài jiā xiūyǎng le yí ge yuè.",
+   "en": "He recuperated at home for a month.",
+   "th": "เขาพักฟื้นที่บ้านหนึ่งเดือน"
+  }
+ },
+ {
+  "h": "修复",
+  "p": "xiū fù",
+  "en": "to restore",
+  "th": "บูรณะ",
+  "ex": {
+   "zh": "工人们正在修复这座古桥。",
+   "py": "Gōngrénmen zhèngzài xiūfù zhè zuò gǔqiáo.",
+   "en": "Workers are restoring this old bridge.",
+   "th": "คนงานกำลังบูรณะสะพานเก่าแห่งนี้"
+  }
+ },
+ {
+  "h": "修建",
+  "p": "xiū jiàn",
+  "en": "to build",
+  "th": "ก่อสร้าง",
+  "ex": {
+   "zh": "他们要修建一条新路。",
+   "py": "Tāmen yào xiūjiàn yì tiáo xīn lù.",
+   "en": "They are going to build a new road.",
+   "th": "พวกเขาจะสร้างถนนสายใหม่"
+  }
+ },
+ {
+  "h": "修理",
+  "p": "xiū lǐ",
+  "en": "to repair",
+  "th": "ซ่อม",
+  "ex": {
+   "zh": "我的车需要修理。",
+   "py": "Wǒ de chē xūyào xiūlǐ.",
+   "en": "My car needs to be repaired.",
+   "th": "รถของฉันต้องซ่อม"
+  }
+ },
+ {
+  "h": "羞耻",
+  "p": "xiū chǐ",
+  "en": "shame",
+  "th": "ความละอาย",
+  "ex": {
+   "zh": "他做错了事，感到羞耻。",
+   "py": "Tā zuò cuò le shì, gǎndào xiūchǐ.",
+   "en": "He did wrong and felt ashamed.",
+   "th": "เขาทำผิดและรู้สึกละอาย"
+  }
+ },
+ {
+  "h": "绣",
+  "p": "xiù",
+  "en": "to embroider",
+  "th": "ปัก (ผ้า)",
+  "ex": {
+   "zh": "她会绣花。",
+   "py": "Tā huì xiùhuā.",
+   "en": "She can embroider flowers.",
+   "th": "เธอปักดอกไม้เป็น"
+  }
+ },
+ {
+  "h": "嗅觉",
+  "p": "xiù jué",
+  "en": "sense of smell",
+  "th": "การรับกลิ่น",
+  "ex": {
+   "zh": "狗的嗅觉非常灵敏。",
+   "py": "Gǒu de xiùjué fēicháng língmǐn.",
+   "en": "Dogs have a very keen sense of smell.",
+   "th": "สุนัขมีประสาทรับกลิ่นไวมาก"
+  }
+ },
+ {
+  "h": "须知",
+  "p": "xū zhī",
+  "en": "notice",
+  "th": "ข้อควรรู้",
+  "ex": {
+   "zh": "请先阅读乘客须知。",
+   "py": "Qǐng xiān yuèdú chéngkè xūzhī.",
+   "en": "Please read the passenger notice first.",
+   "th": "กรุณาอ่านข้อควรรู้สำหรับผู้โดยสารก่อน"
+  }
+ },
+ {
+  "h": "虚假",
+  "p": "xū jiǎ",
+  "en": "false",
+  "th": "เท็จ",
+  "ex": {
+   "zh": "这条广告很虚假。",
+   "py": "Zhè tiáo guǎnggào hěn xūjiǎ.",
+   "en": "This advertisement is very false.",
+   "th": "โฆษณานี้เป็นเท็จมาก"
+  }
+ },
+ {
+  "h": "虚荣",
+  "p": "xū róng",
+  "en": "vanity",
+  "th": "ความทะนงตัว",
+  "ex": {
+   "zh": "她有点虚荣。",
+   "py": "Tā yǒudiǎn xūróng.",
+   "en": "She is a bit vain.",
+   "th": "เธอค่อนข้างรักหน้าตา"
+  }
+ },
+ {
+  "h": "虚伪",
+  "p": "xū wěi",
+  "en": "hypocritical",
+  "th": "หน้าไหว้หลังหลอก",
+  "ex": {
+   "zh": "他这个人很虚伪。",
+   "py": "Tā zhège rén hěn xūwěi.",
+   "en": "He is a very hypocritical person.",
+   "th": "เขาเป็นคนหน้าไหว้หลังหลอก"
+  }
+ },
+ {
+  "h": "需求",
+  "p": "xū qiú",
+  "en": "demand",
+  "th": "ความต้องการ",
+  "ex": {
+   "zh": "市场对这种产品需求很大。",
+   "py": "Shìchǎng duì zhè zhǒng chǎnpǐn xūqiú hěn dà.",
+   "en": "The market has great demand for this product.",
+   "th": "ตลาดมีความต้องการสินค้าชนิดนี้สูง"
+  }
+ },
+ {
+  "h": "许可",
+  "p": "xǔ kě",
+  "en": "to permit",
+  "th": "อนุญาต",
+  "ex": {
+   "zh": "这里不许可停车。",
+   "py": "Zhèlǐ bù xǔkě tíngchē.",
+   "en": "Parking is not permitted here.",
+   "th": "ที่นี่ไม่อนุญาตให้จอดรถ"
+  }
+ },
+ {
+  "h": "序言",
+  "p": "xù yán",
+  "en": "preface",
+  "th": "คำนำ",
+  "ex": {
+   "zh": "这本书的序言是他写的。",
+   "py": "Zhè běn shū de xùyán shì tā xiě de.",
+   "en": "He wrote the preface of this book.",
+   "th": "คำนำของหนังสือเล่มนี้เขาเป็นคนเขียน"
+  }
+ },
+ {
+  "h": "酗酒",
+  "p": "xù jiǔ",
+  "en": "heavy drinking",
+  "th": "ดื่มเหล้าหนัก",
+  "ex": {
+   "zh": "酗酒对身体不好。",
+   "py": "Xùjiǔ duì shēntǐ bù hǎo.",
+   "en": "Heavy drinking is bad for your health.",
+   "th": "การดื่มเหล้าหนักไม่ดีต่อสุขภาพ"
+  }
+ },
+ {
+  "h": "宣誓",
+  "p": "xuān shì",
+  "en": "to take an oath",
+  "th": "สาบาน",
+  "ex": {
+   "zh": "总统宣誓就职。",
+   "py": "Zǒngtǒng xuānshì jiùzhí.",
+   "en": "The president took the oath of office.",
+   "th": "ประธานาธิบดีสาบานตนเข้ารับตำแหน่ง"
+  }
+ },
+ {
+  "h": "宣扬",
+  "p": "xuān yáng",
+  "en": "to promote",
+  "th": "เผยแพร่",
+  "ex": {
+   "zh": "他到处宣扬自己的想法。",
+   "py": "Tā dàochù xuānyáng zìjǐ de xiǎngfǎ.",
+   "en": "He spreads his ideas everywhere.",
+   "th": "เขาเผยแพร่ความคิดของตัวเองไปทั่ว"
+  }
+ },
+ {
+  "h": "悬挂",
+  "p": "xuán guà",
+  "en": "to hang",
+  "th": "แขวน",
+  "ex": {
+   "zh": "墙上悬挂着一幅画。",
+   "py": "Qiáng shàng xuánguà zhe yì fú huà.",
+   "en": "A painting hangs on the wall.",
+   "th": "บนกำแพงมีภาพวาดแขวนอยู่"
+  }
+ },
+ {
+  "h": "悬念",
+  "p": "xuán niàn",
+  "en": "suspense",
+  "th": "ความลุ้นระทึก",
+  "ex": {
+   "zh": "这部电影充满悬念。",
+   "py": "Zhè bù diànyǐng chōngmǎn xuánniàn.",
+   "en": "This movie is full of suspense.",
+   "th": "หนังเรื่องนี้เต็มไปด้วยความลุ้นระทึก"
+  }
+ },
+ {
+  "h": "悬崖峭壁",
+  "p": "xuán yá qiào bì",
+  "en": "sheer cliffs",
+  "th": "หน้าผาสูงชัน",
+  "ex": {
+   "zh": "山上有悬崖峭壁。",
+   "py": "Shān shàng yǒu xuányá-qiàobì.",
+   "en": "There are sheer cliffs on the mountain.",
+   "th": "บนภูเขามีหน้าผาสูงชัน"
+  }
+ },
+ {
+  "h": "旋律",
+  "p": "xuán lǜ",
+  "en": "melody",
+  "th": "ทำนอง",
+  "ex": {
+   "zh": "这首歌的旋律很好听。",
+   "py": "Zhè shǒu gē de xuánlǜ hěn hǎotīng.",
+   "en": "The melody of this song is very pleasant.",
+   "th": "ทำนองเพลงนี้ไพเราะมาก"
+  }
+ },
+ {
+  "h": "旋转",
+  "p": "xuán zhuǎn",
+  "en": "to rotate",
+  "th": "หมุน",
+  "ex": {
+   "zh": "地球绕着太阳旋转。",
+   "py": "Dìqiú ràozhe tàiyáng xuánzhuǎn.",
+   "en": "The Earth rotates around the sun.",
+   "th": "โลกหมุนรอบดวงอาทิตย์"
+  }
+ },
+ {
+  "h": "选拔",
+  "p": "xuǎn bá",
+  "en": "to select",
+  "th": "คัดเลือก",
+  "ex": {
+   "zh": "学校选拔优秀的学生。",
+   "py": "Xuéxiào xuǎnbá yōuxiù de xuésheng.",
+   "en": "The school selects outstanding students.",
+   "th": "โรงเรียนคัดเลือกนักเรียนที่เก่ง"
+  }
+ },
+ {
+  "h": "选手",
+  "p": "xuǎn shǒu",
+  "en": "contestant",
+  "th": "นักกีฬา, ผู้เข้าแข่งขัน",
+  "ex": {
+   "zh": "这位选手跑得很快。",
+   "py": "Zhè wèi xuǎnshǒu pǎo de hěn kuài.",
+   "en": "This contestant runs very fast.",
+   "th": "นักกีฬาคนนี้วิ่งเร็วมาก"
+  }
+ },
+ {
+  "h": "削弱",
+  "p": "xuē ruò",
+  "en": "to weaken",
+  "th": "ทำให้อ่อนลง",
+  "ex": {
+   "zh": "药物削弱了病毒的力量。",
+   "py": "Yàowù xuēruò le bìngdú de lìliàng.",
+   "en": "The medicine weakened the virus.",
+   "th": "ยาทำให้ไวรัสอ่อนกำลังลง"
+  }
+ },
+ {
+  "h": "学历",
+  "p": "xué lì",
+  "en": "educational background",
+  "th": "วุฒิการศึกษา",
+  "ex": {
+   "zh": "这个工作要求本科以上学历。",
+   "py": "Zhège gōngzuò yāoqiú běnkē yǐshàng xuélì.",
+   "en": "This job requires a bachelor's degree or above.",
+   "th": "งานนี้ต้องการวุฒิปริญญาตรีขึ้นไป"
+  }
+ },
+ {
+  "h": "学说",
+  "p": "xué shuō",
+  "en": "theory",
+  "th": "ทฤษฎี",
+  "ex": {
+   "zh": "他提出了一种新学说。",
+   "py": "Tā tíchū le yì zhǒng xīn xuéshuō.",
+   "en": "He proposed a new theory.",
+   "th": "เขาเสนอทฤษฎีใหม่"
+  }
+ },
+ {
+  "h": "学位",
+  "p": "xué wèi",
+  "en": "academic degree",
+  "th": "วุฒิปริญญา",
+  "ex": {
+   "zh": "她拿到了硕士学位。",
+   "py": "Tā nádào le shuòshì xuéwèi.",
+   "en": "She earned a master's degree.",
+   "th": "เธอได้รับปริญญาโท"
+  }
+ },
+ {
+  "h": "雪上加霜",
+  "p": "xuě shàng jiā shuāng",
+  "en": "to make matters worse",
+  "th": "ซ้ำเติม",
+  "ex": {
+   "zh": "下雨了，真是雪上加霜。",
+   "py": "Xià yǔ le, zhēn shì xuěshàng-jiāshuāng.",
+   "en": "It started raining, which made things even worse.",
+   "th": "ฝนตกอีก เหมือนซ้ำเติมเข้าไปอีก"
+  }
+ },
+ {
+  "h": "血压",
+  "p": "xuè yā",
+  "en": "blood pressure",
+  "th": "ความดันโลหิต",
+  "ex": {
+   "zh": "他的血压有点高。",
+   "py": "Tā de xuèyā yǒudiǎn gāo.",
+   "en": "His blood pressure is a bit high.",
+   "th": "ความดันโลหิตของเขาค่อนข้างสูง"
+  }
+ },
+ {
+  "h": "熏陶",
+  "p": "xūn táo",
+  "en": "to influence",
+  "th": "หล่อหลอม",
+  "ex": {
+   "zh": "音乐熏陶了他的性格。",
+   "py": "Yīnyuè xūntáo le tā de xìnggé.",
+   "en": "Music shaped his character.",
+   "th": "ดนตรีหล่อหลอมนิสัยของเขา"
+  }
+ },
+ {
+  "h": "寻觅",
+  "p": "xún mì",
+  "en": "to seek",
+  "th": "แสวงหา",
+  "ex": {
+   "zh": "他在城市里寻觅工作。",
+   "py": "Tā zài chéngshì lǐ xúnmì gōngzuò.",
+   "en": "He is looking for a job in the city.",
+   "th": "เขากำลังหางานทำในเมือง"
+  }
+ },
+ {
+  "h": "巡逻",
+  "p": "xún luó",
+  "en": "to patrol",
+  "th": "ลาดตระเวน",
+  "ex": {
+   "zh": "警察在街上巡逻。",
+   "py": "Jǐngchá zài jiē shàng xúnluó.",
+   "en": "Police are patrolling the streets.",
+   "th": "ตำรวจลาดตระเวนบนถนน"
+  }
+ },
+ {
+  "h": "循环",
+  "p": "xún huán",
+  "en": "to circulate",
+  "th": "หมุนเวียน",
+  "ex": {
+   "zh": "血液在身体里循环。",
+   "py": "Xuèyè zài shēntǐ lǐ xúnhuán.",
+   "en": "Blood circulates in the body.",
+   "th": "เลือดไหลเวียนในร่างกาย"
+  }
+ },
+ {
+  "h": "循序渐进",
+  "p": "xún xù jiàn jìn",
+  "en": "step by step",
+  "th": "ค่อยเป็นค่อยไป",
+  "ex": {
+   "zh": "学习要循序渐进。",
+   "py": "Xuéxí yào xúnxù-jiànjìn.",
+   "en": "Learning should proceed step by step.",
+   "th": "การเรียนต้องค่อยเป็นค่อยไป"
+  }
+ },
+ {
+  "h": "压迫",
+  "p": "yā pò",
+  "en": "to oppress",
+  "th": "กดขี่",
+  "ex": {
+   "zh": "人民不愿被压迫。",
+   "py": "Rénmín bú yuàn bèi yāpò.",
+   "en": "People do not want to be oppressed.",
+   "th": "ประชาชนไม่ต้องการถูกกดขี่"
+  }
+ },
+ {
+  "h": "压岁钱",
+  "p": "yā suì qián",
+  "en": "red envelope money",
+  "th": "เงินแต๊ะเอีย",
+  "ex": {
+   "zh": "爷爷给了我压岁钱。",
+   "py": "Yéye gěi le wǒ yāsuìqián.",
+   "en": "Grandpa gave me New Year money.",
+   "th": "คุณปู่ให้เงินแต๊ะเอียฉัน"
+  }
+ },
+ {
+  "h": "压缩",
+  "p": "yā suō",
+  "en": "to compress",
+  "th": "บีบอัด",
+  "ex": {
+   "zh": "请把文件压缩一下。",
+   "py": "Qǐng bǎ wénjiàn yāsuō yíxià.",
+   "en": "Please compress the file.",
+   "th": "กรุณาบีบอัดไฟล์หน่อย"
+  }
+ },
+ {
+  "h": "压抑",
+  "p": "yā yì",
+  "en": "repressed",
+  "th": "อึดอัด",
+  "ex": {
+   "zh": "他心里觉得很压抑。",
+   "py": "Tā xīnlǐ juéde hěn yāyì.",
+   "en": "He feels very stifled inside.",
+   "th": "เขารู้สึกอึดอัดในใจมาก"
+  }
+ },
+ {
+  "h": "压榨",
+  "p": "yā zhà",
+  "en": "to exploit",
+  "th": "เอารัดเอาเปรียบ",
+  "ex": {
+   "zh": "老板压榨工人。",
+   "py": "Lǎobǎn yāzhà gōngrén.",
+   "en": "The boss exploits the workers.",
+   "th": "เจ้าของบริษัทเอารัดเอาเปรียบคนงาน"
+  }
+ },
+ {
+  "h": "压制",
+  "p": "yā zhì",
+  "en": "to suppress",
+  "th": "ข่มไว้",
+  "ex": {
+   "zh": "他压制住了心中的怒火。",
+   "py": "Tā yāzhì zhù le xīnzhōng de nùhuǒ.",
+   "en": "He suppressed the anger in his heart.",
+   "th": "เขาข่มความโกรธในใจไว้ได้"
+  }
+ },
+ {
+  "h": "押金",
+  "p": "yā jīn",
+  "en": "deposit",
+  "th": "เงินมัดจำ",
+  "ex": {
+   "zh": "租房要付两千元押金。",
+   "py": "Zūfáng yào fù liǎngqiān yuán yājīn.",
+   "en": "Renting requires a deposit of 2,000 yuan.",
+   "th": "เช่าห้องต้องจ่ายเงินมัดจำสองพันหยวน"
+  }
+ },
+ {
+  "h": "亚军",
+  "p": "yà jūn",
+  "en": "runner-up",
+  "th": "รองชนะเลิศ",
+  "ex": {
+   "zh": "我们队得了亚军。",
+   "py": "Wǒmen duì dé le yàjūn.",
+   "en": "Our team won second place.",
+   "th": "ทีมของเราได้รองชนะเลิศ"
+  }
+ },
+ {
+  "h": "烟花",
+  "p": "yān huā",
+  "en": "fireworks",
+  "th": "ดอกไม้ไฟ",
+  "ex": {
+   "zh": "新年夜里放烟花。",
+   "py": "Xīnnián yè lǐ fàng yānhuā.",
+   "en": "Fireworks are set off on New Year's Eve.",
+   "th": "คืนปีใหม่มีการจุดดอกไม้ไฟ"
+  }
+ },
+ {
+  "h": "淹没",
+  "p": "yān mò",
+  "en": "to submerge",
+  "th": "จมน้ำ, ท่วม",
+  "ex": {
+   "zh": "洪水淹没了村庄。",
+   "py": "Hóngshuǐ yānmò le cūnzhuāng.",
+   "en": "The flood submerged the village.",
+   "th": "น้ำท่วมหมู่บ้านจมหมด"
+  }
+ },
+ {
+  "h": "延期",
+  "p": "yán qī",
+  "en": "to postpone",
+  "th": "เลื่อนออกไป",
+  "ex": {
+   "zh": "会议延期了。",
+   "py": "Huìyì yánqī le.",
+   "en": "The meeting was postponed.",
+   "th": "การประชุมถูกเลื่อนออกไป"
+  }
+ },
+ {
+  "h": "延伸",
+  "p": "yán shēn",
+  "en": "to extend",
+  "th": "ยื่นออกไป",
+  "ex": {
+   "zh": "这条路一直延伸到海边。",
+   "py": "Zhè tiáo lù yìzhí yánshēn dào hǎibiān.",
+   "en": "This road extends all the way to the sea.",
+   "th": "ถนนสายนี้ทอดยาวไปถึงชายทะเล"
+  }
+ },
+ {
+  "h": "延续",
+  "p": "yán xù",
+  "en": "to continue",
+  "th": "ดำเนินต่อไป",
+  "ex": {
+   "zh": "这个传统延续了几百年。",
+   "py": "Zhège chuántǒng yánxù le jǐ bǎi nián.",
+   "en": "This tradition has continued for hundreds of years.",
+   "th": "ประเพณีนี้สืบต่อมาหลายร้อยปี"
+  }
+ },
+ {
+  "h": "严寒",
+  "p": "yán hán",
+  "en": "bitter cold",
+  "th": "หนาวจัด",
+  "ex": {
+   "zh": "严寒的冬天来了。",
+   "py": "Yánhán de dōngtiān lái le.",
+   "en": "The bitterly cold winter has arrived.",
+   "th": "ฤดูหนาวที่หนาวจัดมาถึงแล้ว"
+  }
+ },
+ {
+  "h": "严禁",
+  "p": "yán jìn",
+  "en": "to strictly forbid",
+  "th": "ห้ามเด็ดขาด",
+  "ex": {
+   "zh": "这里严禁吸烟。",
+   "py": "Zhèlǐ yánjìn xīyān.",
+   "en": "Smoking is strictly prohibited here.",
+   "th": "ที่นี่ห้ามสูบบุหรี่เด็ดขาด"
+  }
+ },
+ {
+  "h": "严峻",
+  "p": "yán jùn",
+  "en": "grim",
+  "th": "สาหัส",
+  "ex": {
+   "zh": "现在的形势很严峻。",
+   "py": "Xiànzài de xíngshì hěn yánjùn.",
+   "en": "The current situation is grim.",
+   "th": "สถานการณ์ตอนนี้รุนแรงมาก"
+  }
+ },
+ {
+  "h": "严厉",
+  "p": "yán lì",
+  "en": "strict",
+  "th": "เข้มงวด",
+  "ex": {
+   "zh": "我的老师很严厉。",
+   "py": "Wǒ de lǎoshī hěn yánlì.",
+   "en": "My teacher is very strict.",
+   "th": "ครูของฉันเข้มงวดมาก"
+  }
+ },
+ {
+  "h": "严密",
+  "p": "yán mì",
+  "en": "tight",
+  "th": "รัดกุม",
+  "ex": {
+   "zh": "这里的安检很严密。",
+   "py": "Zhèlǐ de ānjiǎn hěn yánmì.",
+   "en": "Security checks here are very tight.",
+   "th": "การตรวจความปลอดภัยที่นี่รัดกุมมาก"
+  }
+ },
+ {
+  "h": "言论",
+  "p": "yán lùn",
+  "en": "remarks",
+  "th": "ความเห็น, คำพูด",
+  "ex": {
+   "zh": "他发表了一些奇怪的言论。",
+   "py": "Tā fābiǎo le yìxiē qíguài de yánlùn.",
+   "en": "He made some strange remarks.",
+   "th": "เขาแสดงความเห็นแปลกๆ ออกมา"
+  }
+ },
+ {
+  "h": "岩石",
+  "p": "yán shí",
+  "en": "rock",
+  "th": "หิน",
+  "ex": {
+   "zh": "山上有很多大岩石。",
+   "py": "Shān shàng yǒu hěn duō dà yánshí.",
+   "en": "There are many big rocks on the mountain.",
+   "th": "บนภูเขามีหินก้อนใหญ่มากมาย"
+  }
+ },
+ {
+  "h": "沿海",
+  "p": "yán hǎi",
+  "en": "coastal",
+  "th": "ชายฝั่งทะเล",
+  "ex": {
+   "zh": "沿海城市很热闹。",
+   "py": "Yánhǎi chéngshì hěn rènao.",
+   "en": "Coastal cities are lively.",
+   "th": "เมืองชายฝั่งทะเลคึกคักมาก"
+  }
+ },
+ {
+  "h": "炎热",
+  "p": "yán rè",
+  "en": "scorching hot",
+  "th": "ร้อนจัด",
+  "ex": {
+   "zh": "夏天的天气非常炎热。",
+   "py": "Xiàtiān de tiānqì fēicháng yánrè.",
+   "en": "The summer weather is extremely hot.",
+   "th": "อากาศหน้าร้อนร้อนจัดมาก"
+  }
+ },
+ {
+  "h": "掩盖",
+  "p": "yǎn gài",
+  "en": "to cover up",
+  "th": "ปกปิด",
+  "ex": {
+   "zh": "他想掩盖自己的错误。",
+   "py": "Tā xiǎng yǎngài zìjǐ de cuòwù.",
+   "en": "He wants to cover up his mistake.",
+   "th": "เขาอยากปกปิดความผิดของตัวเอง"
+  }
+ },
+ {
+  "h": "掩护",
+  "p": "yǎn hù",
+  "en": "to cover, to shield",
+  "th": "คุ้มกัน",
+  "ex": {
+   "zh": "战士们掩护老百姓撤离。",
+   "py": "Zhànshìmen yǎnhù lǎobǎixìng chèlí.",
+   "en": "The soldiers covered the civilians' evacuation.",
+   "th": "ทหารคุ้มกันประชาชนอพยพออกไป"
+  }
+ },
+ {
+  "h": "掩饰",
+  "p": "yǎn shì",
+  "en": "to disguise",
+  "th": "ปิดบัง",
+  "ex": {
+   "zh": "她掩饰不住内心的紧张。",
+   "py": "Tā yǎnshì bú zhù nèixīn de jǐnzhāng.",
+   "en": "She could not hide her nervousness.",
+   "th": "เธอปิดบังความตื่นเต้นในใจไม่อยู่"
+  }
+ },
+ {
+  "h": "眼光",
+  "p": "yǎn guāng",
+  "en": "vision",
+  "th": "วิสัยทัศน์",
+  "ex": {
+   "zh": "他很有眼光。",
+   "py": "Tā hěn yǒu yǎnguāng.",
+   "en": "He has good judgment.",
+   "th": "เขามีวิสัยทัศน์ดี"
+  }
+ },
+ {
+  "h": "眼色",
+  "p": "yǎn sè",
+  "en": "meaningful glance",
+  "th": "การส่งสายตา",
+  "ex": {
+   "zh": "她给我使了个眼色。",
+   "py": "Tā gěi wǒ shǐ le ge yǎnsè.",
+   "en": "She gave me a meaningful look.",
+   "th": "เธอส่งสายตาให้ฉัน"
+  }
+ },
+ {
+  "h": "眼神",
+  "p": "yǎn shén",
+  "en": "look in the eyes",
+  "th": "แววตา",
+  "ex": {
+   "zh": "他的眼神很温柔。",
+   "py": "Tā de yǎnshén hěn wēnróu.",
+   "en": "His eyes look very gentle.",
+   "th": "แววตาของเขาอ่อนโยนมาก"
+  }
+ },
+ {
+  "h": "眼下",
+  "p": "yǎn xià",
+  "en": "at present",
+  "th": "ตอนนี้",
+  "ex": {
+   "zh": "眼下最重要的是休息。",
+   "py": "Yǎnxià zuì zhòngyào de shì xiūxi.",
+   "en": "The most important thing right now is to rest.",
+   "th": "ตอนนี้สิ่งสำคัญที่สุดคือการพักผ่อน"
+  }
+ },
+ {
+  "h": "演变",
+  "p": "yǎn biàn",
+  "en": "to evolve",
+  "th": "วิวัฒนาการ",
+  "ex": {
+   "zh": "社会在不断演变。",
+   "py": "Shèhuì zài búduàn yǎnbiàn.",
+   "en": "Society keeps evolving.",
+   "th": "สังคมเปลี่ยนแปลงพัฒนาไปเรื่อยๆ"
+  }
+ }
+]

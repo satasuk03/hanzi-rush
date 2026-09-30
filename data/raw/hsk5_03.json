@@ -1,0 +1,1202 @@
+[
+ {
+  "h": "改正",
+  "p": "gǎi zhèng",
+  "en": "to correct",
+  "th": "แก้ไขให้ถูก",
+  "ex": {
+   "zh": "发现错误要及时改正。",
+   "py": "Fāxiàn cuòwù yào jíshí gǎizhèng.",
+   "en": "When you find mistakes, correct them promptly.",
+   "th": "พบข้อผิดพลาดต้องรีบแก้ไข"
+  }
+ },
+ {
+  "h": "盖",
+  "p": "Gě",
+  "en": "to cover; to build",
+  "th": "ปิด คลุม / สร้าง",
+  "ex": {
+   "zh": "睡觉时要盖好被子。",
+   "py": "Shuìjiào shí yào gài hǎo bèizi.",
+   "en": "Cover yourself well with the quilt when sleeping.",
+   "th": "ตอนนอนต้องห่มผ้าให้ดี"
+  }
+ },
+ {
+  "h": "概括",
+  "p": "gài kuò",
+  "en": "to summarize",
+  "th": "สรุปโดยย่อ",
+  "ex": {
+   "zh": "请你概括一下这篇文章。",
+   "py": "Qǐng nǐ gàikuò yíxià zhè piān wénzhāng.",
+   "en": "Please summarize this article.",
+   "th": "ช่วยสรุปบทความนี้หน่อย"
+  }
+ },
+ {
+  "h": "概念",
+  "p": "gài niàn",
+  "en": "concept",
+  "th": "แนวคิด",
+  "ex": {
+   "zh": "这个概念很难理解。",
+   "py": "Zhège gàiniàn hěn nán lǐjiě.",
+   "en": "This concept is hard to understand.",
+   "th": "แนวคิดนี้เข้าใจยาก"
+  }
+ },
+ {
+  "h": "赶紧",
+  "p": "gǎn jǐn",
+  "en": "hurriedly; quickly",
+  "th": "รีบ ทันที",
+  "ex": {
+   "zh": "天要下雨了，赶紧回家吧。",
+   "py": "Tiān yào xià yǔ le, gǎnjǐn huí jiā ba.",
+   "en": "It's going to rain; hurry home.",
+   "th": "ฝนจะตกแล้ว รีบกลับบ้านเถอะ"
+  }
+ },
+ {
+  "h": "赶快",
+  "p": "gǎn kuài",
+  "en": "quickly; at once",
+  "th": "รีบ เร็วเข้า",
+  "ex": {
+   "zh": "赶快吃饭，菜要凉了。",
+   "py": "Gǎnkuài chīfàn, cài yào liáng le.",
+   "en": "Eat quickly; the food is getting cold.",
+   "th": "รีบกินข้าวเร็ว อาหารจะเย็นแล้ว"
+  }
+ },
+ {
+  "h": "感激",
+  "p": "gǎn jī",
+  "en": "to be grateful",
+  "th": "ซาบซึ้งใจ ขอบคุณ",
+  "ex": {
+   "zh": "我非常感激你的帮助。",
+   "py": "Wǒ fēicháng gǎnjī nǐ de bāngzhù.",
+   "en": "I am very grateful for your help.",
+   "th": "ฉันซาบซึ้งในความช่วยเหลือของคุณมาก"
+  }
+ },
+ {
+  "h": "感受",
+  "p": "gǎn shòu",
+  "en": "feeling; to experience",
+  "th": "ความรู้สึก / สัมผัสได้",
+  "ex": {
+   "zh": "你能说说你的感受吗？",
+   "py": "Nǐ néng shuōshuo nǐ de gǎnshòu ma?",
+   "en": "Can you tell us how you feel?",
+   "th": "คุณเล่าความรู้สึกของคุณได้ไหม"
+  }
+ },
+ {
+  "h": "感想",
+  "p": "gǎn xiǎng",
+  "en": "impressions; thoughts",
+  "th": "ความรู้สึกนึกคิด ข้อคิด",
+  "ex": {
+   "zh": "看完电影，你有什么感想？",
+   "py": "Kàn wán diànyǐng, nǐ yǒu shénme gǎnxiǎng?",
+   "en": "After the movie, what are your thoughts?",
+   "th": "ดูหนังจบ คุณมีความรู้สึกอย่างไรบ้าง"
+  }
+ },
+ {
+  "h": "干脆",
+  "p": "gān cuì",
+  "en": "simply; straightforward",
+  "th": "ตัดสินใจไปเลย / ตรงไปตรงมา",
+  "ex": {
+   "zh": "太晚了，干脆别去了。",
+   "py": "Tài wǎn le, gāncuì bié qù le.",
+   "en": "It's too late; let's just not go.",
+   "th": "ดึกแล้ว ไม่ไปเลยดีกว่า"
+  }
+ },
+ {
+  "h": "干活儿",
+  "p": "gàn huó r",
+  "en": "to do manual work",
+  "th": "ทำงาน (ใช้แรง)",
+  "ex": {
+   "zh": "他在工地干活儿。",
+   "py": "Tā zài gōngdì gànhuór.",
+   "en": "He works at a construction site.",
+   "th": "เขาทำงานที่ไซต์ก่อสร้าง"
+  }
+ },
+ {
+  "h": "钢铁",
+  "p": "gāng tiě",
+  "en": "steel",
+  "th": "เหล็กกล้า",
+  "ex": {
+   "zh": "这个国家的钢铁产量很高。",
+   "py": "Zhège guójiā de gāngtiě chǎnliàng hěn gāo.",
+   "en": "This country has a high steel output.",
+   "th": "ประเทศนี้ผลิตเหล็กกล้าได้มาก"
+  }
+ },
+ {
+  "h": "高档",
+  "p": "gāo dàng",
+  "en": "high-end",
+  "th": "ระดับสูง หรูหรา",
+  "ex": {
+   "zh": "这是一家高档餐厅。",
+   "py": "Zhè shì yì jiā gāodàng cāntīng.",
+   "en": "This is a high-end restaurant.",
+   "th": "นี่คือร้านอาหารระดับสูง"
+  }
+ },
+ {
+  "h": "高速",
+  "p": "gāo sù",
+  "en": "high-speed",
+  "th": "ความเร็วสูง",
+  "ex": {
+   "zh": "我们开车走高速公路。",
+   "py": "Wǒmen kāichē zǒu gāosù gōnglù.",
+   "en": "We drive along the expressway.",
+   "th": "เราขับรถไปทางด่วน"
+  }
+ },
+ {
+  "h": "搞",
+  "p": "gǎo",
+  "en": "to do; to get up to",
+  "th": "ทำ จัดการ",
+  "ex": {
+   "zh": "你在搞什么呢？",
+   "py": "Nǐ zài gǎo shénme ne?",
+   "en": "What are you up to?",
+   "th": "คุณกำลังทำอะไรอยู่"
+  }
+ },
+ {
+  "h": "告别",
+  "p": "gào bié",
+  "en": "to say goodbye",
+  "th": "กล่าวลา",
+  "ex": {
+   "zh": "我们在机场告别。",
+   "py": "Wǒmen zài jīchǎng gàobié.",
+   "en": "We said goodbye at the airport.",
+   "th": "เรากล่าวลากันที่สนามบิน"
+  }
+ },
+ {
+  "h": "胳膊",
+  "p": "gē bo",
+  "en": "arm",
+  "th": "แขน",
+  "ex": {
+   "zh": "他摔伤了胳膊。",
+   "py": "Tā shuāi shāng le gēbo.",
+   "en": "He hurt his arm in a fall.",
+   "th": "เขาล้มแขนบาดเจ็บ"
+  }
+ },
+ {
+  "h": "鸽子",
+  "p": "gē zi",
+  "en": "pigeon; dove",
+  "th": "นกพิราบ",
+  "ex": {
+   "zh": "广场上有很多鸽子。",
+   "py": "Guǎngchǎng shàng yǒu hěn duō gēzi.",
+   "en": "There are many pigeons in the square.",
+   "th": "ที่ลานกว้างมีนกพิราบมากมาย"
+  }
+ },
+ {
+  "h": "革命",
+  "p": "gé mìng",
+  "en": "revolution",
+  "th": "การปฏิวัติ",
+  "ex": {
+   "zh": "这场革命改变了国家。",
+   "py": "Zhè chǎng gémìng gǎibiàn le guójiā.",
+   "en": "This revolution changed the country.",
+   "th": "การปฏิวัติครั้งนี้เปลี่ยนแปลงประเทศ"
+  }
+ },
+ {
+  "h": "格外",
+  "p": "gé wài",
+  "en": "especially",
+  "th": "เป็นพิเศษ",
+  "ex": {
+   "zh": "今天的月亮格外圆。",
+   "py": "Jīntiān de yuèliang géwài yuán.",
+   "en": "The moon is especially round today.",
+   "th": "วันนี้พระจันทร์กลมเป็นพิเศษ"
+  }
+ },
+ {
+  "h": "隔壁",
+  "p": "gé bì",
+  "en": "next door",
+  "th": "ข้างบ้าน ห้องข้าง ๆ",
+  "ex": {
+   "zh": "隔壁住着一位老奶奶。",
+   "py": "Gébì zhù zhe yí wèi lǎo nǎinai.",
+   "en": "An old lady lives next door.",
+   "th": "ข้างบ้านมีคุณยายคนหนึ่งอาศัยอยู่"
+  }
+ },
+ {
+  "h": "个别",
+  "p": "gè bié",
+  "en": "individual; a few",
+  "th": "บางคน เฉพาะราย",
+  "ex": {
+   "zh": "只有个别学生没来。",
+   "py": "Zhǐyǒu gèbié xuésheng méi lái.",
+   "en": "Only a few students didn't come.",
+   "th": "มีนักเรียนแค่บางคนที่ไม่มา"
+  }
+ },
+ {
+  "h": "个人",
+  "p": "gè rén",
+  "en": "individual; personal",
+  "th": "บุคคล ส่วนตัว",
+  "ex": {
+   "zh": "这只是我的个人看法。",
+   "py": "Zhè zhǐ shì wǒ de gèrén kànfǎ.",
+   "en": "This is just my personal opinion.",
+   "th": "นี่เป็นเพียงความเห็นส่วนตัวของฉัน"
+  }
+ },
+ {
+  "h": "个性",
+  "p": "gè xìng",
+  "en": "personality",
+  "th": "บุคลิก นิสัย",
+  "ex": {
+   "zh": "她的个性很开朗。",
+   "py": "Tā de gèxìng hěn kāilǎng.",
+   "en": "She has a cheerful personality.",
+   "th": "เธอมีบุคลิกร่าเริง"
+  }
+ },
+ {
+  "h": "各自",
+  "p": "gè zì",
+  "en": "each; respective",
+  "th": "ต่างคน ต่างฝ่าย",
+  "ex": {
+   "zh": "吃完饭，大家各自回家了。",
+   "py": "Chī wán fàn, dàjiā gèzì huí jiā le.",
+   "en": "After the meal, everyone went home separately.",
+   "th": "กินข้าวเสร็จ ต่างคนก็กลับบ้าน"
+  }
+ },
+ {
+  "h": "根",
+  "p": "gēn",
+  "en": "root; measure word (thin)",
+  "th": "ราก / เส้น (ลักษณนาม)",
+  "ex": {
+   "zh": "这棵树的根很深。",
+   "py": "Zhè kē shù de gēn hěn shēn.",
+   "en": "This tree has deep roots.",
+   "th": "รากของต้นไม้ต้นนี้ลึกมาก"
+  }
+ },
+ {
+  "h": "根本",
+  "p": "gēn běn",
+  "en": "fundamental; at all",
+  "th": "พื้นฐาน / เลย ทีเดียว",
+  "ex": {
+   "zh": "我根本不认识他。",
+   "py": "Wǒ gēnběn bú rènshi tā.",
+   "en": "I don't know him at all.",
+   "th": "ฉันไม่รู้จักเขาเลย"
+  }
+ },
+ {
+  "h": "更加",
+  "p": "gèng jiā",
+  "en": "even more",
+  "th": "ยิ่งขึ้น มากขึ้น",
+  "ex": {
+   "zh": "下雨后天气更加冷了。",
+   "py": "Xià yǔ hòu tiānqì gèngjiā lěng le.",
+   "en": "After the rain, it got even colder.",
+   "th": "หลังฝนตก อากาศหนาวขึ้นอีก"
+  }
+ },
+ {
+  "h": "工厂",
+  "p": "gōng chǎng",
+  "en": "factory",
+  "th": "โรงงาน",
+  "ex": {
+   "zh": "他爸爸在工厂上班。",
+   "py": "Tā bàba zài gōngchǎng shàngbān.",
+   "en": "His father works at a factory.",
+   "th": "พ่อของเขาทำงานที่โรงงาน"
+  }
+ },
+ {
+  "h": "工程师",
+  "p": "gōng chéng shī",
+  "en": "engineer",
+  "th": "วิศวกร",
+  "ex": {
+   "zh": "我哥哥是一名工程师。",
+   "py": "Wǒ gēge shì yì míng gōngchéngshī.",
+   "en": "My older brother is an engineer.",
+   "th": "พี่ชายของฉันเป็นวิศวกร"
+  }
+ },
+ {
+  "h": "工人",
+  "p": "gōng rén",
+  "en": "worker",
+  "th": "คนงาน กรรมกร",
+  "ex": {
+   "zh": "工人们正在修路。",
+   "py": "Gōngrénmen zhèngzài xiū lù.",
+   "en": "The workers are repairing the road.",
+   "th": "คนงานกำลังซ่อมถนน"
+  }
+ },
+ {
+  "h": "工业",
+  "p": "gōng yè",
+  "en": "industry",
+  "th": "อุตสาหกรรม",
+  "ex": {
+   "zh": "这个城市的工业很发达。",
+   "py": "Zhège chéngshì de gōngyè hěn fādá.",
+   "en": "This city has well-developed industry.",
+   "th": "เมืองนี้มีอุตสาหกรรมที่เจริญมาก"
+  }
+ },
+ {
+  "h": "公布",
+  "p": "gōng bù",
+  "en": "to announce publicly",
+  "th": "ประกาศ",
+  "ex": {
+   "zh": "考试成绩明天公布。",
+   "py": "Kǎoshì chéngjì míngtiān gōngbù.",
+   "en": "The exam results will be announced tomorrow.",
+   "th": "ผลสอบจะประกาศพรุ่งนี้"
+  }
+ },
+ {
+  "h": "公开",
+  "p": "gōng kāi",
+  "en": "public; to make public",
+  "th": "เปิดเผย สาธารณะ",
+  "ex": {
+   "zh": "这个消息还没有公开。",
+   "py": "Zhège xiāoxi hái méiyǒu gōngkāi.",
+   "en": "This news has not been made public yet.",
+   "th": "ข่าวนี้ยังไม่ได้เปิดเผย"
+  }
+ },
+ {
+  "h": "公平",
+  "p": "gōng píng",
+  "en": "fair",
+  "th": "ยุติธรรม",
+  "ex": {
+   "zh": "老师对每个学生都很公平。",
+   "py": "Lǎoshī duì měi ge xuésheng dōu hěn gōngpíng.",
+   "en": "The teacher is fair to every student.",
+   "th": "ครูยุติธรรมกับนักเรียนทุกคน"
+  }
+ },
+ {
+  "h": "公寓",
+  "p": "gōng yù",
+  "en": "apartment",
+  "th": "อพาร์ตเมนต์",
+  "ex": {
+   "zh": "我住在一间小公寓里。",
+   "py": "Wǒ zhù zài yì jiān xiǎo gōngyù lǐ.",
+   "en": "I live in a small apartment.",
+   "th": "ฉันอาศัยอยู่ในอพาร์ตเมนต์เล็ก ๆ"
+  }
+ },
+ {
+  "h": "公元",
+  "p": "gōng yuán",
+  "en": "AD; Common Era",
+  "th": "ค.ศ.",
+  "ex": {
+   "zh": "他出生于公元二千年。",
+   "py": "Tā chūshēng yú gōngyuán èrqiān nián.",
+   "en": "He was born in the year 2000 AD.",
+   "th": "เขาเกิดเมื่อปี ค.ศ. 2000"
+  }
+ },
+ {
+  "h": "公主",
+  "p": "gōng zhǔ",
+  "en": "princess",
+  "th": "เจ้าหญิง",
+  "ex": {
+   "zh": "故事里有一位美丽的公主。",
+   "py": "Gùshi lǐ yǒu yí wèi měilì de gōngzhǔ.",
+   "en": "There is a beautiful princess in the story.",
+   "th": "ในเรื่องมีเจ้าหญิงที่สวยงามองค์หนึ่ง"
+  }
+ },
+ {
+  "h": "功夫",
+  "p": "gōng fu",
+  "en": "kung fu; skill",
+  "th": "กังฟู / ฝีมือ",
+  "ex": {
+   "zh": "他会一点儿中国功夫。",
+   "py": "Tā huì yìdiǎnr Zhōngguó gōngfu.",
+   "en": "He knows a bit of Chinese kung fu.",
+   "th": "เขาพอรู้กังฟูจีนอยู่บ้าง"
+  }
+ },
+ {
+  "h": "功能",
+  "p": "gōng néng",
+  "en": "function; feature",
+  "th": "ฟังก์ชัน คุณสมบัติ",
+  "ex": {
+   "zh": "这部手机有很多功能。",
+   "py": "Zhè bù shǒujī yǒu hěn duō gōngnéng.",
+   "en": "This phone has many functions.",
+   "th": "โทรศัพท์เครื่องนี้มีฟังก์ชันมากมาย"
+  }
+ },
+ {
+  "h": "贡献",
+  "p": "gòng xiàn",
+  "en": "contribution",
+  "th": "ส่วนร่วม การอุทิศ",
+  "ex": {
+   "zh": "他对国家做出了很大贡献。",
+   "py": "Tā duì guójiā zuòchū le hěn dà gòngxiàn.",
+   "en": "He made a great contribution to the country.",
+   "th": "เขาทำคุณประโยชน์ให้ประเทศมาก"
+  }
+ },
+ {
+  "h": "沟通",
+  "p": "gōu tōng",
+  "en": "to communicate",
+  "th": "สื่อสาร",
+  "ex": {
+   "zh": "我们需要多沟通。",
+   "py": "Wǒmen xūyào duō gōutōng.",
+   "en": "We need to communicate more.",
+   "th": "เราต้องสื่อสารกันให้มากขึ้น"
+  }
+ },
+ {
+  "h": "构成",
+  "p": "gòu chéng",
+  "en": "to constitute; to form",
+  "th": "ประกอบขึ้น",
+  "ex": {
+   "zh": "水由氢和氧构成。",
+   "py": "Shuǐ yóu qīng hé yǎng gòuchéng.",
+   "en": "Water is composed of hydrogen and oxygen.",
+   "th": "น้ำประกอบด้วยไฮโดรเจนและออกซิเจน"
+  }
+ },
+ {
+  "h": "姑姑",
+  "p": "gū gu",
+  "en": "paternal aunt",
+  "th": "ป้า/อาผู้หญิง (ฝั่งพ่อ)",
+  "ex": {
+   "zh": "姑姑给我寄了一份礼物。",
+   "py": "Gūgu gěi wǒ jì le yí fèn lǐwù.",
+   "en": "My aunt mailed me a gift.",
+   "th": "ป้าส่งของขวัญมาให้ฉัน"
+  }
+ },
+ {
+  "h": "姑娘",
+  "p": "gū niang",
+  "en": "girl; young woman",
+  "th": "สาว หญิงสาว",
+  "ex": {
+   "zh": "那位姑娘非常漂亮。",
+   "py": "Nà wèi gūniang fēicháng piàoliang.",
+   "en": "That young woman is very pretty.",
+   "th": "สาวคนนั้นสวยมาก"
+  }
+ },
+ {
+  "h": "古代",
+  "p": "gǔ dài",
+  "en": "ancient times",
+  "th": "สมัยโบราณ",
+  "ex": {
+   "zh": "古代的人用毛笔写字。",
+   "py": "Gǔdài de rén yòng máobǐ xiězì.",
+   "en": "People in ancient times wrote with brushes.",
+   "th": "คนสมัยโบราณเขียนหนังสือด้วยพู่กัน"
+  }
+ },
+ {
+  "h": "古典",
+  "p": "gǔ diǎn",
+  "en": "classical",
+  "th": "คลาสสิก",
+  "ex": {
+   "zh": "我喜欢听古典音乐。",
+   "py": "Wǒ xǐhuan tīng gǔdiǎn yīnyuè.",
+   "en": "I like listening to classical music.",
+   "th": "ฉันชอบฟังดนตรีคลาสสิก"
+  }
+ },
+ {
+  "h": "古老",
+  "p": "gǔ lǎo",
+  "en": "ancient; old",
+  "th": "เก่าแก่",
+  "ex": {
+   "zh": "这是一座古老的城市。",
+   "py": "Zhè shì yí zuò gǔlǎo de chéngshì.",
+   "en": "This is an ancient city.",
+   "th": "นี่คือเมืองเก่าแก่"
+  }
+ },
+ {
+  "h": "股票",
+  "p": "gǔ piào",
+  "en": "stock; shares",
+  "th": "หุ้น",
+  "ex": {
+   "zh": "他买了一些股票。",
+   "py": "Tā mǎi le yìxiē gǔpiào.",
+   "en": "He bought some stocks.",
+   "th": "เขาซื้อหุ้นไว้จำนวนหนึ่ง"
+  }
+ },
+ {
+  "h": "骨头",
+  "p": "gǔ tou",
+  "en": "bone",
+  "th": "กระดูก",
+  "ex": {
+   "zh": "小狗在啃骨头。",
+   "py": "Xiǎogǒu zài kěn gǔtou.",
+   "en": "The puppy is gnawing a bone.",
+   "th": "ลูกสุนัขกำลังแทะกระดูก"
+  }
+ },
+ {
+  "h": "鼓舞",
+  "p": "gǔ wǔ",
+  "en": "to encourage; to inspire",
+  "th": "ปลุกใจ ให้กำลังใจ",
+  "ex": {
+   "zh": "他的话鼓舞了大家。",
+   "py": "Tā de huà gǔwǔ le dàjiā.",
+   "en": "His words inspired everyone.",
+   "th": "คำพูดของเขาปลุกใจทุกคน"
+  }
+ },
+ {
+  "h": "固定",
+  "p": "gù dìng",
+  "en": "fixed; to fix",
+  "th": "คงที่ ตายตัว",
+  "ex": {
+   "zh": "我每天固定时间锻炼。",
+   "py": "Wǒ měitiān gùdìng shíjiān duànliàn.",
+   "en": "I exercise at a fixed time every day.",
+   "th": "ฉันออกกำลังกายเวลาเดิมทุกวัน"
+  }
+ },
+ {
+  "h": "固体",
+  "p": "gù tǐ",
+  "en": "solid",
+  "th": "ของแข็ง",
+  "ex": {
+   "zh": "冰是水的固体状态。",
+   "py": "Bīng shì shuǐ de gùtǐ zhuàngtài.",
+   "en": "Ice is the solid state of water.",
+   "th": "น้ำแข็งคือสถานะของแข็งของน้ำ"
+  }
+ },
+ {
+  "h": "雇佣",
+  "p": "gù yōng",
+  "en": "to hire; to employ",
+  "th": "จ้าง",
+  "ex": {
+   "zh": "这家店雇佣了三个员工。",
+   "py": "Zhè jiā diàn gùyōng le sān ge yuángōng.",
+   "en": "This shop hired three employees.",
+   "th": "ร้านนี้จ้างพนักงานสามคน"
+  }
+ },
+ {
+  "h": "挂号",
+  "p": "guà hào",
+  "en": "to register (at a hospital)",
+  "th": "ลงทะเบียนพบแพทย์",
+  "ex": {
+   "zh": "我去医院挂号。",
+   "py": "Wǒ qù yīyuàn guàhào.",
+   "en": "I'm going to register at the hospital.",
+   "th": "ฉันไปลงทะเบียนที่โรงพยาบาล"
+  }
+ },
+ {
+  "h": "乖",
+  "p": "guāi",
+  "en": "well-behaved",
+  "th": "เรียบร้อย เชื่อฟัง",
+  "ex": {
+   "zh": "这个孩子很乖。",
+   "py": "Zhège háizi hěn guāi.",
+   "en": "This child is very well-behaved.",
+   "th": "เด็กคนนี้เชื่อฟังมาก"
+  }
+ },
+ {
+  "h": "拐弯",
+  "p": "guǎi wān",
+  "en": "to turn (a corner)",
+  "th": "เลี้ยว",
+  "ex": {
+   "zh": "前面拐弯就到了。",
+   "py": "Qiánmiàn guǎiwān jiù dào le.",
+   "en": "Turn at the corner ahead and you're there.",
+   "th": "เลี้ยวตรงข้างหน้าก็ถึงแล้ว"
+  }
+ },
+ {
+  "h": "怪不得",
+  "p": "guài bu de",
+  "en": "no wonder",
+  "th": "มิน่าล่ะ",
+  "ex": {
+   "zh": "下雪了，怪不得这么冷。",
+   "py": "Xià xuě le, guàibude zhème lěng.",
+   "en": "It's snowing; no wonder it's so cold.",
+   "th": "หิมะตก มิน่าถึงได้หนาวขนาดนี้"
+  }
+ },
+ {
+  "h": "关闭",
+  "p": "guān bì",
+  "en": "to close; to shut down",
+  "th": "ปิด",
+  "ex": {
+   "zh": "商店晚上九点关闭。",
+   "py": "Shāngdiàn wǎnshang jiǔ diǎn guānbì.",
+   "en": "The shop closes at nine in the evening.",
+   "th": "ร้านปิดตอนสามทุ่ม"
+  }
+ },
+ {
+  "h": "关怀",
+  "p": "guān huái",
+  "en": "care; concern",
+  "th": "ความห่วงใย",
+  "ex": {
+   "zh": "谢谢您对我的关怀。",
+   "py": "Xièxie nín duì wǒ de guānhuái.",
+   "en": "Thank you for your care for me.",
+   "th": "ขอบคุณที่ห่วงใยฉัน"
+  }
+ },
+ {
+  "h": "观察",
+  "p": "guān chá",
+  "en": "to observe",
+  "th": "สังเกต",
+  "ex": {
+   "zh": "医生仔细观察了病人。",
+   "py": "Yīshēng zǐxì guānchá le bìngrén.",
+   "en": "The doctor carefully observed the patient.",
+   "th": "หมอสังเกตอาการผู้ป่วยอย่างละเอียด"
+  }
+ },
+ {
+  "h": "观点",
+  "p": "guān diǎn",
+  "en": "viewpoint",
+  "th": "ทัศนะ มุมมอง",
+  "ex": {
+   "zh": "我不同意你的观点。",
+   "py": "Wǒ bù tóngyì nǐ de guāndiǎn.",
+   "en": "I don't agree with your viewpoint.",
+   "th": "ฉันไม่เห็นด้วยกับทัศนะของคุณ"
+  }
+ },
+ {
+  "h": "观念",
+  "p": "guān niàn",
+  "en": "concept; idea",
+  "th": "ความคิด ทัศนคติ",
+  "ex": {
+   "zh": "老年人的观念比较传统。",
+   "py": "Lǎoniánrén de guānniàn bǐjiào chuántǒng.",
+   "en": "Older people's ideas are more traditional.",
+   "th": "ทัศนคติของผู้สูงอายุค่อนข้างดั้งเดิม"
+  }
+ },
+ {
+  "h": "官",
+  "p": "Guān",
+  "en": "official",
+  "th": "ข้าราชการ เจ้าหน้าที่",
+  "ex": {
+   "zh": "他想当一名法官。",
+   "py": "Tā xiǎng dāng yì míng fǎguān.",
+   "en": "He wants to become a judge.",
+   "th": "เขาอยากเป็นผู้พิพากษา"
+  }
+ },
+ {
+  "h": "冠军",
+  "p": "guàn jūn",
+  "en": "champion",
+  "th": "แชมป์",
+  "ex": {
+   "zh": "我们队得了冠军。",
+   "py": "Wǒmen duì dé le guànjūn.",
+   "en": "Our team won the championship.",
+   "th": "ทีมของเราได้แชมป์"
+  }
+ },
+ {
+  "h": "管子",
+  "p": "Guǎn zǐ",
+  "en": "pipe; tube",
+  "th": "ท่อ",
+  "ex": {
+   "zh": "水管子坏了。",
+   "py": "Shuǐ guǎnzi huài le.",
+   "en": "The water pipe is broken.",
+   "th": "ท่อน้ำเสีย"
+  }
+ },
+ {
+  "h": "罐头",
+  "p": "guàn tou",
+  "en": "canned food",
+  "th": "อาหารกระป๋อง",
+  "ex": {
+   "zh": "他带了几个水果罐头。",
+   "py": "Tā dài le jǐ ge shuǐguǒ guàntou.",
+   "en": "He brought a few cans of fruit.",
+   "th": "เขาเอาผลไม้กระป๋องมาหลายกระป๋อง"
+  }
+ },
+ {
+  "h": "光滑",
+  "p": "guāng huá",
+  "en": "smooth",
+  "th": "เรียบลื่น",
+  "ex": {
+   "zh": "桌子表面很光滑。",
+   "py": "Zhuōzi biǎomiàn hěn guānghuá.",
+   "en": "The table surface is very smooth.",
+   "th": "พื้นผิวโต๊ะเรียบลื่นมาก"
+  }
+ },
+ {
+  "h": "光临",
+  "p": "guāng lín",
+  "en": "to visit (honorific)",
+  "th": "เสด็จ / มาเยือน",
+  "ex": {
+   "zh": "欢迎光临我们的商店。",
+   "py": "Huānyíng guānglín wǒmen de shāngdiàn.",
+   "en": "Welcome to our store.",
+   "th": "ยินดีต้อนรับสู่ร้านของเรา"
+  }
+ },
+ {
+  "h": "光明",
+  "p": "guāng míng",
+  "en": "bright; light",
+  "th": "แสงสว่าง สดใส",
+  "ex": {
+   "zh": "他对未来充满光明的希望。",
+   "py": "Tā duì wèilái chōngmǎn guāngmíng de xīwàng.",
+   "en": "He is full of bright hope for the future.",
+   "th": "เขาเต็มไปด้วยความหวังที่สดใสต่ออนาคต"
+  }
+ },
+ {
+  "h": "光盘",
+  "p": "guāng pán",
+  "en": "CD; disc",
+  "th": "แผ่นซีดี",
+  "ex": {
+   "zh": "这张光盘里有很多歌。",
+   "py": "Zhè zhāng guāngpán lǐ yǒu hěn duō gē.",
+   "en": "This disc has many songs.",
+   "th": "แผ่นซีดีนี้มีเพลงมากมาย"
+  }
+ },
+ {
+  "h": "光荣",
+  "p": "guāng róng",
+  "en": "glory; honorable",
+  "th": "เกียรติยศ น่าภาคภูมิใจ",
+  "ex": {
+   "zh": "当老师是很光荣的事。",
+   "py": "Dāng lǎoshī shì hěn guāngróng de shì.",
+   "en": "Being a teacher is a very honorable thing.",
+   "th": "การเป็นครูเป็นเรื่องน่าภาคภูมิใจ"
+  }
+ },
+ {
+  "h": "广场",
+  "p": "guǎng chǎng",
+  "en": "square; plaza",
+  "th": "ลานกว้าง จัตุรัส",
+  "ex": {
+   "zh": "人们在广场上跳舞。",
+   "py": "Rénmen zài guǎngchǎng shàng tiàowǔ.",
+   "en": "People dance in the square.",
+   "th": "ผู้คนเต้นรำที่ลานกว้าง"
+  }
+ },
+ {
+  "h": "广大",
+  "p": "guǎng dà",
+  "en": "vast; wide",
+  "th": "กว้างใหญ่ มากมาย",
+  "ex": {
+   "zh": "这部电影受到广大观众的喜爱。",
+   "py": "Zhè bù diànyǐng shòudào guǎngdà guānzhòng de xǐ'ài.",
+   "en": "This film is loved by a wide audience.",
+   "th": "ภาพยนตร์เรื่องนี้ได้รับความรักจากผู้ชมจำนวนมาก"
+  }
+ },
+ {
+  "h": "广泛",
+  "p": "guǎng fàn",
+  "en": "widespread",
+  "th": "กว้างขวาง แพร่หลาย",
+  "ex": {
+   "zh": "这种手机使用得很广泛。",
+   "py": "Zhè zhǒng shǒujī shǐyòng de hěn guǎngfàn.",
+   "en": "This kind of phone is widely used.",
+   "th": "โทรศัพท์แบบนี้ใช้กันอย่างแพร่หลาย"
+  }
+ },
+ {
+  "h": "规矩",
+  "p": "guī ju",
+  "en": "rule; well-behaved",
+  "th": "กฎ ระเบียบ",
+  "ex": {
+   "zh": "在这儿要守规矩。",
+   "py": "Zài zhèr yào shǒu guīju.",
+   "en": "You must follow the rules here.",
+   "th": "ที่นี่ต้องปฏิบัติตามกฎระเบียบ"
+  }
+ },
+ {
+  "h": "规律",
+  "p": "guī lǜ",
+  "en": "law; regularity",
+  "th": "กฎเกณฑ์ ความสม่ำเสมอ",
+  "ex": {
+   "zh": "他的生活很有规律。",
+   "py": "Tā de shēnghuó hěn yǒu guīlǜ.",
+   "en": "His life is very regular.",
+   "th": "ชีวิตของเขาเป็นระเบียบสม่ำเสมอ"
+  }
+ },
+ {
+  "h": "规模",
+  "p": "guī mó",
+  "en": "scale; scope",
+  "th": "ขนาด ขอบเขต",
+  "ex": {
+   "zh": "这家公司的规模很大。",
+   "py": "Zhè jiā gōngsī de guīmó hěn dà.",
+   "en": "This company is very large in scale.",
+   "th": "บริษัทนี้มีขนาดใหญ่มาก"
+  }
+ },
+ {
+  "h": "规则",
+  "p": "guī zé",
+  "en": "rule; regulation",
+  "th": "กฎ กติกา",
+  "ex": {
+   "zh": "请遵守比赛规则。",
+   "py": "Qǐng zūnshǒu bǐsài guīzé.",
+   "en": "Please follow the rules of the game.",
+   "th": "กรุณาปฏิบัติตามกติกาการแข่งขัน"
+  }
+ },
+ {
+  "h": "柜台",
+  "p": "guì tái",
+  "en": "counter",
+  "th": "เคาน์เตอร์",
+  "ex": {
+   "zh": "请到柜台付款。",
+   "py": "Qǐng dào guìtái fùkuǎn.",
+   "en": "Please pay at the counter.",
+   "th": "กรุณาไปชำระเงินที่เคาน์เตอร์"
+  }
+ },
+ {
+  "h": "滚",
+  "p": "gǔn",
+  "en": "to roll; get lost",
+  "th": "กลิ้ง",
+  "ex": {
+   "zh": "球滚到桌子下面去了。",
+   "py": "Qiú gǔn dào zhuōzi xiàmiàn qù le.",
+   "en": "The ball rolled under the table.",
+   "th": "ลูกบอลกลิ้งไปใต้โต๊ะ"
+  }
+ },
+ {
+  "h": "锅",
+  "p": "guō",
+  "en": "pot; wok",
+  "th": "หม้อ กระทะ",
+  "ex": {
+   "zh": "我用锅煮了一碗面。",
+   "py": "Wǒ yòng guō zhǔ le yì wǎn miàn.",
+   "en": "I cooked a bowl of noodles in the pot.",
+   "th": "ฉันต้มบะหมี่หนึ่งชามในหม้อ"
+  }
+ },
+ {
+  "h": "国籍",
+  "p": "guó jí",
+  "en": "nationality",
+  "th": "สัญชาติ",
+  "ex": {
+   "zh": "请问您的国籍是什么？",
+   "py": "Qǐngwèn nín de guójí shì shénme?",
+   "en": "May I ask what your nationality is?",
+   "th": "ขอถามสัญชาติของคุณหน่อย"
+  }
+ },
+ {
+  "h": "国庆节",
+  "p": "Guó qìng jié",
+  "en": "National Day",
+  "th": "วันชาติ (จีน)",
+  "ex": {
+   "zh": "国庆节我们放七天假。",
+   "py": "Guóqìngjié wǒmen fàng qī tiān jià.",
+   "en": "We have seven days off for National Day.",
+   "th": "วันชาติเราหยุดเจ็ดวัน"
+  }
+ },
+ {
+  "h": "果实",
+  "p": "guǒ shí",
+  "en": "fruit",
+  "th": "ผลไม้ ผลผลิต",
+  "ex": {
+   "zh": "秋天树上结满了果实。",
+   "py": "Qiūtiān shù shàng jiē mǎn le guǒshí.",
+   "en": "In autumn the trees are full of fruit.",
+   "th": "ฤดูใบไม้ร่วงต้นไม้เต็มไปด้วยผล"
+  }
+ },
+ {
+  "h": "过分",
+  "p": "guò fèn",
+  "en": "excessive",
+  "th": "เกินไป เกินควร",
+  "ex": {
+   "zh": "你这样说太过分了。",
+   "py": "Nǐ zhèyàng shuō tài guòfèn le.",
+   "en": "It's too much for you to say that.",
+   "th": "คุณพูดแบบนี้เกินไปแล้ว"
+  }
+ },
+ {
+  "h": "过敏",
+  "p": "guò mǐn",
+  "en": "allergic; allergy",
+  "th": "แพ้ ภูมิแพ้",
+  "ex": {
+   "zh": "我对花粉过敏。",
+   "py": "Wǒ duì huāfěn guòmǐn.",
+   "en": "I'm allergic to pollen.",
+   "th": "ฉันแพ้เกสรดอกไม้"
+  }
+ },
+ {
+  "h": "过期",
+  "p": "guò qī",
+  "en": "expired",
+  "th": "หมดอายุ",
+  "ex": {
+   "zh": "这瓶牛奶已经过期了。",
+   "py": "Zhè píng niúnǎi yǐjīng guòqī le.",
+   "en": "This bottle of milk has expired.",
+   "th": "นมขวดนี้หมดอายุแล้ว"
+  }
+ },
+ {
+  "h": "哈",
+  "p": "Hā",
+  "en": "ha (laughter)",
+  "th": "ฮ่า (เสียงหัวเราะ)",
+  "ex": {
+   "zh": "哈哈，这个笑话太好笑了！",
+   "py": "Hāhā, zhège xiàohua tài hǎoxiào le!",
+   "en": "Haha, this joke is so funny!",
+   "th": "ฮ่า ๆ มุกนี้ตลกมาก"
+  }
+ },
+ {
+  "h": "海关",
+  "p": "hǎi guān",
+  "en": "customs",
+  "th": "ศุลกากร",
+  "ex": {
+   "zh": "过海关要检查行李。",
+   "py": "Guò hǎiguān yào jiǎnchá xíngli.",
+   "en": "Luggage is checked at customs.",
+   "th": "ผ่านศุลกากรต้องตรวจสัมภาระ"
+  }
+ },
+ {
+  "h": "海鲜",
+  "p": "hǎi xiān",
+  "en": "seafood",
+  "th": "อาหารทะเล",
+  "ex": {
+   "zh": "我最爱吃海鲜。",
+   "py": "Wǒ zuì ài chī hǎixiān.",
+   "en": "I love eating seafood the most.",
+   "th": "ฉันชอบกินอาหารทะเลที่สุด"
+  }
+ },
+ {
+  "h": "喊",
+  "p": "hǎn",
+  "en": "to shout",
+  "th": "ตะโกน เรียก",
+  "ex": {
+   "zh": "他在楼下喊我的名字。",
+   "py": "Tā zài lóu xià hǎn wǒ de míngzi.",
+   "en": "He shouted my name downstairs.",
+   "th": "เขาตะโกนเรียกชื่อฉันที่ชั้นล่าง"
+  }
+ },
+ {
+  "h": "豪华",
+  "p": "háo huá",
+  "en": "luxurious",
+  "th": "หรูหรา",
+  "ex": {
+   "zh": "他们住在豪华的酒店里。",
+   "py": "Tāmen zhù zài háohuá de jiǔdiàn lǐ.",
+   "en": "They are staying in a luxury hotel.",
+   "th": "พวกเขาพักในโรงแรมหรู"
+  }
+ },
+ {
+  "h": "好奇",
+  "p": "hào qí",
+  "en": "curious",
+  "th": "อยากรู้อยากเห็น",
+  "ex": {
+   "zh": "孩子对什么都很好奇。",
+   "py": "Háizi duì shénme dōu hěn hàoqí.",
+   "en": "The child is curious about everything.",
+   "th": "เด็กอยากรู้อยากเห็นทุกเรื่อง"
+  }
+ },
+ {
+  "h": "合法",
+  "p": "hé fǎ",
+  "en": "legal",
+  "th": "ถูกกฎหมาย",
+  "ex": {
+   "zh": "这样做是合法的。",
+   "py": "Zhèyàng zuò shì héfǎ de.",
+   "en": "Doing it this way is legal.",
+   "th": "ทำแบบนี้ถูกกฎหมาย"
+  }
+ },
+ {
+  "h": "合理",
+  "p": "hé lǐ",
+  "en": "reasonable",
+  "th": "สมเหตุสมผล",
+  "ex": {
+   "zh": "这个价格很合理。",
+   "py": "Zhège jiàgé hěn hélǐ.",
+   "en": "This price is very reasonable.",
+   "th": "ราคานี้สมเหตุสมผลมาก"
+  }
+ },
+ {
+  "h": "合同",
+  "p": "hé tong",
+  "en": "contract",
+  "th": "สัญญา",
+  "ex": {
+   "zh": "我们签了一份合同。",
+   "py": "Wǒmen qiān le yí fèn hétong.",
+   "en": "We signed a contract.",
+   "th": "เราลงนามในสัญญาฉบับหนึ่ง"
+  }
+ },
+ {
+  "h": "合影",
+  "p": "hé yǐng",
+  "en": "group photo",
+  "th": "ถ่ายรูปหมู่",
+  "ex": {
+   "zh": "大家一起合影留念吧。",
+   "py": "Dàjiā yìqǐ héyǐng liúniàn ba.",
+   "en": "Let's take a group photo as a keepsake.",
+   "th": "ทุกคนมาถ่ายรูปหมู่เป็นที่ระลึกกันเถอะ"
+  }
+ },
+ {
+  "h": "合作",
+  "p": "hé zuò",
+  "en": "to cooperate",
+  "th": "ร่วมมือ",
+  "ex": {
+   "zh": "我们两家公司合作得很好。",
+   "py": "Wǒmen liǎng jiā gōngsī hézuò de hěn hǎo.",
+   "en": "Our two companies cooperate well.",
+   "th": "บริษัททั้งสองของเราร่วมมือกันได้ดี"
+  }
+ },
+ {
+  "h": "何必",
+  "p": "hé bì",
+  "en": "no need to",
+  "th": "ไม่จำเป็นต้อง จะไปทำไม",
+  "ex": {
+   "zh": "何必为小事生气呢？",
+   "py": "Hébì wèi xiǎoshì shēngqì ne?",
+   "en": "Why get angry over small things?",
+   "th": "จะโกรธเรื่องเล็กน้อยไปทำไม"
+  }
+ }
+]

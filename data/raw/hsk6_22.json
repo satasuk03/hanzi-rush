@@ -1,0 +1,1202 @@
+[
+ {
+  "h": "油腻",
+  "p": "yóu nì",
+  "en": "greasy",
+  "th": "มัน, เลี่ยน",
+  "ex": {
+   "zh": "这道菜太油腻了。",
+   "py": "Zhè dào cài tài yóunì le.",
+   "en": "This dish is too greasy.",
+   "th": "อาหารจานนี้มันเลี่ยนเกินไป"
+  }
+ },
+ {
+  "h": "油漆",
+  "p": "yóu qī",
+  "en": "paint",
+  "th": "สี (ทาบ้าน)",
+  "ex": {
+   "zh": "他在给门刷油漆。",
+   "py": "Tā zài gěi mén shuā yóuqī.",
+   "en": "He is painting the door.",
+   "th": "เขากำลังทาสีประตู"
+  }
+ },
+ {
+  "h": "有条不紊",
+  "p": "yǒu tiáo bù wěn",
+  "en": "methodical",
+  "th": "เป็นระเบียบ",
+  "ex": {
+   "zh": "她把工作安排得有条不紊。",
+   "py": "Tā bǎ gōngzuò ānpái de yǒutiáo-bùwěn.",
+   "en": "She arranges her work in an orderly way.",
+   "th": "เธอจัดการงานอย่างเป็นระเบียบเรียบร้อย"
+  }
+ },
+ {
+  "h": "幼稚",
+  "p": "yòu zhì",
+  "en": "childish",
+  "th": "เด็กๆ, ไร้เดียงสา",
+  "ex": {
+   "zh": "你的想法太幼稚了。",
+   "py": "Nǐ de xiǎngfǎ tài yòuzhì le.",
+   "en": "Your idea is too childish.",
+   "th": "ความคิดของเธอเด็กเกินไป"
+  }
+ },
+ {
+  "h": "诱惑",
+  "p": "yòu huò",
+  "en": "to tempt",
+  "th": "ล่อลวง",
+  "ex": {
+   "zh": "甜食很诱惑人。",
+   "py": "Tiánshí hěn yòuhuò rén.",
+   "en": "Sweets are very tempting.",
+   "th": "ของหวานน่ายั่วยวนใจมาก"
+  }
+ },
+ {
+  "h": "渔民",
+  "p": "yú mín",
+  "en": "fisherman",
+  "th": "ชาวประมง",
+  "ex": {
+   "zh": "渔民早上出海打鱼。",
+   "py": "Yúmín zǎoshang chūhǎi dǎyú.",
+   "en": "Fishermen go out to sea to fish in the morning.",
+   "th": "ชาวประมงออกทะเลจับปลาตอนเช้า"
+  }
+ },
+ {
+  "h": "愚蠢",
+  "p": "yú chǔn",
+  "en": "foolish",
+  "th": "โง่เขลา",
+  "ex": {
+   "zh": "这样做太愚蠢了。",
+   "py": "Zhèyàng zuò tài yúchǔn le.",
+   "en": "Doing it this way is too foolish.",
+   "th": "ทำแบบนี้โง่เกินไป"
+  }
+ },
+ {
+  "h": "愚昧",
+  "p": "yú mèi",
+  "en": "ignorant",
+  "th": "งมงาย",
+  "ex": {
+   "zh": "愚昧的人容易受骗。",
+   "py": "Yúmèi de rén róngyì shòupiàn.",
+   "en": "Ignorant people are easily deceived.",
+   "th": "คนที่โง่งมงายถูกหลอกง่าย"
+  }
+ },
+ {
+  "h": "舆论",
+  "p": "yú lùn",
+  "en": "public opinion",
+  "th": "กระแสสังคม",
+  "ex": {
+   "zh": "舆论对这件事很关注。",
+   "py": "Yúlùn duì zhè jiàn shì hěn guānzhù.",
+   "en": "Public opinion is paying close attention to this matter.",
+   "th": "กระแสสังคมให้ความสนใจเรื่องนี้มาก"
+  }
+ },
+ {
+  "h": "与日俱增",
+  "p": "yǔ rì jù zēng",
+  "en": "to grow day by day",
+  "th": "เพิ่มขึ้นทุกวัน",
+  "ex": {
+   "zh": "他对她的感情与日俱增。",
+   "py": "Tā duì tā de gǎnqíng yǔrì-jùzēng.",
+   "en": "His feelings for her grow with each passing day.",
+   "th": "ความรู้สึกของเขาที่มีต่อเธอเพิ่มขึ้นทุกวัน"
+  }
+ },
+ {
+  "h": "予以",
+  "p": "yǔ yǐ",
+  "en": "to give, to grant",
+  "th": "มอบให้",
+  "ex": {
+   "zh": "公司予以他一次机会。",
+   "py": "Gōngsī yǔyǐ tā yí cì jīhuì.",
+   "en": "The company gave him a chance.",
+   "th": "บริษัทให้โอกาสเขาหนึ่งครั้ง"
+  }
+ },
+ {
+  "h": "羽绒服",
+  "p": "yǔ róng fú",
+  "en": "down jacket",
+  "th": "เสื้อโค้ทขนเป็ด",
+  "ex": {
+   "zh": "冬天我穿羽绒服。",
+   "py": "Dōngtiān wǒ chuān yǔróngfú.",
+   "en": "I wear a down jacket in winter.",
+   "th": "หน้าหนาวฉันใส่เสื้อโค้ทขนเป็ด"
+  }
+ },
+ {
+  "h": "预料",
+  "p": "yù liào",
+  "en": "to anticipate",
+  "th": "คาดการณ์",
+  "ex": {
+   "zh": "结果和预料的一样。",
+   "py": "Jiéguǒ hé yùliào de yíyàng.",
+   "en": "The result was as expected.",
+   "th": "ผลลัพธ์เป็นไปตามที่คาดไว้"
+  }
+ },
+ {
+  "h": "预期",
+  "p": "yù qī",
+  "en": "to expect",
+  "th": "คาดหวัง",
+  "ex": {
+   "zh": "销量超出了预期。",
+   "py": "Xiāoliàng chāochū le yùqī.",
+   "en": "Sales exceeded expectations.",
+   "th": "ยอดขายเกินความคาดหมาย"
+  }
+ },
+ {
+  "h": "预赛",
+  "p": "yù sài",
+  "en": "preliminary round",
+  "th": "รอบคัดเลือก",
+  "ex": {
+   "zh": "他通过了预赛。",
+   "py": "Tā tōngguò le yùsài.",
+   "en": "He passed the preliminary round.",
+   "th": "เขาผ่านรอบคัดเลือกแล้ว"
+  }
+ },
+ {
+  "h": "预算",
+  "p": "yù suàn",
+  "en": "budget",
+  "th": "งบประมาณ",
+  "ex": {
+   "zh": "我们的预算不多。",
+   "py": "Wǒmen de yùsuàn bù duō.",
+   "en": "Our budget is not large.",
+   "th": "งบประมาณของเราไม่มาก"
+  }
+ },
+ {
+  "h": "预先",
+  "p": "yù xiān",
+  "en": "in advance",
+  "th": "ล่วงหน้า",
+  "ex": {
+   "zh": "请预先告诉我。",
+   "py": "Qǐng yùxiān gàosu wǒ.",
+   "en": "Please tell me in advance.",
+   "th": "กรุณาบอกฉันล่วงหน้า"
+  }
+ },
+ {
+  "h": "预言",
+  "p": "yù yán",
+  "en": "to predict",
+  "th": "ทำนาย",
+  "ex": {
+   "zh": "没有人能预言未来。",
+   "py": "Méiyǒu rén néng yùyán wèilái.",
+   "en": "No one can predict the future.",
+   "th": "ไม่มีใครทำนายอนาคตได้"
+  }
+ },
+ {
+  "h": "预兆",
+  "p": "yù zhào",
+  "en": "omen",
+  "th": "ลางบอกเหตุ",
+  "ex": {
+   "zh": "乌云是暴雨的预兆。",
+   "py": "Wūyún shì bàoyǔ de yùzhào.",
+   "en": "Dark clouds are a sign of a heavy storm.",
+   "th": "เมฆดำเป็นลางบอกว่าฝนจะตกหนัก"
+  }
+ },
+ {
+  "h": "欲望",
+  "p": "yù wàng",
+  "en": "desire",
+  "th": "ความปรารถนา",
+  "ex": {
+   "zh": "他有强烈的求知欲望。",
+   "py": "Tā yǒu qiángliè de qiúzhī yùwàng.",
+   "en": "He has a strong desire for knowledge.",
+   "th": "เขามีความปรารถนาใฝ่รู้อย่างแรงกล้า"
+  }
+ },
+ {
+  "h": "寓言",
+  "p": "yù yán",
+  "en": "fable",
+  "th": "นิทานเปรียบเทียบ",
+  "ex": {
+   "zh": "这是一个有趣的寓言。",
+   "py": "Zhè shì yí ge yǒuqù de yùyán.",
+   "en": "This is an interesting fable.",
+   "th": "นี่คือนิทานเปรียบเทียบที่น่าสนใจ"
+  }
+ },
+ {
+  "h": "愈",
+  "p": "yù",
+  "en": "increasingly",
+  "th": "ยิ่ง...ยิ่ง",
+  "ex": {
+   "zh": "天气愈来愈冷。",
+   "py": "Tiānqì yù lái yù lěng.",
+   "en": "The weather is getting colder and colder.",
+   "th": "อากาศยิ่งหนาวขึ้นเรื่อยๆ"
+  }
+ },
+ {
+  "h": "冤枉",
+  "p": "yuān wang",
+  "en": "to wrong someone",
+  "th": "กล่าวหาผิดๆ",
+  "ex": {
+   "zh": "你冤枉他了。",
+   "py": "Nǐ yuānwang tā le.",
+   "en": "You wronged him.",
+   "th": "เธอกล่าวหาเขาผิดคนแล้ว"
+  }
+ },
+ {
+  "h": "元首",
+  "p": "yuán shǒu",
+  "en": "head of state",
+  "th": "ประมุขของรัฐ",
+  "ex": {
+   "zh": "各国元首出席了会议。",
+   "py": "Gè guó yuánshǒu chūxí le huìyì.",
+   "en": "Heads of state attended the meeting.",
+   "th": "ประมุขของแต่ละประเทศเข้าร่วมการประชุม"
+  }
+ },
+ {
+  "h": "元素",
+  "p": "yuán sù",
+  "en": "element",
+  "th": "องค์ประกอบ",
+  "ex": {
+   "zh": "氧是一种化学元素。",
+   "py": "Yǎng shì yì zhǒng huàxué yuánsù.",
+   "en": "Oxygen is a chemical element.",
+   "th": "ออกซิเจนเป็นธาตุเคมีชนิดหนึ่ง"
+  }
+ },
+ {
+  "h": "元宵节",
+  "p": "Yuán xiāo jié",
+  "en": "Lantern Festival",
+  "th": "เทศกาลโคมไฟ",
+  "ex": {
+   "zh": "元宵节要吃汤圆。",
+   "py": "Yuánxiāojié yào chī tāngyuán.",
+   "en": "People eat tangyuan on the Lantern Festival.",
+   "th": "วันเทศกาลโคมไฟต้องกินบัวลอยจีน"
+  }
+ },
+ {
+  "h": "园林",
+  "p": "yuán lín",
+  "en": "garden",
+  "th": "สวนภูมิทัศน์",
+  "ex": {
+   "zh": "苏州的园林很有名。",
+   "py": "Sūzhōu de yuánlín hěn yǒumíng.",
+   "en": "The gardens of Suzhou are very famous.",
+   "th": "สวนของซูโจวมีชื่อเสียงมาก"
+  }
+ },
+ {
+  "h": "原告",
+  "p": "yuán gào",
+  "en": "plaintiff",
+  "th": "โจทก์",
+  "ex": {
+   "zh": "原告向法院提出了申请。",
+   "py": "Yuángào xiàng fǎyuàn tíchū le shēnqǐng.",
+   "en": "The plaintiff filed a request with the court.",
+   "th": "โจทก์ยื่นคำร้องต่อศาล"
+  }
+ },
+ {
+  "h": "原理",
+  "p": "yuán lǐ",
+  "en": "principle",
+  "th": "หลักการ",
+  "ex": {
+   "zh": "我不懂这个原理。",
+   "py": "Wǒ bù dǒng zhège yuánlǐ.",
+   "en": "I don't understand this principle.",
+   "th": "ฉันไม่เข้าใจหลักการนี้"
+  }
+ },
+ {
+  "h": "原始",
+  "p": "yuán shǐ",
+  "en": "primitive",
+  "th": "ดั้งเดิม",
+  "ex": {
+   "zh": "这里有原始森林。",
+   "py": "Zhèlǐ yǒu yuánshǐ sēnlín.",
+   "en": "There is a primeval forest here.",
+   "th": "ที่นี่มีป่าดึกดำบรรพ์"
+  }
+ },
+ {
+  "h": "原先",
+  "p": "yuán xiān",
+  "en": "originally",
+  "th": "แต่เดิม",
+  "ex": {
+   "zh": "我原先住在北京。",
+   "py": "Wǒ yuánxiān zhù zài Běijīng.",
+   "en": "I originally lived in Beijing.",
+   "th": "แต่เดิมฉันอาศัยอยู่ที่ปักกิ่ง"
+  }
+ },
+ {
+  "h": "圆满",
+  "p": "yuán mǎn",
+  "en": "satisfactory",
+  "th": "เป็นที่น่าพอใจ",
+  "ex": {
+   "zh": "会议圆满结束了。",
+   "py": "Huìyì yuánmǎn jiéshù le.",
+   "en": "The meeting ended successfully.",
+   "th": "การประชุมจบลงอย่างสมบูรณ์แบบ"
+  }
+ },
+ {
+  "h": "源泉",
+  "p": "yuán quán",
+  "en": "source",
+  "th": "แหล่งกำเนิด",
+  "ex": {
+   "zh": "读书是知识的源泉。",
+   "py": "Dúshū shì zhīshi de yuánquán.",
+   "en": "Reading is a source of knowledge.",
+   "th": "การอ่านหนังสือเป็นแหล่งกำเนิดแห่งความรู้"
+  }
+ },
+ {
+  "h": "约束",
+  "p": "yuē shù",
+  "en": "to restrain",
+  "th": "ควบคุม, จำกัด",
+  "ex": {
+   "zh": "法律约束每个人。",
+   "py": "Fǎlǜ yuēshù měi ge rén.",
+   "en": "The law binds everyone.",
+   "th": "กฎหมายควบคุมทุกคน"
+  }
+ },
+ {
+  "h": "岳父",
+  "p": "yuè fù",
+  "en": "father-in-law",
+  "th": "พ่อตา",
+  "ex": {
+   "zh": "岳父很喜欢钓鱼。",
+   "py": "Yuèfù hěn xǐhuan diàoyú.",
+   "en": "My father-in-law likes fishing very much.",
+   "th": "พ่อตาชอบตกปลามาก"
+  }
+ },
+ {
+  "h": "孕育",
+  "p": "yùn yù",
+  "en": "to nurture",
+  "th": "บ่มเพาะ",
+  "ex": {
+   "zh": "大地孕育了万物。",
+   "py": "Dàdì yùnyù le wànwù.",
+   "en": "The earth nurtures all living things.",
+   "th": "แผ่นดินให้กำเนิดสรรพสิ่ง"
+  }
+ },
+ {
+  "h": "运算",
+  "p": "yùn suàn",
+  "en": "calculation",
+  "th": "การคำนวณ",
+  "ex": {
+   "zh": "计算机运算速度很快。",
+   "py": "Jìsuànjī yùnsuàn sùdù hěn kuài.",
+   "en": "Computers calculate very fast.",
+   "th": "คอมพิวเตอร์คำนวณได้เร็วมาก"
+  }
+ },
+ {
+  "h": "运行",
+  "p": "yùn xíng",
+  "en": "to operate",
+  "th": "ทำงาน, เคลื่อนที่",
+  "ex": {
+   "zh": "地铁已经开始运行了。",
+   "py": "Dìtiě yǐjīng kāishǐ yùnxíng le.",
+   "en": "The subway has started running.",
+   "th": "รถไฟใต้ดินเริ่มให้บริการแล้ว"
+  }
+ },
+ {
+  "h": "酝酿",
+  "p": "yùn niàng",
+  "en": "to brew",
+  "th": "กำลังก่อตัว",
+  "ex": {
+   "zh": "他们正在酝酿一个新计划。",
+   "py": "Tāmen zhèngzài yùnniàng yí ge xīn jìhuà.",
+   "en": "They are working out a new plan.",
+   "th": "พวกเขากำลังบ่มเพาะแผนใหม่"
+  }
+ },
+ {
+  "h": "熨",
+  "p": "yùn",
+  "en": "to iron",
+  "th": "รีด (ผ้า)",
+  "ex": {
+   "zh": "我要熨这件衬衫。",
+   "py": "Wǒ yào yùn zhè jiàn chènshān.",
+   "en": "I need to iron this shirt.",
+   "th": "ฉันต้องรีดเสื้อเชิ้ตตัวนี้"
+  }
+ },
+ {
+  "h": "蕴藏",
+  "p": "yùn cáng",
+  "en": "to hold in store",
+  "th": "ซ่อนอยู่",
+  "ex": {
+   "zh": "这片海里蕴藏着石油。",
+   "py": "Zhè piàn hǎi lǐ yùncáng zhe shíyóu.",
+   "en": "There is oil hidden in this sea.",
+   "th": "ในทะเลแถบนี้มีน้ำมันซ่อนอยู่"
+  }
+ },
+ {
+  "h": "杂技",
+  "p": "zá jì",
+  "en": "acrobatics",
+  "th": "กายกรรม",
+  "ex": {
+   "zh": "我们去看了杂技表演。",
+   "py": "Wǒmen qù kàn le zájì biǎoyǎn.",
+   "en": "We went to see an acrobatics show.",
+   "th": "พวกเราไปดูการแสดงกายกรรม"
+  }
+ },
+ {
+  "h": "杂交",
+  "p": "zá jiāo",
+  "en": "to crossbreed",
+  "th": "ผสมข้ามพันธุ์",
+  "ex": {
+   "zh": "这种水稻是杂交的。",
+   "py": "Zhè zhǒng shuǐdào shì zájiāo de.",
+   "en": "This kind of rice is a hybrid.",
+   "th": "ข้าวพันธุ์นี้เป็นพันธุ์ผสมข้าม"
+  }
+ },
+ {
+  "h": "砸",
+  "p": "zá",
+  "en": "to smash",
+  "th": "ทุบ",
+  "ex": {
+   "zh": "他不小心砸坏了杯子。",
+   "py": "Tā bù xiǎoxīn zá huài le bēizi.",
+   "en": "He accidentally smashed the cup.",
+   "th": "เขาเผลอทุบแก้วจนแตก"
+  }
+ },
+ {
+  "h": "咋",
+  "p": "zǎ",
+  "en": "how",
+  "th": "ทำไม, อย่างไร",
+  "ex": {
+   "zh": "你咋不早说呢？",
+   "py": "Nǐ zǎ bù zǎo shuō ne?",
+   "en": "Why didn't you say so earlier?",
+   "th": "ทำไมเธอไม่บอกเร็วกว่านี้ล่ะ"
+  }
+ },
+ {
+  "h": "灾难",
+  "p": "zāi nàn",
+  "en": "disaster",
+  "th": "ภัยพิบัติ",
+  "ex": {
+   "zh": "地震是一场灾难。",
+   "py": "Dìzhèn shì yì chǎng zāinàn.",
+   "en": "An earthquake is a disaster.",
+   "th": "แผ่นดินไหวเป็นภัยพิบัติ"
+  }
+ },
+ {
+  "h": "栽培",
+  "p": "zāi péi",
+  "en": "to cultivate",
+  "th": "เพาะปลูก, บ่มเพาะ",
+  "ex": {
+   "zh": "老师用心栽培学生。",
+   "py": "Lǎoshī yòngxīn zāipéi xuésheng.",
+   "en": "The teacher devotedly nurtures the students.",
+   "th": "ครูบ่มเพาะนักเรียนอย่างตั้งใจ"
+  }
+ },
+ {
+  "h": "宰",
+  "p": "zǎi",
+  "en": "to slaughter",
+  "th": "ฆ่า (สัตว์)",
+  "ex": {
+   "zh": "他们宰了一头猪。",
+   "py": "Tāmen zǎi le yì tóu zhū.",
+   "en": "They slaughtered a pig.",
+   "th": "พวกเขาฆ่าหมูหนึ่งตัว"
+  }
+ },
+ {
+  "h": "再接再厉",
+  "p": "zài jiē zài lì",
+  "en": "to keep striving",
+  "th": "พยายามต่อไป",
+  "ex": {
+   "zh": "你们要再接再厉。",
+   "py": "Nǐmen yào zàijiē-zàilì.",
+   "en": "You should keep up the effort.",
+   "th": "พวกเธอต้องพยายามต่อไปอย่าท้อ"
+  }
+ },
+ {
+  "h": "在乎",
+  "p": "zài hu",
+  "en": "to care about",
+  "th": "ใส่ใจ",
+  "ex": {
+   "zh": "我不在乎别人怎么想。",
+   "py": "Wǒ bú zàihu biéren zěnme xiǎng.",
+   "en": "I don't care what others think.",
+   "th": "ฉันไม่สนใจว่าคนอื่นจะคิดอย่างไร"
+  }
+ },
+ {
+  "h": "在意",
+  "p": "zài yì",
+  "en": "to mind",
+  "th": "ถือสา",
+  "ex": {
+   "zh": "她很在意别人的看法。",
+   "py": "Tā hěn zàiyì biéren de kànfǎ.",
+   "en": "She cares a lot about others' opinions.",
+   "th": "เธอใส่ใจความคิดเห็นของคนอื่นมาก"
+  }
+ },
+ {
+  "h": "攒",
+  "p": "zǎn",
+  "en": "to save up",
+  "th": "สะสมเงิน",
+  "ex": {
+   "zh": "我在攒钱买新手机。",
+   "py": "Wǒ zài zǎn qián mǎi xīn shǒujī.",
+   "en": "I am saving money to buy a new phone.",
+   "th": "ฉันกำลังเก็บเงินซื้อมือถือเครื่องใหม่"
+  }
+ },
+ {
+  "h": "暂且",
+  "p": "zàn qiě",
+  "en": "for now",
+  "th": "ชั่วคราว",
+  "ex": {
+   "zh": "你先暂且住在这里吧。",
+   "py": "Nǐ xiān zànqiě zhù zài zhèlǐ ba.",
+   "en": "Just stay here for the time being.",
+   "th": "เธออยู่ที่นี่ไปก่อนชั่วคราวนะ"
+  }
+ },
+ {
+  "h": "赞叹",
+  "p": "zàn tàn",
+  "en": "to praise in awe",
+  "th": "อุทานชื่นชม",
+  "ex": {
+   "zh": "大家都赞叹风景很美。",
+   "py": "Dàjiā dōu zàntàn fēngjǐng hěn měi.",
+   "en": "Everyone marveled at the beautiful scenery.",
+   "th": "ทุกคนอุทานชื่นชมวิวที่สวยงาม"
+  }
+ },
+ {
+  "h": "赞同",
+  "p": "zàn tóng",
+  "en": "to approve",
+  "th": "เห็นด้วย",
+  "ex": {
+   "zh": "我赞同你的意见。",
+   "py": "Wǒ zàntóng nǐ de yìjiàn.",
+   "en": "I agree with your opinion.",
+   "th": "ฉันเห็นด้วยกับความเห็นของเธอ"
+  }
+ },
+ {
+  "h": "赞扬",
+  "p": "zàn yáng",
+  "en": "to praise",
+  "th": "ชมเชย",
+  "ex": {
+   "zh": "老师赞扬了他的努力。",
+   "py": "Lǎoshī zànyáng le tā de nǔlì.",
+   "en": "The teacher praised his effort.",
+   "th": "ครูชมเชยความพยายามของเขา"
+  }
+ },
+ {
+  "h": "赞助",
+  "p": "zàn zhù",
+  "en": "to sponsor",
+  "th": "สนับสนุนทุน",
+  "ex": {
+   "zh": "这家公司赞助了比赛。",
+   "py": "Zhè jiā gōngsī zànzhù le bǐsài.",
+   "en": "This company sponsored the competition.",
+   "th": "บริษัทนี้เป็นผู้สนับสนุนการแข่งขัน"
+  }
+ },
+ {
+  "h": "遭受",
+  "p": "zāo shòu",
+  "en": "to suffer",
+  "th": "ประสบ",
+  "ex": {
+   "zh": "这个地区遭受了洪水。",
+   "py": "Zhège dìqū zāoshòu le hóngshuǐ.",
+   "en": "This area suffered from floods.",
+   "th": "พื้นที่นี้ประสบอุทกภัย"
+  }
+ },
+ {
+  "h": "遭殃",
+  "p": "zāo yāng",
+  "en": "to suffer calamity",
+  "th": "ประสบภัย",
+  "ex": {
+   "zh": "台风让农民遭殃了。",
+   "py": "Táifēng ràng nóngmín zāoyāng le.",
+   "en": "The typhoon brought disaster to the farmers.",
+   "th": "พายุไต้ฝุ่นทำให้ชาวนาประสบภัย"
+  }
+ },
+ {
+  "h": "遭遇",
+  "p": "zāo yù",
+  "en": "to encounter",
+  "th": "ประสบพบเจอ",
+  "ex": {
+   "zh": "他在旅途中遭遇了困难。",
+   "py": "Tā zài lǚtú zhōng zāoyù le kùnnan.",
+   "en": "He ran into difficulties on his trip.",
+   "th": "เขาเจอปัญหาระหว่างการเดินทาง"
+  }
+ },
+ {
+  "h": "糟蹋",
+  "p": "zāo tà",
+  "en": "to waste",
+  "th": "ทำเสียของ",
+  "ex": {
+   "zh": "别糟蹋粮食。",
+   "py": "Bié zāota liángshi.",
+   "en": "Don't waste food.",
+   "th": "อย่าทำข้าวของเสียเปล่า"
+  }
+ },
+ {
+  "h": "造反",
+  "p": "zào fǎn",
+  "en": "to rebel",
+  "th": "ก่อกบฏ",
+  "ex": {
+   "zh": "农民们起来造反了。",
+   "py": "Nóngmínmen qǐlái zàofǎn le.",
+   "en": "The peasants rose up in rebellion.",
+   "th": "ชาวนาลุกขึ้นก่อกบฏ"
+  }
+ },
+ {
+  "h": "造型",
+  "p": "zào xíng",
+  "en": "modeling",
+  "th": "รูปทรง",
+  "ex": {
+   "zh": "这个杯子的造型很特别。",
+   "py": "Zhège bēizi de zàoxíng hěn tèbié.",
+   "en": "This cup has a very special shape.",
+   "th": "ทรงของแก้วใบนี้พิเศษมาก"
+  }
+ },
+ {
+  "h": "噪音",
+  "p": "zào yīn",
+  "en": "noise",
+  "th": "เสียงรบกวน",
+  "ex": {
+   "zh": "外面的噪音太大了。",
+   "py": "Wàimian de zàoyīn tài dà le.",
+   "en": "The noise outside is too loud.",
+   "th": "เสียงรบกวนข้างนอกดังเกินไป"
+  }
+ },
+ {
+  "h": "责怪",
+  "p": "zé guài",
+  "en": "to blame",
+  "th": "ตำหนิ",
+  "ex": {
+   "zh": "不要责怪孩子。",
+   "py": "Búyào zéguài háizi.",
+   "en": "Don't blame the child.",
+   "th": "อย่าตำหนิเด็ก"
+  }
+ },
+ {
+  "h": "贼",
+  "p": "zéi",
+  "en": "thief",
+  "th": "ขโมย",
+  "ex": {
+   "zh": "小贼偷走了他的钱包。",
+   "py": "Xiǎozéi tōuzǒu le tā de qiánbāo.",
+   "en": "The thief stole his wallet.",
+   "th": "ขโมยขโมยกระเป๋าสตางค์ของเขาไป"
+  }
+ },
+ {
+  "h": "增添",
+  "p": "zēng tiān",
+  "en": "to add",
+  "th": "เพิ่ม",
+  "ex": {
+   "zh": "新家具增添了房间的温暖。",
+   "py": "Xīn jiājù zēngtiān le fángjiān de wēnnuǎn.",
+   "en": "New furniture added warmth to the room.",
+   "th": "เฟอร์นิเจอร์ใหม่เพิ่มความอบอุ่นให้ห้อง"
+  }
+ },
+ {
+  "h": "赠送",
+  "p": "zèng sòng",
+  "en": "to give as a gift",
+  "th": "มอบเป็นของขวัญ",
+  "ex": {
+   "zh": "商店赠送小礼物。",
+   "py": "Shāngdiàn zèngsòng xiǎo lǐwù.",
+   "en": "The store gives away small gifts.",
+   "th": "ร้านค้าแจกของขวัญเล็กๆ น้อยๆ"
+  }
+ },
+ {
+  "h": "扎",
+  "p": "zhā",
+  "en": "to prick",
+  "th": "แทง, ปัก",
+  "ex": {
+   "zh": "我的手被针扎了一下。",
+   "py": "Wǒ de shǒu bèi zhēn zhā le yíxià.",
+   "en": "I pricked my hand on a needle.",
+   "th": "มือฉันถูกเข็มทิ่มเข้า"
+  }
+ },
+ {
+  "h": "扎实",
+  "p": "zhā shi",
+  "en": "solid",
+  "th": "แน่นหนา, มั่นคง",
+  "ex": {
+   "zh": "他的基础很扎实。",
+   "py": "Tā de jīchǔ hěn zhāshi.",
+   "en": "His foundation is very solid.",
+   "th": "พื้นฐานของเขาแน่นมาก"
+  }
+ },
+ {
+  "h": "渣",
+  "p": "zhā",
+  "en": "dregs",
+  "th": "กาก",
+  "ex": {
+   "zh": "茶杯里有很多茶渣。",
+   "py": "Chábēi lǐ yǒu hěn duō cházhā.",
+   "en": "There are a lot of tea dregs in the cup.",
+   "th": "ในถ้วยชามีกากชาเยอะ"
+  }
+ },
+ {
+  "h": "眨",
+  "p": "zhǎ",
+  "en": "to blink",
+  "th": "กะพริบตา",
+  "ex": {
+   "zh": "她眨了眨眼睛。",
+   "py": "Tā zhǎ le zhǎ yǎnjing.",
+   "en": "She blinked her eyes.",
+   "th": "เธอกะพริบตา"
+  }
+ },
+ {
+  "h": "诈骗",
+  "p": "zhà piàn",
+  "en": "to swindle",
+  "th": "ฉ้อโกง",
+  "ex": {
+   "zh": "他因为诈骗被抓了。",
+   "py": "Tā yīnwèi zhàpiàn bèi zhuā le.",
+   "en": "He was arrested for fraud.",
+   "th": "เขาถูกจับเพราะข้อหาฉ้อโกง"
+  }
+ },
+ {
+  "h": "摘要",
+  "p": "zhāi yào",
+  "en": "abstract",
+  "th": "บทคัดย่อ",
+  "ex": {
+   "zh": "论文前面有一段摘要。",
+   "py": "Lùnwén qiánmian yǒu yí duàn zhāiyào.",
+   "en": "There is an abstract at the beginning of the paper.",
+   "th": "ส่วนหน้าของวิทยานิพนธ์มีบทคัดย่อ"
+  }
+ },
+ {
+  "h": "债券",
+  "p": "zhài quàn",
+  "en": "bond",
+  "th": "พันธบัตร",
+  "ex": {
+   "zh": "他买了一些债券。",
+   "py": "Tā mǎi le yìxiē zhàiquàn.",
+   "en": "He bought some bonds.",
+   "th": "เขาซื้อพันธบัตรบางส่วน"
+  }
+ },
+ {
+  "h": "沾光",
+  "p": "zhān guāng",
+  "en": "to benefit from",
+  "th": "พลอยได้รับผลดี",
+  "ex": {
+   "zh": "我们沾了他的光。",
+   "py": "Wǒmen zhān le tā de guāng.",
+   "en": "We benefited from his help.",
+   "th": "พวกเราพลอยได้รับผลดีจากเขา"
+  }
+ },
+ {
+  "h": "瞻仰",
+  "p": "zhān yǎng",
+  "en": "to pay homage",
+  "th": "เคารพสักการะ",
+  "ex": {
+   "zh": "游客们瞻仰了烈士纪念碑。",
+   "py": "Yóukèmen zhānyǎng le lièshì jìniànbēi.",
+   "en": "Visitors paid their respects at the martyrs' monument.",
+   "th": "นักท่องเที่ยวไปสักการะอนุสาวรีย์วีรชน"
+  }
+ },
+ {
+  "h": "斩钉截铁",
+  "p": "zhǎn dīng jié tiě",
+  "en": "resolutely",
+  "th": "เด็ดขาด",
+  "ex": {
+   "zh": "他斩钉截铁地拒绝了。",
+   "py": "Tā zhǎndīng-jiétiě de jùjué le.",
+   "en": "He refused resolutely.",
+   "th": "เขาปฏิเสธอย่างเด็ดขาด"
+  }
+ },
+ {
+  "h": "展示",
+  "p": "zhǎn shì",
+  "en": "to display",
+  "th": "จัดแสดง",
+  "ex": {
+   "zh": "博物馆展示了很多文物。",
+   "py": "Bówùguǎn zhǎnshì le hěn duō wénwù.",
+   "en": "The museum displays many cultural relics.",
+   "th": "พิพิธภัณฑ์จัดแสดงโบราณวัตถุมากมาย"
+  }
+ },
+ {
+  "h": "展望",
+  "p": "zhǎn wàng",
+  "en": "outlook",
+  "th": "การมองไปข้างหน้า",
+  "ex": {
+   "zh": "请展望一下明年的情况。",
+   "py": "Qǐng zhǎnwàng yíxià míngnián de qíngkuàng.",
+   "en": "Please look ahead to next year's situation.",
+   "th": "กรุณามองแนวโน้มปีหน้าหน่อย"
+  }
+ },
+ {
+  "h": "展现",
+  "p": "zhǎn xiàn",
+  "en": "to reveal",
+  "th": "ปรากฏให้เห็น",
+  "ex": {
+   "zh": "美丽的风景展现在眼前。",
+   "py": "Měilì de fēngjǐng zhǎnxiàn zài yǎnqián.",
+   "en": "Beautiful scenery unfolded before our eyes.",
+   "th": "ทิวทัศน์สวยงามปรากฏต่อหน้าเรา"
+  }
+ },
+ {
+  "h": "崭新",
+  "p": "zhǎn xīn",
+  "en": "brand new",
+  "th": "ใหม่เอี่ยม",
+  "ex": {
+   "zh": "他买了一辆崭新的车。",
+   "py": "Tā mǎi le yí liàng zhǎnxīn de chē.",
+   "en": "He bought a brand-new car.",
+   "th": "เขาซื้อรถใหม่เอี่ยมคันหนึ่ง"
+  }
+ },
+ {
+  "h": "占据",
+  "p": "zhàn jù",
+  "en": "to occupy",
+  "th": "ครอบครองพื้นที่",
+  "ex": {
+   "zh": "大树占据了整个院子。",
+   "py": "Dà shù zhànjù le zhěnggè yuànzi.",
+   "en": "The big tree takes up the whole yard.",
+   "th": "ต้นไม้ใหญ่ครอบครองพื้นที่ทั้งลาน"
+  }
+ },
+ {
+  "h": "占领",
+  "p": "zhàn lǐng",
+  "en": "to occupy",
+  "th": "ยึดครอง",
+  "ex": {
+   "zh": "军队占领了这座城市。",
+   "py": "Jūnduì zhànlǐng le zhè zuò chéngshì.",
+   "en": "The army occupied this city.",
+   "th": "กองทัพยึดครองเมืองนี้"
+  }
+ },
+ {
+  "h": "占有",
+  "p": "zhàn yǒu",
+  "en": "to own, to hold",
+  "th": "ครอบครอง",
+  "ex": {
+   "zh": "这家公司占有大部分市场。",
+   "py": "Zhè jiā gōngsī zhànyǒu dà bùfen shìchǎng.",
+   "en": "This company holds most of the market.",
+   "th": "บริษัทนี้ครองส่วนแบ่งตลาดส่วนใหญ่"
+  }
+ },
+ {
+  "h": "战斗",
+  "p": "zhàn dòu",
+  "en": "to fight",
+  "th": "ต่อสู้",
+  "ex": {
+   "zh": "战士们勇敢地战斗。",
+   "py": "Zhànshìmen yǒnggǎn de zhàndòu.",
+   "en": "The soldiers fought bravely.",
+   "th": "ทหารต่อสู้อย่างกล้าหาญ"
+  }
+ },
+ {
+  "h": "战略",
+  "p": "zhàn lüè",
+  "en": "strategy",
+  "th": "กลยุทธ์",
+  "ex": {
+   "zh": "公司有新的发展战略。",
+   "py": "Gōngsī yǒu xīn de fāzhǎn zhànlüè.",
+   "en": "The company has a new development strategy.",
+   "th": "บริษัทมีกลยุทธ์การพัฒนาใหม่"
+  }
+ },
+ {
+  "h": "战术",
+  "p": "zhàn shù",
+  "en": "tactics",
+  "th": "ยุทธวิธี",
+  "ex": {
+   "zh": "教练调整了比赛战术。",
+   "py": "Jiàoliàn tiáozhěng le bǐsài zhànshù.",
+   "en": "The coach adjusted the game tactics.",
+   "th": "โค้ชปรับยุทธวิธีการแข่งขัน"
+  }
+ },
+ {
+  "h": "战役",
+  "p": "zhàn yì",
+  "en": "battle",
+  "th": "ยุทธการ",
+  "ex": {
+   "zh": "这场战役非常重要。",
+   "py": "Zhè chǎng zhànyì fēicháng zhòngyào.",
+   "en": "This battle is very important.",
+   "th": "ยุทธการครั้งนี้สำคัญมาก"
+  }
+ },
+ {
+  "h": "章程",
+  "p": "zhāng chéng",
+  "en": "rules",
+  "th": "ระเบียบข้อบังคับ",
+  "ex": {
+   "zh": "请遵守学校的章程。",
+   "py": "Qǐng zūnshǒu xuéxiào de zhāngchéng.",
+   "en": "Please abide by the school's regulations.",
+   "th": "กรุณาปฏิบัติตามระเบียบของโรงเรียน"
+  }
+ },
+ {
+  "h": "长辈",
+  "p": "zhǎng bèi",
+  "en": "elders",
+  "th": "ผู้อาวุโส",
+  "ex": {
+   "zh": "我们要尊敬长辈。",
+   "py": "Wǒmen yào zūnjìng zhǎngbèi.",
+   "en": "We should respect our elders.",
+   "th": "เราต้องเคารพผู้ใหญ่"
+  }
+ },
+ {
+  "h": "帐篷",
+  "p": "zhàng peng",
+  "en": "tent",
+  "th": "เต็นท์",
+  "ex": {
+   "zh": "我们在山上搭了帐篷。",
+   "py": "Wǒmen zài shān shàng dā le zhàngpeng.",
+   "en": "We pitched a tent on the mountain.",
+   "th": "พวกเรากางเต็นท์บนภูเขา"
+  }
+ },
+ {
+  "h": "障碍",
+  "p": "zhàng ài",
+  "en": "obstacle",
+  "th": "อุปสรรค",
+  "ex": {
+   "zh": "语言不是交流的障碍。",
+   "py": "Yǔyán bú shì jiāoliú de zhàng'ài.",
+   "en": "Language is not a barrier to communication.",
+   "th": "ภาษาไม่ใช่อุปสรรคของการสื่อสาร"
+  }
+ },
+ {
+  "h": "招收",
+  "p": "zhāo shōu",
+  "en": "to recruit",
+  "th": "รับสมัคร",
+  "ex": {
+   "zh": "学校今年招收新生。",
+   "py": "Xuéxiào jīnnián zhāoshōu xīnshēng.",
+   "en": "The school is enrolling new students this year.",
+   "th": "ปีนี้โรงเรียนรับนักเรียนใหม่"
+  }
+ },
+ {
+  "h": "招投标",
+  "p": "zhāo tóu biāo",
+  "en": "bidding",
+  "th": "การประมูลงาน",
+  "ex": {
+   "zh": "这个项目要通过招投标。",
+   "py": "Zhège xiàngmù yào tōngguò zhāotóubiāo.",
+   "en": "This project must go through bidding.",
+   "th": "โครงการนี้ต้องผ่านการประมูล"
+  }
+ },
+ {
+  "h": "沼泽",
+  "p": "zhǎo zé",
+  "en": "swamp",
+  "th": "หนองน้ำ",
+  "ex": {
+   "zh": "沼泽里有很多鸟。",
+   "py": "Zhǎozé lǐ yǒu hěn duō niǎo.",
+   "en": "There are many birds in the swamp.",
+   "th": "ในหนองน้ำมีนกมากมาย"
+  }
+ },
+ {
+  "h": "照料",
+  "p": "zhào liào",
+  "en": "to take care of",
+  "th": "ดูแล",
+  "ex": {
+   "zh": "她在家照料孩子。",
+   "py": "Tā zài jiā zhàoliào háizi.",
+   "en": "She takes care of the children at home.",
+   "th": "เธออยู่บ้านดูแลลูก"
+  }
+ },
+ {
+  "h": "照样",
+  "p": "zhào yàng",
+  "en": "as usual",
+  "th": "เหมือนเดิม",
+  "ex": {
+   "zh": "下雨了，比赛照样进行。",
+   "py": "Xià yǔ le, bǐsài zhàoyàng jìnxíng.",
+   "en": "It rained, but the game went on as usual.",
+   "th": "ฝนตก แต่การแข่งขันก็ยังดำเนินต่อไป"
+  }
+ },
+ {
+  "h": "照耀",
+  "p": "zhào yào",
+  "en": "to illuminate",
+  "th": "ส่องสว่าง",
+  "ex": {
+   "zh": "阳光照耀着大地。",
+   "py": "Yángguāng zhàoyào zhe dàdì.",
+   "en": "The sunlight shines on the earth.",
+   "th": "แสงแดดส่องสว่างไปทั่วแผ่นดิน"
+  }
+ },
+ {
+  "h": "照应",
+  "p": "zhào yìng",
+  "en": "to look after",
+  "th": "คอยดูแล",
+  "ex": {
+   "zh": "请你照应一下孩子。",
+   "py": "Qǐng nǐ zhàoying yíxià háizi.",
+   "en": "Please keep an eye on the child.",
+   "th": "ช่วยดูแลเด็กหน่อยนะ"
+  }
+ }
+]

@@ -1,0 +1,1202 @@
+[
+ {
+  "h": "无从",
+  "p": "wú cóng",
+  "en": "no way to",
+  "th": "ไม่มีทาง",
+  "ex": {
+   "zh": "我无从知道他的想法。",
+   "py": "Wǒ wúcóng zhīdào tā de xiǎngfǎ.",
+   "en": "I have no way of knowing what he thinks.",
+   "th": "ฉันไม่มีทางรู้ความคิดของเขา"
+  }
+ },
+ {
+  "h": "无动于衷",
+  "p": "wú dòng yú zhōng",
+  "en": "unmoved",
+  "th": "เฉยเมย",
+  "ex": {
+   "zh": "他对这件事无动于衷。",
+   "py": "Tā duì zhè jiàn shì wúdòngyúzhōng.",
+   "en": "He is indifferent to this matter.",
+   "th": "เขาเฉยเมยต่อเรื่องนี้"
+  }
+ },
+ {
+  "h": "无非",
+  "p": "wú fēi",
+  "en": "nothing but",
+  "th": "ก็แค่",
+  "ex": {
+   "zh": "他无非是想要钱。",
+   "py": "Tā wúfēi shì xiǎng yào qián.",
+   "en": "He just wants money, that's all.",
+   "th": "เขาก็แค่ต้องการเงินเท่านั้น"
+  }
+ },
+ {
+  "h": "无精打采",
+  "p": "wú jīng dǎ cǎi",
+  "en": "listless",
+  "th": "หงอยเหงาไร้แรง",
+  "ex": {
+   "zh": "他今天无精打采的。",
+   "py": "Tā jīntiān wújīngdǎcǎi de.",
+   "en": "He is listless today.",
+   "th": "วันนี้เขาดูหงอยเหงาไร้เรี่ยวแรง"
+  }
+ },
+ {
+  "h": "无可奉告",
+  "p": "wú kě fèng gào",
+  "en": "no comment",
+  "th": "ไม่มีความเห็น",
+  "ex": {
+   "zh": "对此我无可奉告。",
+   "py": "Duì cǐ wǒ wúkěfènggào.",
+   "en": "I have no comment on this.",
+   "th": "เรื่องนี้ฉันขอไม่แสดงความเห็น"
+  }
+ },
+ {
+  "h": "无可奈何",
+  "p": "wú kě nài hé",
+  "en": "helpless",
+  "th": "จนใจ",
+  "ex": {
+   "zh": "他无可奈何地摇了摇头。",
+   "py": "Tā wúkěnàihé de yáo le yáo tóu.",
+   "en": "He shook his head helplessly.",
+   "th": "เขาส่ายหัวอย่างจนใจ"
+  }
+ },
+ {
+  "h": "无赖",
+  "p": "wú lài",
+  "en": "scoundrel",
+  "th": "อันธพาล",
+  "ex": {
+   "zh": "那个无赖又来要钱了。",
+   "py": "Nàge wúlài yòu lái yào qián le.",
+   "en": "That scoundrel came asking for money again.",
+   "th": "อันธพาลคนนั้นมาขอเงินอีกแล้ว"
+  }
+ },
+ {
+  "h": "无理取闹",
+  "p": "wú lǐ qǔ nào",
+  "en": "to make trouble",
+  "th": "หาเรื่องไร้เหตุผล",
+  "ex": {
+   "zh": "你别无理取闹了。",
+   "py": "Nǐ bié wúlǐqǔnào le.",
+   "en": "Stop making unreasonable trouble.",
+   "th": "เลิกหาเรื่องไร้เหตุผลได้แล้ว"
+  }
+ },
+ {
+  "h": "无能为力",
+  "p": "wú néng wéi lì",
+  "en": "powerless",
+  "th": "ไร้อำนาจช่วยเหลือ",
+  "ex": {
+   "zh": "这件事我无能为力。",
+   "py": "Zhè jiàn shì wǒ wúnéngwéilì.",
+   "en": "I am powerless in this matter.",
+   "th": "เรื่องนี้ฉันช่วยอะไรไม่ได้"
+  }
+ },
+ {
+  "h": "无穷无尽",
+  "p": "wú qióng wú jìn",
+  "en": "endless",
+  "th": "ไม่มีที่สิ้นสุด",
+  "ex": {
+   "zh": "他的精力无穷无尽。",
+   "py": "Tā de jīnglì wúqióngwújìn.",
+   "en": "His energy is endless.",
+   "th": "พลังงานของเขาไม่มีที่สิ้นสุด"
+  }
+ },
+ {
+  "h": "无微不至",
+  "p": "wú wēi bù zhì",
+  "en": "meticulous",
+  "th": "เอาใจใส่ทุกด้าน",
+  "ex": {
+   "zh": "妈妈无微不至地照顾我。",
+   "py": "Māma wúwēibúzhì de zhàogù wǒ.",
+   "en": "Mom takes care of me in every way.",
+   "th": "แม่ดูแลฉันอย่างเอาใจใส่ทุกด้าน"
+  }
+ },
+ {
+  "h": "无忧无虑",
+  "p": "wú yōu wú lǜ",
+  "en": "carefree",
+  "th": "ไร้กังวล",
+  "ex": {
+   "zh": "孩子们过得无忧无虑。",
+   "py": "Háizimen guò de wúyōuwúlǜ.",
+   "en": "The children live carefree lives.",
+   "th": "เด็ก ๆ ใช้ชีวิตอย่างไร้กังวล"
+  }
+ },
+ {
+  "h": "无知",
+  "p": "wú zhī",
+  "en": "ignorant",
+  "th": "โง่เขลา",
+  "ex": {
+   "zh": "无知不是他的错。",
+   "py": "Wúzhī bú shì tā de cuò.",
+   "en": "Ignorance is not his fault.",
+   "th": "ความไม่รู้ไม่ใช่ความผิดของเขา"
+  }
+ },
+ {
+  "h": "武侠",
+  "p": "wǔ xiá",
+  "en": "wuxia",
+  "th": "นิยายกำลังภายใน",
+  "ex": {
+   "zh": "我爸爸爱看武侠小说。",
+   "py": "Wǒ bàba ài kàn wǔxiá xiǎoshuō.",
+   "en": "My dad loves reading wuxia novels.",
+   "th": "พ่อฉันชอบอ่านนิยายกำลังภายใน"
+  }
+ },
+ {
+  "h": "武装",
+  "p": "wǔ zhuāng",
+  "en": "armed forces",
+  "th": "ติดอาวุธ",
+  "ex": {
+   "zh": "士兵们全副武装。",
+   "py": "Shìbīngmen quánfù wǔzhuāng.",
+   "en": "The soldiers are fully armed.",
+   "th": "ทหารติดอาวุธครบมือ"
+  }
+ },
+ {
+  "h": "侮辱",
+  "p": "wǔ rǔ",
+  "en": "to insult",
+  "th": "ดูหมิ่น",
+  "ex": {
+   "zh": "你不应该侮辱别人。",
+   "py": "Nǐ bù yīnggāi wǔrǔ biérén.",
+   "en": "You shouldn't insult others.",
+   "th": "คุณไม่ควรดูหมิ่นผู้อื่น"
+  }
+ },
+ {
+  "h": "舞蹈",
+  "p": "wǔ dǎo",
+  "en": "dance",
+  "th": "การเต้นรำ",
+  "ex": {
+   "zh": "她从小学习舞蹈。",
+   "py": "Tā cóngxiǎo xuéxí wǔdǎo.",
+   "en": "She has studied dance since childhood.",
+   "th": "เธอเรียนเต้นรำตั้งแต่เด็ก"
+  }
+ },
+ {
+  "h": "勿",
+  "p": "wù",
+  "en": "do not",
+  "th": "อย่า",
+  "ex": {
+   "zh": "请勿吸烟。",
+   "py": "Qǐng wù xīyān.",
+   "en": "Please do not smoke.",
+   "th": "กรุณาอย่าสูบบุหรี่"
+  }
+ },
+ {
+  "h": "物美价廉",
+  "p": "wù měi jià lián",
+  "en": "good and cheap",
+  "th": "ของดีราคาถูก",
+  "ex": {
+   "zh": "这家店的东西物美价廉。",
+   "py": "Zhè jiā diàn de dōngxi wùměijiàlián.",
+   "en": "Things in this shop are good and cheap.",
+   "th": "ของในร้านนี้ดีและราคาถูก"
+  }
+ },
+ {
+  "h": "物资",
+  "p": "wù zī",
+  "en": "supplies",
+  "th": "เสบียง",
+  "ex": {
+   "zh": "救灾物资已经送到了。",
+   "py": "Jiùzāi wùzī yǐjīng sòng dào le.",
+   "en": "Disaster relief supplies have arrived.",
+   "th": "เสบียงช่วยเหลือผู้ประสบภัยส่งถึงแล้ว"
+  }
+ },
+ {
+  "h": "误差",
+  "p": "wù chā",
+  "en": "error",
+  "th": "ค่าคลาดเคลื่อน",
+  "ex": {
+   "zh": "测量结果有一点误差。",
+   "py": "Cèliáng jiéguǒ yǒu yìdiǎn wùchā.",
+   "en": "The measurement has a small error.",
+   "th": "ผลการวัดมีค่าคลาดเคลื่อนเล็กน้อย"
+  }
+ },
+ {
+  "h": "误解",
+  "p": "wù jiě",
+  "en": "to misunderstand",
+  "th": "เข้าใจผิด",
+  "ex": {
+   "zh": "你误解我的意思了。",
+   "py": "Nǐ wùjiě wǒ de yìsi le.",
+   "en": "You misunderstood what I meant.",
+   "th": "คุณเข้าใจความหมายของฉันผิด"
+  }
+ },
+ {
+  "h": "务必",
+  "p": "wù bì",
+  "en": "must",
+  "th": "ต้อง",
+  "ex": {
+   "zh": "明天请务必准时到。",
+   "py": "Míngtiān qǐng wùbì zhǔnshí dào.",
+   "en": "Please be sure to arrive on time tomorrow.",
+   "th": "พรุ่งนี้กรุณามาตรงเวลาให้ได้"
+  }
+ },
+ {
+  "h": "务实",
+  "p": "wù shí",
+  "en": "pragmatic",
+  "th": "ปฏิบัติได้จริง",
+  "ex": {
+   "zh": "他是个务实的人。",
+   "py": "Tā shì ge wùshí de rén.",
+   "en": "He is a pragmatic person.",
+   "th": "เขาเป็นคนที่ยึดหลักปฏิบัติจริง"
+  }
+ },
+ {
+  "h": "夕阳",
+  "p": "xī yáng",
+  "en": "sunset",
+  "th": "ตะวันตกดิน",
+  "ex": {
+   "zh": "我们在海边看夕阳。",
+   "py": "Wǒmen zài hǎibiān kàn xīyáng.",
+   "en": "We watch the sunset at the seaside.",
+   "th": "เราดูพระอาทิตย์ตกที่ริมทะเล"
+  }
+ },
+ {
+  "h": "吸取",
+  "p": "xī qǔ",
+  "en": "to absorb",
+  "th": "ดูดซับ",
+  "ex": {
+   "zh": "我们要吸取教训。",
+   "py": "Wǒmen yào xīqǔ jiàoxun.",
+   "en": "We must learn our lesson.",
+   "th": "เราต้องเรียนรู้จากบทเรียน"
+  }
+ },
+ {
+  "h": "昔日",
+  "p": "xī rì",
+  "en": "former days",
+  "th": "วันวาน",
+  "ex": {
+   "zh": "昔日的朋友都不见了。",
+   "py": "Xīrì de péngyou dōu bú jiàn le.",
+   "en": "The friends of former days are all gone.",
+   "th": "เพื่อนในวันวานหายไปหมดแล้ว"
+  }
+ },
+ {
+  "h": "牺牲",
+  "p": "xī shēng",
+  "en": "to sacrifice",
+  "th": "เสียสละ",
+  "ex": {
+   "zh": "他为国家牺牲了生命。",
+   "py": "Tā wèi guójiā xīshēng le shēngmìng.",
+   "en": "He sacrificed his life for the country.",
+   "th": "เขาเสียสละชีวิตเพื่อประเทศชาติ"
+  }
+ },
+ {
+  "h": "溪",
+  "p": "xī",
+  "en": "stream",
+  "th": "ลำธาร",
+  "ex": {
+   "zh": "山里有一条清澈的小溪。",
+   "py": "Shān lǐ yǒu yì tiáo qīngchè de xiǎoxī.",
+   "en": "There is a clear stream in the mountains.",
+   "th": "ในภูเขามีลำธารใสสะอาดสายหนึ่ง"
+  }
+ },
+ {
+  "h": "熄灭",
+  "p": "xī miè",
+  "en": "to go out",
+  "th": "ดับ",
+  "ex": {
+   "zh": "大火终于熄灭了。",
+   "py": "Dàhuǒ zhōngyú xīmiè le.",
+   "en": "The fire finally went out.",
+   "th": "ไฟไหม้ใหญ่ดับลงในที่สุด"
+  }
+ },
+ {
+  "h": "膝盖",
+  "p": "xī gài",
+  "en": "knee",
+  "th": "หัวเข่า",
+  "ex": {
+   "zh": "我的膝盖有点疼。",
+   "py": "Wǒ de xīgài yǒudiǎn téng.",
+   "en": "My knee hurts a bit.",
+   "th": "หัวเข่าของฉันเจ็บนิดหน่อย"
+  }
+ },
+ {
+  "h": "习俗",
+  "p": "xí sú",
+  "en": "custom",
+  "th": "ขนบธรรมเนียม",
+  "ex": {
+   "zh": "每个地方都有不同的习俗。",
+   "py": "Měi ge dìfang dōu yǒu bùtóng de xísú.",
+   "en": "Every place has different customs.",
+   "th": "แต่ละที่มีขนบธรรมเนียมต่างกัน"
+  }
+ },
+ {
+  "h": "袭击",
+  "p": "xí jī",
+  "en": "attack",
+  "th": "โจมตี",
+  "ex": {
+   "zh": "他们遭到了突然袭击。",
+   "py": "Tāmen zāodào le tūrán xíjī.",
+   "en": "They suffered a surprise attack.",
+   "th": "พวกเขาถูกโจมตีอย่างกะทันหัน"
+  }
+ },
+ {
+  "h": "媳妇",
+  "p": "xí fù",
+  "en": "daughter-in-law",
+  "th": "ลูกสะใภ้",
+  "ex": {
+   "zh": "她是我们家的好媳妇。",
+   "py": "Tā shì wǒmen jiā de hǎo xífù.",
+   "en": "She is a good daughter-in-law of our family.",
+   "th": "เธอเป็นลูกสะใภ้ที่ดีของบ้านเรา"
+  }
+ },
+ {
+  "h": "喜闻乐见",
+  "p": "xǐ wén lè jiàn",
+  "en": "well received",
+  "th": "ชื่นชอบ",
+  "ex": {
+   "zh": "这是大家喜闻乐见的节目。",
+   "py": "Zhè shì dàjiā xǐwénlèjiàn de jiémù.",
+   "en": "This is a program everyone loves.",
+   "th": "นี่เป็นรายการที่ทุกคนชื่นชอบ"
+  }
+ },
+ {
+  "h": "喜悦",
+  "p": "xǐ yuè",
+  "en": "joy",
+  "th": "ความปิติยินดี",
+  "ex": {
+   "zh": "她脸上充满了喜悦。",
+   "py": "Tā liǎn shàng chōngmǎn le xǐyuè.",
+   "en": "Her face was full of joy.",
+   "th": "ใบหน้าของเธอเต็มไปด้วยความปิติยินดี"
+  }
+ },
+ {
+  "h": "系列",
+  "p": "xì liè",
+  "en": "series",
+  "th": "ชุด",
+  "ex": {
+   "zh": "这是一个系列电影。",
+   "py": "Zhè shì yí ge xìliè diànyǐng.",
+   "en": "This is a film series.",
+   "th": "นี่เป็นภาพยนตร์ชุดหนึ่ง"
+  }
+ },
+ {
+  "h": "细胞",
+  "p": "xì bāo",
+  "en": "cell",
+  "th": "เซลล์",
+  "ex": {
+   "zh": "人体由细胞组成。",
+   "py": "Réntǐ yóu xìbāo zǔchéng.",
+   "en": "The human body is made up of cells.",
+   "th": "ร่างกายมนุษย์ประกอบด้วยเซลล์"
+  }
+ },
+ {
+  "h": "细菌",
+  "p": "xì jūn",
+  "en": "bacteria",
+  "th": "แบคทีเรีย",
+  "ex": {
+   "zh": "洗手可以减少细菌。",
+   "py": "Xǐshǒu kěyǐ jiǎnshǎo xìjūn.",
+   "en": "Washing hands can reduce bacteria.",
+   "th": "การล้างมือช่วยลดแบคทีเรียได้"
+  }
+ },
+ {
+  "h": "细致",
+  "p": "xì zhì",
+  "en": "meticulous",
+  "th": "ละเอียดรอบคอบ",
+  "ex": {
+   "zh": "她做事很细致。",
+   "py": "Tā zuòshì hěn xìzhì.",
+   "en": "She works meticulously.",
+   "th": "เธอทำงานละเอียดรอบคอบมาก"
+  }
+ },
+ {
+  "h": "峡谷",
+  "p": "xiá gǔ",
+  "en": "canyon",
+  "th": "หุบเขาลึก",
+  "ex": {
+   "zh": "我们去看了大峡谷。",
+   "py": "Wǒmen qù kàn le dà xiágǔ.",
+   "en": "We went to see the Grand Canyon.",
+   "th": "เราไปดูหุบเขาแกรนด์แคนยอน"
+  }
+ },
+ {
+  "h": "狭隘",
+  "p": "xiá ài",
+  "en": "narrow-minded",
+  "th": "คับแคบ",
+  "ex": {
+   "zh": "他的想法很狭隘。",
+   "py": "Tā de xiǎngfǎ hěn xiá'ài.",
+   "en": "His thinking is very narrow-minded.",
+   "th": "ความคิดของเขาคับแคบมาก"
+  }
+ },
+ {
+  "h": "狭窄",
+  "p": "xiá zhǎi",
+  "en": "narrow",
+  "th": "แคบ",
+  "ex": {
+   "zh": "这条路太狭窄了。",
+   "py": "Zhè tiáo lù tài xiázhǎi le.",
+   "en": "This road is too narrow.",
+   "th": "ถนนสายนี้แคบเกินไป"
+  }
+ },
+ {
+  "h": "霞",
+  "p": "xiá",
+  "en": "rosy clouds",
+  "th": "เมฆสีเรื่อ",
+  "ex": {
+   "zh": "天边的晚霞很美。",
+   "py": "Tiānbiān de wǎnxiá hěn měi.",
+   "en": "The sunset glow on the horizon is beautiful.",
+   "th": "เมฆยามเย็นที่ขอบฟ้าสวยมาก"
+  }
+ },
+ {
+  "h": "下属",
+  "p": "xià shǔ",
+  "en": "subordinate",
+  "th": "ลูกน้อง",
+  "ex": {
+   "zh": "他对下属很友好。",
+   "py": "Tā duì xiàshǔ hěn yǒuhǎo.",
+   "en": "He is very friendly to his subordinates.",
+   "th": "เขาเป็นมิตรกับลูกน้องมาก"
+  }
+ },
+ {
+  "h": "夏令营",
+  "p": "xià lìng yíng",
+  "en": "summer camp",
+  "th": "ค่ายฤดูร้อน",
+  "ex": {
+   "zh": "孩子们参加了夏令营。",
+   "py": "Háizimen cānjiā le xiàlìngyíng.",
+   "en": "The children attended a summer camp.",
+   "th": "เด็ก ๆ เข้าร่วมค่ายฤดูร้อน"
+  }
+ },
+ {
+  "h": "先进",
+  "p": "xiān jìn",
+  "en": "advanced",
+  "th": "ก้าวหน้า",
+  "ex": {
+   "zh": "这里的设备很先进。",
+   "py": "Zhèlǐ de shèbèi hěn xiānjìn.",
+   "en": "The equipment here is very advanced.",
+   "th": "อุปกรณ์ที่นี่ทันสมัยมาก"
+  }
+ },
+ {
+  "h": "先前",
+  "p": "xiān qián",
+  "en": "previously",
+  "th": "ก่อนหน้านี้",
+  "ex": {
+   "zh": "他先前住在北京。",
+   "py": "Tā xiānqián zhù zài Běijīng.",
+   "en": "He previously lived in Beijing.",
+   "th": "ก่อนหน้านี้เขาอาศัยอยู่ที่ปักกิ่ง"
+  }
+ },
+ {
+  "h": "纤维",
+  "p": "xiān wéi",
+  "en": "fiber",
+  "th": "เส้นใย",
+  "ex": {
+   "zh": "这种衣服是天然纤维做的。",
+   "py": "Zhè zhǒng yīfu shì tiānrán xiānwéi zuò de.",
+   "en": "This clothing is made of natural fibers.",
+   "th": "เสื้อผ้านี้ทำจากเส้นใยธรรมชาติ"
+  }
+ },
+ {
+  "h": "掀起",
+  "p": "xiān qǐ",
+  "en": "to lift",
+  "th": "ยกขึ้น",
+  "ex": {
+   "zh": "风掀起了她的裙子。",
+   "py": "Fēng xiānqǐ le tā de qúnzi.",
+   "en": "The wind lifted her skirt.",
+   "th": "ลมพัดยกกระโปรงของเธอขึ้น"
+  }
+ },
+ {
+  "h": "鲜明",
+  "p": "xiān míng",
+  "en": "distinct",
+  "th": "ชัดเจนโดดเด่น",
+  "ex": {
+   "zh": "这幅画的色彩很鲜明。",
+   "py": "Zhè fú huà de sècǎi hěn xiānmíng.",
+   "en": "The colors of this painting are vivid.",
+   "th": "สีสันของภาพนี้สดใสชัดเจน"
+  }
+ },
+ {
+  "h": "闲话",
+  "p": "xián huà",
+  "en": "gossip",
+  "th": "เรื่องซุบซิบ",
+  "ex": {
+   "zh": "别在背后说人闲话。",
+   "py": "Bié zài bèihòu shuō rén xiánhuà.",
+   "en": "Don't gossip about people behind their backs.",
+   "th": "อย่านินทาลับหลังคนอื่น"
+  }
+ },
+ {
+  "h": "弦",
+  "p": "xián",
+  "en": "string",
+  "th": "สายเครื่องดนตรี",
+  "ex": {
+   "zh": "吉他的一根弦断了。",
+   "py": "Jítā de yì gēn xián duàn le.",
+   "en": "One string of the guitar broke.",
+   "th": "สายกีตาร์ขาดไปหนึ่งเส้น"
+  }
+ },
+ {
+  "h": "贤惠",
+  "p": "xián huì",
+  "en": "virtuous",
+  "th": "เป็นแม่บ้านที่ดี",
+  "ex": {
+   "zh": "她是个贤惠的妻子。",
+   "py": "Tā shì ge xiánhuì de qīzi.",
+   "en": "She is a virtuous wife.",
+   "th": "เธอเป็นภรรยาที่ดีเพียบพร้อม"
+  }
+ },
+ {
+  "h": "衔接",
+  "p": "xián jiē",
+  "en": "to connect",
+  "th": "เชื่อมต่อ",
+  "ex": {
+   "zh": "两个段落衔接得很自然。",
+   "py": "Liǎng ge duànluò xiánjiē de hěn zìrán.",
+   "en": "The two paragraphs connect very naturally.",
+   "th": "สองย่อหน้าเชื่อมต่อกันได้อย่างเป็นธรรมชาติ"
+  }
+ },
+ {
+  "h": "嫌",
+  "p": "xián",
+  "en": "to dislike",
+  "th": "รังเกียจ",
+  "ex": {
+   "zh": "她嫌这里太吵了。",
+   "py": "Tā xián zhèlǐ tài chǎo le.",
+   "en": "She finds it too noisy here.",
+   "th": "เธอรู้สึกว่าที่นี่เสียงดังเกินไป"
+  }
+ },
+ {
+  "h": "嫌疑",
+  "p": "xián yí",
+  "en": "suspicion",
+  "th": "ข้อสงสัย",
+  "ex": {
+   "zh": "警察怀疑他有嫌疑。",
+   "py": "Jǐngchá huáiyí tā yǒu xiányí.",
+   "en": "The police suspect him.",
+   "th": "ตำรวจสงสัยว่าเขาเป็นผู้ต้องสงสัย"
+  }
+ },
+ {
+  "h": "显著",
+  "p": "xiǎn zhù",
+  "en": "notable",
+  "th": "เห็นได้ชัด",
+  "ex": {
+   "zh": "他的成绩有显著提高。",
+   "py": "Tā de chéngjì yǒu xiǎnzhù tígāo.",
+   "en": "His grades improved notably.",
+   "th": "ผลการเรียนของเขาดีขึ้นอย่างเห็นได้ชัด"
+  }
+ },
+ {
+  "h": "现场",
+  "p": "xiàn chǎng",
+  "en": "scene",
+  "th": "ที่เกิดเหตุ",
+  "ex": {
+   "zh": "警察赶到了现场。",
+   "py": "Jǐngchá gǎn dào le xiànchǎng.",
+   "en": "The police arrived at the scene.",
+   "th": "ตำรวจไปถึงที่เกิดเหตุแล้ว"
+  }
+ },
+ {
+  "h": "现成",
+  "p": "xiàn chéng",
+  "en": "ready-made",
+  "th": "สำเร็จรูป",
+  "ex": {
+   "zh": "冰箱里有现成的饭菜。",
+   "py": "Bīngxiāng lǐ yǒu xiànchéng de fàncài.",
+   "en": "There is ready-made food in the fridge.",
+   "th": "ในตู้เย็นมีอาหารสำเร็จรูปอยู่"
+  }
+ },
+ {
+  "h": "现状",
+  "p": "xiàn zhuàng",
+  "en": "current situation",
+  "th": "สภาพปัจจุบัน",
+  "ex": {
+   "zh": "他对现状很满意。",
+   "py": "Tā duì xiànzhuàng hěn mǎnyì.",
+   "en": "He is very satisfied with the current situation.",
+   "th": "เขาพอใจกับสภาพปัจจุบันมาก"
+  }
+ },
+ {
+  "h": "线索",
+  "p": "xiàn suǒ",
+  "en": "clue",
+  "th": "เบาะแส",
+  "ex": {
+   "zh": "警察找到了新线索。",
+   "py": "Jǐngchá zhǎodào le xīn xiànsuǒ.",
+   "en": "The police found a new clue.",
+   "th": "ตำรวจพบเบาะแสใหม่"
+  }
+ },
+ {
+  "h": "宪法",
+  "p": "xiàn fǎ",
+  "en": "constitution",
+  "th": "รัฐธรรมนูญ",
+  "ex": {
+   "zh": "宪法保护公民的权利。",
+   "py": "Xiànfǎ bǎohù gōngmín de quánlì.",
+   "en": "The constitution protects citizens' rights.",
+   "th": "รัฐธรรมนูญคุ้มครองสิทธิของพลเมือง"
+  }
+ },
+ {
+  "h": "陷害",
+  "p": "xiàn hài",
+  "en": "to frame",
+  "th": "ใส่ร้าย",
+  "ex": {
+   "zh": "他被同事陷害了。",
+   "py": "Tā bèi tóngshì xiànhài le.",
+   "en": "He was framed by a colleague.",
+   "th": "เขาถูกเพื่อนร่วมงานใส่ร้าย"
+  }
+ },
+ {
+  "h": "陷入",
+  "p": "xiàn rù",
+  "en": "to fall into",
+  "th": "ตกอยู่ใน",
+  "ex": {
+   "zh": "公司陷入了困境。",
+   "py": "Gōngsī xiànrù le kùnjìng.",
+   "en": "The company fell into difficulty.",
+   "th": "บริษัทตกอยู่ในสถานการณ์ลำบาก"
+  }
+ },
+ {
+  "h": "馅儿",
+  "p": "xiàn r",
+  "en": "filling",
+  "th": "ไส้",
+  "ex": {
+   "zh": "饺子馅儿是猪肉的。",
+   "py": "Jiǎozi xiànr shì zhūròu de.",
+   "en": "The dumpling filling is pork.",
+   "th": "ไส้เกี๊ยวเป็นเนื้อหมู"
+  }
+ },
+ {
+  "h": "乡镇",
+  "p": "xiāng zhèn",
+  "en": "township",
+  "th": "ตำบล",
+  "ex": {
+   "zh": "他在乡镇工作。",
+   "py": "Tā zài xiāngzhèn gōngzuò.",
+   "en": "He works in a township.",
+   "th": "เขาทำงานในเขตตำบล"
+  }
+ },
+ {
+  "h": "相差",
+  "p": "xiāng chà",
+  "en": "to differ",
+  "th": "ต่างกัน",
+  "ex": {
+   "zh": "两个人的年龄相差三岁。",
+   "py": "Liǎng ge rén de niánlíng xiāngchà sān suì.",
+   "en": "The two people differ in age by three years.",
+   "th": "สองคนอายุต่างกันสามปี"
+  }
+ },
+ {
+  "h": "相等",
+  "p": "xiāng děng",
+  "en": "equal",
+  "th": "เท่ากัน",
+  "ex": {
+   "zh": "这两个数相等。",
+   "py": "Zhè liǎng ge shù xiāngděng.",
+   "en": "These two numbers are equal.",
+   "th": "ตัวเลขสองตัวนี้เท่ากัน"
+  }
+ },
+ {
+  "h": "相辅相成",
+  "p": "xiāng fǔ xiāng chéng",
+  "en": "complementary",
+  "th": "เกื้อหนุนกัน",
+  "ex": {
+   "zh": "理论和实践相辅相成。",
+   "py": "Lǐlùn hé shíjiàn xiāngfǔxiāngchéng.",
+   "en": "Theory and practice complement each other.",
+   "th": "ทฤษฎีและการปฏิบัติเกื้อหนุนกัน"
+  }
+ },
+ {
+  "h": "相应",
+  "p": "xiāng yìng",
+  "en": "corresponding",
+  "th": "ที่สอดคล้องกัน",
+  "ex": {
+   "zh": "我们要采取相应的措施。",
+   "py": "Wǒmen yào cǎiqǔ xiāngyìng de cuòshī.",
+   "en": "We need to take corresponding measures.",
+   "th": "เราต้องใช้มาตรการที่เหมาะสมตามสถานการณ์"
+  }
+ },
+ {
+  "h": "镶嵌",
+  "p": "xiāng qiàn",
+  "en": "to inlay",
+  "th": "ประดับฝัง",
+  "ex": {
+   "zh": "戒指上镶嵌着钻石。",
+   "py": "Jièzhi shàng xiāngqiàn zhe zuànshí.",
+   "en": "A diamond is set in the ring.",
+   "th": "บนแหวนประดับฝังด้วยเพชร"
+  }
+ },
+ {
+  "h": "响亮",
+  "p": "xiǎng liàng",
+  "en": "loud and clear",
+  "th": "ดังกังวาน",
+  "ex": {
+   "zh": "他的声音很响亮。",
+   "py": "Tā de shēngyīn hěn xiǎngliàng.",
+   "en": "His voice is loud and clear.",
+   "th": "เสียงของเขาดังกังวาน"
+  }
+ },
+ {
+  "h": "响应",
+  "p": "xiǎng yìng",
+  "en": "to respond to",
+  "th": "ตอบรับ",
+  "ex": {
+   "zh": "大家积极响应这个号召。",
+   "py": "Dàjiā jījí xiǎngyìng zhège hàozhào.",
+   "en": "Everyone responded to this call enthusiastically.",
+   "th": "ทุกคนตอบรับเสียงเรียกร้องนี้อย่างกระตือรือร้น"
+  }
+ },
+ {
+  "h": "想方设法",
+  "p": "xiǎng fāng shè fǎ",
+  "en": "to try every means",
+  "th": "หาทุกวิถีทาง",
+  "ex": {
+   "zh": "他想方设法帮助我们。",
+   "py": "Tā xiǎngfāngshèfǎ bāngzhù wǒmen.",
+   "en": "He tried every means to help us.",
+   "th": "เขาหาทุกวิถีทางเพื่อช่วยเรา"
+  }
+ },
+ {
+  "h": "向导",
+  "p": "xiàng dǎo",
+  "en": "guide",
+  "th": "ไกด์นำทาง",
+  "ex": {
+   "zh": "我们请了一位向导。",
+   "py": "Wǒmen qǐng le yí wèi xiàngdǎo.",
+   "en": "We hired a guide.",
+   "th": "เราจ้างไกด์นำทางคนหนึ่ง"
+  }
+ },
+ {
+  "h": "向来",
+  "p": "xiàng lái",
+  "en": "always",
+  "th": "มาโดยตลอด",
+  "ex": {
+   "zh": "他向来很守时。",
+   "py": "Tā xiànglái hěn shǒushí.",
+   "en": "He has always been punctual.",
+   "th": "เขาตรงต่อเวลามาโดยตลอด"
+  }
+ },
+ {
+  "h": "向往",
+  "p": "xiàng wǎng",
+  "en": "to yearn for",
+  "th": "โหยหา",
+  "ex": {
+   "zh": "我向往自由的生活。",
+   "py": "Wǒ xiàngwǎng zìyóu de shēnghuó.",
+   "en": "I yearn for a free life.",
+   "th": "ฉันโหยหาชีวิตที่เป็นอิสระ"
+  }
+ },
+ {
+  "h": "巷",
+  "p": "xiàng",
+  "en": "alley",
+  "th": "ตรอก",
+  "ex": {
+   "zh": "他家住在一条小巷里。",
+   "py": "Tā jiā zhù zài yì tiáo xiǎoxiàng lǐ.",
+   "en": "His home is in a small alley.",
+   "th": "บ้านของเขาอยู่ในตรอกเล็ก ๆ"
+  }
+ },
+ {
+  "h": "消除",
+  "p": "xiāo chú",
+  "en": "to eliminate",
+  "th": "กำจัดให้หมดไป",
+  "ex": {
+   "zh": "我们要消除误会。",
+   "py": "Wǒmen yào xiāochú wùhuì.",
+   "en": "We need to clear up the misunderstanding.",
+   "th": "เราต้องขจัดความเข้าใจผิด"
+  }
+ },
+ {
+  "h": "消毒",
+  "p": "xiāo dú",
+  "en": "to disinfect",
+  "th": "ฆ่าเชื้อ",
+  "ex": {
+   "zh": "使用前请先消毒。",
+   "py": "Shǐyòng qián qǐng xiān xiāodú.",
+   "en": "Please disinfect before use.",
+   "th": "กรุณาฆ่าเชื้อก่อนใช้งาน"
+  }
+ },
+ {
+  "h": "消防",
+  "p": "xiāo fáng",
+  "en": "firefighting",
+  "th": "ดับเพลิง",
+  "ex": {
+   "zh": "消防员很快赶到了。",
+   "py": "Xiāofángyuán hěn kuài gǎn dào le.",
+   "en": "The firefighters arrived quickly.",
+   "th": "พนักงานดับเพลิงมาถึงอย่างรวดเร็ว"
+  }
+ },
+ {
+  "h": "消耗",
+  "p": "xiāo hào",
+  "en": "to consume",
+  "th": "สิ้นเปลือง",
+  "ex": {
+   "zh": "跑步会消耗很多能量。",
+   "py": "Pǎobù huì xiāohào hěn duō néngliàng.",
+   "en": "Running consumes a lot of energy.",
+   "th": "การวิ่งใช้พลังงานมาก"
+  }
+ },
+ {
+  "h": "消极",
+  "p": "xiāo jí",
+  "en": "negative",
+  "th": "ในแง่ลบ",
+  "ex": {
+   "zh": "不要有消极的想法。",
+   "py": "Bú yào yǒu xiāojí de xiǎngfǎ.",
+   "en": "Don't have negative thoughts.",
+   "th": "อย่ามีความคิดในแง่ลบ"
+  }
+ },
+ {
+  "h": "销毁",
+  "p": "xiāo huǐ",
+  "en": "to destroy",
+  "th": "ทำลายทิ้ง",
+  "ex": {
+   "zh": "他们销毁了旧文件。",
+   "py": "Tāmen xiāohuǐ le jiù wénjiàn.",
+   "en": "They destroyed the old documents.",
+   "th": "พวกเขาทำลายเอกสารเก่าทิ้ง"
+  }
+ },
+ {
+  "h": "小心翼翼",
+  "p": "xiǎo xīn yì yì",
+  "en": "very carefully",
+  "th": "ระมัดระวังอย่างยิ่ง",
+  "ex": {
+   "zh": "他小心翼翼地拿起杯子。",
+   "py": "Tā xiǎoxīnyìyì de ná qǐ bēizi.",
+   "en": "He picked up the cup very carefully.",
+   "th": "เขาหยิบแก้วขึ้นมาอย่างระมัดระวังยิ่ง"
+  }
+ },
+ {
+  "h": "肖像",
+  "p": "xiào xiàng",
+  "en": "portrait",
+  "th": "ภาพเหมือน",
+  "ex": {
+   "zh": "墙上挂着一幅肖像画。",
+   "py": "Qiáng shàng guà zhe yì fú xiàoxiànghuà.",
+   "en": "A portrait hangs on the wall.",
+   "th": "บนผนังแขวนภาพวาดเหมือนอยู่หนึ่งภาพ"
+  }
+ },
+ {
+  "h": "效益",
+  "p": "xiào yì",
+  "en": "benefit",
+  "th": "ประโยชน์ผลตอบแทน",
+  "ex": {
+   "zh": "这家公司的经济效益很好。",
+   "py": "Zhè jiā gōngsī de jīngjì xiàoyì hěn hǎo.",
+   "en": "This company has good economic returns.",
+   "th": "บริษัทนี้มีผลตอบแทนทางเศรษฐกิจดี"
+  }
+ },
+ {
+  "h": "协会",
+  "p": "xié huì",
+  "en": "association",
+  "th": "สมาคม",
+  "ex": {
+   "zh": "他加入了摄影协会。",
+   "py": "Tā jiārù le shèyǐng xiéhuì.",
+   "en": "He joined the photography association.",
+   "th": "เขาเข้าร่วมสมาคมถ่ายภาพ"
+  }
+ },
+ {
+  "h": "协商",
+  "p": "xié shāng",
+  "en": "to negotiate",
+  "th": "ปรึกษาหารือ",
+  "ex": {
+   "zh": "双方正在协商价格。",
+   "py": "Shuāngfāng zhèngzài xiéshāng jiàgé.",
+   "en": "Both sides are negotiating the price.",
+   "th": "ทั้งสองฝ่ายกำลังเจรจาเรื่องราคา"
+  }
+ },
+ {
+  "h": "协议",
+  "p": "xié yì",
+  "en": "agreement",
+  "th": "ข้อตกลง",
+  "ex": {
+   "zh": "他们签了一份协议。",
+   "py": "Tāmen qiān le yí fèn xiéyì.",
+   "en": "They signed an agreement.",
+   "th": "พวกเขาลงนามในข้อตกลงฉบับหนึ่ง"
+  }
+ },
+ {
+  "h": "协助",
+  "p": "xié zhù",
+  "en": "to assist",
+  "th": "ช่วยเหลือ",
+  "ex": {
+   "zh": "请你协助我完成工作。",
+   "py": "Qǐng nǐ xiézhù wǒ wánchéng gōngzuò.",
+   "en": "Please assist me in finishing the work.",
+   "th": "ช่วยเหลือฉันทำงานให้เสร็จด้วย"
+  }
+ },
+ {
+  "h": "携带",
+  "p": "xié dài",
+  "en": "to carry",
+  "th": "พกพา",
+  "ex": {
+   "zh": "请勿携带危险物品。",
+   "py": "Qǐng wù xiédài wēixiǎn wùpǐn.",
+   "en": "Please do not carry dangerous items.",
+   "th": "กรุณาอย่าพกพาของอันตราย"
+  }
+ },
+ {
+  "h": "写作",
+  "p": "xiě zuò",
+  "en": "writing",
+  "th": "การเขียน",
+  "ex": {
+   "zh": "他喜欢写作。",
+   "py": "Tā xǐhuan xiězuò.",
+   "en": "He likes writing.",
+   "th": "เขาชอบเขียนหนังสือ"
+  }
+ },
+ {
+  "h": "泄露",
+  "p": "xiè lù",
+  "en": "to leak",
+  "th": "เปิดเผยความลับ",
+  "ex": {
+   "zh": "不要泄露公司的秘密。",
+   "py": "Bú yào xièlòu gōngsī de mìmì.",
+   "en": "Don't leak the company's secrets.",
+   "th": "อย่าเปิดเผยความลับของบริษัท"
+  }
+ },
+ {
+  "h": "泄气",
+  "p": "xiè qì",
+  "en": "to lose heart",
+  "th": "ท้อแท้",
+  "ex": {
+   "zh": "别泄气，再试一次。",
+   "py": "Bié xièqì, zài shì yí cì.",
+   "en": "Don't lose heart, try again.",
+   "th": "อย่าท้อ ลองอีกครั้ง"
+  }
+ },
+ {
+  "h": "屑",
+  "p": "xiè",
+  "en": "crumbs",
+  "th": "เศษเล็กเศษน้อย",
+  "ex": {
+   "zh": "桌上有很多面包屑。",
+   "py": "Zhuō shàng yǒu hěn duō miànbāo xiè.",
+   "en": "There are lots of bread crumbs on the table.",
+   "th": "บนโต๊ะมีเศษขนมปังเต็มไปหมด"
+  }
+ },
+ {
+  "h": "谢绝",
+  "p": "xiè jué",
+  "en": "to decline politely",
+  "th": "ปฏิเสธอย่างสุภาพ",
+  "ex": {
+   "zh": "他谢绝了我们的邀请。",
+   "py": "Tā xièjué le wǒmen de yāoqǐng.",
+   "en": "He politely declined our invitation.",
+   "th": "เขาปฏิเสธคำเชิญของเราอย่างสุภาพ"
+  }
+ },
+ {
+  "h": "心得",
+  "p": "xīn dé",
+  "en": "insight",
+  "th": "ข้อคิดที่ได้",
+  "ex": {
+   "zh": "请分享一下学习心得。",
+   "py": "Qǐng fēnxiǎng yíxià xuéxí xīndé.",
+   "en": "Please share what you have learned from studying.",
+   "th": "ช่วยแบ่งปันข้อคิดจากการเรียนหน่อย"
+  }
+ },
+ {
+  "h": "心灵",
+  "p": "xīn líng",
+  "en": "mind and soul",
+  "th": "จิตใจ",
+  "ex": {
+   "zh": "音乐能净化心灵。",
+   "py": "Yīnyuè néng jìnghuà xīnlíng.",
+   "en": "Music can cleanse the soul.",
+   "th": "ดนตรีช่วยชำระจิตใจได้"
+  }
+ }
+]

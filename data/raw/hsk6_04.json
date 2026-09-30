@@ -1,0 +1,1202 @@
+[
+ {
+  "h": "党",
+  "p": "Dǎng",
+  "en": "political party",
+  "th": "พรรค",
+  "ex": {
+   "zh": "他是这个党的成员。",
+   "py": "Tā shì zhège dǎng de chéngyuán.",
+   "en": "He is a member of this party.",
+   "th": "เขาเป็นสมาชิกของพรรคนี้"
+  }
+ },
+ {
+  "h": "档案",
+  "p": "dàng àn",
+  "en": "file (records)",
+  "th": "แฟ้มประวัติ",
+  "ex": {
+   "zh": "学校保存着每个学生的档案。",
+   "py": "Xuéxiào bǎocún zhe měi gè xuésheng de dàng'àn.",
+   "en": "The school keeps a file on every student.",
+   "th": "โรงเรียนเก็บแฟ้มประวัติของนักเรียนทุกคน"
+  }
+ },
+ {
+  "h": "档次",
+  "p": "dàng cì",
+  "en": "grade",
+  "th": "ระดับ",
+  "ex": {
+   "zh": "这家酒店的档次很高。",
+   "py": "Zhè jiā jiǔdiàn de dàngcì hěn gāo.",
+   "en": "This hotel is of a high grade.",
+   "th": "โรงแรมนี้ระดับสูงมาก"
+  }
+ },
+ {
+  "h": "导弹",
+  "p": "dǎo dàn",
+  "en": "missile",
+  "th": "ขีปนาวุธ",
+  "ex": {
+   "zh": "军队试射了一枚导弹。",
+   "py": "Jūnduì shìshè le yī méi dǎodàn.",
+   "en": "The army test-fired a missile.",
+   "th": "กองทัพทดสอบยิงขีปนาวุธหนึ่งลูก"
+  }
+ },
+ {
+  "h": "导航",
+  "p": "dǎo háng",
+  "en": "navigation",
+  "th": "นำทาง",
+  "ex": {
+   "zh": "我用手机导航去机场。",
+   "py": "Wǒ yòng shǒujī dǎoháng qù jīchǎng.",
+   "en": "I use phone navigation to get to the airport.",
+   "th": "ฉันใช้แผนที่นำทางในโทรศัพท์ไปสนามบิน"
+  }
+ },
+ {
+  "h": "导向",
+  "p": "dǎo xiàng",
+  "en": "orientation",
+  "th": "ทิศทาง",
+  "ex": {
+   "zh": "教育要以学生为导向。",
+   "py": "Jiàoyù yào yǐ xuésheng wéi dǎoxiàng.",
+   "en": "Education should be student-oriented.",
+   "th": "การศึกษาควรมีนักเรียนเป็นศูนย์กลาง"
+  }
+ },
+ {
+  "h": "岛屿",
+  "p": "dǎo yǔ",
+  "en": "island",
+  "th": "เกาะ",
+  "ex": {
+   "zh": "这片海域有很多岛屿。",
+   "py": "Zhè piàn hǎiyù yǒu hěn duō dǎoyǔ.",
+   "en": "There are many islands in this sea area.",
+   "th": "น่านน้ำแถบนี้มีเกาะมากมาย"
+  }
+ },
+ {
+  "h": "捣乱",
+  "p": "dǎo luàn",
+  "en": "to make trouble",
+  "th": "ก่อกวน",
+  "ex": {
+   "zh": "别在这里捣乱！",
+   "py": "Bié zài zhèlǐ dǎoluàn!",
+   "en": "Don't make trouble here!",
+   "th": "อย่ามาก่อกวนที่นี่!"
+  }
+ },
+ {
+  "h": "倒闭",
+  "p": "dǎo bì",
+  "en": "to go bankrupt",
+  "th": "ล้มละลายปิดกิจการ",
+  "ex": {
+   "zh": "这家小店去年倒闭了。",
+   "py": "Zhè jiā xiǎodiàn qùnián dǎobì le.",
+   "en": "This little shop went out of business last year.",
+   "th": "ร้านเล็กๆ นี้ปิดกิจการไปเมื่อปีที่แล้ว"
+  }
+ },
+ {
+  "h": "盗窃",
+  "p": "dào qiè",
+  "en": "to steal",
+  "th": "ขโมย",
+  "ex": {
+   "zh": "他因盗窃被判了刑。",
+   "py": "Tā yīn dàoqiè bèi pàn le xíng.",
+   "en": "He was sentenced for theft.",
+   "th": "เขาถูกตัดสินจำคุกข้อหาลักทรัพย์"
+  }
+ },
+ {
+  "h": "稻谷",
+  "p": "dào gǔ",
+  "en": "rice (unhusked)",
+  "th": "ข้าวเปลือก",
+  "ex": {
+   "zh": "农民正在收割稻谷。",
+   "py": "Nóngmín zhèngzài shōugē dàogǔ.",
+   "en": "Farmers are harvesting the rice.",
+   "th": "ชาวนากำลังเกี่ยวข้าว"
+  }
+ },
+ {
+  "h": "地步",
+  "p": "dì bù",
+  "en": "extent",
+  "th": "ขั้น",
+  "ex": {
+   "zh": "事情已经到了这种地步。",
+   "py": "Shìqing yǐjīng dào le zhè zhǒng dìbù.",
+   "en": "Things have already reached this point.",
+   "th": "เรื่องมาถึงขั้นนี้แล้ว"
+  }
+ },
+ {
+  "h": "地势",
+  "p": "dì shì",
+  "en": "terrain",
+  "th": "ภูมิประเทศ",
+  "ex": {
+   "zh": "这里地势平坦。",
+   "py": "Zhèlǐ dìshì píngtǎn.",
+   "en": "The terrain here is flat.",
+   "th": "ภูมิประเทศที่นี่ราบเรียบ"
+  }
+ },
+ {
+  "h": "地质",
+  "p": "dì zhì",
+  "en": "geology",
+  "th": "ธรณีวิทยา",
+  "ex": {
+   "zh": "他在大学学习地质。",
+   "py": "Tā zài dàxué xuéxí dìzhì.",
+   "en": "He studies geology at university.",
+   "th": "เขาเรียนธรณีวิทยาที่มหาวิทยาลัย"
+  }
+ },
+ {
+  "h": "得不偿失",
+  "p": "dé bù cháng shī",
+  "en": "not worth the cost",
+  "th": "เสียมากกว่าได้",
+  "ex": {
+   "zh": "为了小钱失去朋友，得不偿失。",
+   "py": "Wèile xiǎo qián shīqù péngyou, dé bù cháng shī.",
+   "en": "Losing a friend over a little money is not worth it.",
+   "th": "เสียเพื่อนเพราะเงินนิดหน่อย เสียมากกว่าได้"
+  }
+ },
+ {
+  "h": "得力",
+  "p": "dé lì",
+  "en": "capable",
+  "th": "เก่งเป็นกำลังสำคัญ",
+  "ex": {
+   "zh": "他是老板的得力助手。",
+   "py": "Tā shì lǎobǎn de délì zhùshǒu.",
+   "en": "He is the boss's capable assistant.",
+   "th": "เขาเป็นผู้ช่วยมือดีของเจ้านาย"
+  }
+ },
+ {
+  "h": "得天独厚",
+  "p": "dé tiān dú hòu",
+  "en": "naturally advantaged",
+  "th": "ได้เปรียบตามธรรมชาติ",
+  "ex": {
+   "zh": "这里有得天独厚的自然条件。",
+   "py": "Zhèlǐ yǒu détiān-dúhòu de zìrán tiáojiàn.",
+   "en": "This place enjoys exceptional natural conditions.",
+   "th": "ที่นี่มีสภาพธรรมชาติที่ได้เปรียบอย่างยิ่ง"
+  }
+ },
+ {
+  "h": "得罪",
+  "p": "dé zuì",
+  "en": "to offend",
+  "th": "ทำให้ขุ่นเคือง",
+  "ex": {
+   "zh": "我不小心得罪了他。",
+   "py": "Wǒ bù xiǎoxīn dézuì le tā.",
+   "en": "I accidentally offended him.",
+   "th": "ฉันเผลอทำให้เขาขุ่นเคือง"
+  }
+ },
+ {
+  "h": "灯笼",
+  "p": "dēng lóng",
+  "en": "lantern",
+  "th": "โคมไฟ",
+  "ex": {
+   "zh": "春节时家家挂红灯笼。",
+   "py": "Chūnjié shí jiājiā guà hóng dēnglong.",
+   "en": "Every home hangs red lanterns during Spring Festival.",
+   "th": "ตอนตรุษจีนทุกบ้านแขวนโคมแดง"
+  }
+ },
+ {
+  "h": "登陆",
+  "p": "dēng lù",
+  "en": "to land",
+  "th": "ขึ้นฝั่ง",
+  "ex": {
+   "zh": "台风今晚将登陆。",
+   "py": "Táifēng jīnwǎn jiāng dēnglù.",
+   "en": "The typhoon will make landfall tonight.",
+   "th": "พายุไต้ฝุ่นจะขึ้นฝั่งคืนนี้"
+  }
+ },
+ {
+  "h": "登录",
+  "p": "dēng lù",
+  "en": "to log in",
+  "th": "เข้าสู่ระบบ",
+  "ex": {
+   "zh": "请先登录你的账号。",
+   "py": "Qǐng xiān dēnglù nǐ de zhànghào.",
+   "en": "Please log in to your account first.",
+   "th": "กรุณาเข้าสู่ระบบบัญชีของคุณก่อน"
+  }
+ },
+ {
+  "h": "蹬",
+  "p": "dēng",
+  "en": "to pedal",
+  "th": "ถีบ",
+  "ex": {
+   "zh": "他用力蹬着自行车。",
+   "py": "Tā yònglì dēngzhe zìxíngchē.",
+   "en": "He pedals the bicycle hard.",
+   "th": "เขาถีบจักรยานอย่างแรง"
+  }
+ },
+ {
+  "h": "等级",
+  "p": "děng jí",
+  "en": "grade",
+  "th": "ระดับชั้น",
+  "ex": {
+   "zh": "这里的会员分为三个等级。",
+   "py": "Zhèlǐ de huìyuán fēn wéi sān gè děngjí.",
+   "en": "Members here are divided into three levels.",
+   "th": "สมาชิกที่นี่แบ่งเป็นสามระดับ"
+  }
+ },
+ {
+  "h": "瞪",
+  "p": "dèng",
+  "en": "to glare",
+  "th": "ถลึงตา",
+  "ex": {
+   "zh": "他生气地瞪了我一眼。",
+   "py": "Tā shēngqì de dèng le wǒ yī yǎn.",
+   "en": "He glared at me angrily.",
+   "th": "เขาถลึงตาใส่ฉันอย่างโกรธ"
+  }
+ },
+ {
+  "h": "堤坝",
+  "p": "dī bà",
+  "en": "dam",
+  "th": "เขื่อนกั้นน้ำ",
+  "ex": {
+   "zh": "洪水冲垮了堤坝。",
+   "py": "Hóngshuǐ chōngkuǎ le dībà.",
+   "en": "The flood broke the dam.",
+   "th": "น้ำท่วมทำให้เขื่อนพัง"
+  }
+ },
+ {
+  "h": "敌视",
+  "p": "dí shì",
+  "en": "to be hostile to",
+  "th": "เป็นปรปักษ์",
+  "ex": {
+   "zh": "他们互相敌视。",
+   "py": "Tāmen hùxiāng díshì.",
+   "en": "They are hostile toward each other.",
+   "th": "พวกเขาเป็นปรปักษ์ต่อกัน"
+  }
+ },
+ {
+  "h": "抵达",
+  "p": "dǐ dá",
+  "en": "to arrive",
+  "th": "มาถึง",
+  "ex": {
+   "zh": "飞机准时抵达北京。",
+   "py": "Fēijī zhǔnshí dǐdá Běijīng.",
+   "en": "The plane arrived in Beijing on time.",
+   "th": "เครื่องบินมาถึงปักกิ่งตรงเวลา"
+  }
+ },
+ {
+  "h": "抵抗",
+  "p": "dǐ kàng",
+  "en": "to resist",
+  "th": "ต้านทาน",
+  "ex": {
+   "zh": "运动能增强抵抗力。",
+   "py": "Yùndòng néng zēngqiáng dǐkànglì.",
+   "en": "Exercise can strengthen your resistance.",
+   "th": "การออกกำลังกายช่วยเพิ่มภูมิต้านทาน"
+  }
+ },
+ {
+  "h": "抵制",
+  "p": "dǐ zhì",
+  "en": "to boycott",
+  "th": "คว่ำบาตร",
+  "ex": {
+   "zh": "消费者抵制这个品牌。",
+   "py": "Xiāofèizhě dǐzhì zhège pǐnpái.",
+   "en": "Consumers are boycotting this brand.",
+   "th": "ผู้บริโภคคว่ำบาตรแบรนด์นี้"
+  }
+ },
+ {
+  "h": "递增",
+  "p": "dì zēng",
+  "en": "to increase gradually",
+  "th": "เพิ่มขึ้นเรื่อยๆ",
+  "ex": {
+   "zh": "公司的收入逐年递增。",
+   "py": "Gōngsī de shōurù zhúnián dìzēng.",
+   "en": "The company's income increases year by year.",
+   "th": "รายได้ของบริษัทเพิ่มขึ้นทุกปี"
+  }
+ },
+ {
+  "h": "颠簸",
+  "p": "diān bǒ",
+  "en": "to bump along",
+  "th": "กระแทกโยกเยก",
+  "ex": {
+   "zh": "车在山路上颠簸前行。",
+   "py": "Chē zài shānlù shàng diānbǒ qiánxíng.",
+   "en": "The car bumps along the mountain road.",
+   "th": "รถแล่นโยกเยกไปบนถนนภูเขา"
+  }
+ },
+ {
+  "h": "颠倒",
+  "p": "diān dǎo",
+  "en": "to reverse",
+  "th": "กลับหัวกลับหาง",
+  "ex": {
+   "zh": "你把顺序颠倒了。",
+   "py": "Nǐ bǎ shùnxù diāndǎo le.",
+   "en": "You got the order reversed.",
+   "th": "คุณสลับลำดับกลับกันแล้ว"
+  }
+ },
+ {
+  "h": "典礼",
+  "p": "diǎn lǐ",
+  "en": "ceremony",
+  "th": "พิธี",
+  "ex": {
+   "zh": "毕业典礼在礼堂举行。",
+   "py": "Bìyè diǎnlǐ zài lǐtáng jǔxíng.",
+   "en": "The graduation ceremony is held in the auditorium.",
+   "th": "พิธีจบการศึกษาจัดที่หอประชุม"
+  }
+ },
+ {
+  "h": "典型",
+  "p": "diǎn xíng",
+  "en": "typical",
+  "th": "ตัวอย่างที่เป็นแบบฉบับ",
+  "ex": {
+   "zh": "这是一个典型的例子。",
+   "py": "Zhè shì yī gè diǎnxíng de lìzi.",
+   "en": "This is a typical example.",
+   "th": "นี่เป็นตัวอย่างที่เป็นแบบฉบับ"
+  }
+ },
+ {
+  "h": "点缀",
+  "p": "diǎn zhuì",
+  "en": "to decorate",
+  "th": "ประดับ",
+  "ex": {
+   "zh": "花朵点缀着整个花园。",
+   "py": "Huāduǒ diǎnzhuì zhe zhěnggè huāyuán.",
+   "en": "Flowers adorn the whole garden.",
+   "th": "ดอกไม้ประดับไปทั่วทั้งสวน"
+  }
+ },
+ {
+  "h": "电源",
+  "p": "diàn yuán",
+  "en": "power supply",
+  "th": "แหล่งจ่ายไฟ",
+  "ex": {
+   "zh": "请先关掉电源。",
+   "py": "Qǐng xiān guāndiào diànyuán.",
+   "en": "Please turn off the power first.",
+   "th": "กรุณาปิดแหล่งจ่ายไฟก่อน"
+  }
+ },
+ {
+  "h": "垫",
+  "p": "diàn",
+  "en": "pad",
+  "th": "รองไว้",
+  "ex": {
+   "zh": "他在椅子上放了一个垫子。",
+   "py": "Tā zài yǐzi shàng fàng le yī gè diànzi.",
+   "en": "He put a cushion on the chair.",
+   "th": "เขาวางเบาะรองไว้บนเก้าอี้"
+  }
+ },
+ {
+  "h": "惦记",
+  "p": "diàn jì",
+  "en": "to keep in mind",
+  "th": "เป็นห่วงคิดถึง",
+  "ex": {
+   "zh": "妈妈总是惦记着我。",
+   "py": "Māma zǒngshì diànjì zhe wǒ.",
+   "en": "Mom is always thinking about me.",
+   "th": "แม่เป็นห่วงคิดถึงฉันอยู่เสมอ"
+  }
+ },
+ {
+  "h": "奠定",
+  "p": "diàn dìng",
+  "en": "to lay (foundation)",
+  "th": "วางรากฐาน",
+  "ex": {
+   "zh": "这项研究奠定了基础。",
+   "py": "Zhè xiàng yánjiū diàndìng le jīchǔ.",
+   "en": "This research laid the foundation.",
+   "th": "งานวิจัยนี้วางรากฐานไว้"
+  }
+ },
+ {
+  "h": "叼",
+  "p": "diāo",
+  "en": "to hold in mouth",
+  "th": "คาบ",
+  "ex": {
+   "zh": "小狗叼着一根骨头。",
+   "py": "Xiǎogǒu diāozhe yī gēn gǔtou.",
+   "en": "The puppy is holding a bone in its mouth.",
+   "th": "ลูกสุนัขคาบกระดูกอยู่"
+  }
+ },
+ {
+  "h": "雕刻",
+  "p": "diāo kè",
+  "en": "to carve",
+  "th": "แกะสลัก",
+  "ex": {
+   "zh": "他会雕刻木头。",
+   "py": "Tā huì diāokè mùtou.",
+   "en": "He can carve wood.",
+   "th": "เขาแกะสลักไม้เป็น"
+  }
+ },
+ {
+  "h": "雕塑",
+  "p": "diāo sù",
+  "en": "sculpture",
+  "th": "ประติมากรรม",
+  "ex": {
+   "zh": "公园里有一座雕塑。",
+   "py": "Gōngyuán lǐ yǒu yī zuò diāosù.",
+   "en": "There is a sculpture in the park.",
+   "th": "ในสวนสาธารณะมีประติมากรรมชิ้นหนึ่ง"
+  }
+ },
+ {
+  "h": "吊",
+  "p": "diào",
+  "en": "to hang",
+  "th": "แขวน",
+  "ex": {
+   "zh": "他把灯吊在天花板上。",
+   "py": "Tā bǎ dēng diào zài tiānhuābǎn shàng.",
+   "en": "He hung the lamp from the ceiling.",
+   "th": "เขาแขวนโคมไฟไว้ที่เพดาน"
+  }
+ },
+ {
+  "h": "调动",
+  "p": "diào dòng",
+  "en": "to transfer",
+  "th": "ย้ายตำแหน่ง",
+  "ex": {
+   "zh": "他被调动到上海工作。",
+   "py": "Tā bèi diàodòng dào Shànghǎi gōngzuò.",
+   "en": "He was transferred to work in Shanghai.",
+   "th": "เขาถูกย้ายไปทำงานที่เซี่ยงไฮ้"
+  }
+ },
+ {
+  "h": "调和",
+  "p": "tiáo hé",
+  "en": "to reconcile",
+  "th": "ประสาน",
+  "ex": {
+   "zh": "他想调和双方的矛盾。",
+   "py": "Tā xiǎng tiáohé shuāngfāng de máodùn.",
+   "en": "He wants to reconcile the conflict between both sides.",
+   "th": "เขาอยากประสานความขัดแย้งของทั้งสองฝ่าย"
+  }
+ },
+ {
+  "h": "调剂",
+  "p": "tiáo jì",
+  "en": "to balance",
+  "th": "ปรับสมดุล",
+  "ex": {
+   "zh": "听音乐可以调剂生活。",
+   "py": "Tīng yīnyuè kěyǐ tiáojì shēnghuó.",
+   "en": "Listening to music can add some variety to life.",
+   "th": "การฟังเพลงช่วยเพิ่มสีสันให้ชีวิต"
+  }
+ },
+ {
+  "h": "调节",
+  "p": "tiáo jié",
+  "en": "to adjust",
+  "th": "ปรับ",
+  "ex": {
+   "zh": "你可以调节空调的温度。",
+   "py": "Nǐ kěyǐ tiáojié kōngtiáo de wēndù.",
+   "en": "You can adjust the air conditioner's temperature.",
+   "th": "คุณปรับอุณหภูมิของเครื่องปรับอากาศได้"
+  }
+ },
+ {
+  "h": "调解",
+  "p": "tiáo jiě",
+  "en": "to mediate",
+  "th": "ไกล่เกลี่ย",
+  "ex": {
+   "zh": "警察调解了他们的争吵。",
+   "py": "Jǐngchá tiáojiě le tāmen de zhēngchǎo.",
+   "en": "The police mediated their quarrel.",
+   "th": "ตำรวจไกล่เกลี่ยการทะเลาะของพวกเขา"
+  }
+ },
+ {
+  "h": "调料",
+  "p": "tiáo liào",
+  "en": "seasoning",
+  "th": "เครื่องปรุง",
+  "ex": {
+   "zh": "做菜需要各种调料。",
+   "py": "Zuòcài xūyào gèzhǒng tiáoliào.",
+   "en": "Cooking requires various seasonings.",
+   "th": "การทำอาหารต้องใช้เครื่องปรุงหลายอย่าง"
+  }
+ },
+ {
+  "h": "跌",
+  "p": "diē",
+  "en": "to fall",
+  "th": "ล้ม",
+  "ex": {
+   "zh": "他不小心跌倒了。",
+   "py": "Tā bù xiǎoxīn diēdǎo le.",
+   "en": "He accidentally fell down.",
+   "th": "เขาเผลอล้มลง"
+  }
+ },
+ {
+  "h": "叮嘱",
+  "p": "dīng zhǔ",
+  "en": "to urge repeatedly",
+  "th": "กำชับ",
+  "ex": {
+   "zh": "妈妈叮嘱我路上小心。",
+   "py": "Māma dīngzhǔ wǒ lùshang xiǎoxīn.",
+   "en": "Mom repeatedly told me to be careful on the road.",
+   "th": "แม่กำชับให้ฉันระวังตัวระหว่างทาง"
+  }
+ },
+ {
+  "h": "盯",
+  "p": "dīng",
+  "en": "to stare at",
+  "th": "จ้อง",
+  "ex": {
+   "zh": "他一直盯着手机看。",
+   "py": "Tā yīzhí dīngzhe shǒujī kàn.",
+   "en": "He keeps staring at his phone.",
+   "th": "เขาจ้องมองโทรศัพท์ตลอดเวลา"
+  }
+ },
+ {
+  "h": "定期",
+  "p": "dìng qī",
+  "en": "regularly",
+  "th": "เป็นประจำ",
+  "ex": {
+   "zh": "你应该定期检查身体。",
+   "py": "Nǐ yīnggāi dìngqī jiǎnchá shēntǐ.",
+   "en": "You should have regular check-ups.",
+   "th": "คุณควรตรวจร่างกายเป็นประจำ"
+  }
+ },
+ {
+  "h": "定义",
+  "p": "dìng yì",
+  "en": "definition",
+  "th": "คำนิยาม",
+  "ex": {
+   "zh": "请解释一下这个词的定义。",
+   "py": "Qǐng jiěshì yīxià zhège cí de dìngyì.",
+   "en": "Please explain the definition of this word.",
+   "th": "กรุณาอธิบายคำนิยามของคำนี้"
+  }
+ },
+ {
+  "h": "丢人",
+  "p": "diū rén",
+  "en": "embarrassing",
+  "th": "ขายหน้า",
+  "ex": {
+   "zh": "考试作弊太丢人了。",
+   "py": "Kǎoshì zuòbì tài diūrén le.",
+   "en": "Cheating on an exam is so embarrassing.",
+   "th": "โกงข้อสอบนี่น่าขายหน้ามาก"
+  }
+ },
+ {
+  "h": "丢三落四",
+  "p": "diū sān là sì",
+  "en": "forgetful",
+  "th": "ขี้ลืม",
+  "ex": {
+   "zh": "他总是丢三落四的。",
+   "py": "Tā zǒngshì diūsān-làsì de.",
+   "en": "He is always forgetting things.",
+   "th": "เขาขี้ลืมอยู่เสมอ"
+  }
+ },
+ {
+  "h": "东道主",
+  "p": "dōng dào zhǔ",
+  "en": "host",
+  "th": "เจ้าภาพ",
+  "ex": {
+   "zh": "中国是这次比赛的东道主。",
+   "py": "Zhōngguó shì zhè cì bǐsài de dōngdàozhǔ.",
+   "en": "China is the host of this competition.",
+   "th": "จีนเป็นเจ้าภาพของการแข่งขันครั้งนี้"
+  }
+ },
+ {
+  "h": "东张西望",
+  "p": "dōng zhāng xī wàng",
+  "en": "to look around",
+  "th": "มองซ้ายมองขวา",
+  "ex": {
+   "zh": "他在教室里东张西望。",
+   "py": "Tā zài jiàoshì lǐ dōngzhāng-xīwàng.",
+   "en": "He is looking around in the classroom.",
+   "th": "เขามองซ้ายมองขวาอยู่ในห้องเรียน"
+  }
+ },
+ {
+  "h": "董事长",
+  "p": "dǒng shì zhǎng",
+  "en": "chairman",
+  "th": "ประธานกรรมการ",
+  "ex": {
+   "zh": "董事长今天要来公司。",
+   "py": "Dǒngshìzhǎng jīntiān yào lái gōngsī.",
+   "en": "The chairman is coming to the company today.",
+   "th": "ประธานกรรมการจะมาที่บริษัทวันนี้"
+  }
+ },
+ {
+  "h": "动荡",
+  "p": "dòng dàng",
+  "en": "turbulence",
+  "th": "ความไม่สงบ",
+  "ex": {
+   "zh": "那个国家局势动荡。",
+   "py": "Nàge guójiā júshì dòngdàng.",
+   "en": "The situation in that country is turbulent.",
+   "th": "สถานการณ์ในประเทศนั้นไม่สงบ"
+  }
+ },
+ {
+  "h": "动机",
+  "p": "dòng jī",
+  "en": "motive",
+  "th": "แรงจูงใจ",
+  "ex": {
+   "zh": "你这样做的动机是什么？",
+   "py": "Nǐ zhèyàng zuò de dòngjī shì shénme?",
+   "en": "What is your motive for doing this?",
+   "th": "แรงจูงใจที่คุณทำแบบนี้คืออะไร"
+  }
+ },
+ {
+  "h": "动静",
+  "p": "dòng jìng",
+  "en": "sign of activity",
+  "th": "ความเคลื่อนไหว",
+  "ex": {
+   "zh": "外面有什么动静吗？",
+   "py": "Wàimiàn yǒu shénme dòngjing ma?",
+   "en": "Is there any sign of activity outside?",
+   "th": "ข้างนอกมีความเคลื่อนไหวอะไรไหม"
+  }
+ },
+ {
+  "h": "动力",
+  "p": "dòng lì",
+  "en": "driving force",
+  "th": "แรงขับเคลื่อน",
+  "ex": {
+   "zh": "兴趣是学习的动力。",
+   "py": "Xìngqù shì xuéxí de dònglì.",
+   "en": "Interest is the driving force of learning.",
+   "th": "ความสนใจคือแรงขับเคลื่อนของการเรียน"
+  }
+ },
+ {
+  "h": "动脉",
+  "p": "dòng mài",
+  "en": "artery",
+  "th": "หลอดเลือดแดง",
+  "ex": {
+   "zh": "他的动脉有点堵塞。",
+   "py": "Tā de dòngmài yǒudiǎn dǔsè.",
+   "en": "His arteries are a bit blocked.",
+   "th": "หลอดเลือดแดงของเขามีการอุดตันเล็กน้อย"
+  }
+ },
+ {
+  "h": "动身",
+  "p": "dòng shēn",
+  "en": "to set off",
+  "th": "ออกเดินทาง",
+  "ex": {
+   "zh": "我们明天早上动身。",
+   "py": "Wǒmen míngtiān zǎoshang dòngshēn.",
+   "en": "We set off tomorrow morning.",
+   "th": "พรุ่งนี้เช้าเราจะออกเดินทาง"
+  }
+ },
+ {
+  "h": "动手",
+  "p": "dòng shǒu",
+  "en": "to get started",
+  "th": "ลงมือ",
+  "ex": {
+   "zh": "大家一起动手做饭吧。",
+   "py": "Dàjiā yīqǐ dòngshǒu zuòfàn ba.",
+   "en": "Let's all pitch in and cook.",
+   "th": "ทุกคนมาลงมือทำอาหารด้วยกันเถอะ"
+  }
+ },
+ {
+  "h": "动态",
+  "p": "dòng tài",
+  "en": "dynamics",
+  "th": "ความเคลื่อนไหวล่าสุด",
+  "ex": {
+   "zh": "我经常关注行业动态。",
+   "py": "Wǒ jīngcháng guānzhù hángyè dòngtài.",
+   "en": "I often follow industry developments.",
+   "th": "ฉันติดตามความเคลื่อนไหวของวงการอยู่เสมอ"
+  }
+ },
+ {
+  "h": "动员",
+  "p": "dòng yuán",
+  "en": "to mobilize",
+  "th": "ระดมพล",
+  "ex": {
+   "zh": "学校动员学生参加活动。",
+   "py": "Xuéxiào dòngyuán xuésheng cānjiā huódòng.",
+   "en": "The school mobilized students to take part in the event.",
+   "th": "โรงเรียนกระตุ้นให้นักเรียนเข้าร่วมกิจกรรม"
+  }
+ },
+ {
+  "h": "冻结",
+  "p": "dòng jié",
+  "en": "to freeze (assets)",
+  "th": "อายัด",
+  "ex": {
+   "zh": "银行冻结了他的账户。",
+   "py": "Yínháng dòngjié le tā de zhànghù.",
+   "en": "The bank froze his account.",
+   "th": "ธนาคารอายัดบัญชีของเขา"
+  }
+ },
+ {
+  "h": "栋",
+  "p": "dòng",
+  "en": "building (classifier)",
+  "th": "หลัง (ตึก)",
+  "ex": {
+   "zh": "那栋楼是新盖的。",
+   "py": "Nà dòng lóu shì xīn gài de.",
+   "en": "That building is newly built.",
+   "th": "ตึกหลังนั้นเพิ่งสร้างใหม่"
+  }
+ },
+ {
+  "h": "洞穴",
+  "p": "dòng xué",
+  "en": "cave",
+  "th": "ถ้ำ",
+  "ex": {
+   "zh": "他们在洞穴里发现了壁画。",
+   "py": "Tāmen zài dòngxué lǐ fāxiàn le bìhuà.",
+   "en": "They discovered murals in the cave.",
+   "th": "พวกเขาพบภาพจิตรกรรมฝาผนังในถ้ำ"
+  }
+ },
+ {
+  "h": "都市",
+  "p": "dū shì",
+  "en": "city",
+  "th": "เมืองใหญ่",
+  "ex": {
+   "zh": "上海是一座大都市。",
+   "py": "Shànghǎi shì yī zuò dà dūshì.",
+   "en": "Shanghai is a big metropolis.",
+   "th": "เซี่ยงไฮ้เป็นมหานครใหญ่"
+  }
+ },
+ {
+  "h": "兜",
+  "p": "dōu",
+  "en": "pocket",
+  "th": "กระเป๋า",
+  "ex": {
+   "zh": "他把手插在裤兜里。",
+   "py": "Tā bǎ shǒu chā zài kùdōu lǐ.",
+   "en": "He put his hands in his trouser pockets.",
+   "th": "เขาสอดมือไว้ในกระเป๋ากางเกง"
+  }
+ },
+ {
+  "h": "陡峭",
+  "p": "dǒu qiào",
+  "en": "steep",
+  "th": "ชัน",
+  "ex": {
+   "zh": "这座山非常陡峭。",
+   "py": "Zhè zuò shān fēicháng dǒuqiào.",
+   "en": "This mountain is very steep.",
+   "th": "ภูเขาลูกนี้ชันมาก"
+  }
+ },
+ {
+  "h": "斗争",
+  "p": "dòu zhēng",
+  "en": "struggle",
+  "th": "การต่อสู้",
+  "ex": {
+   "zh": "他们为自由而斗争。",
+   "py": "Tāmen wèi zìyóu ér dòuzhēng.",
+   "en": "They are struggling for freedom.",
+   "th": "พวกเขาต่อสู้เพื่อเสรีภาพ"
+  }
+ },
+ {
+  "h": "督促",
+  "p": "dū cù",
+  "en": "to urge",
+  "th": "เร่งรัด",
+  "ex": {
+   "zh": "老师督促学生完成作业。",
+   "py": "Lǎoshī dūcù xuésheng wánchéng zuòyè.",
+   "en": "The teacher urges students to finish their homework.",
+   "th": "ครูเร่งให้นักเรียนทำการบ้านให้เสร็จ"
+  }
+ },
+ {
+  "h": "毒品",
+  "p": "dú pǐn",
+  "en": "drugs",
+  "th": "ยาเสพติด",
+  "ex": {
+   "zh": "我们要远离毒品。",
+   "py": "Wǒmen yào yuǎnlí dúpǐn.",
+   "en": "We must stay away from drugs.",
+   "th": "เราต้องอยู่ห่างจากยาเสพติด"
+  }
+ },
+ {
+  "h": "独裁",
+  "p": "dú cái",
+  "en": "dictatorship",
+  "th": "เผด็จการ",
+  "ex": {
+   "zh": "人们反对独裁统治。",
+   "py": "Rénmen fǎnduì dúcái tǒngzhì.",
+   "en": "People oppose dictatorial rule.",
+   "th": "ผู้คนต่อต้านการปกครองแบบเผด็จการ"
+  }
+ },
+ {
+  "h": "堵塞",
+  "p": "dǔ sè",
+  "en": "to block",
+  "th": "อุดตัน",
+  "ex": {
+   "zh": "下水道堵塞了。",
+   "py": "Xiàshuǐdào dǔsè le.",
+   "en": "The drain is clogged.",
+   "th": "ท่อระบายน้ำอุดตัน"
+  }
+ },
+ {
+  "h": "赌博",
+  "p": "dǔ bó",
+  "en": "to gamble",
+  "th": "พนัน",
+  "ex": {
+   "zh": "他因为赌博欠了很多钱。",
+   "py": "Tā yīnwèi dǔbó qiàn le hěn duō qián.",
+   "en": "He owes a lot of money because of gambling.",
+   "th": "เขาเป็นหนี้มากมายเพราะการพนัน"
+  }
+ },
+ {
+  "h": "杜绝",
+  "p": "dù jué",
+  "en": "to put an end to",
+  "th": "ขจัดให้หมดสิ้น",
+  "ex": {
+   "zh": "我们要杜绝浪费。",
+   "py": "Wǒmen yào dùjué làngfèi.",
+   "en": "We must put an end to waste.",
+   "th": "เราต้องขจัดการสิ้นเปลืองให้หมดไป"
+  }
+ },
+ {
+  "h": "端",
+  "p": "duān",
+  "en": "end",
+  "th": "ปลาย",
+  "ex": {
+   "zh": "他站在桥的另一端。",
+   "py": "Tā zhàn zài qiáo de lìng yī duān.",
+   "en": "He is standing at the other end of the bridge.",
+   "th": "เขายืนอยู่อีกฝั่งของสะพาน"
+  }
+ },
+ {
+  "h": "端午节",
+  "p": "Duān wǔ jié",
+  "en": "Dragon Boat Festival",
+  "th": "เทศกาลไหว้บ๊ะจ่าง",
+  "ex": {
+   "zh": "端午节我们吃粽子。",
+   "py": "Duānwǔjié wǒmen chī zòngzi.",
+   "en": "We eat zongzi at the Dragon Boat Festival.",
+   "th": "เทศกาลตวนอู่เรากินบ๊ะจ่าง"
+  }
+ },
+ {
+  "h": "端正",
+  "p": "duān zhèng",
+  "en": "upright",
+  "th": "เที่ยงตรง",
+  "ex": {
+   "zh": "他坐得很端正。",
+   "py": "Tā zuò de hěn duānzhèng.",
+   "en": "He sits very upright.",
+   "th": "เขานั่งตัวตรงเป็นระเบียบมาก"
+  }
+ },
+ {
+  "h": "短促",
+  "p": "duǎn cù",
+  "en": "brief",
+  "th": "สั้นๆ รวดเร็ว",
+  "ex": {
+   "zh": "他发出了短促的叫声。",
+   "py": "Tā fāchū le duǎncù de jiàoshēng.",
+   "en": "He let out a short cry.",
+   "th": "เขาส่งเสียงร้องสั้นๆ"
+  }
+ },
+ {
+  "h": "断定",
+  "p": "duàn dìng",
+  "en": "to conclude",
+  "th": "ฟันธง",
+  "ex": {
+   "zh": "我可以断定他在说谎。",
+   "py": "Wǒ kěyǐ duàndìng tā zài shuōhuǎng.",
+   "en": "I can conclude that he is lying.",
+   "th": "ฉันฟันธงได้เลยว่าเขาโกหก"
+  }
+ },
+ {
+  "h": "断断续续",
+  "p": "duàn duàn xù xù",
+  "en": "intermittent",
+  "th": "ขาดๆ หายๆ",
+  "ex": {
+   "zh": "雨断断续续下了一天。",
+   "py": "Yǔ duànduàn-xùxù xià le yī tiān.",
+   "en": "It rained on and off all day.",
+   "th": "ฝนตกๆ หยุดๆ ทั้งวัน"
+  }
+ },
+ {
+  "h": "断绝",
+  "p": "duàn jué",
+  "en": "to cut off",
+  "th": "ตัดขาด",
+  "ex": {
+   "zh": "他和家人断绝了关系。",
+   "py": "Tā hé jiārén duànjué le guānxi.",
+   "en": "He cut off relations with his family.",
+   "th": "เขาตัดขาดความสัมพันธ์กับครอบครัว"
+  }
+ },
+ {
+  "h": "堆积",
+  "p": "duī jī",
+  "en": "to pile up",
+  "th": "กองสุม",
+  "ex": {
+   "zh": "桌上堆积着很多文件。",
+   "py": "Zhuō shàng duījī zhe hěn duō wénjiàn.",
+   "en": "Many documents are piled up on the desk.",
+   "th": "บนโต๊ะมีเอกสารกองพะเนินอยู่"
+  }
+ },
+ {
+  "h": "队伍",
+  "p": "duì wǔ",
+  "en": "team",
+  "th": "ทีม",
+  "ex": {
+   "zh": "我们的队伍赢了比赛。",
+   "py": "Wǒmen de duìwǔ yíng le bǐsài.",
+   "en": "Our team won the match.",
+   "th": "ทีมของเราชนะการแข่งขัน"
+  }
+ },
+ {
+  "h": "对策",
+  "p": "duì cè",
+  "en": "countermeasure",
+  "th": "มาตรการรับมือ",
+  "ex": {
+   "zh": "我们要想出对策。",
+   "py": "Wǒmen yào xiǎngchū duìcè.",
+   "en": "We need to come up with a countermeasure.",
+   "th": "เราต้องคิดมาตรการรับมือ"
+  }
+ },
+ {
+  "h": "对称",
+  "p": "duì chèn",
+  "en": "symmetrical",
+  "th": "สมมาตร",
+  "ex": {
+   "zh": "这两座塔左右对称。",
+   "py": "Zhè liǎng zuò tǎ zuǒyòu duìchèn.",
+   "en": "These two towers are symmetrical left to right.",
+   "th": "หอสองหลังนี้สมมาตรซ้ายขวา"
+  }
+ },
+ {
+  "h": "对付",
+  "p": "duì fu",
+  "en": "to deal with",
+  "th": "รับมือ",
+  "ex": {
+   "zh": "我不知道怎么对付他。",
+   "py": "Wǒ bù zhīdào zěnme duìfu tā.",
+   "en": "I don't know how to deal with him.",
+   "th": "ฉันไม่รู้จะรับมือกับเขายังไง"
+  }
+ },
+ {
+  "h": "对抗",
+  "p": "duì kàng",
+  "en": "to confront",
+  "th": "ต่อต้านเผชิญหน้า",
+  "ex": {
+   "zh": "两支队伍激烈地对抗。",
+   "py": "Liǎng zhī duìwǔ jīliè de duìkàng.",
+   "en": "The two teams are fiercely competing.",
+   "th": "สองทีมสู้กันอย่างดุเดือด"
+  }
+ },
+ {
+  "h": "对立",
+  "p": "duì lì",
+  "en": "to oppose",
+  "th": "ตรงข้ามกัน",
+  "ex": {
+   "zh": "两种观点完全对立。",
+   "py": "Liǎng zhǒng guāndiǎn wánquán duìlì.",
+   "en": "The two viewpoints are completely opposed.",
+   "th": "สองความคิดเห็นนี้ขัดแย้งกันสิ้นเชิง"
+  }
+ },
+ {
+  "h": "对联",
+  "p": "duì lián",
+  "en": "couplet",
+  "th": "คำกลอนคู่",
+  "ex": {
+   "zh": "春节时家家贴对联。",
+   "py": "Chūnjié shí jiājiā tiē duìlián.",
+   "en": "Every household puts up couplets at Spring Festival.",
+   "th": "ตอนตรุษจีนทุกบ้านติดกลอนคู่"
+  }
+ },
+ {
+  "h": "对应",
+  "p": "duì yìng",
+  "en": "to correspond",
+  "th": "สอดคล้องกับ",
+  "ex": {
+   "zh": "每个问题都有对应的答案。",
+   "py": "Měi gè wèntí dōu yǒu duìyìng de dá'àn.",
+   "en": "Each question has a corresponding answer.",
+   "th": "ทุกคำถามมีคำตอบที่ตรงกัน"
+  }
+ },
+ {
+  "h": "对照",
+  "p": "duì zhào",
+  "en": "to compare",
+  "th": "เทียบ",
+  "ex": {
+   "zh": "请对照原文检查译文。",
+   "py": "Qǐng duìzhào yuánwén jiǎnchá yìwén.",
+   "en": "Please check the translation against the original.",
+   "th": "กรุณาเทียบตรวจคำแปลกับต้นฉบับ"
+  }
+ },
+ {
+  "h": "兑换",
+  "p": "duì huàn",
+  "en": "to exchange",
+  "th": "แลกเปลี่ยน",
+  "ex": {
+   "zh": "我想把美元兑换成人民币。",
+   "py": "Wǒ xiǎng bǎ měiyuán duìhuàn chéng rénmínbì.",
+   "en": "I want to exchange US dollars for RMB.",
+   "th": "ฉันอยากแลกดอลลาร์เป็นเงินหยวน"
+  }
+ },
+ {
+  "h": "兑现",
+  "p": "duì xiàn",
+  "en": "to honor (promise)",
+  "th": "ทำตามที่สัญญา",
+  "ex": {
+   "zh": "他兑现了自己的承诺。",
+   "py": "Tā duìxiàn le zìjǐ de chéngnuò.",
+   "en": "He honored his promise.",
+   "th": "เขาทำตามที่สัญญาไว้"
+  }
+ }
+]

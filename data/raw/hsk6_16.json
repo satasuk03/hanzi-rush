@@ -1,0 +1,1202 @@
+[
+ {
+  "h": "深沉",
+  "p": "shēn chén",
+  "en": "deep",
+  "th": "ลึกซึ้ง",
+  "ex": {
+   "zh": "夜色深沉，大家都睡了。",
+   "py": "Yèsè shēnchén, dàjiā dōu shuì le.",
+   "en": "The night was deep and everyone was asleep.",
+   "th": "ค่ำคืนมืดสนิท ทุกคนหลับกันหมดแล้ว"
+  }
+ },
+ {
+  "h": "深情厚谊",
+  "p": "shēn qíng hòu yì",
+  "en": "deep friendship",
+  "th": "มิตรภาพอันลึกซึ้ง",
+  "ex": {
+   "zh": "我们之间有深情厚谊。",
+   "py": "Wǒmen zhījiān yǒu shēnqínghòuyì.",
+   "en": "There is a deep friendship between us.",
+   "th": "ระหว่างเรามีมิตรภาพอันลึกซึ้ง"
+  }
+ },
+ {
+  "h": "神奇",
+  "p": "shén qí",
+  "en": "magical",
+  "th": "มหัศจรรย์",
+  "ex": {
+   "zh": "这个魔术太神奇了。",
+   "py": "Zhège móshù tài shénqí le.",
+   "en": "This magic trick is amazing.",
+   "th": "มายากลนี้มหัศจรรย์มาก"
+  }
+ },
+ {
+  "h": "神气",
+  "p": "shén qì",
+  "en": "proud and spirited",
+  "th": "ทำท่าวางมาด",
+  "ex": {
+   "zh": "他穿上制服显得很神气。",
+   "py": "Tā chuān shàng zhìfú xiǎnde hěn shénqì.",
+   "en": "He looks spirited in his uniform.",
+   "th": "เขาสวมเครื่องแบบแล้วดูสง่างามมาก"
+  }
+ },
+ {
+  "h": "神情",
+  "p": "shén qíng",
+  "en": "expression",
+  "th": "สีหน้า",
+  "ex": {
+   "zh": "他的神情很紧张。",
+   "py": "Tā de shénqíng hěn jǐnzhāng.",
+   "en": "His expression was very tense.",
+   "th": "สีหน้าของเขาตึงเครียดมาก"
+  }
+ },
+ {
+  "h": "神色",
+  "p": "shén sè",
+  "en": "look",
+  "th": "สีหน้าท่าทาง",
+  "ex": {
+   "zh": "她神色慌张地跑了进来。",
+   "py": "Tā shénsè huāngzhāng de pǎo le jìnlái.",
+   "en": "She ran in looking panicked.",
+   "th": "เธอวิ่งเข้ามาด้วยสีหน้าตื่นตกใจ"
+  }
+ },
+ {
+  "h": "神圣",
+  "p": "shén shèng",
+  "en": "sacred",
+  "th": "ศักดิ์สิทธิ์",
+  "ex": {
+   "zh": "这是一个神圣的地方。",
+   "py": "Zhè shì yí ge shénshèng de dìfang.",
+   "en": "This is a sacred place.",
+   "th": "ที่นี่เป็นสถานที่ศักดิ์สิทธิ์"
+  }
+ },
+ {
+  "h": "神态",
+  "p": "shén tài",
+  "en": "manner",
+  "th": "ท่าทาง",
+  "ex": {
+   "zh": "她的神态很自然。",
+   "py": "Tā de shéntài hěn zìrán.",
+   "en": "Her manner is very natural.",
+   "th": "ท่าทางของเธอเป็นธรรมชาติมาก"
+  }
+ },
+ {
+  "h": "神仙",
+  "p": "shén xiān",
+  "en": "immortal",
+  "th": "เซียน",
+  "ex": {
+   "zh": "他过得像神仙一样快活。",
+   "py": "Tā guò de xiàng shénxiān yíyàng kuàihuo.",
+   "en": "He lives as happily as an immortal.",
+   "th": "เขามีชีวิตสุขสบายราวกับเทพเซียน"
+  }
+ },
+ {
+  "h": "审查",
+  "p": "shěn chá",
+  "en": "to review",
+  "th": "ตรวจสอบ",
+  "ex": {
+   "zh": "文件正在审查中。",
+   "py": "Wénjiàn zhèngzài shěnchá zhōng.",
+   "en": "The document is under review.",
+   "th": "เอกสารอยู่ระหว่างการตรวจสอบ"
+  }
+ },
+ {
+  "h": "审理",
+  "p": "shěn lǐ",
+  "en": "to hear a case",
+  "th": "พิจารณาคดี",
+  "ex": {
+   "zh": "法院明天审理这个案子。",
+   "py": "Fǎyuàn míngtiān shěnlǐ zhège ànzi.",
+   "en": "The court will hear this case tomorrow.",
+   "th": "ศาลจะพิจารณาคดีนี้พรุ่งนี้"
+  }
+ },
+ {
+  "h": "审美",
+  "p": "shěn měi",
+  "en": "aesthetics",
+  "th": "สุนทรียะ",
+  "ex": {
+   "zh": "每个人的审美不一样。",
+   "py": "Měi ge rén de shěnměi bù yíyàng.",
+   "en": "Everyone's aesthetic taste is different.",
+   "th": "รสนิยมความงามของแต่ละคนไม่เหมือนกัน"
+  }
+ },
+ {
+  "h": "审判",
+  "p": "shěn pàn",
+  "en": "trial",
+  "th": "พิพากษา",
+  "ex": {
+   "zh": "法官正在审判罪犯。",
+   "py": "Fǎguān zhèngzài shěnpàn zuìfàn.",
+   "en": "The judge is trying the criminal.",
+   "th": "ผู้พิพากษากำลังพิจารณาคดีผู้ต้องหา"
+  }
+ },
+ {
+  "h": "渗透",
+  "p": "shèn tòu",
+  "en": "to permeate",
+  "th": "ซึมซาบ",
+  "ex": {
+   "zh": "雨水渗透到了土里。",
+   "py": "Yǔshuǐ shèntòu dào le tǔ lǐ.",
+   "en": "Rainwater seeped into the soil.",
+   "th": "น้ำฝนซึมลงไปในดิน"
+  }
+ },
+ {
+  "h": "慎重",
+  "p": "shèn zhòng",
+  "en": "cautious",
+  "th": "รอบคอบ",
+  "ex": {
+   "zh": "做决定要慎重。",
+   "py": "Zuò juédìng yào shènzhòng.",
+   "en": "Be cautious when making decisions.",
+   "th": "การตัดสินใจต้องรอบคอบ"
+  }
+ },
+ {
+  "h": "生存",
+  "p": "shēng cún",
+  "en": "to survive",
+  "th": "อยู่รอด",
+  "ex": {
+   "zh": "动物需要水才能生存。",
+   "py": "Dòngwù xūyào shuǐ cái néng shēngcún.",
+   "en": "Animals need water to survive.",
+   "th": "สัตว์ต้องมีน้ำจึงจะอยู่รอดได้"
+  }
+ },
+ {
+  "h": "生机",
+  "p": "shēng jī",
+  "en": "vitality",
+  "th": "ชีวิตชีวา",
+  "ex": {
+   "zh": "春天里到处充满生机。",
+   "py": "Chūntiān lǐ dàochù chōngmǎn shēngjī.",
+   "en": "Spring is full of vitality everywhere.",
+   "th": "ฤดูใบไม้ผลิเต็มไปด้วยชีวิตชีวาทุกหนแห่ง"
+  }
+ },
+ {
+  "h": "生理",
+  "p": "shēng lǐ",
+  "en": "physiology",
+  "th": "สรีรวิทยา",
+  "ex": {
+   "zh": "这是正常的生理现象。",
+   "py": "Zhè shì zhèngcháng de shēnglǐ xiànxiàng.",
+   "en": "This is a normal physiological phenomenon.",
+   "th": "นี่เป็นปรากฏการณ์ทางสรีระที่ปกติ"
+  }
+ },
+ {
+  "h": "生疏",
+  "p": "shēng shū",
+  "en": "unfamiliar",
+  "th": "ไม่คุ้นเคย",
+  "ex": {
+   "zh": "我对这里很生疏。",
+   "py": "Wǒ duì zhèlǐ hěn shēngshū.",
+   "en": "I am unfamiliar with this place.",
+   "th": "ฉันไม่คุ้นเคยกับที่นี่"
+  }
+ },
+ {
+  "h": "生态",
+  "p": "shēng tài",
+  "en": "ecology",
+  "th": "ระบบนิเวศ",
+  "ex": {
+   "zh": "我们要保护生态环境。",
+   "py": "Wǒmen yào bǎohù shēngtài huánjìng.",
+   "en": "We must protect the ecological environment.",
+   "th": "เราต้องปกป้องสิ่งแวดล้อมทางนิเวศ"
+  }
+ },
+ {
+  "h": "生物",
+  "p": "shēng wù",
+  "en": "living things",
+  "th": "สิ่งมีชีวิต",
+  "ex": {
+   "zh": "海里有很多生物。",
+   "py": "Hǎi lǐ yǒu hěn duō shēngwù.",
+   "en": "There are many living things in the sea.",
+   "th": "ในทะเลมีสิ่งมีชีวิตมากมาย"
+  }
+ },
+ {
+  "h": "生效",
+  "p": "shēng xiào",
+  "en": "to take effect",
+  "th": "มีผลบังคับใช้",
+  "ex": {
+   "zh": "新规定明天生效。",
+   "py": "Xīn guīdìng míngtiān shēngxiào.",
+   "en": "The new rule takes effect tomorrow.",
+   "th": "กฎใหม่มีผลบังคับใช้พรุ่งนี้"
+  }
+ },
+ {
+  "h": "生锈",
+  "p": "shēng xiù",
+  "en": "to rust",
+  "th": "เป็นสนิม",
+  "ex": {
+   "zh": "铁门生锈了。",
+   "py": "Tiěmén shēngxiù le.",
+   "en": "The iron gate has rusted.",
+   "th": "ประตูเหล็กเป็นสนิมแล้ว"
+  }
+ },
+ {
+  "h": "生育",
+  "p": "shēng yù",
+  "en": "to give birth",
+  "th": "ให้กำเนิด",
+  "ex": {
+   "zh": "她想生育两个孩子。",
+   "py": "Tā xiǎng shēngyù liǎng ge háizi.",
+   "en": "She wants to have two children.",
+   "th": "เธออยากมีลูกสองคน"
+  }
+ },
+ {
+  "h": "声明",
+  "p": "shēng míng",
+  "en": "statement",
+  "th": "แถลงการณ์",
+  "ex": {
+   "zh": "公司发表了一份声明。",
+   "py": "Gōngsī fābiǎo le yí fèn shēngmíng.",
+   "en": "The company issued a statement.",
+   "th": "บริษัทออกแถลงการณ์ฉบับหนึ่ง"
+  }
+ },
+ {
+  "h": "声势",
+  "p": "shēng shì",
+  "en": "momentum",
+  "th": "กระแส",
+  "ex": {
+   "zh": "这次活动声势很大。",
+   "py": "Zhè cì huódòng shēngshì hěn dà.",
+   "en": "This event has great momentum.",
+   "th": "กิจกรรมครั้งนี้มีกระแสตอบรับยิ่งใหญ่"
+  }
+ },
+ {
+  "h": "声誉",
+  "p": "shēng yù",
+  "en": "reputation",
+  "th": "ชื่อเสียง",
+  "ex": {
+   "zh": "这家公司声誉很好。",
+   "py": "Zhè jiā gōngsī shēngyù hěn hǎo.",
+   "en": "This company has a good reputation.",
+   "th": "บริษัทนี้มีชื่อเสียงดี"
+  }
+ },
+ {
+  "h": "牲畜",
+  "p": "shēng chù",
+  "en": "livestock",
+  "th": "ปศุสัตว์",
+  "ex": {
+   "zh": "农民养了很多牲畜。",
+   "py": "Nóngmín yǎng le hěn duō shēngchù.",
+   "en": "The farmer raises a lot of livestock.",
+   "th": "ชาวนาเลี้ยงปศุสัตว์มากมาย"
+  }
+ },
+ {
+  "h": "省会",
+  "p": "shěng huì",
+  "en": "provincial capital",
+  "th": "เมืองเอกของมณฑล",
+  "ex": {
+   "zh": "成都是四川的省会。",
+   "py": "Chéngdū shì Sìchuān de shěnghuì.",
+   "en": "Chengdu is the capital of Sichuan.",
+   "th": "เฉิงตูเป็นเมืองเอกของมณฑลเสฉวน"
+  }
+ },
+ {
+  "h": "胜负",
+  "p": "shèng fù",
+  "en": "win or lose",
+  "th": "แพ้ชนะ",
+  "ex": {
+   "zh": "比赛的胜负还没决定。",
+   "py": "Bǐsài de shèngfù hái méi juédìng.",
+   "en": "The outcome of the match is not yet decided.",
+   "th": "ผลแพ้ชนะของการแข่งขันยังไม่ตัดสิน"
+  }
+ },
+ {
+  "h": "盛",
+  "p": "Shèng",
+  "en": "Sheng (surname)",
+  "th": "นามสกุลเซิ่ง",
+  "ex": {
+   "zh": "盛先生是我的老师。",
+   "py": "Shèng xiānsheng shì wǒ de lǎoshī.",
+   "en": "Mr. Sheng is my teacher.",
+   "th": "คุณเซิ่งเป็นอาจารย์ของฉัน"
+  }
+ },
+ {
+  "h": "盛产",
+  "p": "shèng chǎn",
+  "en": "to abound in",
+  "th": "ผลิตได้มาก",
+  "ex": {
+   "zh": "这里盛产水果。",
+   "py": "Zhèlǐ shèngchǎn shuǐguǒ.",
+   "en": "This place abounds in fruit.",
+   "th": "ที่นี่ผลิตผลไม้ได้มาก"
+  }
+ },
+ {
+  "h": "盛开",
+  "p": "shèng kāi",
+  "en": "in full bloom",
+  "th": "บานสะพรั่ง",
+  "ex": {
+   "zh": "花园里的花盛开了。",
+   "py": "Huāyuán lǐ de huā shèngkāi le.",
+   "en": "The flowers in the garden are in full bloom.",
+   "th": "ดอกไม้ในสวนบานสะพรั่ง"
+  }
+ },
+ {
+  "h": "盛情",
+  "p": "shèng qíng",
+  "en": "warm hospitality",
+  "th": "น้ำใจอันอบอุ่น",
+  "ex": {
+   "zh": "谢谢你的盛情款待。",
+   "py": "Xièxie nǐ de shèngqíng kuǎndài.",
+   "en": "Thank you for your warm hospitality.",
+   "th": "ขอบคุณสำหรับการต้อนรับอย่างอบอุ่น"
+  }
+ },
+ {
+  "h": "盛行",
+  "p": "shèng xíng",
+  "en": "to be popular",
+  "th": "เป็นที่นิยม",
+  "ex": {
+   "zh": "这种风格现在很盛行。",
+   "py": "Zhè zhǒng fēnggé xiànzài hěn shèngxíng.",
+   "en": "This style is very popular now.",
+   "th": "สไตล์นี้กำลังเป็นที่นิยมมาก"
+  }
+ },
+ {
+  "h": "尸体",
+  "p": "shī tǐ",
+  "en": "corpse",
+  "th": "ศพ",
+  "ex": {
+   "zh": "警察发现了一具尸体。",
+   "py": "Jǐngchá fāxiàn le yí jù shītǐ.",
+   "en": "The police found a corpse.",
+   "th": "ตำรวจพบศพหนึ่งศพ"
+  }
+ },
+ {
+  "h": "失误",
+  "p": "shī wù",
+  "en": "mistake",
+  "th": "ความผิดพลาด",
+  "ex": {
+   "zh": "这是我的失误。",
+   "py": "Zhè shì wǒ de shīwù.",
+   "en": "This was my mistake.",
+   "th": "นี่เป็นความผิดพลาดของฉัน"
+  }
+ },
+ {
+  "h": "失踪",
+  "p": "shī zōng",
+  "en": "to go missing",
+  "th": "หายตัวไป",
+  "ex": {
+   "zh": "他已经失踪三天了。",
+   "py": "Tā yǐjīng shīzōng sān tiān le.",
+   "en": "He has been missing for three days.",
+   "th": "เขาหายตัวไปสามวันแล้ว"
+  }
+ },
+ {
+  "h": "师范",
+  "p": "shī fàn",
+  "en": "teachers' college",
+  "th": "วิทยาลัยครู",
+  "ex": {
+   "zh": "她在师范大学读书。",
+   "py": "Tā zài shīfàn dàxué dúshū.",
+   "en": "She studies at a normal university.",
+   "th": "เธอเรียนอยู่ที่มหาวิทยาลัยครุศาสตร์"
+  }
+ },
+ {
+  "h": "施加",
+  "p": "shī jiā",
+  "en": "to exert",
+  "th": "กดดัน",
+  "ex": {
+   "zh": "不要给孩子施加压力。",
+   "py": "Bú yào gěi háizi shījiā yālì.",
+   "en": "Don't put pressure on the child.",
+   "th": "อย่ากดดันเด็ก"
+  }
+ },
+ {
+  "h": "施展",
+  "p": "shī zhǎn",
+  "en": "to display",
+  "th": "แสดงฝีมือ",
+  "ex": {
+   "zh": "他想施展自己的才能。",
+   "py": "Tā xiǎng shīzhǎn zìjǐ de cáinéng.",
+   "en": "He wants to display his talent.",
+   "th": "เขาอยากแสดงความสามารถของตัวเอง"
+  }
+ },
+ {
+  "h": "十足",
+  "p": "shí zú",
+  "en": "complete",
+  "th": "เต็มที่",
+  "ex": {
+   "zh": "他信心十足。",
+   "py": "Tā xìnxīn shízú.",
+   "en": "He is full of confidence.",
+   "th": "เขามั่นใจเต็มเปี่ยม"
+  }
+ },
+ {
+  "h": "石油",
+  "p": "shí yóu",
+  "en": "petroleum",
+  "th": "น้ำมันปิโตรเลียม",
+  "ex": {
+   "zh": "这个国家有很多石油。",
+   "py": "Zhège guójiā yǒu hěn duō shíyóu.",
+   "en": "This country has a lot of oil.",
+   "th": "ประเทศนี้มีน้ำมันมากมาย"
+  }
+ },
+ {
+  "h": "时差",
+  "p": "shí chā",
+  "en": "time difference",
+  "th": "ความต่างของเวลา",
+  "ex": {
+   "zh": "我还没倒过时差。",
+   "py": "Wǒ hái méi dǎo guò shíchā.",
+   "en": "I haven't gotten over the jet lag yet.",
+   "th": "ฉันยังไม่หายเจ็ตแล็ก"
+  }
+ },
+ {
+  "h": "时常",
+  "p": "shí cháng",
+  "en": "often",
+  "th": "บ่อย ๆ",
+  "ex": {
+   "zh": "他时常给我打电话。",
+   "py": "Tā shícháng gěi wǒ dǎ diànhuà.",
+   "en": "He often calls me.",
+   "th": "เขาโทรหาฉันบ่อย ๆ"
+  }
+ },
+ {
+  "h": "时而",
+  "p": "shí ér",
+  "en": "from time to time",
+  "th": "เป็นครั้งคราว",
+  "ex": {
+   "zh": "天气时而晴，时而雨。",
+   "py": "Tiānqì shí'ér qíng, shí'ér yǔ.",
+   "en": "The weather is sometimes sunny, sometimes rainy.",
+   "th": "อากาศบางครั้งแจ่มใส บางครั้งฝนตก"
+  }
+ },
+ {
+  "h": "时光",
+  "p": "shí guāng",
+  "en": "time",
+  "th": "เวลา",
+  "ex": {
+   "zh": "我们度过了美好的时光。",
+   "py": "Wǒmen dùguò le měihǎo de shíguāng.",
+   "en": "We spent a wonderful time together.",
+   "th": "เราใช้เวลาที่ดีร่วมกัน"
+  }
+ },
+ {
+  "h": "时机",
+  "p": "shí jī",
+  "en": "opportunity",
+  "th": "โอกาส",
+  "ex": {
+   "zh": "现在是最好的时机。",
+   "py": "Xiànzài shì zuì hǎo de shíjī.",
+   "en": "Now is the best opportunity.",
+   "th": "ตอนนี้เป็นโอกาสที่ดีที่สุด"
+  }
+ },
+ {
+  "h": "时事",
+  "p": "shí shì",
+  "en": "current affairs",
+  "th": "เหตุการณ์ปัจจุบัน",
+  "ex": {
+   "zh": "他每天看时事新闻。",
+   "py": "Tā měitiān kàn shíshì xīnwén.",
+   "en": "He watches current affairs news every day.",
+   "th": "เขาดูข่าวเหตุการณ์ปัจจุบันทุกวัน"
+  }
+ },
+ {
+  "h": "时装",
+  "p": "shí zhuāng",
+  "en": "fashion",
+  "th": "แฟชั่น",
+  "ex": {
+   "zh": "她喜欢看时装秀。",
+   "py": "Tā xǐhuan kàn shízhuāng xiù.",
+   "en": "She likes watching fashion shows.",
+   "th": "เธอชอบดูแฟชั่นโชว์"
+  }
+ },
+ {
+  "h": "实惠",
+  "p": "shí huì",
+  "en": "affordable",
+  "th": "คุ้มค่า",
+  "ex": {
+   "zh": "这家店的东西又好又实惠。",
+   "py": "Zhè jiā diàn de dōngxi yòu hǎo yòu shíhuì.",
+   "en": "Things at this shop are good and affordable.",
+   "th": "ของในร้านนี้ทั้งดีและคุ้มค่า"
+  }
+ },
+ {
+  "h": "实力",
+  "p": "shí lì",
+  "en": "strength",
+  "th": "ความสามารถ",
+  "ex": {
+   "zh": "这支球队很有实力。",
+   "py": "Zhè zhī qiúduì hěn yǒu shílì.",
+   "en": "This team is very strong.",
+   "th": "ทีมนี้มีความสามารถสูง"
+  }
+ },
+ {
+  "h": "实施",
+  "p": "shí shī",
+  "en": "to implement",
+  "th": "ดำเนินการ",
+  "ex": {
+   "zh": "新政策已经开始实施。",
+   "py": "Xīn zhèngcè yǐjīng kāishǐ shíshī.",
+   "en": "The new policy has begun to be implemented.",
+   "th": "นโยบายใหม่เริ่มดำเนินการแล้ว"
+  }
+ },
+ {
+  "h": "实事求是",
+  "p": "shí shì qiú shì",
+  "en": "to be realistic",
+  "th": "ยึดข้อเท็จจริง",
+  "ex": {
+   "zh": "做事要实事求是。",
+   "py": "Zuòshì yào shíshìqiúshì.",
+   "en": "Handle things realistically and based on facts.",
+   "th": "ทำสิ่งใดต้องยึดข้อเท็จจริง"
+  }
+ },
+ {
+  "h": "实质",
+  "p": "shí zhì",
+  "en": "substance",
+  "th": "สาระสำคัญ",
+  "ex": {
+   "zh": "问题的实质是什么？",
+   "py": "Wèntí de shízhì shì shénme?",
+   "en": "What is the essence of the problem?",
+   "th": "สาระสำคัญของปัญหาคืออะไร"
+  }
+ },
+ {
+  "h": "使命",
+  "p": "shǐ mìng",
+  "en": "mission",
+  "th": "ภารกิจ",
+  "ex": {
+   "zh": "这是我们的历史使命。",
+   "py": "Zhè shì wǒmen de lìshǐ shǐmìng.",
+   "en": "This is our historic mission.",
+   "th": "นี่คือภารกิจทางประวัติศาสตร์ของเรา"
+  }
+ },
+ {
+  "h": "世代",
+  "p": "shì dài",
+  "en": "generations",
+  "th": "หลายชั่วอายุคน",
+  "ex": {
+   "zh": "他们世代生活在这里。",
+   "py": "Tāmen shìdài shēnghuó zài zhèlǐ.",
+   "en": "They have lived here for generations.",
+   "th": "พวกเขาอาศัยอยู่ที่นี่มาหลายชั่วอายุคน"
+  }
+ },
+ {
+  "h": "世界观",
+  "p": "shì jiè guān",
+  "en": "worldview",
+  "th": "โลกทัศน์",
+  "ex": {
+   "zh": "读书能改变人的世界观。",
+   "py": "Dúshū néng gǎibiàn rén de shìjièguān.",
+   "en": "Reading can change a person's worldview.",
+   "th": "การอ่านหนังสือเปลี่ยนโลกทัศน์ของคนได้"
+  }
+ },
+ {
+  "h": "示范",
+  "p": "shì fàn",
+  "en": "to demonstrate",
+  "th": "สาธิต",
+  "ex": {
+   "zh": "老师给我们示范了一遍。",
+   "py": "Lǎoshī gěi wǒmen shìfàn le yí biàn.",
+   "en": "The teacher demonstrated it for us once.",
+   "th": "อาจารย์สาธิตให้เราดูหนึ่งรอบ"
+  }
+ },
+ {
+  "h": "示威",
+  "p": "shì wēi",
+  "en": "to protest",
+  "th": "ประท้วง",
+  "ex": {
+   "zh": "人们在街上示威游行。",
+   "py": "Rénmen zài jiē shàng shìwēi yóuxíng.",
+   "en": "People are holding a protest march on the street.",
+   "th": "ผู้คนเดินขบวนประท้วงบนถนน"
+  }
+ },
+ {
+  "h": "示意",
+  "p": "shì yì",
+  "en": "to signal",
+  "th": "ส่งสัญญาณ",
+  "ex": {
+   "zh": "他向我点头示意。",
+   "py": "Tā xiàng wǒ diǎntóu shìyì.",
+   "en": "He nodded to signal me.",
+   "th": "เขาพยักหน้าให้สัญญาณฉัน"
+  }
+ },
+ {
+  "h": "事故",
+  "p": "shì gù",
+  "en": "accident",
+  "th": "อุบัติเหตุ",
+  "ex": {
+   "zh": "路上发生了交通事故。",
+   "py": "Lù shàng fāshēng le jiāotōng shìgù.",
+   "en": "A traffic accident happened on the road.",
+   "th": "เกิดอุบัติเหตุบนท้องถนน"
+  }
+ },
+ {
+  "h": "事迹",
+  "p": "shì jì",
+  "en": "deeds",
+  "th": "วีรกรรม",
+  "ex": {
+   "zh": "大家都知道他的感人事迹。",
+   "py": "Dàjiā dōu zhīdào tā de gǎnrén shìjì.",
+   "en": "Everyone knows his touching deeds.",
+   "th": "ทุกคนรู้จักเรื่องราวประทับใจของเขา"
+  }
+ },
+ {
+  "h": "事件",
+  "p": "shì jiàn",
+  "en": "incident",
+  "th": "เหตุการณ์",
+  "ex": {
+   "zh": "这个事件引起了关注。",
+   "py": "Zhège shìjiàn yǐnqǐ le guānzhù.",
+   "en": "This incident attracted attention.",
+   "th": "เหตุการณ์นี้เป็นที่จับตามอง"
+  }
+ },
+ {
+  "h": "事态",
+  "p": "shì tài",
+  "en": "state of affairs",
+  "th": "สถานการณ์",
+  "ex": {
+   "zh": "事态越来越严重。",
+   "py": "Shìtài yuè lái yuè yánzhòng.",
+   "en": "The situation is getting more and more serious.",
+   "th": "สถานการณ์ร้ายแรงขึ้นเรื่อย ๆ"
+  }
+ },
+ {
+  "h": "事务",
+  "p": "shì wù",
+  "en": "affairs",
+  "th": "กิจการ",
+  "ex": {
+   "zh": "他每天忙于处理事务。",
+   "py": "Tā měitiān mángyú chǔlǐ shìwù.",
+   "en": "He is busy handling affairs every day.",
+   "th": "เขายุ่งอยู่กับการจัดการงานทุกวัน"
+  }
+ },
+ {
+  "h": "事项",
+  "p": "shì xiàng",
+  "en": "matter",
+  "th": "เรื่อง",
+  "ex": {
+   "zh": "请注意以下事项。",
+   "py": "Qǐng zhùyì yǐxià shìxiàng.",
+   "en": "Please note the following items.",
+   "th": "กรุณาสังเกตเรื่องต่อไปนี้"
+  }
+ },
+ {
+  "h": "事业",
+  "p": "shì yè",
+  "en": "career",
+  "th": "กิจการงาน",
+  "ex": {
+   "zh": "他把事业看得很重。",
+   "py": "Tā bǎ shìyè kàn de hěn zhòng.",
+   "en": "He takes his career very seriously.",
+   "th": "เขาให้ความสำคัญกับหน้าที่การงานมาก"
+  }
+ },
+ {
+  "h": "势必",
+  "p": "shì bì",
+  "en": "bound to",
+  "th": "ย่อมต้อง",
+  "ex": {
+   "zh": "不努力势必会失败。",
+   "py": "Bù nǔlì shìbì huì shībài.",
+   "en": "Without effort you are bound to fail.",
+   "th": "ถ้าไม่พยายามย่อมต้องล้มเหลว"
+  }
+ },
+ {
+  "h": "势力",
+  "p": "shì li",
+  "en": "power",
+  "th": "อิทธิพล",
+  "ex": {
+   "zh": "他在这里有很大的势力。",
+   "py": "Tā zài zhèlǐ yǒu hěn dà de shìli.",
+   "en": "He has great influence here.",
+   "th": "เขามีอิทธิพลมากที่นี่"
+  }
+ },
+ {
+  "h": "视力",
+  "p": "shì lì",
+  "en": "eyesight",
+  "th": "สายตา",
+  "ex": {
+   "zh": "他的视力很好。",
+   "py": "Tā de shìlì hěn hǎo.",
+   "en": "His eyesight is very good.",
+   "th": "สายตาของเขาดีมาก"
+  }
+ },
+ {
+  "h": "视线",
+  "p": "shì xiàn",
+  "en": "line of sight",
+  "th": "สายตา",
+  "ex": {
+   "zh": "汽车消失在我的视线里。",
+   "py": "Qìchē xiāoshī zài wǒ de shìxiàn lǐ.",
+   "en": "The car disappeared from my sight.",
+   "th": "รถหายไปจากสายตาของฉัน"
+  }
+ },
+ {
+  "h": "视野",
+  "p": "shì yě",
+  "en": "field of view",
+  "th": "ขอบเขตการมองเห็น",
+  "ex": {
+   "zh": "旅行能开阔我们的视野。",
+   "py": "Lǚxíng néng kāikuò wǒmen de shìyě.",
+   "en": "Travel broadens our horizons.",
+   "th": "การเดินทางช่วยเปิดโลกทัศน์ของเรา"
+  }
+ },
+ {
+  "h": "试图",
+  "p": "shì tú",
+  "en": "to attempt",
+  "th": "พยายาม",
+  "ex": {
+   "zh": "他试图解释原因。",
+   "py": "Tā shìtú jiěshì yuányīn.",
+   "en": "He tried to explain the reason.",
+   "th": "เขาพยายามอธิบายเหตุผล"
+  }
+ },
+ {
+  "h": "试验",
+  "p": "shì yàn",
+  "en": "experiment",
+  "th": "การทดลอง",
+  "ex": {
+   "zh": "科学家正在做试验。",
+   "py": "Kēxuéjiā zhèngzài zuò shìyàn.",
+   "en": "Scientists are conducting an experiment.",
+   "th": "นักวิทยาศาสตร์กำลังทำการทดลอง"
+  }
+ },
+ {
+  "h": "是非",
+  "p": "shì fēi",
+  "en": "right and wrong",
+  "th": "ถูกผิด",
+  "ex": {
+   "zh": "要学会分辨是非。",
+   "py": "Yào xuéhuì fēnbiàn shìfēi.",
+   "en": "You need to learn to tell right from wrong.",
+   "th": "ต้องเรียนรู้ที่จะแยกแยะถูกผิด"
+  }
+ },
+ {
+  "h": "适宜",
+  "p": "shì yí",
+  "en": "suitable",
+  "th": "เหมาะสม",
+  "ex": {
+   "zh": "这里的气候适宜种茶。",
+   "py": "Zhèlǐ de qìhòu shìyí zhòng chá.",
+   "en": "The climate here is suitable for growing tea.",
+   "th": "ภูมิอากาศที่นี่เหมาะกับการปลูกชา"
+  }
+ },
+ {
+  "h": "逝世",
+  "p": "shì shì",
+  "en": "to pass away",
+  "th": "เสียชีวิต",
+  "ex": {
+   "zh": "老人昨天逝世了。",
+   "py": "Lǎorén zuótiān shìshì le.",
+   "en": "The old man passed away yesterday.",
+   "th": "ผู้เฒ่าเสียชีวิตเมื่อวานนี้"
+  }
+ },
+ {
+  "h": "释放",
+  "p": "shì fàng",
+  "en": "to release",
+  "th": "ปล่อยตัว",
+  "ex": {
+   "zh": "他被提前释放了。",
+   "py": "Tā bèi tíqián shìfàng le.",
+   "en": "He was released early.",
+   "th": "เขาได้รับการปล่อยตัวก่อนกำหนด"
+  }
+ },
+ {
+  "h": "识别",
+  "p": "shí bié",
+  "en": "to identify",
+  "th": "จำแนก",
+  "ex": {
+   "zh": "手机可以识别我的脸。",
+   "py": "Shǒujī kěyǐ shíbié wǒ de liǎn.",
+   "en": "The phone can recognize my face.",
+   "th": "โทรศัพท์จดจำใบหน้าของฉันได้"
+  }
+ },
+ {
+  "h": "拾",
+  "p": "shè",
+  "en": "to pick up",
+  "th": "เก็บ",
+  "ex": {
+   "zh": "他拾起了地上的钱包。",
+   "py": "Tā shí qǐ le dì shàng de qiánbāo.",
+   "en": "He picked up the wallet on the ground.",
+   "th": "เขาเก็บกระเป๋าสตางค์ที่พื้นขึ้นมา"
+  }
+ },
+ {
+  "h": "收藏",
+  "p": "shōu cáng",
+  "en": "to collect",
+  "th": "สะสม",
+  "ex": {
+   "zh": "他喜欢收藏邮票。",
+   "py": "Tā xǐhuan shōucáng yóupiào.",
+   "en": "He likes collecting stamps.",
+   "th": "เขาชอบสะสมแสตมป์"
+  }
+ },
+ {
+  "h": "收缩",
+  "p": "shōu suō",
+  "en": "to shrink",
+  "th": "หดตัว",
+  "ex": {
+   "zh": "衣服洗后收缩了。",
+   "py": "Yīfu xǐ hòu shōusuō le.",
+   "en": "The clothes shrank after washing.",
+   "th": "เสื้อผ้าหดหลังซัก"
+  }
+ },
+ {
+  "h": "收益",
+  "p": "shōu yì",
+  "en": "earnings",
+  "th": "ผลตอบแทน",
+  "ex": {
+   "zh": "这项投资收益不错。",
+   "py": "Zhè xiàng tóuzī shōuyì búcuò.",
+   "en": "This investment has decent returns.",
+   "th": "การลงทุนนี้ให้ผลตอบแทนไม่เลว"
+  }
+ },
+ {
+  "h": "收音机",
+  "p": "shōu yīn jī",
+  "en": "radio",
+  "th": "วิทยุ",
+  "ex": {
+   "zh": "爷爷喜欢听收音机。",
+   "py": "Yéye xǐhuan tīng shōuyīnjī.",
+   "en": "Grandpa likes listening to the radio.",
+   "th": "คุณปู่ชอบฟังวิทยุ"
+  }
+ },
+ {
+  "h": "手法",
+  "p": "shǒu fǎ",
+  "en": "technique",
+  "th": "กลวิธี",
+  "ex": {
+   "zh": "这位画家的手法很独特。",
+   "py": "Zhè wèi huàjiā de shǒufǎ hěn dútè.",
+   "en": "This painter's technique is very unique.",
+   "th": "กลวิธีของจิตรกรผู้นี้เป็นเอกลักษณ์มาก"
+  }
+ },
+ {
+  "h": "手势",
+  "p": "shǒu shì",
+  "en": "gesture",
+  "th": "ท่าทางมือ",
+  "ex": {
+   "zh": "他做了一个手势。",
+   "py": "Tā zuò le yí ge shǒushì.",
+   "en": "He made a gesture.",
+   "th": "เขาทำท่าทางด้วยมือ"
+  }
+ },
+ {
+  "h": "手艺",
+  "p": "shǒu yì",
+  "en": "craftsmanship",
+  "th": "ฝีมือ",
+  "ex": {
+   "zh": "妈妈的手艺真不错。",
+   "py": "Māma de shǒuyì zhēn búcuò.",
+   "en": "Mom's cooking skills are really good.",
+   "th": "ฝีมือของแม่ยอดเยี่ยมมาก"
+  }
+ },
+ {
+  "h": "守护",
+  "p": "shǒu hù",
+  "en": "to guard",
+  "th": "ปกป้อง",
+  "ex": {
+   "zh": "他一直守护着家人。",
+   "py": "Tā yìzhí shǒuhù zhe jiārén.",
+   "en": "He has always protected his family.",
+   "th": "เขาปกป้องครอบครัวมาโดยตลอด"
+  }
+ },
+ {
+  "h": "首要",
+  "p": "shǒu yào",
+  "en": "most important",
+  "th": "สำคัญที่สุด",
+  "ex": {
+   "zh": "安全是首要问题。",
+   "py": "Ānquán shì shǒuyào wèntí.",
+   "en": "Safety is the top priority.",
+   "th": "ความปลอดภัยเป็นเรื่องสำคัญที่สุด"
+  }
+ },
+ {
+  "h": "受罪",
+  "p": "shòu zuì",
+  "en": "to suffer",
+  "th": "ทนทุกข์",
+  "ex": {
+   "zh": "坐这么久的车真受罪。",
+   "py": "Zuò zhème jiǔ de chē zhēn shòuzuì.",
+   "en": "Riding in a car this long is real suffering.",
+   "th": "นั่งรถนานขนาดนี้ทรมานจริง ๆ"
+  }
+ },
+ {
+  "h": "授予",
+  "p": "shòu yǔ",
+  "en": "to award",
+  "th": "มอบให้",
+  "ex": {
+   "zh": "学校授予他荣誉学位。",
+   "py": "Xuéxiào shòuyǔ tā róngyù xuéwèi.",
+   "en": "The university awarded him an honorary degree.",
+   "th": "มหาวิทยาลัยมอบปริญญากิตติมศักดิ์ให้เขา"
+  }
+ },
+ {
+  "h": "书法",
+  "p": "shū fǎ",
+  "en": "calligraphy",
+  "th": "การเขียนพู่กัน",
+  "ex": {
+   "zh": "他的书法写得很好。",
+   "py": "Tā de shūfǎ xiě de hěn hǎo.",
+   "en": "His calligraphy is very good.",
+   "th": "ลายมือพู่กันของเขาสวยมาก"
+  }
+ },
+ {
+  "h": "书籍",
+  "p": "shū jí",
+  "en": "books",
+  "th": "หนังสือ",
+  "ex": {
+   "zh": "图书馆里有很多书籍。",
+   "py": "Túshūguǎn lǐ yǒu hěn duō shūjí.",
+   "en": "There are many books in the library.",
+   "th": "ในห้องสมุดมีหนังสือมากมาย"
+  }
+ },
+ {
+  "h": "书记",
+  "p": "shū ji",
+  "en": "secretary",
+  "th": "เลขาธิการ",
+  "ex": {
+   "zh": "他是党委书记。",
+   "py": "Tā shì dǎngwěi shūji.",
+   "en": "He is the Party committee secretary.",
+   "th": "เขาเป็นเลขาธิการคณะกรรมการพรรค"
+  }
+ },
+ {
+  "h": "书面",
+  "p": "shū miàn",
+  "en": "written",
+  "th": "เป็นลายลักษณ์อักษร",
+  "ex": {
+   "zh": "请提交书面申请。",
+   "py": "Qǐng tíjiāo shūmiàn shēnqǐng.",
+   "en": "Please submit a written application.",
+   "th": "กรุณายื่นคำร้องเป็นลายลักษณ์อักษร"
+  }
+ },
+ {
+  "h": "疏忽",
+  "p": "shū hu",
+  "en": "to overlook",
+  "th": "เลินเล่อ",
+  "ex": {
+   "zh": "这是我的疏忽。",
+   "py": "Zhè shì wǒ de shūhu.",
+   "en": "This was my oversight.",
+   "th": "นี่เป็นความเลินเล่อของฉัน"
+  }
+ },
+ {
+  "h": "舒畅",
+  "p": "shū chàng",
+  "en": "comfortable",
+  "th": "สบายใจ",
+  "ex": {
+   "zh": "听音乐让我心情舒畅。",
+   "py": "Tīng yīnyuè ràng wǒ xīnqíng shūchàng.",
+   "en": "Listening to music puts me in a good mood.",
+   "th": "การฟังเพลงทำให้ฉันสบายใจ"
+  }
+ },
+ {
+  "h": "束",
+  "p": "Shù",
+  "en": "Shu (surname)",
+  "th": "นามสกุลชู่",
+  "ex": {
+   "zh": "束先生是我们的邻居。",
+   "py": "Shù xiānsheng shì wǒmen de línjū.",
+   "en": "Mr. Shu is our neighbor.",
+   "th": "คุณชู่เป็นเพื่อนบ้านของเรา"
+  }
+ },
+ {
+  "h": "束缚",
+  "p": "shù fù",
+  "en": "to restrict",
+  "th": "พันธนาการ",
+  "ex": {
+   "zh": "不要被旧观念束缚。",
+   "py": "Bú yào bèi jiù guānniàn shùfù.",
+   "en": "Don't be bound by old ideas.",
+   "th": "อย่าถูกความคิดเก่า ๆ ผูกมัด"
+  }
+ }
+]

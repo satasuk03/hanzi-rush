@@ -1,0 +1,1202 @@
+[
+ {
+  "h": "共和国",
+  "p": "gòng hé guó",
+  "en": "republic",
+  "th": "สาธารณรัฐ",
+  "ex": {
+   "zh": "中华人民共和国成立于一九四九年。",
+   "py": "Zhōnghuá Rénmín Gònghéguó chénglì yú yī jiǔ sì jiǔ nián.",
+   "en": "The People's Republic of China was founded in 1949.",
+   "th": "สาธารณรัฐประชาชนจีนก่อตั้งขึ้นในปี 1949"
+  }
+ },
+ {
+  "h": "共计",
+  "p": "gòng jì",
+  "en": "in total",
+  "th": "รวมทั้งหมด",
+  "ex": {
+   "zh": "这次活动共计五十人参加。",
+   "py": "Zhè cì huódòng gòngjì wǔshí rén cānjiā.",
+   "en": "A total of fifty people took part in this event.",
+   "th": "กิจกรรมครั้งนี้มีผู้เข้าร่วมรวมห้าสิบคน"
+  }
+ },
+ {
+  "h": "共鸣",
+  "p": "gòng míng",
+  "en": "resonance",
+  "th": "ความรู้สึกร่วม",
+  "ex": {
+   "zh": "这首歌引起了大家的共鸣。",
+   "py": "Zhè shǒu gē yǐnqǐ le dàjiā de gòngmíng.",
+   "en": "This song resonated with everyone.",
+   "th": "เพลงนี้ทำให้ทุกคนรู้สึกเห็นพ้อง"
+  }
+ },
+ {
+  "h": "勾结",
+  "p": "gōu jié",
+  "en": "to collude",
+  "th": "สมคบคิด",
+  "ex": {
+   "zh": "他和坏人勾结做坏事。",
+   "py": "Tā hé huàirén gōujié zuò huàishì.",
+   "en": "He colluded with bad people to do evil.",
+   "th": "เขาสมคบกับคนร้ายทำเรื่องชั่ว"
+  }
+ },
+ {
+  "h": "钩子",
+  "p": "gōu zi",
+  "en": "hook",
+  "th": "ตะขอ",
+  "ex": {
+   "zh": "把衣服挂在钩子上。",
+   "py": "Bǎ yīfu guà zài gōuzi shàng.",
+   "en": "Hang the clothes on the hook.",
+   "th": "แขวนเสื้อผ้าไว้บนตะขอ"
+  }
+ },
+ {
+  "h": "构思",
+  "p": "gòu sī",
+  "en": "to conceive",
+  "th": "ออกแบบความคิด",
+  "ex": {
+   "zh": "作家正在构思新小说。",
+   "py": "Zuòjiā zhèngzài gòusī xīn xiǎoshuō.",
+   "en": "The writer is conceiving a new novel.",
+   "th": "นักเขียนกำลังคิดพล็อตนิยายเรื่องใหม่"
+  }
+ },
+ {
+  "h": "姑且",
+  "p": "gū qiě",
+  "en": "for the time being",
+  "th": "ชั่วคราว",
+  "ex": {
+   "zh": "这件事姑且不谈。",
+   "py": "Zhè jiàn shì gūqiě bù tán.",
+   "en": "Let's not discuss this matter for now.",
+   "th": "เรื่องนี้ยังไม่ต้องพูดถึงไปก่อน"
+  }
+ },
+ {
+  "h": "孤独",
+  "p": "gū dú",
+  "en": "lonely",
+  "th": "โดดเดี่ยว",
+  "ex": {
+   "zh": "老人一个人很孤独。",
+   "py": "Lǎorén yí ge rén hěn gūdú.",
+   "en": "The old man is very lonely by himself.",
+   "th": "ผู้สูงอายุอยู่คนเดียวรู้สึกเดียวดาย"
+  }
+ },
+ {
+  "h": "孤立",
+  "p": "gū lì",
+  "en": "isolated",
+  "th": "ถูกตัดขาด",
+  "ex": {
+   "zh": "他在班里被孤立了。",
+   "py": "Tā zài bān lǐ bèi gūlì le.",
+   "en": "He was isolated in the class.",
+   "th": "เขาถูกแยกให้โดดเดี่ยวในห้อง"
+  }
+ },
+ {
+  "h": "辜负",
+  "p": "gū fù",
+  "en": "to let down",
+  "th": "ทำให้ผิดหวัง",
+  "ex": {
+   "zh": "我不想辜负你的期望。",
+   "py": "Wǒ bù xiǎng gūfù nǐ de qīwàng.",
+   "en": "I don't want to let down your expectations.",
+   "th": "ฉันไม่อยากทำให้ความหวังของคุณสูญเปล่า"
+  }
+ },
+ {
+  "h": "古董",
+  "p": "gǔ dǒng",
+  "en": "antique",
+  "th": "ของโบราณ",
+  "ex": {
+   "zh": "他喜欢收藏古董。",
+   "py": "Tā xǐhuan shōucáng gǔdǒng.",
+   "en": "He likes collecting antiques.",
+   "th": "เขาชอบสะสมของโบราณ"
+  }
+ },
+ {
+  "h": "古怪",
+  "p": "gǔ guài",
+  "en": "weird",
+  "th": "แปลกประหลาด",
+  "ex": {
+   "zh": "这个人的脾气很古怪。",
+   "py": "Zhège rén de píqi hěn gǔguài.",
+   "en": "This person has a strange temper.",
+   "th": "คนคนนี้นิสัยแปลกประหลาด"
+  }
+ },
+ {
+  "h": "股东",
+  "p": "gǔ dōng",
+  "en": "shareholder",
+  "th": "ผู้ถือหุ้น",
+  "ex": {
+   "zh": "股东们今天开会。",
+   "py": "Gǔdōngmen jīntiān kāihuì.",
+   "en": "The shareholders are meeting today.",
+   "th": "ผู้ถือหุ้นประชุมกันวันนี้"
+  }
+ },
+ {
+  "h": "股份",
+  "p": "gǔ fèn",
+  "en": "share",
+  "th": "หุ้น",
+  "ex": {
+   "zh": "他在公司占有百分之十的股份。",
+   "py": "Tā zài gōngsī zhànyǒu bǎifēn zhī shí de gǔfèn.",
+   "en": "He holds ten percent of the company's shares.",
+   "th": "เขาถือหุ้นบริษัทสิบเปอร์เซ็นต์"
+  }
+ },
+ {
+  "h": "骨干",
+  "p": "gǔ gàn",
+  "en": "backbone",
+  "th": "กำลังหลัก",
+  "ex": {
+   "zh": "他是公司的技术骨干。",
+   "py": "Tā shì gōngsī de jìshù gǔgàn.",
+   "en": "He is a key technical member of the company.",
+   "th": "เขาเป็นกำลังหลักด้านเทคนิคของบริษัท"
+  }
+ },
+ {
+  "h": "鼓动",
+  "p": "gǔ dòng",
+  "en": "to incite",
+  "th": "ปลุกปั่น",
+  "ex": {
+   "zh": "他鼓动大家一起罢工。",
+   "py": "Tā gǔdòng dàjiā yìqǐ bàgōng.",
+   "en": "He urged everyone to go on strike.",
+   "th": "เขาปลุกระดมให้ทุกคนหยุดงานประท้วง"
+  }
+ },
+ {
+  "h": "固然",
+  "p": "gù rán",
+  "en": "admittedly",
+  "th": "จริงอยู่",
+  "ex": {
+   "zh": "他固然有错,但你也有责任。",
+   "py": "Tā gùrán yǒu cuò, dàn nǐ yě yǒu zérèn.",
+   "en": "He is indeed at fault, but you're also responsible.",
+   "th": "จริงอยู่ที่เขาผิด แต่คุณก็มีส่วนรับผิดชอบ"
+  }
+ },
+ {
+  "h": "固有",
+  "p": "gù yǒu",
+  "en": "inherent",
+  "th": "ที่มีอยู่แต่เดิม",
+  "ex": {
+   "zh": "这是人类固有的本能。",
+   "py": "Zhè shì rénlèi gùyǒu de běnnéng.",
+   "en": "This is an inherent human instinct.",
+   "th": "นี่เป็นสัญชาตญาณที่มีติดตัวมนุษย์"
+  }
+ },
+ {
+  "h": "固执",
+  "p": "gù zhí",
+  "en": "stubborn",
+  "th": "ดื้อรั้น",
+  "ex": {
+   "zh": "爷爷的脾气很固执。",
+   "py": "Yéye de píqi hěn gùzhí.",
+   "en": "Grandpa is very stubborn.",
+   "th": "ปู่เป็นคนดื้อรั้นมาก"
+  }
+ },
+ {
+  "h": "故乡",
+  "p": "gù xiāng",
+  "en": "hometown",
+  "th": "บ้านเกิด",
+  "ex": {
+   "zh": "我很想念我的故乡。",
+   "py": "Wǒ hěn xiǎngniàn wǒ de gùxiāng.",
+   "en": "I miss my hometown very much.",
+   "th": "ฉันคิดถึงบ้านเกิดมาก"
+  }
+ },
+ {
+  "h": "故障",
+  "p": "gù zhàng",
+  "en": "breakdown",
+  "th": "ขัดข้อง",
+  "ex": {
+   "zh": "汽车出了故障。",
+   "py": "Qìchē chū le gùzhàng.",
+   "en": "The car broke down.",
+   "th": "รถเกิดขัดข้อง"
+  }
+ },
+ {
+  "h": "顾虑",
+  "p": "gù lǜ",
+  "en": "misgivings",
+  "th": "ความกังวล",
+  "ex": {
+   "zh": "你不用有什么顾虑。",
+   "py": "Nǐ búyòng yǒu shénme gùlǜ.",
+   "en": "You don't need to have any misgivings.",
+   "th": "คุณไม่ต้องกังวลอะไร"
+  }
+ },
+ {
+  "h": "顾问",
+  "p": "gù wèn",
+  "en": "consultant",
+  "th": "ที่ปรึกษา",
+  "ex": {
+   "zh": "他是公司的法律顾问。",
+   "py": "Tā shì gōngsī de fǎlǜ gùwèn.",
+   "en": "He is the company's legal adviser.",
+   "th": "เขาเป็นที่ปรึกษากฎหมายของบริษัท"
+  }
+ },
+ {
+  "h": "拐杖",
+  "p": "guǎi zhàng",
+  "en": "crutch",
+  "th": "ไม้ค้ำยัน",
+  "ex": {
+   "zh": "爷爷拄着拐杖走路。",
+   "py": "Yéye zhǔ zhe guǎizhàng zǒulù.",
+   "en": "Grandpa walks leaning on a cane.",
+   "th": "ปู่ใช้ไม้เท้าค้ำเดิน"
+  }
+ },
+ {
+  "h": "关照",
+  "p": "guān zhào",
+  "en": "to look after",
+  "th": "ดูแล",
+  "ex": {
+   "zh": "请你多关照我的孩子。",
+   "py": "Qǐng nǐ duō guānzhào wǒ de háizi.",
+   "en": "Please take good care of my child.",
+   "th": "ฝากดูแลลูกของฉันด้วย"
+  }
+ },
+ {
+  "h": "观光",
+  "p": "guān guāng",
+  "en": "sightseeing",
+  "th": "ชมทัศนียภาพ",
+  "ex": {
+   "zh": "我们去北京观光。",
+   "py": "Wǒmen qù Běijīng guānguāng.",
+   "en": "We are going to Beijing for sightseeing.",
+   "th": "เราไปเที่ยวชมปักกิ่ง"
+  }
+ },
+ {
+  "h": "官方",
+  "p": "guān fāng",
+  "en": "official",
+  "th": "ทางการ",
+  "ex": {
+   "zh": "官方已经发布了消息。",
+   "py": "Guānfāng yǐjīng fābù le xiāoxi.",
+   "en": "The authorities have released the news.",
+   "th": "ทางการได้ประกาศข่าวแล้ว"
+  }
+ },
+ {
+  "h": "管辖",
+  "p": "guǎn xiá",
+  "en": "to have jurisdiction",
+  "th": "ปกครอง",
+  "ex": {
+   "zh": "这个区由市政府管辖。",
+   "py": "Zhège qū yóu shì zhèngfǔ guǎnxiá.",
+   "en": "This district is under the city government's jurisdiction.",
+   "th": "เขตนี้อยู่ภายใต้การปกครองของรัฐบาลเมือง"
+  }
+ },
+ {
+  "h": "贯彻",
+  "p": "guàn chè",
+  "en": "to implement",
+  "th": "ปฏิบัติตาม",
+  "ex": {
+   "zh": "学校认真贯彻了新规定。",
+   "py": "Xuéxiào rènzhēn guànchè le xīn guīdìng.",
+   "en": "The school seriously implemented the new rules.",
+   "th": "โรงเรียนปฏิบัติตามกฎใหม่อย่างจริงจัง"
+  }
+ },
+ {
+  "h": "惯例",
+  "p": "guàn lì",
+  "en": "convention",
+  "th": "ธรรมเนียม",
+  "ex": {
+   "zh": "按照惯例,我们先开会。",
+   "py": "Ànzhào guànlì, wǒmen xiān kāihuì.",
+   "en": "As usual, we hold a meeting first.",
+   "th": "ตามธรรมเนียม เราจะประชุมกันก่อน"
+  }
+ },
+ {
+  "h": "灌溉",
+  "p": "guàn gài",
+  "en": "to irrigate",
+  "th": "ชลประทาน",
+  "ex": {
+   "zh": "农民引水灌溉农田。",
+   "py": "Nóngmín yǐnshuǐ guàngài nóngtián.",
+   "en": "Farmers divert water to irrigate the fields.",
+   "th": "ชาวนาผันน้ำมารดพื้นที่เกษตร"
+  }
+ },
+ {
+  "h": "罐",
+  "p": "guàn",
+  "en": "jar",
+  "th": "กระป๋อง",
+  "ex": {
+   "zh": "桌上有一个玻璃罐。",
+   "py": "Zhuō shàng yǒu yí ge bōli guàn.",
+   "en": "There is a glass jar on the table.",
+   "th": "บนโต๊ะมีโหลแก้วอยู่ใบหนึ่ง"
+  }
+ },
+ {
+  "h": "光彩",
+  "p": "guāng cǎi",
+  "en": "luster",
+  "th": "ความเปล่งประกาย",
+  "ex": {
+   "zh": "她的笑容光彩照人。",
+   "py": "Tā de xiàoróng guāngcǎi zhàorén.",
+   "en": "Her smile is radiant.",
+   "th": "รอยยิ้มของเธอเปล่งประกาย"
+  }
+ },
+ {
+  "h": "光辉",
+  "p": "guāng huī",
+  "en": "radiance",
+  "th": "ความเจิดจ้า",
+  "ex": {
+   "zh": "太阳散发着光辉。",
+   "py": "Tàiyáng sànfā zhe guānghuī.",
+   "en": "The sun gives off brilliant light.",
+   "th": "ดวงอาทิตย์ส่องแสงเจิดจ้า"
+  }
+ },
+ {
+  "h": "光芒",
+  "p": "guāng máng",
+  "en": "rays of light",
+  "th": "รัศมี",
+  "ex": {
+   "zh": "星星发出微弱的光芒。",
+   "py": "Xīngxing fāchū wēiruò de guāngmáng.",
+   "en": "The stars give off a faint glow.",
+   "th": "ดวงดาวส่องแสงริบหรี่"
+  }
+ },
+ {
+  "h": "广阔",
+  "p": "guǎng kuò",
+  "en": "vast",
+  "th": "กว้างใหญ่",
+  "ex": {
+   "zh": "草原十分广阔。",
+   "py": "Cǎoyuán shífēn guǎngkuò.",
+   "en": "The grassland is extremely vast.",
+   "th": "ทุ่งหญ้ากว้างใหญ่ไพศาล"
+  }
+ },
+ {
+  "h": "归根到底",
+  "p": "guī gēn dào dǐ",
+  "en": "in the final analysis",
+  "th": "สรุปแล้ว",
+  "ex": {
+   "zh": "归根到底,这是钱的问题。",
+   "py": "Guī gēn dào dǐ, zhè shì qián de wèntí.",
+   "en": "In the end, it's a matter of money.",
+   "th": "สรุปแล้ว นี่เป็นปัญหาเรื่องเงิน"
+  }
+ },
+ {
+  "h": "归还",
+  "p": "guī huán",
+  "en": "to return",
+  "th": "คืน",
+  "ex": {
+   "zh": "请按时归还图书。",
+   "py": "Qǐng ànshí guīhuán túshū.",
+   "en": "Please return the books on time.",
+   "th": "กรุณาคืนหนังสือตามกำหนด"
+  }
+ },
+ {
+  "h": "归纳",
+  "p": "guī nà",
+  "en": "to summarize",
+  "th": "สรุป",
+  "ex": {
+   "zh": "老师帮我们归纳重点。",
+   "py": "Lǎoshī bāng wǒmen guīnà zhòngdiǎn.",
+   "en": "The teacher helps us summarize the key points.",
+   "th": "ครูช่วยเราสรุปประเด็นสำคัญ"
+  }
+ },
+ {
+  "h": "规范",
+  "p": "guī fàn",
+  "en": "standard",
+  "th": "มาตรฐาน",
+  "ex": {
+   "zh": "他的发音很规范。",
+   "py": "Tā de fāyīn hěn guīfàn.",
+   "en": "His pronunciation is very standard.",
+   "th": "การออกเสียงของเขาได้มาตรฐานมาก"
+  }
+ },
+ {
+  "h": "规格",
+  "p": "guī gé",
+  "en": "specification",
+  "th": "ข้อกำหนด",
+  "ex": {
+   "zh": "这两种产品规格不同。",
+   "py": "Zhè liǎng zhǒng chǎnpǐn guīgé bù tóng.",
+   "en": "These two products have different specifications.",
+   "th": "สินค้าสองชนิดนี้มีขนาดต่างกัน"
+  }
+ },
+ {
+  "h": "规划",
+  "p": "guī huà",
+  "en": "to plan",
+  "th": "วางแผน",
+  "ex": {
+   "zh": "市政府正在规划新公园。",
+   "py": "Shì zhèngfǔ zhèngzài guīhuà xīn gōngyuán.",
+   "en": "The city government is planning a new park.",
+   "th": "รัฐบาลเมืองกำลังวางแผนสวนสาธารณะแห่งใหม่"
+  }
+ },
+ {
+  "h": "规章",
+  "p": "guī zhāng",
+  "en": "regulation",
+  "th": "ระเบียบ",
+  "ex": {
+   "zh": "大家要遵守学校的规章。",
+   "py": "Dàjiā yào zūnshǒu xuéxiào de guīzhāng.",
+   "en": "Everyone must follow the school's regulations.",
+   "th": "ทุกคนต้องปฏิบัติตามระเบียบของโรงเรียน"
+  }
+ },
+ {
+  "h": "轨道",
+  "p": "guǐ dào",
+  "en": "orbit",
+  "th": "วงโคจร",
+  "ex": {
+   "zh": "卫星进入了轨道。",
+   "py": "Wèixīng jìnrù le guǐdào.",
+   "en": "The satellite entered orbit.",
+   "th": "ดาวเทียมเข้าสู่วงโคจร"
+  }
+ },
+ {
+  "h": "贵族",
+  "p": "guì zú",
+  "en": "nobility",
+  "th": "ชนชั้นสูง",
+  "ex": {
+   "zh": "他出生在一个贵族家庭。",
+   "py": "Tā chūshēng zài yí ge guìzú jiātíng.",
+   "en": "He was born into a noble family.",
+   "th": "เขาเกิดในตระกูลขุนนาง"
+  }
+ },
+ {
+  "h": "跪",
+  "p": "guì",
+  "en": "to kneel",
+  "th": "คุกเข่า",
+  "ex": {
+   "zh": "他跪在地上求原谅。",
+   "py": "Tā guì zài dìshàng qiú yuánliàng.",
+   "en": "He knelt on the ground begging for forgiveness.",
+   "th": "เขาคุกเข่าลงกับพื้นขออภัย"
+  }
+ },
+ {
+  "h": "棍棒",
+  "p": "gùn bàng",
+  "en": "club",
+  "th": "กระบอง",
+  "ex": {
+   "zh": "他手里拿着一根棍棒。",
+   "py": "Tā shǒu lǐ ná zhe yì gēn gùnbàng.",
+   "en": "He is holding a club in his hand.",
+   "th": "ในมือของเขาถือกระบองอยู่"
+  }
+ },
+ {
+  "h": "国防",
+  "p": "guó fáng",
+  "en": "national defense",
+  "th": "การป้องกันประเทศ",
+  "ex": {
+   "zh": "国防是国家的大事。",
+   "py": "Guófáng shì guójiā de dàshì.",
+   "en": "National defense is a major state matter.",
+   "th": "การป้องกันประเทศเป็นเรื่องสำคัญของชาติ"
+  }
+ },
+ {
+  "h": "国务院",
+  "p": "Guó wù yuàn",
+  "en": "State Council",
+  "th": "คณะรัฐมนตรีจีน",
+  "ex": {
+   "zh": "国务院发布了新政策。",
+   "py": "Guówùyuàn fābù le xīn zhèngcè.",
+   "en": "The State Council issued a new policy.",
+   "th": "คณะรัฐมนตรีจีนประกาศนโยบายใหม่"
+  }
+ },
+ {
+  "h": "果断",
+  "p": "guǒ duàn",
+  "en": "decisive",
+  "th": "เด็ดขาด",
+  "ex": {
+   "zh": "他做事很果断。",
+   "py": "Tā zuòshì hěn guǒduàn.",
+   "en": "He acts decisively.",
+   "th": "เขาทำงานอย่างเด็ดขาด"
+  }
+ },
+ {
+  "h": "过度",
+  "p": "guò dù",
+  "en": "excessive",
+  "th": "มากเกินไป",
+  "ex": {
+   "zh": "过度劳累对身体不好。",
+   "py": "Guòdù láolèi duì shēntǐ bù hǎo.",
+   "en": "Overwork is bad for your health.",
+   "th": "การทำงานหนักเกินไปไม่ดีต่อสุขภาพ"
+  }
+ },
+ {
+  "h": "过渡",
+  "p": "guò dù",
+  "en": "transition",
+  "th": "การเปลี่ยนผ่าน",
+  "ex": {
+   "zh": "这是一个过渡时期。",
+   "py": "Zhè shì yí ge guòdù shíqī.",
+   "en": "This is a transitional period.",
+   "th": "นี่คือช่วงเปลี่ยนผ่าน"
+  }
+ },
+ {
+  "h": "过奖",
+  "p": "guò jiǎng",
+  "en": "to flatter",
+  "th": "ชมเกินไป",
+  "ex": {
+   "zh": "您过奖了,我做得不好。",
+   "py": "Nín guòjiǎng le, wǒ zuò de bù hǎo.",
+   "en": "You flatter me; I didn't do well.",
+   "th": "คุณชมเกินไปแล้ว ฉันทำได้ไม่ดีหรอก"
+  }
+ },
+ {
+  "h": "过滤",
+  "p": "guò lǜ",
+  "en": "to filter",
+  "th": "กรอง",
+  "ex": {
+   "zh": "这台机器可以过滤水。",
+   "py": "Zhè tái jīqì kěyǐ guòlǜ shuǐ.",
+   "en": "This machine can filter water.",
+   "th": "เครื่องนี้กรองน้ำได้"
+  }
+ },
+ {
+  "h": "过失",
+  "p": "guò shī",
+  "en": "mistake",
+  "th": "ความผิดพลาด",
+  "ex": {
+   "zh": "这次事故是他的过失。",
+   "py": "Zhè cì shìgù shì tā de guòshī.",
+   "en": "This accident was his fault.",
+   "th": "อุบัติเหตุครั้งนี้เป็นความผิดพลาดของเขา"
+  }
+ },
+ {
+  "h": "过问",
+  "p": "guò wèn",
+  "en": "to get involved",
+  "th": "ใส่ใจ",
+  "ex": {
+   "zh": "他从不过问家里的事。",
+   "py": "Tā cóng bú guòwèn jiā lǐ de shì.",
+   "en": "He never concerns himself with family matters.",
+   "th": "เขาไม่เคยสนใจเรื่องในบ้านเลย"
+  }
+ },
+ {
+  "h": "过瘾",
+  "p": "guò yǐn",
+  "en": "satisfying",
+  "th": "สะใจ",
+  "ex": {
+   "zh": "吃了辣火锅真过瘾!",
+   "py": "Chī le là huǒguō zhēn guòyǐn!",
+   "en": "Eating spicy hotpot is so satisfying!",
+   "th": "กินหม่าล่าหม้อไฟแล้วสะใจจริงๆ"
+  }
+ },
+ {
+  "h": "过于",
+  "p": "guò yú",
+  "en": "too",
+  "th": "เกินไป",
+  "ex": {
+   "zh": "你过于紧张了。",
+   "py": "Nǐ guòyú jǐnzhāng le.",
+   "en": "You are too nervous.",
+   "th": "คุณตื่นเต้นเกินไป"
+  }
+ },
+ {
+  "h": "嗨",
+  "p": "hāi",
+  "en": "hi",
+  "th": "ไฮ",
+  "ex": {
+   "zh": "嗨,你好吗?",
+   "py": "Hāi, nǐ hǎo ma?",
+   "en": "Hi, how are you?",
+   "th": "ไฮ สบายดีไหม"
+  }
+ },
+ {
+  "h": "还原",
+  "p": "huán yuán",
+  "en": "to restore",
+  "th": "คืนสภาพ",
+  "ex": {
+   "zh": "专家把画还原成了原样。",
+   "py": "Zhuānjiā bǎ huà huányuán chéng le yuányàng.",
+   "en": "Experts restored the painting to its original state.",
+   "th": "ผู้เชี่ยวชาญบูรณะภาพให้กลับเป็นเหมือนเดิม"
+  }
+ },
+ {
+  "h": "海拔",
+  "p": "hǎi bá",
+  "en": "elevation",
+  "th": "ความสูงจากระดับน้ำทะเล",
+  "ex": {
+   "zh": "这座山海拔三千米。",
+   "py": "Zhè zuò shān hǎibá sānqiān mǐ.",
+   "en": "This mountain is 3,000 meters above sea level.",
+   "th": "ภูเขาลูกนี้สูงจากระดับน้ำทะเลสามพันเมตร"
+  }
+ },
+ {
+  "h": "海滨",
+  "p": "hǎi bīn",
+  "en": "seaside",
+  "th": "ชายทะเล",
+  "ex": {
+   "zh": "我们在海滨散步。",
+   "py": "Wǒmen zài hǎibīn sànbù.",
+   "en": "We took a walk by the seaside.",
+   "th": "เราเดินเล่นริมชายทะเล"
+  }
+ },
+ {
+  "h": "含糊",
+  "p": "hán hu",
+  "en": "vague",
+  "th": "คลุมเครือ",
+  "ex": {
+   "zh": "他的回答很含糊。",
+   "py": "Tā de huídá hěn hánhu.",
+   "en": "His answer was vague.",
+   "th": "คำตอบของเขาคลุมเครือ"
+  }
+ },
+ {
+  "h": "含义",
+  "p": "hán yì",
+  "en": "meaning",
+  "th": "ความหมาย",
+  "ex": {
+   "zh": "这句话的含义很深。",
+   "py": "Zhè jù huà de hányì hěn shēn.",
+   "en": "The meaning of this sentence is profound.",
+   "th": "ประโยคนี้มีความหมายลึกซึ้ง"
+  }
+ },
+ {
+  "h": "寒暄",
+  "p": "hán xuān",
+  "en": "to exchange greetings",
+  "th": "ทักทาย",
+  "ex": {
+   "zh": "他们见面时寒暄了几句。",
+   "py": "Tāmen jiànmiàn shí hánxuān le jǐ jù.",
+   "en": "They exchanged a few pleasantries when they met.",
+   "th": "พวกเขาทักทายกันสองสามคำเมื่อพบกัน"
+  }
+ },
+ {
+  "h": "罕见",
+  "p": "hǎn jiàn",
+  "en": "rare",
+  "th": "หายาก",
+  "ex": {
+   "zh": "这种花很罕见。",
+   "py": "Zhè zhǒng huā hěn hǎnjiàn.",
+   "en": "This kind of flower is rare.",
+   "th": "ดอกไม้ชนิดนี้หาดูยาก"
+  }
+ },
+ {
+  "h": "捍卫",
+  "p": "hàn wèi",
+  "en": "to defend",
+  "th": "ปกป้อง",
+  "ex": {
+   "zh": "战士们捍卫祖国。",
+   "py": "Zhànshìmen hànwèi zǔguó.",
+   "en": "The soldiers defend the motherland.",
+   "th": "ทหารปกป้องมาตุภูมิ"
+  }
+ },
+ {
+  "h": "航空",
+  "p": "háng kōng",
+  "en": "aviation",
+  "th": "การบิน",
+  "ex": {
+   "zh": "他在航空公司工作。",
+   "py": "Tā zài hángkōng gōngsī gōngzuò.",
+   "en": "He works at an airline.",
+   "th": "เขาทำงานที่สายการบิน"
+  }
+ },
+ {
+  "h": "航天",
+  "p": "háng tiān",
+  "en": "space flight",
+  "th": "การบินอวกาศ",
+  "ex": {
+   "zh": "中国的航天技术发展很快。",
+   "py": "Zhōngguó de hángtiān jìshù fāzhǎn hěn kuài.",
+   "en": "China's space technology is developing fast.",
+   "th": "เทคโนโลยีอวกาศของจีนพัฒนาเร็วมาก"
+  }
+ },
+ {
+  "h": "航行",
+  "p": "háng xíng",
+  "en": "to sail",
+  "th": "แล่นเรือ",
+  "ex": {
+   "zh": "轮船在海上航行。",
+   "py": "Lúnchuán zài hǎishàng hángxíng.",
+   "en": "The ship sails on the sea.",
+   "th": "เรือกลไฟแล่นอยู่กลางทะเล"
+  }
+ },
+ {
+  "h": "毫米",
+  "p": "háo mǐ",
+  "en": "millimeter",
+  "th": "มิลลิเมตร",
+  "ex": {
+   "zh": "这张纸只有一毫米厚。",
+   "py": "Zhè zhāng zhǐ zhǐ yǒu yì háomǐ hòu.",
+   "en": "This paper is only one millimeter thick.",
+   "th": "กระดาษแผ่นนี้หนาแค่หนึ่งมิลลิเมตร"
+  }
+ },
+ {
+  "h": "毫无",
+  "p": "háo wú",
+  "en": "not at all",
+  "th": "ไม่มีเลย",
+  "ex": {
+   "zh": "他对此毫无兴趣。",
+   "py": "Tā duì cǐ háowú xìngqù.",
+   "en": "He has no interest in this at all.",
+   "th": "เขาไม่สนใจเรื่องนี้เลยแม้แต่น้อย"
+  }
+ },
+ {
+  "h": "豪迈",
+  "p": "háo mài",
+  "en": "heroic",
+  "th": "กล้าหาญ",
+  "ex": {
+   "zh": "他说话很豪迈。",
+   "py": "Tā shuōhuà hěn háomài.",
+   "en": "He speaks with bold heroism.",
+   "th": "เขาพูดจาห้าวหาญเปิดเผย"
+  }
+ },
+ {
+  "h": "好客",
+  "p": "hào kè",
+  "en": "hospitable",
+  "th": "ชอบต้อนรับแขก",
+  "ex": {
+   "zh": "云南人很好客。",
+   "py": "Yúnnán rén hěn hàokè.",
+   "en": "People in Yunnan are very hospitable.",
+   "th": "คนยูนนานเป็นมิตรต้อนรับแขก"
+  }
+ },
+ {
+  "h": "号召",
+  "p": "hào zhào",
+  "en": "to call on",
+  "th": "เรียกร้อง",
+  "ex": {
+   "zh": "老师号召大家做环保。",
+   "py": "Lǎoshī hàozhào dàjiā zuò huánbǎo.",
+   "en": "The teacher called on everyone to protect the environment.",
+   "th": "ครูเรียกร้องให้ทุกคนช่วยกันรักษาสิ่งแวดล้อม"
+  }
+ },
+ {
+  "h": "耗费",
+  "p": "hào fèi",
+  "en": "to waste",
+  "th": "สิ้นเปลือง",
+  "ex": {
+   "zh": "这项工程耗费了大量资金。",
+   "py": "Zhè xiàng gōngchéng hàofèi le dàliàng zījīn.",
+   "en": "This project consumed a large amount of funds.",
+   "th": "โครงการนี้ใช้เงินทุนจำนวนมาก"
+  }
+ },
+ {
+  "h": "合并",
+  "p": "hé bìng",
+  "en": "to merge",
+  "th": "รวมเข้าด้วยกัน",
+  "ex": {
+   "zh": "两家公司合并了。",
+   "py": "Liǎng jiā gōngsī hébìng le.",
+   "en": "The two companies merged.",
+   "th": "สองบริษัทรวมกิจการกัน"
+  }
+ },
+ {
+  "h": "合成",
+  "p": "hé chéng",
+  "en": "to synthesize",
+  "th": "สังเคราะห์",
+  "ex": {
+   "zh": "水由氢和氧合成。",
+   "py": "Shuǐ yóu qīng hé yǎng héchéng.",
+   "en": "Water is composed of hydrogen and oxygen.",
+   "th": "น้ำเกิดจากไฮโดรเจนและออกซิเจนรวมกัน"
+  }
+ },
+ {
+  "h": "合乎",
+  "p": "hé hū",
+  "en": "to conform to",
+  "th": "สอดคล้องกับ",
+  "ex": {
+   "zh": "这个做法合乎规定。",
+   "py": "Zhège zuòfǎ héhū guīdìng.",
+   "en": "This practice conforms to the regulations.",
+   "th": "วิธีนี้สอดคล้องกับระเบียบ"
+  }
+ },
+ {
+  "h": "合伙",
+  "p": "hé huǒ",
+  "en": "to form a partnership",
+  "th": "ร่วมหุ้น",
+  "ex": {
+   "zh": "他们合伙开了一家餐厅。",
+   "py": "Tāmen héhuǒ kāi le yì jiā cāntīng.",
+   "en": "They opened a restaurant as partners.",
+   "th": "พวกเขาร่วมหุ้นกันเปิดร้านอาหาร"
+  }
+ },
+ {
+  "h": "合身",
+  "p": "hé shēn",
+  "en": "well-fitting",
+  "th": "พอดีตัว",
+  "ex": {
+   "zh": "这件衣服很合身。",
+   "py": "Zhè jiàn yīfu hěn héshēn.",
+   "en": "This piece of clothing fits well.",
+   "th": "เสื้อตัวนี้พอดีตัวมาก"
+  }
+ },
+ {
+  "h": "合算",
+  "p": "hé suàn",
+  "en": "worthwhile",
+  "th": "คุ้มค่า",
+  "ex": {
+   "zh": "买这个很合算。",
+   "py": "Mǎi zhège hěn hésuàn.",
+   "en": "Buying this is a good deal.",
+   "th": "ซื้อของชิ้นนี้คุ้มมาก"
+  }
+ },
+ {
+  "h": "和蔼",
+  "p": "hé ǎi",
+  "en": "kindly",
+  "th": "ใจดี",
+  "ex": {
+   "zh": "老师看起来很和蔼。",
+   "py": "Lǎoshī kàn qǐlái hěn hé'ǎi.",
+   "en": "The teacher looks very kind.",
+   "th": "ครูดูใจดีมาก"
+  }
+ },
+ {
+  "h": "和解",
+  "p": "hé jiě",
+  "en": "to reconcile",
+  "th": "ปรองดอง",
+  "ex": {
+   "zh": "两家公司最后达成了和解。",
+   "py": "Liǎng jiā gōngsī zuìhòu dáchéng le héjiě.",
+   "en": "The two companies finally reached a settlement.",
+   "th": "สองบริษัทตกลงประนีประนอมกันในที่สุด"
+  }
+ },
+ {
+  "h": "和睦",
+  "p": "hé mù",
+  "en": "living in harmony",
+  "th": "กลมเกลียว",
+  "ex": {
+   "zh": "他们家庭很和睦。",
+   "py": "Tāmen jiātíng hěn hémù.",
+   "en": "Their family is very harmonious.",
+   "th": "ครอบครัวของพวกเขาสามัคคีปรองดอง"
+  }
+ },
+ {
+  "h": "和气",
+  "p": "hé qi",
+  "en": "amiable",
+  "th": "อัธยาศัยดี",
+  "ex": {
+   "zh": "她说话总是和和气气的。",
+   "py": "Tā shuōhuà zǒngshì héhéqìqì de.",
+   "en": "She always speaks in a friendly manner.",
+   "th": "เธอพูดจาสุภาพอ่อนโยนเสมอ"
+  }
+ },
+ {
+  "h": "和谐",
+  "p": "hé xié",
+  "en": "harmony",
+  "th": "ความกลมกลืน",
+  "ex": {
+   "zh": "我们要建设和谐社会。",
+   "py": "Wǒmen yào jiànshè héxié shèhuì.",
+   "en": "We should build a harmonious society.",
+   "th": "เราต้องสร้างสังคมที่กลมกลืน"
+  }
+ },
+ {
+  "h": "嘿",
+  "p": "hēi",
+  "en": "hey",
+  "th": "เฮ้",
+  "ex": {
+   "zh": "嘿,你在这儿干什么?",
+   "py": "Hēi, nǐ zài zhèr gàn shénme?",
+   "en": "Hey, what are you doing here?",
+   "th": "เฮ้ คุณมาทำอะไรที่นี่"
+  }
+ },
+ {
+  "h": "痕迹",
+  "p": "hén jì",
+  "en": "trace",
+  "th": "ร่องรอย",
+  "ex": {
+   "zh": "墙上留下了他的痕迹。",
+   "py": "Qiáng shàng liú xià le tā de hénjì.",
+   "en": "His marks were left on the wall.",
+   "th": "บนผนังมีร่องรอยของเขาหลงเหลืออยู่"
+  }
+ },
+ {
+  "h": "狠心",
+  "p": "hěn xīn",
+  "en": "heartless",
+  "th": "ใจร้าย",
+  "ex": {
+   "zh": "你怎么这么狠心?",
+   "py": "Nǐ zěnme zhème hěnxīn?",
+   "en": "How can you be so heartless?",
+   "th": "ทำไมคุณใจร้ายอย่างนี้"
+  }
+ },
+ {
+  "h": "恨不得",
+  "p": "hèn bu de",
+  "en": "to be dying to",
+  "th": "อยากจะ...แทบแย่",
+  "ex": {
+   "zh": "我恨不得马上回家。",
+   "py": "Wǒ hènbude mǎshàng huíjiā.",
+   "en": "I can't wait to go home right now.",
+   "th": "ฉันอยากกลับบ้านเดี๋ยวนี้แทบแย่"
+  }
+ },
+ {
+  "h": "哼",
+  "p": "hēng",
+  "en": "to groan",
+  "th": "ครางฮึ",
+  "ex": {
+   "zh": "他疼得哼了一声。",
+   "py": "Tā téng de hēng le yì shēng.",
+   "en": "He groaned with pain.",
+   "th": "เขาเจ็บจนครางออกมาเสียงหนึ่ง"
+  }
+ },
+ {
+  "h": "轰动",
+  "p": "hōng dòng",
+  "en": "to cause a sensation",
+  "th": "เป็นข่าวสะเทือน",
+  "ex": {
+   "zh": "这个消息轰动了全国。",
+   "py": "Zhège xiāoxi hōngdòng le quánguó.",
+   "en": "This news caused a sensation across the country.",
+   "th": "ข่าวนี้สร้างความฮือฮาไปทั่วประเทศ"
+  }
+ },
+ {
+  "h": "哄",
+  "p": "hōng",
+  "en": "roar of laughter",
+  "th": "เสียงฮือ",
+  "ex": {
+   "zh": "教室里发出一阵哄笑。",
+   "py": "Jiàoshì lǐ fāchū yí zhèn hōngxiào.",
+   "en": "A burst of laughter rose in the classroom.",
+   "th": "ในห้องเรียนมีเสียงหัวเราะฮือขึ้นมา"
+  }
+ },
+ {
+  "h": "烘",
+  "p": "hōng",
+  "en": "to roast",
+  "th": "อบ",
+  "ex": {
+   "zh": "他在火边烘干衣服。",
+   "py": "Tā zài huǒ biān hōnggān yīfu.",
+   "en": "He dried his clothes by the fire.",
+   "th": "เขาผิงไฟอบเสื้อผ้าให้แห้ง"
+  }
+ },
+ {
+  "h": "红包",
+  "p": "hóng bāo",
+  "en": "red envelope",
+  "th": "อั่งเปา",
+  "ex": {
+   "zh": "过年时长辈发红包。",
+   "py": "Guònián shí zhǎngbèi fā hóngbāo.",
+   "en": "Elders give red envelopes at New Year.",
+   "th": "ช่วงตรุษจีนผู้ใหญ่แจกอั่งเปา"
+  }
+ },
+ {
+  "h": "宏观",
+  "p": "hóng guān",
+  "en": "macro",
+  "th": "ภาพรวม",
+  "ex": {
+   "zh": "我们要从宏观上考虑问题。",
+   "py": "Wǒmen yào cóng hóngguān shàng kǎolǜ wèntí.",
+   "en": "We should consider the problem from a macro perspective.",
+   "th": "เราต้องพิจารณาปัญหาในภาพรวม"
+  }
+ },
+ {
+  "h": "宏伟",
+  "p": "hóng wěi",
+  "en": "magnificent",
+  "th": "ยิ่งใหญ่ตระการตา",
+  "ex": {
+   "zh": "这座建筑很宏伟。",
+   "py": "Zhè zuò jiànzhù hěn hóngwěi.",
+   "en": "This building is magnificent.",
+   "th": "อาคารนี้ยิ่งใหญ่อลังการ"
+  }
+ },
+ {
+  "h": "洪水",
+  "p": "hóng shuǐ",
+  "en": "flood",
+  "th": "น้ำท่วม",
+  "ex": {
+   "zh": "洪水冲走了桥。",
+   "py": "Hóngshuǐ chōng zǒu le qiáo.",
+   "en": "The flood washed the bridge away.",
+   "th": "น้ำท่วมพัดสะพานไป"
+  }
+ },
+ {
+  "h": "喉咙",
+  "p": "hóu lóng",
+  "en": "throat",
+  "th": "ลำคอ",
+  "ex": {
+   "zh": "我的喉咙很痛。",
+   "py": "Wǒ de hóulóng hěn tòng.",
+   "en": "My throat hurts a lot.",
+   "th": "คอของฉันเจ็บมาก"
+  }
+ }
+]

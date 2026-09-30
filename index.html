@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#2a1a3a" />
+  <title>Hanzi Rush</title>
+  <meta name="description" content="Hanzi Rush — learn Chinese HSK 1–6 vocabulary with juicy mini games. เรียนคำศัพท์ภาษาจีน HSK ผ่านเกมสุดมันส์" />
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Mitr:wght@500;600;700&family=Noto+Sans+SC:wght@700;900&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* Critical: paint a full idle scene before any JS runs. */
+    html, body { margin: 0; height: 100%; background: #1b6fd1; overflow: hidden; }
+    body {
+      background:
+        radial-gradient(circle at 50% 30%, rgba(255,255,255,.35), transparent 55%),
+        repeating-conic-gradient(from 0deg at 50% 30%, #3fa9f5 0deg 11.25deg, #58b9fa 11.25deg 22.5deg);
+    }
+  </style>
+  <script type="module" src="/src/main.ts"></script>
+</head>
+<body>
+  <div id="shake">
+    <canvas id="bg"></canvas>
+    <div id="app"></div>
+    <canvas id="gl"></canvas>
+    <canvas id="fx"></canvas>
+    <div id="overlay"></div>
+    <div id="flash"></div>
+    <div id="iris"></div>
+  </div>
+  <noscript>Hanzi Rush needs JavaScript.</noscript>
+</body>
+</html>

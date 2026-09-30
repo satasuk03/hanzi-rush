@@ -1,0 +1,1202 @@
+[
+ {
+  "h": "树立",
+  "p": "shù lì",
+  "en": "to establish",
+  "th": "สร้าง",
+  "ex": {
+   "zh": "他为大家树立了好榜样。",
+   "py": "Tā wèi dàjiā shùlì le hǎo bǎngyàng.",
+   "en": "He set a good example for everyone.",
+   "th": "เขาสร้างแบบอย่างที่ดีให้ทุกคน"
+  }
+ },
+ {
+  "h": "竖",
+  "p": "shù",
+  "en": "vertical",
+  "th": "แนวตั้ง",
+  "ex": {
+   "zh": "请在纸上画一条竖线。",
+   "py": "Qǐng zài zhǐ shàng huà yì tiáo shùxiàn.",
+   "en": "Please draw a vertical line on the paper.",
+   "th": "กรุณาวาดเส้นแนวตั้งบนกระดาษ"
+  }
+ },
+ {
+  "h": "数",
+  "p": "shǔ",
+  "en": "to count",
+  "th": "นับ",
+  "ex": {
+   "zh": "请数一数有几个人。",
+   "py": "Qǐng shǔ yi shǔ yǒu jǐ ge rén.",
+   "en": "Please count how many people there are.",
+   "th": "กรุณานับดูว่ามีกี่คน"
+  }
+ },
+ {
+  "h": "数额",
+  "p": "shù é",
+  "en": "amount",
+  "th": "จำนวนเงิน",
+  "ex": {
+   "zh": "这笔钱的数额很大。",
+   "py": "Zhè bǐ qián de shù'é hěn dà.",
+   "en": "The amount of this money is very large.",
+   "th": "จำนวนเงินก้อนนี้สูงมาก"
+  }
+ },
+ {
+  "h": "数目",
+  "p": "shù mù",
+  "en": "number",
+  "th": "จำนวน",
+  "ex": {
+   "zh": "会员的数目在增加。",
+   "py": "Huìyuán de shùmù zài zēngjiā.",
+   "en": "The number of members is increasing.",
+   "th": "จำนวนสมาชิกเพิ่มขึ้น"
+  }
+ },
+ {
+  "h": "耍",
+  "p": "Shuǎ",
+  "en": "to play tricks",
+  "th": "เล่นแง่",
+  "ex": {
+   "zh": "别耍小聪明。",
+   "py": "Bié shuǎ xiǎo cōngming.",
+   "en": "Don't play clever tricks.",
+   "th": "อย่าเล่นเล่ห์เหลี่ยมเล็ก ๆ น้อย ๆ"
+  }
+ },
+ {
+  "h": "衰老",
+  "p": "shuāi lǎo",
+  "en": "to age",
+  "th": "แก่ชรา",
+  "ex": {
+   "zh": "人总会衰老的。",
+   "py": "Rén zǒng huì shuāilǎo de.",
+   "en": "People will always age.",
+   "th": "คนเราย่อมแก่ชราลงเป็นธรรมดา"
+  }
+ },
+ {
+  "h": "衰退",
+  "p": "shuāi tuì",
+  "en": "to decline",
+  "th": "ถดถอย",
+  "ex": {
+   "zh": "经济开始衰退了。",
+   "py": "Jīngjì kāishǐ shuāituì le.",
+   "en": "The economy has begun to decline.",
+   "th": "เศรษฐกิจเริ่มถดถอย"
+  }
+ },
+ {
+  "h": "涮",
+  "p": "shuàn",
+  "en": "to rinse",
+  "th": "ลวก",
+  "ex": {
+   "zh": "我们晚上去吃涮羊肉。",
+   "py": "Wǒmen wǎnshang qù chī shuàn yángròu.",
+   "en": "We are going for lamb hotpot tonight.",
+   "th": "คืนนี้เราไปกินหม้อไฟเนื้อแกะกัน"
+  }
+ },
+ {
+  "h": "双胞胎",
+  "p": "shuāng bāo tāi",
+  "en": "twins",
+  "th": "ฝาแฝด",
+  "ex": {
+   "zh": "她生了一对双胞胎。",
+   "py": "Tā shēng le yí duì shuāngbāotāi.",
+   "en": "She gave birth to a pair of twins.",
+   "th": "เธอให้กำเนิดลูกแฝดหนึ่งคู่"
+  }
+ },
+ {
+  "h": "爽快",
+  "p": "shuǎng kuai",
+  "en": "frank",
+  "th": "ตรงไปตรงมา",
+  "ex": {
+   "zh": "他回答得很爽快。",
+   "py": "Tā huídá de hěn shuǎngkuai.",
+   "en": "He answered very frankly.",
+   "th": "เขาตอบอย่างตรงไปตรงมา"
+  }
+ },
+ {
+  "h": "水利",
+  "p": "shuǐ lì",
+  "en": "water conservancy",
+  "th": "ชลประทาน",
+  "ex": {
+   "zh": "国家重视水利建设。",
+   "py": "Guójiā zhòngshì shuǐlì jiànshè.",
+   "en": "The country values water conservancy projects.",
+   "th": "ประเทศให้ความสำคัญกับงานชลประทาน"
+  }
+ },
+ {
+  "h": "水龙头",
+  "p": "shuǐ lóng tóu",
+  "en": "faucet",
+  "th": "ก๊อกน้ำ",
+  "ex": {
+   "zh": "请关好水龙头。",
+   "py": "Qǐng guān hǎo shuǐlóngtóu.",
+   "en": "Please turn off the faucet properly.",
+   "th": "กรุณาปิดก๊อกน้ำให้สนิท"
+  }
+ },
+ {
+  "h": "水泥",
+  "p": "shuǐ ní",
+  "en": "cement",
+  "th": "ปูนซีเมนต์",
+  "ex": {
+   "zh": "工人在搅拌水泥。",
+   "py": "Gōngrén zài jiǎobàn shuǐní.",
+   "en": "The workers are mixing cement.",
+   "th": "คนงานกำลังผสมปูนซีเมนต์"
+  }
+ },
+ {
+  "h": "司法",
+  "p": "sī fǎ",
+  "en": "judiciary",
+  "th": "ตุลาการ",
+  "ex": {
+   "zh": "他在司法部门工作。",
+   "py": "Tā zài sīfǎ bùmén gōngzuò.",
+   "en": "He works in the judicial department.",
+   "th": "เขาทำงานในหน่วยงานตุลาการ"
+  }
+ },
+ {
+  "h": "司令",
+  "p": "sī lìng",
+  "en": "commander",
+  "th": "ผู้บัญชาการ",
+  "ex": {
+   "zh": "司令下达了命令。",
+   "py": "Sīlìng xiàdá le mìnglìng.",
+   "en": "The commander issued an order.",
+   "th": "ผู้บัญชาการออกคำสั่ง"
+  }
+ },
+ {
+  "h": "私自",
+  "p": "sī zì",
+  "en": "without permission",
+  "th": "ทำเองโดยพลการ",
+  "ex": {
+   "zh": "你不能私自决定。",
+   "py": "Nǐ bù néng sīzì juédìng.",
+   "en": "You can't decide on your own.",
+   "th": "คุณห้ามตัดสินใจเองโดยพลการ"
+  }
+ },
+ {
+  "h": "思念",
+  "p": "sī niàn",
+  "en": "to miss",
+  "th": "คิดถึง",
+  "ex": {
+   "zh": "我很思念远方的家人。",
+   "py": "Wǒ hěn sīniàn yuǎnfāng de jiārén.",
+   "en": "I miss my family far away.",
+   "th": "ฉันคิดถึงครอบครัวที่อยู่ไกล"
+  }
+ },
+ {
+  "h": "思索",
+  "p": "sī suǒ",
+  "en": "to ponder",
+  "th": "ครุ่นคิด",
+  "ex": {
+   "zh": "他低头思索了一会儿。",
+   "py": "Tā dītóu sīsuǒ le yíhuìr.",
+   "en": "He lowered his head and pondered for a while.",
+   "th": "เขาก้มหน้าครุ่นคิดอยู่ครู่หนึ่ง"
+  }
+ },
+ {
+  "h": "思维",
+  "p": "sī wéi",
+  "en": "thinking",
+  "th": "ความคิด",
+  "ex": {
+   "zh": "孩子的思维很活跃。",
+   "py": "Háizi de sīwéi hěn huóyuè.",
+   "en": "Children's thinking is very active.",
+   "th": "ความคิดของเด็กคล่องแคล่วมาก"
+  }
+ },
+ {
+  "h": "思绪",
+  "p": "sī xù",
+  "en": "train of thought",
+  "th": "ห้วงความคิด",
+  "ex": {
+   "zh": "她的思绪飘回了童年。",
+   "py": "Tā de sīxù piāo huí le tóngnián.",
+   "en": "Her thoughts drifted back to childhood.",
+   "th": "ห้วงความคิดของเธอลอยกลับไปสู่วัยเด็ก"
+  }
+ },
+ {
+  "h": "斯文",
+  "p": "sī wén",
+  "en": "refined",
+  "th": "สุภาพเรียบร้อย",
+  "ex": {
+   "zh": "他说话很斯文。",
+   "py": "Tā shuōhuà hěn sīwen.",
+   "en": "He speaks in a refined way.",
+   "th": "เขาพูดจาสุภาพเรียบร้อย"
+  }
+ },
+ {
+  "h": "死亡",
+  "p": "sǐ wáng",
+  "en": "death",
+  "th": "ความตาย",
+  "ex": {
+   "zh": "这次事故造成三人死亡。",
+   "py": "Zhè cì shìgù zàochéng sān rén sǐwáng.",
+   "en": "This accident caused three deaths.",
+   "th": "อุบัติเหตุครั้งนี้ทำให้มีผู้เสียชีวิตสามคน"
+  }
+ },
+ {
+  "h": "四肢",
+  "p": "sì zhī",
+  "en": "limbs",
+  "th": "แขนขา",
+  "ex": {
+   "zh": "他的四肢很有力。",
+   "py": "Tā de sìzhī hěn yǒulì.",
+   "en": "His limbs are very strong.",
+   "th": "แขนขาของเขาแข็งแรงมาก"
+  }
+ },
+ {
+  "h": "饲养",
+  "p": "sì yǎng",
+  "en": "to raise",
+  "th": "เลี้ยง",
+  "ex": {
+   "zh": "他在农场饲养奶牛。",
+   "py": "Tā zài nóngchǎng sìyǎng nǎiniú.",
+   "en": "He raises dairy cows on the farm.",
+   "th": "เขาเลี้ยงวัวนมที่ฟาร์ม"
+  }
+ },
+ {
+  "h": "肆无忌惮",
+  "p": "sì wú jì dàn",
+  "en": "unbridled",
+  "th": "ไม่เกรงกลัวใคร",
+  "ex": {
+   "zh": "他肆无忌惮地大声说话。",
+   "py": "Tā sìwújìdàn de dàshēng shuōhuà.",
+   "en": "He talks loudly without any restraint.",
+   "th": "เขาพูดเสียงดังโดยไม่เกรงใจใคร"
+  }
+ },
+ {
+  "h": "耸",
+  "p": "sǒng",
+  "en": "to shrug",
+  "th": "ยักไหล่",
+  "ex": {
+   "zh": "他耸了耸肩。",
+   "py": "Tā sǒng le sǒng jiān.",
+   "en": "He shrugged his shoulders.",
+   "th": "เขายักไหล่"
+  }
+ },
+ {
+  "h": "搜索",
+  "p": "sōu suǒ",
+  "en": "to search",
+  "th": "ค้นหา",
+  "ex": {
+   "zh": "警察在搜索现场。",
+   "py": "Jǐngchá zài sōusuǒ xiànchǎng.",
+   "en": "The police are searching the scene.",
+   "th": "ตำรวจกำลังค้นหาในที่เกิดเหตุ"
+  }
+ },
+ {
+  "h": "艘",
+  "p": "sōu",
+  "en": "ship (measure word)",
+  "th": "ลำ (ลักษณนามเรือ)",
+  "ex": {
+   "zh": "港口停着一艘大船。",
+   "py": "Gǎngkǒu tíng zhe yì sōu dà chuán.",
+   "en": "A big ship is docked in the harbor.",
+   "th": "มีเรือลำใหญ่จอดอยู่ที่ท่าเรือ"
+  }
+ },
+ {
+  "h": "苏醒",
+  "p": "sū xǐng",
+  "en": "to regain consciousness",
+  "th": "ฟื้นคืนสติ",
+  "ex": {
+   "zh": "病人终于苏醒了。",
+   "py": "Bìngrén zhōngyú sūxǐng le.",
+   "en": "The patient finally regained consciousness.",
+   "th": "ผู้ป่วยฟื้นคืนสติในที่สุด"
+  }
+ },
+ {
+  "h": "俗话",
+  "p": "sú huà",
+  "en": "saying",
+  "th": "สุภาษิต",
+  "ex": {
+   "zh": "俗话说，笑一笑十年少。",
+   "py": "Súhuà shuō, xiào yi xiào shí nián shào.",
+   "en": "As the saying goes, a smile takes ten years off.",
+   "th": "สุภาษิตว่า ยิ้มหน่อยอ่อนเยาว์สิบปี"
+  }
+ },
+ {
+  "h": "素食",
+  "p": "sù shí",
+  "en": "vegetarian food",
+  "th": "อาหารมังสวิรัติ",
+  "ex": {
+   "zh": "她只吃素食。",
+   "py": "Tā zhǐ chī sùshí.",
+   "en": "She only eats vegetarian food.",
+   "th": "เธอกินแต่อาหารมังสวิรัติ"
+  }
+ },
+ {
+  "h": "素质",
+  "p": "sù zhì",
+  "en": "quality",
+  "th": "คุณภาพ",
+  "ex": {
+   "zh": "他的综合素质很高。",
+   "py": "Tā de zōnghé sùzhì hěn gāo.",
+   "en": "His overall quality is very high.",
+   "th": "คุณสมบัติโดยรวมของเขาสูงมาก"
+  }
+ },
+ {
+  "h": "塑造",
+  "p": "sù zào",
+  "en": "to shape",
+  "th": "หล่อหลอม",
+  "ex": {
+   "zh": "教育塑造孩子的性格。",
+   "py": "Jiàoyù sùzào háizi de xìnggé.",
+   "en": "Education shapes a child's character.",
+   "th": "การศึกษาหล่อหลอมนิสัยของเด็ก"
+  }
+ },
+ {
+  "h": "诉讼",
+  "p": "sù sòng",
+  "en": "lawsuit",
+  "th": "การฟ้องร้อง",
+  "ex": {
+   "zh": "他们打了一场诉讼。",
+   "py": "Tāmen dǎ le yì chǎng sùsòng.",
+   "en": "They fought a lawsuit.",
+   "th": "พวกเขาต่อสู้คดีความครั้งหนึ่ง"
+  }
+ },
+ {
+  "h": "算了",
+  "p": "suàn le",
+  "en": "forget it",
+  "th": "ช่างเถอะ",
+  "ex": {
+   "zh": "算了，不说这个了。",
+   "py": "Suàn le, bù shuō zhège le.",
+   "en": "Forget it, let's not talk about this.",
+   "th": "ช่างเถอะ ไม่พูดเรื่องนี้แล้ว"
+  }
+ },
+ {
+  "h": "算数",
+  "p": "suàn shù",
+  "en": "to keep one's word",
+  "th": "รักษาคำพูด",
+  "ex": {
+   "zh": "说话要算数。",
+   "py": "Shuōhuà yào suànshù.",
+   "en": "You must keep your word.",
+   "th": "พูดแล้วต้องรักษาคำพูด"
+  }
+ },
+ {
+  "h": "随即",
+  "p": "suí jí",
+  "en": "immediately",
+  "th": "ทันที",
+  "ex": {
+   "zh": "他说完随即离开了。",
+   "py": "Tā shuō wán suíjí líkāi le.",
+   "en": "After speaking, he left immediately.",
+   "th": "พูดจบเขาก็จากไปทันที"
+  }
+ },
+ {
+  "h": "随身",
+  "p": "suí shēn",
+  "en": "on one's person",
+  "th": "พกติดตัว",
+  "ex": {
+   "zh": "请随身携带证件。",
+   "py": "Qǐng suíshēn xiédài zhèngjiàn.",
+   "en": "Please carry your ID with you.",
+   "th": "กรุณาพกบัตรประจำตัวติดตัว"
+  }
+ },
+ {
+  "h": "随手",
+  "p": "suí shǒu",
+  "en": "casually",
+  "th": "ถือโอกาส",
+  "ex": {
+   "zh": "出门时请随手关灯。",
+   "py": "Chūmén shí qǐng suíshǒu guān dēng.",
+   "en": "Please turn off the lights on your way out.",
+   "th": "เวลาออกจากบ้านช่วยปิดไฟด้วย"
+  }
+ },
+ {
+  "h": "随意",
+  "p": "suí yì",
+  "en": "as one pleases",
+  "th": "ตามสบาย",
+  "ex": {
+   "zh": "大家请随意坐。",
+   "py": "Dàjiā qǐng suíyì zuò.",
+   "en": "Everyone, please sit wherever you like.",
+   "th": "ทุกคนเชิญนั่งตามสบาย"
+  }
+ },
+ {
+  "h": "岁月",
+  "p": "suì yuè",
+  "en": "years",
+  "th": "วันเวลา",
+  "ex": {
+   "zh": "岁月过得真快。",
+   "py": "Suìyuè guò de zhēn kuài.",
+   "en": "The years pass so quickly.",
+   "th": "วันเวลาผ่านไปเร็วจริง ๆ"
+  }
+ },
+ {
+  "h": "隧道",
+  "p": "suì dào",
+  "en": "tunnel",
+  "th": "อุโมงค์",
+  "ex": {
+   "zh": "火车穿过了隧道。",
+   "py": "Huǒchē chuānguò le suìdào.",
+   "en": "The train passed through the tunnel.",
+   "th": "รถไฟวิ่งผ่านอุโมงค์"
+  }
+ },
+ {
+  "h": "损坏",
+  "p": "sǔn huài",
+  "en": "to damage",
+  "th": "ทำให้เสียหาย",
+  "ex": {
+   "zh": "手机屏幕损坏了。",
+   "py": "Shǒujī píngmù sǔnhuài le.",
+   "en": "The phone screen is damaged.",
+   "th": "หน้าจอโทรศัพท์เสียหาย"
+  }
+ },
+ {
+  "h": "索赔",
+  "p": "suǒ péi",
+  "en": "to claim compensation",
+  "th": "เรียกร้องค่าชดเชย",
+  "ex": {
+   "zh": "他向公司提出索赔。",
+   "py": "Tā xiàng gōngsī tíchū suǒpéi.",
+   "en": "He filed a claim with the company.",
+   "th": "เขายื่นเรียกร้องค่าชดเชยจากบริษัท"
+  }
+ },
+ {
+  "h": "索性",
+  "p": "suǒ xìng",
+  "en": "might as well",
+  "th": "ยอมไปเสียเลย",
+  "ex": {
+   "zh": "太晚了，索性别回去了。",
+   "py": "Tài wǎn le, suǒxìng bié huíqù le.",
+   "en": "It's too late, you might as well not go back.",
+   "th": "ดึกแล้ว ไม่ต้องกลับไปเสียเลยก็ได้"
+  }
+ },
+ {
+  "h": "塌",
+  "p": "tā",
+  "en": "to collapse",
+  "th": "พังทลาย",
+  "ex": {
+   "zh": "房子被大雨冲塌了。",
+   "py": "Fángzi bèi dàyǔ chōng tā le.",
+   "en": "The house collapsed in the heavy rain.",
+   "th": "บ้านพังทลายเพราะฝนตกหนัก"
+  }
+ },
+ {
+  "h": "踏实",
+  "p": "tā shi",
+  "en": "steady",
+  "th": "มั่นคง",
+  "ex": {
+   "zh": "他做事很踏实。",
+   "py": "Tā zuòshì hěn tāshi.",
+   "en": "He works in a down-to-earth way.",
+   "th": "เขาทำงานอย่างมั่นคงจริงจัง"
+  }
+ },
+ {
+  "h": "台风",
+  "p": "tái fēng",
+  "en": "typhoon",
+  "th": "ไต้ฝุ่น",
+  "ex": {
+   "zh": "明天有台风要来。",
+   "py": "Míngtiān yǒu táifēng yào lái.",
+   "en": "A typhoon is coming tomorrow.",
+   "th": "พรุ่งนี้จะมีไต้ฝุ่นเข้า"
+  }
+ },
+ {
+  "h": "太空",
+  "p": "tài kōng",
+  "en": "outer space",
+  "th": "อวกาศ",
+  "ex": {
+   "zh": "宇航员飞向太空。",
+   "py": "Yǔhángyuán fēi xiàng tàikōng.",
+   "en": "The astronaut flew into space.",
+   "th": "นักบินอวกาศบินสู่อวกาศ"
+  }
+ },
+ {
+  "h": "泰斗",
+  "p": "tài dǒu",
+  "en": "leading authority",
+  "th": "ปรมาจารย์",
+  "ex": {
+   "zh": "他是文学界的泰斗。",
+   "py": "Tā shì wénxuéjiè de tàidǒu.",
+   "en": "He is a leading figure in the literary world.",
+   "th": "เขาเป็นปรมาจารย์แห่งวงการวรรณกรรม"
+  }
+ },
+ {
+  "h": "贪婪",
+  "p": "tān lán",
+  "en": "greedy",
+  "th": "โลภ",
+  "ex": {
+   "zh": "他的眼神很贪婪。",
+   "py": "Tā de yǎnshén hěn tānlán.",
+   "en": "His gaze is very greedy.",
+   "th": "สายตาของเขาโลภมาก"
+  }
+ },
+ {
+  "h": "贪污",
+  "p": "tān wū",
+  "en": "to embezzle",
+  "th": "ยักยอก",
+  "ex": {
+   "zh": "他因贪污被抓了。",
+   "py": "Tā yīn tānwū bèi zhuā le.",
+   "en": "He was arrested for embezzlement.",
+   "th": "เขาถูกจับข้อหายักยอกทรัพย์"
+  }
+ },
+ {
+  "h": "摊儿",
+  "p": "tān r",
+  "en": "stall",
+  "th": "แผงขายของ",
+  "ex": {
+   "zh": "路边有个卖水果的摊儿。",
+   "py": "Lùbiān yǒu ge mài shuǐguǒ de tānr.",
+   "en": "There is a fruit stall by the road.",
+   "th": "ริมถนนมีแผงขายผลไม้"
+  }
+ },
+ {
+  "h": "瘫痪",
+  "p": "tān huàn",
+  "en": "paralysis",
+  "th": "อัมพาต",
+  "ex": {
+   "zh": "大雪使交通瘫痪了。",
+   "py": "Dàxuě shǐ jiāotōng tānhuàn le.",
+   "en": "The heavy snow paralyzed traffic.",
+   "th": "หิมะตกหนักทำให้การจราจรเป็นอัมพาต"
+  }
+ },
+ {
+  "h": "坦白",
+  "p": "tǎn bái",
+  "en": "frank",
+  "th": "เปิดเผยตรงไปตรงมา",
+  "ex": {
+   "zh": "我坦白地告诉你吧。",
+   "py": "Wǒ tǎnbái de gàosu nǐ ba.",
+   "en": "Let me tell you frankly.",
+   "th": "ฉันขอบอกคุณตรง ๆ นะ"
+  }
+ },
+ {
+  "h": "叹气",
+  "p": "tàn qì",
+  "en": "to sigh",
+  "th": "ถอนหายใจ",
+  "ex": {
+   "zh": "她无奈地叹了口气。",
+   "py": "Tā wúnài de tàn le kǒu qì.",
+   "en": "She sighed helplessly.",
+   "th": "เธอถอนหายใจอย่างจนใจ"
+  }
+ },
+ {
+  "h": "探测",
+  "p": "tàn cè",
+  "en": "to probe",
+  "th": "สำรวจ",
+  "ex": {
+   "zh": "科学家在探测海底。",
+   "py": "Kēxuéjiā zài tàncè hǎidǐ.",
+   "en": "Scientists are probing the seabed.",
+   "th": "นักวิทยาศาสตร์กำลังสำรวจก้นทะเล"
+  }
+ },
+ {
+  "h": "探索",
+  "p": "tàn suǒ",
+  "en": "to explore",
+  "th": "สำรวจค้นหา",
+  "ex": {
+   "zh": "人类不断探索宇宙。",
+   "py": "Rénlèi búduàn tànsuǒ yǔzhòu.",
+   "en": "Humans keep exploring the universe.",
+   "th": "มนุษย์สำรวจจักรวาลอย่างไม่หยุดยั้ง"
+  }
+ },
+ {
+  "h": "探讨",
+  "p": "tàn tǎo",
+  "en": "to discuss",
+  "th": "อภิปราย",
+  "ex": {
+   "zh": "我们探讨了这个问题。",
+   "py": "Wǒmen tàntǎo le zhège wèntí.",
+   "en": "We discussed this issue in depth.",
+   "th": "เราอภิปรายปัญหานี้กัน"
+  }
+ },
+ {
+  "h": "探望",
+  "p": "tàn wàng",
+  "en": "to visit",
+  "th": "เยี่ยมเยียน",
+  "ex": {
+   "zh": "周末我去探望奶奶。",
+   "py": "Zhōumò wǒ qù tànwàng nǎinai.",
+   "en": "I'm visiting grandma this weekend.",
+   "th": "สุดสัปดาห์ฉันไปเยี่ยมคุณย่า"
+  }
+ },
+ {
+  "h": "糖葫芦",
+  "p": "táng hú lu",
+  "en": "candied hawthorns",
+  "th": "ท้อพันธุ์จีนเคลือบน้ำตาล",
+  "ex": {
+   "zh": "冬天我爱吃糖葫芦。",
+   "py": "Dōngtiān wǒ ài chī tánghúlu.",
+   "en": "I love eating candied hawthorns in winter.",
+   "th": "หน้าหนาวฉันชอบกินท้อเคลือบน้ำตาล"
+  }
+ },
+ {
+  "h": "倘若",
+  "p": "tǎng ruò",
+  "en": "if",
+  "th": "ถ้าหาก",
+  "ex": {
+   "zh": "倘若下雨，我们就不去了。",
+   "py": "Tǎngruò xià yǔ, wǒmen jiù bú qù le.",
+   "en": "If it rains, we won't go.",
+   "th": "ถ้าหากฝนตก เราก็จะไม่ไป"
+  }
+ },
+ {
+  "h": "掏",
+  "p": "tāo",
+  "en": "to take out",
+  "th": "ควัก",
+  "ex": {
+   "zh": "他从口袋里掏出钥匙。",
+   "py": "Tā cóng kǒudai lǐ tāochū yàoshi.",
+   "en": "He took the key out of his pocket.",
+   "th": "เขาควักกุญแจออกจากกระเป๋า"
+  }
+ },
+ {
+  "h": "滔滔不绝",
+  "p": "tāo tāo bù jué",
+  "en": "talking nonstop",
+  "th": "พูดไม่หยุด",
+  "ex": {
+   "zh": "他滔滔不绝地讲了一小时。",
+   "py": "Tā tāotāobùjué de jiǎng le yì xiǎoshí.",
+   "en": "He talked nonstop for an hour.",
+   "th": "เขาพูดไม่หยุดเป็นชั่วโมง"
+  }
+ },
+ {
+  "h": "陶瓷",
+  "p": "táo cí",
+  "en": "ceramics",
+  "th": "เครื่องเคลือบดินเผา",
+  "ex": {
+   "zh": "景德镇以陶瓷闻名。",
+   "py": "Jǐngdézhèn yǐ táocí wénmíng.",
+   "en": "Jingdezhen is famous for ceramics.",
+   "th": "จิ่งเต๋อเจิ้นมีชื่อเสียงเรื่องเครื่องเคลือบ"
+  }
+ },
+ {
+  "h": "淘气",
+  "p": "táo qì",
+  "en": "naughty",
+  "th": "ซุกซน",
+  "ex": {
+   "zh": "这个孩子很淘气。",
+   "py": "Zhège háizi hěn táoqì.",
+   "en": "This child is very naughty.",
+   "th": "เด็กคนนี้ซุกซนมาก"
+  }
+ },
+ {
+  "h": "淘汰",
+  "p": "táo tài",
+  "en": "to eliminate",
+  "th": "คัดออก",
+  "ex": {
+   "zh": "他在第一轮就被淘汰了。",
+   "py": "Tā zài dì yī lún jiù bèi táotài le.",
+   "en": "He was eliminated in the first round.",
+   "th": "เขาถูกคัดออกตั้งแต่รอบแรก"
+  }
+ },
+ {
+  "h": "讨价还价",
+  "p": "tǎo jià huán jià",
+  "en": "to haggle",
+  "th": "ต่อราคา",
+  "ex": {
+   "zh": "她在市场上讨价还价。",
+   "py": "Tā zài shìchǎng shàng tǎojiàhuánjià.",
+   "en": "She is haggling at the market.",
+   "th": "เธอกำลังต่อราคาที่ตลาด"
+  }
+ },
+ {
+  "h": "特定",
+  "p": "tè dìng",
+  "en": "specific",
+  "th": "เฉพาะเจาะจง",
+  "ex": {
+   "zh": "这是针对特定人群的。",
+   "py": "Zhè shì zhēnduì tèdìng rénqún de.",
+   "en": "This is aimed at a specific group of people.",
+   "th": "นี่มุ่งเป้าไปที่กลุ่มคนเฉพาะ"
+  }
+ },
+ {
+  "h": "特色",
+  "p": "tè sè",
+  "en": "characteristic",
+  "th": "เอกลักษณ์",
+  "ex": {
+   "zh": "这家餐厅很有特色。",
+   "py": "Zhè jiā cāntīng hěn yǒu tèsè.",
+   "en": "This restaurant has a lot of character.",
+   "th": "ร้านอาหารนี้มีเอกลักษณ์มาก"
+  }
+ },
+ {
+  "h": "特长",
+  "p": "tè cháng",
+  "en": "special skill",
+  "th": "ความถนัดพิเศษ",
+  "ex": {
+   "zh": "你有什么特长？",
+   "py": "Nǐ yǒu shénme tècháng?",
+   "en": "What special skills do you have?",
+   "th": "คุณมีความถนัดพิเศษอะไรบ้าง"
+  }
+ },
+ {
+  "h": "提拔",
+  "p": "tí bá",
+  "en": "to promote",
+  "th": "เลื่อนตำแหน่ง",
+  "ex": {
+   "zh": "他被提拔为部门经理。",
+   "py": "Tā bèi tíbá wéi bùmén jīnglǐ.",
+   "en": "He was promoted to department manager.",
+   "th": "เขาได้รับเลื่อนตำแหน่งเป็นผู้จัดการแผนก"
+  }
+ },
+ {
+  "h": "提炼",
+  "p": "tí liàn",
+  "en": "to refine",
+  "th": "สกัด",
+  "ex": {
+   "zh": "这种油是从植物中提炼的。",
+   "py": "Zhè zhǒng yóu shì cóng zhíwù zhōng tíliàn de.",
+   "en": "This oil is extracted from plants.",
+   "th": "น้ำมันชนิดนี้สกัดจากพืช"
+  }
+ },
+ {
+  "h": "提示",
+  "p": "tí shì",
+  "en": "to prompt",
+  "th": "แจ้งเตือน",
+  "ex": {
+   "zh": "屏幕上有提示信息。",
+   "py": "Píngmù shàng yǒu tíshì xìnxī.",
+   "en": "There is a prompt message on the screen.",
+   "th": "มีข้อความแจ้งเตือนบนหน้าจอ"
+  }
+ },
+ {
+  "h": "提议",
+  "p": "tí yì",
+  "en": "proposal",
+  "th": "ข้อเสนอ",
+  "ex": {
+   "zh": "我同意你的提议。",
+   "py": "Wǒ tóngyì nǐ de tíyì.",
+   "en": "I agree with your proposal.",
+   "th": "ฉันเห็นด้วยกับข้อเสนอของคุณ"
+  }
+ },
+ {
+  "h": "题材",
+  "p": "tí cái",
+  "en": "subject matter",
+  "th": "เนื้อหาเรื่อง",
+  "ex": {
+   "zh": "这部电影的题材很新颖。",
+   "py": "Zhè bù diànyǐng de tícái hěn xīnyǐng.",
+   "en": "The subject matter of this film is very fresh.",
+   "th": "เนื้อหาของภาพยนตร์เรื่องนี้แปลกใหม่มาก"
+  }
+ },
+ {
+  "h": "体谅",
+  "p": "tǐ liàng",
+  "en": "to be understanding",
+  "th": "เห็นอกเห็นใจ",
+  "ex": {
+   "zh": "请你体谅我的难处。",
+   "py": "Qǐng nǐ tǐliàng wǒ de nánchù.",
+   "en": "Please understand my difficulties.",
+   "th": "ขอให้คุณเข้าใจความลำบากของฉัน"
+  }
+ },
+ {
+  "h": "体面",
+  "p": "tǐ miàn",
+  "en": "respectable",
+  "th": "น่านับถือ",
+  "ex": {
+   "zh": "他有一份体面的工作。",
+   "py": "Tā yǒu yí fèn tǐmiàn de gōngzuò.",
+   "en": "He has a respectable job.",
+   "th": "เขามีงานที่น่านับถือ"
+  }
+ },
+ {
+  "h": "体系",
+  "p": "tǐ xì",
+  "en": "system",
+  "th": "ระบบ",
+  "ex": {
+   "zh": "我们建立了完整的体系。",
+   "py": "Wǒmen jiànlì le wánzhěng de tǐxì.",
+   "en": "We built a complete system.",
+   "th": "เราสร้างระบบที่สมบูรณ์ขึ้นมา"
+  }
+ },
+ {
+  "h": "天才",
+  "p": "tiān cái",
+  "en": "genius",
+  "th": "อัจฉริยะ",
+  "ex": {
+   "zh": "他是个音乐天才。",
+   "py": "Tā shì ge yīnyuè tiāncái.",
+   "en": "He is a musical genius.",
+   "th": "เขาเป็นอัจฉริยะทางดนตรี"
+  }
+ },
+ {
+  "h": "天伦之乐",
+  "p": "tiān lún zhī lè",
+  "en": "family happiness",
+  "th": "สุขสันต์ในครอบครัว",
+  "ex": {
+   "zh": "老人享受着天伦之乐。",
+   "py": "Lǎorén xiǎngshòu zhe tiānlúnzhīlè.",
+   "en": "The old couple enjoy family happiness.",
+   "th": "ผู้เฒ่าเพลิดเพลินกับความสุขในครอบครัว"
+  }
+ },
+ {
+  "h": "天然气",
+  "p": "tiān rán qì",
+  "en": "natural gas",
+  "th": "ก๊าซธรรมชาติ",
+  "ex": {
+   "zh": "我家用天然气做饭。",
+   "py": "Wǒ jiā yòng tiānránqì zuòfàn.",
+   "en": "My family cooks with natural gas.",
+   "th": "บ้านฉันใช้ก๊าซธรรมชาติทำอาหาร"
+  }
+ },
+ {
+  "h": "天生",
+  "p": "tiān shēng",
+  "en": "innate",
+  "th": "มาแต่กำเนิด",
+  "ex": {
+   "zh": "她天生就很聪明。",
+   "py": "Tā tiānshēng jiù hěn cōngming.",
+   "en": "She is naturally smart.",
+   "th": "เธอฉลาดมาแต่กำเนิด"
+  }
+ },
+ {
+  "h": "天堂",
+  "p": "tiān táng",
+  "en": "paradise",
+  "th": "สวรรค์",
+  "ex": {
+   "zh": "这里像天堂一样美。",
+   "py": "Zhèlǐ xiàng tiāntáng yíyàng měi.",
+   "en": "This place is as beautiful as paradise.",
+   "th": "ที่นี่สวยราวกับสวรรค์"
+  }
+ },
+ {
+  "h": "天文",
+  "p": "tiān wén",
+  "en": "astronomy",
+  "th": "ดาราศาสตร์",
+  "ex": {
+   "zh": "他对天文很感兴趣。",
+   "py": "Tā duì tiānwén hěn gǎn xìngqù.",
+   "en": "He is very interested in astronomy.",
+   "th": "เขาสนใจดาราศาสตร์มาก"
+  }
+ },
+ {
+  "h": "田径",
+  "p": "tián jìng",
+  "en": "track and field",
+  "th": "กรีฑา",
+  "ex": {
+   "zh": "他参加了田径比赛。",
+   "py": "Tā cānjiā le tiánjìng bǐsài.",
+   "en": "He took part in the track and field event.",
+   "th": "เขาเข้าร่วมการแข่งขันกรีฑา"
+  }
+ },
+ {
+  "h": "舔",
+  "p": "tiǎn",
+  "en": "to lick",
+  "th": "เลีย",
+  "ex": {
+   "zh": "小狗在舔我的手。",
+   "py": "Xiǎogǒu zài tiǎn wǒ de shǒu.",
+   "en": "The puppy is licking my hand.",
+   "th": "ลูกสุนัขกำลังเลียมือฉัน"
+  }
+ },
+ {
+  "h": "挑拨",
+  "p": "tiǎo bō",
+  "en": "to sow discord",
+  "th": "ยุยงให้แตกแยก",
+  "ex": {
+   "zh": "别挑拨我们的关系。",
+   "py": "Bié tiǎobō wǒmen de guānxi.",
+   "en": "Don't sow discord between us.",
+   "th": "อย่ายุแยงความสัมพันธ์ของเรา"
+  }
+ },
+ {
+  "h": "挑剔",
+  "p": "tiāo ti",
+  "en": "picky",
+  "th": "จู้จี้จุกจิก",
+  "ex": {
+   "zh": "他对食物很挑剔。",
+   "py": "Tā duì shíwù hěn tiāotī.",
+   "en": "He is very picky about food.",
+   "th": "เขาจู้จี้เรื่องอาหารมาก"
+  }
+ },
+ {
+  "h": "挑衅",
+  "p": "tiǎo xìn",
+  "en": "to provoke",
+  "th": "ยั่วยุ",
+  "ex": {
+   "zh": "他故意挑衅对方。",
+   "py": "Tā gùyì tiǎoxìn duìfāng.",
+   "en": "He deliberately provoked the other side.",
+   "th": "เขายั่วยุอีกฝ่ายโดยเจตนา"
+  }
+ },
+ {
+  "h": "条款",
+  "p": "tiáo kuǎn",
+  "en": "clause",
+  "th": "ข้อกำหนด",
+  "ex": {
+   "zh": "请仔细阅读合同条款。",
+   "py": "Qǐng zǐxì yuèdú hétong tiáokuǎn.",
+   "en": "Please read the contract clauses carefully.",
+   "th": "กรุณาอ่านข้อกำหนดในสัญญาอย่างละเอียด"
+  }
+ },
+ {
+  "h": "条理",
+  "p": "tiáo lǐ",
+  "en": "order",
+  "th": "ความเป็นระเบียบ",
+  "ex": {
+   "zh": "他说话很有条理。",
+   "py": "Tā shuōhuà hěn yǒu tiáolǐ.",
+   "en": "He speaks in a well-organized way.",
+   "th": "เขาพูดเป็นลำดับขั้นตอนมาก"
+  }
+ },
+ {
+  "h": "条约",
+  "p": "tiáo yuē",
+  "en": "treaty",
+  "th": "สนธิสัญญา",
+  "ex": {
+   "zh": "两国签订了和平条约。",
+   "py": "Liǎng guó qiāndìng le hépíng tiáoyuē.",
+   "en": "The two countries signed a peace treaty.",
+   "th": "สองประเทศลงนามสนธิสัญญาสันติภาพ"
+  }
+ },
+ {
+  "h": "跳跃",
+  "p": "tiào yuè",
+  "en": "to jump",
+  "th": "กระโดด",
+  "ex": {
+   "zh": "鱼儿在水里跳跃。",
+   "py": "Yúr zài shuǐ lǐ tiàoyuè.",
+   "en": "Fish are leaping in the water.",
+   "th": "ปลากระโดดอยู่ในน้ำ"
+  }
+ },
+ {
+  "h": "亭子",
+  "p": "tíng zi",
+  "en": "pavilion",
+  "th": "ศาลา",
+  "ex": {
+   "zh": "我们在亭子里休息。",
+   "py": "Wǒmen zài tíngzi lǐ xiūxi.",
+   "en": "We rest in the pavilion.",
+   "th": "เราพักผ่อนกันในศาลา"
+  }
+ },
+ {
+  "h": "停顿",
+  "p": "tíng dùn",
+  "en": "to pause",
+  "th": "หยุดชะงัก",
+  "ex": {
+   "zh": "他讲到这里停顿了一下。",
+   "py": "Tā jiǎng dào zhèlǐ tíngdùn le yíxià.",
+   "en": "He paused for a moment at this point.",
+   "th": "เขาพูดถึงตรงนี้แล้วหยุดชั่วครู่"
+  }
+ },
+ {
+  "h": "停泊",
+  "p": "tíng bó",
+  "en": "to anchor",
+  "th": "จอดเรือ",
+  "ex": {
+   "zh": "港口停泊着很多渔船。",
+   "py": "Gǎngkǒu tíngbó zhe hěn duō yúchuán.",
+   "en": "Many fishing boats are anchored in the harbor.",
+   "th": "ที่ท่าเรือมีเรือประมงจอดอยู่มากมาย"
+  }
+ },
+ {
+  "h": "停滞",
+  "p": "tíng zhì",
+  "en": "stagnation",
+  "th": "หยุดนิ่ง",
+  "ex": {
+   "zh": "经济发展一度停滞。",
+   "py": "Jīngjì fāzhǎn yídù tíngzhì.",
+   "en": "Economic development once stagnated.",
+   "th": "การพัฒนาเศรษฐกิจเคยหยุดนิ่งไปช่วงหนึ่ง"
+  }
+ },
+ {
+  "h": "挺拔",
+  "p": "tǐng bá",
+  "en": "tall and straight",
+  "th": "สูงตระหง่าน",
+  "ex": {
+   "zh": "松树高大挺拔。",
+   "py": "Sōngshù gāodà tǐngbá.",
+   "en": "The pine tree is tall and upright.",
+   "th": "ต้นสนสูงตระหง่านตั้งตรง"
+  }
+ }
+]
