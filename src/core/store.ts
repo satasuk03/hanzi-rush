@@ -35,6 +35,14 @@ export interface Profile {
   seen: string[];
 }
 
+export interface Daily {
+  /** local calendar day of the last claim, `YYYY-MM-DD` ('' = never) */
+  last: string;
+  streak: number;
+  best: number;
+  total: number;
+}
+
 export interface Progress {
   /** best score per `${gameId}:${level}:${mode}` */
   best: Record<string, number>;
@@ -46,6 +54,7 @@ export interface Progress {
   pity: number;
   stats: Stats;
   profile: Profile;
+  daily: Daily;
 }
 
 const KEY = 'hanzi-rush:v1';
@@ -63,6 +72,7 @@ const defaults = (): { settings: Settings; progress: Progress } => ({
     pity: 0,
     stats: { games: 0, questions: 0, correct: 0, bestCombo: 0, perfect: 0, pulls: 0, coinsEarned: 0, coinsSpent: 0, maxCoins: STARTING_COINS, byRarity: [0, 0, 0, 0, 0] },
     profile: { name: '', title: 'novice', seen: ['novice'] },
+    daily: { last: '', streak: 0, best: 0, total: 0 },
   },
 });
 
@@ -80,6 +90,7 @@ function load() {
         ...p,
         stats: { ...d.progress.stats, ...p.stats },
         profile: { ...d.progress.profile, ...p.profile },
+        daily: { ...d.progress.daily, ...p.daily },
       },
     };
   } catch {

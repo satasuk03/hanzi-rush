@@ -66,6 +66,8 @@ export const TITLES: Title[] = [
   { id: 'librarian', zh: '藏经阁主', en: 'Keeper of Scrolls', th: 'ผู้พิทักษ์คัมภีร์', req: { en: 'Collect 500 words', th: 'สะสมครบ 500 คำ' }, progress: count(owned, 500), tier: 3 },
   { id: 'whale', zh: '豪客', en: 'High Roller', th: 'สายเปย์', req: { en: 'Open 200 cards', th: 'เปิดการ์ดครบ 200 ใบ' }, progress: count(() => st().pulls, 200), tier: 3 },
   { id: 'wealth', zh: '财神爷', en: 'God of Wealth', th: 'เทพเจ้าแห่งโชคลาภ', req: { en: 'Hold 5,000 coins at once', th: 'มีเหรียญพร้อมกัน 5,000' }, progress: count(() => st().maxCoins, 5000), tier: 3 },
+  { id: 'streak7', zh: '恒心', en: 'Steadfast', th: 'ใจเด็ด 7 วัน', req: { en: 'Log in 7 days in a row', th: 'เข้าเล่นติดต่อกัน 7 วัน' }, progress: count(() => store.progress.daily.best, 7), tier: 2 },
+  { id: 'streak30', zh: '持之以恒', en: 'Unwavering', th: 'ไฟไม่มอด', req: { en: 'Log in 30 days in a row', th: 'เข้าเล่นติดต่อกัน 30 วัน' }, progress: count(() => store.progress.daily.best, 30), tier: 3 },
   { id: 'master', zh: '汉字大师', en: 'Hanzi Master', th: 'ปรมาจารย์อักษร', req: { en: 'Reach level 20', th: 'ถึงเลเวล 20' }, progress: lvReq(20), tier: 4 },
   { id: 'chosen', zh: '天选之人', en: 'The Chosen One', th: 'ผู้ถูกเลือก', req: { en: 'Pull a MYTHIC card', th: 'เปิดได้การ์ด MYTHIC' }, progress: count(() => st().byRarity[4], 1), tier: 4 },
 ];
@@ -132,4 +134,55 @@ export function awardRun(r: { score: number; correct: number; asked: number; max
   const gain = addXp(r.correct * 12 + r.asked * 3 + r.maxCombo * 3 + (perfect ? 50 : 0));
   store.save();
   return { ...gain, coins, titles: newTitles() };
+}
+
+// ------------------------------------------------------------------ daily login & streak
+/** coins for day 1..7 of the streak cycle; the streak keeps counting past 7, the reward table loops */
+export const DAILY_REWARDS = [50, 75, 100, 125, 150, 200, 500];
+
+const dayKey = (d = new Date()) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+const dayNum = (k: string) => {
+  const [y, m, d] = k.split('-').map(Number);
+  return Math.round(Date.UTC(y, m - 1, d) / 86400000);
+};
+
+export interface DailyStatus {
+  claimable: boolean;
+  /** streak the player holds right now (0 once it has lapsed) */
+  streak: number;
+  /** streak after claiming today */
+  next: number;
+  /** 0..6 slot of the reward that claiming today pays */
+  slot: number;
+}
+
+export function dailyStatus(): DailyStatus {
+  const d = store.progress.daily;
+  const gap = d.last ? dayNum(dayKey()) - dayNum(d.last) : Infinity;
+  // gap < 0 means the clock went backwards: never pay twice, never break the streak
+  const claimable = gap >= 1;
+  const streak = gap <= 1 ? d.streak : 0;
+  const next = gap === 1 ? d.streak + 1 : claimable ? 1 : d.streak;
+  return { claimable, streak, next, slot: (next - 1) % DAILY_REWARDS.length };
+}
+
+export interface DailyClaim {
+  coins: number;
+  streak: number;
+  slot: number;
+  titles: Title[];
+}
+
+export function claimDaily(): DailyClaim | null {
+  const s = dailyStatus();
+  if (!s.claimable) return null;
+  const d = store.progress.daily;
+  d.last = dayKey();
+  d.streak = s.next;
+  d.best = Math.max(d.best, d.streak);
+  d.total++;
+  const coins = DAILY_REWARDS[s.slot];
+  addCoins(coins);
+  store.save();
+  return { coins, streak: d.streak, slot: s.slot, titles: newTitles() };
 }

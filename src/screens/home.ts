@@ -10,7 +10,8 @@ import { pop, pressable, dropIn, popIn, loop, breathe, bob, nope } from '../engi
 import { langToggle, muteButton, ICON } from '../ui/widgets';
 import { store } from '../core/store';
 import { formatNum } from '../core/util';
-import { playerLevel, titleById } from '../core/meta';
+import { playerLevel, titleById, dailyStatus } from '../core/meta';
+import { maybeShowDaily } from '../ui/daily';
 import { i18n } from '../core/i18n';
 import { mascot, setMood } from '../ui/mascot';
 import { GAMES } from '../games/registry';
@@ -105,7 +106,16 @@ export function homeScreen(): Screen {
   });
   const offLang = i18n.onChange(syncChip);
 
-  const top = h('div', { class: 'topbar' }, chip, h('div', { class: 'spacer' }), muteButton(), langToggle());
+  const streakNum = h('span', {});
+  const streakBadge = h('span', { class: 'streak-badge' }, h('span', { html: ICON.flame }), streakNum);
+  const syncStreak = () => {
+    const st = dailyStatus().streak;
+    streakNum.textContent = String(st);
+    streakBadge.classList.toggle('off', st === 0);
+  };
+  syncStreak();
+
+  const top = h('div', { class: 'topbar' }, chip, streakBadge, h('div', { class: 'spacer' }), muteButton(), langToggle());
   const tagline = h('p', { class: 'tagline' }, tx('tagline'));
   const el = h(
     'div',
@@ -129,6 +139,7 @@ export function homeScreen(): Screen {
   });
 
   let sparkleT = 0;
+  let dailyCall: gsap.core.Tween | undefined;
   return {
     el,
     theme: 'home',
@@ -142,6 +153,13 @@ export function homeScreen(): Screen {
       gsap.from(chip, { x: -60, opacity: 0, delay: 0.2, duration: 0.6, ease: 'back.out(2)' });
       popIn(locked, 0.6, 0.07);
       gsap.delayedCall(0.3, () => audio.drum(0, 0.4));
+      dailyCall = gsap.delayedCall(1.2, () =>
+        maybeShowDaily(() => {
+          syncStreak();
+          const coins = store.progress.coins;
+          chip.querySelector('.pc-coins')!.lastChild!.textContent = formatNum(coins);
+        }),
+      );
       // idle loops — registered so leaving the screen resets them cleanly
       lg.tiles.forEach((t, i) => loop(`home:tile${i}`, t, () => gsap.to(t, { y: -6, rotation: i ? 8 : -8, duration: 1.2 + i * 0.2, yoyo: true, repeat: -1, ease: 'sine.inOut', delay: i * 0.3 }), { y: 0, rotation: i ? 6 : -6 }));
       loop('home:buddy', buddy, () => bob(buddy, 10, 1.3), { y: 0 });
@@ -149,6 +167,7 @@ export function homeScreen(): Screen {
       loop('home:vault', vaultPill, () => breathe(vaultPill, 0.05, 0.7), { scaleX: 1, scaleY: 1 });
     },
     leave() {
+      dailyCall?.kill();
       offLang();
     },
     update(dt) {
