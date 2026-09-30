@@ -123,6 +123,7 @@ export function homeScreen(): Screen {
     top,
     h('div', { class: 'home-hero' }, lg.el, tagline, buddy),
     h('div', { class: 'home-games' }, featured, vault, h('div', { class: 'locked-grid' }, ...locked)),
+    h('a', { class: 'home-credit', href: 'https://zeze.app/', target: '_blank', rel: 'noopener' }, 'by zeze.app'),
   );
 
   const greetings = ['你好!', '加油!', '欢迎!', '太棒了!'];

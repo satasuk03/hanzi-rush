@@ -185,6 +185,11 @@ body.lang-th .screen-title { font-family: var(--f-thai); font-weight: 700; }
 .mascot[data-mood='happy'] .m-happy, .mascot[data-mood='wow'] .m-wow, .mascot[data-mood='sad'] .m-sad { display: inline; }
 
 .home-games { display: flex; flex-direction: column; gap: 12px; padding-bottom: 6px; }
+.home-credit {
+  align-self: center; margin-top: 2px; padding: 4px 12px; border-radius: 999px;
+  color: rgba(255,255,255,.8); font-weight: 800; font-size: 12px; text-decoration: none;
+}
+.home-credit:hover { color: #fff; background: rgba(42,26,58,.35); }
 .game-card {
   --c: var(--red); --d: var(--red-d);
   position: relative;
