@@ -463,7 +463,7 @@ body.lang-th .fb-main { font-family: var(--f-thai); font-weight: 700; font-size:
 .end-banner.done { color: var(--green); }
 body.lang-th .end-banner { font-family: var(--f-thai); font-weight: 700; }
 
-.modal { position: absolute; inset: 0; z-index: 20; display: grid; place-items: center; background: rgba(20,8,30,.6); }
+.modal { position: absolute; inset: 0; z-index: 20; pointer-events: auto; display: grid; place-items: center; background: rgba(20,8,30,.6); }
 .modal.hidden { display: none; }
 .modal-card {
   width: min(86%, 340px); padding: 22px; display: flex; flex-direction: column; gap: 16px;
