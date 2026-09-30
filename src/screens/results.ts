@@ -14,6 +14,9 @@ import { langToggle, muteButton, bigButton, ICON } from '../ui/widgets';
 import { mascot } from '../ui/mascot';
 import { GAMES, bestKey, type Mode } from '../games/registry';
 import { homeScreen } from './home';
+import type { Reward } from '../core/meta';
+import { t } from '../core/i18n';
+import { notify } from '../ui/notify';
 import { levelsScreen } from './levels';
 
 export interface RunStats {
@@ -26,6 +29,8 @@ export interface RunStats {
   maxCombo: number;
   missed: Word[];
   rush: boolean;
+  /** coins + XP paid out for this run */
+  reward?: Reward;
 }
 
 const STAR_SVG = `<svg viewBox="0 0 100 100"><path d="M50 6l13 28 30 4-22 21 6 30-27-15-27 15 6-30L7 38l30-4z" fill="currentColor" stroke="#2a1a3a" stroke-width="7" stroke-linejoin="round"/><ellipse cx="38" cy="36" rx="7" ry="4" fill="#fff" opacity=".7" transform="rotate(-35 38 36)"/></svg>`;
@@ -80,6 +85,56 @@ export function resultsScreen(r: RunStats): Screen {
     missedList,
   );
 
+  // ---- rewards: coins + XP bar (+ level up)
+  const rw = r.reward;
+  const coinsV = h('span', { class: 'rw-v' }, '+0');
+  const xpV = h('span', { class: 'rw-v' }, '+0');
+  const lvV = h('span', { class: 'rw-lv' }, `Lv ${rw?.before.level ?? 1}`);
+  const xpFill = h('span', { class: 'rw-fill' });
+  const rewards = rw
+    ? h(
+        'div',
+        { class: 'r-rewards' },
+        h('div', { class: 'rw-row' },
+          h('span', { class: 'rw-item' }, h('span', { class: 'rw-ic', html: ICON.coin }), coinsV),
+          h('span', { class: 'rw-item xp' }, h('span', { class: 'rw-ic xp' }, 'XP'), xpV)),
+        h('div', { class: 'rw-bar-row' }, lvV, h('span', { class: 'rw-bar' }, xpFill)),
+      )
+    : null;
+  if (rewards) panel.insertBefore(rewards, missedList);
+
+  const payout = () => {
+    if (!rw || !rewards) return;
+    let k = 0;
+    countTo(coinsV, 0, rw.coins, 0.8, (n) => `+${formatNum(n)}`, () => audio.coin(k++));
+    countTo(xpV, 0, rw.xp, 0.8, (n) => `+${formatNum(n)}`);
+    const c = center(rewards);
+    particles.burst(c.x, c.y, { count: 14, sprite: ['coin', 'sparkGold'], speed: [150, 420], size: [14, 24], g: 800 });
+    gsap.set(xpFill, { scaleX: rw.before.into / rw.before.need });
+    const ups = rw.after.level - rw.before.level;
+    const tl = gsap.timeline({ delay: 0.2 });
+    for (let i = 0; i < ups; i++) {
+      tl.to(xpFill, { scaleX: 1, duration: 0.5, ease: 'power2.in' });
+      tl.add(() => {
+        const lv = rw.before.level + i + 1;
+        lvV.textContent = `Lv ${lv}`;
+        pop(lvV, 1.4);
+        audio.newBest();
+        const b = center(lvV);
+        particles.firework(b.x, b.y, 'sparkGold');
+        shake(0.4);
+        const banner = h('div', { class: 'lvup' }, h('span', { class: 'lvup-k' }, t('levelUp')), h('span', { class: 'lvup-n' }, `Lv ${lv}`));
+        document.getElementById('overlay')!.append(banner);
+        gsap.timeline({ onComplete: () => banner.remove() })
+          .fromTo(banner, { scale: 0, rotation: -12 }, { scale: 1, rotation: -3, duration: 0.6, ease: 'elastic.out(1.1,0.45)' })
+          .to(banner, { y: -40, opacity: 0, duration: 0.35, delay: 0.8 });
+      });
+      tl.set(xpFill, { scaleX: 0 });
+    }
+    tl.to(xpFill, { scaleX: rw.after.into / rw.after.need, duration: 0.6, ease: 'power2.out' });
+    rw.titles.forEach((T, i) => notify({ kicker: t('titleUnlocked'), title: `${T.zh} · ${T[i18n.lang]}`, seal: T.zh[0], tier: T.tier }, 1 + ups * 0.9 + i * 0.5));
+  };
+
   const retry = bigButton(tx('retry'), '#5be35b', async (e) => {
     const words = await loadLevel(r.level);
     const mod = await game.load!();
@@ -130,6 +185,7 @@ export function resultsScreen(r: RunStats): Screen {
         let n = 0;
         countTo(scoreV, 0, r.score, Math.min(1.8, 0.6 + r.score / 20000), formatNum, () => audio.coin(n++)).then(() => {
           pop(scoreV, 1.2);
+          payout();
           if (isBest) {
             audio.newBest();
             gsap.to(bestRibbon, { scale: 1, rotation: -6, duration: 0.6, ease: 'elastic.out(1.2,0.4)' });

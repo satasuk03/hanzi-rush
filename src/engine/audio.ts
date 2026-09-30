@@ -260,6 +260,67 @@ class AudioEngine {
     this.firecracker(12);
   }
 
+  // ------------------------------------------------------------------ vault (gacha)
+  /** temple bell: inharmonic partials, long ring */
+  bell(freq: number, at = 0, vol = 0.16) {
+    if (!this.ok) return;
+    [1, 2.76, 5.4, 8.93].forEach((m, i) =>
+      this.tone(freq * m, 1.8 - i * 0.35, { type: 'sine', vol: vol / (i * 1.6 + 1), at, attack: 0.002, rev: 0.7 }),
+    );
+  }
+  /** wooden doors rattling against their latch */
+  rattle(n = 5) {
+    if (!this.ok) return;
+    for (let i = 0; i < n; i++) {
+      const at = i * 0.075 + Math.random() * 0.02;
+      this.noise(0.06, { freq: 380 + Math.random() * 200, q: 4, vol: 0.32, at });
+      this.tone(170 + Math.random() * 40, 0.07, { type: 'triangle', vol: 0.18, at, glide: 90 });
+    }
+  }
+  /** rising wind + tone while the vault charges */
+  charge(dur = 1.4) {
+    if (!this.ok) return;
+    this.noise(dur, { freq: 180, sweep: 5200, q: 2.2, vol: 0.2 });
+    this.tone(160, dur, { type: 'sawtooth', vol: 0.05, glide: 720, attack: dur * 0.6 });
+  }
+  /** one step of the rarity escalation */
+  rarityStep(i: number) {
+    if (!this.ok) return;
+    this.bell(midiHz(pentaNote(69, i * 2 + 2)), 0, 0.14 + i * 0.03);
+    this.noise(0.25, { freq: 6000, q: 2, vol: 0.06 + i * 0.02 });
+  }
+  vaultOpen(best: number) {
+    if (!this.ok) return;
+    this.boom(1);
+    this.noise(0.9, { freq: 9000, sweep: 1200, q: 0.7, vol: 0.14 });
+    if (best >= 3) this.gong();
+    this.firecracker(4 + best * 2);
+  }
+  /** card lands face up; grander the rarer */
+  reveal(r: number) {
+    if (!this.ok) return;
+    const root = 67 + r * 2;
+    const n = 3 + r;
+    for (let i = 0; i < n; i++) this.pluck(midiHz(pentaNote(root, i + (i > 2 ? 1 : 0))), i * 0.05, 0.2);
+    if (r >= 1) this.bell(midiHz(pentaNote(root + 12, r)), 0.12, 0.1 + r * 0.02);
+    if (r >= 2) [0, 4, 7].forEach((s) => this.tone(midiHz(root + s + 12), 1.2, { type: 'triangle', vol: 0.06, at: 0.2, rev: 0.6 }));
+    if (r >= 3) {
+      this.gong();
+      this.firecracker(8 + (r - 3) * 8);
+    }
+    if (r >= 4) {
+      this.newBest();
+      for (let i = 0; i < 8; i++) this.tone(midiHz(pentaNote(84, i)), 0.3, { type: 'sine', vol: 0.05, at: 0.4 + i * 0.06, rev: 0.8 });
+    }
+  }
+  spend(n = 6) {
+    if (!this.ok) return;
+    for (let i = 0; i < n; i++) {
+      const f = 2400 - i * 90;
+      this.tone(f, 0.08, { type: 'square', vol: 0.035, at: i * 0.045 });
+    }
+  }
+
   // ------------------------------------------------------------------ adaptive BGM
   startMusic() {
     if (!this.ctx || this.musicOn) return;

@@ -160,9 +160,46 @@ function petal(c: CanvasRenderingContext2D) {
   c.stroke();
 }
 
+/** ink splatter: a main drop with satellite droplets */
+function ink(c: CanvasRenderingContext2D) {
+  c.fillStyle = '#17111d';
+  c.beginPath();
+  c.arc(0, 0, S * 0.2, 0, TAU);
+  c.fill();
+  const drops = [[0.3, -0.12, 0.07], [-0.26, 0.2, 0.06], [0.1, 0.32, 0.045], [-0.3, -0.24, 0.04], [0.36, 0.22, 0.03]];
+  for (const [x, y, r] of drops) {
+    c.beginPath();
+    c.arc(x * S, y * S, r * S, 0, TAU);
+    c.fill();
+  }
+  c.fillStyle = 'rgba(255,255,255,.18)';
+  c.beginPath();
+  c.ellipse(-S * 0.06, -S * 0.07, S * 0.06, S * 0.035, -0.6, 0, TAU);
+  c.fill();
+}
+
+/** gold leaf flake, lit on one side */
+function goldLeaf(c: CanvasRenderingContext2D) {
+  const g = c.createLinearGradient(-S * 0.3, -S * 0.3, S * 0.3, S * 0.3);
+  g.addColorStop(0, '#fff6c9');
+  g.addColorStop(0.45, '#f4c64f');
+  g.addColorStop(1, '#a8701a');
+  c.fillStyle = g;
+  c.beginPath();
+  c.moveTo(-S * 0.34, -S * 0.12);
+  c.lineTo(-S * 0.05, -S * 0.34);
+  c.lineTo(S * 0.3, -S * 0.2);
+  c.lineTo(S * 0.36, S * 0.14);
+  c.lineTo(S * 0.04, S * 0.34);
+  c.lineTo(-S * 0.28, S * 0.2);
+  c.closePath();
+  c.fill();
+}
+
 export type SpriteKey =
   | 'coin' | 'yuanbao' | 'star' | 'starPink' | 'spark' | 'sparkRed' | 'sparkGold' | 'sparkCyan'
-  | 'glow' | 'heart' | 'puff' | 'paper' | 'petal';
+  | 'sparkBlue' | 'sparkPurple' | 'sparkWhite' | 'sparkPink'
+  | 'glow' | 'heart' | 'puff' | 'paper' | 'petal' | 'ink' | 'goldLeaf';
 
 let cache: Record<SpriteKey, HTMLCanvasElement> | null = null;
 
@@ -177,11 +214,17 @@ export function sprites() {
       sparkRed: make(S, S, (c) => glow(c, 'rgba(255,90,90,.9)')),
       sparkGold: make(S, S, (c) => glow(c, 'rgba(255,190,40,.9)')),
       sparkCyan: make(S, S, (c) => glow(c, 'rgba(90,230,255,.9)')),
+      sparkBlue: make(S, S, (c) => glow(c, 'rgba(70,140,255,.95)')),
+      sparkPurple: make(S, S, (c) => glow(c, 'rgba(180,90,255,.95)')),
+      sparkWhite: make(S, S, (c) => glow(c, 'rgba(235,230,255,.9)')),
+      sparkPink: make(S, S, (c) => glow(c, 'rgba(255,90,150,.95)')),
       glow: make(S, S, (c) => glow(c, 'rgba(255,220,120,.5)')),
       heart: make(S, S, heartShard),
       puff: make(S, S, puff),
       paper: make(S, S, paper),
       petal: make(S, S, petal),
+      ink: make(S, S, ink),
+      goldLeaf: make(S, S, goldLeaf),
     };
   }
   return cache;

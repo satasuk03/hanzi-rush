@@ -166,7 +166,7 @@ export function drawPatternBack(cv: HTMLCanvasElement, w: number, h: number) {
 }
 
 /** Thai has no spaces between words → wrap with Intl.Segmenter; CJK wraps per char. */
-function wrap(c: CanvasRenderingContext2D, text: string, maxW: number, lang: 'zh' | 'th' | 'latin'): string[] {
+export function wrap(c: CanvasRenderingContext2D, text: string, maxW: number, lang: 'zh' | 'th' | 'latin'): string[] {
   let units: string[];
   if (lang === 'zh') units = [...text];
   else if (lang === 'th' && 'Segmenter' in Intl) {

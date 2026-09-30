@@ -7,6 +7,7 @@ Static site: no backend. Runs at 60fps on mobile.
 | Game | Status |
 | --- | --- |
 | **Meaning Rush** (ทายความหมาย): see the hanzi and pick its meaning | ✅ playable |
+| **Hanzi Gacha** (กาชาคำศัพท์): spend coins in the Treasure Vault to collect word cards | ✅ playable |
 | Pinyin Pop · Tone Hero · Stroke Master · Listen & Catch | 🔒 placeholders (coming soon) |
 
 **Meaning Rush modes**
@@ -15,6 +16,13 @@ Static site: no backend. Runs at 60fps on mobile.
 
 **Juice loop:** combo builds heat stages at 5, 10, 20 and 30. Each stage adds music layers, spins the sunburst faster, shifts the colours hotter and brings bigger particle bursts and praise banners. The FEVER gauge fills as you answer, and at full it triggers **FEVER TIME**: ×2 points, a gold world and falling coins (古钱) and yuanbao (元宝).
 A wrong answer flips the card in WebGL to show the answer, pinyin and an example sentence (中文 + pinyin + TH/EN). Missed words come back 4 questions later and are listed on the results screen with text-to-speech.
+
+**Hanzi Gacha · 宝库 Treasure Vault**
+- Six cabinets, one per HSK level. Open 1–10 cards at a time with coins earned in games (500-coin welcome gift). ×10 costs 9 and guarantees EPIC+. LEGENDARY+ is guaranteed within 50 pulls (hard pity).
+- Five rarities: COMMON 55% · RARE 28% · EPIC 12% · LEGENDARY 4% · MYTHIC 1%. Each word has a fixed rarity per level, assigned by a stable hash, and 4-character idioms skew rare. Duplicates refund coins and stack copies.
+- Opening ceremony: the doors rattle and the seam light climbs through the rarity colours up to the best card in the batch, then the doors burst open. Each card flips in WebGL with rarity-scaled FX, and a summary grid follows.
+- Cards are painted on canvas: rice paper, a dry-brush ensō, Ma Shan Zheng brush hanzi, a carved seal, foil frames, pinyin, TH/EN meaning and an example sentence. Live holo foil and glare follow the pointer.
+- **图鉴 Collection**: overall, per-level and per-rarity progress, plus a grid of every word slot. **Profile**: player level from XP earned by playing games (opening cards gives no XP), lifetime stats, and 14 titles (称号) unlocked by level or achievements. You can equip one on your name card.
 
 ## Stack
 - **Vite + TypeScript**, vanilla DOM: no framework, instant first paint, 47 KB gzipped
@@ -50,6 +58,9 @@ src/
   games/
     registry.ts         game catalogue: add new games here
     quiz/               Meaning Rush (QuizGame.ts, cardFace.ts)
+    gacha/              Hanzi Gacha: VaultScreen, opening ceremony, cardArt (canvas cards), collection, profile
+  core/meta.ts          coins, XP → level curve, titles, run rewards
+  core/rarity.ts        rarity table + deterministic per-level assignment
 public/data/hsk1-6.json vocabulary (4,991 words), lazy-loaded per level
 data/                   raw enrichment chunks, source lists, manual overrides, build script input
 ```

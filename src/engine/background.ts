@@ -11,6 +11,7 @@ export const THEMES = {
   hot: { a: '#ff5a1f', b: '#ff7a2f', glow: '#fff0a0', cloud: '#fff1e0' },
   fever: { a: '#ffae00', b: '#ffc82e', glow: '#fffbe0', cloud: '#fff8dc' },
   results: { a: '#7b4dff', b: '#8f66ff', glow: '#f0e6ff', cloud: '#f5efff' },
+  vault: { a: '#1d1030', b: '#26163d', glow: '#b8741f', cloud: '#3b2856' },
 } satisfies Record<string, Theme>;
 export type ThemeName = keyof typeof THEMES;
 

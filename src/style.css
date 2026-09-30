@@ -96,6 +96,7 @@ button:focus-visible { outline: 4px solid #fff; outline-offset: 3px; }
   border: 4px solid var(--ink);
   box-shadow: 0 5px 0 var(--ink);
   font: 400 19px/1 var(--f-display);
+  color: var(--ink);
   overflow: hidden;
 }
 .lt-knob {
@@ -521,7 +522,93 @@ body.lang-th .r-best { font-family: var(--f-thai); font-weight: 700; }
 .r-actions .big-btn { padding: 0 8px; font-size: 20px; }
 .r-actions .r-retry { font-size: 24px; }
 
+
+/* ------------------------------------------------------------------ meta: wallet, profile chip, vault card, rewards */
+.mini-coin { display: inline-block; width: 1.15em; height: 1.15em; vertical-align: -.2em; }
+.mini-coin svg { width: 100%; height: 100%; display: block; }
+.coin-pill {
+  flex: none; display: flex; align-items: center; gap: 6px; height: 44px; padding: 0 14px 0 4px;
+  background: var(--ink); border-radius: 999px; border: 3px solid var(--ink);
+  box-shadow: inset 0 0 0 2px rgba(255, 201, 60, .55); color: var(--gold);
+}
+.coin-ic { width: 34px; height: 34px; }
+.coin-ic svg { width: 100%; height: 100%; display: block; }
+.coin-v { font: 400 21px/1 var(--f-display); }
+
+.profile-chip {
+  position: relative; flex: 0 1 auto; min-width: 0; display: flex; align-items: center; gap: 8px;
+  height: 52px; padding: 0 14px 0 4px; border-radius: 999px;
+  background: #fff; border: 4px solid var(--ink); box-shadow: 0 5px 0 var(--ink); overflow: hidden;
+}
+.pc-seal {
+  position: relative; flex: none; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center;
+  background: #c3272d; color: #f7ecdc; font: 400 24px/1 'Ma Shan Zheng', var(--f-hanzi);
+  box-shadow: inset 0 0 0 2px #f7ecdc, inset 0 0 0 3.5px #c3272d;
+}
+.pc-seal[data-t='3'] { background: linear-gradient(135deg, #f2c14e, #b47a1c); }
+.pc-seal[data-t='4'] { background: #120a18; color: #f6d77a; }
+.pc-lv {
+  position: absolute; right: -6px; bottom: -4px; min-width: 20px; height: 20px; padding: 0 4px; border-radius: 99px;
+  background: var(--gold); color: var(--ink); border: 2.5px solid var(--ink); font: 400 12px/15px var(--f-display); text-align: center;
+}
+.pc-text { display: flex; flex-direction: column; min-width: 0; line-height: 1.05; }
+.pc-name { font-weight: 900; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 110px; }
+body.lang-th .pc-name { font-weight: 600; }
+.pc-coins { display: flex; align-items: center; gap: 3px; font: 400 15px/1 var(--f-display); color: var(--gold-d); }
+.pc-xp { position: absolute; left: 48px; right: 14px; bottom: 5px; height: 3px; border-radius: 9px; background: rgba(42, 26, 58, .12); overflow: hidden; }
+.pc-xp span { display: block; height: 100%; background: var(--gold); transform-origin: left; }
+
+.game-card.vault-card {
+  --c: #2a1739; --d: #170b21;
+  overflow: hidden;
+  background: radial-gradient(120% 140% at 0% 0%, rgba(255, 190, 80, .35), transparent 55%), linear-gradient(135deg, #3b1f52, #1d0f2a);
+  box-shadow: 0 7px 0 var(--ink), inset 0 -9px 0 #140a1d, inset 0 0 0 3px rgba(242, 193, 78, .8);
+}
+.vc-glyph { background: #c3272d !important; color: #ffd66b !important; font-family: 'Ma Shan Zheng', var(--f-hanzi) !important; font-weight: 400 !important; font-size: 42px !important; -webkit-text-stroke: 0 !important; box-shadow: inset 0 0 0 3px #ffd66b; }
+.vc-shine { position: absolute; top: -30%; bottom: -30%; width: 30%; left: -40%; background: linear-gradient(100deg, transparent, rgba(255, 240, 200, .35), transparent); transform: skewX(-18deg); animation: vcShine 3.4s ease-in-out infinite; pointer-events: none; }
+@keyframes vcShine { 0%, 60% { left: -40%; } 100% { left: 130%; } }
+.vc-new { position: absolute; top: 8px; right: -28px; rotate: 35deg; padding: 3px 32px; background: #ff4757; color: #fff; font: 400 12px/1 var(--f-display); letter-spacing: 1px; border-block: 2px solid var(--ink); }
+.play-pill.gold { background: linear-gradient(135deg, #fff6cf, #f2c14e 45%, #c9892a); }
+.game-card.featured.vault-card .gc-desc { color: #f3dfb5; }
+
+.r-rewards { width: 100%; display: flex; flex-direction: column; gap: 8px; padding: 10px 12px; border-radius: 18px; background: var(--ink); color: #fff; }
+.rw-row { display: flex; justify-content: center; gap: 18px; }
+.rw-item { display: flex; align-items: center; gap: 6px; }
+.rw-ic { width: 30px; height: 30px; display: grid; place-items: center; }
+.rw-ic svg { width: 100%; height: 100%; }
+.rw-ic.xp { border-radius: 9px; background: var(--purple); font: 400 13px/1 var(--f-display); border: 2.5px solid #fff; }
+.rw-v { font: 400 24px/1 var(--f-display); color: var(--gold); min-width: 64px; }
+.rw-item.xp .rw-v { color: #c9a8ff; }
+.rw-bar-row { display: flex; align-items: center; gap: 10px; }
+.rw-lv { font: 400 17px/1 var(--f-display); color: var(--gold); white-space: nowrap; }
+.rw-bar { flex: 1; height: 12px; border-radius: 9px; background: rgba(255, 255, 255, .14); overflow: hidden; }
+.rw-fill { display: block; height: 100%; transform-origin: left; transform: scaleX(0); background: linear-gradient(90deg, #9b6bff, #ff5fa2, #ffc93c); }
+.lvup { position: absolute; left: 0; right: 0; top: 30%; display: flex; flex-direction: column; align-items: center; }
+.lvup-k { font: 400 54px/1 var(--f-display); color: var(--gold); -webkit-text-stroke: 11px var(--ink); paint-order: stroke fill; text-shadow: 0 7px 0 var(--ink); }
+body.lang-th .lvup-k { font-family: var(--f-thai); font-weight: 700; }
+.lvup-n { margin-top: 4px; padding: 4px 16px; border-radius: 14px; background: var(--purple); color: #fff; border: 5px solid var(--ink); font: 400 34px/1 var(--f-display); -webkit-text-stroke: 6px var(--ink); paint-order: stroke fill; }
+
+.notify-stack { position: absolute; left: 0; right: 0; top: calc(var(--safe-t) + 70px); display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 50; }
+.notify {
+  display: flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; border-radius: 18px; max-width: calc(100% - 32px);
+  background: linear-gradient(135deg, #2e1a40, #150a1f); color: #f6ecd8;
+  box-shadow: 0 0 0 2px #0d0614, 0 0 0 4px rgba(242, 193, 78, .8), 0 10px 24px rgba(0, 0, 0, .5);
+}
+.nt-seal { flex: none; width: 40px; height: 40px; border-radius: 9px; display: grid; place-items: center; background: #c3272d; color: #f7ecdc; font: 400 26px/1 'Ma Shan Zheng', var(--f-hanzi); box-shadow: inset 0 0 0 2px rgba(247, 236, 220, .65); }
+.nt-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.nt-kicker { font: 400 12px/1 var(--f-display); letter-spacing: .6px; text-transform: uppercase; color: #f2c14e; }
+body.lang-th .nt-kicker { font-family: var(--f-thai); letter-spacing: 0; font-weight: 600; }
+.nt-title { font-weight: 900; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+body.lang-th .nt-title { font-weight: 600; }
+
 /* ------------------------------------------------------------------ responsive */
+@media (max-height: 760px) {
+  .home .mascot { width: 84px; margin-top: 2px; }
+  .home .tagline { display: none; }
+  .game-card.featured { padding: 10px 12px 15px; }
+  .game-card.featured .gc-glyph { width: 52px; height: 52px; font-size: 32px; }
+  .home-games { gap: 10px; }
+}
 @media (max-height: 700px) {
   .mascot { width: 96px; }
   .logo-tile { width: 64px; font-size: 42px; }
@@ -535,4 +622,21 @@ body.lang-th .r-best { font-family: var(--f-thai); font-weight: 700; }
 }
 @media (prefers-reduced-motion: reduce) {
   .fever-fill { animation: none; }
+}
+
+/* ------------------------------------------------------------------ scrollbars */
+/* thin rounded pill, floating on a transparent track; ink on light panels, gold on the vault */
+* { --sb-thumb: rgba(42, 26, 58, .38); --sb-thumb-h: rgba(42, 26, 58, .6); }
+.vault, .collection, .profile, .vs, .cv-modal { --sb-thumb: rgba(242, 193, 78, .45); --sb-thumb-h: rgba(242, 193, 78, .8); }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb); border-radius: 99px;
+  border: 3px solid transparent; background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover, ::-webkit-scrollbar-thumb:active { background: var(--sb-thumb-h); background-clip: padding-box; }
+::-webkit-scrollbar-corner { background: transparent; }
+/* Firefox (the standard props would override the rounded WebKit styles in Chrome, so scope them) */
+@supports not selector(::-webkit-scrollbar) {
+  * { scrollbar-width: thin; scrollbar-color: var(--sb-thumb) transparent; }
 }

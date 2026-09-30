@@ -349,6 +349,31 @@ class Particles {
     }
   }
 
+  /** Sparks appear on a wide ring and get sucked into a point (charge-up). */
+  implode(x: number, y: number, count: number, sprite: SpriteKey = 'sparkGold', radius = 260) {
+    const n = this.n(count);
+    for (let i = 0; i < n; i++) {
+      const a = rand(0, TAU);
+      const r = radius * rand(0.7, 1.2);
+      this.spawn({
+        sprite,
+        mode: Mode.Pull,
+        target: { x, y },
+        x: x + Math.cos(a) * r,
+        y: y + Math.sin(a) * r,
+        vx: -Math.sin(a) * rand(80, 220),
+        vy: Math.cos(a) * rand(80, 220),
+        drag: 1,
+        pullAt: rand(0.02, 0.12),
+        max: 2,
+        size: rand(12, 24),
+        size1: rand(12, 24),
+        add: true,
+        delay: rand(0, 0.25),
+      });
+    }
+  }
+
   orbit(cx: number, cy: number, count: number, radius: number, life = 1.2, sprite: SpriteKey = 'sparkGold') {
     const n = this.n(count);
     for (let i = 0; i < n; i++) {

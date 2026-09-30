@@ -20,6 +20,7 @@ import { langToggle, muteButton, iconButton, ICON } from '../../ui/widgets';
 import type { GameContext } from '../registry';
 import { drawFront, drawPatternBack, drawAnswerBack, F_HANZI } from './cardFace';
 import { resultsScreen, type RunStats } from '../../screens/results';
+import { awardRun } from '../../core/meta';
 
 type Phase = 'intro' | 'ask' | 'lock' | 'reveal' | 'over';
 
@@ -654,6 +655,7 @@ class QuizGame {
       missed: this.missed.slice(0, 30),
       rush: this.rush,
     };
+    stats.reward = awardRun(stats);
     const ov = document.getElementById('overlay')!;
     const txt = this.rush ? t('gameOver') : t('finished');
     const el = h('div', { class: `end-banner ${this.rush ? 'over' : 'done'}` }, txt);
