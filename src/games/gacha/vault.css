@@ -334,7 +334,7 @@ body.lang-th .vs-hint { font-weight: 600; }
 .mc-frame::before, .mc-frame::after { content: ''; position: absolute; width: 7cqw; height: 7cqw; border: 1.5px solid color-mix(in srgb, var(--rc) 80%, transparent); }
 .mc-frame::before { left: 2px; top: 2px; border-right: 0; border-bottom: 0; }
 .mc-frame::after { right: 2px; top: 2px; border-left: 0; border-bottom: 0; }
-.mc-body { position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 1cqw; padding: 18cqw 5cqw 3cqw; }
+.mc-body { position: relative; flex: 1; min-height: 0; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 1cqw; padding: 18cqw 5cqw 3cqw; }
 .mc-p, .mc-m { text-shadow: 0 0 2px var(--p1), 0 0 4px var(--p1), 0 0 6px var(--p1); }
 .mc-hw { position: relative; display: flex; }
 .mc-h { font: 400 30px/1.05 var(--f-brush); font-size: 46cqw; white-space: nowrap; text-shadow: 0 0 3px color-mix(in srgb, var(--rc) 35%, transparent); }
@@ -351,7 +351,7 @@ body.lang-th .vs-hint { font-weight: 600; }
 .mc-m { font-size: clamp(9px, 12.5cqw, 12.5px); font-weight: 800; line-height: 1.15; max-width: 100%; text-align: center; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; opacity: .85; }
 body.lang-th .mc-m { font-weight: 500; }
 .mc-band {
-  position: relative; flex: none; height: 17cqw; display: grid; place-items: center;
+  position: relative; flex: none; width: 100%; height: 17cqw; display: grid; place-items: center;
   background: var(--tg); border-top: 1.5px solid #0d0614; box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, .5);
 }
 .mc-stars { font-size: 11cqw; line-height: 1; letter-spacing: .6cqw; color: #fff; -webkit-text-stroke: 2cqw #0d0614; paint-order: stroke fill; }
@@ -371,7 +371,7 @@ body.lang-th .mc-m { font-weight: 500; }
 .mc.locked::after { display: none; }
 .mc.locked .mc-band { opacity: .4; filter: saturate(.6); }
 .mc.locked .mc-no { color: rgba(255, 240, 220, .5); }
-.mc-q { flex: 1; display: grid; place-items: center; font: 400 26px/1 var(--f-brush); font-size: 40cqw; opacity: .3; }
+.mc-q { flex: 1; width: 100%; display: grid; place-items: center; font: 400 26px/1 var(--f-brush); font-size: 40cqw; opacity: .3; }
 
 /* ------------------------------------------------------------------ card viewer */
 .cv-modal {
