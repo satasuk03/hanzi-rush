@@ -12,7 +12,7 @@ import { t, tx, i18n, PRAISE } from '../../core/i18n';
 import { store } from '../../core/store';
 import { audio, speak } from '../../engine/audio';
 import { particles } from '../../engine/particles';
-import { background } from '../../engine/background';
+import { background, type ThemeName } from '../../engine/background';
 import { shake, punch } from '../../engine/shake';
 import { flipper } from '../../engine/flip3d';
 import { pop, pressable, nope, loop, stopLoop, breathe, stopAllLoops } from '../../engine/juice';
@@ -29,88 +29,102 @@ const FEVER_TIME = 10;
 const ZEN_TOTAL = 20;
 
 export function create(ctx: GameContext): Screen {
-  return new QuizGame(ctx).screen;
+  return new QuizGame(ctx).init();
 }
 
-class QuizGame {
-  screen: Screen;
-  private ctx: GameContext;
-  private rush: boolean;
-  private phase: Phase = 'intro';
-  private paused = false;
+export class QuizGame {
+  screen!: Screen;
+  protected ctx: GameContext;
+  protected rush: boolean;
+  protected phase: Phase = 'intro';
+  protected paused = false;
 
   // run state
-  private score = 0;
-  private shown = { v: 0 };
-  private combo = 0;
-  private maxCombo = 0;
-  private correct = 0;
-  private asked = 0;
-  private lives = 3;
-  private stage = 0;
-  private feverGauge = 0;
-  private feverT = 0;
-  private fever = false;
-  private timeMax: number;
-  private timeLeft = 0;
-  private lastTick = 0;
-  private missed: Word[] = [];
-  private used = new Set<string>();
-  private retry: { w: Word; due: number }[] = [];
-  private word!: Word;
-  private choices: Word[] = [];
-  private answerIdx = 0;
-  private coinSfx = 0;
+  protected score = 0;
+  protected shown = { v: 0 };
+  protected combo = 0;
+  protected maxCombo = 0;
+  protected correct = 0;
+  protected asked = 0;
+  protected lives = 3;
+  protected stage = 0;
+  protected feverGauge = 0;
+  protected feverT = 0;
+  protected fever = false;
+  protected timeMax: number;
+  protected timeLeft = 0;
+  protected lastTick = 0;
+  protected missed: Word[] = [];
+  protected used = new Set<string>();
+  protected retry: { w: Word; due: number }[] = [];
+  protected word!: Word;
+  protected choices: Word[] = [];
+  protected answerIdx = 0;
+  protected coinSfx = 0;
 
   // DOM
-  private el!: HTMLElement;
-  private cardEl!: HTMLElement;
-  private cardCv!: HTMLCanvasElement;
-  private rays!: HTMLElement;
-  private timerFill!: HTMLElement;
-  private timerEl!: HTMLElement;
-  private scoreEl!: HTMLElement;
-  private scorePill!: HTMLElement;
-  private hearts: HTMLElement[] = [];
-  private feverFill!: HTMLElement;
-  private feverRow!: HTMLElement;
-  private feverLabel!: HTMLElement;
-  private comboEl!: HTMLElement;
-  private comboNum!: HTMLElement;
-  private qMeta!: HTMLElement;
-  private buttons: HTMLButtonElement[] = [];
-  private labels: HTMLElement[] = [];
-  private contHint!: HTMLElement;
-  private pauseModal!: HTMLElement;
-  private cardW = 320;
-  private cardH = 220;
-  private offLang: () => void = () => {};
+  protected el!: HTMLElement;
+  protected cardEl!: HTMLElement;
+  protected cardCv!: HTMLCanvasElement;
+  protected rays!: HTMLElement;
+  protected timerFill!: HTMLElement;
+  protected timerEl!: HTMLElement;
+  protected scoreEl!: HTMLElement;
+  protected scorePill!: HTMLElement;
+  protected hearts: HTMLElement[] = [];
+  protected feverFill!: HTMLElement;
+  protected feverRow!: HTMLElement;
+  protected feverLabel!: HTMLElement;
+  protected comboEl!: HTMLElement;
+  protected comboNum!: HTMLElement;
+  protected qMeta!: HTMLElement;
+  protected buttons: HTMLButtonElement[] = [];
+  protected labels: HTMLElement[] = [];
+  protected contHint!: HTMLElement;
+  protected pauseModal!: HTMLElement;
+  protected cardW = 320;
+  protected cardH = 220;
+  protected offLang: () => void = () => {};
 
   constructor(ctx: GameContext) {
     this.ctx = ctx;
     this.rush = ctx.mode === 'rush';
     this.lives = this.rush ? 3 : Infinity;
     this.timeMax = 10 + (ctx.level >= 4 ? 2 : 0);
+  }
+
+  /** game id used for bests / results / retry */
+  protected get gid() {
+    return 'quiz';
+  }
+  /** resting backdrop colour world */
+  protected get baseTheme(): ThemeName {
+    return 'play';
+  }
+
+  /** two-phase construction: subclasses override hooks that touch their own fields after super() */
+  init(): Screen {
     this.build();
     if (import.meta.env.DEV) (window as any).__quiz = this;
     this.screen = {
       el: this.el,
-      theme: 'play',
+      theme: this.baseTheme,
       enter: () => this.start(),
       leave: () => this.teardown(),
       update: (dt) => this.update(dt),
       onKey: (e) => this.onKey(e),
       onHidden: () => this.phase !== 'over' && this.setPaused(true),
     };
+    return this.screen;
   }
 
   /** method (not inline compare) so TS doesn't over-narrow `phase` across awaits */
-  private isOver() {
+  protected isOver() {
     return this.phase === 'over';
   }
 
   // ------------------------------------------------------------------ build
-  private build() {
+  protected build() {
     this.scoreEl = h('span', { class: 'score-v' }, '0');
     this.scorePill = h('div', { class: 'score-pill' }, h('span', { class: 'score-coin', html: ICON.coin }), this.scoreEl);
 
@@ -180,7 +194,7 @@ class QuizGame {
         this.modalBtn('quit', '#ff4757', (e) => {
           this.phase = 'over';
           import('../../screens/levels').then(({ levelsScreen }) =>
-            import('../registry').then(({ GAMES }) => app.go(() => levelsScreen(GAMES[0]), { x: e.clientX, y: e.clientY })),
+            import('../registry').then(({ GAMES }) => app.go(() => levelsScreen(GAMES.find((g) => g.id === this.gid)!), { x: e.clientX, y: e.clientY })),
           );
         }),
       ),
@@ -202,13 +216,15 @@ class QuizGame {
       if (this.phase === 'reveal' && !(e.target as HTMLElement).closest('.topbar, .modal')) this.continue();
     });
 
-    this.offLang = i18n.onChange(() => {
-      this.renderLabels();
-      if (this.phase === 'reveal') this.drawAnswer(this.cardCv);
-    });
+    this.offLang = i18n.onChange(() => this.onLangChange());
   }
 
-  private modalBtn(k: 'resume' | 'quit', color: string, onTap: (e: PointerEvent) => void) {
+  protected onLangChange() {
+    this.renderLabels();
+    if (this.phase === 'reveal') this.drawAnswer(this.cardCv);
+  }
+
+  protected modalBtn(k: 'resume' | 'quit', color: string, onTap: (e: PointerEvent) => void) {
     const b = h('button', { class: 'big-btn', style: `--c:${color}` }, h('span', { class: 'big-btn-label' }, tx(k)));
     pressable(b, (e) => {
       audio.pop();
@@ -217,7 +233,7 @@ class QuizGame {
     return b;
   }
 
-  private layoutCard() {
+  protected layoutCard() {
     const wrap = this.cardEl.parentElement!;
     const w = Math.min(wrap.clientWidth, 440);
     const avail = (this.el.querySelector('.stage-area') as HTMLElement).clientHeight - 70;
@@ -228,9 +244,9 @@ class QuizGame {
   }
 
   // ------------------------------------------------------------------ flow
-  private async start() {
+  protected async start() {
     this.layoutCard();
-    drawPatternBack(this.cardCv, this.cardW, this.cardH);
+    this.introCard();
     this.renderHud();
     this.buttons.forEach((b) => gsap.set(b, { scale: 0 }));
     gsap.set(this.comboEl, { scale: 0 });
@@ -245,7 +261,7 @@ class QuizGame {
     this.next(false);
   }
 
-  private async countdown() {
+  protected async countdown() {
     const ov = document.getElementById('overlay')!;
     for (const n of [3, 2, 1, 0]) {
       if (this.isOver()) return;
@@ -266,7 +282,7 @@ class QuizGame {
     }
   }
 
-  private pickWord(): Word {
+  protected pickWord(): Word {
     const due = this.retry.findIndex((r) => r.due <= this.asked);
     if (due >= 0) return this.retry.splice(due, 1)[0].w;
     const pool = this.ctx.words;
@@ -284,7 +300,7 @@ class QuizGame {
     return pick(pool.filter((w) => w.h !== this.word?.h));
   }
 
-  private pickChoices(answer: Word): Word[] {
+  protected pickChoices(answer: Word): Word[] {
     const pool = this.ctx.words;
     const taken = new Set([answer.en.toLowerCase(), answer.th]);
     const out: Word[] = [];
@@ -299,7 +315,7 @@ class QuizGame {
     return shuffle([answer, ...out]);
   }
 
-  private async next(fromReveal: boolean) {
+  protected async next(fromReveal: boolean) {
     if (!this.rush && this.asked >= ZEN_TOTAL) return this.finish();
     this.phase = 'lock';
     this.word = this.pickWord();
@@ -309,39 +325,10 @@ class QuizGame {
     this.asked++;
     this.qMeta.textContent = this.rush ? `${t('question')} ${this.asked}` : `${this.asked} / ${ZEN_TOTAL}`;
 
-    // make sure the glyphs are loaded before painting to canvas (Google Fonts slices CJK by unicode-range)
-    await Promise.race([
-      document.fonts.load(`900 40px ${F_HANZI}`, this.word.h + this.word.ex.zh + this.word.p + this.word.ex.py),
-      new Promise((r) => setTimeout(r, 1200)),
-    ]);
-    if (this.isOver()) return;
-
-    const front = document.createElement('canvas');
-    drawFront(front, this.cardW, this.cardH, this.word, store.settings.pinyin);
-    const back = this.cardCv;
-    if (!fromReveal) drawPatternBack(back, this.cardW, this.cardH);
-
-    // choices out → in
     this.buttons.forEach((b) => b.classList.remove('is-correct', 'is-wrong', 'is-dim'));
     this.renderLabels();
-    audio.whoosh();
-    await flipper.flip({
-      el: this.cardEl,
-      front,
-      back,
-      from: Math.PI,
-      to: Math.PI * 2,
-      duration: 0.62,
-      hop: 36,
-      enterScale: fromReveal ? 1 : 0.2,
-      onMid: () => audio.pop(0.8),
-    });
+    await this.presentQuestion(fromReveal);
     if (this.isOver()) return;
-    this.cardEl.replaceChild(front, this.cardCv);
-    front.className = 'card-cv';
-    this.cardCv = front;
-    this.cardEl.setAttribute('aria-label', `${this.word.h} ${this.word.p}`);
-    pop(this.cardEl, 0.5);
 
     gsap.fromTo(
       this.buttons,
@@ -361,7 +348,45 @@ class QuizGame {
     this.phase = 'ask';
   }
 
-  private renderLabels() {
+  /** card shown (face-down) while the countdown runs */
+  protected introCard() {
+    drawPatternBack(this.cardCv, this.cardW, this.cardH);
+  }
+
+  /** bring the new question onto the card. Base: WebGL flip to the hanzi face. */
+  protected async presentQuestion(fromReveal: boolean) {
+    // make sure the glyphs are loaded before painting to canvas (Google Fonts slices CJK by unicode-range)
+    await Promise.race([
+      document.fonts.load(`900 40px ${F_HANZI}`, this.word.h + this.word.ex.zh + this.word.p + this.word.ex.py),
+      new Promise((r) => setTimeout(r, 1200)),
+    ]);
+    if (this.isOver()) return;
+
+    const front = document.createElement('canvas');
+    drawFront(front, this.cardW, this.cardH, this.word, store.settings.pinyin);
+    const back = this.cardCv;
+    if (!fromReveal) drawPatternBack(back, this.cardW, this.cardH);
+    audio.whoosh();
+    await flipper.flip({
+      el: this.cardEl,
+      front,
+      back,
+      from: Math.PI,
+      to: Math.PI * 2,
+      duration: 0.62,
+      hop: 36,
+      enterScale: fromReveal ? 1 : 0.2,
+      onMid: () => audio.pop(0.8),
+    });
+    if (this.isOver()) return;
+    this.cardEl.replaceChild(front, this.cardCv);
+    front.className = 'card-cv';
+    this.cardCv = front;
+    this.cardEl.setAttribute('aria-label', `${this.word.h} ${this.word.p}`);
+    pop(this.cardEl, 0.5);
+  }
+
+  protected renderLabels() {
     const lang = i18n.lang;
     this.choices.forEach((w, i) => {
       const text = lang === 'th' ? w.th : w.en;
@@ -371,7 +396,7 @@ class QuizGame {
     });
   }
 
-  private answer(i: number) {
+  protected answer(i: number) {
     if (this.phase !== 'ask' || this.paused) return;
     this.phase = 'lock';
     this.stopUrgency();
@@ -382,7 +407,7 @@ class QuizGame {
   }
 
   // ------------------------------------------------------------------ correct
-  private onCorrect(btn: HTMLButtonElement) {
+  protected onCorrect(btn: HTMLButtonElement) {
     this.combo++;
     this.correct++;
     this.maxCombo = Math.max(this.maxCombo, this.combo);
@@ -398,7 +423,7 @@ class QuizGame {
     pop(btn, 1.3);
     audio.correct(this.combo);
     audio.cheer(this.combo);
-    speak(this.word.h);
+    this.speakAnswer();
 
     const bc = center(btn);
     const power = 1 + this.stage * 0.35 + (this.fever ? 0.6 : 0);
@@ -419,11 +444,7 @@ class QuizGame {
     );
     this.floatText(`+${formatNum(pts)}`, bc.x, bc.y - 20, this.fever ? 'gold' : '');
 
-    // card celebration
-    const cc = center(this.cardEl);
-    gsap.fromTo(this.rays, { scale: 0.3, opacity: 1, rotation: 0 }, { scale: 1.5, opacity: 0, rotation: 120, duration: 0.9, ease: 'power2.out' });
-    pop(this.cardEl, 0.6);
-    particles.burst(cc.x, cc.y - this.cardH * 0.1, { count: 8, sprite: 'glow', speed: [40, 140], size: [60, 100], g: 0, life: [0.4, 0.6], add: true });
+    this.celebrateCard();
     shake(0.18 + this.stage * 0.06);
     punch(0.012 + this.stage * 0.006);
     background.kick(power);
@@ -452,10 +473,26 @@ class QuizGame {
     }
     this.renderHud();
 
-    gsap.delayedCall(0.8, () => this.explodeCard());
+    gsap.delayedCall(this.explodeDelay, () => this.explodeCard());
   }
 
-  private explodeCard() {
+  protected get explodeDelay() {
+    return 0.8;
+  }
+
+  protected speakAnswer() {
+    speak(this.word.h);
+  }
+
+  /** card-level reaction to a right answer (rays, squash, glow) */
+  protected celebrateCard() {
+    const cc = center(this.cardEl);
+    gsap.fromTo(this.rays, { scale: 0.3, opacity: 1, rotation: 0 }, { scale: 1.5, opacity: 0, rotation: 120, duration: 0.9, ease: 'power2.out' });
+    pop(this.cardEl, 0.6);
+    particles.burst(cc.x, cc.y - this.cardH * 0.1, { count: 8, sprite: 'glow', speed: [40, 140], size: [60, 100], g: 0, life: [0.4, 0.6], add: true });
+  }
+
+  protected explodeCard() {
     if (this.isOver()) return;
     const cc = center(this.cardEl);
     gsap.timeline()
@@ -471,7 +508,7 @@ class QuizGame {
     gsap.to(this.buttons, { scale: 0, duration: 0.2, stagger: 0.03, ease: 'back.in(2)' });
   }
 
-  private rollScore(from: number, to: number) {
+  protected rollScore(from: number, to: number) {
     this.shown.v = from;
     gsap.to(this.shown, {
       v: to,
@@ -482,7 +519,7 @@ class QuizGame {
     });
   }
 
-  private praise() {
+  protected praise() {
     const tier = this.combo >= 20 ? 4 : this.combo >= 15 ? 3 : this.combo >= 10 ? 2 : this.combo >= 5 ? 1 : 0;
     const p = PRAISE[tier];
     const ov = document.getElementById('overlay')!;
@@ -497,12 +534,12 @@ class QuizGame {
     audio.firecracker(3 + tier);
   }
 
-  private stageUp(st: number) {
+  protected stageUp(st: number) {
     this.stage = st;
     audio.stageUp(st);
     audio.setIntensity(st, this.fever);
     background.speed.v = 0.12 + st * 0.1;
-    if (!this.fever) background.setTheme(st >= 2 ? 'hot' : 'play', 0.6);
+    if (!this.fever) background.setTheme(st >= 2 ? 'hot' : this.baseTheme, 0.6);
     shake(0.4);
     for (let i = 0; i < 1 + st; i++) {
       gsap.delayedCall(i * 0.15, () => particles.firework(rand(innerWidth * 0.15, innerWidth * 0.85), rand(innerHeight * 0.12, innerHeight * 0.35), pick(['sparkGold', 'sparkRed', 'sparkCyan'] as const)));
@@ -511,7 +548,7 @@ class QuizGame {
   }
 
   // ------------------------------------------------------------------ fever
-  private startFever() {
+  protected startFever() {
     if (this.fever || this.isOver()) return;
     this.fever = true;
     this.feverT = FEVER_TIME;
@@ -536,20 +573,20 @@ class QuizGame {
     particles.orbit(fc.x, fc.y, 18, fc.w * 0.45, 1.2);
   }
 
-  private endFever() {
+  protected endFever() {
     this.fever = false;
     this.feverGauge = 0;
     this.el.classList.remove('is-fever');
     stopLoop('quiz:fever');
     audio.setIntensity(this.stage, false);
-    background.setTheme(this.stage >= 2 ? 'hot' : 'play', 0.8);
+    background.setTheme(this.stage >= 2 ? 'hot' : this.baseTheme, 0.8);
     background.speed.v = 0.12 + this.stage * 0.1;
     audio.swoosh();
     this.renderHud();
   }
 
   // ------------------------------------------------------------------ wrong
-  private onWrong(btn: HTMLButtonElement | null) {
+  protected onWrong(btn: HTMLButtonElement | null) {
     const timeout = !btn;
     this.combo = 0;
     this.missed.includes(this.word) || this.missed.push(this.word);
@@ -596,13 +633,17 @@ class QuizGame {
     if (this.stage > 0) {
       this.stage = 0;
       audio.setIntensity(0, this.fever);
-      if (!this.fever) background.setTheme('play', 0.6);
+      if (!this.fever) background.setTheme(this.baseTheme, 0.6);
       background.speed.v = this.fever ? 0.7 : 0.12;
     }
     if (!this.fever) this.feverGauge = Math.max(0, this.feverGauge - 0.35);
     this.renderHud();
 
-    // reveal the answer on the back of the card
+    this.revealAnswer(timeout);
+  }
+
+  /** show the right answer after a miss. Base: flip the card over to the answer face. */
+  protected revealAnswer(timeout: boolean) {
     const back = document.createElement('canvas');
     this.drawAnswer(back);
     const front = this.cardCv;
@@ -614,18 +655,22 @@ class QuizGame {
       this.cardEl.replaceChild(back, this.cardCv);
       back.className = 'card-cv';
       this.cardCv = back;
-      this.phase = 'reveal';
-      this.contHint.classList.add('show');
-      gsap.fromTo(this.contHint, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: 'back.out(2)' });
-      loop('quiz:cont', this.contHint, () => gsap.to(this.contHint, { y: -6, duration: 0.45, yoyo: true, repeat: -1, ease: 'sine.inOut' }), { y: 0 });
+      this.showContinue();
     });
   }
 
-  private drawAnswer(cv: HTMLCanvasElement) {
+  protected showContinue() {
+    this.phase = 'reveal';
+    this.contHint.classList.add('show');
+    gsap.fromTo(this.contHint, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: 'back.out(2)' });
+    loop('quiz:cont', this.contHint, () => gsap.to(this.contHint, { y: -6, duration: 0.45, yoyo: true, repeat: -1, ease: 'sine.inOut' }), { y: 0 });
+  }
+
+  protected drawAnswer(cv: HTMLCanvasElement) {
     drawAnswerBack(cv, this.cardW, this.cardH, this.word, i18n.lang, t('answer'));
   }
 
-  private continue() {
+  protected continue() {
     if (this.phase !== 'reveal' || this.paused) return;
     this.phase = 'lock';
     audio.click();
@@ -639,14 +684,14 @@ class QuizGame {
   }
 
   // ------------------------------------------------------------------ end
-  private finish() {
+  protected finish() {
     if (this.isOver()) return;
     this.phase = 'over';
     this.stopUrgency();
     if (this.fever) this.endFever();
     store.save();
     const stats: RunStats = {
-      game: 'quiz',
+      game: this.gid,
       level: this.ctx.level,
       mode: this.ctx.mode,
       score: this.score,
@@ -671,7 +716,7 @@ class QuizGame {
     gsap.delayedCall(1.4, () => app.go(() => resultsScreen(stats)));
   }
 
-  private teardown() {
+  protected teardown() {
     this.phase = 'over';
     this.offLang();
     stopAllLoops('quiz:');
@@ -682,7 +727,7 @@ class QuizGame {
   }
 
   // ------------------------------------------------------------------ per-frame
-  private update(dt: number) {
+  protected update(dt: number) {
     if (this.paused) return;
     if (this.fever && (this.phase === 'ask' || this.phase === 'lock')) {
       this.feverT -= dt;
@@ -712,23 +757,23 @@ class QuizGame {
     }
   }
 
-  private stopUrgency() {
+  protected stopUrgency() {
     stopLoop('quiz:urgent');
     stopLoop('quiz:urgentCard');
   }
 
-  private renderTimer() {
+  protected renderTimer() {
     const f = clamp(this.timeLeft / this.timeMax, 0, 1);
     this.timerFill.style.transform = `scaleX(${f})`;
     this.timerFill.dataset.level = f > 0.5 ? 'ok' : f > 0.25 ? 'warn' : 'danger';
   }
 
-  private renderHud() {
+  protected renderHud() {
     this.feverFill.style.transform = `scaleX(${this.feverGauge})`;
     this.feverRow.classList.toggle('ready', this.feverGauge > 0.8 && !this.fever);
   }
 
-  private setPaused(p: boolean) {
+  protected setPaused(p: boolean) {
     if (this.isOver() || this.phase === 'intro' || this.paused === p) return;
     this.paused = p;
     this.pauseModal.classList.toggle('hidden', !p);
@@ -740,7 +785,7 @@ class QuizGame {
     }
   }
 
-  private onKey(e: KeyboardEvent) {
+  protected onKey(e: KeyboardEvent) {
     if (e.key === 'Escape') return this.setPaused(!this.paused);
     if (this.paused) return;
     const n = Number(e.key);
@@ -753,7 +798,7 @@ class QuizGame {
   }
 
   // ------------------------------------------------------------------ small fx
-  private floatText(text: string, x: number, y: number, cls = '') {
+  protected floatText(text: string, x: number, y: number, cls = '') {
     const el = h('div', { class: `float-pts ${cls}` }, text);
     el.style.left = `${x}px`;
     el.style.top = `${y}px`;
@@ -764,7 +809,7 @@ class QuizGame {
       .to(el, { y: -90, opacity: 0, duration: 0.6, ease: 'power2.in' }, 0.25);
   }
 
-  private banner(text: string) {
+  protected banner(text: string) {
     const el = h('div', { class: 'banner' }, text);
     const cc = center(this.cardEl);
     el.style.top = `${cc.y}px`;
@@ -774,7 +819,7 @@ class QuizGame {
       .to(el, { opacity: 0, y: -30, duration: 0.3, delay: 0.5 });
   }
 
-  private flash(color: string, strength: number) {
+  protected flash(color: string, strength: number) {
     const f = document.getElementById('flash')!;
     f.style.background = color;
     gsap.fromTo(f, { opacity: strength }, { opacity: 0, duration: 0.35, ease: 'power2.out', overwrite: true });
