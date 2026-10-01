@@ -10,8 +10,6 @@ const pentaNote = (base: number, idx: number) =>
   base + PENTA[((idx % 5) + 5) % 5] + 12 * Math.floor(idx / 5);
 
 const VOICE_GROUPS = {
-  right: ['dui', 'henhao', 'taibang', 'lihai'],
-  wrong: ['cuo', 'buxing'],
   c5: ['c5'], // 不错
   c10: ['c10'], // 太强了
   c15: ['c15'], // 疯了
@@ -20,11 +18,6 @@ const VOICE_GROUPS = {
   c50: ['c50'], // 传奇
 };
 type VoiceGroup = keyof typeof VOICE_GROUPS;
-/** on-screen text for each shouted word */
-const VOICE_TEXT: Record<string, string> = {
-  dui: '对!', henhao: '很好!', taibang: '太棒了!', lihai: '厉害!', cuo: '错!', buxing: '不行!',
-  c5: '不错!', c10: '太强了!', c15: '疯了!', c20: '无敌!', c30: '神了!', c50: '传奇!',
-};
 const VOICE_FILES = Object.values(VOICE_GROUPS).flatMap((bases) => bases.flatMap((b) => [1, 2, 3].map((v) => `${b}_${v}`)));
 
 class AudioEngine {
@@ -80,10 +73,10 @@ class AudioEngine {
   }
 
   /** shout one clip from a group, avoiding an immediate repeat of the last pick in that group */
-  say(group: VoiceGroup): string | null {
-    if (!this.ok) return null;
+  say(group: VoiceGroup) {
+    if (!this.ok) return;
     const pool = VOICE_GROUPS[group].flatMap((b) => [1, 2, 3].map((v) => `${b}_${v}`)).filter((n) => this.voiceBufs.has(n));
-    if (!pool.length) return null;
+    if (!pool.length) return;
     const last = this.lastVoice.get(group);
     // prefer a different word than last time, else at least a different take
     let cand = pool.filter((n) => n.split('_')[0] !== last?.split('_')[0]);
@@ -97,7 +90,6 @@ class AudioEngine {
     src.connect(this.sfxBus);
     src.start();
     this.voiceSrc = src;
-    return VOICE_TEXT[pick.split('_')[0]];
   }
 
   /** only combo milestones (5, 10, 15…) shout, each tier with its own escalating line */
