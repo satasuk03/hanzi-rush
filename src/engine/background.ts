@@ -10,6 +10,7 @@ export const THEMES = {
   play: { a: '#e8344e', b: '#f4495f', glow: '#ffd3a8', cloud: '#ffe9ec' },
   hot: { a: '#ff5a1f', b: '#ff7a2f', glow: '#fff0a0', cloud: '#fff1e0' },
   fever: { a: '#ffae00', b: '#ffc82e', glow: '#fffbe0', cloud: '#fff8dc' },
+  jade: { a: '#0ea57a', b: '#19c08f', glow: '#d2fbe3', cloud: '#e9fff5' },
   results: { a: '#7b4dff', b: '#8f66ff', glow: '#f0e6ff', cloud: '#f5efff' },
   vault: { a: '#1d1030', b: '#26163d', glow: '#b8741f', cloud: '#3b2856' },
 } satisfies Record<string, Theme>;
