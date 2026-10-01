@@ -9,6 +9,17 @@ const midiHz = (m: number) => 440 * 2 ** ((m - 69) / 12);
 const pentaNote = (base: number, idx: number) =>
   base + PENTA[((idx % 5) + 5) % 5] + 12 * Math.floor(idx / 5);
 
+const VOICE_GROUPS = {
+  c5: ['c5'], // 不错
+  c10: ['c10'], // 太强了
+  c15: ['c15'], // 疯了
+  c20: ['c20'], // 无敌
+  c30: ['c30'], // 神了
+  c50: ['c50'], // 传奇
+};
+type VoiceGroup = keyof typeof VOICE_GROUPS;
+const VOICE_FILES = Object.values(VOICE_GROUPS).flatMap((bases) => bases.flatMap((b) => [1, 2, 3].map((v) => `${b}_${v}`)));
+
 class AudioEngine {
   ctx: AudioContext | null = null;
   private master!: GainNode;
@@ -37,6 +48,54 @@ class AudioEngine {
       this.build();
     }
     if (this.ctx.state === 'suspended') this.ctx.resume();
+    this.loadVoices();
+  }
+
+  // ------------------------------------------------------------------ voice clips
+  // Shouted announcer lines (public/sfx). Each base word has 3 takes; we rotate so the same clip never repeats back-to-back.
+  private voiceBufs = new Map<string, AudioBuffer>();
+  private voiceLoading = false;
+  private lastVoice = new Map<string, string>();
+  private voiceSrc: AudioBufferSourceNode | null = null;
+
+  private loadVoices() {
+    if (this.voiceLoading || !this.ctx) return;
+    this.voiceLoading = true;
+    const ctx = this.ctx;
+    for (const name of VOICE_FILES) {
+      fetch(`${import.meta.env.BASE_URL}sfx/${name}.mp3`)
+        .then((r) => r.arrayBuffer())
+        // callback form: older Safari has no promise-based decodeAudioData
+        .then((buf) => new Promise<AudioBuffer>((res, rej) => ctx.decodeAudioData(buf, res, rej)))
+        .then((b) => this.voiceBufs.set(name, b))
+        .catch(() => {});
+    }
+  }
+
+  /** shout one clip from a group, avoiding an immediate repeat of the last pick in that group */
+  say(group: VoiceGroup) {
+    if (!this.ok) return;
+    const pool = VOICE_GROUPS[group].flatMap((b) => [1, 2, 3].map((v) => `${b}_${v}`)).filter((n) => this.voiceBufs.has(n));
+    if (!pool.length) return;
+    const last = this.lastVoice.get(group);
+    // prefer a different word than last time, else at least a different take
+    let cand = pool.filter((n) => n.split('_')[0] !== last?.split('_')[0]);
+    if (!cand.length) cand = pool.filter((n) => n !== last);
+    if (!cand.length) cand = pool;
+    const pick = cand[Math.floor(Math.random() * cand.length)];
+    this.lastVoice.set(group, pick);
+    this.voiceSrc?.stop();
+    const src = this.ctx!.createBufferSource();
+    src.buffer = this.voiceBufs.get(pick)!;
+    src.connect(this.sfxBus);
+    src.start();
+    this.voiceSrc = src;
+  }
+
+  /** only combo milestones (5, 10, 15…) shout, each tier with its own escalating line */
+  cheer(combo: number) {
+    const tier = [50, 30, 20, 15, 10, 5].find((t) => combo >= t);
+    if (tier && combo % 5 === 0) this.say(`c${tier}` as VoiceGroup);
   }
 
   private build() {

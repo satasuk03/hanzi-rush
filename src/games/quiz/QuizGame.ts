@@ -422,6 +422,7 @@ export class QuizGame {
     this.buttons.forEach((b) => b !== btn && b.classList.add('is-dim'));
     pop(btn, 1.3);
     audio.correct(this.combo);
+    audio.cheer(this.combo);
     this.speakAnswer();
 
     const bc = center(btn);
