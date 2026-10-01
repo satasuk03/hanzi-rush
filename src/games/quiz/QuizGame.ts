@@ -392,6 +392,7 @@ export class QuizGame {
       const text = lang === 'th' ? w.th : w.en;
       const L = this.labels[i];
       L.textContent = text;
+      L.dataset.text = text;
       L.className = `ch-label ${lang === 'th' ? 'th' : ''} ${text.length > 18 ? 'xl' : text.length > 11 ? 'l' : ''}`;
     });
   }

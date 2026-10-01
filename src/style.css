@@ -418,13 +418,22 @@ body.lang-th .combo-l { font-family: var(--f-thai); font-weight: 700; }
 .ch-label {
   font: 800 21px/1.15 var(--f-body);
   text-align: center;
-  -webkit-text-stroke: 5px var(--ink); paint-order: stroke fill;
+  --stroke: 5px;
   word-break: break-word;
+  position: relative; z-index: 0;
+}
+/* Outline drawn on its own layer behind the text: iOS WebKit ignores
+   paint-order for some Thai runs, letting the stroke swallow the fill. */
+.ch-label::before {
+  content: attr(data-text);
+  position: absolute; inset: 0; z-index: -1;
+  color: var(--ink);
+  -webkit-text-stroke: var(--stroke) var(--ink);
 }
 .ch-label.th { font-family: var(--f-thai); font-weight: 600; font-size: 22px; line-height: 1.25; }
 .ch-label.l { font-size: 17px; }
 .ch-label.th.l { font-size: 18px; }
-.ch-label.xl { font-size: 14.5px; -webkit-text-stroke-width: 4px; }
+.ch-label.xl { font-size: 14.5px; --stroke: 4px; }
 .ch-label.th.xl { font-size: 15px; }
 
 .continue {
@@ -793,8 +802,9 @@ body.lang-th .cz-ribbon { font-family: var(--f-thai); font-weight: 700; letter-s
 .ch-label.hz {
   position: relative; z-index: 1;
   display: flex; flex-direction: column; align-items: center; gap: 3px;
-  font: 900 38px/1.05 var(--f-hanzi); -webkit-text-stroke: 7px var(--ink); word-break: keep-all; white-space: nowrap;
+  font: 900 38px/1.05 var(--f-hanzi); -webkit-text-stroke: 7px var(--ink); paint-order: stroke fill; word-break: keep-all; white-space: nowrap;
 }
+.ch-label.hz::before { content: none; }
 .ch-label.hz.s { font-size: 31px; }
 .ch-label.hz.xs { font-size: 24px; }
 .hz-p { font: 800 13px/1 var(--f-hanzi); -webkit-text-stroke: 4px var(--ink); letter-spacing: .2px; opacity: .95; }
