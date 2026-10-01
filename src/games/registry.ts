@@ -28,6 +28,7 @@ export interface GameDef {
 
 export const GAMES: GameDef[] = [
   { id: 'quiz', name: 'quizName', desc: 'quizDesc', glyph: '义', color: '#ff4757', dark: '#c8203a', load: () => import('./quiz/QuizGame') },
+  { id: 'cloze', name: 'clozeName', desc: 'clozeDesc', glyph: '填', color: '#12b886', dark: '#0b8a65', load: () => import('./cloze/ClozeGame') },
   { id: 'pinyin', name: 'pinyinName', glyph: 'ā', color: '#3da5ff', dark: '#1c6fd1' },
   { id: 'tone', name: 'toneName', glyph: 'ˇ', color: '#9b6bff', dark: '#6a3fd6' },
   { id: 'stroke', name: 'strokeName', glyph: '笔', color: '#1fd1c1', dark: '#0e9488' },

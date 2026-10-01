@@ -27,26 +27,47 @@ export function logo() {
 export function homeScreen(): Screen {
   const lg = logo();
   const buddy = mascot('happy');
-  const [feat, ...rest] = GAMES;
+  const playable = GAMES.filter((g) => g.load);
+  const rest = GAMES.filter((g) => !g.load);
 
-  const playBtn = h('span', { class: 'play-pill' }, tx('play'), h('span', { class: 'play-arrow' }, '▶'));
-  const featured = h(
-    'button',
-    { class: 'game-card featured', style: `--c:${feat.color};--d:${feat.dark}` },
-    h('span', { class: 'gc-glyph' }, feat.glyph),
-    h('span', { class: 'gc-text' }, h('span', { class: 'gc-name' }, tx(feat.name)), feat.desc ? h('span', { class: 'gc-desc' }, tx(feat.desc)) : null),
-    playBtn,
-  );
-  const openGame = (e: PointerEvent) => {
+  const playBtns: HTMLElement[] = [];
+  const cards = playable.slice(0, 1).map((g) => {
+    const playBtn = h('span', { class: 'play-pill' }, tx('play'), h('span', { class: 'play-arrow' }, '▶'));
+    playBtns.push(playBtn);
+    const card = h(
+      'button',
+      { class: 'game-card featured', style: `--c:${g.color};--d:${g.dark}` },
+      h('span', { class: 'gc-glyph' }, g.glyph),
+      h('span', { class: 'gc-text' }, h('span', { class: 'gc-name' }, tx(g.name)), g.desc ? h('span', { class: 'gc-desc' }, tx(g.desc)) : null),
+      playBtn,
+    );
+    pressable(card, (e) => openGame(card, g, e));
+    return card;
+  });
+  const featured = cards[0];
+  const openGame = (card: HTMLElement, g: (typeof GAMES)[number], e: PointerEvent) => {
     audio.unlock();
     audio.startMusic();
     audio.pop(1.3);
-    const c = center(featured);
+    const c = center(card);
     particles.burst(c.x, c.y, { count: 22, sprite: ['star', 'coin'], speed: [250, 600], size: [16, 28], g: 1000 });
     shake(0.25);
-    app.go(() => levelsScreen(feat), { x: e.clientX, y: e.clientY });
+    app.go(() => levelsScreen(g), { x: e.clientX, y: e.clientY });
   };
-  pressable(featured, openGame);
+
+  // newer playable games sit in the small tile row with a NEW tag
+  const minis = playable.slice(1).map((g) => {
+    const card = h(
+      'button',
+      { class: 'game-card mini', style: `--c:${g.color};--d:${g.dark}` },
+      h('span', { class: 'gc-glyph' }, g.glyph),
+      h('span', { class: 'gc-name' }, tx(g.name)),
+      h('span', { class: 'mini-play' }, '▶'),
+      h('span', { class: 'mini-new' }, 'NEW'),
+    );
+    pressable(card, (e) => openGame(card, g, e));
+    return card;
+  });
 
   const locked = rest.map((g) => {
     const card = h(
@@ -122,7 +143,7 @@ export function homeScreen(): Screen {
     { class: 'screen home' },
     top,
     h('div', { class: 'home-hero' }, lg.el, tagline, buddy),
-    h('div', { class: 'home-games' }, featured, vault, h('div', { class: 'locked-grid' }, ...locked)),
+    h('div', { class: 'home-games' }, ...cards, vault, h('div', { class: 'locked-grid' }, ...minis, ...locked)),
     h('a', { class: 'home-credit', href: 'https://zeze.app/', target: '_blank', rel: 'noopener' }, 'by zeze.app'),
   );
 
@@ -149,10 +170,10 @@ export function homeScreen(): Screen {
       popIn(lg.tiles, 0, 0.12);
       gsap.from(tagline, { opacity: 0, y: 16, delay: 0.6, duration: 0.5, ease: 'back.out(2)' });
       gsap.from(buddy, { scale: 0, delay: 0.35, duration: 0.8, ease: 'elastic.out(1,0.45)' });
-      gsap.from(featured, { y: 80, opacity: 0, delay: 0.4, duration: 0.7, ease: 'back.out(1.6)' });
-      gsap.from(vault, { y: 80, opacity: 0, delay: 0.5, duration: 0.7, ease: 'back.out(1.6)' });
+      cards.forEach((c, i) => gsap.from(c, { y: 80, opacity: 0, delay: 0.4 + i * 0.1, duration: 0.7, ease: 'back.out(1.6)' }));
+      gsap.from(vault, { y: 80, opacity: 0, delay: 0.4 + cards.length * 0.1, duration: 0.7, ease: 'back.out(1.6)' });
       gsap.from(chip, { x: -60, opacity: 0, delay: 0.2, duration: 0.6, ease: 'back.out(2)' });
-      popIn(locked, 0.6, 0.07);
+      popIn([...minis, ...locked], 0.7, 0.07);
       gsap.delayedCall(0.3, () => audio.drum(0, 0.4));
       dailyCall = gsap.delayedCall(1.2, () =>
         maybeShowDaily(() => {
@@ -164,7 +185,7 @@ export function homeScreen(): Screen {
       // idle loops — registered so leaving the screen resets them cleanly
       lg.tiles.forEach((t, i) => loop(`home:tile${i}`, t, () => gsap.to(t, { y: -6, rotation: i ? 8 : -8, duration: 1.2 + i * 0.2, yoyo: true, repeat: -1, ease: 'sine.inOut', delay: i * 0.3 }), { y: 0, rotation: i ? 6 : -6 }));
       loop('home:buddy', buddy, () => bob(buddy, 10, 1.3), { y: 0 });
-      loop('home:play', playBtn, () => breathe(playBtn, 0.06, 0.55), { scaleX: 1, scaleY: 1 });
+      playBtns.forEach((b, i) => loop(`home:play${i}`, b, () => breathe(b, 0.06, 0.55 + i * 0.07), { scaleX: 1, scaleY: 1 }));
       loop('home:vault', vaultPill, () => breathe(vaultPill, 0.05, 0.7), { scaleX: 1, scaleY: 1 });
     },
     leave() {
@@ -180,7 +201,7 @@ export function homeScreen(): Screen {
       }
     },
     onKey(e) {
-      if (e.key === 'Enter') openGame(new PointerEvent('pointerup', { clientX: innerWidth / 2, clientY: innerHeight / 2 }));
+      if (e.key === 'Enter') openGame(featured, playable[0], new PointerEvent('pointerup', { clientX: innerWidth / 2, clientY: innerHeight / 2 }));
     },
   };
 }
