@@ -10,7 +10,7 @@ import { audio, speak } from '../engine/audio';
 import { particles } from '../engine/particles';
 import { shake, punch } from '../engine/shake';
 import { pop, pressable, countTo, loop, bob } from '../engine/juice';
-import { langToggle, muteButton, bigButton, ICON } from '../ui/widgets';
+import { langToggle, muteButton, iconButton, bigButton, ICON } from '../ui/widgets';
 import { mascot } from '../ui/mascot';
 import { GAMES, bestKey, type Mode } from '../games/registry';
 import { homeScreen } from './home';
@@ -18,6 +18,10 @@ import type { Reward } from '../core/meta';
 import { t } from '../core/i18n';
 import { notify } from '../ui/notify';
 import { levelsScreen } from './levels';
+import { cloud } from '../core/cloud';
+import { boardKey, RANKED_GAMES, type RankedGame, type SubmitRunResponse } from '../../shared/api';
+import { invalidateBoard, leaderboardScreen } from './leaderboard';
+import { nameAsked, showNamePrompt } from '../ui/transfer';
 
 export interface RunStats {
   game: string;
@@ -31,6 +35,9 @@ export interface RunStats {
   rush: boolean;
   /** coins + XP paid out for this run */
   reward?: Reward;
+  /** cloud run id (clientRunId) and wall clock of the run, for leaderboard submission */
+  runId?: string;
+  durationMs?: number;
 }
 
 const STAR_SVG = `<svg viewBox="0 0 100 100"><path d="M50 6l13 28 30 4-22 21 6 30-27-15-27 15 6-30L7 38l30-4z" fill="currentColor" stroke="#2a1a3a" stroke-width="7" stroke-linejoin="round"/><ellipse cx="38" cy="36" rx="7" ry="4" fill="#fff" opacity=".7" transform="rotate(-35 38 36)"/></svg>`;
@@ -42,6 +49,8 @@ export function resultsScreen(r: RunStats): Screen {
   const key = bestKey(r.game, r.level, r.mode);
   const prevBest = store.getBest(key);
   const isBest = r.score > 0 && store.submitBest(key, r.score);
+  const ranked = (RANKED_GAMES as readonly string[]).includes(r.game);
+  const board = ranked ? boardKey(r.game as RankedGame, r.level, r.mode) : null;
 
   const buddy = mascot(starsEarned >= 2 ? 'happy' : starsEarned === 1 ? 'wow' : 'sad');
   const stars = [0, 1, 2].map((i) => h('span', { class: `r-star s${i}`, html: STAR_SVG }));
@@ -84,6 +93,41 @@ export function resultsScreen(r: RunStats): Screen {
     h('div', { class: 'r-stats' }, stat('correct', `${r.correct}/${r.asked}`), stat('accuracy', `${Math.round(acc * 100)}%`), stat('maxCombo', `×${r.maxCombo}`)),
     missedList,
   );
+
+  // ---- leaderboard: submit in the background, show the rank when (if) the server answers
+  let alive = true;
+  const showRank = (res: SubmitRunResponse | null) => {
+    if (!res || !alive) return;
+    const all = res.ranks.all;
+    const day = res.ranks.day;
+    const pick = all.improved && all.rank ? { n: all.rank, k: 'lbRankAll' as const } : day.rank ? { n: day.rank, k: 'lbRankDay' as const } : null;
+    if (!pick) return;
+    const chip = h('div', { class: 'r-rank' }, h('span', { class: 'r-rank-ic', html: ICON.trophy }), h('b', null, `#${formatNum(pick.n)}`), tx(pick.k), res.verified ? null : h('small', { class: 'r-rank-un' }, tx('lbUnverified')));
+    panel.insertBefore(chip, panel.querySelector('.r-stats'));
+    gsap.from(chip, { scale: 0, duration: 0.6, ease: 'elastic.out(1.1,0.45)' });
+    audio.pop(1.3);
+    // first ranked run and no name yet: offer one (never blocks the screen; "Later" is final)
+    if (!store.progress.profile.name && !nameAsked()) {
+      setTimeout(() => {
+        if (!alive || !board) return;
+        showNamePrompt(() => {
+          invalidateBoard(board);
+          void cloud.flush().then(() => invalidateBoard(board));
+        });
+      }, 900);
+    }
+  };
+  if (r.score > 0 && board) {
+    const handle = cloud.handle(r.runId) ?? { id: r.runId ?? crypto.randomUUID(), board, startedAt: performance.now() - (r.durationMs ?? 0) };
+    cloud
+      .submitRun(handle, r)
+      .then((res) => {
+        if (res) invalidateBoard(board);
+        showRank(res);
+      })
+      .catch(() => {});
+    cloud.flush(); // progress (coins, xp, best) was just saved: push it too
+  }
 
   // ---- rewards: coins + XP bar (+ level up)
   const rw = r.reward;
@@ -146,7 +190,7 @@ export function resultsScreen(r: RunStats): Screen {
   const el = h(
     'div',
     { class: 'screen results' },
-    h('div', { class: 'topbar' }, h('div', { class: 'spacer' }), muteButton(), langToggle()),
+    h('div', { class: 'topbar' }, h('div', { class: 'spacer' }), cloud.status === 'off' || !board ? null : iconButton(ICON.trophy, 'Leaderboard', (e) => app.go(() => leaderboardScreen({ board, from: 'results' }), { x: e.clientX, y: e.clientY })), muteButton(), langToggle()),
     h('div', { class: 'r-buddy' }, buddy),
     panel,
     h('div', { class: 'r-actions' }, levels, retry, home),
@@ -200,9 +244,11 @@ export function resultsScreen(r: RunStats): Screen {
       gsap.from(missedList.children, { x: -40, opacity: 0, stagger: 0.05, delay: 1.4, duration: 0.4, ease: 'back.out(2)' });
     },
     leave() {
+      alive = false;
       offLang();
     },
     onKey(e) {
+      if (document.querySelector('.name-prompt')) return; // typing a name: Enter/Space belong to the prompt
       if (e.key === 'Escape') app.go(homeScreen);
       if (e.key === 'Enter') retry.dispatchEvent(new PointerEvent('pointerdown')), retry.dispatchEvent(new PointerEvent('pointerup', { clientX: innerWidth / 2, clientY: innerHeight / 2 }));
     },

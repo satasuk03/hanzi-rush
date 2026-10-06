@@ -1,62 +1,8 @@
-import type { Lang } from './i18n';
+import type { Settings, WordStats, Cards, Stats, Profile, Daily, Progress, SaveDoc } from '../../shared/api';
 import { storage } from './storage';
 
-export interface Settings {
-  lang: Lang;
-  sound: boolean;
-  pinyin: boolean;
-  voice: boolean;
-}
-
-/** Per-word learning stats: [seen, correct]. Kept compact for future SRS games. */
-export type WordStats = Record<string, [number, number]>;
-
-/** Collected gacha cards: `${level}:${hanzi}` → [copies, rarity index, first-pulled epoch seconds]. */
-export type Cards = Record<string, [number, number, number]>;
-
-export interface Stats {
-  games: number;
-  questions: number;
-  correct: number;
-  bestCombo: number;
-  perfect: number;
-  pulls: number;
-  coinsEarned: number;
-  coinsSpent: number;
-  maxCoins: number;
-  /** pulls per rarity index */
-  byRarity: number[];
-}
-
-export interface Profile {
-  name: string;
-  /** equipped title id */
-  title: string;
-  /** titles the player has already been told about */
-  seen: string[];
-}
-
-export interface Daily {
-  /** local calendar day of the last claim, `YYYY-MM-DD` ('' = never) */
-  last: string;
-  streak: number;
-  best: number;
-  total: number;
-}
-
-export interface Progress {
-  /** best score per `${gameId}:${level}:${mode}` */
-  best: Record<string, number>;
-  words: WordStats;
-  coins: number;
-  xp: number;
-  cards: Cards;
-  /** pulls since the last LEGENDARY+ (hard pity) */
-  pity: number;
-  stats: Stats;
-  profile: Profile;
-  daily: Daily;
-}
+// the save-document shapes live in the shared API contract; re-exported so existing importers keep working
+export type { Settings, WordStats, Cards, Stats, Profile, Daily, Progress, SaveDoc };
 
 const KEY = 'hanzi-rush:v1';
 /** welcome gift so the vault can be tried before the first run */
@@ -101,6 +47,28 @@ function load() {
 
 const state = load();
 
+/** a pristine save: the merge base when nothing has ever synced */
+export const freshSave = (): SaveDoc => ({ v: 1, ...defaults() });
+
+const saveListeners = new Set<() => void>();
+
+const isObj = (v: unknown): v is Record<string, unknown> => typeof v === 'object' && v !== null && !Array.isArray(v);
+
+/** overwrite `target` with `src` without replacing nested containers, so held references stay valid */
+function assignInPlace(target: any, src: any) {
+  if (Array.isArray(target) && Array.isArray(src)) {
+    target.length = 0;
+    for (const v of src) target.push(structuredClone(v));
+    return;
+  }
+  for (const k of Object.keys(target)) if (!(k in src)) delete target[k];
+  for (const k of Object.keys(src)) {
+    if (isObj(target[k]) && isObj(src[k])) assignInPlace(target[k], src[k]);
+    else if (Array.isArray(target[k]) && Array.isArray(src[k])) assignInPlace(target[k], src[k]);
+    else target[k] = structuredClone(src[k]);
+  }
+}
+
 export const store = {
   settings: state.settings,
   progress: state.progress,
@@ -110,6 +78,30 @@ export const store = {
     } catch {
       /* storage unavailable (private mode) — play on without persistence */
     }
+    saveListeners.forEach((f) => f());
+  },
+  /** called after every save(); returns an unsubscribe */
+  onSave(cb: () => void) {
+    saveListeners.add(cb);
+    return () => saveListeners.delete(cb);
+  },
+  /** deep copy of everything that is synced to the cloud */
+  snapshot(): SaveDoc {
+    return structuredClone({ v: 1 as const, settings: state.settings, progress: state.progress });
+  },
+  /** replace the whole save (cloud merge / restore). Mutates in place so `store.progress` keeps its identity. */
+  replaceAll(doc: SaveDoc) {
+    const d = defaults();
+    const p = doc.progress;
+    assignInPlace(state.settings, { ...d.settings, ...doc.settings });
+    assignInPlace(state.progress, {
+      ...d.progress,
+      ...p,
+      stats: { ...d.progress.stats, ...p.stats },
+      profile: { ...d.progress.profile, ...p.profile },
+      daily: { ...d.progress.daily, ...p.daily },
+    });
+    store.save();
   },
   recordWord(hanzi: string, ok: boolean) {
     const s = (state.progress.words[hanzi] ??= [0, 0]);

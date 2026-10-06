@@ -2,6 +2,8 @@ node_modules
 dist
 .DS_Store
 .wrangler
+.dev.vars
+.e2e-shots/
 *.xcuserstate
 local.properties
 DerivedData

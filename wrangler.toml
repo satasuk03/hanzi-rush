@@ -1,3 +1,24 @@
 name = "hanzi-rush"
 pages_build_output_dir = "dist"
 compatibility_date = "2026-09-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "hanzi-rush"
+database_id = "31ef87fe-56a1-4626-95b3-fa44e436f375"
+migrations_dir = "migrations"
+
+[vars]
+ALLOWED_ORIGINS = "capacitor://localhost,https://localhost,http://localhost,http://localhost:5173,http://127.0.0.1:5173"
+
+# Preview deployments get their own DB so branch testing never touches prod data
+[[env.preview.d1_databases]]
+binding = "DB"
+database_name = "hanzi-rush-preview"
+database_id = "25969929-12ce-4ef2-8bb2-29100ef3156c"
+migrations_dir = "migrations"
+
+[env.preview.vars]
+ALLOWED_ORIGINS = "capacitor://localhost,https://localhost,http://localhost,http://localhost:5173,http://127.0.0.1:5173"
+
+# Secret: IP_SALT. Prod: `npx wrangler pages secret put IP_SALT`. Local: put IP_SALT=dev in .dev.vars (git-ignored).

@@ -16,6 +16,7 @@ import { i18n } from '../core/i18n';
 import { mascot, setMood } from '../ui/mascot';
 import { GAMES } from '../games/registry';
 import { levelsScreen } from './levels';
+import { cloud } from '../core/cloud';
 
 export function logo() {
   const tiles = ['汉', '字'].map((c, i) => h('span', { class: `logo-tile t${i}` }, c));
@@ -111,14 +112,31 @@ export function homeScreen(): Screen {
   const lv = playerLevel();
   const T = titleById(store.progress.profile.title);
   const chipName = h('span', { class: 'pc-name' });
-  const syncChip = () => (chipName.textContent = store.progress.profile.name || T[i18n.lang]);
+  const seal = h('span', { class: 'pc-seal', 'data-t': String(T.tier) });
+  const sealGlyph = document.createTextNode(T.zh[0]);
+  const sealLv = h('span', { class: 'pc-lv' }, String(lv.level));
+  seal.append(sealGlyph, sealLv);
+  const coinsText = document.createTextNode(formatNum(store.progress.coins));
+  const xpFillEl = h('span', { style: `transform:scaleX(${lv.into / lv.need})` });
+  const syncChip = () => (chipName.textContent = store.progress.profile.name || titleById(store.progress.profile.title)[i18n.lang]);
   syncChip();
+  /** re-read everything the chip shows (the cloud may have merged newer progress in) */
+  const refreshChip = () => {
+    const l = playerLevel();
+    const Tt = titleById(store.progress.profile.title);
+    syncChip();
+    sealGlyph.textContent = Tt.zh[0];
+    seal.dataset.t = String(Tt.tier);
+    sealLv.textContent = String(l.level);
+    coinsText.textContent = formatNum(store.progress.coins);
+    xpFillEl.style.transform = `scaleX(${l.into / l.need})`;
+  };
   const chip = h(
     'button',
     { class: 'profile-chip', 'aria-label': 'Profile' },
-    h('span', { class: 'pc-seal', 'data-t': String(T.tier) }, T.zh[0], h('span', { class: 'pc-lv' }, String(lv.level))),
-    h('span', { class: 'pc-text' }, chipName, h('span', { class: 'pc-coins' }, h('span', { class: 'mini-coin', html: ICON.coin }), formatNum(store.progress.coins))),
-    h('span', { class: 'pc-xp' }, h('span', { style: `transform:scaleX(${lv.into / lv.need})` })),
+    seal,
+    h('span', { class: 'pc-text' }, chipName, h('span', { class: 'pc-coins' }, h('span', { class: 'mini-coin', html: ICON.coin }), coinsText)),
+    h('span', { class: 'pc-xp' }, xpFillEl),
   );
   pressable(chip, (e) => {
     audio.unlock();
@@ -135,6 +153,10 @@ export function homeScreen(): Screen {
     streakBadge.classList.toggle('off', st === 0);
   };
   syncStreak();
+  const offApplied = cloud.on('applied', () => {
+    refreshChip();
+    syncStreak();
+  });
 
   const top = h('div', { class: 'topbar' }, chip, streakBadge, h('div', { class: 'spacer' }), muteButton(), langToggle());
   const tagline = h('p', { class: 'tagline' }, tx('tagline'));
@@ -179,8 +201,7 @@ export function homeScreen(): Screen {
       dailyCall = gsap.delayedCall(1.2, () =>
         maybeShowDaily(() => {
           syncStreak();
-          const coins = store.progress.coins;
-          chip.querySelector('.pc-coins')!.lastChild!.textContent = formatNum(coins);
+          coinsText.textContent = formatNum(store.progress.coins);
         }),
       );
       // idle loops — registered so leaving the screen resets them cleanly
@@ -192,6 +213,7 @@ export function homeScreen(): Screen {
     leave() {
       dailyCall?.kill();
       offLang();
+      offApplied();
     },
     update(dt) {
       sparkleT -= dt;

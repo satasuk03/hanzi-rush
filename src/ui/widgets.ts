@@ -15,6 +15,8 @@ export const ICON = {
   heart: `<svg viewBox="0 0 32 30"><path d="M16 28S2 19.5 2 10.2C2 5.6 5.4 2 9.6 2c2.7 0 5 1.5 6.4 3.8C17.4 3.5 19.7 2 22.4 2 26.6 2 30 5.6 30 10.2 30 19.5 16 28 16 28z" fill="#ff4757" stroke="#2a1a3a" stroke-width="3" stroke-linejoin="round"/><ellipse cx="9.5" cy="9" rx="2.6" ry="3.6" fill="#fff" opacity=".7" transform="rotate(-25 9.5 9)"/></svg>`,
   coin: `<svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="13" fill="#ffc93c" stroke="#2a1a3a" stroke-width="3"/><circle cx="16" cy="16" r="9" fill="none" stroke="#e8930c" stroke-width="2"/><rect x="12.5" y="12.5" width="7" height="7" rx="1" fill="#2a1a3a"/></svg>`,
   flame: `<svg viewBox="0 0 24 28"><path d="M12 2c1 5 7 7 7 14a7 7 0 0 1-14 0c0-4 2-6 3-8 0 3 1.5 4.5 3 5-1-4 0-8 1-11z" fill="#ff7a1f" stroke="#2a1a3a" stroke-width="2.4" stroke-linejoin="round"/><path d="M12 14c.5 2.5 3 3.5 3 6.5a3 3 0 0 1-6 0c0-2 1.5-3.2 3-6.5z" fill="#ffe14d"/></svg>`,
+  trophy: `<svg viewBox="0 0 28 28"><path d="M8 4h12v7a6 6 0 0 1-12 0z" fill="#ffc93c" stroke="#2a1a3a" stroke-width="2.4" stroke-linejoin="round"/><path d="M8 6H4c0 4 1.5 6 4.5 6.5M20 6h4c0 4-1.5 6-4.5 6.5" fill="none" stroke="#2a1a3a" stroke-width="2.4" stroke-linecap="round"/><path d="M14 17v4M9 24h10" stroke="#2a1a3a" stroke-width="2.8" stroke-linecap="round"/></svg>`,
+  cloud: `<svg viewBox="0 0 28 22"><path d="M7 19a5 5 0 0 1-.6-9.96A7 7 0 0 1 19.8 7.6 5.5 5.5 0 0 1 21 19z" fill="#fff" stroke="#2a1a3a" stroke-width="2.4" stroke-linejoin="round"/></svg>`,
   crown: `<svg viewBox="0 0 28 22"><path d="M3 18L2 5l7 6 5-9 5 9 7-6-1 13z" fill="#ffc93c" stroke="#2a1a3a" stroke-width="2.6" stroke-linejoin="round"/></svg>`,
 };
 
