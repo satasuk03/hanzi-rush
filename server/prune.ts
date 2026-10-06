@@ -14,6 +14,8 @@ export async function maybePrune(env: Env, now = Date.now()): Promise<void> {
   await env.DB.batch([
     env.DB.prepare("DELETE FROM scores WHERE period >= 'd' AND period < ?1").bind(dayCut),
     env.DB.prepare("DELETE FROM scores WHERE period >= 'w' AND period < ?1").bind(weekCut),
+    env.DB.prepare("DELETE FROM effort WHERE period >= 'd' AND period < ?1").bind(dayCut),
+    env.DB.prepare("DELETE FROM effort WHERE period >= 'w' AND period < ?1").bind(weekCut),
     env.DB.prepare('DELETE FROM runs WHERE created_at < ?1').bind(now - 30 * DAY),
     env.DB.prepare('DELETE FROM rate_limits WHERE bucket < ?1').bind(Math.floor(now / 3_600_000) - 2),
   ]);

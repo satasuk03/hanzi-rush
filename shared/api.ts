@@ -321,6 +321,31 @@ export interface BoardResponse {
   serverTime: number;
 }
 
+/**
+ * GET /boards/effort?period=all|week|day&limit=50: who has practiced the most. Ranked by correct answers summed over
+ * VERIFIED (ticketed) runs of every game, level and mode. Completed runs only (quitting never submits).
+ */
+export interface EffortEntry {
+  rank: number;
+  name: string;
+  tag: string;
+  title: string;
+  correct: number;
+  runs: number;
+  durationMs: number;
+  isMe: boolean;
+}
+
+export interface EffortResponse {
+  period: Period;
+  periodKey: string;
+  resetsAt: number | null;
+  total: number;
+  entries: EffortEntry[];
+  me: EffortEntry | null;
+  serverTime: number;
+}
+
 // ====================================================================== errors
 
 export type ErrorCode =

@@ -14,6 +14,7 @@ import {
   type BoardKey,
   type BoardResponse,
   type CreatePlayerResponse,
+  type EffortResponse,
   type Period,
   type MeResponse,
   type PutSaveRequest,
@@ -692,6 +693,17 @@ export const cloud = {
     } catch (e) {
       // a stale token must not hide the public board
       if (e instanceof ApiError && e.status === 401 && st.auth) return api<BoardResponse>('GET', path);
+      throw e;
+    }
+  },
+
+  /** the effort board (throws ApiError, status 0 = offline) */
+  async effort(period: Period, limit: number = LIMITS.boardDefault): Promise<EffortResponse> {
+    const path = `/boards/effort?period=${period}&limit=${limit}`;
+    try {
+      return await api<EffortResponse>('GET', path, { token: st.auth?.token });
+    } catch (e) {
+      if (e instanceof ApiError && e.status === 401 && st.auth) return api<EffortResponse>('GET', path);
       throw e;
     }
   },
