@@ -813,6 +813,20 @@ body.lang-th .cz-ribbon { font-family: var(--f-thai); font-weight: 700; letter-s
 @media (max-height: 700px) { .cz-ribbon { font-size: 12px; padding: 5px 13px 6px; } .cz-hint { font-size: 14px; } }
 
 /* ------------------------------------------------------------------ leaderboard */
+.effort-card {
+  display: flex; align-items: center; gap: 12px; width: 100%;
+  padding: 10px 14px; border-radius: 20px;
+  background: var(--cream); color: var(--ink);
+  border: 4px solid var(--ink); box-shadow: 0 5px 0 var(--ink);
+  text-align: left;
+}
+.ec-ic { flex: none; width: 34px; height: 34px; }
+.ec-ic svg { width: 100%; height: 100%; display: block; }
+.ec-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.ec-name { font: 400 19px/1.05 var(--f-display); }
+body.lang-th .ec-name { font-family: var(--f-thai); font-weight: 700; font-size: 17px; }
+.ec-sub { font-size: 13px; font-weight: 800; color: #6b5a78; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ec-go { flex: none; font: 900 26px/1 var(--f-body); color: #6b5a78; }
 .leaderboard { gap: 8px; }
 .lb-title { margin: 6px 0 2px; }
 .lb-seg { margin-bottom: 4px; }

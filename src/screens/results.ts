@@ -21,6 +21,7 @@ import { levelsScreen } from './levels';
 import { cloud } from '../core/cloud';
 import { boardKey, RANKED_GAMES, type RankedGame, type SubmitRunResponse } from '../../shared/api';
 import { invalidateBoard, leaderboardScreen } from './leaderboard';
+import { invalidateEffort } from './effort';
 import { nameAsked, showNamePrompt } from '../ui/transfer';
 
 export interface RunStats {
@@ -122,7 +123,10 @@ export function resultsScreen(r: RunStats): Screen {
     cloud
       .submitRun(handle, r)
       .then((res) => {
-        if (res) invalidateBoard(board);
+        if (res) {
+          invalidateBoard(board);
+          invalidateEffort();
+        }
         showRank(res);
       })
       .catch(() => {});

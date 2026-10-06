@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import { h, center, pick, rand } from '../core/util';
-import { tx } from '../core/i18n';
+import { t, tx } from '../core/i18n';
 import type { Screen } from '../core/app';
 import { app } from '../core/app';
 import { audio, speak } from '../engine/audio';
@@ -17,6 +17,7 @@ import { mascot, setMood } from '../ui/mascot';
 import { GAMES } from '../games/registry';
 import { levelsScreen } from './levels';
 import { cloud } from '../core/cloud';
+import { effortScreen, loadEffort } from './effort';
 
 export function logo() {
   const tiles = ['汉', '字'].map((c, i) => h('span', { class: `logo-tile t${i}` }, c));
@@ -108,6 +109,28 @@ export function homeScreen(): Screen {
   };
   pressable(vault, openVault);
 
+  // effort board: compact card with this week's rank (a tap opens the full board)
+  const effortSub = h('span', { class: 'ec-sub' }, tx('effortSub'));
+  const effortCard = h('button', { class: 'effort-card' }, h('span', { class: 'ec-ic', html: ICON.trophy }), h('span', { class: 'ec-text' }, h('span', { class: 'ec-name' }, tx('effortTitle')), effortSub), h('span', { class: 'ec-go' }, '›'));
+  pressable(effortCard, (e) => {
+    audio.unlock();
+    audio.pop(1.2);
+    app.go(() => effortScreen(), { x: e.clientX, y: e.clientY });
+  });
+  let effortSeq = 0;
+  const syncEffort = async () => {
+    const my = ++effortSeq;
+    if (cloud.status === 'off') return;
+    try {
+      const res = await loadEffort('week', 1);
+      if (my !== effortSeq || !res.me) return;
+      effortSub.textContent = `#${formatNum(res.me.rank)} ${t('effortWeekRank')} · ${formatNum(res.me.correct)} ${t('effortUnit')}`;
+    } catch {
+      /* keep the default subtitle */
+    }
+  };
+  void syncEffort();
+
   // profile chip: title seal + level + coins
   const lv = playerLevel();
   const T = titleById(store.progress.profile.title);
@@ -143,7 +166,10 @@ export function homeScreen(): Screen {
     audio.pop(1.2);
     import('../games/gacha/profile').then((m) => app.go(() => m.create('home'), { x: e.clientX, y: e.clientY }));
   });
-  const offLang = i18n.onChange(syncChip);
+  const offLang = i18n.onChange(() => {
+    syncChip();
+    void syncEffort();
+  });
 
   const streakNum = h('span', {});
   const streakBadge = h('span', { class: 'streak-badge' }, h('span', { html: ICON.flame }), streakNum);
@@ -165,7 +191,7 @@ export function homeScreen(): Screen {
     { class: 'screen home' },
     top,
     h('div', { class: 'home-hero' }, lg.el, tagline, buddy),
-    h('div', { class: 'home-games' }, ...cards, vault, h('div', { class: 'locked-grid' }, ...minis, ...locked)),
+    h('div', { class: 'home-games' }, ...cards, vault, effortCard, h('div', { class: 'locked-grid' }, ...minis, ...locked)),
     h('a', { class: 'home-credit', href: 'https://zeze.app/', target: '_blank', rel: 'noopener' }, 'by zeze.app'),
   );
 
@@ -196,6 +222,7 @@ export function homeScreen(): Screen {
       cards.forEach((c, i) => gsap.from(c, { y: 80, opacity: 0, delay: 0.4 + i * 0.1, duration: 0.7, ease: 'back.out(1.6)' }));
       gsap.from(vault, { y: 80, opacity: 0, delay: 0.4 + cards.length * 0.1, duration: 0.7, ease: 'back.out(1.6)' });
       gsap.from(chip, { x: -60, opacity: 0, delay: 0.2, duration: 0.6, ease: 'back.out(2)' });
+      gsap.from(effortCard, { y: 60, opacity: 0, delay: 0.5 + cards.length * 0.1, duration: 0.6, ease: 'back.out(1.6)' });
       popIn([...minis, ...locked], 0.7, 0.07);
       gsap.delayedCall(0.3, () => audio.drum(0, 0.4));
       dailyCall = gsap.delayedCall(1.2, () =>

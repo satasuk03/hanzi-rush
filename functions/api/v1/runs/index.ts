@@ -18,6 +18,7 @@ import { bestsOf, periodKeyOf, ranksOf, upsertStmt } from '../../../../server/bo
 import { uuid } from '../../../../server/crypto';
 import type { Ctx, Env } from '../../../../server/env';
 import { byMethod, fail, json, readJson } from '../../../../server/http';
+import { effortStmts } from '../../../../server/effort';
 import { maybePrune, shouldPrune } from '../../../../server/prune';
 import { validateSubmit } from '../../../../server/validate';
 
@@ -122,6 +123,8 @@ export const onRequest: PagesFunction<Env> = async (ctx) =>
       const keys = periodKeys(t);
       const before = me.status === 0 ? await bestsOf(ctx.env, req.board, keys, me.id) : null;
       const stmts = [claim];
+      // effort counts verified runs only (a server-measured duration backs the answer count); must follow the claim directly
+      if (me.status === 0 && verified === 1) stmts.push(...effortStmts(ctx.env, periodKeys(now), me.id, req, now));
       if (req.profile) {
         stmts.push(db.prepare('UPDATE players SET name = ?1, title = ?2 WHERE id = ?3').bind(sanitizeName(req.profile.name), sanitizeTitle(req.profile.title), me.id));
       }
