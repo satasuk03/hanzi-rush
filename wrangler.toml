@@ -5,8 +5,7 @@ compatibility_date = "2026-09-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "hanzi-rush"
-# Placeholder. After `npx wrangler d1 create hanzi-rush`, paste the printed database_id here.
-database_id = "00000000-0000-0000-0000-000000000000"
+database_id = "31ef87fe-56a1-4626-95b3-fa44e436f375"
 migrations_dir = "migrations"
 
 [vars]
@@ -16,8 +15,7 @@ ALLOWED_ORIGINS = "capacitor://localhost,https://localhost,http://localhost,http
 [[env.preview.d1_databases]]
 binding = "DB"
 database_name = "hanzi-rush-preview"
-# Placeholder. After `npx wrangler d1 create hanzi-rush-preview`, paste the printed database_id here.
-database_id = "00000000-0000-0000-0000-000000000000"
+database_id = "25969929-12ce-4ef2-8bb2-29100ef3156c"
 migrations_dir = "migrations"
 
 [env.preview.vars]
