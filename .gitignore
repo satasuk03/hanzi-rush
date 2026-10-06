@@ -2,3 +2,12 @@ node_modules
 dist
 .DS_Store
 .wrangler
+*.xcuserstate
+local.properties
+DerivedData
+ios/App/Pods
+ios/App/App/public
+android/.gradle
+android/build
+android/app/build
+android/app/src/main/assets/public

@@ -165,6 +165,7 @@ export function homeScreen(): Screen {
   return {
     el,
     theme: 'home',
+    home: true,
     enter() {
       lg.letters.forEach((l, i) => dropIn(l, 0.15 + i * 0.08, -160));
       popIn(lg.tiles, 0, 0.12);
