@@ -2,8 +2,14 @@
 <html lang="th">
 <head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8DXZKC3NW4"></script>
   <script>
+    // skip analytics in the native shell (window.Capacitor is injected before page scripts)
+    if (!window.Capacitor) {
+      var gs = document.createElement('script');
+      gs.async = true;
+      gs.src = 'https://www.googletagmanager.com/gtag/js?id=G-8DXZKC3NW4';
+      document.head.appendChild(gs);
+    }
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());

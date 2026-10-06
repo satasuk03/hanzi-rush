@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Hanzi Rush</string>
+    <string name="title_activity_main">Hanzi Rush</string>
+    <string name="package_name">app.zeze.hanzirush</string>
+    <string name="custom_url_scheme">app.zeze.hanzirush</string>
+</resources>

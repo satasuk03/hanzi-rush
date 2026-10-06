@@ -1,4 +1,5 @@
 import type { Lang } from './i18n';
+import { storage } from './storage';
 
 export interface Settings {
   lang: Lang;
@@ -79,7 +80,7 @@ const defaults = (): { settings: Settings; progress: Progress } => ({
 function load() {
   const d = defaults();
   try {
-    const raw = localStorage.getItem(KEY);
+    const raw = storage.get(KEY);
     if (!raw) return d;
     const parsed = JSON.parse(raw);
     const p = parsed.progress ?? {};
@@ -105,7 +106,7 @@ export const store = {
   progress: state.progress,
   save() {
     try {
-      localStorage.setItem(KEY, JSON.stringify({ settings: state.settings, progress: state.progress }));
+      storage.set(KEY, JSON.stringify({ settings: state.settings, progress: state.progress }));
     } catch {
       /* storage unavailable (private mode) — play on without persistence */
     }
