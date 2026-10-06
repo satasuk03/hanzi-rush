@@ -16,6 +16,9 @@ import { particles } from '../../engine/particles';
 import { shake } from '../../engine/shake';
 import { pop, pressable, nope, popIn } from '../../engine/juice';
 import { langToggle, muteButton, iconButton, ICON } from '../../ui/widgets';
+import { sanitizeName } from '../../../shared/api';
+import { cloud } from '../../core/cloud';
+import { showTransferCode, showRestore, showDeleteAccount } from '../../ui/transfer';
 import { ring } from './collection';
 import { SPARK } from './fx';
 
@@ -37,7 +40,8 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
   name.value = p.profile.name;
   name.placeholder = t('playerName');
   name.addEventListener('change', () => {
-    p.profile.name = name.value.trim().slice(0, 16);
+    p.profile.name = sanitizeName(name.value);
+    name.value = p.profile.name;
     store.save();
     audio.pop(1.2);
   });
@@ -84,6 +88,46 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
     stat('statCoins', formatNum(s.coinsEarned), '财'),
   );
   const rarRow = h('div', { class: 'pf-rar' }, ...RARITIES.slice().reverse().map((R) => h('span', { class: 'col-r', style: `--rc:${R.color}` }, h('i'), h('b', null, formatNum(s.byRarity[R.i])), R.name)));
+
+  // ---- cloud save (hidden when the backend is disabled)
+  const cloudBox = h('div', { class: 'pf-cloud' });
+  const cloudDot = h('span', { class: 'pf-cloud-dot' });
+  const cloudStatus = h('span', { class: 'pf-cloud-st' });
+  const cloudTag = h('span', { class: 'pf-cloud-tag' });
+  const cbtn = (label: Key, onTap: () => void, cls = '') => {
+    const b = h('button', { class: `pf-cbtn ${cls}` }, tx(label));
+    pressable(b, () => {
+      audio.pop(1.1);
+      onTap();
+    });
+    return b;
+  };
+  const reload = () => app.go(() => create(from));
+  const btnsOn = h('div', { class: 'pf-cloud-btns' }, cbtn('transferCode', showTransferCode), cbtn('restore', () => showRestore(reload)));
+  const btnDel = cbtn('deleteAccount', () => showDeleteAccount(reload), 'danger');
+  // cloud save off (account deleted or banned): turning it back on, or restoring another account, are the only actions
+  const btnsOff = h('div', { class: 'pf-cloud-btns' }, cbtn('cloudEnable', () => void cloud.enable(), 'wide'), cbtn('restore', () => showRestore(reload), 'wide'));
+  // signed out (session revoked elsewhere): a persistent note + the two ways forward
+  const noteOut = h('p', { class: 'pf-cloud-note' }, tx('cloudSignedOut'));
+  const btnsOut = h('div', { class: 'pf-cloud-btns' }, cbtn('signedOutEnter', () => showRestore(reload)), cbtn('signedOutNew', () => void cloud.enable()));
+  cloudBox.append(h('div', { class: 'pf-cloud-line' }, cloudDot, cloudStatus, cloudTag), noteOut, btnsOut, btnsOn, btnDel, btnsOff);
+  const syncCloud = () => {
+    const s = cloud.status;
+    const off = s === 'disabled';
+    const out = s === 'signedOut';
+    cloudBox.dataset.s = s;
+    btnsOn.hidden = btnDel.hidden = off || out;
+    btnsOff.hidden = !off;
+    noteOut.hidden = btnsOut.hidden = !out;
+    const clock = cloud.syncedAt ? new Date(cloud.syncedAt).toLocaleTimeString(i18n.lang === 'th' ? 'th-TH' : 'en-US', { hour: '2-digit', minute: '2-digit' }) : '';
+    cloudStatus.replaceChildren(
+      s === 'syncing' ? t('cloudSyncing') : s === 'synced' ? `${t('cloudSynced')}${clock ? ` · ${clock}` : ''}` : s === 'pending' ? t('cloudPending') : off ? t('cloudDisabled') : out ? t('signedOutTitle') : t('cloudOffline'),
+    );
+    cloudTag.textContent = cloud.tag ? `#${cloud.tag}` : '';
+  };
+  syncCloud();
+  const offStatus = cloud.on('status', syncCloud);
+  const offApplied = cloud.on('applied', () => (name.value = p.profile.name));
 
   // ---- titles
   const list = h('div', { class: 'ti-list' });
@@ -134,6 +178,8 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
       card,
       rarRow,
       stats,
+      cloud.status === 'off' ? null : h('h3', { class: 'pf-h' }, h('span', { class: 'pf-h-zh' }, '云'), tx('cloudSave')),
+      cloud.status === 'off' ? null : cloudBox,
       h('h3', { class: 'pf-h' }, h('span', { class: 'pf-h-zh' }, '称号'), tx('titles'), h('small', null, ` ${unlockedN}/${TITLES.length}`)),
       list),
   );
@@ -158,6 +204,8 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
     },
     leave() {
       offLang();
+      offStatus();
+      offApplied();
     },
     onKey(e) {
       if (e.key === 'Escape') back().then((sc) => app.go(() => sc));

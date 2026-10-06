@@ -9,6 +9,8 @@ import { flipper } from './engine/flip3d';
 import { mountShake, updateShake } from './engine/shake';
 import { sprites } from './engine/sprites';
 import { homeScreen } from './screens/home';
+import { cloud } from './core/cloud';
+import { showSignedOut } from './ui/transfer';
 
 const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
 
@@ -25,6 +27,14 @@ $('iris').innerHTML = '<div class="iris-medal"><span>汉</span></div>';
 i18n.set(i18n.lang);
 app.mount($('app'), $('iris'));
 app.show(homeScreen());
+cloud.init();
+
+// a revoked session is announced once, never mid-run (endRun re-emits 'status' when the run is over)
+const announceSignedOut = () => {
+  if (cloud.signedOutPending && !cloud.runActive) showSignedOut(() => {});
+};
+cloud.on('status', announceSignedOut);
+setTimeout(announceSignedOut, 1500);
 
 // one loop drives everything, synced with GSAP so tweens and particles never drift
 gsap.ticker.lagSmoothing(250, 33);

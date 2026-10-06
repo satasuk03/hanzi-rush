@@ -21,6 +21,8 @@ import type { GameContext } from '../registry';
 import { drawFront, drawPatternBack, drawAnswerBack, F_HANZI } from './cardFace';
 import { resultsScreen, type RunStats } from '../../screens/results';
 import { awardRun } from '../../core/meta';
+import { cloud, type RunHandle } from '../../core/cloud';
+import { boardKey, checkRun, type RankedGame } from '../../../shared/api';
 
 type Phase = 'intro' | 'ask' | 'lock' | 'reveal' | 'over';
 
@@ -85,6 +87,8 @@ export class QuizGame {
   protected cardW = 320;
   protected cardH = 220;
   protected offLang: () => void = () => {};
+  /** cloud run ticket + clock for this run (leaderboard submission) */
+  protected run?: RunHandle;
 
   constructor(ctx: GameContext) {
     this.ctx = ctx;
@@ -245,6 +249,7 @@ export class QuizGame {
 
   // ------------------------------------------------------------------ flow
   protected async start() {
+    this.run = cloud.startRun(boardKey(this.gid as RankedGame, this.ctx.level, this.ctx.mode));
     this.layoutCard();
     this.introCard();
     this.renderHud();
@@ -701,7 +706,14 @@ export class QuizGame {
       maxCombo: this.maxCombo,
       missed: this.missed.slice(0, 30),
       rush: this.rush,
+      runId: this.run?.id,
+      durationMs: this.run ? Math.round(performance.now() - this.run.startedAt) : undefined,
     };
+    if (import.meta.env.DEV && this.run) {
+      // a failure here means SCORING in shared/api.ts drifted from this file's scoring
+      const why = checkRun({ board: this.run.board, score: stats.score, correct: stats.correct, asked: stats.asked, maxCombo: stats.maxCombo, durationMs: stats.durationMs! });
+      if (why) console.error('[cloud] checkRun failed:', why, stats);
+    }
     stats.reward = awardRun(stats);
     const ov = document.getElementById('overlay')!;
     const txt = this.rush ? t('gameOver') : t('finished');
@@ -719,6 +731,7 @@ export class QuizGame {
 
   protected teardown() {
     this.phase = 'over';
+    cloud.endRun();
     this.offLang();
     stopAllLoops('quiz:');
     gsap.killTweensOf(this.shown);

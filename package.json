@@ -7,13 +7,20 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "data": "node scripts/build-data.mjs"
+    "data": "node scripts/build-data.mjs",
+    "dev:api": "wrangler pages dev dist --port 8788",
+    "db:local": "wrangler d1 migrations apply hanzi-rush --local",
+    "db:remote": "wrangler d1 migrations apply hanzi-rush --remote",
+    "typecheck:api": "tsc -p functions/tsconfig.json",
+    "deploy": "npm run build && wrangler pages deploy"
   },
   "dependencies": {
     "gsap": "^3.15.0"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261006.1",
     "typescript": "^5.9.3",
-    "vite": "^6.4.3"
+    "vite": "^6.4.3",
+    "wrangler": "^4.147.0"
   }
 }

@@ -5,8 +5,8 @@
 import type { Key } from '../core/i18n';
 import type { Screen } from '../core/app';
 import type { Word } from '../core/data';
-
-export type Mode = 'rush' | 'zen';
+import type { Mode } from '../../shared/api';
+export type { Mode };
 
 export interface GameContext {
   level: number;

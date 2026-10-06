@@ -11,9 +11,14 @@ import { shake } from '../engine/shake';
 import { pop, pressable, popIn, nope } from '../engine/juice';
 import { langToggle, muteButton, iconButton, ICON } from '../ui/widgets';
 import { bestKey, type GameDef, type Mode } from '../games/registry';
+import { boardKey, RANKED_GAMES, type RankedGame } from '../../shared/api';
+import { cloud } from '../core/cloud';
+import { leaderboardScreen } from './leaderboard';
 import { homeScreen } from './home';
 
 let lastMode: Mode = 'rush';
+/** the level last opened here: the trophy button shows that level's board */
+let lastLevel = 1;
 
 export function levelsScreen(game: GameDef): Screen {
   let mode: Mode = lastMode;
@@ -25,6 +30,9 @@ export function levelsScreen(game: GameDef): Screen {
     { class: 'topbar' },
     iconButton(ICON.back, 'Back', (e) => app.go(homeScreen, { x: e.clientX, y: e.clientY })),
     h('div', { class: 'topbar-title' }, h('span', { class: 'game-chip', style: `--c:${game.color}` }, tx(game.name))),
+    (RANKED_GAMES as readonly string[]).includes(game.id) && cloud.status !== 'off'
+      ? iconButton(ICON.trophy, 'Leaderboard', (e) => app.go(() => leaderboardScreen({ board: boardKey(game.id as RankedGame, lastLevel, mode), from: 'levels' }), { x: e.clientX, y: e.clientY }))
+      : null,
     muteButton(),
     langToggle(),
   );
@@ -72,6 +80,7 @@ export function levelsScreen(game: GameDef): Screen {
     pressable(btn, async (e) => {
       if (loading || !game.load) return;
       loading = true;
+      lastLevel = L.n;
       audio.unlock();
       audio.pop(1 + L.n * 0.08);
       const c = center(btn);
