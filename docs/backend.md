@@ -531,7 +531,7 @@ export const storage = {
 ### 7.1 Config and boot
 
 - `src/core/api.ts`: `const BASE = (import.meta.env.VITE_API_BASE ?? '').replace(/\/$/, '') + API_PREFIX;`. An empty value means same-origin, which is the web default.
-- Native builds must use an absolute URL, because a relative fetch from `capacitor://localhost` would hit the app bundle: `.env.capacitor` → `VITE_API_BASE=https://hanzi-rush.pages.dev` (or the custom domain), built with `vite build --mode capacitor`. `VITE_API_BASE=off` disables cloud entirely: `cloud.init()` becomes a no-op and the UI hides the cloud features.
+- Native builds must use an absolute URL, because a relative fetch from `capacitor://localhost` would hit the app bundle. `src/core/api.ts` defaults native builds to `https://hanzi-rush.zeze.app`; set `VITE_API_BASE` at build time to override it. `VITE_API_BASE=off` disables cloud entirely: `cloud.init()` becomes a no-op and the UI hides the cloud features.
 - `src/vite-env.d.ts`: `interface ImportMetaEnv { readonly VITE_API_BASE?: string }`.
 - **`main.ts`: the only change is** `import { cloud } from './core/cloud';` and `cloud.init();` right after `app.show(homeScreen())` (line 27). On `feat/capacitor`, `main.ts`'s body moved to `src/boot.ts`, so at merge these two lines go to the same spot in `boot.ts`. Make no other `main.ts` edits.
 - `api.ts` details: 8 s `AbortController` timeout. Parse error bodies into `class ApiError { status; code; body }`; a network failure is `ApiError` with `status 0, code 'offline'`. Send `DeviceInfo` with `platform` `'web'` for now (the capacitor branch can detect native) and `appVersion` from `package.json` via `define`/`import.meta.env`.

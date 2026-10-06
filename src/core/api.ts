@@ -3,7 +3,7 @@ import { Capacitor } from '@capacitor/core';
 import { API_PREFIX, AUTH_HEADER, LIMITS, authValue, type ApiErrorBody, type DeviceInfo, type ErrorCode, type Platform } from '../../shared/api';
 
 /** the production deploy; the native shell has no same-origin server to fall back to */
-const NATIVE_DEFAULT = 'https://hanzi-rush.pages.dev';
+const NATIVE_DEFAULT = 'https://hanzi-rush.zeze.app';
 const RAW = (import.meta.env.VITE_API_BASE ?? '').trim() || (Capacitor.isNativePlatform() ? NATIVE_DEFAULT : '');
 /** `VITE_API_BASE=off` disables every cloud feature */
 export const API_OFF = RAW === 'off';
