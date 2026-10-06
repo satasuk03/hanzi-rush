@@ -249,6 +249,7 @@ export function resultsScreen(r: RunStats): Screen {
     },
     onKey(e) {
       if (document.querySelector('.name-prompt')) return; // typing a name: Enter/Space belong to the prompt
+      if (e.key === 'Escape') app.go(homeScreen);
       if (e.key === 'Enter') retry.dispatchEvent(new PointerEvent('pointerdown')), retry.dispatchEvent(new PointerEvent('pointerup', { clientX: innerWidth / 2, clientY: innerHeight / 2 }));
     },
   };

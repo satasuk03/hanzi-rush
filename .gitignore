@@ -4,3 +4,12 @@ dist
 .wrangler
 .dev.vars
 .e2e-shots/
+*.xcuserstate
+local.properties
+DerivedData
+ios/App/Pods
+ios/App/App/public
+android/.gradle
+android/build
+android/app/build
+android/app/src/main/assets/public

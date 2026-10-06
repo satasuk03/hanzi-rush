@@ -12,13 +12,28 @@
     "db:local": "wrangler d1 migrations apply hanzi-rush --local",
     "db:remote": "wrangler d1 migrations apply hanzi-rush --remote",
     "typecheck:api": "tsc -p functions/tsconfig.json",
-    "deploy": "npm run build && wrangler pages deploy"
+    "deploy": "npm run build && wrangler pages deploy",
+    "cap:sync": "npm run build && cap sync",
+    "ios": "npm run build && cap sync ios && cap open ios",
+    "android": "npm run build && cap sync android && cap open android",
+    "assets": "capacitor-assets generate --iconBackgroundColor '#2a1a3a' --iconBackgroundColorDark '#2a1a3a' --splashBackgroundColor '#1b6fd1' --splashBackgroundColorDark '#1b6fd1'"
   },
   "dependencies": {
+    "@capacitor-community/text-to-speech": "^8.0.2",
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/app": "^8.1.2",
+    "@capacitor/core": "^8.5.2",
+    "@capacitor/ios": "^8.5.2",
+    "@capacitor/preferences": "^8.0.1",
+    "@capacitor/screen-orientation": "^8.0.2",
+    "@capacitor/splash-screen": "^8.0.2",
+    "@capacitor/status-bar": "^8.0.4",
     "gsap": "^3.15.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20261006.1",
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^8.5.2",
     "typescript": "^5.9.3",
     "vite": "^6.4.3",
     "wrangler": "^4.147.0"

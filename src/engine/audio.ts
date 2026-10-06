@@ -2,6 +2,8 @@
  * Procedural audio: every SFX and the adaptive BGM are synthesized with Web Audio.
  * No audio files → tiny bundle, instant load, and pitch/intensity can follow gameplay.
  */
+import { Capacitor } from '@capacitor/core';
+import { TextToSpeech } from '@capacitor-community/text-to-speech';
 import { store } from '../core/store';
 
 const PENTA = [0, 2, 4, 7, 9]; // C major pentatonic — instantly "Chinese" flavoured
@@ -392,6 +394,16 @@ class AudioEngine {
     this.musicOn = false;
     clearInterval(this.timer);
   }
+  /** native: silence when backgrounded, resume on return */
+  suspend() {
+    this.stopMusic();
+    this.ctx?.suspend();
+  }
+  resume() {
+    if (!this.ctx) return;
+    this.ctx.resume();
+    this.startMusic();
+  }
   setIntensity(level: number, fever = false) {
     this.intensity = level;
     this.feverOn = fever;
@@ -463,17 +475,26 @@ class AudioEngine {
 export const audio = new AudioEngine();
 
 // ------------------------------------------------------------------ voice (TTS)
+// native: Android WebView has no reliable speechSynthesis, so use the platform TTS plugin
+const native = Capacitor.isNativePlatform();
 let zhVoice: SpeechSynthesisVoice | null | undefined;
 function findVoice() {
   if (!('speechSynthesis' in window)) return null;
   const vs = speechSynthesis.getVoices();
   return vs.find((v) => /zh[-_]CN/i.test(v.lang)) ?? vs.find((v) => /^zh/i.test(v.lang)) ?? null;
 }
-if ('speechSynthesis' in window) speechSynthesis.onvoiceschanged = () => (zhVoice = findVoice());
+if (!native && 'speechSynthesis' in window) speechSynthesis.onvoiceschanged = () => (zhVoice = findVoice());
 
 export function speak(text: string, force = false) {
-  if (!('speechSynthesis' in window)) return;
   if (!force && (!store.settings.voice || !store.settings.sound)) return;
+  if (native) {
+    TextToSpeech.stop()
+      .catch(() => {})
+      .then(() => TextToSpeech.speak({ text, lang: 'zh-CN', rate: 0.85, pitch: 1, volume: 1 }))
+      .catch(() => {});
+    return;
+  }
+  if (!('speechSynthesis' in window)) return;
   if (zhVoice === undefined) zhVoice = findVoice();
   speechSynthesis.cancel();
   const u = new SpeechSynthesisUtterance(text);
