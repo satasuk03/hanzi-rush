@@ -206,7 +206,7 @@ body.lang-th .effort-chip em { font-family: var(--f-thai); font-weight: 500; }
 .home .logo-rush { margin-top: 0; }
 .home .logo-letter { font-size: clamp(48px, 15vw, 60px); -webkit-text-stroke: 7px var(--ink); text-shadow: 0 5px 0 var(--ink); }
 .home .mascot { width: clamp(84px, 24vw, 112px); margin: 6px 0 -34px; position: relative; z-index: 0; }
-.home-games { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 12px; padding-bottom: 6px; }
+.home-games { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 12px; }
 .home-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .game-card.tall { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-height: 124px; padding: 12px 10px 18px; text-align: center; }
 .game-card.tall .gc-glyph { width: 54px; height: 54px; font-size: 33px; }
@@ -226,7 +226,7 @@ body.lang-th .game-shelf .game-card .gc-name { font-size: 12px; }
 .game-shelf .gc-soon { position: absolute; left: -6px; right: -6px; top: 50%; translate: 0 -50%; rotate: -12deg; z-index: 2; gap: 4px; padding: 5px 4px; border-radius: 6px; font: 600 12px/1 var(--f-thai); white-space: nowrap; color: var(--ink); background: var(--gold); border: 3px solid var(--ink); box-shadow: 0 3px 0 rgba(42,26,58,.5); }
 .game-shelf .game-card.locked .lock svg { width: 12px; height: 12px; }
 .home-credit {
-  align-self: center; margin-top: 2px; padding: 4px 12px; border-radius: 999px;
+  align-self: center; margin-top: -12px; padding: 4px 12px; border-radius: 999px;
   color: rgba(255,255,255,.8); font-weight: 800; font-size: 12px; text-decoration: none;
 }
 .home-credit:hover { color: #fff; background: rgba(42,26,58,.35); }
@@ -355,8 +355,8 @@ body.lang-th .zen-badge { font-family: var(--f-thai); font-weight: 700; }
   box-shadow: inset 0 0 0 3px rgba(255,255,255,.15);
   color: var(--gold);
 }
-.score-coin { width: 36px; height: 36px; flex: none; }
-.score-coin svg { width: 100%; height: 100%; display: block; }
+.score-ic { width: 34px; height: 34px; flex: none; margin-left: 2px; }
+.score-ic svg { width: 100%; height: 100%; display: block; }
 .score-v { font: 400 25px/1 var(--f-display); flex: 1; text-align: right; white-space: nowrap; overflow: hidden; }
 .game-top .lang-toggle { width: 88px; height: 44px; font-size: 16px; }
 .game-top .icon-btn { width: 44px; height: 44px; border-radius: 14px; }

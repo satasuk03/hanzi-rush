@@ -233,6 +233,11 @@ class AudioEngine {
     [0, 1, 2, 3].forEach((i) => this.pluck(midiHz(pentaNote(base, i * 1 + (i > 1 ? 1 : 0))), i * 0.055, 0.2));
     this.tone(midiHz(base + 24), 0.5, { type: 'sine', vol: 0.08, at: 0.2, rev: 0.6 });
   }
+  /** a score point landing: a soft rising chime (the coin sound is kept for real coins) */
+  point(i = 0) {
+    if (!this.ok) return;
+    this.pluck(midiHz(pentaNote(76, i % 7)), 0, 0.12, this.sfxBus, 0.35);
+  }
   coin(i = 0) {
     if (!this.ok) return;
     const f = 1800 + (i % 6) * 140 + Math.random() * 60;
