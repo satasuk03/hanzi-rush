@@ -1,6 +1,6 @@
 # Cosmetics shop, profile customization, and more ฉายา
 
-Status: ฉายา (§7, phase A) is implemented. Everything else is design for review.
+Status: phases A (titles), B (cosmetics foundations) and B2 (Jade wallet) are implemented and deployed. Phase C onward is design. The current checklist is [`HANDOFFS.md`](../HANDOFFS.md).
 Builds on: [`docs/backend.md`](backend.md) (guest accounts, cloud save, boards), `src/core/meta.ts` (titles), `src/games/gacha/*` (word gacha).
 
 ---
