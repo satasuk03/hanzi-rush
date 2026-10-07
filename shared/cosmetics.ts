@@ -82,21 +82,34 @@ const AVATARS: [id: string, zh: string, en: string, th: string, rarity: RarityId
 
 export const AVATAR_PREFIX = 'avatar_';
 
-/**
- * PLACEHOLDERS for the frame, nameFx and badge slots: just enough for the renderer and the sanitizer to be exercised.
- * They are `event` items, so no box pool will ever pick them. The real set (about 14 frames, 12 name effects, 20
- * badges, §8) replaces them in phase C.
+/*
+ * Frames, name effects and badges: one block per slot, so each can be edited on its own (phase C launch set: about
+ * 14 frames, 12 name effects, 20 badges, weighted toward COMMON/RARE; docs/cosmetics-shop.md §8). The art is CSS keyed
+ * by id: src/cosmetics/frames.css, namefx.css, badges.css. Ids are prefixed by slot (`frame_`, `fx_`, `badge_`).
+ *
+ * The `_ph_` entries are PLACEHOLDERS (`event` items, so no box pool picks them). Each slot's real set replaces them,
+ * together with their CSS rules.
  */
-const PLACEHOLDERS: Item[] = [
+
+const FRAMES: Item[] = [
   item('frame_ph_bronze', 'frame', 0, '铜框', 'Bronze Frame', 'กรอบทองแดง', 'event'),
   item('frame_ph_gold', 'frame', 3, '金框', 'Gold Frame', 'กรอบทอง', 'event'),
+];
+
+const NAME_FX: Item[] = [
   item('fx_ph_red', 'nameFx', 1, '朱红', 'Vermilion', 'แดงชาด', 'event'),
   item('fx_ph_gold', 'nameFx', 3, '流金', 'Gilded', 'ทองอร่าม', 'event'),
+];
+
+const BADGES: Item[] = [
   item('badge_ph_star', 'badge', 0, '星', 'Star', 'ดาว', 'event'),
   item('badge_ph_gem', 'badge', 2, '宝', 'Gem', 'อัญมณี', 'event'),
 ];
 
-export const ITEMS: readonly Item[] = [...AVATARS.map(([id, zh, en, th, r]) => item(AVATAR_PREFIX + id, 'avatar', r, zh, en, th)), ...PLACEHOLDERS];
+export const ITEMS: readonly Item[] = [...AVATARS.map(([id, zh, en, th, r]) => item(AVATAR_PREFIX + id, 'avatar', r, zh, en, th)), ...FRAMES, ...NAME_FX, ...BADGES];
+
+/** the items a box can drop (any slot), by rarity index */
+export const gachaPool = (rarity: RarityIdx): Item[] => ITEMS.filter((i) => i.source === 'gacha' && i.rarity === rarity);
 
 const BY_ID = new Map(ITEMS.map((i) => [i.id, i]));
 
