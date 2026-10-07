@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <radialGradient id="bg" cx=".5" cy=".4" r=".85">
+      <stop offset="0" stop-color="#cfe3ff"/>
+      <stop offset="1" stop-color="#1f5fd0"/>
+    </radialGradient>
+  </defs>
+  <rect width="256" height="256" fill="url(#bg)"/>
+  <path d="M40 52l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#fff" opacity=".85"/>
+  <ellipse cx="128" cy="228" rx="70" ry="10" fill="#2a1a3a" opacity=".25"/>
+  <!-- body -->
+  <ellipse cx="120" cy="206" rx="76" ry="32" fill="#fffaf0" stroke="#2a1a3a" stroke-width="7"/>
+  <path d="M50 200Q36 214 58 228Q92 226 112 214Q96 196 50 200Z" fill="#2b2433" stroke="#2a1a3a" stroke-width="5" stroke-linejoin="round"/>
+  <!-- head -->
+  <ellipse cx="124" cy="130" rx="72" ry="64" fill="#fffaf0" stroke="#2a1a3a" stroke-width="7"/>
+  <ellipse cx="82" cy="102" rx="12" ry="19" transform="rotate(27 82 102)" fill="#fff" opacity=".7"/>
+  <!-- black eye stripe -->
+  <path d="M128 124Q90 118 56 142Q92 158 130 140Z" fill="#2b2433"/>
+  <!-- red crown -->
+  <path d="M82 80Q124 40 166 80Q124 92 82 80Z" fill="#e8283c" stroke="#2a1a3a" stroke-width="5" stroke-linejoin="round"/>
+  <ellipse cx="108" cy="72" rx="9" ry="4" transform="rotate(-15 108 72)" fill="#fff" opacity=".5"/>
+  <!-- beak -->
+  <path d="M190 128L232 144L190 160Z" fill="#f2b84b" stroke="#2a1a3a" stroke-width="5.5" stroke-linejoin="round"/>
+  <path d="M192 144L226 144" stroke="#2a1a3a" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- eye + cheek -->
+  <ellipse cx="146" cy="126" rx="12" ry="16" fill="#2a1a3a"/>
+  <circle cx="150" cy="119" r="5" fill="#fff"/>
+  <ellipse cx="150" cy="166" rx="14" ry="8" fill="#ff9fb0"/>
+  <path d="M170 168q8 6 16-2" fill="none" stroke="#2a1a3a" stroke-width="4" stroke-linecap="round"/>
+  <!-- seal -->
+  <g transform="rotate(-6 180 204)">
+    <rect x="162" y="186" width="36" height="36" rx="6" fill="#c3272d" stroke="#2a1a3a" stroke-width="4"/>
+    <text x="180" y="214" text-anchor="middle" font-family="Kaiti SC, STKaiti, PingFang SC, serif" font-size="26" font-weight="700" fill="#f7ecdc">鹤</text>
+  </g>
+</svg>

@@ -91,6 +91,8 @@ const dict = {
   equip: { en: 'Equip', th: 'ใส่' },
   equipped: { en: 'Equipped', th: 'ใส่อยู่' },
   titleUnlocked: { en: 'New title unlocked', th: 'ปลดล็อกฉายาใหม่' },
+  titlesMany: { en: '{n} new titles! See your profile', th: 'ฉายาใหม่ {n} ฉายา! ดูที่โปรไฟล์' },
+  titlesNextUp: { en: 'Next up', th: 'ใกล้ปลดล็อก' },
   statGames: { en: 'Games played', th: 'เกมที่เล่น' },
   statCorrect: { en: 'Correct answers', th: 'ตอบถูก' },
   statPulls: { en: 'Cards opened', th: 'การ์ดที่เปิด' },

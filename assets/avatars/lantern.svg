@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <radialGradient id="bg" cx=".5" cy=".4" r=".85">
+      <stop offset="0" stop-color="#e0bdff"/>
+      <stop offset="1" stop-color="#7a2fc4"/>
+    </radialGradient>
+  </defs>
+  <rect width="256" height="256" fill="url(#bg)"/>
+  <g fill="#fff" opacity=".85">
+    <path d="M36 70l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/>
+    <path d="M220 44l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/>
+  </g>
+  <ellipse cx="128" cy="230" rx="66" ry="9" fill="#2a1a3a" opacity=".25"/>
+  <g transform="translate(28 14) scale(1)" stroke-linejoin="round">
+    <path d="M92 196h16l5 26H87z" fill="#ffc93c" stroke="#2a1a3a" stroke-width="6"/>
+    <line x1="100" y1="6" x2="100" y2="26" stroke="#2a1a3a" stroke-width="6" stroke-linecap="round"/>
+    <rect x="62" y="22" width="76" height="22" rx="8" fill="#ffc93c" stroke="#2a1a3a" stroke-width="6"/>
+    <rect x="62" y="178" width="76" height="22" rx="8" fill="#ffc93c" stroke="#2a1a3a" stroke-width="6"/>
+    <ellipse cx="100" cy="112" rx="86" ry="74" fill="#ff3b4f" stroke="#2a1a3a" stroke-width="7"/>
+    <path d="M60 46c-26 36-26 96 0 132M140 46c26 36 26 96 0 132" fill="none" stroke="#c81e36" stroke-width="5"/>
+    <ellipse cx="52" cy="80" rx="10" ry="20" fill="#fff" opacity=".55" transform="rotate(25 52 80)"/>
+    <ellipse cx="56" cy="128" rx="13" ry="8" fill="#ff9fb0"/>
+    <ellipse cx="144" cy="128" rx="13" ry="8" fill="#ff9fb0"/>
+    <ellipse cx="74" cy="108" rx="11" ry="14" fill="#2a1a3a"/><circle cx="78" cy="102" r="4.5" fill="#fff"/>
+    <ellipse cx="126" cy="108" rx="11" ry="14" fill="#2a1a3a"/><circle cx="130" cy="102" r="4.5" fill="#fff"/>
+    <path d="M84 132q16 20 32 0z" fill="#7a1024" stroke="#2a1a3a" stroke-width="5"/>
+  </g>
+  <!-- gold sparkle glints -->
+  <g fill="#fff3c0" stroke="#2a1a3a" stroke-width="2">
+    <path d="M200 96l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
+  </g>
+  <g transform="rotate(-6 180 204)">
+    <rect x="162" y="186" width="36" height="36" rx="6" fill="#c3272d" stroke="#2a1a3a" stroke-width="4"/>
+    <text x="180" y="214" text-anchor="middle" font-family="Kaiti SC, STKaiti, PingFang SC, serif" font-size="26" font-weight="700" fill="#f7ecdc">灯</text>
+  </g>
+</svg>

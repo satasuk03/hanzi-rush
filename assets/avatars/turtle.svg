@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <radialGradient id="bg" cx=".5" cy=".4" r=".85">
+      <stop offset="0" stop-color="#cfe3ff"/>
+      <stop offset="1" stop-color="#1f5fd0"/>
+    </radialGradient>
+    <clipPath id="shell"><path d="M34 206Q30 132 128 128Q226 132 222 206Q128 226 34 206Z"/></clipPath>
+  </defs>
+  <rect width="256" height="256" fill="url(#bg)"/>
+  <path d="M40 52l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#fff" opacity=".85"/>
+  <ellipse cx="128" cy="228" rx="70" ry="10" fill="#2a1a3a" opacity=".25"/>
+  <!-- feet -->
+  <g fill="#6fcf5a" stroke="#2a1a3a" stroke-width="6">
+    <ellipse cx="62" cy="212" rx="24" ry="15"/>
+    <ellipse cx="194" cy="212" rx="24" ry="15"/>
+  </g>
+  <!-- head -->
+  <ellipse cx="128" cy="100" rx="54" ry="50" fill="#6fcf5a" stroke="#2a1a3a" stroke-width="7"/>
+  <ellipse cx="102" cy="78" rx="10" ry="16" transform="rotate(27 102 78)" fill="#fff" opacity=".5"/>
+  <ellipse cx="86" cy="116" rx="12" ry="8" fill="#ff9fb0"/>
+  <ellipse cx="170" cy="116" rx="12" ry="8" fill="#ff9fb0"/>
+  <ellipse cx="106" cy="98" rx="10" ry="14" fill="#2a1a3a"/>
+  <circle cx="110" cy="92" r="4.5" fill="#fff"/>
+  <ellipse cx="150" cy="98" rx="10" ry="14" fill="#2a1a3a"/>
+  <circle cx="154" cy="92" r="4.5" fill="#fff"/>
+  <path d="M112 116q16 14 32 0" fill="#ff7a95" stroke="#2a1a3a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- shell -->
+  <path d="M34 206Q30 132 128 128Q226 132 222 206Q128 226 34 206Z" fill="#9a6a35"/>
+  <g clip-path="url(#shell)" stroke="#2a1a3a" stroke-width="4" stroke-linejoin="round">
+    <polygon points="128,154 147,165 147,187 128,198 109,187 109,165" fill="#d9a85f"/>
+    <polygon points="90,154 109,165 109,187 90,198 71,187 71,165" fill="#6fa84a"/>
+    <polygon points="166,154 185,165 185,187 166,198 147,187 147,165" fill="#6fa84a"/>
+    <polygon points="52,154 71,165 71,187 52,198 33,187 33,165" fill="#c89a5a"/>
+    <polygon points="204,154 223,165 223,187 204,198 185,187 185,165" fill="#c89a5a"/>
+    <polygon points="109,121 128,132 128,154 109,165 90,154 90,132" fill="#c89a5a"/>
+    <polygon points="147,121 166,132 166,154 147,165 128,154 128,132" fill="#c89a5a"/>
+    <polygon points="109,187 128,198 128,220 109,231 90,220 90,198" fill="#c89a5a"/>
+    <polygon points="147,187 166,198 166,220 147,231 128,220 128,198" fill="#c89a5a"/>
+    <polygon points="71,187 90,198 90,220 71,231 52,220 52,198" fill="#6fa84a"/>
+    <polygon points="185,187 204,198 204,220 185,231 166,220 166,198" fill="#6fa84a"/>
+  </g>
+  <path d="M34 206Q30 132 128 128Q226 132 222 206Q128 226 34 206Z" fill="none" stroke="#2a1a3a" stroke-width="7" stroke-linejoin="round"/>
+  <!-- seal -->
+  <g transform="rotate(-6 180 204)">
+    <rect x="162" y="186" width="36" height="36" rx="6" fill="#c3272d" stroke="#2a1a3a" stroke-width="4"/>
+    <text x="180" y="214" text-anchor="middle" font-family="Kaiti SC, STKaiti, PingFang SC, serif" font-size="26" font-weight="700" fill="#f7ecdc">龟</text>
+  </g>
+</svg>

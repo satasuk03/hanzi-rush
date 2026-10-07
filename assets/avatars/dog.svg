@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <radialGradient id="bg" cx=".5" cy=".4" r=".85">
+      <stop offset="0" stop-color="#f4effa"/>
+      <stop offset="1" stop-color="#b4adc0"/>
+    </radialGradient>
+  </defs>
+  <rect width="256" height="256" fill="url(#bg)"/>
+  <ellipse cx="128" cy="228" rx="70" ry="10" fill="#2a1a3a" opacity=".25"/>
+  <!-- ears -->
+  <g stroke="#2a1a3a" stroke-width="7" stroke-linejoin="round">
+    <path d="M56 130q-18-50 10-78q34 6 48 36z" fill="#e8963c"/>
+    <path d="M200 130q18-50-10-78q-34 6-48 36z" fill="#e8963c"/>
+  </g>
+  <path d="M68 104q-6-24 4-36q16 4 24 20z" fill="#fff0d8"/>
+  <path d="M188 104q6-24-4-36q-16 4-24 20z" fill="#fff0d8"/>
+  <!-- head -->
+  <ellipse cx="128" cy="148" rx="78" ry="66" fill="#e8963c" stroke="#2a1a3a" stroke-width="7"/>
+  <ellipse cx="86" cy="110" rx="12" ry="20" transform="rotate(26 86 110)" fill="#fff" opacity=".45"/>
+  <!-- cream face mask -->
+  <path d="M128 104q-20 0-30 20q-20 8-20 34q0 30 50 30t50-30q0-26-20-34q-10-20-30-20z" fill="#fff0d8"/>
+  <!-- eyebrow dots -->
+  <circle cx="98" cy="112" r="5" fill="#fff0d8" stroke="#2a1a3a" stroke-width="3"/>
+  <circle cx="158" cy="112" r="5" fill="#fff0d8" stroke="#2a1a3a" stroke-width="3"/>
+  <ellipse cx="76" cy="170" rx="13" ry="8" fill="#ff9fb0"/>
+  <ellipse cx="180" cy="170" rx="13" ry="8" fill="#ff9fb0"/>
+  <ellipse cx="97" cy="140" rx="11" ry="15" fill="#2a1a3a"/>
+  <circle cx="101" cy="134" r="4.8" fill="#fff"/>
+  <ellipse cx="159" cy="140" rx="11" ry="15" fill="#2a1a3a"/>
+  <circle cx="163" cy="134" r="4.8" fill="#fff"/>
+  <!-- tongue -->
+  <path d="M118 186q10 30 20 0z" fill="#ff7a95" stroke="#2a1a3a" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M128 188v10" stroke="#2a1a3a" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- nose + mouth -->
+  <ellipse cx="128" cy="164" rx="11" ry="8" fill="#2a1a3a"/>
+  <ellipse cx="125" cy="161" rx="3.5" ry="2" fill="#fff"/>
+  <path d="M128 172v8M128 180q-12 10-24 0M128 180q12 10 24 0" fill="none" stroke="#2a1a3a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- seal -->
+  <g transform="rotate(-6 180 204)">
+    <rect x="162" y="186" width="36" height="36" rx="6" fill="#c3272d" stroke="#2a1a3a" stroke-width="4"/>
+    <text x="180" y="214" text-anchor="middle" font-family="Kaiti SC, STKaiti, PingFang SC, serif" font-size="26" font-weight="700" fill="#f7ecdc">狗</text>
+  </g>
+</svg>

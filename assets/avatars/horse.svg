@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <radialGradient id="bg" cx=".5" cy=".4" r=".85">
+      <stop offset="0" stop-color="#cfe3ff"/>
+      <stop offset="1" stop-color="#1f5fd0"/>
+    </radialGradient>
+  </defs>
+  <rect width="256" height="256" fill="url(#bg)"/>
+  <path fill="#fff" opacity=".9" d="M218 52l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/>
+  <ellipse cx="128" cy="228" rx="70" ry="10" fill="#2a1a3a" opacity=".25"/>
+  <!-- ears -->
+  <g transform="translate(0 26)">
+  <g stroke="#2a1a3a" stroke-width="7" stroke-linejoin="round">
+    <path d="M70 92l-4-60 52 38z" fill="#c9803f"/>
+    <path d="M186 92l4-60-52 38z" fill="#c9803f"/>
+  </g>
+  <path d="M76 70l-2-26 22 18zM180 70l2-26-22 18z" fill="#ff9fb0"/>
+  </g>
+  <!-- side mane tufts -->
+  <g fill="#a8501f" stroke="#2a1a3a" stroke-width="6" stroke-linejoin="round">
+    <path d="M62 100q-30 14-24 56q4 14 14 18q-2-18 12-28z"/>
+    <path d="M194 100q30 14 24 56q-4 14-14 18q2-18-12-28z"/>
+  </g>
+  <!-- head -->
+  <ellipse cx="128" cy="150" rx="78" ry="68" fill="#c9803f" stroke="#2a1a3a" stroke-width="7"/>
+  <ellipse cx="86" cy="112" rx="12" ry="20" transform="rotate(26 86 112)" fill="#fff" opacity=".5"/>
+  <!-- forelock + blaze -->
+  <path d="M128 84l-12 8q-4 40 6 56q6 4 12 0q10-16 6-56z" fill="#fff7ec" stroke="#2a1a3a" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M128 82q-24 0-30 20q14-6 30 6q16-12 30-6q-6-20-30-20z" fill="#a8501f" stroke="#2a1a3a" stroke-width="5" stroke-linejoin="round"/>
+  <!-- muzzle -->
+  <ellipse cx="128" cy="184" rx="42" ry="28" fill="#f3d3a4" stroke="#2a1a3a" stroke-width="5"/>
+  <ellipse cx="72" cy="170" rx="13" ry="8" fill="#ff9fb0"/>
+  <ellipse cx="184" cy="170" rx="13" ry="8" fill="#ff9fb0"/>
+  <!-- eyes -->
+  <ellipse cx="94" cy="146" rx="11" ry="15" fill="#2a1a3a"/>
+  <circle cx="98" cy="140" r="4.8" fill="#fff"/>
+  <ellipse cx="162" cy="146" rx="11" ry="15" fill="#2a1a3a"/>
+  <circle cx="166" cy="140" r="4.8" fill="#fff"/>
+  <ellipse cx="114" cy="180" rx="5" ry="6.5" fill="#a8663a" stroke="#2a1a3a" stroke-width="3"/>
+  <ellipse cx="142" cy="180" rx="5" ry="6.5" fill="#a8663a" stroke="#2a1a3a" stroke-width="3"/>
+  <path d="M112 198q16 8 32 0" fill="none" stroke="#2a1a3a" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- red bow -->
+  <g transform="rotate(-20 62 104)">
+    <path d="M62 104l-22-14v28z" fill="#e8303c" stroke="#2a1a3a" stroke-width="4.5" stroke-linejoin="round"/>
+    <path d="M62 104l22-14v28z" fill="#e8303c" stroke="#2a1a3a" stroke-width="4.5" stroke-linejoin="round"/>
+    <circle cx="62" cy="104" r="7" fill="#ff6b6b" stroke="#2a1a3a" stroke-width="4"/>
+  </g>
+  <!-- seal -->
+  <g transform="rotate(-6 180 204)">
+    <rect x="162" y="186" width="36" height="36" rx="6" fill="#c3272d" stroke="#2a1a3a" stroke-width="4"/>
+    <text x="180" y="214" text-anchor="middle" font-family="Kaiti SC, STKaiti, PingFang SC, serif" font-size="26" font-weight="700" fill="#f7ecdc">马</text>
+  </g>
+</svg>

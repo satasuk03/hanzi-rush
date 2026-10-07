@@ -501,7 +501,12 @@ body.lang-th .pf-stat-k { font-weight: 500; }
 body.lang-th .pf-h { font-family: var(--f-thai); font-weight: 700; }
 .pf-h-zh { font: 400 28px/1 var(--f-brush); }
 .pf-h small { font: 400 15px/1 var(--f-display); color: #bba98c; }
-.ti-list { display: flex; flex-direction: column; gap: 8px; }
+.ti-list { display: flex; flex-direction: column; gap: 16px; }
+.ti-fam { display: flex; flex-direction: column; gap: 8px; }
+.ti-fam-h { margin: 0 2px; font: 400 15px/1 var(--f-display); color: #d9c8a6; letter-spacing: .02em; }
+body.lang-th .ti-fam-h { font-family: var(--f-thai); font-weight: 700; }
+.ti-fam-h b { font: 400 22px/1 var(--f-brush); color: var(--gold-2); }
+.ti-fam-h small { font: 400 13px/1 var(--f-display); color: #a893b5; }
 .ti {
   display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 18px; text-align: left;
   background: rgba(255, 255, 255, .05); box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, .1);
