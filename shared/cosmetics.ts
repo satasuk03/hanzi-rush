@@ -83,12 +83,10 @@ const AVATARS: [id: string, zh: string, en: string, th: string, rarity: RarityId
 export const AVATAR_PREFIX = 'avatar_';
 
 /*
- * Frames, name effects and badges: one block per slot, so each can be edited on its own (phase C launch set: about
- * 14 frames, 12 name effects, 20 badges, weighted toward COMMON/RARE; docs/cosmetics-shop.md §8). The art is CSS keyed
- * by id: src/cosmetics/frames.css, namefx.css, badges.css. Ids are prefixed by slot (`frame_`, `fx_`, `badge_`).
- *
- * The `_ph_` entries are PLACEHOLDERS (`event` items, so no box pool picks them). Each slot's real set replaces them,
- * together with their CSS rules.
+ * Frames, name effects and badges: one block per slot, so each can be edited on its own (phase C launch set: 14
+ * frames, 12 name effects, 20 badges, weighted toward COMMON/RARE; docs/cosmetics-shop.md §8). The art is CSS keyed
+ * by id: src/cosmetics/frames.css, namefx.css, badges.css (previews in dev/preview-*.html, `npx vite`). Ids are
+ * prefixed by slot (`frame_`, `fx_`, `badge_`). Never rename or remove a released id: players own it.
  */
 
 const FRAMES: Item[] = [
