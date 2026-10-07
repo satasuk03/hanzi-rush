@@ -109,8 +109,18 @@ const FRAMES: Item[] = [
 ];
 
 const NAME_FX: Item[] = [
-  item('fx_ph_red', 'nameFx', 1, '朱红', 'Vermilion', 'แดงชาด', 'event'),
-  item('fx_ph_gold', 'nameFx', 3, '流金', 'Gilded', 'ทองอร่าม', 'event'),
+  item('fx_zhuhong', 'nameFx', 0, '朱红', 'Vermilion', 'แดงชาด'),
+  item('fx_daiqing', 'nameFx', 0, '黛青', 'Slate Blue', 'น้ำเงินคราม'),
+  item('fx_hupo', 'nameFx', 0, '琥珀', 'Amber', 'สีอำพัน'),
+  item('fx_songlv', 'nameFx', 0, '松绿', 'Pine', 'เขียวสน'),
+  item('fx_wanxia', 'nameFx', 1, '晚霞', 'Sunset', 'อาทิตย์อัสดง'),
+  item('fx_bibo', 'nameFx', 1, '碧波', 'Teal Wave', 'คลื่นเขียวคราม'),
+  item('fx_zijin', 'nameFx', 1, '紫金', 'Violet Gold', 'ม่วงทอง'),
+  item('fx_moyun', 'nameFx', 2, '墨韵', 'Ink Wash', 'หมึกจีน'),
+  item('fx_chiyan', 'nameFx', 2, '赤焰', 'Crimson Flame', 'เปลวแดง'),
+  item('fx_cuiyu', 'nameFx', 2, '翠玉', 'Emerald Glow', 'หยกมรกต'),
+  item('fx_liujin', 'nameFx', 3, '流金', 'Gilded', 'ทองอร่าม'),
+  item('fx_fenghuang', 'nameFx', 4, '凤凰', 'Phoenix Glow', 'ประกายหงส์'),
 ];
 
 const BADGES: Item[] = [
