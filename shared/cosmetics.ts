@@ -102,8 +102,26 @@ const NAME_FX: Item[] = [
 ];
 
 const BADGES: Item[] = [
-  item('badge_ph_star', 'badge', 0, '星', 'Star', 'ดาว', 'event'),
-  item('badge_ph_gem', 'badge', 2, '宝', 'Gem', 'อัญมณี', 'event'),
+  item('badge_fortune', 'badge', 0, '福运', 'Fortune', 'โชคลาภ'),
+  item('badge_joy', 'badge', 0, '喜气', 'Joy', 'ความยินดี'),
+  item('badge_study', 'badge', 0, '学者', 'Scholar', 'นักเรียน'),
+  item('badge_letters', 'badge', 0, '文人', 'Letters', 'อักษร'),
+  item('badge_mountain', 'badge', 0, '山岳', 'Mountain', 'ภูเขา'),
+  item('badge_moon', 'badge', 0, '月光', 'Moonlight', 'แสงจันทร์'),
+  item('badge_fire', 'badge', 0, '火焰', 'Flame', 'เปลวไฟ'),
+  item('badge_wood', 'badge', 0, '木叶', 'Leaf', 'ใบไม้'),
+  item('badge_courage', 'badge', 1, '勇士', 'Courage', 'กล้าหาญ'),
+  item('badge_wisdom', 'badge', 1, '智者', 'Wisdom', 'ปัญญา'),
+  item('badge_spring', 'badge', 1, '春风', 'Spring', 'ฤดูใบไม้ผลิ'),
+  item('badge_wind', 'badge', 1, '风行', 'Wind', 'สายลม'),
+  item('badge_snow', 'badge', 1, '雪花', 'Snow', 'หิมะ'),
+  item('badge_star', 'badge', 1, '星辰', 'Starlight', 'แสงดาว'),
+  item('badge_dragon', 'badge', 2, '龙威', 'Dragon', 'มังกร'),
+  item('badge_phoenix', 'badge', 2, '凤鸣', 'Phoenix', 'หงส์'),
+  item('badge_jade', 'badge', 2, '玉佩', 'Jade', 'หยก'),
+  item('badge_gold', 'badge', 3, '金榜', 'Gold List', 'ทำเนียบทอง'),
+  item('badge_sage', 'badge', 3, '圣贤', 'Sage', 'ปราชญ์'),
+  item('badge_divine', 'badge', 4, '神话', 'Divine', 'เทพนิยาย'),
 ];
 
 export const ITEMS: readonly Item[] = [...AVATARS.map(([id, zh, en, th, r]) => item(AVATAR_PREFIX + id, 'avatar', r, zh, en, th)), ...FRAMES, ...NAME_FX, ...BADGES];
