@@ -92,8 +92,20 @@ export const AVATAR_PREFIX = 'avatar_';
  */
 
 const FRAMES: Item[] = [
-  item('frame_ph_bronze', 'frame', 0, '铜框', 'Bronze Frame', 'กรอบทองแดง', 'event'),
-  item('frame_ph_gold', 'frame', 3, '金框', 'Gold Frame', 'กรอบทอง', 'event'),
+  item('frame_bamboo', 'frame', 0, '竹节', 'Bamboo Ring', 'กรอบไผ่'),
+  item('frame_redstring', 'frame', 0, '红绳', 'Red String', 'ด้ายแดง'),
+  item('frame_jadering', 'frame', 0, '玉环', 'Jade Ring', 'แหวนหยก'),
+  item('frame_ink', 'frame', 0, '墨圈', 'Ink Circle', 'วงหมึก'),
+  item('frame_copper', 'frame', 0, '铜钱', 'Copper Coin', 'เหรียญทองแดง'),
+  item('frame_koi', 'frame', 1, '鱼鳞', 'Fish Scales', 'เกล็ดปลา'),
+  item('frame_plum', 'frame', 1, '梅花', 'Plum Blossom', 'ดอกเหมย'),
+  item('frame_cloud', 'frame', 1, '祥云', 'Auspicious Cloud', 'เมฆมงคล'),
+  item('frame_lantern', 'frame', 1, '灯穗', 'Lantern Tassel', 'พู่โคมไฟ'),
+  item('frame_lotus', 'frame', 2, '莲瓣', 'Lotus Petals', 'กลีบบัว'),
+  item('frame_goldleaf', 'frame', 2, '金叶', 'Gold Leaf', 'ใบไม้ทอง'),
+  item('frame_dragon', 'frame', 2, '龙鳞', 'Dragon Scale', 'เกล็ดมังกร'),
+  item('frame_phoenix', 'frame', 3, '凤焰', 'Phoenix Flame', 'เปลวหงส์'),
+  item('frame_heaven', 'frame', 4, '天命', 'Mandate of Heaven', 'บัญชาสวรรค์'),
 ];
 
 const NAME_FX: Item[] = [
