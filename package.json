@@ -12,6 +12,8 @@
     "db:local": "wrangler d1 migrations apply hanzi-rush --local",
     "db:remote": "wrangler d1 migrations apply hanzi-rush --remote",
     "test:wallet": "node scripts/test-wallet.mjs",
+    "test:shop": "node scripts/test-shop.mjs",
+    "test:ownership": "node scripts/test-ownership.mjs",
     "typecheck:api": "tsc -p functions/tsconfig.json",
     "deploy": "npm run build && wrangler pages deploy",
     "cap:sync": "npm run build && cap sync",
