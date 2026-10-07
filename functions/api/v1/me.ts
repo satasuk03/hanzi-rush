@@ -32,6 +32,10 @@ export const onRequest: PagesFunction<Env> = async (ctx) =>
       const db = ctx.env.DB;
       // explicit child deletes as well as ON DELETE CASCADE, so deletion does not depend on FK enforcement
       await db.batch([
+        db.prepare('DELETE FROM jade_ledger WHERE player_id = ?1').bind(me.id),
+        db.prepare('DELETE FROM inventory WHERE player_id = ?1').bind(me.id),
+        db.prepare('DELETE FROM banner_pity WHERE player_id = ?1').bind(me.id),
+        db.prepare('DELETE FROM jade_daily WHERE player_id = ?1').bind(me.id),
         db.prepare('DELETE FROM scores WHERE player_id = ?1').bind(me.id),
         db.prepare('DELETE FROM effort WHERE player_id = ?1').bind(me.id),
         db.prepare('DELETE FROM runs WHERE player_id = ?1').bind(me.id),

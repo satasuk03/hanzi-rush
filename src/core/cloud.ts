@@ -624,6 +624,20 @@ export const cloud = {
   get tag(): string | null {
     return st.auth?.tag ?? null;
   },
+  get playerId(): string | null {
+    return st.auth?.playerId ?? null;
+  },
+  /** authenticated call for features outside the save sync (the Jade wallet). Throws ApiError, status 0 = offline. */
+  async authed<T>(method: 'GET' | 'POST', path: string, body?: unknown): Promise<T> {
+    if (!st.auth) await ensureAccount();
+    if (!st.auth) throw new ApiError(0, 'offline');
+    try {
+      return await api<T>(method, path, { body, token: st.auth.token });
+    } catch (e) {
+      if (e instanceof ApiError && e.status === 401) void handle401();
+      throw e;
+    }
+  },
   /** cloud save was switched off (account deleted / banned); `enable()` turns it back on */
   get disabled() {
     return st.disabled;

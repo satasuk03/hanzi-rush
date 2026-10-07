@@ -587,6 +587,8 @@ body.lang-th .r-best { font-family: var(--f-thai); font-weight: 700; }
 .pc-name { font-weight: 900; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 110px; }
 body.lang-th .pc-name { font-weight: 600; }
 .pc-coins { display: flex; align-items: center; gap: 3px; font: 400 15px/1 var(--f-display); color: var(--gold-d); }
+.pc-jade { display: flex; align-items: center; gap: 3px; margin-left: 5px; color: #1f9b79; }
+.pc-jade[hidden] { display: none; }
 .pc-xp { position: absolute; left: 48px; right: 14px; bottom: 5px; height: 3px; border-radius: 9px; background: rgba(42, 26, 58, .12); overflow: hidden; }
 .pc-xp span { display: block; height: 100%; background: var(--gold); transform-origin: left; }
 
