@@ -2,7 +2,7 @@
  * Jade wallet, client side (docs/cosmetics-shop.md §11). The server owns the balance; this module only caches it so
  * the home chip works offline, claims the one-time starter grant, and sends the daily claim (queued until it lands).
  */
-import { bangkokDay, type JadeDailyResponse, type JadeStarterResponse, type WalletResponse } from '../../shared/api';
+import { bangkokDay, type JadeDailyResponse, type JadeStarterResponse, type ShopPullRequest, type ShopPullResponse, type WalletResponse } from '../../shared/api';
 import { API_OFF, ApiError } from './api';
 import { cloud } from './cloud';
 import { storage } from './storage';
@@ -14,18 +14,23 @@ interface Cache {
   jade: number | null;
   /** Bangkok day of a daily claim the server has not confirmed yet */
   pendingDay: string | null;
+  /** item id → copies, as last seen from the server (the Wardrobe and equipping read this offline) */
+  inventory: Record<string, number>;
+  /** box id → pulls since the last LEGENDARY+ */
+  pity: Record<string, number>;
 }
 
 const KEY = 'hanzi-rush:wallet:v1';
+const empty = (): Cache => ({ playerId: null, jade: null, pendingDay: null, inventory: {}, pity: {} });
 
 function load(): Cache {
   try {
     const raw = storage.get(KEY);
-    if (raw) return { playerId: null, jade: null, pendingDay: null, ...JSON.parse(raw) };
+    if (raw) return { ...empty(), ...JSON.parse(raw) };
   } catch {
     /* corrupt cache: refetch */
   }
-  return { playerId: null, jade: null, pendingDay: null };
+  return empty();
 }
 
 let c = load();
@@ -39,8 +44,17 @@ const emit = () => listeners.forEach((f) => f());
 function bind() {
   const pid = cloud.playerId;
   if (!pid || pid === c.playerId) return;
-  c = c.playerId === null ? { ...c, playerId: pid } : { playerId: pid, jade: null, pendingDay: null };
+  c = c.playerId === null ? { ...c, playerId: pid } : { ...empty(), playerId: pid };
   persist();
+}
+
+/** the server's inventory and pity replace the cache (they are authoritative) */
+function setHoldings(inventory: Record<string, number>, pity: Record<string, number>) {
+  bind();
+  c.inventory = inventory;
+  c.pity = pity;
+  persist();
+  emit();
 }
 
 function setJade(n: number) {
@@ -86,6 +100,17 @@ export const wallet = {
   get jade(): number | null {
     return c.jade;
   },
+  /** item id → copies owned (cached; empty until the server has answered once) */
+  get inventory(): Readonly<Record<string, number>> {
+    return c.inventory;
+  },
+  owns(itemId: string): boolean {
+    return (c.inventory[itemId] ?? 0) > 0;
+  },
+  /** box id → pulls since the last LEGENDARY+ */
+  get pity(): Readonly<Record<string, number>> {
+    return c.pity;
+  },
   /** the wallet exists on this build (a backend is configured) */
   get enabled() {
     return !API_OFF;
@@ -104,6 +129,7 @@ export const wallet = {
       try {
         const w = await cloud.authed<WalletResponse>('GET', '/wallet');
         bind();
+        setHoldings(w.inventory, w.pity);
         setJade(w.jade);
         if (!w.starterClaimed) setJade((await cloud.authed<JadeStarterResponse>('POST', '/jade/starter')).jade);
         if (c.pendingDay) await sendDaily();
@@ -113,6 +139,22 @@ export const wallet = {
         inflight = null;
       }
     })());
+  },
+
+  /**
+   * Buys `qty` boxes on the server (online only). Throws ApiError: `insufficient_jade`, `rate_limited`, `offline`, ...
+   * Retrying after a network failure must reuse the same `ref`, so the server returns the original result instead of
+   * charging twice; `newPullRef()` makes one per purchase.
+   */
+  async pull(box: string, qty: number, ref: string): Promise<ShopPullResponse> {
+    const body: ShopPullRequest = { box, qty, ref };
+    const r = await cloud.authed<ShopPullResponse>('POST', '/shop/pull', body);
+    bind();
+    const inventory = { ...c.inventory };
+    for (const d of r.drops) inventory[d.itemId] = Math.max(inventory[d.itemId] ?? 0, d.copies);
+    setHoldings(inventory, { ...c.pity, ...r.pity });
+    setJade(r.jade);
+    return r;
   },
 
   /**
@@ -127,3 +169,6 @@ export const wallet = {
     return sendDaily();
   },
 };
+
+/** idempotency key for one purchase (keep it across retries of that purchase) */
+export const newPullRef = (): string => crypto.randomUUID();
