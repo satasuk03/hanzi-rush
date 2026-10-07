@@ -629,6 +629,9 @@ export const cloud = {
   },
   /** authenticated call for features outside the save sync (the Jade wallet). Throws ApiError, status 0 = offline. */
   async authed<T>(method: 'GET' | 'POST', path: string, body?: unknown): Promise<T> {
+    // the home screen asks for the wallet before boot reaches cloud.init(): load the saved account first, or a
+    // stale blank state would mint a new guest on every launch
+    cloud.init();
     if (!st.auth) await ensureAccount();
     if (!st.auth) throw new ApiError(0, 'offline');
     try {
