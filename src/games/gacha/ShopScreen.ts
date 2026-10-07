@@ -22,7 +22,7 @@ import { langToggle, muteButton, iconButton, ICON } from '../../ui/widgets';
 import { lanternMachine, lanternSVG } from './lantern';
 import { Opening, type AgainResult } from './opening';
 import { cosmeticBatch, jadePrice } from './cosmeticReveal';
-import { buy, BuyError } from './shopBuy';
+import { buy, BuyError, resumePending } from './shopBuy';
 
 let lastBox: BoxDef['id'] = 'standard';
 
@@ -282,6 +282,34 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
   };
   buys.forEach((b) => pressable(b.el, () => void doBuy(b)));
 
+  /** a purchase the app never saw the answer to (killed mid-buy): re-send it with its ref and show what it gave */
+  let left = false;
+  const recover = async () => {
+    if (busy || !wallet.pending) return;
+    busy = true;
+    const r = await resumePending();
+    const bx = r && BOXES.find((x) => x.id === r.box);
+    if (left || !r || !bx) {
+      busy = false;
+      return;
+    }
+    jadeHint = null;
+    setJade(true);
+    new Opening({
+      host: el,
+      machine: lanternMachine(bx),
+      batch: cosmeticBatch(bx, r.res),
+      qty: r.qty,
+      price: jadePrice(boxPrice(bx, r.qty)),
+      again: againFor(bx, r.qty),
+      onClose: () => {
+        busy = false;
+        setJade(true);
+        syncBox();
+      },
+    });
+  };
+
   const offWallet = wallet.on(() => {
     if (!busy) sync();
   });
@@ -291,9 +319,11 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
     el,
     theme: 'vault',
     enter() {
+      left = false;
       drawStage(false);
       sync();
       refresh();
+      void wallet.refresh().then(recover);
       gsap.from(head.children, { y: -30, opacity: 0, stagger: 0.08, duration: 0.6, ease: 'back.out(2)' });
       popIn(tabs.map((x) => x.el), 0.1, 0.07);
       gsap.from(stageArt, { scale: 0, rotation: -12, duration: 0.9, delay: 0.15, ease: 'elastic.out(1,0.5)' });
@@ -301,6 +331,7 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
       if (!matchMedia('(prefers-reduced-motion: reduce)').matches) loop('shop:bob', stageArt, () => gsap.to(stageArt, { y: -8, rotation: 2, duration: 1.5, yoyo: true, repeat: -1, ease: 'sine.inOut' }), { y: 0, rotation: 0 });
     },
     leave() {
+      left = true;
       offLang();
       offWallet();
       Opening.current?.destroy();

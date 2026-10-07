@@ -23,6 +23,12 @@ const SLOT_KEY: Record<Item['slot'], Key> = { frame: 'slotFrame', avatar: 'slotA
 
 const clampR = (r: number) => Math.max(0, Math.min(4, Math.round(r) || 0));
 
+/** a short sample that fits a tile: the player's name when it is short, else a fixed one */
+const sampleName = () => {
+  const n = (store.progress.profile.name || '').trim();
+  return n && [...n].length <= 6 ? n : 'Aa 字';
+};
+
 /** the item drawn live: the player's own disc and name, wearing just this item */
 export function itemArt(it: Item | undefined): HTMLElement {
   const title = titleById(store.progress.profile.title);
@@ -34,7 +40,7 @@ export function itemArt(it: Item | undefined): HTMLElement {
     case 'frame':
       return h('span', { class: 'ca ca-disc' }, renderIdentity({ avatar: mine.avatar, frame: it.id }, 'L', { title }));
     case 'nameFx': {
-      const name = h('span', { class: 'ca-name' }, store.progress.profile.name || title[i18n.lang]);
+      const name = h('span', { class: 'ca-name' }, sampleName());
       applyNameFx(name, { nameFx: it.id } satisfies Look, true);
       return h('span', { class: 'ca ca-chip' }, name);
     }

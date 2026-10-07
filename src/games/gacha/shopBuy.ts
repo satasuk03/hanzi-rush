@@ -23,16 +23,33 @@ export class BuyError extends Error {
 }
 
 const RETRIES = 3;
-let unresolved: { box: string; qty: number; ref: string } | null = null;
 
 export async function buy(box: string, qty: number): Promise<ShopPullResponse> {
-  if (!wallet.enabled) throw new BuyError('offline');
-  if (!unresolved || unresolved.box !== box || unresolved.qty !== qty) unresolved = { box, qty, ref: newPullRef() };
-  const ref = unresolved.ref;
+  if (!wallet.enabled || !navigator.onLine) throw new BuyError('offline');
+  let un = wallet.pending;
+  if (!un || un.box !== box || un.qty !== qty) wallet.setPending((un = { box, qty, ref: newPullRef() }));
+  return send(un.box, un.qty, un.ref);
+}
+
+/**
+ * Re-sends a purchase left unanswered (e.g. the app was killed mid-buy) with its original ref. Resolves to the
+ * result (fresh or a replay) to play, or null when there is nothing pending or it is still unresolved.
+ */
+export async function resumePending(): Promise<{ box: string; qty: number; res: ShopPullResponse } | null> {
+  const p = wallet.pending;
+  if (!p || !wallet.enabled || !navigator.onLine) return null;
+  try {
+    return { box: p.box, qty: p.qty, res: await send(p.box, p.qty, p.ref) };
+  } catch {
+    return null;
+  }
+}
+
+async function send(box: string, qty: number, ref: string): Promise<ShopPullResponse> {
   for (let attempt = 0; ; attempt++) {
     try {
       const r = await wallet.pull(box, qty, ref);
-      unresolved = null;
+      wallet.setPending(null);
       // a replay carries the balance from the original pull: fetch the current one
       if (r.replay) void wallet.refresh();
       return r;
@@ -41,7 +58,7 @@ export async function buy(box: string, qty: number): Promise<ShopPullResponse> {
       if (!(e instanceof ApiError)) throw new BuyError('net');
       if (!e.transient) {
         // a definitive refusal: nothing was applied under this ref
-        unresolved = null;
+        wallet.setPending(null);
         if (e.code === 'insufficient_jade') {
           const j = (e.body as { jade?: unknown } | null)?.jade;
           void wallet.refresh();

@@ -6,6 +6,8 @@
   -webkit-background-clip: text; background-clip: text; color: transparent; caret-color: #fff7e6;
   filter: var(--f, none);
 }
+/* an <input> (the Profile name field) cannot clip a background to its text: it would paint a solid bar, so it takes the first stop as a plain colour */
+input.nfx { background-image: none !important; color: var(--a, #fff7e6); }
 .lb-nm.nfx { padding-block: .22em; margin-block: -.22em; } /* room for Thai tone marks inside the clip box */
 .nfx[data-fx='fx_zhuhong'] { --a: #c0272d; --b: #c0272d; --c: #c0272d; --da: #ff7b72; --db: #ff7b72; --dc: #ff7b72; }
 .nfx[data-fx='fx_daiqing'] { --a: #2f5d8a; --b: #2f5d8a; --c: #2f5d8a; --da: #8cc0f0; --db: #8cc0f0; --dc: #8cc0f0; }

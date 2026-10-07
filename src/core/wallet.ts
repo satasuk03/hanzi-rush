@@ -18,10 +18,18 @@ interface Cache {
   inventory: Record<string, number>;
   /** box id → pulls since the last LEGENDARY+ */
   pity: Record<string, number>;
+  /** a purchase that may have been charged but whose answer we never saw: re-sent with the same ref until answered */
+  pending: PendingPull | null;
+}
+
+export interface PendingPull {
+  box: string;
+  qty: number;
+  ref: string;
 }
 
 const KEY = 'hanzi-rush:wallet:v1';
-const empty = (): Cache => ({ playerId: null, jade: null, pendingDay: null, inventory: {}, pity: {} });
+const empty = (): Cache => ({ playerId: null, jade: null, pendingDay: null, inventory: {}, pity: {}, pending: null });
 
 function load(): Cache {
   try {
@@ -103,6 +111,16 @@ export const wallet = {
   /** item id → copies owned (cached; empty until the server has answered once) */
   get inventory(): Readonly<Record<string, number>> {
     return c.inventory;
+  },
+  /** the unanswered purchase of this account, if any (survives an app kill) */
+  get pending(): PendingPull | null {
+    bind();
+    return c.pending;
+  },
+  setPending(p: PendingPull | null) {
+    bind();
+    c.pending = p;
+    persist();
   },
   owns(itemId: string): boolean {
     return (c.inventory[itemId] ?? 0) > 0;
