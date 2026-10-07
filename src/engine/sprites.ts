@@ -160,6 +160,85 @@ function petal(c: CanvasRenderingContext2D) {
   c.stroke();
 }
 
+/** 小红花 as a 梅花: five round red petals outlined as one shape, a gold heart with stamens (score points) */
+function blossom(c: CanvasRenderingContext2D) {
+  const k = S / 32;
+  c.scale(k, k);
+  const petals = [0, 1, 2, 3, 4].map((i) => {
+    const a = -Math.PI / 2 + (i * TAU) / 5;
+    return [Math.cos(a) * 7.2, Math.sin(a) * 7.2];
+  });
+  c.fillStyle = INK;
+  for (const [x, y] of petals) {
+    c.beginPath();
+    c.arc(x, y, 6.6 + 1.6, 0, TAU);
+    c.fill();
+  }
+  const g = c.createRadialGradient(0, 0, 1, 0, 0, 14);
+  g.addColorStop(0, '#b80d2a');
+  g.addColorStop(0.45, '#ee2b3f');
+  g.addColorStop(1, '#ff6b6f');
+  c.fillStyle = g;
+  for (const [x, y] of petals) {
+    c.beginPath();
+    c.arc(x, y, 6.6, 0, TAU);
+    c.fill();
+  }
+  // the seams between petals
+  c.strokeStyle = 'rgba(122,10,30,.55)';
+  c.lineWidth = 0.9;
+  for (let i = 0; i < 5; i++) {
+    const a = -Math.PI / 2 + ((i + 0.5) * TAU) / 5;
+    c.beginPath();
+    c.moveTo(Math.cos(a) * 3.5, Math.sin(a) * 3.5);
+    c.lineTo(Math.cos(a) * 8.5, Math.sin(a) * 8.5);
+    c.stroke();
+  }
+  // shine on the upper-left petal
+  c.fillStyle = 'rgba(255,255,255,.6)';
+  c.beginPath();
+  c.ellipse(-7.4, -4.6, 1.6, 2.6, -0.9, 0, TAU);
+  c.fill();
+  // stamens and heart
+  c.fillStyle = '#ffd84d';
+  for (let i = 0; i < 10; i++) {
+    const a = (i * TAU) / 10;
+    c.beginPath();
+    c.arc(Math.cos(a) * 5, Math.sin(a) * 5, 0.85, 0, TAU);
+    c.fill();
+  }
+  c.beginPath();
+  c.arc(0, 0, 3.3, 0, TAU);
+  c.fill();
+  c.strokeStyle = INK;
+  c.lineWidth = 1.6;
+  c.stroke();
+}
+
+/** one loose plum petal: round with a little notch at the tip */
+function petalRed(c: CanvasRenderingContext2D) {
+  const r = S * 0.26;
+  c.beginPath();
+  c.moveTo(0, r * 0.95);
+  c.bezierCurveTo(-r * 1.25, r * 0.55, -r * 1.05, -r * 1.05, -r * 0.18, -r * 0.92);
+  c.lineTo(0, -r * 0.7);
+  c.lineTo(r * 0.18, -r * 0.92);
+  c.bezierCurveTo(r * 1.05, -r * 1.05, r * 1.25, r * 0.55, 0, r * 0.95);
+  c.closePath();
+  const g = c.createLinearGradient(0, r, 0, -r);
+  g.addColorStop(0, '#c8102e');
+  g.addColorStop(1, '#ff6b6f');
+  c.fillStyle = g;
+  c.fill();
+  c.strokeStyle = INK;
+  c.lineWidth = 5;
+  c.stroke();
+  c.fillStyle = 'rgba(255,255,255,.5)';
+  c.beginPath();
+  c.ellipse(-r * 0.35, -r * 0.25, r * 0.14, r * 0.26, 0.4, 0, TAU);
+  c.fill();
+}
+
 /** ink splatter: a main drop with satellite droplets */
 function ink(c: CanvasRenderingContext2D) {
   c.fillStyle = '#17111d';
@@ -199,7 +278,7 @@ function goldLeaf(c: CanvasRenderingContext2D) {
 export type SpriteKey =
   | 'coin' | 'yuanbao' | 'star' | 'starPink' | 'spark' | 'sparkRed' | 'sparkGold' | 'sparkCyan'
   | 'sparkBlue' | 'sparkPurple' | 'sparkWhite' | 'sparkPink'
-  | 'glow' | 'heart' | 'puff' | 'paper' | 'petal' | 'ink' | 'goldLeaf';
+  | 'glow' | 'heart' | 'puff' | 'paper' | 'petal' | 'ink' | 'goldLeaf' | 'blossom' | 'petalRed';
 
 let cache: Record<SpriteKey, HTMLCanvasElement> | null = null;
 
@@ -225,6 +304,8 @@ export function sprites() {
       petal: make(S, S, petal),
       ink: make(S, S, ink),
       goldLeaf: make(S, S, goldLeaf),
+      blossom: make(S, S, blossom),
+      petalRed: make(S, S, petalRed),
     };
   }
   return cache;

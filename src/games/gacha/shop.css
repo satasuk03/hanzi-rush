@@ -1,6 +1,6 @@
 /* ================================================================== 商店 shop · cosmetic reveals (lazy: ShopScreen, cosmeticReveal) */
 .shop { --c: #e8344e; --lc: #e8344e; }
-.shop[data-box='select'] { --c: #c9d3df; --lc: #9fb0c4; }
+.shop[data-box='select'] { --c: #5aa9ff; --lc: #6fa8e8; }
 .shop[data-box='supreme'] { --c: #f2c14e; --lc: #f2c14e; }
 
 .jade-pill { color: #7ff0cb; box-shadow: inset 0 0 0 2px rgba(62, 201, 160, .55); }
@@ -14,18 +14,47 @@
   transition: transform .2s, box-shadow .2s, filter .2s; filter: saturate(.7) brightness(.85);
 }
 .shop-box.on { filter: none; transform: translateY(-3px); box-shadow: 0 7px 0 var(--ink), inset 0 0 0 2px var(--gold-2), 0 0 18px color-mix(in srgb, var(--gold-2) 45%, transparent); }
-.sb-art { display: block; width: 40px; height: 50px; }
+.sb-art { display: block; width: 50px; height: 50px; }
 .sb-svg { display: block; width: 100%; height: 100%; overflow: visible; }
 .sb-zh { font: 400 20px/1 var(--f-brush); color: #f3cf73; }
 .sb-name { font-weight: 800; font-size: 11px; line-height: 1.1; color: #e8d9bd; text-align: center; min-height: 12px; }
 body.lang-th .sb-name { font-weight: 600; }
 .sb-price { display: flex; align-items: center; gap: 3px; font: 400 15px/1 var(--f-display); color: #7ff0cb; }
 
-/* ---- the selected lantern */
+/* ---- the selected chest */
 .shop-stage { position: relative; flex: 1; min-height: 90px; display: flex; align-items: center; justify-content: center; padding: 4px 0 10px; }
-.shop-stage .cab-aura { left: 50%; top: 50%; width: min(70%, 40vh); }
-.shop-lantern { position: relative; z-index: 1; height: 100%; max-height: 230px; aspect-ratio: 240 / 300; min-height: 0; }
-.shop-lantern .cab-svg { display: block; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 8px 0 rgba(10, 4, 16, .45)); }
+.shop-stage .cab-aura { left: 50%; top: 48%; width: min(86%, 46vh); }
+/* treasure light: slow rays behind the chest and a lit floor under it, in the tier colour */
+.shop-stage::before {
+  content: ''; position: absolute; left: 50%; top: 46%; width: min(120%, 70vh); aspect-ratio: 1; translate: -50% -50%; border-radius: 50%;
+  background: repeating-conic-gradient(color-mix(in srgb, var(--c) 30%, transparent) 0 5deg, transparent 5deg 18deg);
+  -webkit-mask: radial-gradient(circle, #000 12%, transparent 62%); mask: radial-gradient(circle, #000 12%, transparent 62%);
+  animation: spin 60s linear infinite; pointer-events: none;
+}
+.shop-stage::after {
+  content: ''; position: absolute; left: 50%; bottom: 4%; width: min(78%, 300px); height: 34px; translate: -50% 0; border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--c) 55%, transparent), transparent);
+  filter: blur(4px); pointer-events: none;
+}
+.shop-chest { position: relative; z-index: 1; height: 100%; max-height: 290px; aspect-ratio: 228 / 266; min-height: 0; }
+.shop-chest .cab-svg { display: block; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 rgba(10, 4, 16, .4)); }
+/* the stage chest's seam breathes softly; the ceremony drives it itself */
+.shop-chest .cab-seam { opacity: .55; animation-duration: 2.6s; }
+
+/* ---- chest details: glints twinkle, the tassel sways */
+.ch-glint { transform-box: fill-box; transform-origin: center; animation: chGlint 3.4s ease-in-out infinite; }
+.ch-glint:nth-child(2) { animation-delay: -1.2s; }
+.ch-glint:nth-child(3) { animation-delay: -2.3s; }
+@keyframes chGlint { 0%, 70%, 100% { opacity: 0; scale: .2; } 80% { opacity: 1; scale: 1; rotate: 45deg; } }
+.ch-tassel { transform-box: fill-box; transform-origin: 50% 0; animation: chSway 2.8s ease-in-out infinite; }
+@keyframes chSway { 50% { rotate: 6deg; } }
+.sb-svg .ch-glint, .sb-svg .ch-tassel { animation: none; }
+.sb-svg .ch-glint { opacity: 0; }
+/* the ceremony's flare sits on the lid seam, not the cabinet's door lock */
+.shop .vs-flare { top: 50.4%; }
+@media (prefers-reduced-motion: reduce) {
+  .ch-glint, .ch-tassel, .shop-stage::before { animation: none; }
+}
 
 /* ---- panel */
 .shop-panel { gap: 8px; }
@@ -56,7 +85,7 @@ body.lang-th .sb-name { font-weight: 600; }
 .shop-toast { white-space: normal; width: max-content; max-width: calc(100vw - 32px); text-align: center; }
 
 @media (max-height: 700px) {
-  .sb-art { width: 32px; height: 40px; }
+  .sb-art { width: 40px; height: 40px; }
   .shop-buy { min-height: 66px; }
   .shop-buy .open-label { font-size: 20px; }
 }
@@ -92,8 +121,37 @@ body.lang-th .ca-name { font-family: var(--f-thai); font-weight: 700; }
 body.lang-th .cos-equip { font-family: var(--f-thai); font-weight: 700; }
 .cos-equip.on { background: rgba(20, 10, 30, .6); color: var(--gold-2); box-shadow: inset 0 0 0 2px var(--gold-2); border-color: transparent; }
 
-/* ---- summary tiles */
+/* ---- summary tiles: little display cases (treasureArt.ts at tile size) */
 .ct { align-items: center; }
+.mc.ct {
+  --v0: #a49cb2; --v1: #6a6178; --v2: #2f2839; --silk: #e2525d; --silk2: #8a1424; --mp: #f3cf73; color: #fbeccb;
+  background: linear-gradient(165deg, #3e2a4f, #22142f 50%, #0f0717) padding-box, var(--b) border-box;
+}
+.mc.ct[data-r='1'] { --v0: #6aa6ff; --v1: #2459c4; --v2: #0b1f5c; }
+.mc.ct[data-r='2'] { --v0: #c98bff; --v1: #7a2dd0; --v2: #2a0b55; }
+.mc.ct[data-r='3'] { --v0: #ff6a4f; --v1: #b3161f; --v2: #3d0510; --silk: #ffe58a; --silk2: #c98516; }
+.mc.ct[data-r='4'] { --v0: #5a3a86; --v1: #24123f; --v2: #08040f; --silk: #ffe58a; --silk2: #c98516; --mp: #ff8aa2; }
+.ct-case {
+  position: absolute; left: 7cqw; right: 7cqw; top: 8cqw; height: 77cqw; pointer-events: none;
+  border-radius: 43cqw 43cqw 4cqw 4cqw / 20cqw 20cqw 4cqw 4cqw;
+  background:
+    radial-gradient(60% 50% at 50% 42%, rgba(255, 250, 230, .3), transparent),
+    radial-gradient(circle at 50% 40%, var(--v0), var(--v1) 48%, var(--v2));
+  box-shadow: 0 0 0 1.5px #0d0614, 0 0 0 3px color-mix(in srgb, var(--rc) 70%, #f3cf73), 0 0 0 4.5px #0d0614, inset 0 0 7cqw rgba(0, 0, 0, .55);
+}
+.mc.ct[data-r='3'] .ct-case, .mc.ct[data-r='4'] .ct-case { box-shadow: 0 0 0 1.5px #0d0614, 0 0 0 3px #f3cf73, 0 0 0 4.5px #0d0614, inset 0 0 7cqw rgba(0, 0, 0, .55); }
+.mc.ct[data-r='4'] .ct-case {
+  background:
+    repeating-conic-gradient(from 0deg at 50% 42%, rgba(255, 210, 240, .18) 0 6deg, transparent 6deg 22deg),
+    radial-gradient(circle at 50% 42%, var(--v0), var(--v1) 48%, var(--v2));
+}
+/* the silk cushion */
+.ct-case::after {
+  content: ''; position: absolute; left: 14%; right: 14%; bottom: 7cqw; height: 9cqw; border-radius: 50%;
+  background: radial-gradient(70% 90% at 40% 30%, #fff, var(--silk) 25%, var(--silk2));
+  box-shadow: 0 0 0 1px #0d0614, 0 2.5cqw 0 color-mix(in srgb, var(--silk2) 80%, #000), 0 2.5cqw 0 1px #0d0614;
+}
+.ct .mc-x { color: var(--mp); }
 .ct-art { position: absolute; left: 0; right: 0; top: 34%; translate: 0 -50%; display: grid; place-items: center; pointer-events: none; }
 .ct-art .pf-glyph { position: relative; width: 56cqw; height: 56cqw; font-size: 32cqw; box-shadow: inset 0 0 0 2px #c3272d, 0 3px 8px rgba(0, 0, 0, .35); }
 .ct-art .pf-glyph.id-img { box-shadow: 0 3px 8px rgba(0, 0, 0, .35); }
@@ -103,7 +161,7 @@ body.lang-th .cos-equip { font-family: var(--f-thai); font-weight: 700; }
 .ct-art .id-badge { width: 34cqw; height: 34cqw; font-size: 23cqw; }
 .ct-name {
   position: absolute; left: 4cqw; right: 4cqw; top: 64%; text-align: center; font-weight: 900; font-size: 10.5cqw; line-height: 1.1;
-  color: var(--ink2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  color: #fbeccb; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 body.lang-th .ct-name { font-weight: 700; }
 .ct-eq {

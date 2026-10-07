@@ -206,7 +206,7 @@ body.lang-th .effort-chip em { font-family: var(--f-thai); font-weight: 500; }
 .home .logo-rush { margin-top: 0; }
 .home .logo-letter { font-size: clamp(48px, 15vw, 60px); -webkit-text-stroke: 7px var(--ink); text-shadow: 0 5px 0 var(--ink); }
 .home .mascot { width: clamp(84px, 24vw, 112px); margin: 6px 0 -34px; position: relative; z-index: 0; }
-.home-games { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 12px; padding-bottom: 6px; }
+.home-games { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 12px; }
 .home-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .game-card.tall { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-height: 124px; padding: 12px 10px 18px; text-align: center; }
 .game-card.tall .gc-glyph { width: 54px; height: 54px; font-size: 33px; }
@@ -226,7 +226,7 @@ body.lang-th .game-shelf .game-card .gc-name { font-size: 12px; }
 .game-shelf .gc-soon { position: absolute; left: -6px; right: -6px; top: 50%; translate: 0 -50%; rotate: -12deg; z-index: 2; gap: 4px; padding: 5px 4px; border-radius: 6px; font: 600 12px/1 var(--f-thai); white-space: nowrap; color: var(--ink); background: var(--gold); border: 3px solid var(--ink); box-shadow: 0 3px 0 rgba(42,26,58,.5); }
 .game-shelf .game-card.locked .lock svg { width: 12px; height: 12px; }
 .home-credit {
-  align-self: center; margin-top: 2px; padding: 4px 12px; border-radius: 999px;
+  align-self: center; margin-top: -12px; padding: 4px 12px; border-radius: 999px;
   color: rgba(255,255,255,.8); font-weight: 800; font-size: 12px; text-decoration: none;
 }
 .home-credit:hover { color: #fff; background: rgba(42,26,58,.35); }
@@ -355,8 +355,8 @@ body.lang-th .zen-badge { font-family: var(--f-thai); font-weight: 700; }
   box-shadow: inset 0 0 0 3px rgba(255,255,255,.15);
   color: var(--gold);
 }
-.score-coin { width: 36px; height: 36px; flex: none; }
-.score-coin svg { width: 100%; height: 100%; display: block; }
+.score-ic { width: 34px; height: 34px; flex: none; margin-left: 2px; }
+.score-ic svg { width: 100%; height: 100%; display: block; }
 .score-v { font: 400 25px/1 var(--f-display); flex: 1; text-align: right; white-space: nowrap; overflow: hidden; }
 .game-top .lang-toggle { width: 88px; height: 44px; font-size: 16px; }
 .game-top .icon-btn { width: 44px; height: 44px; border-radius: 14px; }
@@ -717,23 +717,124 @@ body.lang-th .nt-title { font-weight: 600; }
 .streak-badge { display: flex; align-items: center; gap: 4px; padding: 4px 12px 4px 8px; margin-left: 8px; background: var(--cream); border: 4px solid var(--ink); border-radius: 999px; box-shadow: 0 4px 0 var(--ink); font: 400 20px/1 var(--f-display); color: var(--ink); }
 .streak-badge svg { width: 20px; height: 24px; }
 .streak-badge.off { filter: grayscale(1); opacity: .7; }
-.daily-sub { margin: -8px 0 0; text-align: center; font-weight: 900; color: #6b5a78; display: flex; align-items: center; justify-content: center; gap: 6px; }
-.daily-sub svg { width: 20px; height: 24px; }
-.daily-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-.daily-cell { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 2px; background: #fff; border: 3px solid var(--ink); border-radius: 14px; font: 900 12px/1 var(--f-body); color: var(--ink); }
-.daily-cell.big { grid-column: span 2; background: #fff0c2; }
-.daily-cell svg { width: 20px; height: 20px; display: block; }
-.dc-rewards { display: flex; flex-direction: column; gap: 4px; margin-top: 2px; }
-.dc-row { display: flex; align-items: center; justify-content: center; gap: 4px; }
-.dc-row.jade b { color: #1f9b79; }
-.daily-cell.big { justify-content: center; }
-.daily-cell.big .dc-rewards { flex-direction: row; gap: 14px; }
-.dc-done { font-size: 26px; line-height: 40px; }
-.daily-cell b { font: 400 18px/1 var(--f-display); }
-.daily-cell.done { background: #d6f7d6; opacity: .8; }
-.daily-cell.now { background: var(--gold); box-shadow: 0 4px 0 var(--ink); transform: translateY(-2px); }
-.daily-claim { padding: 14px; font: 400 26px/1 var(--f-display); color: var(--ink); background: var(--green); border: 5px solid var(--ink); border-radius: 20px; box-shadow: 0 6px 0 var(--ink); cursor: pointer; }
+.daily-card {
+  position: relative; gap: 12px; padding-top: 30px; overflow: visible;
+  background:
+    radial-gradient(120% 60% at 50% 0%, #fff1cf, transparent 70%),
+    var(--cream);
+  box-shadow: 0 10px 0 var(--ink), inset 0 0 0 5px var(--cream), inset 0 0 0 7.5px #e9b949, inset 0 0 0 9px rgba(200, 32, 58, .35);
+}
+/* Deng Deng peeks over the top-left corner */
+.daily-mascot { position: absolute; left: -22px; top: -64px; width: 82px; margin: 0; rotate: -12deg; z-index: 2; pointer-events: none; }
+.daily-head { position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; margin-top: -58px; }
+/* swallow-tailed red ribbon with the brush title */
+.daily-ribbon {
+  position: relative; padding: 7px 34px 9px; color: #ffe08a; font: 400 26px/1 'Ma Shan Zheng', 'Noto Serif SC', serif; letter-spacing: 6px;
+  background: linear-gradient(180deg, #ff5a63, #d8263a 60%, #a6122a);
+  clip-path: polygon(0 0, 100% 0, 92% 50%, 100% 100%, 0 100%, 8% 50%);
+  filter: drop-shadow(0 4px 0 var(--ink));
+  text-shadow: 0 2px 0 #7a0d1d;
+}
+.daily-ribbon::before {
+  content: ''; position: absolute; inset: 4px 18px; border-top: 1.5px solid rgba(255, 224, 138, .7); border-bottom: 1.5px solid rgba(255, 224, 138, .7); pointer-events: none;
+}
+.daily-ribbon-zh { position: relative; padding-left: 6px; }
+.daily-card .modal-title { margin: 0; font-size: 30px; }
+.daily-sub { margin: -4px auto 0; padding: 4px 12px 4px 8px; display: flex; align-items: center; justify-content: center; gap: 4px; font-weight: 900; color: #8a3a12; background: #ffe7b8; border: 2.5px solid var(--ink); border-radius: 99px; }
+.daily-sub b { font: 400 18px/1 var(--f-display); color: #e8590c; }
+.daily-sub svg { width: 18px; height: 22px; }
+.daily-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px 7px; padding-top: 4px; }
+
+/* ---- 红包 envelopes */
+.daily-cell.env {
+  position: relative; display: flex; flex-direction: column; align-items: center; gap: 3px; min-height: 96px; padding: 6px 2px 7px;
+  background: linear-gradient(170deg, #ff6a6a, #e0303f 45%, #b3162c); color: #fff3d6;
+  border: 3px solid var(--ink); border-radius: 12px; box-shadow: 0 4px 0 var(--ink);
+  font: 900 11px/1 var(--f-body); overflow: hidden; isolation: isolate;
+}
+/* the V flap over the top */
+.env-flap {
+  position: absolute; left: -3px; right: -3px; top: -3px; height: 42px; z-index: -1; transform-origin: 50% 3px;
+  background: linear-gradient(180deg, #ff7f7f, #d42639); clip-path: polygon(0 0, 100% 0, 100% 40%, 50% 100%, 0 40%);
+}
+.env-flap::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(122, 13, 29, .5)); clip-path: inherit; }
+.env-day {
+  position: relative; padding: 2px 6px; border-radius: 99px; background: rgba(122, 13, 29, .55); color: #ffe7b0; white-space: nowrap;
+  font: 800 10.5px/1.1 var(--f-body);
+}
+body.lang-th .env-day { font-family: var(--f-thai); font-weight: 600; }
+.env-seal {
+  display: grid; place-items: center; width: 26px; height: 26px; margin-top: 1px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff6c9, #f6cf5d 45%, #c4861a); border: 2px solid var(--ink);
+  color: #b3162c; font: 400 17px/1 'Ma Shan Zheng', 'Noto Serif SC', serif; box-shadow: 0 2px 0 rgba(42, 26, 58, .5);
+}
+.dc-rewards { display: flex; flex-direction: column; gap: 3px; margin-top: 1px; }
+.dc-row { display: flex; align-items: center; justify-content: center; gap: 3px; }
+.dc-row svg { width: 16px; height: 16px; display: block; }
+.daily-cell b { font: 400 15px/1 var(--f-display); color: #fff3d6; -webkit-text-stroke: 3px #6a0a1a; paint-order: stroke fill; }
+.dc-row.jade b { color: #9dffd9; }
+
+/* later days wait quietly, today glows, claimed days are opened and stamped */
+.daily-cell.env.later { filter: saturate(.75) brightness(.92); }
+.daily-cell.env.now {
+  box-shadow: 0 4px 0 var(--ink), 0 0 0 3px #ffd66b, 0 0 18px 4px rgba(255, 200, 70, .75);
+  animation: envGlow 1.6s ease-in-out infinite;
+}
+@keyframes envGlow { 50% { box-shadow: 0 4px 0 var(--ink), 0 0 0 3px #fff2b0, 0 0 26px 8px rgba(255, 214, 102, .9); } }
+.daily-cell.env.now .env-seal { animation: sealShine 1.6s ease-in-out infinite; }
+@keyframes sealShine { 50% { filter: brightness(1.25); scale: 1.08; } }
+.daily-cell.env.done:not(.just) { filter: saturate(.55) brightness(.85); }
+.daily-cell.env.done:not(.big) .env-flap { transform: scaleY(-1); }
+.daily-cell.env.done .dc-rewards { opacity: .75; }
+.daily-cell.env.done:not(.big) .env-seal { visibility: hidden; }
+.env-stamp {
+  position: absolute; left: 50%; top: 22px; width: 32px; height: 32px; margin-left: -16px; z-index: 2; rotate: -14deg;
+  display: grid; place-items: center; border-radius: 50%; border: 3px solid #fff3d6; background: rgba(35, 166, 58, .92);
+  color: #fff; font: 400 19px/1 var(--f-display); box-shadow: 0 0 0 2px var(--ink), 0 2px 0 2px var(--ink);
+}
+
+/* day 7: the golden chest */
+.daily-cell.env.big {
+  grid-column: span 2; flex-direction: row; justify-content: center; gap: 4px; padding: 6px 6px 6px 2px;
+  background: linear-gradient(170deg, #fff1a8, #f6c544 45%, #d8901a); color: var(--ink);
+}
+.daily-cell.env.big::before {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background: repeating-conic-gradient(from 0deg at 30% 55%, rgba(255, 255, 255, .35) 0 8deg, transparent 8deg 24deg);
+}
+.env-chest { flex: none; width: 66px; margin: -4px 0 -2px; }
+.daily-cell .env-chest-svg { display: block; width: 100%; height: auto; overflow: visible; filter: drop-shadow(0 3px 0 rgba(42, 26, 58, .4)); }
+.env-chest-svg .ch-glints { display: none; }
+.env-big-txt { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.daily-cell.env.big .env-day { background: #b3162c; color: #ffe7b0; }
+.daily-cell.env.big .dc-rewards { flex-direction: column; }
+.daily-cell.env.big .env-stamp { left: 38px; top: 50%; margin-top: -16px; }
+.daily-cell.env.big b { font-size: 18px; }
+.daily-cell.env.big .dc-row svg { width: 18px; height: 18px; }
+
+/* the claim button: a gold lucky button with a sweeping shine */
+.daily-claim {
+  position: relative; overflow: hidden; padding: 13px; font: 400 26px/1 var(--f-display); color: #7a0d1d;
+  background: linear-gradient(180deg, #fff1a8, #ffc93c 50%, #e8930c); border: 5px solid var(--ink); border-radius: 20px;
+  box-shadow: 0 6px 0 var(--ink), inset 0 3px 0 rgba(255, 255, 255, .6); cursor: pointer;
+}
 body.lang-th .daily-claim { font-family: var(--f-thai); font-weight: 700; }
+.daily-claim-shine {
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, .75) 50%, transparent 65%);
+  translate: -100% 0; animation: claimShine 2.6s ease-in-out infinite 0.8s;
+}
+@keyframes claimShine { 0% { translate: -100% 0; } 45%, 100% { translate: 100% 0; } }
+.daily-claim.used { filter: saturate(.6) brightness(.95); }
+.daily-claim.used .daily-claim-shine { display: none; }
+@media (max-width: 360px) {
+  .daily-cell.env { min-height: 90px; }
+  .daily-cell b { font-size: 13.5px; }
+  .env-chest { width: 56px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .daily-cell.env.now, .daily-cell.env.now .env-seal, .daily-claim-shine { animation: none; }
+}
 .daily-hint { margin: 0; text-align: center; font-weight: 800; color: #6b5a78; }
 
 /* ------------------------------------------------------------------ Cloze Rush */

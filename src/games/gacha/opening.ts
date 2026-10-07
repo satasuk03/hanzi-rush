@@ -54,6 +54,8 @@ export interface RevealBatch {
   ready?: Promise<unknown>;
   /** titles earned by this batch, toasted when the stage goes away */
   titles?: Title[];
+  /** the face-down side (default: the vault's 宝 card back) */
+  back?(width: number): HTMLCanvasElement;
 }
 
 /** the art that bursts open. Its SVG root has class `cab-svg`; `.cab-seam` flashes on each escalation step. */
@@ -302,7 +304,7 @@ export class Opening {
     pop(this.counter, 0.5);
     this.info.replaceChildren();
 
-    const card = gcard(this.cardW, p.rarity, cardBack(this.cardW), false);
+    const card = gcard(this.cardW, p.rarity, batch.back?.(this.cardW) ?? cardBack(this.cardW), false);
     this.card = card;
     card.el.classList.add('down');
     this.slot.append(card.el);

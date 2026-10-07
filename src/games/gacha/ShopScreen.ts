@@ -1,8 +1,8 @@
 /**
- * 商店 Shop (docs/cosmetics-shop.md §5.1, §11.6b). Three lucky-lantern boxes bought with Jade; the server rolls
+ * 商店 Shop (docs/cosmetics-shop.md §5.1, §11.6b). Three 宝匣 treasure chests bought with Jade; the server rolls
  * (POST /shop/pull), so the shop is online only. Shows each box's drop rates, its lowest rarity and the hard pity with
  * the player's own counter (store rules need the odds on screen). A purchase plays the opening ceremony with the
- * lantern machine. Its own lazy chunk, opened from Home and from the Vault.
+ * chest machine. Its own lazy chunk, opened from Home and from the Vault.
  */
 import gsap from 'gsap';
 import './vault.css';
@@ -17,9 +17,9 @@ import { wallet } from '../../core/wallet';
 import { audio } from '../../engine/audio';
 import { particles } from '../../engine/particles';
 import { shake } from '../../engine/shake';
-import { pop, pressable, nope, popIn, loop } from '../../engine/juice';
+import { pop, pressable, nope, popIn } from '../../engine/juice';
 import { langToggle, muteButton, iconButton, ICON } from '../../ui/widgets';
-import { lanternMachine, lanternSVG } from './lantern';
+import { chestMachine, chestSVG, lidHop } from './chest';
 import { Opening, type AgainResult } from './opening';
 import { cosmeticBatch, jadePrice } from './cosmeticReveal';
 import { buy, BuyError, resumePending } from './shopBuy';
@@ -70,7 +70,7 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
     const el = h(
       'button',
       { class: 'shop-box', 'data-b': b.id, 'aria-label': b.en },
-      h('span', { class: 'sb-art', html: lanternSVG(b.id, 'sb-svg') }),
+      h('span', { class: 'sb-art', html: chestSVG(b.id, 'sb-svg', true) }),
       h('span', { class: 'sb-zh' }, b.zh),
       name,
       h('span', { class: 'sb-price' }, h('span', { class: 'mini-coin', html: ICON.jade }), formatNum(b.price)),
@@ -79,8 +79,8 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
   });
   const picker = h('div', { class: 'shop-boxes' }, ...tabs.map((x) => x.el));
 
-  // ---- the selected lantern
-  const stageArt = h('div', { class: 'shop-lantern' });
+  // ---- the selected chest
+  const stageArt = h('div', { class: 'shop-chest' });
   const stage = h('div', { class: 'shop-stage' }, h('span', { class: 'cab-aura' }), stageArt);
 
   // ---- panel
@@ -158,10 +158,33 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
     gsap.to(o, { v: to, duration: 0.6, ease: 'power2.out', onUpdate: () => (jadeV.textContent = formatNum(o.v)) });
     pop(jadePill, 0.6);
   };
-  const drawStage = (animate: boolean) => {
-    stageArt.innerHTML = lanternSVG(box.id);
-    if (animate) gsap.fromTo(stageArt, { scale: 0.6, rotation: -8 }, { scale: 1, rotation: 0, duration: 0.7, ease: 'elastic.out(1.1,0.5)' });
+  /** idle teaser: every few seconds the lid knocks twice, as if something inside wants out */
+  let knock: gsap.core.Timeline | null = null;
+  const stopKnock = () => {
+    knock?.kill();
+    knock = null;
   };
+  const startKnock = () => {
+    stopKnock();
+    const svg = stageArt.querySelector('svg');
+    if (!svg || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    knock = gsap.timeline({ repeat: -1, repeatDelay: 3.2, delay: 1.4 }).add(lidHop(svg)).add(lidHop(svg, true), '-=0.3');
+  };
+  const drawStage = (animate: boolean) => {
+    stopKnock();
+    stageArt.innerHTML = chestSVG(box.id, 'cab-svg', true);
+    startKnock();
+    if (animate) gsap.fromTo(stageArt, { scale: 0.6, y: -40 }, { scale: 1, y: 0, duration: 0.7, ease: 'elastic.out(1.1,0.5)' });
+  };
+  /** a manual hop (tap, purchase) pauses the idle knocking so the two never fight over the lid */
+  const poke = (resume = true) => {
+    stopKnock();
+    const svg = stageArt.querySelector('svg');
+    if (svg) lidHop(svg, true);
+    if (resume) startKnock();
+  };
+  /** the chest thumps down: squash, then settle */
+  const thud = () => gsap.fromTo(stageArt, { scaleX: 1.08, scaleY: 0.9 }, { scaleX: 1, scaleY: 1, duration: 0.6, ease: 'elastic.out(1.3,0.35)', transformOrigin: '50% 100%' });
   const refresh = () => {
     if (!wallet.enabled) return;
     connecting = wallet.jade === null;
@@ -178,7 +201,7 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
     if (!x || busy) return;
     if (x.b === box) {
       audio.rattle(3);
-      gsap.fromTo(stageArt, { rotation: -4 }, { rotation: 0, duration: 0.6, ease: 'elastic.out(1.4,0.3)' });
+      poke();
       return;
     }
     box = x.b;
@@ -192,9 +215,11 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
   pressable(stageArt, () => {
     audio.rattle(4);
     shake(0.12);
-    gsap.fromTo(stageArt, { rotation: -5 }, { rotation: 0, duration: 0.6, ease: 'elastic.out(1.4,0.3)' });
-    const c = center(stageArt);
-    particles.burst(c.x, c.y, { count: 8, sprite: 'sparkGold', speed: [80, 240], size: [12, 22], g: -60, life: [0.4, 0.8], add: true });
+    thud();
+    poke();
+    // light escapes the lid seam
+    const r = stageArt.getBoundingClientRect();
+    particles.burst(r.left + r.width / 2, r.top + r.height * 0.47, { count: 10, sprite: 'sparkGold', speed: [80, 260], size: [12, 22], g: -60, life: [0.4, 0.8], add: true, angle: -Math.PI / 2, spread: 1.6 });
   });
 
   // ---- purchase
@@ -220,10 +245,32 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
     }
   };
 
+  /** dev builds without the API: play the ceremony with a fake pull */
+  const demo = async (qty: number) => {
+    const { demoPull } = await import('./devDemo');
+    const bx = box;
+    busy = true;
+    poke(false);
+    new Opening({
+      host: el,
+      machine: chestMachine(bx),
+      batch: cosmeticBatch(bx, demoPull(bx, qty)),
+      qty,
+      price: jadePrice(boxPrice(bx, qty)),
+      again: () => cosmeticBatch(bx, demoPull(bx, qty)),
+      onClose: () => {
+        busy = false;
+        startKnock();
+        thud();
+      },
+    });
+  };
+
   const doBuy = async (b: (typeof buys)[number]) => {
     if (busy) return;
     audio.unlock();
     const j = jade();
+    if (import.meta.env.DEV && (!wallet.enabled || j === null)) return void demo(b.qty);
     if (!wallet.enabled || j === null) {
       audio.wrong();
       nope(b.el);
@@ -248,6 +295,7 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
     } catch (e) {
       busy = false;
       b.el.classList.remove('is-loading');
+      startKnock();
       if (e instanceof BuyError && e.jade !== undefined) jadeHint = e.jade;
       audio.wrong();
       nope(b.el);
@@ -257,17 +305,18 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
     }
     jadeHint = null;
     b.el.classList.remove('is-loading');
-    // Jade flies from the wallet into the lantern
+    // Jade flies from the wallet into the chest
     audio.spend(Math.min(12, 4 + b.qty));
     setJade(true);
     const cp = center(jadePill);
     particles.arc(cp.x, cp.y, () => center(stageArt), Math.min(14, 4 + b.qty), 'sparkCyan', () => audio.coin(Math.floor(Math.random() * 6)));
+    poke(false);
     pop(b.el, 1);
     shake(0.2);
     await new Promise((r) => setTimeout(r, 650));
     new Opening({
       host: el,
-      machine: lanternMachine(bx),
+      machine: chestMachine(bx),
       batch: cosmeticBatch(bx, res),
       qty: b.qty,
       price: jadePrice(boxPrice(bx, b.qty)),
@@ -276,7 +325,8 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
         busy = false;
         setJade(true);
         syncBox();
-        gsap.fromTo(stageArt, { scale: 0.85 }, { scale: 1, duration: 0.7, ease: 'elastic.out(1.2,0.4)' });
+        startKnock();
+        thud();
       },
     });
   };
@@ -297,7 +347,7 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
     setJade(true);
     new Opening({
       host: el,
-      machine: lanternMachine(bx),
+      machine: chestMachine(bx),
       batch: cosmeticBatch(bx, r.res),
       qty: r.qty,
       price: jadePrice(boxPrice(bx, r.qty)),
@@ -306,6 +356,7 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
         busy = false;
         setJade(true);
         syncBox();
+        startKnock();
       },
     });
   };
@@ -326,12 +377,18 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
       void wallet.refresh().then(recover);
       gsap.from(head.children, { y: -30, opacity: 0, stagger: 0.08, duration: 0.6, ease: 'back.out(2)' });
       popIn(tabs.map((x) => x.el), 0.1, 0.07);
-      gsap.from(stageArt, { scale: 0, rotation: -12, duration: 0.9, delay: 0.15, ease: 'elastic.out(1,0.5)' });
+      gsap.from(stageArt, { y: -innerHeight * 0.35, opacity: 0, duration: 0.45, delay: 0.2, ease: 'power3.in', onComplete: () => {
+        thud();
+        shake(0.15);
+        audio.pop(0.7);
+        const r = stageArt.getBoundingClientRect();
+        particles.burst(r.left + r.width / 2, r.bottom - 6, { count: 12, sprite: 'paper', speed: [120, 320], size: [10, 18], g: 400, life: [0.4, 0.7], angle: -Math.PI / 2, spread: 2.6 });
+      } });
       gsap.from(panel, { y: 90, opacity: 0, duration: 0.7, delay: 0.15, ease: 'back.out(1.4)' });
-      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) loop('shop:bob', stageArt, () => gsap.to(stageArt, { y: -8, rotation: 2, duration: 1.5, yoyo: true, repeat: -1, ease: 'sine.inOut' }), { y: 0, rotation: 0 });
     },
     leave() {
       left = true;
+      stopKnock();
       offLang();
       offWallet();
       Opening.current?.destroy();

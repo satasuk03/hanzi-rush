@@ -1,6 +1,6 @@
 /**
- * Shop drops as ceremony reveals (docs/cosmetics-shop.md §5.5). The face is a canvas card (cardArt drawCosmeticFront)
- * with the live item laid over its ensō once it is up: avatars as the image, frames on the player's own disc, name
+ * Shop drops as ceremony reveals (docs/cosmetics-shop.md §5.5). The face is a canvas display case (treasureArt.ts) with
+ * the live item laid on its cushion once it is up: avatars as the image, frames on the player's own disc, name
  * effects on the player's name (on a light chip: namefx.css colours are for light backgrounds), badges through
  * renderBadges(). Items this build does not know (a newer server) show a "?" and never throw.
  */
@@ -16,7 +16,8 @@ import { pop, pressable } from '../../engine/juice';
 import { ICON } from '../../ui/widgets';
 import { applyNameFx, avatarSrc, renderBadges, renderIdentity } from '../../cosmetics/render';
 import { currentLook, equipItem, isEquipped, unequipItem } from '../../cosmetics/equip';
-import { drawCosmeticFront, COSMETIC_STAGE } from './cardArt';
+import { COSMETIC_STAGE } from './cardArt';
+import { drawTreasureBack, drawTreasureFront } from './treasureArt';
 import type { Price, Reveal, RevealBatch } from './opening';
 
 const SLOT_KEY: Record<Item['slot'], Key> = { frame: 'slotFrame', avatar: 'slotAvatar', nameFx: 'slotNameFx', badge: 'slotBadge' };
@@ -69,7 +70,7 @@ function cosmeticReveal(d: ShopDrop, sync: Sync): Reveal {
     isNew: d.isNew,
     copies: d.copies,
     refund: d.refund,
-    paint: (w) => drawCosmeticFront(document.createElement('canvas'), w, rarity, { key: d.itemId, zh: it?.zh ?? '？', name: name(), kind: it ? t(SLOT_KEY[it.slot]) : '' }, i18n.lang),
+    paint: (w) => drawTreasureFront(document.createElement('canvas'), w, rarity, { key: d.itemId, zh: it?.zh ?? '？', name: name(), kind: it ? t(SLOT_KEY[it.slot]) : '' }, i18n.lang),
     layer() {
       const el = h('div', { class: 'cos-stage', style: `top:${COSMETIC_STAGE.y * 100}%` }, itemArt(it));
       return el;
@@ -92,6 +93,7 @@ function cosmeticReveal(d: ShopDrop, sync: Sync): Reveal {
       const m = h(
         'button',
         { class: 'mc ct', 'data-r': String(rarity) },
+        h('span', { class: 'ct-case' }),
         h('span', { class: 'ct-art' }, itemArt(it)),
         h('span', { class: 'ct-name' }, name()),
         it ? pill : null,
@@ -140,6 +142,7 @@ function ready(items: (Item | undefined)[]) {
 
 export function cosmeticBatch(box: BoxDef, res: ShopPullResponse): RevealBatch {
   const sync: Sync = new Set();
+  let back: { width: number; cv: HTMLCanvasElement } | null = null;
   const reveals = res.drops.map((d) => cosmeticReveal(d, sync));
   return {
     reveals,
@@ -148,6 +151,16 @@ export function cosmeticBatch(box: BoxDef, res: ShopPullResponse): RevealBatch {
     ready: ready(res.drops.map((d) => itemById(d.itemId))),
     // titles that count cosmetics (`wardrobe`) are evaluated from wallet.inventory, which the pull just updated
     titles: newTitles(),
+    back: (w) => {
+      // painted once per batch and size, copied per card (the flipper takes ownership of each canvas)
+      if (!back || back.width !== w) back = { width: w, cv: drawTreasureBack(document.createElement('canvas'), w, box.id) };
+      const cv = document.createElement('canvas');
+      cv.width = back.cv.width;
+      cv.height = back.cv.height;
+      cv.style.cssText = back.cv.style.cssText;
+      cv.getContext('2d')!.drawImage(back.cv, 0, 0);
+      return cv;
+    },
   };
 }
 

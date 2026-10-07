@@ -228,10 +228,10 @@ export function resultsScreen(r: RunStats): Screen {
         });
         tl.fromTo(s, { scale: 3, rotation: -40, opacity: 0 }, { scale: 1, rotation: 0, opacity: 1, duration: 0.4, ease: earned ? 'back.out(3)' : 'power2.out' });
       });
-      // score count up with coin ticks
+      // score count up with point chimes (coins are the payout below, never the score)
       tl.add(() => {
         let n = 0;
-        countTo(scoreV, 0, r.score, Math.min(1.8, 0.6 + r.score / 20000), formatNum, () => audio.coin(n++)).then(() => {
+        countTo(scoreV, 0, r.score, Math.min(1.8, 0.6 + r.score / 20000), formatNum, () => audio.point(n++)).then(() => {
           pop(scoreV, 1.2);
           payout();
           if (isBest) {

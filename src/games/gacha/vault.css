@@ -32,10 +32,12 @@ body.lang-th .vault-sub { font-family: var(--f-thai); letter-spacing: 1px; font-
 .vault-track {
   display: flex; height: 100%; overflow-x: auto; overflow-y: hidden;
   scroll-snap-type: x mandatory; scrollbar-width: none;
-  padding: 0 19%;
+  /* each side pads half of what a slide leaves free, so the first and the last slide can sit in the centre
+     (a % flex-basis would be of the padded content box: the slide is the whole content box instead) */
+  padding: 0 31%;
 }
 .vault-track::-webkit-scrollbar { display: none; }
-.vault-slide { flex: 0 0 62%; scroll-snap-align: center; display: flex; }
+.vault-slide { flex: 0 0 100%; scroll-snap-align: center; display: flex; }
 .slide-in { position: relative; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; will-change: transform; }
 .cab { position: relative; z-index: 1; width: min(100%, 37vh, 270px); }
 .cab-svg { display: block; width: 100%; height: auto; overflow: visible; filter: drop-shadow(0 10px 0 rgba(10, 4, 16, .45)); }
