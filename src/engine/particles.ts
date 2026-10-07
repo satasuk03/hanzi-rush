@@ -292,19 +292,19 @@ class Particles {
     count: number,
     onEach?: (i: number) => void,
     onFirst?: () => void,
-    /** 'stars' for score points, so they never read as coins earned */
-    kind: 'coins' | 'stars' = 'coins',
+    /** 'points' for score (小红花 blossoms), so they never read as coins earned */
+    kind: 'coins' | 'points' = 'coins',
   ) {
     const n = this.n(count);
     let arrived = 0;
-    const stars = kind === 'stars';
+    const pts = kind === 'points';
     for (let i = 0; i < n; i++) {
       const a = rand(0, TAU);
       const sp = rand(260, 720);
       const isBao = i % 4 === 0;
-      const sz = stars ? rand(24, 36) : isBao ? rand(38, 50) : rand(26, 36);
+      const sz = pts ? (isBao ? rand(18, 24) : rand(28, 38)) : isBao ? rand(38, 50) : rand(26, 36);
       this.spawn({
-        sprite: stars ? (isBao ? 'starPink' : 'star') : isBao ? 'yuanbao' : 'coin',
+        sprite: pts ? (isBao ? 'petalRed' : 'blossom') : isBao ? 'yuanbao' : 'coin',
         mode: Mode.Pull,
         target,
         x, y,
@@ -318,7 +318,7 @@ class Particles {
         size1: sz,
         rot: rand(-0.4, 0.4),
         vr: rand(-3, 3),
-        vspin: stars || isBao ? 0 : rand(9, 15),
+        vspin: pts || isBao ? 0 : rand(9, 15),
         onArrive: () => {
           if (arrived === 0) onFirst?.();
           onEach?.(arrived++);

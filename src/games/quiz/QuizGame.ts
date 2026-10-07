@@ -130,7 +130,7 @@ export class QuizGame {
   // ------------------------------------------------------------------ build
   protected build() {
     this.scoreEl = h('span', { class: 'score-v' }, '0');
-    this.scorePill = h('div', { class: 'score-pill' }, h('span', { class: 'score-ic', html: ICON.star }), this.scoreEl);
+    this.scorePill = h('div', { class: 'score-pill' }, h('span', { class: 'score-ic', html: ICON.blossom }), this.scoreEl);
 
     const lifeBox = h('div', { class: 'hearts' });
     if (this.rush) {
@@ -435,7 +435,7 @@ export class QuizGame {
     const power = 1 + this.stage * 0.35 + (this.fever ? 0.6 : 0);
     particles.ring(bc.x, bc.y, 120 * power, '#ffffff', 12);
     particles.burst(bc.x, bc.y, { count: 18 * power, sprite: this.fever ? 'sparkGold' : 'spark', speed: [300, 800], size: [14, 24], g: 400, drag: 3, life: [0.35, 0.7], add: true, stretch: true });
-    particles.burst(bc.x, bc.y, { count: 6 * power, sprite: ['star', 'starPink'], speed: [200, 500], size: [18, 30], g: 1200, life: [0.6, 1] });
+    particles.burst(bc.x, bc.y, { count: 6 * power, sprite: ['blossom', 'petalRed', 'petalRed'], speed: [200, 500], size: [18, 30], g: 1200, life: [0.6, 1] });
     this.pointSfx = 0;
     particles.treasure(
       bc.x,
@@ -447,7 +447,7 @@ export class QuizGame {
         gsap.fromTo(this.scorePill, { scale: 1.12 }, { scale: 1, duration: 0.25, ease: 'back.out(3)', overwrite: true });
       },
       () => this.rollScore(prevScore, this.score),
-      'stars',
+      'points',
     );
     this.floatText(`+${formatNum(pts)}`, bc.x, bc.y - 20, this.fever ? 'gold' : '');
 
@@ -748,7 +748,7 @@ export class QuizGame {
       this.feverT -= dt;
       this.feverGauge = Math.max(0, this.feverT / FEVER_TIME);
       this.feverFill.style.transform = `scaleX(${this.feverGauge})`;
-      if (Math.random() < dt * 6) particles.rain(Math.random() < 0.3 ? 'starPink' : 'star', 1);
+      if (Math.random() < dt * 6) particles.rain(Math.random() < 0.25 ? 'blossom' : 'petalRed', 1);
       if (this.feverT <= 0) this.endFever();
     }
     if (this.phase !== 'ask' || !this.rush) return;
