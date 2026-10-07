@@ -1,10 +1,46 @@
-/* Name effect art, one rule set per item id (shared/cosmetics.ts NAME_FX). Colour only: never hide the name, stay
-   readable on the dark board. Animation only under .nfx-anim (top 10 and "me") and inside prefers-reduced-motion. */
-.nfx[data-fx='fx_ph_red'] { color: #b3202a; }
-.nfx[data-fx='fx_ph_gold'] {
-  background: linear-gradient(100deg, #9a6a12, #d99a1c 45%, #9a6a12); background-size: 220% 100%;
-  -webkit-background-clip: text; background-clip: text; color: transparent;
+/* Name effect art, one rule set per item id (shared/cosmetics.ts NAME_FX). Colour only: never hide the name.
+   --a/--b/--c are the gradient stops on the light board rows (default), --da/--db/--dc on the dark profile card;
+   --f/--df an optional glow. Animation only under .nfx-anim (top 10 and "me") and inside prefers-reduced-motion. */
+.nfx {
+  background-image: linear-gradient(100deg, var(--a), var(--b), var(--c));
+  -webkit-background-clip: text; background-clip: text; color: transparent; caret-color: #fff7e6;
+  filter: var(--f, none);
 }
+.lb-nm.nfx { padding-block: .22em; margin-block: -.22em; } /* room for Thai tone marks inside the clip box */
+.nfx[data-fx='fx_zhuhong'] { --a: #c0272d; --b: #c0272d; --c: #c0272d; --da: #ff7b72; --db: #ff7b72; --dc: #ff7b72; }
+.nfx[data-fx='fx_daiqing'] { --a: #2f5d8a; --b: #2f5d8a; --c: #2f5d8a; --da: #8cc0f0; --db: #8cc0f0; --dc: #8cc0f0; }
+.nfx[data-fx='fx_hupo'] { --a: #8f5400; --b: #8f5400; --c: #8f5400; --da: #ffb84a; --db: #ffb84a; --dc: #ffb84a; }
+.nfx[data-fx='fx_songlv'] { --a: #1d7a4d; --b: #1d7a4d; --c: #1d7a4d; --da: #6fe0a0; --db: #6fe0a0; --dc: #6fe0a0; }
+.nfx[data-fx='fx_wanxia'] { --a: #c2410c; --b: #a21caf; --c: #a21caf; --da: #ffa05a; --db: #ff7ad9; --dc: #ff7ad9; }
+.nfx[data-fx='fx_bibo'] { --a: #0f766e; --b: #1d4ed8; --c: #1d4ed8; --da: #5eead4; --db: #7db4ff; --dc: #7db4ff; }
+.nfx[data-fx='fx_zijin'] { --a: #6d28d9; --b: #946000; --c: #946000; --da: #c4a0ff; --db: #ffd36a; --dc: #ffd36a; }
+.nfx[data-fx='fx_moyun'] {
+  --a: #2a1a3a; --b: #5b3d7a; --c: #2a1a3a; --da: #f3e9ff; --db: #b79be0; --dc: #f3e9ff;
+  --f: drop-shadow(0 1px 0 rgba(42, 26, 58, .3)); --df: drop-shadow(0 0 5px rgba(183, 155, 224, .55));
+}
+.nfx[data-fx='fx_chiyan'] {
+  --a: #b91c1c; --b: #c2410c; --c: #b91c1c; --da: #ff5a4f; --db: #ffb347; --dc: #ff5a4f;
+  --f: drop-shadow(0 0 4px rgba(255, 120, 40, .55)); --df: drop-shadow(0 0 6px rgba(255, 110, 40, .7));
+}
+.nfx[data-fx='fx_cuiyu'] {
+  --a: #047857; --b: #0e7490; --c: #047857; --da: #5ef2b0; --db: #67e8f9; --dc: #5ef2b0;
+  --f: drop-shadow(0 0 4px rgba(20, 200, 150, .6)); --df: drop-shadow(0 0 6px rgba(60, 240, 190, .65));
+}
+.nfx[data-fx='fx_liujin'] {
+  --a: #7c4a03; --b: #946000; --c: #7c4a03; --da: #ffe08a; --db: #ffb321; --dc: #fff1c0;
+  --f: drop-shadow(0 0 4px rgba(255, 190, 40, .8)); --df: drop-shadow(0 0 7px rgba(255, 190, 40, .85));
+}
+.nfx[data-fx='fx_fenghuang'] {
+  --a: #b3122f; --b: #a1177a; --c: #5b21b6; --da: #ff6b8a; --db: #ff8ae6; --dc: #b69cff;
+  --f: drop-shadow(0 0 4px rgba(255, 61, 99, .6)); --df: drop-shadow(0 0 8px rgba(255, 61, 99, .85));
+}
+.pf-card .nfx { --a: var(--da); --b: var(--db); --c: var(--dc); --f: var(--df, none); }
+@keyframes nfxFlow { to { background-position: 200% 0; } }
 @media (prefers-reduced-motion: no-preference) {
-  .nfx-anim[data-fx='fx_ph_gold'] { animation: nfxShine 3.2s linear infinite; }
+  .nfx-anim:is([data-fx='fx_wanxia'], [data-fx='fx_bibo'], [data-fx='fx_zijin'], [data-fx='fx_moyun'], [data-fx='fx_chiyan'], [data-fx='fx_cuiyu'], [data-fx='fx_liujin'], [data-fx='fx_fenghuang']) {
+    background-image: linear-gradient(100deg, var(--a), var(--b), var(--c), var(--a)); background-size: 200% 100%;
+    animation: nfxFlow 5s linear infinite;
+  }
+  .nfx-anim[data-fx='fx_liujin'] { animation-duration: 3.2s; }
+  .nfx-anim[data-fx='fx_fenghuang'] { animation-duration: 2.6s; }
 }
