@@ -1,5 +1,17 @@
-import { PERIODS, type BoardEntry, type Period, type PeriodKeys, type RankInfo } from '../shared/api';
+import { PERIODS, sanitizeLook, type BoardEntry, type Look, type Period, type PeriodKeys, type RankInfo } from '../shared/api';
+import { isLookEmpty } from '../shared/cosmetics';
 import type { Env } from './env';
+
+/** `players.look` → the optional `look` field of a board row (absent when it is the default look) */
+export function lookField(json: string | null | undefined): { look?: Look } {
+  if (!json || json === '{}') return {};
+  try {
+    const look = sanitizeLook(JSON.parse(json));
+    return isLookEmpty(look) ? {} : { look };
+  } catch {
+    return {};
+  }
+}
 
 export const periodKeyOf = (keys: PeriodKeys, p: Period): string => (p === 'all' ? 'all' : p === 'week' ? keys.week : keys.day);
 
@@ -66,14 +78,14 @@ export async function ranksOf(env: Env, board: string, keys: PeriodKeys, playerI
 
 export async function top(env: Env, board: string, period: string, limit: number, meId: string | null): Promise<BoardEntry[]> {
   const { results } = await env.DB.prepare(
-    `SELECT s.score, s.achieved_at, s.player_id, s.verified, p.name, p.tag, p.title
+    `SELECT s.score, s.achieved_at, s.player_id, s.verified, p.name, p.tag, p.title, p.look
      FROM scores s JOIN players p ON p.id = s.player_id
      WHERE s.board = ?1 AND s.period = ?2
      ORDER BY s.score DESC, s.achieved_at ASC
      LIMIT ?3`,
   )
     .bind(board, period, limit)
-    .all<{ score: number; achieved_at: number; player_id: string; verified: number; name: string; tag: string; title: string }>();
+    .all<{ score: number; achieved_at: number; player_id: string; verified: number; name: string; tag: string; title: string; look: string }>();
   return results.map((r, i) => ({
     rank: i + 1,
     name: r.name,
@@ -83,6 +95,7 @@ export async function top(env: Env, board: string, period: string, limit: number
     achievedAt: r.achieved_at,
     isMe: meId !== null && r.player_id === meId,
     verified: r.verified === 1,
+    ...lookField(r.look),
   }));
 }
 
@@ -94,14 +107,14 @@ export async function total(env: Env, board: string, period: string): Promise<nu
 /** The caller's own entry (rank by score desc, achieved_at asc). */
 export async function myEntry(env: Env, board: string, period: string, playerId: string): Promise<BoardEntry | null> {
   const r = await env.DB.prepare(
-    `SELECT s.score, s.achieved_at, s.verified, p.name, p.tag, p.title,
+    `SELECT s.score, s.achieved_at, s.verified, p.name, p.tag, p.title, p.look,
        (SELECT COUNT(*) + 1 FROM scores o WHERE o.board = ?1 AND o.period = ?2
           AND (o.score > s.score OR (o.score = s.score AND o.achieved_at < s.achieved_at))) AS rank
      FROM scores s JOIN players p ON p.id = s.player_id
      WHERE s.board = ?1 AND s.period = ?2 AND s.player_id = ?3`,
   )
     .bind(board, period, playerId)
-    .first<{ score: number; achieved_at: number; verified: number; name: string; tag: string; title: string; rank: number }>();
+    .first<{ score: number; achieved_at: number; verified: number; name: string; tag: string; title: string; look: string; rank: number }>();
   if (!r) return null;
-  return { rank: r.rank, name: r.name, tag: r.tag, title: r.title, score: r.score, achievedAt: r.achieved_at, isMe: true, verified: r.verified === 1 };
+  return { rank: r.rank, name: r.name, tag: r.tag, title: r.title, score: r.score, achievedAt: r.achieved_at, isMe: true, verified: r.verified === 1, ...lookField(r.look) };
 }

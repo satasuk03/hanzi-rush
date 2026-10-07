@@ -10,6 +10,12 @@
  *    and bump SCORING_VERSION, or the server will reject legitimate runs.
  */
 
+import { sanitizeLook, type Look } from './cosmetics';
+import { TITLE_DEFS } from './titles';
+
+export { sanitizeLook };
+export type { Look };
+
 export const API_PREFIX = '/api/v1';
 
 // ====================================================================== game identity
@@ -84,6 +90,8 @@ export interface Profile {
   title: string;
   /** titles the player has already been told about */
   seen: string[];
+  /** equipped cosmetics (shared/cosmetics.ts); merged per slot, absent = default */
+  look?: Look;
 }
 
 export interface Daily {
@@ -196,6 +204,23 @@ export interface RecoverRequest {
 
 export type RecoverResponse = AuthResponse;
 
+/**
+ * PATCH /me/profile: change what others see. Every field is optional but at least one is required; each is sanitized
+ * like its counterpart in POST /runs. A `look` replaces the whole look (slots left out go back to the default).
+ */
+export interface PatchProfileRequest {
+  name?: string;
+  title?: string;
+  look?: Look;
+}
+
+/** the stored (sanitized) values after a PATCH /me/profile */
+export interface PatchProfileResponse {
+  name: string;
+  title: string;
+  look: Look;
+}
+
 /** DELETE /me → 204. Deletes the player, sessions, save, runs and scores (App Store 5.1.1(v)). */
 
 // ====================================================================== cloud save
@@ -305,6 +330,8 @@ export interface BoardEntry {
   isMe: boolean;
   /** false = the run had no (or a late) server ticket; clients render a small mark */
   verified: boolean;
+  /** equipped cosmetics; absent = the default look */
+  look?: Look;
 }
 
 export interface BoardResponse {
@@ -334,6 +361,7 @@ export interface EffortEntry {
   runs: number;
   durationMs: number;
   isMe: boolean;
+  look?: Look;
 }
 
 export interface EffortResponse {
@@ -403,6 +431,8 @@ export const LIMITS = {
   boardMax: 100,
   /** per player: minimum seconds between accepted PUT /save */
   saveMinIntervalSec: 10,
+  /** per player: minimum seconds between accepted PATCH /me/profile */
+  profileMinIntervalSec: 3,
   /** per player: minimum seconds between POST /runs/start */
   runStartMinIntervalSec: 2,
   /** per player per board-day: tickets issued + unverified submissions */
@@ -476,7 +506,10 @@ export function sanitizeName(raw: unknown): string {
   return [...s].slice(0, LIMITS.nameMaxChars).join('').trim();
 }
 
-export const sanitizeTitle = (raw: unknown): string => (typeof raw === 'string' && LIMITS.titlePattern.test(raw) ? raw : 'novice');
+const TITLE_IDS = new Set(TITLE_DEFS.map((t) => t.id));
+
+/** the id must be in the title catalog (shared/titles.ts), not just well-formed; anything else is 'novice' */
+export const sanitizeTitle = (raw: unknown): string => (typeof raw === 'string' && LIMITS.titlePattern.test(raw) && TITLE_IDS.has(raw) ? raw : 'novice');
 
 // ====================================================================== recovery / transfer codes
 

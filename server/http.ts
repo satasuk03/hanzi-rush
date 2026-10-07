@@ -58,7 +58,7 @@ export const isObj = (x: unknown): x is Record<string, unknown> => typeof x === 
 type Handler = () => Promise<Response> | Response;
 
 /** Per-method dispatch with a 405 for everything else. */
-export function byMethod(req: Request, handlers: Partial<Record<'GET' | 'POST' | 'PUT' | 'DELETE', Handler>>): Promise<Response> | Response {
+export function byMethod(req: Request, handlers: Partial<Record<'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE', Handler>>): Promise<Response> | Response {
   const h = handlers[req.method as 'GET'];
   if (!h) return fail('method_not_allowed', 'Method not allowed');
   return h();

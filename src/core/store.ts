@@ -18,7 +18,7 @@ const defaults = (): { settings: Settings; progress: Progress } => ({
     cards: {},
     pity: 0,
     stats: { games: 0, questions: 0, correct: 0, bestCombo: 0, perfect: 0, pulls: 0, coinsEarned: 0, coinsSpent: 0, maxCoins: STARTING_COINS, byRarity: [0, 0, 0, 0, 0] },
-    profile: { name: '', title: 'novice', seen: ['novice'] },
+    profile: { name: '', title: 'novice', seen: ['novice'], look: {} },
     daily: { last: '', streak: 0, best: 0, total: 0 },
   },
 });

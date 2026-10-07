@@ -19,7 +19,7 @@ export function corsHeaders(origin: string | null, env: Env): Record<string, str
 export function preflight(origin: string | null, env: Env): Response {
   const h: Record<string, string> = {
     ...corsHeaders(origin, env),
-    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
     'Access-Control-Allow-Headers': 'Authorization, Content-Type',
     'Access-Control-Max-Age': '86400',
   };

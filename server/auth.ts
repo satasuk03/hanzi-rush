@@ -57,6 +57,9 @@ export function parseDevice(x: unknown): DeviceInfo {
 
 export const randomTag = (): string => randomCode(RECOVERY_ALPHABET, 4);
 
+/** public id of a player (`players.pub`): 8 chars, unique, safe to show. Unrelated to players.id */
+export const randomPub = (): string => randomCode(RECOVERY_ALPHABET, 8);
+
 /** Builds the INSERT for a new session; returns the statement plus the clear token (shown once). */
 export async function issueSession(env: Env, playerId: string, via: string, device: DeviceInfo, now: number) {
   const token = randomToken();

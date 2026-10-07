@@ -39,7 +39,7 @@ export interface ApiOpts {
   timeoutMs?: number;
 }
 
-export async function api<T>(method: 'GET' | 'POST' | 'PUT' | 'DELETE', path: string, opts: ApiOpts = {}): Promise<T> {
+export async function api<T>(method: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE', path: string, opts: ApiOpts = {}): Promise<T> {
   if (API_OFF) throw new ApiError(0, 'offline');
   const headers: Record<string, string> = { Accept: 'application/json' };
   if (opts.token) headers[AUTH_HEADER] = authValue(opts.token);
