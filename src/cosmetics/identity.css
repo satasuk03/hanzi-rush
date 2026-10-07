@@ -1,0 +1,34 @@
+/* Look rendering (src/cosmetics/render.ts). Only what an equipped item adds; the default seal is styled by .pc-seal / .pf-glyph. */
+
+/* avatar image: replaces the seal disc */
+.pc-seal.id-img, .pf-glyph.id-img { background: #f7ecdc; box-shadow: none; }
+.id-av { display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; pointer-events: none; }
+
+/* frame: a ring drawn over the disc, bold enough to read at 34 px */
+.id-fr::after {
+  content: ''; position: absolute; inset: 0; border-radius: 50%; pointer-events: none;
+  box-shadow: inset 0 0 0 3px var(--fr, #c3272d), inset 0 0 0 4.5px rgba(255, 255, 255, .55);
+}
+.pf-glyph.id-fr::after { box-shadow: inset 0 0 0 5px var(--fr, #c3272d), inset 0 0 0 7px rgba(255, 255, 255, .55); }
+.id-fr[data-fr='frame_ph_bronze'] { --fr: #b4793a; }
+.id-fr[data-fr='frame_ph_gold'] { --fr: #f2c14e; }
+
+/* name effects: colour only, never hide the name (the board row stays readable) */
+.nfx[data-fx='fx_ph_red'] { color: #b3202a; }
+.nfx[data-fx='fx_ph_gold'] {
+  background: linear-gradient(100deg, #9a6a12, #d99a1c 45%, #9a6a12); background-size: 220% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .nfx-anim[data-fx='fx_ph_gold'] { animation: nfxShine 3.2s linear infinite; }
+}
+@keyframes nfxShine { to { background-position: -220% 0; } }
+
+/* badges: a glyph on a small seal (the first one only on a board row) */
+.id-badges { flex: none; display: inline-flex; gap: 3px; margin-left: 5px; align-self: center; }
+.id-badge {
+  display: grid; place-items: center; width: 16px; height: 16px; border-radius: 50%; background: #c3272d; color: #f7ecdc;
+  font: 400 11px/1 'Ma Shan Zheng', var(--f-hanzi);
+}
+.id-badge[data-r='2'] { background: #6b3fa0; }
+.id-badge[data-r='3'], .id-badge[data-r='4'] { background: linear-gradient(135deg, #f2c14e, #b47a1c); color: #2a1a3a; }

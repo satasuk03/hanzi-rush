@@ -17,6 +17,7 @@ import { mascot, setMood } from '../ui/mascot';
 import { GAMES } from '../games/registry';
 import { levelsScreen } from './levels';
 import { cloud } from '../core/cloud';
+import { paintIdentity, renderIdentity } from '../cosmetics/render';
 import { effortScreen, loadEffort } from './effort';
 
 export function logo() {
@@ -135,10 +136,9 @@ export function homeScreen(): Screen {
   const lv = playerLevel();
   const T = titleById(store.progress.profile.title);
   const chipName = h('span', { class: 'pc-name' });
-  const seal = h('span', { class: 'pc-seal', 'data-t': String(T.tier) });
-  const sealGlyph = document.createTextNode(T.zh[0]);
+  const seal = renderIdentity(store.progress.profile.look, 'M', { title: T });
   const sealLv = h('span', { class: 'pc-lv' }, String(lv.level));
-  seal.append(sealGlyph, sealLv);
+  seal.append(sealLv);
   const coinsText = document.createTextNode(formatNum(store.progress.coins));
   const xpFillEl = h('span', { style: `transform:scaleX(${lv.into / lv.need})` });
   const syncChip = () => (chipName.textContent = store.progress.profile.name || titleById(store.progress.profile.title)[i18n.lang]);
@@ -148,9 +148,9 @@ export function homeScreen(): Screen {
     const l = playerLevel();
     const Tt = titleById(store.progress.profile.title);
     syncChip();
-    sealGlyph.textContent = Tt.zh[0];
-    seal.dataset.t = String(Tt.tier);
+    paintIdentity(seal, store.progress.profile.look, 'M', { title: Tt });
     sealLv.textContent = String(l.level);
+    seal.append(sealLv);
     coinsText.textContent = formatNum(store.progress.coins);
     xpFillEl.style.transform = `scaleX(${l.into / l.need})`;
   };

@@ -1,4 +1,4 @@
-import { LIMITS, PUSH_IDS_KEPT, SAVE_FORMAT, sanitizeName, sanitizeTitle, type PutSaveResponse, type SaveConflictBody, type SaveDoc, type SaveResponse } from '../../../shared/api';
+import { LIMITS, PUSH_IDS_KEPT, SAVE_FORMAT, sanitizeLook, sanitizeName, sanitizeTitle, type PutSaveResponse, type SaveConflictBody, type SaveDoc, type SaveResponse } from '../../../shared/api';
 import { authenticate } from '../../../server/auth';
 import type { Ctx, Env } from '../../../server/env';
 import { byMethod, fail, json, readJson } from '../../../server/http';
@@ -32,6 +32,9 @@ export const onRequest: PagesFunction<Env> = async (ctx) =>
       const json_ = JSON.stringify(req.data);
       const name = sanitizeName(req.data.progress.profile.name);
       const title = sanitizeTitle(req.data.progress.profile.title);
+      // saves from builds that predate looks carry none: keep what the player has
+      const rawLook = req.data.progress.profile.look;
+      const look = rawLook === undefined ? null : JSON.stringify(sanitizeLook(rawLook));
       // No row yet: insert at revision 1 regardless of baseRevision (also recovers a client whose server row vanished).
       const write = cur
         ? db
@@ -43,8 +46,8 @@ export const onRequest: PagesFunction<Env> = async (ctx) =>
       const newRev = cur ? req.baseRevision + 1 : 1;
       // name/title only follow a save that this very request wrote
       const profile = db
-        .prepare('UPDATE players SET name = ?1, title = ?2 WHERE id = ?3 AND EXISTS (SELECT 1 FROM saves WHERE player_id = ?3 AND revision = ?4 AND updated_at = ?5)')
-        .bind(name, title, me.id, newRev, now);
+        .prepare('UPDATE players SET name = ?1, title = ?2, look = COALESCE(?6, look) WHERE id = ?3 AND EXISTS (SELECT 1 FROM saves WHERE player_id = ?3 AND revision = ?4 AND updated_at = ?5)')
+        .bind(name, title, me.id, newRev, now, look);
       const [w] = await db.batch([write, profile]);
       if (w.meta.changes === 0) {
         const current = await readSave(ctx, me.id);

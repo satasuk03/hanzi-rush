@@ -9,6 +9,7 @@ import {
   checkRun,
   formatRecoveryCode,
   normalizeRecoveryCode,
+  sanitizeLook,
   sanitizeName,
   type AuthResponse,
   type BoardKey,
@@ -17,6 +18,8 @@ import {
   type EffortResponse,
   type Period,
   type MeResponse,
+  type PatchProfileRequest,
+  type PatchProfileResponse,
   type PutSaveRequest,
   type PutSaveResponse,
   type RecoveryCodeRequest,
@@ -81,6 +84,8 @@ interface CloudState {
   queue: QueuedRun[];
   /** merged result about to be applied to the store (crash safety, §5.4) */
   pendingMerged: SaveDoc | null;
+  /** canonical JSON of the look the server is known to have (set by PATCH /me/profile and by every accepted PUT /save) */
+  lookSent: string;
 }
 
 const KEY = 'hanzi-rush:cloud:v1';
@@ -90,10 +95,12 @@ const BACKOFF_MIN = 15_000;
 const BACKOFF_MAX = 300_000;
 const PULL_AFTER_HIDDEN_MS = 5 * 60_000;
 const TICKET_WAIT_MS = 3000;
+/** equip taps within this window go up as one PATCH /me/profile */
+const LOOK_DEBOUNCE_MS = 1500;
 /** safety net: a run that never ended can't hold off merges forever */
 const RUN_ACTIVE_MAX_MS = 30 * 60_000;
 
-const blank = (): CloudState => ({ auth: null, rev: 0, base: null, syncedAt: 0, recovery: null, inflight: null, disabled: false, signedOut: false, signedOutSeen: false, prev: null, queue: [], pendingMerged: null });
+const blank = (): CloudState => ({ auth: null, rev: 0, base: null, syncedAt: 0, recovery: null, inflight: null, disabled: false, signedOut: false, signedOutSeen: false, prev: null, queue: [], pendingMerged: null, lookSent: '{}' });
 
 function load(): CloudState {
   try {
@@ -177,6 +184,35 @@ function scheduleSync(ms: number) {
 function scheduleRetry() {
   scheduleSync(retryDelay);
   retryDelay = Math.min(retryDelay * 2, BACKOFF_MAX);
+}
+
+// ------------------------------------------------------------------ look
+// A new look goes up on its own (PATCH /me/profile), not with the next run or save, so others see it on the boards soon.
+const lookKey = (look: unknown) => JSON.stringify(sanitizeLook(look));
+const lookDirty = () => lookKey(store.progress.profile.look) !== st.lookSent;
+let lookTimer = 0;
+
+function scheduleLookPush(ms = LOOK_DEBOUNCE_MS) {
+  if (lookTimer || !lookDirty()) return;
+  lookTimer = window.setTimeout(() => {
+    lookTimer = 0;
+    void pushLook();
+  }, ms);
+}
+
+async function pushLook() {
+  // no account yet (nothing played): the first PUT /save carries the look
+  if (API_OFF || st.disabled || st.signedOut || !st.auth || !lookDirty()) return;
+  const key = lookKey(store.progress.profile.look);
+  const body: PatchProfileRequest = { look: JSON.parse(key) };
+  try {
+    await api<PatchProfileResponse>('PATCH', '/me/profile', { token: st.auth.token, body });
+    st.lookSent = key;
+    persist();
+  } catch (e) {
+    if (e instanceof ApiError && e.status === 429) scheduleLookPush((e.retryAfter ?? 3) * 1000 + 300);
+    else fail(e); // offline etc.: the sync that fail() schedules re-arms this at its end
+  }
 }
 
 function markDirty() {
@@ -387,6 +423,7 @@ async function doSync(pull: boolean) {
     if (blocked) scheduleRetry();
     else retryDelay = BACKOFF_MIN;
     setStatus(pushed && !blocked ? 'synced' : 'pending');
+    scheduleLookPush();
   } catch (e) {
     fail(e);
   } finally {
@@ -445,6 +482,7 @@ async function pushPhase(): Promise<boolean> {
       st.base = doc;
       st.rev = res.revision;
       st.inflight = null;
+      st.lookSent = lookKey(doc.progress.profile.look); // the save carries the look too
       st.syncedAt = Date.now();
       persist();
       return true;
@@ -556,7 +594,9 @@ export const cloud = {
       applyMerged(M, null, local);
     }
     store.onSave(() => {
-      if (!applying) markDirty();
+      if (applying) return;
+      markDirty();
+      scheduleLookPush();
     });
     addEventListener('online', () => {
       retryDelay = BACKOFF_MIN;

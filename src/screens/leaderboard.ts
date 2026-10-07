@@ -7,6 +7,7 @@ import { app } from '../core/app';
 import { LEVELS } from '../core/data';
 import { titleById } from '../core/meta';
 import { cloud } from '../core/cloud';
+import { applyNameFx, renderBadges, renderIdentity } from '../cosmetics/render';
 import { audio } from '../engine/audio';
 import { pop, pressable, popIn } from '../engine/juice';
 import { langToggle, muteButton, iconButton, ICON } from '../ui/widgets';
@@ -124,12 +125,14 @@ export function leaderboardScreen(opts: { board: ReturnType<typeof boardKey>; pe
   const rowFor = (e: BoardEntry, pinned = false) => {
     const T = titleById(e.title);
     const medal = e.rank <= 3 ? ` m${e.rank}` : '';
+    const nm = h('span', { class: 'lb-nm' }, e.name || `${t('playerName')}#${e.tag}`);
+    applyNameFx(nm, e.look, e.rank <= 10 || e.isMe);
     return h(
       'div',
       { class: `lb-row${e.isMe ? ' me' : ''}${medal}${pinned ? ' pinned' : ''}` },
       h('span', { class: 'lb-rank' }, e.rank <= 99999 ? String(e.rank) : '99k+'),
-      h('span', { class: 'pc-seal lb-seal', 'data-t': String(T.tier) }, T.zh[0]),
-      h('span', { class: 'lb-who' }, h('span', { class: 'lb-name' }, h('span', { class: 'lb-nm' }, e.name || `${t('playerName')}#${e.tag}`), e.isMe ? h('em', null, '\u00a0', tx('lbYou')) : null), h('span', { class: 'lb-title-t' }, T[i18n.lang])),
+      renderIdentity(e.look, 'S', { title: T }),
+      h('span', { class: 'lb-who' }, h('span', { class: 'lb-name' }, nm, renderBadges(e.look, 'S'), e.isMe ? h('em', null, '\u00a0', tx('lbYou')) : null), h('span', { class: 'lb-title-t' }, T[i18n.lang])),
       h('span', { class: 'lb-score' }, formatNum(e.score), e.verified ? null : h('span', { class: 'lb-unv', title: t('lbUnverified'), 'aria-label': t('lbUnverified') }, '?')),
     );
   };

@@ -18,6 +18,7 @@ import { pop, pressable, nope, popIn } from '../../engine/juice';
 import { langToggle, muteButton, iconButton, ICON } from '../../ui/widgets';
 import { sanitizeName } from '../../../shared/api';
 import { cloud } from '../../core/cloud';
+import { paintIdentity, renderIdentity } from '../../cosmetics/render';
 import { showTransferCode, showRestore, showDeleteAccount } from '../../ui/transfer';
 import { ring } from './collection';
 import { SPARK } from './fx';
@@ -50,7 +51,7 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
   name.addEventListener('keydown', (e) => e.stopPropagation());
 
   const titleRib = h('div', { class: 'pf-title' });
-  const avatarGlyph = h('span', { class: 'pf-glyph' });
+  const avatarGlyph = renderIdentity(p.profile.look, 'L', { title: titleById(p.profile.title) });
   const avatar = h('div', { class: 'pf-avatar', html: ring(lv.into / lv.need, 112, 7, 'url(#pfg)') }, avatarGlyph, h('span', { class: 'pf-lv' }, h('small', null, 'Lv'), String(lv.level)));
   avatar.querySelector('svg')!.insertAdjacentHTML('afterbegin', '<defs><linearGradient id="pfg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff3c0"/><stop offset=".5" stop-color="#f0bf45"/><stop offset="1" stop-color="#b47a1c"/></linearGradient></defs>');
   const xpFill = h('span', { class: 'pf-xp-fill' });
@@ -67,8 +68,7 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
     const T = titleById(p.profile.title);
     titleRib.dataset.t = String(T.tier);
     titleRib.replaceChildren(h('b', null, T.zh), h('span', null, T[i18n.lang]));
-    avatarGlyph.textContent = T.zh[0];
-    avatarGlyph.dataset.t = String(T.tier);
+    paintIdentity(avatarGlyph, p.profile.look, 'L', { title: T });
   };
 
   // ---- stats

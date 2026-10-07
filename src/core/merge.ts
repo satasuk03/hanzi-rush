@@ -4,7 +4,7 @@
  * L = local, S = server. Counters add up (S + (L − B)), bests take the max, collections union,
  * scalars follow whichever side changed.
  */
-import type { SaveDoc, WordStats, Cards, Stats, Daily } from '../../shared/api';
+import type { SaveDoc, WordStats, Cards, Stats, Daily, Look } from '../../shared/api';
 
 type Rec = Record<string, any>;
 
@@ -30,7 +30,7 @@ function scalars(out: Rec, B: Rec, L: Rec, S: Rec, known: readonly string[]) {
 const ADDITIVE_STATS = ['games', 'questions', 'correct', 'perfect', 'pulls', 'coinsEarned', 'coinsSpent'] as const;
 const KNOWN_STATS = [...ADDITIVE_STATS, 'bestCombo', 'maxCoins', 'byRarity'];
 const KNOWN_PROGRESS = ['best', 'words', 'coins', 'xp', 'cards', 'pity', 'stats', 'profile', 'daily'];
-const KNOWN_PROFILE = ['name', 'title', 'seen'];
+const KNOWN_PROFILE = ['name', 'title', 'seen', 'look'];
 const KNOWN_DAILY = ['last', 'streak', 'best', 'total'];
 
 function mergeWords(B: WordStats = {}, L: WordStats = {}, S: WordStats = {}): WordStats {
@@ -63,6 +63,16 @@ function mergeCards(B: Cards = {}, L: Cards = {}, S: Cards = {}): Cards {
     out[k] = [copies, rarity, firsts.length ? Math.min(...firsts) : 0];
   }
   return out;
+}
+
+/** per slot last-writer-wins (`badges` is one unit); a slot cleared on this device stays cleared */
+function mergeLook(B: Rec = {}, L: Rec = {}, S: Rec = {}): Look {
+  const out: Rec = {};
+  for (const k of keysOf(B, L, S)) {
+    const v = lww(B[k], L[k], S[k]);
+    if (v !== undefined) out[k] = clone(v);
+  }
+  return out as Look;
 }
 
 function mergeDaily(B: Rec, L: Rec, S: Rec): Daily {
@@ -139,6 +149,7 @@ export function merge(base: SaveDoc, local: SaveDoc, server: SaveDoc): SaveDoc {
     title: lww(bf.title, lf.title, sf.title) ?? 'novice',
     // union, server order first, then whatever this device added
     seen: [...new Set<string>([...(sf.seen ?? []), ...(lf.seen ?? [])])],
+    look: mergeLook(bf.look, lf.look, sf.look),
   };
   scalars(profile, bf, lf, sf, KNOWN_PROFILE);
   p.profile = profile;

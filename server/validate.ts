@@ -31,6 +31,17 @@ function tuple(x: unknown, what: string, n: number, lastMax?: number): unknown[]
   return x;
 }
 
+/** Shape only (≤16 keys, short strings, ≤8 badges): sanitizeLook() decides what is actually kept. */
+export function validateLook(x: unknown, what: string): void {
+  const l = rec(x, what, 16);
+  for (const [k, v] of Object.entries(l)) {
+    if (k === 'badges') {
+      if (!Array.isArray(v) || v.length > 8) bad(`${what}.badges`);
+      (v as unknown[]).forEach((b) => str(b, `${what}.badges`, 64));
+    } else str(v, `${what}.${k}`, 64);
+  }
+}
+
 /** Shape-only validation of a SaveDoc. Unknown extra keys are allowed (forward compat). */
 export function validateSaveDoc(x: unknown): SaveDoc {
   if (!isObj(x)) return bad('data');
@@ -71,6 +82,7 @@ export function validateSaveDoc(x: unknown): SaveDoc {
   str(pr.title, 'profile.title', 64);
   if (!Array.isArray(pr.seen) || pr.seen.length > 256) bad('profile.seen');
   (pr.seen as unknown[]).forEach((v) => str(v, 'profile.seen', 64));
+  if (pr.look !== undefined) validateLook(pr.look, 'profile.look');
 
   const d = rec(p.daily, 'progress.daily', 64);
   str(d.last, 'daily.last', 16);
