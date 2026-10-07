@@ -16,7 +16,7 @@ import { GAMES, bestKey, type Mode } from '../games/registry';
 import { homeScreen } from './home';
 import type { Reward } from '../core/meta';
 import { t } from '../core/i18n';
-import { notify } from '../ui/notify';
+import { announceTitles } from '../ui/notify';
 import { levelsScreen } from './levels';
 import { cloud } from '../core/cloud';
 import { boardKey, RANKED_GAMES, type RankedGame, type SubmitRunResponse } from '../../shared/api';
@@ -180,7 +180,7 @@ export function resultsScreen(r: RunStats): Screen {
       tl.set(xpFill, { scaleX: 0 });
     }
     tl.to(xpFill, { scaleX: rw.after.into / rw.after.need, duration: 0.6, ease: 'power2.out' });
-    rw.titles.forEach((T, i) => notify({ kicker: t('titleUnlocked'), title: `${T.zh} · ${T[i18n.lang]}`, seal: T.zh[0], tier: T.tier }, 1 + ups * 0.9 + i * 0.5));
+    announceTitles(rw.titles, 1 + ups * 0.9);
   };
 
   const retry = bigButton(tx('retry'), '#5be35b', async (e) => {

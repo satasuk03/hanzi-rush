@@ -1,0 +1,36 @@
+[
+  { "id": "rabbit", "zh": "兔", "en": "Rabbit", "th": "กระต่าย", "rarity": 0, "done": true },
+  { "id": "rat", "zh": "鼠", "en": "Rat", "th": "หนู", "rarity": 0 },
+  { "id": "ox", "zh": "牛", "en": "Ox", "th": "วัว", "rarity": 0 },
+  { "id": "goat", "zh": "羊", "en": "Goat", "th": "แพะ", "rarity": 0 },
+  { "id": "rooster", "zh": "鸡", "en": "Rooster", "th": "ไก่", "rarity": 0 },
+  { "id": "dog", "zh": "狗", "en": "Dog", "th": "สุนัข", "rarity": 0 },
+  { "id": "pig", "zh": "猪", "en": "Pig", "th": "หมู", "rarity": 0 },
+  { "id": "dumpling", "zh": "饺", "en": "Dumpling", "th": "เกี๊ยว", "rarity": 0 },
+  { "id": "tea", "zh": "茶", "en": "Teacup", "th": "ถ้วยชา", "rarity": 0 },
+  { "id": "bamboo", "zh": "竹", "en": "Bamboo", "th": "ไผ่", "rarity": 0 },
+
+  { "id": "snake", "zh": "蛇", "en": "Snake", "th": "งู", "rarity": 1 },
+  { "id": "horse", "zh": "马", "en": "Horse", "th": "ม้า", "rarity": 1 },
+  { "id": "monkey", "zh": "猴", "en": "Monkey", "th": "ลิง", "rarity": 1 },
+  { "id": "panda", "zh": "熊", "en": "Panda", "th": "แพนด้า", "rarity": 1 },
+  { "id": "koi", "zh": "鲤", "en": "Koi", "th": "ปลาคาร์ป", "rarity": 1 },
+  { "id": "crane", "zh": "鹤", "en": "Crane", "th": "นกกระเรียน", "rarity": 1 },
+  { "id": "turtle", "zh": "龟", "en": "Turtle", "th": "เต่า", "rarity": 1 },
+  { "id": "cat", "zh": "猫", "en": "Lucky Cat", "th": "แมวกวัก", "rarity": 1 },
+
+  { "id": "tiger", "zh": "虎", "en": "Tiger", "th": "เสือ", "rarity": 2, "done": true },
+  { "id": "fox", "zh": "狐", "en": "Fox", "th": "จิ้งจอก", "rarity": 2 },
+  { "id": "lion", "zh": "狮", "en": "Lion Dancer", "th": "สิงโตเชิด", "rarity": 2 },
+  { "id": "lantern", "zh": "灯", "en": "Lantern", "th": "โคมไฟ", "rarity": 2 },
+  { "id": "lotus", "zh": "莲", "en": "Lotus", "th": "ดอกบัว", "rarity": 2 },
+  { "id": "brush", "zh": "笔", "en": "Brush Spirit", "th": "วิญญาณพู่กัน", "rarity": 2 },
+
+  { "id": "phoenix", "zh": "凤", "en": "Phoenix", "th": "หงส์เพลิง", "rarity": 3 },
+  { "id": "qilin", "zh": "麒", "en": "Qilin", "th": "ฉีหลิน", "rarity": 3 },
+  { "id": "wealth", "zh": "财", "en": "God of Wealth", "th": "ไฉ่ซิงเอี๊ย", "rarity": 3 },
+  { "id": "jaderabbit", "zh": "玉", "en": "Jade Rabbit", "th": "กระต่ายหยก", "rarity": 3 },
+
+  { "id": "dragon", "zh": "龙", "en": "Dragon", "th": "มังกร", "rarity": 4, "done": true },
+  { "id": "baize", "zh": "泽", "en": "Baize", "th": "ไป๋เจ๋อ", "rarity": 4 }
+]

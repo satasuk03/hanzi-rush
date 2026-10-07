@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <radialGradient id="bg" cx=".5" cy=".4" r=".85">
+      <stop offset="0" stop-color="#e0bdff"/>
+      <stop offset="1" stop-color="#7a2fc4"/>
+    </radialGradient>
+  </defs>
+  <rect width="256" height="256" fill="url(#bg)"/>
+  <g fill="#fff" opacity=".85">
+    <path d="M36 52l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/>
+    <path d="M222 44l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/>
+  </g>
+  <ellipse cx="128" cy="228" rx="70" ry="10" fill="#2a1a3a" opacity=".25"/>
+  <!-- three flame tails behind -->
+  <g stroke="#2a1a3a" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M128 90q-22-22-6-50q10 12 14 22q14-10 6-30q28 18 12 58z" fill="#ffa526"/>
+    <path d="M62 168q-44-4-44-58q16 10 26 18q-6-22 4-38q22 32 22 78z" fill="#ffa526"/>
+    <path d="M194 168q44-4 44-58q-16 10-26 18q6-22-4-38q-22 32-22 78z" fill="#ffa526"/>
+  </g>
+  <g fill="#fff3c0">
+    <path d="M128 84q-10-14-2-28q6 8 8 14q6-6 4-16q12 14 2 30z"/>
+    <path d="M60 156q-24-4-26-34q8 6 14 10q-2-12 2-22q14 20 10 46z"/>
+    <path d="M196 156q24-4 26-34q-8 6-14 10q2-12-2-22q-14 20-10 46z"/>
+  </g>
+  <!-- ears -->
+  <g stroke="#2a1a3a" stroke-width="7" stroke-linejoin="round">
+    <path d="M56 120L52 52L106 96z" fill="#ff8a2a"/>
+    <path d="M200 120L204 52L150 96z" fill="#ff8a2a"/>
+  </g>
+  <path d="M60 104L58 70L88 94z" fill="#ffe0b0"/>
+  <path d="M196 104L198 70L168 94z" fill="#ffe0b0"/>
+  <path d="M52 52L56 82L72 72z" fill="#4a2a3a" stroke="#2a1a3a" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M204 52L200 82L184 72z" fill="#4a2a3a" stroke="#2a1a3a" stroke-width="3" stroke-linejoin="round"/>
+  <!-- head -->
+  <ellipse cx="128" cy="152" rx="80" ry="64" fill="#ff8a2a" stroke="#2a1a3a" stroke-width="7"/>
+  <ellipse cx="84" cy="116" rx="12" ry="20" transform="rotate(26 84 116)" fill="#fff" opacity=".5"/>
+  <!-- white cheeks -->
+  <path transform="translate(0 12) scale(1)" d="M50 166q6-26 34-24q14 6 26 22q-4 26-30 30q-26 2-30-28zM206 166q-6-26-34-24q-14 6-26 22q4 26 30 30q26 2 30-28z" fill="#fff7ec" stroke="#2a1a3a" stroke-width="5" stroke-linejoin="round"/>
+  <ellipse cx="74" cy="172" rx="12" ry="7" fill="#ff9fb0"/>
+  <ellipse cx="182" cy="172" rx="12" ry="7" fill="#ff9fb0"/>
+  <!-- forehead marks -->
+  <path d="M128 92v14M114 98l4 10M142 98l-4 10" stroke="#e0601a" stroke-width="5" stroke-linecap="round"/>
+  <!-- eyes -->
+  <ellipse cx="96" cy="150" rx="11" ry="15" fill="#2a1a3a"/>
+  <circle cx="100" cy="144" r="4.8" fill="#fff"/>
+  <ellipse cx="160" cy="150" rx="11" ry="15" fill="#2a1a3a"/>
+  <circle cx="164" cy="144" r="4.8" fill="#fff"/>
+  <!-- nose + mouth -->
+  <ellipse cx="128" cy="170" rx="8" ry="6" fill="#2a1a3a"/>
+  <path d="M128 176v6M128 182q-10 9-20 1M128 182q10 9 20 1" fill="none" stroke="#2a1a3a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="rotate(-6 180 204)">
+    <rect x="162" y="186" width="36" height="36" rx="6" fill="#c3272d" stroke="#2a1a3a" stroke-width="4"/>
+    <text x="180" y="214" text-anchor="middle" font-family="Kaiti SC, STKaiti, PingFang SC, serif" font-size="26" font-weight="700" fill="#f7ecdc">狐</text>
+  </g>
+</svg>

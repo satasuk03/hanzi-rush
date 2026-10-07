@@ -1,14 +1,14 @@
 /** Daily login pop-up: 7-day reward strip, claim button, streak flame. */
 import gsap from 'gsap';
 import { h, center } from '../core/util';
-import { t, tx, i18n } from '../core/i18n';
+import { t, tx } from '../core/i18n';
 import { claimDaily, dailyStatus, DAILY_REWARDS } from '../core/meta';
 import { audio } from '../engine/audio';
 import { particles } from '../engine/particles';
 import { shake } from '../engine/shake';
 import { pressable, popIn } from '../engine/juice';
 import { ICON } from './widgets';
-import { notify } from './notify';
+import { announceTitles } from './notify';
 
 /** Shows the pop-up when today's reward is unclaimed. `onClaim` fires after the coins are paid. */
 export function maybeShowDaily(onClaim: () => void) {
@@ -46,7 +46,7 @@ export function maybeShowDaily(onClaim: () => void) {
     particles.burst(c.x, c.y, { count: 26, sprite: ['coin', 'star'], speed: [250, 650], size: [16, 28], g: 900 });
     shake(0.3);
     onClaim();
-    r.titles.forEach((tt, i) => notify({ kicker: t('profile'), title: tt[i18n.lang], seal: tt.zh[0], tier: tt.tier }, 0.9 + i * 0.4));
+    announceTitles(r.titles, 0.9, 0.4);
     gsap.to(el, { opacity: 0, duration: 0.3, delay: 0.5, onComplete: () => el.remove() });
   });
 }

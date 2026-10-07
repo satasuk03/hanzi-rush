@@ -4,6 +4,7 @@
  */
 import { store } from './store';
 import { LEVELS } from './data';
+import { TITLE_DEFS, TITLE_FAMILIES, type TitleReq, type TitleStat, type TitleFamily } from '../../shared/titles';
 
 // ------------------------------------------------------------------ level curve
 export interface LevelInfo {
@@ -40,6 +41,7 @@ export interface Title {
   progress: () => number;
   /** visual tier 0..4, reuses rarity colours */
   tier: number;
+  family: TitleFamily;
 }
 
 const owned = () => Object.keys(store.progress.cards).length;
@@ -49,28 +51,87 @@ const ownedIn = (lv: number) => {
   for (const k in store.progress.cards) if (k.startsWith(pre)) n++;
   return n;
 };
-const lvReq = (L: number) => () => Math.min(1, playerLevel().level / L);
-const count = (v: () => number, goal: number) => () => Math.min(1, v() / goal);
-const st = () => store.progress.stats;
+const totalWords = () => LEVELS.reduce((s, L) => s + L.count, 0);
+/** words seen 5+ times and answered right 80%+ of the time */
+const mastered = () => {
+  let n = 0;
+  for (const k in store.progress.words) {
+    const [seen, ok] = store.progress.words[k];
+    if (seen >= 5 && ok / seen >= 0.8) n++;
+  }
+  return n;
+};
+const STAT: Record<TitleStat, () => number> = {
+  perfect: () => store.progress.stats.perfect,
+  bestCombo: () => store.progress.stats.bestCombo,
+  correct: () => store.progress.stats.correct,
+  wrong: () => store.progress.stats.questions - store.progress.stats.correct,
+  games: () => store.progress.stats.games,
+  pulls: () => store.progress.stats.pulls,
+  maxCoins: () => store.progress.stats.maxCoins,
+  legendary: () => store.progress.stats.byRarity[3] + store.progress.stats.byRarity[4],
+  mythic: () => store.progress.stats.byRarity[4],
+};
 
-export const TITLES: Title[] = [
-  { id: 'novice', zh: '初学者', en: 'Novice', th: 'มือใหม่หัดจีน', req: { en: 'Everyone starts here', th: 'ทุกคนเริ่มที่นี่' }, progress: () => 1, tier: 0 },
-  { id: 'inkling', zh: '墨童', en: 'Ink Apprentice', th: 'ศิษย์น้ำหมึก', req: { en: 'Reach level 3', th: 'ถึงเลเวล 3' }, progress: lvReq(3), tier: 0 },
-  { id: 'collector', zh: '藏家', en: 'Collector', th: 'นักสะสม', req: { en: 'Collect 50 words', th: 'สะสมครบ 50 คำ' }, progress: count(owned, 50), tier: 1 },
-  { id: 'scholar', zh: '书生', en: 'Scholar', th: 'บัณฑิตหนุ่ม', req: { en: 'Reach level 5', th: 'ถึงเลเวล 5' }, progress: lvReq(5), tier: 1 },
-  { id: 'sharp', zh: '百发百中', en: 'Sharpshooter', th: 'แม่นเหมือนจับวาง', req: { en: 'Finish a practice run with no mistakes', th: 'จบโหมดฝึกซ้อมโดยไม่ผิดเลย' }, progress: count(() => st().perfect, 1), tier: 1 },
-  { id: 'hsk1', zh: '入门圆满', en: 'HSK 1 Complete', th: 'พิชิต HSK 1', req: { en: 'Collect every HSK 1 word', th: 'สะสมคำ HSK 1 ครบทุกคำ' }, progress: count(() => ownedIn(1), LEVELS[0].count), tier: 2 },
-  { id: 'combo', zh: '连击王', en: 'Combo King', th: 'ราชาคอมโบ', req: { en: 'Hit a ×30 combo', th: 'ทำคอมโบ ×30' }, progress: count(() => st().bestCombo, 30), tier: 2 },
-  { id: 'brush', zh: '笔仙', en: 'Brush Sage', th: 'เซียนพู่กัน', req: { en: 'Reach level 10', th: 'ถึงเลเวล 10' }, progress: lvReq(10), tier: 2 },
-  { id: 'golden', zh: '金手指', en: 'Golden Touch', th: 'มือทอง', req: { en: 'Pull 5 LEGENDARY or better', th: 'เปิดได้ LEGENDARY ขึ้นไป 5 ใบ' }, progress: count(() => st().byRarity[3] + st().byRarity[4], 5), tier: 3 },
-  { id: 'librarian', zh: '藏经阁主', en: 'Keeper of Scrolls', th: 'ผู้พิทักษ์คัมภีร์', req: { en: 'Collect 500 words', th: 'สะสมครบ 500 คำ' }, progress: count(owned, 500), tier: 3 },
-  { id: 'whale', zh: '豪客', en: 'High Roller', th: 'สายเปย์', req: { en: 'Open 200 cards', th: 'เปิดการ์ดครบ 200 ใบ' }, progress: count(() => st().pulls, 200), tier: 3 },
-  { id: 'wealth', zh: '财神爷', en: 'God of Wealth', th: 'เทพเจ้าแห่งโชคลาภ', req: { en: 'Hold 5,000 coins at once', th: 'มีเหรียญพร้อมกัน 5,000' }, progress: count(() => st().maxCoins, 5000), tier: 3 },
-  { id: 'streak7', zh: '恒心', en: 'Steadfast', th: 'ใจเด็ด 7 วัน', req: { en: 'Log in 7 days in a row', th: 'เข้าเล่นติดต่อกัน 7 วัน' }, progress: count(() => store.progress.daily.best, 7), tier: 2 },
-  { id: 'streak30', zh: '持之以恒', en: 'Unwavering', th: 'ไฟไม่มอด', req: { en: 'Log in 30 days in a row', th: 'เข้าเล่นติดต่อกัน 30 วัน' }, progress: count(() => store.progress.daily.best, 30), tier: 3 },
-  { id: 'master', zh: '汉字大师', en: 'Hanzi Master', th: 'ปรมาจารย์อักษร', req: { en: 'Reach level 20', th: 'ถึงเลเวล 20' }, progress: lvReq(20), tier: 4 },
-  { id: 'chosen', zh: '天选之人', en: 'The Chosen One', th: 'ผู้ถูกเลือก', req: { en: 'Pull a MYTHIC card', th: 'เปิดได้การ์ด MYTHIC' }, progress: count(() => st().byRarity[4], 1), tier: 4 },
-];
+const fmt = (n: number) => n.toLocaleString('en-US');
+const STAT_REQ: Record<TitleStat, (n: number) => { en: string; th: string }> = {
+  perfect: (n) => ({ en: n === 1 ? 'Finish a practice run with no mistakes' : `Finish ${n} practice runs with no mistakes`, th: n === 1 ? 'จบโหมดฝึกซ้อมโดยไม่ผิดเลย' : `จบโหมดฝึกซ้อมโดยไม่ผิดเลย ${n} ครั้ง` }),
+  bestCombo: (n) => ({ en: `Hit a ×${n} combo`, th: `ทำคอมโบ ×${n}` }),
+  correct: (n) => ({ en: `Answer ${fmt(n)} questions correctly`, th: `ตอบถูกครบ ${fmt(n)} ข้อ` }),
+  wrong: (n) => ({ en: `Get ${fmt(n)} answers wrong and keep going`, th: `ตอบผิดครบ ${fmt(n)} ข้อ แต่ยังสู้ต่อ` }),
+  games: (n) => ({ en: `Play ${fmt(n)} games`, th: `เล่นครบ ${fmt(n)} เกม` }),
+  pulls: (n) => ({ en: `Open ${fmt(n)} cards`, th: `เปิดการ์ดครบ ${fmt(n)} ใบ` }),
+  maxCoins: (n) => ({ en: `Hold ${fmt(n)} coins at once`, th: `มีเหรียญพร้อมกัน ${fmt(n)}` }),
+  legendary: (n) => ({ en: `Pull ${n} LEGENDARY or better`, th: `เปิดได้ LEGENDARY ขึ้นไป ${n} ใบ` }),
+  mythic: (n) => ({ en: n === 1 ? 'Pull a MYTHIC card' : `Pull ${n} MYTHIC cards`, th: n === 1 ? 'เปิดได้การ์ด MYTHIC' : `เปิดได้การ์ด MYTHIC ${n} ใบ` }),
+};
+
+function reqText(r: TitleReq): { en: string; th: string } {
+  switch (r.k) {
+    case 'none':
+      return { en: 'Everyone starts here', th: 'ทุกคนเริ่มที่นี่' };
+    case 'level':
+      return { en: `Reach level ${r.n}`, th: `ถึงเลเวล ${r.n}` };
+    case 'owned':
+      return { en: `Collect ${fmt(r.n)} words`, th: `สะสมครบ ${fmt(r.n)} คำ` };
+    case 'hsk':
+      return { en: `Collect every HSK ${r.n} word`, th: `สะสมคำ HSK ${r.n} ครบทุกคำ` };
+    case 'all':
+      return { en: 'Collect every word in the game', th: 'สะสมคำศัพท์ครบทุกคำในเกม' };
+    case 'streak':
+      return { en: `Log in ${r.n} days in a row`, th: `เข้าเล่นติดต่อกัน ${r.n} วัน` };
+    case 'mastered':
+      return { en: `Master ${fmt(r.n)} words (seen 5+ times, 80%+ right)`, th: `จำได้แม่น ${fmt(r.n)} คำ (เจอ 5 ครั้งขึ้นไป ตอบถูก 80%+)` };
+    case 'stat':
+      return STAT_REQ[r.key](r.n);
+  }
+}
+
+/** 0..1 progress toward a requirement */
+function progressOf(r: TitleReq): number {
+  const frac = (v: number, goal: number) => Math.min(1, v / goal);
+  switch (r.k) {
+    case 'none':
+      return 1;
+    case 'level':
+      return frac(playerLevel().level, r.n);
+    case 'owned':
+      return frac(owned(), r.n);
+    case 'hsk':
+      return frac(ownedIn(r.n), LEVELS[r.n - 1].count);
+    case 'all':
+      return frac(owned(), totalWords());
+    case 'streak':
+      return frac(store.progress.daily.best, r.n);
+    case 'mastered':
+      return frac(mastered(), r.n);
+    case 'stat':
+      return frac(STAT[r.key](), r.n);
+  }
+}
+
+export { TITLE_FAMILIES };
+export const TITLES: Title[] = TITLE_DEFS.map((d) => ({ id: d.id, zh: d.zh, en: d.en, th: d.th, tier: d.tier, family: d.family, req: reqText(d.req), progress: () => progressOf(d.req) }));
 
 export const titleById = (id: string) => TITLES.find((t) => t.id === id) ?? TITLES[0];
 export const isUnlocked = (t: Title) => t.progress() >= 1;

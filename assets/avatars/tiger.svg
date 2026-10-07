@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <radialGradient id="bg" cx=".5" cy=".38" r=".85">
+      <stop offset="0" stop-color="#e0bdff"/>
+      <stop offset="1" stop-color="#7a2fc4"/>
+    </radialGradient>
+  </defs>
+  <rect width="256" height="256" fill="url(#bg)"/>
+  <!-- sparkles -->
+  <g fill="#fff" opacity=".85">
+    <path d="M36 52l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/>
+    <path d="M222 40l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/>
+  </g>
+  <ellipse cx="128" cy="228" rx="72" ry="10" fill="#2a1a3a" opacity=".25"/>
+  <!-- ears -->
+  <g stroke="#2a1a3a" stroke-width="7">
+    <circle cx="64" cy="84" r="24" fill="#ffa526"/>
+    <circle cx="192" cy="84" r="24" fill="#ffa526"/>
+  </g>
+  <circle cx="64" cy="88" r="11" fill="#ffe0b0"/>
+  <circle cx="192" cy="88" r="11" fill="#ffe0b0"/>
+  <!-- head -->
+  <ellipse cx="128" cy="146" rx="82" ry="72" fill="#ffa526" stroke="#2a1a3a" stroke-width="7"/>
+  <ellipse cx="82" cy="108" rx="13" ry="22" transform="rotate(28 82 108)" fill="#fff" opacity=".45"/>
+  <!-- stripes: 王 on the forehead, side stripes -->
+  <g fill="none" stroke="#2a1a3a" stroke-width="7" stroke-linecap="round">
+    <path d="M108 82h40M114 96h28M108 110h40M128 82v28"/>
+    <path d="M54 136l22 6M52 156l24 3M202 136l-22 6M204 156l-24 3"/>
+  </g>
+  <!-- muzzle -->
+  <ellipse cx="128" cy="176" rx="42" ry="30" fill="#fff3dc" stroke="#2a1a3a" stroke-width="5"/>
+  <ellipse cx="72" cy="170" rx="13" ry="8" fill="#ff7a95" opacity=".85"/>
+  <ellipse cx="184" cy="170" rx="13" ry="8" fill="#ff7a95" opacity=".85"/>
+  <!-- eyes -->
+  <ellipse cx="94" cy="146" rx="11" ry="15" fill="#2a1a3a"/>
+  <circle cx="98" cy="140" r="4.8" fill="#fff"/>
+  <ellipse cx="162" cy="146" rx="11" ry="15" fill="#2a1a3a"/>
+  <circle cx="166" cy="140" r="4.8" fill="#fff"/>
+  <!-- nose + mouth -->
+  <path d="M117 164h22l-11 11z" fill="#ff5f7e" stroke="#2a1a3a" stroke-width="4.5" stroke-linejoin="round"/>
+  <path d="M128 175v8M128 183q-12 11-24 0M128 183q12 11 24 0" fill="none" stroke="#2a1a3a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- seal -->
+  <g transform="rotate(-6 180 204)">
+    <rect x="162" y="186" width="36" height="36" rx="6" fill="#c3272d" stroke="#2a1a3a" stroke-width="4"/>
+    <text x="180" y="214" text-anchor="middle" font-family="Kaiti SC, STKaiti, PingFang SC, serif" font-size="26" font-weight="700" fill="#f7ecdc">虎</text>
+  </g>
+</svg>

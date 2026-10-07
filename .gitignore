@@ -4,6 +4,7 @@ dist
 .wrangler
 .dev.vars
 .e2e-shots/
+assets/avatars/.build/
 *.xcuserstate
 local.properties
 DerivedData

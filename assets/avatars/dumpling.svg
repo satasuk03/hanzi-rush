@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <radialGradient id="bg" cx=".5" cy=".38" r=".85">
+      <stop offset="0" stop-color="#f4effa"/>
+      <stop offset="1" stop-color="#b4adc0"/>
+    </radialGradient>
+  </defs>
+  <rect width="256" height="256" fill="url(#bg)"/>
+  <ellipse cx="128" cy="228" rx="70" ry="10" fill="#2a1a3a" opacity=".25"/>
+  <!-- steam -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 78q-14-12 0-24q14-12 0-24M156 76q-14-12 0-24q14-12 0-24" stroke="#2a1a3a" stroke-width="11"/>
+    <path d="M100 78q-14-12 0-24q14-12 0-24M156 76q-14-12 0-24q14-12 0-24" stroke="#fff" stroke-width="5"/>
+  </g>
+  <!-- body -->
+  <path d="M40 156Q38 92 128 88Q218 92 216 156Q214 206 128 208Q42 206 40 156Z" fill="#fffaf0" stroke="#2a1a3a" stroke-width="7" stroke-linejoin="round"/>
+  <ellipse cx="84" cy="130" rx="12" ry="20" transform="rotate(25 84 130)" fill="#fff" opacity=".5"/>
+  <!-- pleats -->
+  <g fill="none" stroke="#2a1a3a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M66 118q8 10 4 26M88 102q8 12 6 28M112 96q6 12 6 26M144 96q-6 12-6 26M168 102q-8 12-6 28M190 118q-8 10-4 26"/>
+  </g>
+  <!-- face -->
+  <ellipse cx="74" cy="180" rx="14" ry="9" fill="#ff9fb0"/>
+  <ellipse cx="182" cy="180" rx="14" ry="9" fill="#ff9fb0"/>
+  <ellipse cx="97" cy="164" rx="11" ry="15" fill="#2a1a3a"/>
+  <circle cx="101" cy="158" r="4.8" fill="#fff"/>
+  <ellipse cx="159" cy="164" rx="11" ry="15" fill="#2a1a3a"/>
+  <circle cx="163" cy="158" r="4.8" fill="#fff"/>
+  <path d="M112 180q16 14 32 0" fill="#ff7a95" stroke="#2a1a3a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- seal -->
+  <g transform="rotate(-6 180 204)">
+    <rect x="162" y="186" width="36" height="36" rx="6" fill="#c3272d" stroke="#2a1a3a" stroke-width="4"/>
+    <text x="180" y="214" text-anchor="middle" font-family="Kaiti SC, STKaiti, PingFang SC, serif" font-size="26" font-weight="700" fill="#f7ecdc">饺</text>
+  </g>
+</svg>

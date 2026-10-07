@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <radialGradient id="bg" cx=".5" cy=".4" r=".85">
+      <stop offset="0" stop-color="#f4effa"/>
+      <stop offset="1" stop-color="#b4adc0"/>
+    </radialGradient>
+  </defs>
+  <rect width="256" height="256" fill="url(#bg)"/>
+  <ellipse cx="128" cy="228" rx="70" ry="10" fill="#2a1a3a" opacity=".25"/>
+  <!-- ears -->
+  <g stroke="#2a1a3a" stroke-width="7" stroke-linejoin="round">
+    <path d="M52 112q-8-44 18-58q34 8 42 40z" fill="#ff9fb8"/>
+    <path d="M204 112q8-44-18-58q-34 8-42 40z" fill="#ff9fb8"/>
+  </g>
+  <path d="M68 96q-2-22 8-30q16 6 22 22z" fill="#ff7a95"/>
+  <path d="M188 96q2-22-8-30q-16 6-22 22z" fill="#ff7a95"/>
+  <!-- head -->
+  <ellipse cx="128" cy="148" rx="80" ry="68" fill="#ffb3c6" stroke="#2a1a3a" stroke-width="7"/>
+  <ellipse cx="84" cy="108" rx="12" ry="20" transform="rotate(26 84 108)" fill="#fff" opacity=".55"/>
+  <ellipse cx="68" cy="170" rx="14" ry="9" fill="#ff7a95" opacity=".85"/>
+  <ellipse cx="188" cy="170" rx="14" ry="9" fill="#ff7a95" opacity=".85"/>
+  <ellipse cx="94" cy="136" rx="11" ry="15" fill="#2a1a3a"/>
+  <circle cx="98" cy="130" r="4.8" fill="#fff"/>
+  <ellipse cx="162" cy="136" rx="11" ry="15" fill="#2a1a3a"/>
+  <circle cx="166" cy="130" r="4.8" fill="#fff"/>
+  <!-- snout -->
+  <ellipse cx="128" cy="172" rx="36" ry="26" fill="#ff8fab" stroke="#2a1a3a" stroke-width="5"/>
+  <ellipse cx="116" cy="172" rx="5.5" ry="9" fill="#2a1a3a"/>
+  <ellipse cx="140" cy="172" rx="5.5" ry="9" fill="#2a1a3a"/>
+  <path d="M112 202q16 8 32 0" fill="none" stroke="#2a1a3a" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- seal -->
+  <g transform="rotate(-6 180 204)">
+    <rect x="162" y="186" width="36" height="36" rx="6" fill="#c3272d" stroke="#2a1a3a" stroke-width="4"/>
+    <text x="180" y="214" text-anchor="middle" font-family="Kaiti SC, STKaiti, PingFang SC, serif" font-size="26" font-weight="700" fill="#f7ecdc">猪</text>
+  </g>
+</svg>

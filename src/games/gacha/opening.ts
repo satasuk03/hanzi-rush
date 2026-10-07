@@ -9,14 +9,13 @@ import type { LevelMeta } from '../../core/data';
 import { h, center, rand, wait, formatNum } from '../../core/util';
 import { t, tx, i18n } from '../../core/i18n';
 import { RARITIES } from '../../core/rarity';
-import { titleById } from '../../core/meta';
 import { audio, speak } from '../../engine/audio';
 import { particles } from '../../engine/particles';
 import { shake, punch } from '../../engine/shake';
 import { flipper } from '../../engine/flip3d';
 import { pop, pressable, nope, loop, stopLoop, stopAllLoops } from '../../engine/juice';
 import { ICON } from '../../ui/widgets';
-import { notify } from '../../ui/notify';
+import { announceTitles } from '../../ui/notify';
 import { cabinetSVG } from './cabinet';
 import { drawCardBack, drawCardFront, loadCardFonts, CARD_RATIO } from './cardArt';
 import { gcard, type GCard } from './gcard';
@@ -417,13 +416,7 @@ export class Opening {
 
   /** titles earned by this batch (shown once the stage is gone). Level only grows from playing games. */
   private celebrateMeta() {
-    const { titles } = this.o.batch;
-    let d = 0.4;
-    for (const ti of titles) {
-      const T = titleById(ti.id);
-      notify({ kicker: t('titleUnlocked'), title: `${T.zh} · ${T[i18n.lang]}`, seal: T.zh[0], tier: T.tier }, d);
-      d += 0.5;
-    }
+    announceTitles(this.o.batch.titles, 0.4);
   }
 
   private close() {

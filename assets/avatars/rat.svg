@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <radialGradient id="bg" cx=".5" cy=".4" r=".85">
+      <stop offset="0" stop-color="#f4effa"/>
+      <stop offset="1" stop-color="#b4adc0"/>
+    </radialGradient>
+  </defs>
+  <rect width="256" height="256" fill="url(#bg)"/>
+  <ellipse cx="128" cy="228" rx="70" ry="10" fill="#2a1a3a" opacity=".25"/>
+  <!-- ears -->
+  <g stroke="#2a1a3a" stroke-width="7">
+    <circle cx="62" cy="88" r="34" fill="#a08a82"/>
+    <circle cx="194" cy="88" r="34" fill="#a08a82"/>
+  </g>
+  <circle cx="62" cy="90" r="20" fill="#ff9fb0"/>
+  <circle cx="194" cy="90" r="20" fill="#ff9fb0"/>
+  <!-- head -->
+  <ellipse cx="128" cy="150" rx="76" ry="66" fill="#a08a82" stroke="#2a1a3a" stroke-width="7"/>
+  <ellipse cx="86" cy="112" rx="12" ry="20" transform="rotate(26 86 112)" fill="#fff" opacity=".5"/>
+  <!-- muzzle -->
+  <ellipse cx="128" cy="176" rx="38" ry="26" fill="#f1e4da" stroke="#2a1a3a" stroke-width="5"/>
+  <ellipse cx="76" cy="172" rx="13" ry="8" fill="#ff9fb0"/>
+  <ellipse cx="180" cy="172" rx="13" ry="8" fill="#ff9fb0"/>
+  <!-- whiskers -->
+  <g stroke="#2a1a3a" stroke-width="3.5" stroke-linecap="round" fill="none">
+    <path d="M92 176l-34-6M92 184l-32 8M164 176l34-6M164 184l32 8"/>
+  </g>
+  <!-- eyes -->
+  <ellipse cx="97" cy="146" rx="11" ry="15" fill="#2a1a3a"/>
+  <circle cx="101" cy="140" r="4.8" fill="#fff"/>
+  <ellipse cx="159" cy="146" rx="11" ry="15" fill="#2a1a3a"/>
+  <circle cx="163" cy="140" r="4.8" fill="#fff"/>
+  <!-- nose mouth -->
+  <ellipse cx="128" cy="166" rx="9" ry="6.5" fill="#ff7a95" stroke="#2a1a3a" stroke-width="3.5"/>
+  <path d="M128 172v6M128 178q-9 8-18 1M128 178q9 8 18 1" fill="none" stroke="#2a1a3a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="121" y="180" width="14" height="12" rx="3" fill="#ffe27a" stroke="#2a1a3a" stroke-width="3.5"/>
+  <!-- seal -->
+  <g transform="rotate(-6 180 204)">
+    <rect x="162" y="186" width="36" height="36" rx="6" fill="#c3272d" stroke="#2a1a3a" stroke-width="4"/>
+    <text x="180" y="214" text-anchor="middle" font-family="Kaiti SC, STKaiti, PingFang SC, serif" font-size="26" font-weight="700" fill="#f7ecdc">鼠</text>
+  </g>
+</svg>

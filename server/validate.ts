@@ -69,7 +69,7 @@ export function validateSaveDoc(x: unknown): SaveDoc {
   const pr = rec(p.profile, 'progress.profile', 64);
   str(pr.name, 'profile.name', 128);
   str(pr.title, 'profile.title', 64);
-  if (!Array.isArray(pr.seen) || pr.seen.length > 64) bad('profile.seen');
+  if (!Array.isArray(pr.seen) || pr.seen.length > 256) bad('profile.seen');
   (pr.seen as unknown[]).forEach((v) => str(v, 'profile.seen', 64));
 
   const d = rec(p.daily, 'progress.daily', 64);
