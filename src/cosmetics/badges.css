@@ -1,26 +1,31 @@
 /* Badge art, one rule set per item id (shared/cosmetics.ts BADGES). The base 16 px seal and the rarity colours are in
-   identity.css (.id-badge, [data-r]); a badge may override them through [data-b='<id>']. Must read at 16 px. */
-.id-badge[data-b] { box-shadow: inset 0 0 0 1px rgba(247, 236, 220, 0.55); }
+   identity.css (.id-badge, [data-r]); a badge may override them through `.id-badges .id-badge[data-b='<id>']` (identity.css
+   loads after this file, so the extra class is needed). Must read at 16 px.
+   Rarity reads as a progression: COMMON a plain flat seal (no ring), RARE one bright inner ring, EPIC a gradient with a
+   double ring and a gold glyph, LEGENDARY gold with a shine, MYTHIC dark with a glow. Per-id rules set fill and shape;
+   the ring comes from the rarity rule below unless an id overrides it. Rings need a round or rounded-square shape
+   (an inset shadow is cut by clip-path), so only COMMON uses the octagon. */
+.id-badges .id-badge[data-r='1'] { box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, .8); }
+.id-badges .id-badge[data-r='2'] { color: #ffe08a; box-shadow: inset 0 0 0 1px #ffe08a, inset 0 0 0 2px rgba(0, 0, 0, .35), inset 0 0 0 3px rgba(255, 224, 138, .6); }
 /* COMMON */
-.id-badges .id-badge[data-b='badge_fortune'] { box-shadow: inset 0 0 0 1px #f7ecdc, inset 0 0 0 2px #c3272d, inset 0 0 0 3px rgba(247, 236, 220, 0.6); }
 .id-badges .id-badge[data-b='badge_joy'] { border-radius: 3px; background: #e0392f; color: #fff; }
 .id-badges .id-badge[data-b='badge_study'] { background: #1f8a62; color: #effff6; }
-.id-badges .id-badge[data-b='badge_letters'] { border-radius: 2px; background: #efe3cc; color: #1d1530; box-shadow: inset 0 0 0 1px #1d1530, inset 0 0 0 2px #efe3cc; }
-.id-badges .id-badge[data-b='badge_mountain'] { border-radius: 3px; background: #15604a; color: #d9ffe9; box-shadow: inset 0 0 0 1.5px #5fd0a0; }
-.id-badges .id-badge[data-b='badge_moon'] { background: #241a3c; color: #ffe9a0; box-shadow: inset 0 0 0 1px #ffe9a0; }
-.id-badges .id-badge[data-b='badge_fire'] { clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%); border-radius: 0; background: #ee5a14; color: #fff3d0; box-shadow: none; }
+.id-badges .id-badge[data-b='badge_letters'] { border-radius: 2px; background: #6b4a2e; color: #fff3dc; }
+.id-badges .id-badge[data-b='badge_mountain'] { border-radius: 3px; background: #15604a; color: #d9ffe9; }
+.id-badges .id-badge[data-b='badge_moon'] { background: #3b3f9a; color: #ffe9a0; }
+.id-badges .id-badge[data-b='badge_fire'] { clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%); border-radius: 0; background: #ee5a14; color: #fff3d0; }
 .id-badges .id-badge[data-b='badge_wood'] { border-radius: 5px 1px 5px 1px; background: #5b8c2a; color: #f6ffd8; }
 /* RARE */
-.id-badges .id-badge[data-b='badge_courage'] { background: #1a4fb3; color: #eaf3ff; box-shadow: inset 0 0 0 1px #a9cdff, inset 0 0 0 2px #1a4fb3, inset 0 0 0 3px #7fb2ff; }
-.id-badges .id-badge[data-b='badge_wisdom'] { border-radius: 3px; background: #123a86; color: #bfe0ff; box-shadow: inset 0 0 0 1.5px #5aa0ff; }
-.id-badges .id-badge[data-b='badge_spring'] { clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%); border-radius: 0; background: #12a39a; color: #effffd; box-shadow: none; }
-.id-badges .id-badge[data-b='badge_wind'] { background: linear-gradient(135deg, #7fc4ff, #2a6fd6); color: #072a66; box-shadow: inset 0 0 0 1px #eaf6ff; }
-.id-badges .id-badge[data-b='badge_snow'] { background: #f2f8ff; color: #1a4fb3; box-shadow: inset 0 0 0 1.5px #7fb2ff; }
-.id-badges .id-badge[data-b='badge_star'] { border-radius: 3px; background: #0b1b44; color: #9fd0ff; box-shadow: inset 0 0 0 1px #3d8bff, inset 0 0 0 2px #0b1b44, inset 0 0 0 3px #7fb2ff; }
+.id-badges .id-badge[data-b='badge_courage'] { background: #1a4fb3; color: #eaf3ff; }
+.id-badges .id-badge[data-b='badge_wisdom'] { border-radius: 3px; background: #123a86; color: #bfe0ff; }
+.id-badges .id-badge[data-b='badge_spring'] { background: #12a39a; color: #effffd; }
+.id-badges .id-badge[data-b='badge_wind'] { background: linear-gradient(135deg, #7fc4ff, #2a6fd6); color: #072a66; }
+.id-badges .id-badge[data-b='badge_snow'] { background: #e4f1ff; color: #1a4fb3; box-shadow: inset 0 0 0 1.5px #5aa0ff; }
+.id-badges .id-badge[data-b='badge_star'] { border-radius: 3px; background: #0b1b44; color: #9fd0ff; box-shadow: inset 0 0 0 1.5px #7fb2ff; }
 /* EPIC */
-.id-badges .id-badge[data-b='badge_dragon'] { border-radius: 3px; background: linear-gradient(135deg, #8a3fd8, #4a1688); color: #ffe9a0; box-shadow: inset 0 0 0 1px #e0bdff, inset 0 0 0 2px #4a1688, inset 0 0 0 3px #b25cff; }
-.id-badges .id-badge[data-b='badge_phoenix'] { background: linear-gradient(135deg, #e0449a, #7a2bc0); color: #fff0f6; box-shadow: inset 0 0 0 1px #ffd0e6, inset 0 0 0 2px #7a2bc0, inset 0 0 0 3px #ffd0e6; }
-.id-badges .id-badge[data-b='badge_jade'] { clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%); border-radius: 0; background: #b8f0d4; color: #4a1688; box-shadow: none; }
+.id-badges .id-badge[data-b='badge_dragon'] { border-radius: 3px; background: linear-gradient(135deg, #8a3fd8, #4a1688); }
+.id-badges .id-badge[data-b='badge_pearl'] { background: radial-gradient(circle at 35% 30%, #e86ab8, #7a2bc0 70%); color: #fff6d8; }
+.id-badges .id-badge[data-b='badge_jade'] { background: linear-gradient(135deg, #3fbf86, #0b6b4a); }
 /* LEGENDARY */
 .id-badges .id-badge[data-b='badge_gold'] { background: linear-gradient(135deg, #ffe08a, #e0a020 55%, #b47a1c); color: #3a1a00; box-shadow: inset 0 0 0 1px #fff3c4, inset 0 0 0 2px #b47a1c; }
 .id-badges .id-badge[data-b='badge_sage'] { border-radius: 3px; background: linear-gradient(135deg, #ffd45a, #c98a12); color: #2a0f40; box-shadow: inset 0 0 0 1px #fff3c4, inset 0 0 0 2px #7a4a00, inset 0 0 0 3px #ffe08a; }
