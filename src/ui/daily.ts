@@ -10,6 +10,7 @@ import { pressable, popIn } from '../engine/juice';
 import { ICON } from './widgets';
 import { announceTitles, notify } from './notify';
 import { wallet } from '../core/wallet';
+import { JADE_DAILY } from '../../shared/api';
 
 /** Shows the pop-up when today's reward is unclaimed. `onClaim` fires after the coins are paid. */
 export function maybeShowDaily(onClaim: () => void) {
@@ -22,8 +23,14 @@ export function maybeShowDaily(onClaim: () => void) {
       'div',
       { class: `daily-cell ${i === 6 ? 'big' : ''} ${cls}` },
       h('span', {}, `${t('dailyDay')} ${i + 1}`),
-      h('span', { html: i < s.slot ? '✔' : ICON.coin }),
-      h('b', {}, String(c)),
+      i < s.slot
+        ? h('span', { class: 'dc-done', html: '✔' })
+        : h(
+            'span',
+            { class: 'dc-rewards' },
+            h('span', { class: 'dc-row' }, h('span', { html: ICON.coin }), h('b', {}, String(c))),
+            h('span', { class: 'dc-row jade', 'aria-label': t('jade') }, h('span', { html: ICON.jade }), h('b', {}, String(JADE_DAILY[i]))),
+          ),
     );
   });
   const sub = h('p', { class: 'daily-sub' }, h('span', { html: ICON.flame }), `${s.next} `, tx('dailyStreak'));

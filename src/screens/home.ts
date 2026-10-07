@@ -6,7 +6,7 @@ import { app } from '../core/app';
 import { audio, speak } from '../engine/audio';
 import { particles } from '../engine/particles';
 import { shake } from '../engine/shake';
-import { pop, pressable, dropIn, popIn, loop, breathe, bob, nope } from '../engine/juice';
+import { pop, pressable, dropIn, popIn, loop, bob, nope } from '../engine/juice';
 import { langToggle, muteButton, ICON, jadeChip } from '../ui/widgets';
 import { store } from '../core/store';
 import { formatNum } from '../core/util';
@@ -33,16 +33,13 @@ export function homeScreen(): Screen {
   const playable = GAMES.filter((g) => g.load);
   const rest = GAMES.filter((g) => !g.load);
 
-  const playBtns: HTMLElement[] = [];
   const cards = playable.slice(0, 1).map((g) => {
-    const playBtn = h('span', { class: 'play-pill' }, tx('play'), h('span', { class: 'play-arrow' }, '▶'));
-    playBtns.push(playBtn);
     const card = h(
       'button',
-      { class: 'game-card featured', style: `--c:${g.color};--d:${g.dark}` },
+      { class: 'game-card tall', style: `--c:${g.color};--d:${g.dark}` },
       h('span', { class: 'gc-glyph' }, g.glyph),
-      h('span', { class: 'gc-text' }, h('span', { class: 'gc-name' }, tx(g.name)), g.desc ? h('span', { class: 'gc-desc' }, tx(g.desc)) : null),
-      playBtn,
+      h('span', { class: 'gc-name' }, tx(g.name)),
+      g.desc ? h('span', { class: 'gc-desc' }, tx(g.desc)) : null,
     );
     pressable(card, (e) => openGame(card, g, e));
     return card;
@@ -65,7 +62,6 @@ export function homeScreen(): Screen {
       { class: 'game-card mini', style: `--c:${g.color};--d:${g.dark}` },
       h('span', { class: 'gc-glyph' }, g.glyph),
       h('span', { class: 'gc-name' }, tx(g.name)),
-      h('span', { class: 'mini-play' }, '▶'),
       h('span', { class: 'mini-new' }, 'NEW'),
     );
     pressable(card, (e) => openGame(card, g, e));
@@ -89,14 +85,13 @@ export function homeScreen(): Screen {
   });
 
   // vault (gacha) — its own lazy chunk
-  const vaultPill = h('span', { class: 'play-pill gold' }, tx('open'), h('span', { class: 'play-arrow' }, '✦'));
   const vault = h(
     'button',
-    { class: 'game-card featured vault-card' },
+    { class: 'game-card tall vault-card' },
     h('span', { class: 'vc-shine' }),
     h('span', { class: 'gc-glyph vc-glyph' }, '宝'),
-    h('span', { class: 'gc-text' }, h('span', { class: 'gc-name' }, tx('vaultName')), h('span', { class: 'gc-desc' }, tx('vaultDesc'))),
-    vaultPill,
+    h('span', { class: 'gc-name' }, tx('vaultName')),
+    h('span', { class: 'gc-desc' }, tx('vaultDesc')),
     h('span', { class: 'vc-new' }, 'NEW'),
   );
   const openVault = (e: PointerEvent) => {
@@ -110,9 +105,9 @@ export function homeScreen(): Screen {
   };
   pressable(vault, openVault);
 
-  // effort board: compact card with this week's rank (a tap opens the full board)
-  const effortSub = h('span', { class: 'ec-sub' }, tx('effortSub'));
-  const effortCard = h('button', { class: 'effort-card' }, h('span', { class: 'ec-ic', html: ICON.trophy }), h('span', { class: 'ec-text' }, h('span', { class: 'ec-name' }, tx('effortTitle')), effortSub), h('span', { class: 'ec-go' }, '›'));
+  // effort board: small chip under the wallet with this week's rank (a tap opens the full board)
+  const effortRank = h('b', { class: 'ec-rank' }, '#–');
+  const effortCard = h('button', { class: 'effort-chip', 'aria-label': t('effortTitle') }, h('span', { class: 'ec-ic', html: ICON.trophy }), effortRank);
   pressable(effortCard, (e) => {
     audio.unlock();
     audio.pop(1.2);
@@ -125,7 +120,7 @@ export function homeScreen(): Screen {
     try {
       const res = await loadEffort('week', 1);
       if (my !== effortSeq || !res.me) return;
-      effortSub.textContent = `#${formatNum(res.me.rank)} ${t('effortWeekRank')} · ${formatNum(res.me.correct)} ${t('effortUnit')}`;
+      effortRank.textContent = `#${formatNum(res.me.rank)}`;
     } catch {
       /* keep the default subtitle */
     }
@@ -184,14 +179,23 @@ export function homeScreen(): Screen {
     syncStreak();
   });
 
-  const top = h('div', { class: 'topbar' }, chip, streakBadge, h('div', { class: 'spacer' }), muteButton(), langToggle());
+  const shelf = h('div', { class: 'game-shelf' }, ...minis, ...locked);
+  const top = h('div', { class: 'topbar' }, chip, h('div', { class: 'spacer' }), muteButton(), langToggle());
+  const subrow = h('div', { class: 'home-sub' }, effortCard, streakBadge);
   const tagline = h('p', { class: 'tagline' }, tx('tagline'));
   const el = h(
     'div',
     { class: 'screen home' },
     top,
+    subrow,
     h('div', { class: 'home-hero' }, lg.el, tagline, buddy),
-    h('div', { class: 'home-games' }, ...cards, vault, effortCard, h('div', { class: 'locked-grid' }, ...minis, ...locked)),
+    h(
+      'div',
+      { class: 'home-games' },
+      h('div', { class: 'home-duo' }, ...cards, vault),
+      h('div', { class: 'shelf-head' }, tx('moreGames')),
+      shelf,
+    ),
     h('a', { class: 'home-credit', href: 'https://zeze.app/', target: '_blank', rel: 'noopener' }, 'by zeze.app'),
   );
 
@@ -222,7 +226,7 @@ export function homeScreen(): Screen {
       cards.forEach((c, i) => gsap.from(c, { y: 80, opacity: 0, delay: 0.4 + i * 0.1, duration: 0.7, ease: 'back.out(1.6)' }));
       gsap.from(vault, { y: 80, opacity: 0, delay: 0.4 + cards.length * 0.1, duration: 0.7, ease: 'back.out(1.6)' });
       gsap.from(chip, { x: -60, opacity: 0, delay: 0.2, duration: 0.6, ease: 'back.out(2)' });
-      gsap.from(effortCard, { y: 60, opacity: 0, delay: 0.5 + cards.length * 0.1, duration: 0.6, ease: 'back.out(1.6)' });
+      gsap.from(subrow, { x: -40, opacity: 0, delay: 0.3, duration: 0.5, ease: 'back.out(1.6)' });
       popIn([...minis, ...locked], 0.7, 0.07);
       gsap.delayedCall(0.3, () => audio.drum(0, 0.4));
       dailyCall = gsap.delayedCall(1.2, () =>
@@ -234,8 +238,6 @@ export function homeScreen(): Screen {
       // idle loops — registered so leaving the screen resets them cleanly
       lg.tiles.forEach((t, i) => loop(`home:tile${i}`, t, () => gsap.to(t, { y: -6, rotation: i ? 8 : -8, duration: 1.2 + i * 0.2, yoyo: true, repeat: -1, ease: 'sine.inOut', delay: i * 0.3 }), { y: 0, rotation: i ? 6 : -6 }));
       loop('home:buddy', buddy, () => bob(buddy, 10, 1.3), { y: 0 });
-      playBtns.forEach((b, i) => loop(`home:play${i}`, b, () => breathe(b, 0.06, 0.55 + i * 0.07), { scaleX: 1, scaleY: 1 }));
-      loop('home:vault', vaultPill, () => breathe(vaultPill, 0.05, 0.7), { scaleX: 1, scaleY: 1 });
     },
     leave() {
       dailyCall?.kill();

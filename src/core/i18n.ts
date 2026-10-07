@@ -6,6 +6,7 @@ const dict = {
   tagline: { en: 'Learn Chinese. Get the rush.', th: 'เรียนจีนให้มันส์ สะใจทุกคำ' },
   games: { en: 'Games', th: 'เกม' },
   play: { en: 'PLAY', th: 'เล่น' },
+  moreGames: { en: 'More games', th: 'เกมอื่น' },
   comingSoon: { en: 'Coming soon', th: 'เร็วๆ นี้' },
   chooseLevel: { en: 'Choose HSK level', th: 'เลือกระดับ HSK' },
   words: { en: 'words', th: 'คำ' },
