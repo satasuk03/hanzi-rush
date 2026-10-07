@@ -4,6 +4,8 @@
  */
 import { store } from './store';
 import { LEVELS } from './data';
+import { wallet } from './wallet';
+import { itemById } from '../../shared/cosmetics';
 import { TITLE_DEFS, TITLE_FAMILIES, type TitleReq, type TitleStat, type TitleFamily } from '../../shared/titles';
 
 // ------------------------------------------------------------------ level curve
@@ -61,6 +63,13 @@ const mastered = () => {
   }
   return n;
 };
+/** distinct cosmetics in the cached inventory (0 while it is unknown, e.g. offline on a fresh install) */
+const cosmetics = () => {
+  let n = 0;
+  const inv = wallet.inventory;
+  for (const id in inv) if (inv[id] > 0 && itemById(id)) n++;
+  return n;
+};
 const STAT: Record<TitleStat, () => number> = {
   perfect: () => store.progress.stats.perfect,
   bestCombo: () => store.progress.stats.bestCombo,
@@ -102,6 +111,8 @@ function reqText(r: TitleReq): { en: string; th: string } {
       return { en: `Log in ${r.n} days in a row`, th: `เข้าเล่นติดต่อกัน ${r.n} วัน` };
     case 'mastered':
       return { en: `Master ${fmt(r.n)} words (seen 5+ times, 80%+ right)`, th: `จำได้แม่น ${fmt(r.n)} คำ (เจอ 5 ครั้งขึ้นไป ตอบถูก 80%+)` };
+    case 'cosmetics':
+      return { en: `Own ${fmt(r.n)} cosmetics`, th: `สะสมของตกแต่งครบ ${fmt(r.n)} ชิ้น` };
     case 'stat':
       return STAT_REQ[r.key](r.n);
   }
@@ -125,6 +136,8 @@ function progressOf(r: TitleReq): number {
       return frac(store.progress.daily.best, r.n);
     case 'mastered':
       return frac(mastered(), r.n);
+    case 'cosmetics':
+      return frac(cosmetics(), r.n);
     case 'stat':
       return frac(STAT[r.key](), r.n);
   }
