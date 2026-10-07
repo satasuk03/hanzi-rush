@@ -1,0 +1,115 @@
+/* ================================================================== 商店 shop · cosmetic reveals (lazy: ShopScreen, cosmeticReveal) */
+.shop { --c: #e8344e; --lc: #e8344e; }
+.shop[data-box='select'] { --c: #c9d3df; --lc: #9fb0c4; }
+.shop[data-box='supreme'] { --c: #f2c14e; --lc: #f2c14e; }
+
+.jade-pill { color: #7ff0cb; box-shadow: inset 0 0 0 2px rgba(62, 201, 160, .55); }
+
+/* ---- box picker */
+.shop-boxes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 2px 4px 0; }
+.shop-box {
+  position: relative; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 4px 8px; border-radius: 16px;
+  background: linear-gradient(180deg, #3a2450, #221330); color: #f6e5c4;
+  border: 3px solid var(--ink); box-shadow: 0 4px 0 var(--ink), inset 0 0 0 2px rgba(242, 193, 78, .3);
+  transition: transform .2s, box-shadow .2s, filter .2s; filter: saturate(.7) brightness(.85);
+}
+.shop-box.on { filter: none; transform: translateY(-3px); box-shadow: 0 7px 0 var(--ink), inset 0 0 0 2px var(--gold-2), 0 0 18px color-mix(in srgb, var(--gold-2) 45%, transparent); }
+.sb-art { display: block; width: 40px; height: 50px; }
+.sb-svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.sb-zh { font: 400 20px/1 var(--f-brush); color: #f3cf73; }
+.sb-name { font-weight: 800; font-size: 11px; line-height: 1.1; color: #e8d9bd; text-align: center; min-height: 12px; }
+body.lang-th .sb-name { font-weight: 600; }
+.sb-price { display: flex; align-items: center; gap: 3px; font: 400 15px/1 var(--f-display); color: #7ff0cb; }
+
+/* ---- the selected lantern */
+.shop-stage { position: relative; flex: 1; min-height: 90px; display: flex; align-items: center; justify-content: center; padding: 4px 0 10px; }
+.shop-stage .cab-aura { left: 50%; top: 50%; width: min(70%, 40vh); }
+.shop-lantern { position: relative; z-index: 1; height: 100%; max-height: 230px; aspect-ratio: 240 / 300; min-height: 0; }
+.shop-lantern .cab-svg { display: block; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 8px 0 rgba(10, 4, 16, .45)); }
+
+/* ---- panel */
+.shop-panel { gap: 8px; }
+.tier-chip.zero { opacity: .32; filter: saturate(.3); }
+.shop-floor { color: #f3cf73; }
+.shop-floor[hidden] { display: none; }
+.shop-pity { display: flex; flex-direction: column; gap: 4px; }
+.shop-pity-row { display: flex; align-items: center; gap: 8px; padding: 0 10px; }
+.shop-pity-bar { flex: 1; height: 7px; border-radius: 9px; background: rgba(0, 0, 0, .45); overflow: hidden; box-shadow: inset 0 0 0 1px rgba(255, 220, 150, .25); }
+.shop-pity-fill { display: block; height: 100%; transform-origin: left; background: linear-gradient(90deg, #f2b53a, #ffd66b); transition: transform .6s cubic-bezier(.3, 1.4, .5, 1); }
+.shop-pity-n { font: 400 13px/1 var(--f-display); color: #e9d3a4; white-space: nowrap; }
+.shop-buys { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.shop-buy { flex-direction: column; gap: 5px; min-height: 76px; padding: 6px 4px; }
+.shop-buy .open-label { font-size: 22px; -webkit-text-stroke-width: 5px; }
+.shop-buy .open-price { padding: 4px 10px 4px 5px; font-size: 17px; color: #7ff0cb; }
+.shop-buy[data-q='10'] { background: linear-gradient(180deg, #ffcf5e, #e89a12 55%, #b5680a); }
+.shop-buy.off { filter: grayscale(.9) brightness(.7); }
+.shop-buy.off .open-shine { display: none; }
+.shop-buy.is-loading { pointer-events: none; }
+.shop-buy.is-loading .open-label { opacity: .5; }
+.shop-buy.is-loading .open-price { visibility: hidden; }
+.shop-buy.is-loading::after {
+  content: ''; position: absolute; left: 50%; bottom: 12px; width: 18px; height: 18px; margin-left: -9px; border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, .35); border-top-color: #fff; animation: spin .7s linear infinite;
+}
+.shop-note[data-s='off'] { color: #cdbb9e; }
+.shop-note[data-s='poor'] { color: #ff9d9d; }
+.shop-toast { white-space: normal; width: max-content; max-width: calc(100vw - 32px); text-align: center; }
+
+@media (max-height: 700px) {
+  .sb-art { width: 32px; height: 40px; }
+  .shop-buy { min-height: 66px; }
+  .shop-buy .open-label { font-size: 20px; }
+}
+@media (max-width: 370px) {
+  .shop-buy .open-label { font-size: 19px; }
+  .shop-panel .tier-chip.rate { font-size: 10.5px; }
+}
+
+/* ================================================================== cosmetic card face (ceremony) */
+/* the live item over the canvas ensō; --cw is the card width (gcard) */
+.cos-stage { position: absolute; left: 0; right: 0; translate: 0 -50%; z-index: 1; display: grid; place-items: center; pointer-events: none; }
+.ca { display: grid; place-items: center; }
+.cos-stage .pf-glyph { position: relative; width: calc(var(--cw) * .44); height: calc(var(--cw) * .44); font-size: calc(var(--cw) * .26); }
+.cos-stage .pf-glyph.id-fr::after { box-shadow: inset 0 0 0 calc(var(--cw) * .03) var(--fr, #c3272d), inset 0 0 0 calc(var(--cw) * .04) rgba(255, 255, 255, .55); }
+.ca-chip {
+  padding: .35em .8em; border-radius: 99px; background: #fbf3e4; border: 2.5px solid var(--ink);
+  box-shadow: 0 4px 0 var(--ink); max-width: calc(var(--cw) * .8);
+}
+.ca-name { font: 900 18px/1.15 var(--f-body); color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+body.lang-th .ca-name { font-family: var(--f-thai); font-weight: 700; }
+.cos-stage .ca-chip { font-size: calc(var(--cw) * .075); }
+.cos-stage .ca-name { font-size: calc(var(--cw) * .085); }
+.ca-badge .id-badges { margin: 0; }
+.cos-stage .id-badge { width: calc(var(--cw) * .3); height: calc(var(--cw) * .3); font-size: calc(var(--cw) * .2); }
+.ca-unknown .pf-glyph { color: #8d7c99; }
+
+/* single pull: Equip pinned to the card's lower edge */
+.gcard > .cos-equip { position: absolute; left: 50%; bottom: -10px; translate: -50% 0; z-index: 3; }
+.cos-equip {
+  padding: 9px 22px; border-radius: 99px; background: var(--gold-grad); color: var(--ink); border: 3px solid var(--ink);
+  box-shadow: 0 4px 0 var(--ink); font: 400 18px/1 var(--f-display); letter-spacing: .5px; white-space: nowrap;
+}
+body.lang-th .cos-equip { font-family: var(--f-thai); font-weight: 700; }
+.cos-equip.on { background: rgba(20, 10, 30, .6); color: var(--gold-2); box-shadow: inset 0 0 0 2px var(--gold-2); border-color: transparent; }
+
+/* ---- summary tiles */
+.ct { align-items: center; }
+.ct-art { position: absolute; left: 0; right: 0; top: 34%; translate: 0 -50%; display: grid; place-items: center; pointer-events: none; }
+.ct-art .pf-glyph { position: relative; width: 56cqw; height: 56cqw; font-size: 32cqw; box-shadow: inset 0 0 0 2px #c3272d, 0 3px 8px rgba(0, 0, 0, .35); }
+.ct-art .pf-glyph.id-img { box-shadow: 0 3px 8px rgba(0, 0, 0, .35); }
+.ct-art .pf-glyph.id-fr::after { box-shadow: inset 0 0 0 4cqw var(--fr, #c3272d), inset 0 0 0 5.5cqw rgba(255, 255, 255, .55); }
+.ct-art .ca-chip { font-size: 10cqw; border-width: 1.5px; box-shadow: 0 2px 0 var(--ink); max-width: 86cqw; }
+.ct-art .ca-name { font-size: 12cqw; }
+.ct-art .id-badge { width: 34cqw; height: 34cqw; font-size: 23cqw; }
+.ct-name {
+  position: absolute; left: 4cqw; right: 4cqw; top: 64%; text-align: center; font-weight: 900; font-size: 10.5cqw; line-height: 1.1;
+  color: var(--ink2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+body.lang-th .ct-name { font-weight: 700; }
+.ct-eq {
+  position: absolute; left: 50%; bottom: calc(17cqw + 4cqw); translate: -50% 0; padding: 2cqw 6cqw; border-radius: 99px;
+  font: 400 9.5cqw/1 var(--f-display); background: var(--gold-grad); color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); white-space: nowrap;
+}
+body.lang-th .ct-eq { font-family: var(--f-thai); font-weight: 700; }
+.ct-eq.on { background: #2f9e6e; color: #fff; padding: 2cqw 9cqw; }
+.ct .mc-x { right: auto; left: 6cqw; top: 6cqw; bottom: auto; font-size: 10cqw; }

@@ -574,6 +574,109 @@ export function drawCardFront(cv: HTMLCanvasElement, width: number, word: Word, 
   return cv;
 }
 
+export interface CosmeticFace {
+  /** seeds the procedural noise (the item id) */
+  key: string;
+  /** the item's Chinese name */
+  zh: string;
+  /** its name in the current language */
+  name: string;
+  /** slot label, e.g. "FRAME" */
+  kind: string;
+}
+
+/**
+ * A cosmetic item's card face: the same paper, frame and tier pill as a word card. The upper ensō is left empty: the
+ * ceremony lays the live item (avatar image, frame ring, CSS name effect, badge) over it, at COSMETIC_STAGE.
+ */
+export function drawCosmeticFront(cv: HTMLCanvasElement, width: number, rarity: number, f: CosmeticFace, lang: Lang) {
+  const { w, h } = cardSize(width);
+  const c = sizeCanvas(cv, w, h);
+  const a = ART[rarity];
+  const u = w / 320;
+  const R = rng(hash(f.key));
+  const rad = 18 * u;
+  c.save();
+  rr(c, 0, 0, w, h, rad);
+  c.clip();
+  paper(c, w, h, a, R, u);
+  const cc = a.foil ? (a.dark ? 'rgba(246,225,164,.35)' : 'rgba(170,110,30,.35)') : `rgba(${a.enso},.18)`;
+  if (rarity >= 1) {
+    cloud(c, 48 * u, 74 * u, 0.9 * u, 1, cc, 1.3 * u);
+    cloud(c, w - 48 * u, 74 * u, 0.9 * u, -1, cc, 1.3 * u);
+  }
+  const cx = w / 2;
+  const cy = h * COSMETIC_STAGE.y;
+  const er = w * 0.3;
+  const g = c.createRadialGradient(cx, cy, 0, cx, cy, er * 1.4);
+  g.addColorStop(0, a.dark ? 'rgba(255,200,110,.3)' : `rgba(${a.wash},.16)`);
+  g.addColorStop(1, a.dark ? 'rgba(255,200,110,0)' : `rgba(${a.wash},0)`);
+  c.fillStyle = g;
+  c.fillRect(0, 0, w, h);
+  enso(c, cx, cy, er, a.enso, R, 20 * u);
+  if (rarity >= 2) {
+    for (let i = 0; i < 10 + rarity * 4; i++) {
+      const ang = R() * TAU;
+      const d = er * (1.08 + R() * 0.45);
+      c.fillStyle = `rgba(${a.enso},${0.2 + R() * 0.45})`;
+      c.beginPath();
+      c.arc(cx + Math.cos(ang) * d, cy + Math.sin(ang) * d, (0.6 + R() * 2.2) * u, 0, TAU);
+      c.fill();
+    }
+  }
+
+  // header: tier pill
+  const top = (a.foil ? 35 : 31) * u;
+  c.textAlign = 'center';
+  tierPill(c, rarity, cx, top, u);
+
+  // name block: brush zh, a brush line, the translated name
+  const zy = cy + er + 52 * u;
+  let fill: string | CanvasGradient = a.ink;
+  const zs = fit(c, f.zh, (s) => `${s}px ${F_BRUSH}`, 58 * u, w * 0.74);
+  if (a.dark) {
+    const gg = c.createLinearGradient(0, zy - zs / 2, 0, zy + zs / 2);
+    gg.addColorStop(0, '#fff7d6');
+    gg.addColorStop(0.5, '#f2c75a');
+    gg.addColorStop(1, '#b0761c');
+    fill = gg;
+  }
+  c.fillStyle = fill;
+  c.fillText(f.zh, cx, zy);
+  brushLine(c, cx - w * 0.2, cx + w * 0.2, zy + zs * 0.62, a.enso, R, 3.2 * u);
+  const font = lang === 'th' ? F_SERIF_TH : F_LATIN_SERIF;
+  c.font = `700 ${20 * u}px ${font}`;
+  const lines = wrap(c, f.name, w - 70 * u, lang === 'th' ? 'th' : 'latin').slice(0, 2);
+  c.fillStyle = a.accent;
+  lines.forEach((line, i) => c.fillText(line, cx, zy + zs * 0.62 + 26 * u + i * 25 * u));
+  // the slot, under the name (the card's foot is kept clear for the Equip button)
+  const ky = zy + zs * 0.62 + 26 * u + lines.length * 25 * u - 2 * u;
+  c.fillStyle = a.sub;
+  if (lang === 'th') {
+    c.font = `600 ${12 * u}px ${F_SERIF_TH}`;
+    c.fillText(f.kind, cx, ky);
+  } else {
+    c.font = `${11 * u}px ${F_LABEL}`;
+    spaced(c, f.kind.toUpperCase(), cx, ky, 0.8 * u);
+  }
+
+  // seal
+  const ss = 26 * u;
+  const sealCv = seal(RARITIES[rarity].zh, ss, R, String(rarity));
+  c.save();
+  c.translate(cx + er * 0.8, cy + er * 0.72);
+  c.rotate(-0.05);
+  c.globalAlpha = 0.92;
+  c.drawImage(sealCv, -ss / 2, -(ss * 1.78) / 2, ss, ss * 1.78);
+  c.restore();
+  c.restore();
+  frame(c, w, h, a, rad, u);
+  return cv;
+}
+
+/** where the live item sits on a cosmetic face: centre height and disc size, as fractions of the card */
+export const COSMETIC_STAGE = { y: 0.335, d: 0.44 };
+
 export function drawCardBack(cv: HTMLCanvasElement, width: number) {
   const { w, h } = cardSize(width);
   const c = sizeCanvas(cv, w, h);

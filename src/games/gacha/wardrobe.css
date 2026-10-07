@@ -1,0 +1,51 @@
+/* Wardrobe screen (src/games/gacha/wardrobe.ts). The titles list reuses .ti-* from vault.css. */
+.wardrobe { color: var(--paper); }
+.wd-card { padding: 20px 16px 16px; gap: 10px; }
+.wd-av { position: relative; width: 84px; height: 84px; margin: 4px 0 2px; }
+.wd-name { display: flex; align-items: center; justify-content: center; max-width: 100%; min-width: 0; }
+.wd-name-t { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #fff7e6; font: 400 26px/1.2 var(--f-display); }
+body.lang-th .wd-name-t { font-family: var(--f-thai); font-weight: 700; }
+.wd-badges { display: inline-flex; flex: none; }
+.wd-badges .id-badges { margin-left: 8px; gap: 5px; }
+.wd-badges .id-badge { width: 22px; height: 22px; font-size: 15px; }
+
+.wd-tabs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.wd-tab {
+  display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 7px 2px 6px; border-radius: 14px; min-width: 0;
+  background: rgba(255, 255, 255, .06); box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .1); color: #e8dcc6; transition: background .2s;
+}
+.wd-tab b { font: 400 20px/1 var(--f-brush); }
+.wd-tab small { font-size: 10.5px; font-weight: 900; opacity: .8; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+body.lang-th .wd-tab small { font-weight: 600; }
+.wd-tab.on { background: var(--gold-grad); color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink), 0 4px 0 var(--ink); }
+.wd-tab.on small { opacity: 1; }
+
+.wd-body { display: flex; flex-direction: column; gap: 10px; }
+.wd-note { margin: 0; font-weight: 700; font-size: 12.5px; line-height: 1.35; color: #cdbb9e; text-align: center; }
+body.lang-th .wd-note { font-weight: 500; }
+.wd-empty { padding: 10px 12px; border-radius: 14px; background: rgba(242, 193, 78, .1); box-shadow: inset 0 0 0 1.5px rgba(242, 193, 78, .35); color: #f3e3c3; }
+.wd-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.wd-tile {
+  position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 4px 8px; border-radius: 16px; min-width: 0;
+  background: linear-gradient(170deg, color-mix(in srgb, var(--rc) 20%, transparent), rgba(255, 255, 255, .04));
+  box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--rc) 60%, transparent);
+}
+.wd-tile.on { box-shadow: inset 0 0 0 2.5px var(--gold-2), 0 0 16px rgba(242, 193, 78, .35); }
+.wd-tile.lock { background: rgba(255, 255, 255, .03); box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--rc) 35%, transparent); }
+.wd-v { display: grid; place-items: center; height: 56px; width: 100%; position: relative; }
+.wd-v .pc-seal { position: relative; flex: none; }
+.wd-v-av img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; background: #f7ecdc; pointer-events: none; }
+.wd-v-fx { font: 400 17px/1 var(--f-display); color: #fff7e6; white-space: nowrap; }
+body.lang-th .wd-v-fx { font-family: var(--f-thai); font-weight: 700; }
+.wd-v-none i { font: 400 34px/1 var(--f-display); font-style: normal; color: #a893b5; }
+.wd-v .id-badges { margin: 0; }
+.wd-v .id-badge { width: 40px; height: 40px; font-size: 26px; }
+.wd-tile.lock .wd-v { filter: brightness(0) opacity(.5); }
+.wd-tile.lock .wd-v-fx { color: #fff; }
+.wd-t-name { font-weight: 800; font-size: 11.5px; line-height: 1.15; color: #f6ead2; text-align: center; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+body.lang-th .wd-t-name { font-weight: 600; }
+.wd-tile.lock .wd-t-name { color: var(--rc); filter: brightness(1.1); opacity: .85; }
+.wd-copies { position: absolute; left: 6px; top: 5px; font: 400 11px/1 var(--f-display); color: #d9c8a6; }
+.wd-check { position: absolute; right: 5px; top: 4px; width: 17px; height: 17px; border-radius: 50%; display: grid; place-items: center; font: 900 11px/1 var(--f-body); background: var(--gold-grad); color: var(--ink); }
+.wd-lock { position: absolute; right: 4px; top: 3px; width: 16px; height: 16px; }
+.wd-lock svg { width: 100%; height: 100%; display: block; }

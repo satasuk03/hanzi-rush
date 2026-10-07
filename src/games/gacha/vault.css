@@ -566,3 +566,12 @@ body.lang-th .pf-cbtn { font-family: var(--f-thai); font-weight: 600; font-size:
 .pf-cloud[data-s='signedOut'] .pf-cloud-dot { background: #ff4757; }
 .pf-cbtn.wide { grid-column: 1 / -1; }
 .pf-cbtn.danger { background: none; box-shadow: none; color: #cdbb9e; font-size: 13px; text-decoration: underline; }
+
+/* Customize button on the profile card */
+.pf-custom {
+  display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 16px; border-radius: 16px;
+  background: var(--gold-grad); color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink), 0 4px 0 var(--ink);
+  font: 400 19px/1 var(--f-display);
+}
+body.lang-th .pf-custom { font-family: var(--f-thai); font-weight: 700; font-size: 17px; }
+.pf-custom b { font: 400 24px/1 var(--f-brush); color: #8a1220; }

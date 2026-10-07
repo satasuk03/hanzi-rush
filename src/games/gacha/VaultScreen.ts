@@ -15,10 +15,11 @@ import { audio } from '../../engine/audio';
 import { particles } from '../../engine/particles';
 import { shake } from '../../engine/shake';
 import { pop, pressable, nope, popIn, loop } from '../../engine/juice';
-import { langToggle, muteButton, iconButton, ICON } from '../../ui/widgets';
-import { cabinetSVG, HALLS } from './cabinet';
+import { langToggle, muteButton, iconButton, ICON, shopChip } from '../../ui/widgets';
+import { cabinetMachine, cabinetSVG, HALLS } from './cabinet';
 import { HARD_PITY, MAX_QTY, priceFor, pull, ownedCount } from './gacha';
 import { Opening } from './opening';
+import { wordBatch, wordPrice } from './wordReveal';
 
 let lastIdx = 0;
 let lastQty = 1;
@@ -42,7 +43,8 @@ export function create(): Screen {
     muteButton(),
     langToggle(),
   );
-  const head = h('div', { class: 'vault-head' }, h('h1', { class: 'vault-title' }, '宝库'), h('span', { class: 'vault-sub' }, tx('vaultTitle')));
+  const shop = shopChip((e) => import('./ShopScreen').then((m) => app.go(() => m.create('vault'), { x: e.clientX, y: e.clientY })));
+  const head = h('div', { class: 'vault-head' }, h('h1', { class: 'vault-title' }, '宝库'), h('span', { class: 'vault-sub' }, tx('vaultTitle')), shop);
 
   // ---- carousel
   const slides = LEVELS.map((L) => {
@@ -220,14 +222,15 @@ export function create(): Screen {
     await new Promise((r) => setTimeout(r, 650));
     new Opening({
       host: el,
-      level: L,
-      batch,
+      machine: cabinetMachine(L),
+      batch: wordBatch(L, batch),
       qty,
+      price: wordPrice(L, qty),
       again: () => {
         const b = pull(L.n, words, qty);
         setCoins(false);
         syncLevel();
-        return b;
+        return b ? wordBatch(L, b) : 'poor';
       },
       onClose: () => {
         busy = false;

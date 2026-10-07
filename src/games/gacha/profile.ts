@@ -1,27 +1,24 @@
 /**
- * Profile: a lacquer name card with the player's level ring, XP, equipped title (称号)
- * and lifetime stats, plus the title list. Unlocked titles can be equipped; locked ones show progress.
+ * Profile: a lacquer name card with the player's level ring, XP, equipped title (称号) and lifetime stats, plus cloud
+ * save. Titles and cosmetics are changed in the Wardrobe (wardrobe.ts), opened from the Customize button.
  */
 import gsap from 'gsap';
 import './vault.css';
 import type { Screen } from '../../core/app';
 import { app } from '../../core/app';
-import { h, center, formatNum } from '../../core/util';
+import { h, formatNum } from '../../core/util';
 import { t, tx, i18n, type Key } from '../../core/i18n';
 import { store } from '../../core/store';
 import { RARITIES } from '../../core/rarity';
-import { TITLES, TITLE_FAMILIES, isUnlocked, playerLevel, titleById, type Title } from '../../core/meta';
+import { playerLevel, titleById } from '../../core/meta';
 import { audio } from '../../engine/audio';
-import { particles } from '../../engine/particles';
-import { shake } from '../../engine/shake';
-import { pop, pressable, nope, popIn } from '../../engine/juice';
+import { pressable, popIn } from '../../engine/juice';
 import { langToggle, muteButton, iconButton, ICON } from '../../ui/widgets';
 import { sanitizeName } from '../../../shared/api';
 import { cloud } from '../../core/cloud';
-import { paintIdentity, renderIdentity } from '../../cosmetics/render';
+import { applyNameFx, paintIdentity, renderIdentity } from '../../cosmetics/render';
 import { showTransferCode, showRestore, showDeleteAccount } from '../../ui/transfer';
 import { ring } from './collection';
-import { SPARK } from './fx';
 
 export function create(from: 'home' | 'vault' = 'vault'): Screen {
   const back = () => (from === 'home' ? import('../../screens/home').then((m) => m.homeScreen()) : import('./VaultScreen').then((m) => m.create()));
@@ -39,6 +36,7 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
   const lv = playerLevel();
   const name = h('input', { class: 'pf-name', maxlength: '16', spellcheck: 'false', 'aria-label': 'Name' }) as HTMLInputElement;
   name.value = p.profile.name;
+  applyNameFx(name, p.profile.look, true);
   name.placeholder = t('playerName');
   name.addEventListener('change', () => {
     p.profile.name = sanitizeName(name.value);
@@ -129,79 +127,26 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
   const offStatus = cloud.on('status', syncCloud);
   const offApplied = cloud.on('applied', () => (name.value = p.profile.name));
 
-  // ---- titles
-  const list = h('div', { class: 'ti-list' });
-  const renderTitles = () => {
-    const row = (T: Title) => {
-      const un = isUnlocked(T);
-      const on = p.profile.title === T.id;
-      const prog = T.progress();
-      const b = h(
-        'button',
-        { class: `ti ${un ? 'un' : 'lock'} ${on ? 'on' : ''}`, 'data-t': String(T.tier), style: `--rc:${RARITIES[T.tier].color}` },
-        h('span', { class: 'ti-seal' }, T.zh[0]),
-        h('span', { class: 'ti-text' }, h('span', { class: 'ti-name' }, h('b', null, T.zh), ` ${T[i18n.lang]}`), h('span', { class: 'ti-req' }, T.req[i18n.lang])),
-        un
-          ? h('span', { class: 'ti-state' }, tx(on ? 'equipped' : 'equip'))
-          : h('span', { class: 'ti-prog' }, h('span', { class: 'ti-prog-fill', style: `transform:scaleX(${prog})` }), h('span', { class: 'ti-lock', html: ICON.lock })),
-      );
-      pressable(b, () => {
-        if (!un) {
-          audio.tick(true);
-          nope(b);
-          return;
-        }
-        if (on) return pop(b, 0.4);
-        p.profile.title = T.id;
-        store.save();
-        audio.reveal(Math.min(T.tier, 2));
-        syncTitle();
-        renderTitles();
-        pop(titleRib, 1.2);
-        const c = center(titleRib);
-        particles.burst(c.x, c.y, { count: 18 + T.tier * 6, sprite: SPARK[T.tier], speed: [200, 520], size: [12, 22], g: 300, drag: 2, life: [0.4, 0.8], add: true, stretch: true });
-        particles.ring(c.x, c.y, 120, RARITIES[T.tier].color, 8);
-        shake(0.2 + T.tier * 0.05);
-      });
-      return b;
-    };
-
-    // "next up": the closest locked titles that have been started
-    const next = TITLES.map((T) => ({ T, f: T.progress() }))
-      .filter((x) => x.f > 0 && x.f < 1)
-      .sort((a, b) => b.f - a.f)
-      .slice(0, 3)
-      .map((x) => x.T);
-    const section = (zh: string, name: string, items: Title[], count?: string) =>
-      h('div', { class: 'ti-fam' }, h('h4', { class: 'ti-fam-h' }, h('b', null, zh), ` ${name}`, count ? h('small', null, ` ${count}`) : null), ...items.map(row));
-    list.replaceChildren(
-      ...(next.length ? [section('近', t('titlesNextUp'), next)] : []),
-      ...TITLE_FAMILIES.map((F) => {
-        const items = TITLES.filter((T) => T.family === F.id);
-        return section(F.zh, F[i18n.lang], items, `${items.filter(isUnlocked).length}/${items.length}`);
-      }),
-    );
-  };
-
-  const unlockedN = TITLES.filter(isUnlocked).length;
+  const custom = h('button', { class: 'pf-custom' }, h('b', null, '衣'), tx('wdCustomize'));
+  pressable(custom, (e) => {
+    audio.pop(1.2);
+    import('./wardrobe').then((m) => app.go(() => m.create(from), { x: e.clientX, y: e.clientY }));
+  });
   const el = h(
     'div',
     { class: 'screen profile' },
     top,
     h('div', { class: 'pf-scroll' },
       card,
+      custom,
       rarRow,
       stats,
       cloud.status === 'off' ? null : h('h3', { class: 'pf-h' }, h('span', { class: 'pf-h-zh' }, '云'), tx('cloudSave')),
-      cloud.status === 'off' ? null : cloudBox,
-      h('h3', { class: 'pf-h' }, h('span', { class: 'pf-h-zh' }, '称号'), tx('titles'), h('small', null, ` ${unlockedN}/${TITLES.length}`)),
-      list),
+      cloud.status === 'off' ? null : cloudBox),
   );
   syncTitle();
-  renderTitles();
   const offLang = i18n.onChange(() => {
     syncTitle();
-    renderTitles();
     name.placeholder = t('playerName');
   });
 
@@ -214,7 +159,6 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
       const fill = avatar.querySelector<SVGCircleElement>('.ring-fill')!;
       gsap.from(fill, { attr: { 'stroke-dashoffset': Number(fill.getAttribute('stroke-dasharray')) }, duration: 1.3, delay: 0.25, ease: 'power3.out' });
       popIn([...stats.children], 0.2, 0.04);
-      gsap.from(list.children, { x: -30, opacity: 0, duration: 0.4, stagger: 0.03, delay: 0.3, ease: 'back.out(2)' });
     },
     leave() {
       offLang();

@@ -1,0 +1,13 @@
+/* Ceremony additions that are not word-card specific (the stage itself is in vault.css). */
+
+/* "again" while a network purchase is in flight: the price tag becomes a spinner, Done waits */
+.vs-again.is-pending { filter: saturate(.6) brightness(.9); }
+.vs-again.is-pending .price-tag { visibility: hidden; }
+.vs-again.is-pending::after {
+  content: ''; position: absolute; left: 50%; bottom: 9px; width: 16px; height: 16px; margin-left: -8px; border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, .35); border-top-color: #fff; animation: spin .7s linear infinite;
+}
+.vs-done.is-off { filter: grayscale(.8) brightness(.7); }
+@media (prefers-reduced-motion: reduce) {
+  .vs-again.is-pending::after { animation-duration: 2s; }
+}

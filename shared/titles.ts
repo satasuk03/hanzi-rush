@@ -23,6 +23,8 @@ export type TitleReq =
   | { k: 'streak'; n: number }
   /** words seen at least 5 times and answered right at least 80% of the time */
   | { k: 'mastered'; n: number }
+  /** distinct cosmetics owned (the cached inventory; 0 while it is unknown) */
+  | { k: 'cosmetics'; n: number }
   | { k: 'stat'; key: TitleStat; n: number };
 
 export type TitleFamily = 'level' | 'collection' | 'hsk' | 'skill' | 'streak' | 'fortune';
@@ -109,5 +111,6 @@ export const TITLE_DEFS: TitleDef[] = [
   T('chosen', '天选之人', 'The Chosen One', 'ผู้ถูกเลือก', 4, 'fortune', { k: 'stat', key: 'mythic', n: 1 }),
   T('mythichunter', '神话猎人', 'Mythic Hunter', 'นักล่าตำนาน', 4, 'fortune', { k: 'stat', key: 'mythic', n: 3 }),
   T('wealth', '财神爷', 'God of Wealth', 'เทพเจ้าแห่งโชคลาภ', 3, 'fortune', { k: 'stat', key: 'maxCoins', n: 5000 }),
+  T('wardrobe', '衣橱', 'Wardrobe', 'ตู้เสื้อผ้าล้น', 2, 'fortune', { k: 'cosmetics', n: 25 }),
   T('rich', '富翁', 'Tycoon', 'เศรษฐีเหรียญ', 4, 'fortune', { k: 'stat', key: 'maxCoins', n: 20000 }),
 ];
