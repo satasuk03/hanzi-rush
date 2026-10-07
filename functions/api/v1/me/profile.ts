@@ -1,6 +1,7 @@
 import { LIMITS, sanitizeLook, sanitizeName, sanitizeTitle, type PatchProfileResponse } from '../../../../shared/api';
 import { authenticate } from '../../../../server/auth';
 import { lookField } from '../../../../server/boards';
+import { ownedLook } from '../../../../server/inventory';
 import type { Env } from '../../../../server/env';
 import { byMethod, fail, isObj, json, readJson } from '../../../../server/http';
 import { validateLook } from '../../../../server/validate';
@@ -27,7 +28,7 @@ export const onRequest: PagesFunction<Env> = async (ctx) =>
       }
       if (value.look !== undefined) {
         validateLook(value.look, 'look');
-        sets.push(`look = ?${args.push(JSON.stringify(sanitizeLook(value.look)))}`);
+        sets.push(`look = ?${args.push(JSON.stringify(await ownedLook(ctx.env.DB, me.id, sanitizeLook(value.look))))}`);
       }
       if (!sets.length) return fail('bad_request', 'Nothing to update');
 

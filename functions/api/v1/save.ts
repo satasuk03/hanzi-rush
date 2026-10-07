@@ -1,5 +1,6 @@
 import { LIMITS, PUSH_IDS_KEPT, SAVE_FORMAT, sanitizeLook, sanitizeName, sanitizeTitle, type PutSaveResponse, type SaveConflictBody, type SaveDoc, type SaveResponse } from '../../../shared/api';
 import { authenticate } from '../../../server/auth';
+import { ownedLook } from '../../../server/inventory';
 import type { Ctx, Env } from '../../../server/env';
 import { byMethod, fail, json, readJson } from '../../../server/http';
 import { minInterval } from '../../../server/ratelimit';
@@ -34,7 +35,7 @@ export const onRequest: PagesFunction<Env> = async (ctx) =>
       const title = sanitizeTitle(req.data.progress.profile.title);
       // saves from builds that predate looks carry none: keep what the player has
       const rawLook = req.data.progress.profile.look;
-      const look = rawLook === undefined ? null : JSON.stringify(sanitizeLook(rawLook));
+      const look = rawLook === undefined ? null : JSON.stringify(await ownedLook(db, me.id, sanitizeLook(rawLook)));
       // No row yet: insert at revision 1 regardless of baseRevision (also recovers a client whose server row vanished).
       const write = cur
         ? db
