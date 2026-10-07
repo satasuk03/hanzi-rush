@@ -11,8 +11,8 @@ Read this first, then [`docs/cosmetics-shop.md`](docs/cosmetics-shop.md) (the fu
 | B | Foundations: `shared/cosmetics.ts`, `players.look`, `PATCH /me/profile`, identity renderer | **Merged and deployed** (`2e51900`) |
 | B2 | Jade wallet: ledger, starter grant, daily claim, client cache, Jade in the home chip | **Merged and deployed** (`c1dd915`) |
 | — | Home screen rework, Jade shown in the Daily login cells | **Merged and deployed** (`ed4dbef`) |
-| C | Wardrobe, Shop, box pulls, frames / name effects / badges content | **Next** |
-| C2 | Player card modal | Not started (its DB columns already exist in `0004_look.sql`) |
+| C | Box pulls (server), 46 frames / name effects / badges, Shop, lantern ceremony, Wardrobe | Server and art **merged and deployed** (PRs #13, #14, migration `0006`); UI in PR `feat/c-shop-ui` |
+| C2 | Player card modal | **Next**. Not started (its DB columns already exist in `0004_look.sql`) |
 | D | Depth: animated effects, set boxes, Exchange, deals | Not started |
 | E | Prestige: grants, background and banner slots, real money | Not started |
 
@@ -29,6 +29,10 @@ Nobody has checked these by hand yet:
 - [ ] A new account receives the 100 Jade starter grant exactly once.
 - [ ] Thai and Chinese copy of the 33 new titles (`shared/titles.ts`), read by a native speaker.
 - [ ] The 5 weak avatars (crane, horse, lion dancer, baize, qilin): redraw or accept. Edit `assets/avatars/<id>.svg`, then `node scripts/build-avatars.mjs <id>`.
+- [ ] Phase C on a real phone (iOS Safari and Android WebView): the lantern ceremony, the Shop at 360 px, the Wardrobe, name effects with `background-clip: text` on Thai, the frames at 34 px on the board.
+- [ ] A first real pull in production: starter Jade buys one Standard box, the result shows on the leaderboard from another device.
+- [ ] Native-speaker copy for the launch cosmetics. Thai: แหวนหยก (frame_jadering, maybe วงหยก), หมึกจีน, น้ำเงินคราม, อานุภาพมังกร, จี้หยก, บัณฑิต, เทพเจ้า, ประกายหงส์, plus the Shop and Wardrobe strings in `src/core/i18n.ts`. Chinese: 灯穗, 木叶, 明珠.
+- [ ] Old native builds against the new server: unknown frame / name-effect / badge ids must render the default.
 
 ## Decisions already made (do not reopen without a reason)
 
@@ -52,46 +56,26 @@ Nobody has checked these by hand yet:
 | Jade ledger: `applyJade`, `spendJade`, `claimStarter`, `claimDaily`, `walletState` | `server/wallet.ts`; routes `functions/api/v1/wallet.ts`, `functions/api/v1/jade/*` |
 | Wallet types (`WalletResponse`, `JadeDaily*`) | `shared/api.ts`, section "Jade" |
 | Client wallet cache | `src/core/wallet.ts` |
-| Tables `inventory`, `banner_pity` (created, not yet used) | `migrations/0005_jade.sql` |
+| Box pulls: `pull`, `rollPull` (pure), concurrency design in the file header | `server/shop.ts`; route `functions/api/v1/shop/pull.ts`; tables `shop_pulls`, `inventory`, `banner_pity`, `players.pull_seq` / `pull_at` (`0005`, `0006`) |
+| Ownership check of a look (`ownedLook`), used by `PATCH /me/profile` and `PUT /save` | `server/inventory.ts` |
+| Client: Jade, inventory and pity cache, `wallet.pull()`, `newPullRef()` | `src/core/wallet.ts` |
+| Client: equip / unequip from the cached inventory | `src/cosmetics/equip.ts` |
+| Launch art: one item block per slot (`FRAMES`, `NAME_FX`, `BADGES`), CSS per slot, dev previews | `shared/cosmetics.ts`, `src/cosmetics/{frames,namefx,badges}.css`, `dev/preview-*.html` (`npx vite`) |
+| Generic opening ceremony: `Reveal`, `RevealBatch`, `Machine`, `Price`, async `again` | `src/games/gacha/opening.ts`; word cards `wordReveal.ts` + `cabinet.ts`; cosmetics `cosmeticReveal.ts` + `lantern.ts` |
+| Shop screen and purchase flow (one ref per purchase, kept across retries) | `src/games/gacha/ShopScreen.ts`, `shopBuy.ts` |
+| Wardrobe screen (tabs, preview card, titles list) | `src/games/gacha/wardrobe.ts` |
 | `players.pub`, `card`, `card_public` (for C2, not yet used) | `migrations/0004_look.sql` |
-| Wallet tests | `node scripts/test-wallet.mjs` (run from the repo root) |
+| Tests (run from the repo root) | `npm run test:wallet`, `npm run test:shop`, `npm run test:ownership` |
 
-## Phase C: First release (next)
+## Phase C: First release (done, 2026-10-07)
 
-Goal: players can buy boxes with Jade, get cosmetics, equip them, and others see them on the boards.
+Players buy boxes with Jade, get cosmetics, equip them, and others see them on the boards. Built in parallel tracks (art ×3, server, UI) on separate worktrees, then one Opus review pass on the art; that split worked well.
 
-1. **Content first (can run in parallel with the code).** Only the 30 avatars exist; the catalog has placeholders for the other slots. Launch needs about **14 frames, 12 name colours/effects, 20 badges**, weighted toward COMMON/RARE.
-   - Frames: SVG/CSS layers that read at 34 px (bold shapes, no fine detail), drawn outside the avatar circle so they never hide the face.
-   - Name effects: CSS only (solid colour, gradient, shimmer, glow); readable on the dark board; animated only for the top 10 rows and "me"; respect `prefers-reduced-motion`.
-   - Badges: a glyph on a seal shape, matching `.pc-seal`; must read at 16 px.
-   - Add them to `ITEMS` in `shared/cosmetics.ts` with rarity and names (zh/en/th). Follow `assets/avatars/STYLE.md` for the look. The avatar work was done by 3 parallel subagents plus one fix pass; that worked well.
-2. **`POST /shop/pull { box, qty, ref }`**: roll on the server with `BOXES` rates and per-box pity (`banner_pity`), unowned items weighted ×3, ×10 guarantees EPIC+, spend with `spendJade`, write `inventory`, refund duplicates by rarity, all in **one D1 batch**; replaying a `ref` returns the original result. Extend `scripts/test-wallet.mjs` (or add a test) for pity, the ×10 guarantee, refunds and replay.
-3. **Inventory in the wallet response** (or `GET /inventory`), cached client-side in `src/core/wallet.ts`.
-4. **Server checks equipped items against `inventory`** in `PATCH /me/profile` and on run submission, so nobody can wear what they do not own.
-5. **Shop screen** (from Home and the Vault): the three boxes, prices, the drop rates and pity shown on screen (needed later for store rules), ×1 and ×10, "connect to buy" when offline.
-6. **Opening ceremony**: `src/games/gacha/opening.ts` is tied to word cards and `LevelMeta`. Put it behind a `Reveal` interface and add a cosmetic box machine (the Deng Deng lantern fits).
-7. **Wardrobe screen** from a "Customize" button on Profile: tabs Frame / Avatar / Name / Badges / Title, live preview card at the top (reuse `renderIdentity`), locked items as silhouettes with rarity. Move the titles list here from Profile.
-8. Titles `wardrobe` (own 25 cosmetics) and `fullset`: needs an inventory requirement kind in `shared/titles.ts` and the evaluator in `src/core/meta.ts`.
-
-Acceptance: `npx tsc --noEmit`, `npm run typecheck:api`, `npm run build` and the wallet tests pass; a fresh account can pull with its starter Jade, equip the result, and see it on the leaderboard from another account.
-
-### Phase C work plan (decided 2026-10-07)
-
-Step 0 (shared base) is on `main`: the pull contract (`ShopPullRequest`, `ShopDrop`, `ShopPullResponse`, error `insufficient_jade` = 402, `LIMITS.pullMinIntervalSec`) in `shared/api.ts`; `FRAMES`, `NAME_FX`, `BADGES` blocks and `gachaPool()` in `shared/cosmetics.ts`; per-slot art CSS in `src/cosmetics/frames.css`, `namefx.css`, `badges.css`.
-
-Decisions: frames stay a **ring drawn over the edge of the avatar disc** (`.id-fr::after`), no board-row relayout. The `fullset` title moves to phase D (it needs sets); `wardrobe` ships in C.
-
-| Track | Branch | Owns | Must not touch |
-| --- | --- | --- | --- |
-| Art: frames | `feat/c-frames` | `FRAMES` in `shared/cosmetics.ts`, `src/cosmetics/frames.css` | every other file |
-| Art: name effects | `feat/c-namefx` | `NAME_FX`, `src/cosmetics/namefx.css` | every other file |
-| Art: badges | `feat/c-badges` | `BADGES`, `src/cosmetics/badges.css` | every other file |
-| Server | `feat/c-shop-server` | `server/shop.ts`, `functions/api/v1/shop/*`, **migration `0006`** (stored pull results), ownership checks in `functions/api/v1/me/profile.ts` and `functions/api/v1/save.ts`, inventory in `src/core/wallet.ts`, tests | `shared/cosmetics.ts` item blocks, `src/screens`, `src/games` |
-| UI | `feat/c-shop-ui` | `Reveal` refactor of `src/games/gacha/opening.ts`, Shop and Wardrobe screens, titles list moved off Profile, `wardrobe` title (new inventory requirement kind) | `server/`, `functions/`, `migrations/`, the item blocks |
-
-Merge order: server (carries the migration), then the three art branches, then UI. Each art branch replaces its own `_ph_` placeholders and their CSS.
-
-Pull design points the server track must settle: replay needs the stored result (0006); `spendJade` writes one ledger row, so the pull needs its own batch (spend, refund rows, inventory, pity, result); two concurrent pulls with different refs must not both consume the same pity count.
+- **Content:** 14 frames (5/4/3/1/1), 12 name effects (4/3/3/1/1), 20 badges (8/6/3/2/1), plus the 30 avatars: 76 gacha items. Frames are a ring drawn over the edge of the avatar disc (decided; no board-row relayout). Board rows are **light** and the profile card (`.pf-card`) is **dark**: name effects have stops for both. Badge rarity reads as a progression: COMMON flat, RARE one ring, EPIC gold double ring, LEGENDARY/MYTHIC shine/glow.
+- **`POST /shop/pull`:** server roll, per-box hard pity, ×10 EPIC+ guarantee, unowned ×3, duplicate refunds by rarity, one D1 batch; a replayed ref returns the stored result. A forced pity roll keeps the box odds above the floor (Standard pity: LEGENDARY 80% / MYTHIC 20%). An empty rarity pool resolves upward first.
+- **Ownership:** `PATCH /me/profile` and `PUT /save` keep only owned items in `players.look`; the save itself is never rejected. (`POST /runs` never wrote the look.)
+- **Shop** from Home and the Vault (chip with a dot until the first box), lantern ceremony, **Wardrobe** from Profile → Customize, titles list moved there, title `wardrobe` (requirement kind `cosmetics`).
+- `fullset` moved to phase D (it needs sets).
 
 ## Phase C2: Player card modal
 
@@ -102,6 +86,7 @@ Pull design points the server track must settle: replay needs the stored result 
 
 ## Phase D: Depth
 
+- [ ] Title `fullset` (complete a cosmetic set): needs `set` on items and a requirement kind.
 - [ ] Animated name effects beyond the launch set, themed set boxes and set bonuses, the Exchange (spend duplicates to craft a chosen item) if players ask, rotating direct-buy deals.
 - [ ] Title Jade rewards (0 / 5 / 10 / 20 / 40 by tier) once the server can verify title requirements; decide how retroactive unlocks are paid.
 
@@ -116,7 +101,9 @@ Pull design points the server track must settle: replay needs the stored result 
 - `server/validate.ts`: any failure rejects the whole save push. `progress.pity` must stay a single int; box pity has its own table.
 - `src/core/merge.ts`: unknown keys fall back to last-writer-wins; register new save keys.
 - Old native app builds will meet new item ids: render the default, never crash. Ship a native build that uses new ids only after the server has them.
-- `opening.ts` is coupled to word cards.
+- Anything that writes `inventory` outside `server/shop.ts` (grants, Exchange) **must bump `players.pull_seq` in the same batch**, or a concurrent pull can label a duplicate as new.
+- Per-badge CSS must be scoped `.id-badges .id-badge[data-b=…]` (identity.css loads after badges.css). Never rename or remove a released item id: players own it.
+- The `wardrobe` title is evaluated live from the cached inventory, so on a new device it shows locked until the first wallet refresh.
 
 ## Working notes
 
