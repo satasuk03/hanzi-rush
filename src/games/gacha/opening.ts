@@ -1,36 +1,86 @@
 /**
- * The opening ceremony. The vault rattles, its door seam glows and steps up through the
- * rarity colours to the best card in the batch, then the doors burst open. Each card flies
+ * The opening ceremony. The machine rattles, its seam glows and steps up through the
+ * rarity colours to the best item in the batch, then it bursts open. Each card flies
  * out face down with an aura that hints at its rarity; a tap flips it (WebGL) and the
  * reveal FX scale with rarity. Ends with a summary grid, or action buttons for a single pull.
+ *
+ * What is revealed is behind `Reveal` (word cards: wordReveal.ts, cosmetics: cosmeticReveal.ts), the art that opens
+ * is a `Machine` (the HSK cabinet, the lantern box), and "again" may be a network call (async, can fail).
  */
 import gsap from 'gsap';
-import type { LevelMeta } from '../../core/data';
+import './opening.css';
 import { h, center, rand, wait, formatNum } from '../../core/util';
 import { t, tx, i18n } from '../../core/i18n';
 import { RARITIES } from '../../core/rarity';
-import { audio, speak } from '../../engine/audio';
+import type { Title } from '../../core/meta';
+import { audio } from '../../engine/audio';
 import { particles } from '../../engine/particles';
 import { shake, punch } from '../../engine/shake';
 import { flipper } from '../../engine/flip3d';
 import { pop, pressable, nope, loop, stopLoop, stopAllLoops } from '../../engine/juice';
-import { ICON } from '../../ui/widgets';
 import { announceTitles } from '../../ui/notify';
-import { cabinetSVG } from './cabinet';
-import { drawCardBack, drawCardFront, loadCardFonts, CARD_RATIO } from './cardArt';
+import { drawCardBack, CARD_RATIO } from './cardArt';
 import { gcard, type GCard } from './gcard';
-import { miniCard } from './mini';
-import { openCardView } from './cardView';
 import { SPARK, flash, revealFx } from './fx';
-import { priceFor, type PullBatch } from './gacha';
+
+/** one thing that comes out of the machine */
+export interface Reveal {
+  /** 0 COMMON .. 4 MYTHIC */
+  rarity: number;
+  isNew: boolean;
+  /** copies owned after this one */
+  copies: number;
+  /** currency given back for a duplicate (0 = none) */
+  refund: number;
+  /** paints the face-up card for the current language (a canvas, so the WebGL flip can texture it) */
+  paint(width: number): HTMLCanvasElement;
+  /** live DOM laid over the face once it is up (art the canvas cannot draw: CSS effects, images) */
+  layer?(): HTMLElement | null;
+  /** the face just landed (e.g. pronounce the word) */
+  shown?(): void;
+  /** single pull only: an extra control under the rarity line (e.g. Equip) */
+  extra?(): HTMLElement | null;
+  /** its tile in the summary grid (handles its own taps) */
+  tile(): HTMLElement;
+}
+
+export interface RevealBatch {
+  reveals: Reveal[];
+  /** highest rarity in the batch (how far the seam light climbs) */
+  best: number;
+  /** what is being opened, shown in the counter and the summary ("HSK 3", "漆匣") */
+  label: string;
+  /** resolves when the faces can be painted (fonts, images); the ceremony waits for it after the burst */
+  ready?: Promise<unknown>;
+  /** titles earned by this batch, toasted when the stage goes away */
+  titles?: Title[];
+}
+
+/** the art that bursts open. Its SVG root has class `cab-svg`; `.cab-seam` flashes on each escalation step. */
+export interface Machine {
+  svg: string;
+  /** the parts fly open (the light, particles and sound around it are the ceremony's) */
+  open(svg: Element): void;
+}
+
+/** price of one more batch of the same size, for the "again" button and the refund tags */
+export interface Price {
+  /** currency icon (SVG markup) */
+  icon: string;
+  amount: number;
+}
+
+/** 'poor' = cannot afford (the button greys out); 'failed' = anything else (the caller explains, the stage stays) */
+export type AgainResult = RevealBatch | 'poor' | 'failed';
 
 export interface OpeningOpts {
   host: HTMLElement;
-  level: LevelMeta;
-  batch: PullBatch;
+  machine: Machine;
+  batch: RevealBatch;
   qty: number;
-  /** try another pull of the same size; null = can't afford */
-  again: () => PullBatch | null;
+  price: Price;
+  /** another batch of the same size. May be async (a network purchase): the button shows a pending state meanwhile. */
+  again: () => AgainResult | Promise<AgainResult>;
   onClose: () => void;
 }
 
@@ -73,7 +123,7 @@ export class Opening {
     this.o = o;
     this.cardW = Math.round(Math.min(innerWidth * 0.7, 320, (innerHeight - 250) / CARD_RATIO));
     this.rays = h('div', { class: 'vs-rays' });
-    this.cab = h('div', { class: 'vs-cab', html: cabinetSVG(o.level) });
+    this.cab = h('div', { class: 'vs-cab', html: o.machine.svg });
     this.cab.append(h('span', { class: 'vs-flare' }, h('i')));
     this.slot = h('div', { class: 'vs-slot' });
     this.info = h('div', { class: 'vs-info' });
@@ -96,7 +146,7 @@ export class Opening {
     );
     pressable(this.skipBtn, () => this.skip());
     this.el.addEventListener('pointerup', (e) => {
-      if ((e.target as HTMLElement).closest('.vs-skip, .vs-sum, .vs-actions')) return;
+      if ((e.target as HTMLElement).closest('.vs-skip, .vs-sum, .vs-actions, .vs-extra')) return;
       this.tap();
     });
     this.offLang = i18n.onChange(() => this.repaint?.());
@@ -168,9 +218,9 @@ export class Opening {
   private async run() {
     const { batch } = this.o;
     const best = batch.best;
-    const fonts = loadCardFonts(batch.pulls.map((p) => p.word));
+    const fonts = batch.ready;
     this.setTone(0, 0.3);
-    this.counter.textContent = `HSK ${this.o.level.n} · ×${batch.pulls.length}`;
+    this.counter.textContent = `${batch.label} · ×${batch.reveals.length}`;
     gsap.fromTo(this.el, { opacity: 0 }, { opacity: 1, duration: 0.3 });
     gsap.fromTo(this.cab, { scale: 0.35, y: 160, opacity: 0 }, { scale: 1, y: 0, opacity: 1, duration: 0.75, ease: 'back.out(1.5)' });
     gsap.from(this.el.querySelector('.vs-top')!, { y: -60, opacity: 0, duration: 0.5, delay: 0.2, ease: 'back.out(2)' });
@@ -214,7 +264,7 @@ export class Opening {
     gsap.to(this.cab, { y: innerHeight * 0.6, scale: 0.6, opacity: 0, duration: 0.6, ease: 'power3.in' });
     await fonts;
 
-    const n = batch.pulls.length;
+    const n = batch.reveals.length;
     for (let i = 0; i < n && !this.skipped && !this.closed; i++) await this.revealOne(i);
     if (this.closed) return;
     if (n > 1 || this.skipped) this.summary();
@@ -222,16 +272,11 @@ export class Opening {
 
   private burst(best: number) {
     const svg = this.cab.querySelector('.cab-svg')!;
-    const q = (s: string) => svg.querySelector(s)!;
     const c = center(svg);
     const R = RARITIES[best];
     this.setTone(best, 1);
     gsap.set(this.cab, { y: 0, scale: 1 });
-    gsap.to(q('.cab-lock'), { y: 90, rotation: 50, opacity: 0, duration: 0.55, ease: 'power2.in', svgOrigin: '120 178' });
-    gsap.to(q('.cab-seam'), { opacity: 0, duration: 0.15 });
-    gsap.fromTo(q('.cab-door-l'), { scaleX: 1, skewY: 0 }, { scaleX: -0.42, skewY: -8, duration: 0.55, ease: 'back.out(1.1)', svgOrigin: '52 177' });
-    gsap.fromTo(q('.cab-door-r'), { scaleX: 1, skewY: 0 }, { scaleX: -0.42, skewY: 8, duration: 0.55, ease: 'back.out(1.1)', svgOrigin: '188 177' });
-    gsap.fromTo(q('.cab-inside'), { opacity: 0.6 }, { opacity: 1, duration: 0.2 });
+    this.o.machine.open(svg);
     gsap.fromTo(this.rays, { scale: 0.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.7, ease: 'power3.out' });
     this.el.classList.add('open');
     flash('#ffffff', 0.9, 0.6);
@@ -249,10 +294,10 @@ export class Opening {
   }
 
   private async revealOne(i: number) {
-    const { batch, level } = this.o;
-    const p = batch.pulls[i];
+    const { batch } = this.o;
+    const p = batch.reveals[i];
     const R = RARITIES[p.rarity];
-    const n = batch.pulls.length;
+    const n = batch.reveals.length;
     this.counter.textContent = `${i + 1} / ${n}`;
     pop(this.counter, 0.5);
     this.info.replaceChildren();
@@ -292,23 +337,34 @@ export class Opening {
     }
     stopLoop('vault:breathe');
 
-    const front = drawCardFront(document.createElement('canvas'), this.cardW, p.word, p.rarity, { level: level.n, no: p.no }, i18n.lang);
+    const front = p.paint(this.cardW);
     card.flatten();
     card.el.classList.add('busy');
     await flipper.flip({ el: card.body, front, back: card.cv, from: Math.PI, to: Math.PI * 2, duration: 0.72, hop: 50, onMid: () => audio.pop(0.8) });
     if (this.closed) return;
     card.setFace(front, true);
     card.el.classList.remove('busy', 'down');
-    this.repaint = () => card.setFace(drawCardFront(document.createElement('canvas'), this.cardW, p.word, p.rarity, { level: level.n, no: p.no }, i18n.lang), true);
+    this.repaint = () => card.setFace(p.paint(this.cardW), true);
+    const layer = p.layer?.();
+    if (layer) {
+      card.body.insertBefore(layer, card.cv.nextSibling);
+      gsap.fromTo(layer, { scale: 0.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: 'back.out(2.2)' });
+    }
     const r = card.body.getBoundingClientRect();
     revealFx(p.rarity, r.left + r.width / 2, r.top + r.height / 2, r.width, r.height, R.color);
     audio.reveal(p.rarity);
-    speak(p.word.h);
+    p.shown?.();
     pop(card.el, 0.35);
     this.showInfo(i);
 
     if (n === 1 && !this.skipped) {
       gsap.to(this.skipBtn, { opacity: 0, duration: 0.2, onComplete: () => (this.skipBtn.style.visibility = 'hidden') });
+      const extra = p.extra?.();
+      if (extra) {
+        // pinned to the card's lower edge, so the info lines and the buttons keep their room
+        card.el.append(extra);
+        gsap.from(extra, { scale: 0, duration: 0.45, delay: 0.3, ease: 'back.out(2)' });
+      }
       this.actions(this.info);
       return;
     }
@@ -324,12 +380,12 @@ export class Opening {
   }
 
   private showInfo(i: number) {
-    const p = this.o.batch.pulls[i];
+    const p = this.o.batch.reveals[i];
     const R = RARITIES[p.rarity];
     const name = h('span', { class: 'vs-rn' }, ...[...R.name].map((ch) => h('i', null, ch)));
     const tag = p.isNew
       ? h('span', { class: 'vs-tag new' }, tx('newCard'), '!')
-      : h('span', { class: 'vs-tag dup' }, tx('duplicate'), ` ×${p.copies}`, p.refund ? h('span', { class: 'vs-refund' }, ` +${p.refund}`, h('span', { class: 'mini-coin', html: ICON.coin })) : null);
+      : h('span', { class: 'vs-tag dup' }, tx('duplicate'), ` ×${p.copies}`, p.refund ? h('span', { class: 'vs-refund' }, ` +${p.refund}`, h('span', { class: 'mini-coin', html: this.o.price.icon })) : null);
     const row = h('div', { class: 'vs-rarity', 'data-r': String(p.rarity) }, h('span', { class: 'vs-rz' }, R.zh), name, tag);
     this.info.append(row);
     gsap.fromTo(name.children, { scale: 2.4, opacity: 0, y: -10 }, { scale: 1, opacity: 1, y: 0, duration: 0.4, stagger: 0.035, ease: 'back.out(3)' });
@@ -339,24 +395,41 @@ export class Opening {
 
   /** again / done buttons */
   private actions(parent: HTMLElement) {
-    const { qty, level } = this.o;
-    const price = priceFor(level.n, qty);
-    const again = h('button', { class: 'big-btn vs-again', style: '--c:#e8344e' }, h('span', { class: 'big-btn-label' }, tx('again'), ` ×${qty}`), h('span', { class: 'price-tag' }, h('span', { class: 'mini-coin', html: ICON.coin }), formatNum(price)));
+    const { qty, price } = this.o;
+    const again = h('button', { class: 'big-btn vs-again', style: '--c:#e8344e' }, h('span', { class: 'big-btn-label' }, tx('again'), ` ×${qty}`), h('span', { class: 'price-tag' }, h('span', { class: 'mini-coin', html: price.icon }), formatNum(price.amount)));
     const done = h('button', { class: 'big-btn vs-done', style: '--c:#6b5a78' }, h('span', { class: 'big-btn-label' }, tx('done')));
-    pressable(again, () => {
-      const next = this.o.again();
-      if (!next) {
+    let pending = false;
+    const settle = (next: AgainResult) => {
+      if (typeof next === 'string') {
         audio.wrong();
         nope(again);
-        again.classList.add('poor');
+        if (next === 'poor') again.classList.add('poor');
         return;
       }
       audio.pop(1.2);
       this.celebrateMeta();
       this.destroy();
       new Opening({ ...this.o, batch: next });
+    };
+    pressable(again, () => {
+      if (pending || this.closed) return;
+      const next = this.o.again();
+      if (!(next instanceof Promise)) return settle(next);
+      // a purchase over the network: hold the stage, block Done, and let the caller explain a failure
+      pending = true;
+      again.classList.add('is-pending');
+      done.classList.add('is-off');
+      next
+        .catch((): AgainResult => 'failed')
+        .then((r) => {
+          pending = false;
+          again.classList.remove('is-pending');
+          done.classList.remove('is-off');
+          if (!this.closed) settle(r);
+        });
     });
     pressable(done, () => {
+      if (pending) return nope(done);
       audio.pop(0.9);
       this.close();
     });
@@ -366,7 +439,7 @@ export class Opening {
   }
 
   private summary() {
-    const { batch, level } = this.o;
+    const { batch } = this.o;
     this.hideHint();
     this.info.replaceChildren();
     this.card?.destroy();
@@ -377,22 +450,15 @@ export class Opening {
     const best = batch.best;
     this.setTone(best, 0.5);
 
-    const counts = RARITIES.map((R) => batch.pulls.filter((p) => p.rarity === R.i).length);
+    const counts = RARITIES.map((R) => batch.reveals.filter((p) => p.rarity === R.i).length);
     const chips = RARITIES.filter((R) => counts[R.i]).reverse().map((R) => h('span', { class: 'tier-chip', 'data-r': String(R.i) }, R.name, h('b', null, `×${counts[R.i]}`)));
-    const fresh = batch.pulls.filter((p) => p.isNew).length;
-    const tiles = batch.pulls.map((p) => {
-      const m = miniCard(p.word, p.rarity, { isNew: p.isNew, copies: p.copies, meaning: true });
-      pressable(m, () => {
-        audio.pop(1.1);
-        openCardView({ word: p.word, level: level.n, no: p.no, rarity: p.rarity, copies: p.copies });
-      });
-      return m;
-    });
-    const refund = batch.pulls.reduce((s, p) => s + p.refund, 0);
+    const fresh = batch.reveals.filter((p) => p.isNew).length;
+    const tiles = batch.reveals.map((p) => p.tile());
+    const refund = batch.reveals.reduce((s, p) => s + p.refund, 0);
     this.sum.replaceChildren(
       h('div', { class: 'sum-head' },
         h('h2', { class: 'sum-title' }, '收获'),
-        h('div', { class: 'sum-sub' }, `HSK ${level.n} · ${fresh} `, tx('newCard'), refund ? ` · +${refund}` : '', refund ? h('span', { class: 'mini-coin', html: ICON.coin }) : null),
+        h('div', { class: 'sum-sub' }, `${batch.label} · ${fresh} `, tx('newCard'), refund ? ` · +${refund}` : '', refund ? h('span', { class: 'mini-coin', html: this.o.price.icon }) : null),
         h('div', { class: 'sum-chips' }, ...chips)),
       h('div', { class: 'sum-grid' }, ...tiles),
     );
@@ -400,7 +466,7 @@ export class Opening {
     this.actions(this.sum);
     gsap.fromTo(this.sum.querySelector('.sum-head'), { y: -40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: 'back.out(2)' });
     tiles.forEach((m, i) => {
-      const r = batch.pulls[i].rarity;
+      const r = batch.reveals[i].rarity;
       gsap.fromTo(m, { scale: 0, rotation: rand(-20, 20) }, {
         scale: 1, rotation: 0, duration: 0.6, delay: 0.15 + i * 0.07, ease: 'elastic.out(1.1,0.55)',
         onStart: () => {
@@ -416,7 +482,7 @@ export class Opening {
 
   /** titles earned by this batch (shown once the stage is gone). Level only grows from playing games. */
   private celebrateMeta() {
-    announceTitles(this.o.batch.titles, 0.4);
+    announceTitles(this.o.batch.titles ?? [], 0.4);
   }
 
   private close() {

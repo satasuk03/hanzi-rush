@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import { h, formatNum } from '../core/util';
-import { i18n } from '../core/i18n';
+import { i18n, tx } from '../core/i18n';
 import { store } from '../core/store';
 import { wallet } from '../core/wallet';
 import { audio } from '../engine/audio';
@@ -88,5 +88,28 @@ export function jadeChip() {
   const off = wallet.on(sync);
   sync();
   void wallet.refresh();
+  return el;
+}
+
+/**
+ * Entry to the cosmetic Shop (Home and Vault). Carries a pulsing dot until the player owns a cosmetic, i.e. has opened
+ * a first box (docs/cosmetics-shop.md §11.3). The Shop itself is a lazy chunk the caller imports on tap.
+ */
+export function shopChip(onTap: (e: PointerEvent) => void) {
+  const dot = h('i', { class: 'sc-dot' });
+  const el = h('button', { class: 'shop-chip', 'aria-label': 'Shop' }, h('span', { class: 'sc-ic' }, '商'), tx('shopName'), dot);
+  let seen = false;
+  const sync = () => {
+    if (el.isConnected) seen = true;
+    else if (seen) return off();
+    dot.hidden = !wallet.enabled || Object.keys(wallet.inventory).length > 0;
+  };
+  const off = wallet.on(sync);
+  sync();
+  pressable(el, (e) => {
+    audio.unlock();
+    audio.pop(1.3);
+    onTap(e);
+  });
   return el;
 }

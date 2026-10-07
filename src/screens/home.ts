@@ -7,7 +7,7 @@ import { audio, speak } from '../engine/audio';
 import { particles } from '../engine/particles';
 import { shake } from '../engine/shake';
 import { pop, pressable, dropIn, popIn, loop, bob, nope } from '../engine/juice';
-import { langToggle, muteButton, ICON, jadeChip } from '../ui/widgets';
+import { langToggle, muteButton, ICON, jadeChip, shopChip } from '../ui/widgets';
 import { store } from '../core/store';
 import { formatNum } from '../core/util';
 import { playerLevel, titleById, dailyStatus } from '../core/meta';
@@ -181,7 +181,9 @@ export function homeScreen(): Screen {
 
   const shelf = h('div', { class: 'game-shelf' }, ...minis, ...locked);
   const top = h('div', { class: 'topbar' }, chip, h('div', { class: 'spacer' }), muteButton(), langToggle());
-  const subrow = h('div', { class: 'home-sub' }, effortCard, streakBadge);
+  // cosmetic shop: its own lazy chunk
+  const shop = shopChip((e) => import('../games/gacha/ShopScreen').then((m) => app.go(() => m.create('home'), { x: e.clientX, y: e.clientY })));
+  const subrow = h('div', { class: 'home-sub' }, effortCard, streakBadge, shop);
   const tagline = h('p', { class: 'tagline' }, tx('tagline'));
   const el = h(
     'div',

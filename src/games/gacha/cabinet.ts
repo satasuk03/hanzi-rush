@@ -2,8 +2,10 @@
  * Treasure cabinet (宝阁) per HSK level: lacquered body, pagoda eave, lattice doors that
  * swing open, a coin lock, and a door seam whose light colour (--vglow) teases the rarity.
  */
+import gsap from 'gsap';
 import type { LevelMeta } from '../../core/data';
 import { mixHex } from '../../core/util';
+import type { Machine } from './opening';
 
 export const HALLS = ['初心', '青云', '碧玉', '紫霄', '赤霞', '金龙'];
 export const NUMERALS = ['壹', '贰', '叁', '肆', '伍', '陆'];
@@ -93,4 +95,19 @@ export function cabinetSVG(L: LevelMeta) {
   <g class="cab-tassel"><path d="M24 106v14" stroke="#1a0f24" stroke-width="2.5"/><path d="M20 120h8l2 16h-12z" fill="#e8344e" stroke="#1a0f24" stroke-width="2.5" stroke-linejoin="round"/></g>
   <g class="cab-tassel"><path d="M216 106v14" stroke="#1a0f24" stroke-width="2.5"/><path d="M212 120h8l2 16h-12z" fill="#e8344e" stroke="#1a0f24" stroke-width="2.5" stroke-linejoin="round"/></g>
 </svg>`;
+}
+
+/** the cabinet as a ceremony machine: the coin lock drops and the lattice doors swing open */
+export function cabinetMachine(L: LevelMeta): Machine {
+  return {
+    svg: cabinetSVG(L),
+    open(svg) {
+      const q = (s: string) => svg.querySelector(s)!;
+      gsap.to(q('.cab-lock'), { y: 90, rotation: 50, opacity: 0, duration: 0.55, ease: 'power2.in', svgOrigin: '120 178' });
+      gsap.to(q('.cab-seam'), { opacity: 0, duration: 0.15 });
+      gsap.fromTo(q('.cab-door-l'), { scaleX: 1, skewY: 0 }, { scaleX: -0.42, skewY: -8, duration: 0.55, ease: 'back.out(1.1)', svgOrigin: '52 177' });
+      gsap.fromTo(q('.cab-door-r'), { scaleX: 1, skewY: 0 }, { scaleX: -0.42, skewY: 8, duration: 0.55, ease: 'back.out(1.1)', svgOrigin: '188 177' });
+      gsap.fromTo(q('.cab-inside'), { opacity: 0.6 }, { opacity: 1, duration: 0.2 });
+    },
+  };
 }

@@ -945,3 +945,20 @@ body.lang-th .tf-btn { font-family: var(--f-thai); font-weight: 700; font-size: 
 .tf-check input { flex: none; width: 22px; height: 22px; accent-color: var(--green); }
 .lb-unv { flex: none; margin-left: 4px; font: 900 12px/1 var(--f-body); color: #8a7898; cursor: help; }
 .tf-link { align-self: center; background: none; border: 0; padding: 4px 8px; font-weight: 900; color: #6b5a78; text-decoration: underline; }
+
+/* shop entry (home sub-row, vault head): a seal, a label and a "first box" dot */
+.shop-chip {
+  position: relative; display: flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px 0 4px; border-radius: 999px;
+  background: #fff; color: var(--ink); border: 3px solid var(--ink); box-shadow: 0 3px 0 var(--ink); font: 400 16px/1 var(--f-display);
+}
+body.lang-th .shop-chip { font-family: var(--f-thai); font-weight: 700; font-size: 14px; }
+.sc-ic { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: #2f9e6e; color: #f7ecdc; font: 400 16px/1 'Ma Shan Zheng', var(--f-hanzi); box-shadow: inset 0 0 0 1.5px #f7ecdc; }
+.sc-dot { position: absolute; top: -4px; right: -4px; width: 13px; height: 13px; border-radius: 50%; background: #ff4757; border: 2.5px solid var(--ink); }
+.sc-dot[hidden] { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .sc-dot { animation: scDot 1.4s ease-in-out infinite; }
+  @keyframes scDot { 50% { transform: scale(1.3); box-shadow: 0 0 0 4px rgba(255, 71, 87, .35); } }
+}
+.home-sub .shop-chip { margin-left: auto; }
+.vault-head { position: relative; align-self: stretch; }
+.vault-head .shop-chip { position: absolute; right: 2px; top: 50%; translate: 0 -50%; }
