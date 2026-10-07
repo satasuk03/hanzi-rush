@@ -8,7 +8,8 @@ import { particles } from '../engine/particles';
 import { shake } from '../engine/shake';
 import { pressable, popIn } from '../engine/juice';
 import { ICON } from './widgets';
-import { announceTitles } from './notify';
+import { announceTitles, notify } from './notify';
+import { wallet } from '../core/wallet';
 
 /** Shows the pop-up when today's reward is unclaimed. `onClaim` fires after the coins are paid. */
 export function maybeShowDaily(onClaim: () => void) {
@@ -47,6 +48,10 @@ export function maybeShowDaily(onClaim: () => void) {
     shake(0.3);
     onClaim();
     announceTitles(r.titles, 0.9, 0.4);
+    // the Jade half goes to the server with the same tap; offline it stays queued and the coins above are unaffected
+    void wallet.claimDaily().then((j) => {
+      if (j && j.granted > 0 && !j.replay) notify({ kicker: t('jadeDailyKicker'), title: `+${j.granted} ${t('jade')}`, seal: '玉', tier: 2 }, 0.5);
+    });
     gsap.to(el, { opacity: 0, duration: 0.3, delay: 0.5, onComplete: () => el.remove() });
   });
 }

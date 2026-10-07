@@ -7,7 +7,7 @@ import { audio, speak } from '../engine/audio';
 import { particles } from '../engine/particles';
 import { shake } from '../engine/shake';
 import { pop, pressable, dropIn, popIn, loop, breathe, bob, nope } from '../engine/juice';
-import { langToggle, muteButton, ICON } from '../ui/widgets';
+import { langToggle, muteButton, ICON, jadeChip } from '../ui/widgets';
 import { store } from '../core/store';
 import { formatNum } from '../core/util';
 import { playerLevel, titleById, dailyStatus } from '../core/meta';
@@ -158,7 +158,7 @@ export function homeScreen(): Screen {
     'button',
     { class: 'profile-chip', 'aria-label': 'Profile' },
     seal,
-    h('span', { class: 'pc-text' }, chipName, h('span', { class: 'pc-coins' }, h('span', { class: 'mini-coin', html: ICON.coin }), coinsText)),
+    h('span', { class: 'pc-text' }, chipName, h('span', { class: 'pc-coins' }, h('span', { class: 'mini-coin', html: ICON.coin }), coinsText, jadeChip())),
     h('span', { class: 'pc-xp' }, xpFillEl),
   );
   pressable(chip, (e) => {

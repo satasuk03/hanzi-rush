@@ -154,7 +154,7 @@ const dict = {
   restoreCloudOnly: { en: 'Use restored only', th: 'ใช้ของที่กู้มาอย่างเดียว' },
   tooMany: { en: 'Too many tries. Try again later.', th: 'ลองบ่อยเกินไป รอสักครู่แล้วลองใหม่' },
   deleteAccount: { en: 'Delete cloud account', th: 'ลบบัญชีบนคลาวด์' },
-  deleteWarn: { en: 'This erases your cloud save and leaderboard scores. Progress on this device is kept.', th: 'จะลบเซฟบนคลาวด์และคะแนนในกระดานผู้นำ ความคืบหน้าในเครื่องนี้ยังอยู่' },
+  deleteWarn: { en: 'This erases your cloud save, leaderboard scores and Jade. Progress on this device is kept.', th: 'จะลบเซฟบนคลาวด์ คะแนนในกระดานผู้นำ และหยก ความคืบหน้าในเครื่องนี้ยังอยู่' },
   deleteYes: { en: 'Delete', th: 'ลบเลย' },
   deleteDone: { en: 'Account deleted', th: 'ลบบัญชีแล้ว' },
   signedOutTitle: { en: 'Signed out on this device', th: 'ออกจากระบบในเครื่องนี้แล้ว' },
@@ -166,6 +166,10 @@ const dict = {
   namePromptHint: { en: 'Others will see this next to your score. You can change it later in your profile.', th: 'คนอื่นจะเห็นชื่อนี้ข้างคะแนนของคุณ เปลี่ยนทีหลังได้ในโปรไฟล์' },
   nameSave: { en: 'Save', th: 'บันทึก' },
   nameLater: { en: 'Later', th: 'ไว้ทีหลัง' },
+  // ---- Jade wallet (phase B2)
+  jade: { en: 'Jade', th: 'หยก' },
+  jadeEarned: { en: 'Jade earned', th: 'ได้รับหยก' },
+  jadeDailyKicker: { en: 'Daily Jade', th: 'หยกรายวัน' },
 } as const;
 
 export type Key = keyof typeof dict;

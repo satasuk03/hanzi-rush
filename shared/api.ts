@@ -346,6 +346,65 @@ export interface EffortResponse {
   serverTime: number;
 }
 
+// ====================================================================== Jade wallet (docs/cosmetics-shop.md §11)
+
+/** Daily Jade for streak slot 1..7 (the streak keeps counting past 7, the table loops). */
+export const JADE_DAILY = [10, 10, 15, 15, 20, 20, 50] as const;
+export const JADE_STARTER = 100;
+/** The "day" of the Jade daily claim is the Asia/Bangkok calendar day (UTC+7, no DST). */
+export const bangkokDay = (ms: number): string => new Date(ms + 7 * 3600_000).toISOString().slice(0, 10);
+export const DAY_RE = /^\d{4}-\d{2}-\d{2}$/;
+export const dayNumber = (day: string): number => Date.parse(day + 'T00:00:00Z') / 86_400_000;
+
+export interface WalletDaily {
+  /** today's Bangkok day */
+  day: string;
+  claimable: boolean;
+  /** streak held right now (0 once lapsed) */
+  streak: number;
+  /** streak after claiming today */
+  next: number;
+  /** 0..6 index into JADE_DAILY that claiming today pays */
+  slot: number;
+}
+
+/** GET /wallet */
+export interface WalletResponse {
+  jade: number;
+  starterClaimed: boolean;
+  daily: WalletDaily;
+  /** item id → copies */
+  inventory: Record<string, number>;
+  /** box id → pulls since the last LEGENDARY+ */
+  pity: Record<string, number>;
+  serverTime: number;
+}
+
+/** Result of every ledger write. `replay` = this ref was already applied; nothing changed, `granted` is the original delta. */
+export interface JadeGrantResponse {
+  granted: number;
+  replay: boolean;
+  jade: number;
+}
+
+/** POST /jade/starter: no body. Once per account. */
+export type JadeStarterResponse = JadeGrantResponse;
+
+/** POST /jade/daily */
+export interface JadeDailyRequest {
+  /**
+   * Bangkok day the player tapped CLAIM (client clock), for a claim that was queued offline. Accepted only for
+   * today or yesterday (server clock) and never earlier than the last claim; default = today.
+   */
+  day?: string;
+}
+
+export interface JadeDailyResponse extends JadeGrantResponse {
+  day: string;
+  streak: number;
+  slot: number;
+}
+
 // ====================================================================== errors
 
 export type ErrorCode =
