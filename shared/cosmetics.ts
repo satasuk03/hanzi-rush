@@ -108,7 +108,7 @@ const NAME_FX: Item[] = [
   item('fx_chiyan', 'nameFx', 2, '赤焰', 'Crimson Flame', 'เปลวแดง'),
   item('fx_cuiyu', 'nameFx', 2, '翠玉', 'Emerald Glow', 'หยกมรกต'),
   item('fx_liujin', 'nameFx', 3, '流金', 'Gilded', 'ทองอร่าม'),
-  item('fx_fenghuang', 'nameFx', 4, '凤凰', 'Phoenix', 'หงส์เพลิง'),
+  item('fx_fenghuang', 'nameFx', 4, '凤凰', 'Phoenix Glow', 'ประกายหงส์'),
 ];
 
 const BADGES: Item[] = [
