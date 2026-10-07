@@ -36,7 +36,8 @@ input.nfx { background-image: none !important; color: var(--a, #fff7e6); }
   --a: #b3122f; --b: #a1177a; --c: #5b21b6; --da: #ff6b8a; --db: #ff8ae6; --dc: #b69cff;
   --f: drop-shadow(0 0 4px rgba(255, 61, 99, .6)); --df: drop-shadow(0 0 8px rgba(255, 61, 99, .85));
 }
-.pf-card .nfx { --a: var(--da, #fff7e6); --b: var(--db, var(--a)); --c: var(--dc, var(--a)); --f: var(--df, none); }
+/* the Wardrobe's board-row preview sits inside the card but is a light row */
+.pf-card .nfx:not(.wd-board *) { --a: var(--da, #fff7e6); --b: var(--db, var(--a)); --c: var(--dc, var(--a)); --f: var(--df, none); }
 @keyframes nfxFlow { to { background-position: 200% 0; } }
 @media (prefers-reduced-motion: no-preference) {
   .nfx-anim:is([data-fx='fx_wanxia'], [data-fx='fx_bibo'], [data-fx='fx_zijin'], [data-fx='fx_moyun'], [data-fx='fx_chiyan'], [data-fx='fx_cuiyu'], [data-fx='fx_liujin'], [data-fx='fx_fenghuang']) {
