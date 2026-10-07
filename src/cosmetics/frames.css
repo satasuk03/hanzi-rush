@@ -1,0 +1,5 @@
+/* Frame art, one rule set per item id (shared/cosmetics.ts FRAMES). The ring itself is .id-fr::after in identity.css:
+   it is drawn over the edge of the avatar disc, so a frame must stay bold and thin enough to read at 34 px without
+   covering the face. A frame sets --fr (ring colour) and may add its own ::after background. */
+.id-fr[data-fr='frame_ph_bronze'] { --fr: #b4793a; }
+.id-fr[data-fr='frame_ph_gold'] { --fr: #f2c14e; }

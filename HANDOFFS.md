@@ -75,6 +75,24 @@ Goal: players can buy boxes with Jade, get cosmetics, equip them, and others see
 
 Acceptance: `npx tsc --noEmit`, `npm run typecheck:api`, `npm run build` and the wallet tests pass; a fresh account can pull with its starter Jade, equip the result, and see it on the leaderboard from another account.
 
+### Phase C work plan (decided 2026-10-07)
+
+Step 0 (shared base) is on `main`: the pull contract (`ShopPullRequest`, `ShopDrop`, `ShopPullResponse`, error `insufficient_jade` = 402, `LIMITS.pullMinIntervalSec`) in `shared/api.ts`; `FRAMES`, `NAME_FX`, `BADGES` blocks and `gachaPool()` in `shared/cosmetics.ts`; per-slot art CSS in `src/cosmetics/frames.css`, `namefx.css`, `badges.css`.
+
+Decisions: frames stay a **ring drawn over the edge of the avatar disc** (`.id-fr::after`), no board-row relayout. The `fullset` title moves to phase D (it needs sets); `wardrobe` ships in C.
+
+| Track | Branch | Owns | Must not touch |
+| --- | --- | --- | --- |
+| Art: frames | `feat/c-frames` | `FRAMES` in `shared/cosmetics.ts`, `src/cosmetics/frames.css` | every other file |
+| Art: name effects | `feat/c-namefx` | `NAME_FX`, `src/cosmetics/namefx.css` | every other file |
+| Art: badges | `feat/c-badges` | `BADGES`, `src/cosmetics/badges.css` | every other file |
+| Server | `feat/c-shop-server` | `server/shop.ts`, `functions/api/v1/shop/*`, **migration `0006`** (stored pull results), ownership checks in `functions/api/v1/me/profile.ts` and `functions/api/v1/save.ts`, inventory in `src/core/wallet.ts`, tests | `shared/cosmetics.ts` item blocks, `src/screens`, `src/games` |
+| UI | `feat/c-shop-ui` | `Reveal` refactor of `src/games/gacha/opening.ts`, Shop and Wardrobe screens, titles list moved off Profile, `wardrobe` title (new inventory requirement kind) | `server/`, `functions/`, `migrations/`, the item blocks |
+
+Merge order: server (carries the migration), then the three art branches, then UI. Each art branch replaces its own `_ph_` placeholders and their CSS.
+
+Pull design points the server track must settle: replay needs the stored result (0006); `spendJade` writes one ledger row, so the pull needs its own batch (spend, refund rows, inventory, pity, result); two concurrent pulls with different refs must not both consume the same pity count.
+
 ## Phase C2: Player card modal
 
 - [ ] Expose `players.pub` on board and effort entries as `pid` (never expose `players.id`).

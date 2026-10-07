@@ -1,0 +1,10 @@
+/* Name effect art, one rule set per item id (shared/cosmetics.ts NAME_FX). Colour only: never hide the name, stay
+   readable on the dark board. Animation only under .nfx-anim (top 10 and "me") and inside prefers-reduced-motion. */
+.nfx[data-fx='fx_ph_red'] { color: #b3202a; }
+.nfx[data-fx='fx_ph_gold'] {
+  background: linear-gradient(100deg, #9a6a12, #d99a1c 45%, #9a6a12); background-size: 220% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .nfx-anim[data-fx='fx_ph_gold'] { animation: nfxShine 3.2s linear infinite; }
+}

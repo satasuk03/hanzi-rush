@@ -1,0 +1,2 @@
+/* Badge art, one rule set per item id (shared/cosmetics.ts BADGES). The base 16 px seal and the rarity colours are in
+   identity.css (.id-badge, [data-r]); a badge may override them through [data-b='<id>']. Must read at 16 px. */

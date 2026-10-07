@@ -433,6 +433,46 @@ export interface JadeDailyResponse extends JadeGrantResponse {
   slot: number;
 }
 
+// ====================================================================== shop (docs/cosmetics-shop.md §5.2, §11.6b)
+
+/** POST /shop/pull. The server rolls; the client only says which box and how many. */
+export interface ShopPullRequest {
+  /** BoxDef id in shared/cosmetics.ts */
+  box: string;
+  /** 1 or BOX_MULTI (10) */
+  qty: number;
+  /** client idempotency key (uuid). A retry with the same ref returns the original result and charges nothing. */
+  ref: string;
+}
+
+export interface ShopDrop {
+  itemId: string;
+  rarity: number;
+  /** first copy of this item for the player */
+  isNew: boolean;
+  /** copies owned after this drop */
+  copies: number;
+  /** Jade refunded for this drop (duplicates only, DUPLICATE_REFUND by item rarity) */
+  refund: number;
+}
+
+export interface ShopPullResponse {
+  box: string;
+  qty: number;
+  /** in roll order; the ×10 guarantee, if it fired, is the last one */
+  drops: ShopDrop[];
+  /** Jade charged (boxPrice) */
+  cost: number;
+  /** sum of the drops' refunds */
+  refund: number;
+  /** balance after the pull and the refunds */
+  jade: number;
+  /** box id → pulls since the last LEGENDARY+, after this pull */
+  pity: Record<string, number>;
+  /** true when `ref` had already been applied: this is the stored original result, nothing was charged now */
+  replay: boolean;
+}
+
 // ====================================================================== errors
 
 export type ErrorCode =
@@ -446,6 +486,7 @@ export type ErrorCode =
   | 'payload_too_large' // 413
   | 'implausible' // 422 run failed checkRun() (reason in error.reason)
   | 'ticket_invalid' // 422 ticket unknown / other player / board mismatch / expired / reused by another run
+  | 'insufficient_jade' // 402 POST /shop/pull: the balance does not cover the box
   | 'rate_limited' // 429 (+ Retry-After header and error.retryAfter seconds)
   | 'server_error'; // 500
 
@@ -471,6 +512,7 @@ export const STATUS: Record<ErrorCode, number> = {
   payload_too_large: 413,
   implausible: 422,
   ticket_invalid: 422,
+  insufficient_jade: 402,
   rate_limited: 429,
   server_error: 500,
 };
@@ -492,6 +534,8 @@ export const LIMITS = {
   saveMinIntervalSec: 10,
   /** per player: minimum seconds between accepted PATCH /me/profile */
   profileMinIntervalSec: 3,
+  /** per player: minimum seconds between accepted POST /shop/pull (a replayed ref is not limited) */
+  pullMinIntervalSec: 1,
   /** per player: minimum seconds between POST /runs/start */
   runStartMinIntervalSec: 2,
   /** per player per board-day: tickets issued + unverified submissions */
