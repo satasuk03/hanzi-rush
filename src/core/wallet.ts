@@ -20,6 +20,9 @@ interface Cache {
   pity: Record<string, number>;
   /** a purchase that may have been charged but whose answer we never saw: re-sent with the same ref until answered */
   pending: PendingPull | null;
+  /** owned item ids the player has already looked at in the Wardrobe; null until the first inventory arrives, which
+   *  marks everything owned then as seen (device-local, so a new device shows no "new" dots) */
+  seen: string[] | null;
 }
 
 export interface PendingPull {
@@ -29,7 +32,7 @@ export interface PendingPull {
 }
 
 const KEY = 'hanzi-rush:wallet:v1';
-const empty = (): Cache => ({ playerId: null, jade: null, pendingDay: null, inventory: {}, pity: {}, pending: null });
+const empty = (): Cache => ({ playerId: null, jade: null, pendingDay: null, inventory: {}, pity: {}, pending: null, seen: null });
 
 function load(): Cache {
   try {
@@ -61,6 +64,7 @@ function setHoldings(inventory: Record<string, number>, pity: Record<string, num
   bind();
   c.inventory = inventory;
   c.pity = pity;
+  c.seen ??= Object.keys(inventory).filter((id) => inventory[id] > 0);
   persist();
   emit();
 }
@@ -124,6 +128,18 @@ export const wallet = {
   },
   owns(itemId: string): boolean {
     return (c.inventory[itemId] ?? 0) > 0;
+  },
+  /** owned, but not yet looked at in the Wardrobe */
+  isNew(itemId: string): boolean {
+    return !!c.seen && wallet.owns(itemId) && !c.seen.includes(itemId);
+  },
+  markSeen(ids: string[]) {
+    if (!c.seen) return;
+    const fresh = ids.filter((id) => wallet.isNew(id));
+    if (!fresh.length) return;
+    c.seen.push(...fresh);
+    persist();
+    emit();
   },
   /** box id → pulls since the last LEGENDARY+ */
   get pity(): Readonly<Record<string, number>> {

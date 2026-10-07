@@ -41,6 +41,8 @@ export interface Title {
   req: { en: string; th: string };
   /** 0..1 progress toward unlocking */
   progress: () => number;
+  /** where the player stands on the requirement, e.g. level 2 of 3 */
+  count: () => { have: number; need: number };
   /** visual tier 0..4, reuses rarity colours */
   tier: number;
   family: TitleFamily;
@@ -118,33 +120,39 @@ function reqText(r: TitleReq): { en: string; th: string } {
   }
 }
 
-/** 0..1 progress toward a requirement */
-function progressOf(r: TitleReq): number {
-  const frac = (v: number, goal: number) => Math.min(1, v / goal);
+/** current value and goal of a requirement */
+function countOf(r: TitleReq): { have: number; need: number } {
+  const c = (have: number, need: number) => ({ have: Math.min(have, need), need });
   switch (r.k) {
     case 'none':
-      return 1;
+      return c(1, 1);
     case 'level':
-      return frac(playerLevel().level, r.n);
+      return c(playerLevel().level, r.n);
     case 'owned':
-      return frac(owned(), r.n);
+      return c(owned(), r.n);
     case 'hsk':
-      return frac(ownedIn(r.n), LEVELS[r.n - 1].count);
+      return c(ownedIn(r.n), LEVELS[r.n - 1].count);
     case 'all':
-      return frac(owned(), totalWords());
+      return c(owned(), totalWords());
     case 'streak':
-      return frac(store.progress.daily.best, r.n);
+      return c(store.progress.daily.best, r.n);
     case 'mastered':
-      return frac(mastered(), r.n);
+      return c(mastered(), r.n);
     case 'cosmetics':
-      return frac(cosmetics(), r.n);
+      return c(cosmetics(), r.n);
     case 'stat':
-      return frac(STAT[r.key](), r.n);
+      return c(STAT[r.key](), r.n);
   }
 }
 
+/** 0..1 progress toward a requirement */
+function progressOf(r: TitleReq): number {
+  const { have, need } = countOf(r);
+  return need > 0 ? have / need : 1;
+}
+
 export { TITLE_FAMILIES };
-export const TITLES: Title[] = TITLE_DEFS.map((d) => ({ id: d.id, zh: d.zh, en: d.en, th: d.th, tier: d.tier, family: d.family, req: reqText(d.req), progress: () => progressOf(d.req) }));
+export const TITLES: Title[] = TITLE_DEFS.map((d) => ({ id: d.id, zh: d.zh, en: d.en, th: d.th, tier: d.tier, family: d.family, req: reqText(d.req), progress: () => progressOf(d.req), count: () => countOf(d.req) }));
 
 export const titleById = (id: string) => TITLES.find((t) => t.id === id) ?? TITLES[0];
 export const isUnlocked = (t: Title) => t.progress() >= 1;

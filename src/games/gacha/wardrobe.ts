@@ -1,5 +1,6 @@
 /**
  * Wardrobe (衣橱): a live preview card plus one tab per cosmetic slot (frame, avatar, name, badges) and the titles list.
+ * The preview and tabs sit above the scrolling list and shrink to a slim bar once it scrolls, so every tap stays visible.
  * Everything reads the cached inventory, so it works offline; wallet.on() redraws when the inventory changes.
  */
 import gsap from 'gsap';
@@ -32,6 +33,10 @@ const TABS: { id: Tab; zh: string; k: Key }[] = [
   { id: 'title', zh: '称', k: 'wdTitle' },
 ];
 
+const fmt = (n: number) => n.toLocaleString('en-US');
+/** height of the slim preview bar (.wd-card.compact) */
+const COMPACT_H = 64;
+
 export function create(from: 'home' | 'vault' = 'vault'): Screen {
   const p = store.progress;
   const back = () => import('./profile').then((m) => m.create(from));
@@ -44,60 +49,135 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
     langToggle(),
   );
 
-  // ---- live preview
+  // ---- live preview: the dark profile card, or the light board row other players see
+  let view: 'card' | 'board' = 'card';
   const glyph = h('span');
   const avWrap = h('div', { class: 'wd-av' }, glyph);
   const nameEl = h('span', { class: 'wd-name-t' });
   const badgesSlot = h('span', { class: 'wd-badges' });
   const titleRib = h('div', { class: 'pf-title' });
+  const cardStage = h('div', { class: 'wd-stage' }, avWrap, h('div', { class: 'wd-name' }, nameEl, badgesSlot), titleRib);
+  const boardStage = h('div', { class: 'wd-board' });
+  const viewBtns = (['card', 'board'] as const).map((v) => {
+    const b = h('button', { class: 'wd-view-b', 'data-v': v }, tx(v === 'card' ? 'wdViewCard' : 'wdViewBoard'));
+    pressable(b, () => {
+      if (view === v) return;
+      audio.pop(1.1);
+      view = v;
+      paintPreview();
+      pop(view === 'card' ? avWrap : boardStage, 0.5);
+    });
+    return b;
+  });
   const preview = h(
     'div',
     { class: 'pf-card wd-card' },
     h('span', { class: 'pf-corner tl' }), h('span', { class: 'pf-corner tr' }), h('span', { class: 'pf-corner bl' }), h('span', { class: 'pf-corner br' }),
-    avWrap,
-    h('div', { class: 'wd-name' }, nameEl, badgesSlot),
-    titleRib,
+    cardStage,
+    boardStage,
+    h('div', { class: 'wd-view' }, ...viewBtns),
   );
   const paintPreview = () => {
     const T = titleById(p.profile.title);
     const look = currentLook();
+    const name = p.profile.name || t('playerName');
+    for (const b of viewBtns) b.classList.toggle('on', b.dataset.v === view);
+    cardStage.hidden = view !== 'card';
+    boardStage.hidden = view !== 'board';
+    if (view === 'board') {
+      // the same markup as a leaderboard row (src/screens/leaderboard.ts), so it picks up the real board styles
+      const nm = h('span', { class: 'lb-nm' }, name);
+      applyNameFx(nm, look, true);
+      boardStage.replaceChildren(
+        h(
+          'div',
+          { class: 'lb-row me' },
+          h('span', { class: 'lb-rank' }, '–'),
+          renderIdentity(look, 'S', { title: T }),
+          h('span', { class: 'lb-who' }, h('span', { class: 'lb-name' }, nm, renderBadges(look, 'S'), h('em', null, ' ', tx('lbYou'))), h('span', { class: 'lb-title-t' }, T[i18n.lang])),
+        ),
+      );
+      return;
+    }
     paintIdentity(glyph, look, 'L', { title: T });
     nameEl.className = 'wd-name-t';
     delete nameEl.dataset.fx;
-    nameEl.textContent = p.profile.name || t('playerName');
+    nameEl.textContent = name;
     applyNameFx(nameEl, look, true);
     badgesSlot.replaceChildren(...[renderBadges(look, 'L')].filter((x): x is HTMLElement => !!x));
     titleRib.dataset.t = String(T.tier);
     titleRib.replaceChildren(h('b', null, T.zh), h('span', null, T[i18n.lang]));
   };
 
-  // ---- tabs
-  let tab: Tab = 'frame';
+  // ---- tabs: how much of each slot you own, and a dot for items you have not looked at yet
+  const items = (slot: Slot): Item[] =>
+    ITEMS.filter((i) => i.slot === slot && i.source !== 'grant' && (i.source !== 'event' || wallet.owns(i.id))).sort((a, b) => b.rarity - a.rarity || a.en.localeCompare(b.en));
+  const hasNew = (slot: Slot) => items(slot).some((i) => wallet.isNew(i.id));
+
+  // open on the first slot with something new in it
+  let tab: Tab = TABS.find((T) => T.id !== 'title' && hasNew(T.id))?.id ?? 'frame';
+  let ownedOnly = false;
+  /** the player has now seen everything in the tab they are leaving */
+  const leaveTab = () => {
+    if (tab !== 'title') wallet.markSeen(items(tab).map((i) => i.id));
+  };
+  const tabCounts = new Map<Tab, HTMLElement>();
   const tabBtns = TABS.map((T) => {
-    const b = h('button', { class: 'wd-tab', 'data-tab': T.id }, h('b', null, T.zh), tx(T.k, 'small'));
+    const ct = h('span', { class: 'wd-tab-ct' });
+    tabCounts.set(T.id, ct);
+    const b = h('button', { class: 'wd-tab', 'data-tab': T.id }, h('b', null, T.zh), tx(T.k, 'small'), ct, h('i', { class: 'wd-tab-dot' }));
     pressable(b, () => {
       if (tab === T.id) return;
       audio.pop(1.1);
+      const prev = tab;
       tab = T.id;
+      if (prev !== 'title') wallet.markSeen(items(prev).map((i) => i.id));
       renderBody(true);
+      scroll.scrollTop = 0;
     });
     return b;
   });
   const tabs = h('div', { class: 'wd-tabs', role: 'tablist' }, ...tabBtns);
+  const paintTabs = () => {
+    for (const b of tabBtns) {
+      const id = b.dataset.tab as Tab;
+      b.classList.toggle('on', id === tab);
+      b.classList.toggle('new', id !== 'title' && id !== tab && hasNew(id));
+      const [have, all] = id === 'title' ? [TITLES.filter(isUnlocked).length, TITLES.length] : [items(id).filter((i) => wallet.owns(i.id)).length, items(id).length];
+      tabCounts.get(id)!.textContent = `${have}/${all}`;
+    }
+  };
+
+  // ---- All / Owned
+  const filterBtns = ([false, true] as const).map((only) => {
+    const b = h('button', { class: 'wd-filter-b' });
+    pressable(b, () => {
+      if (ownedOnly === only) return;
+      audio.pop(1);
+      ownedOnly = only;
+      renderBody(true);
+    });
+    return { b, only };
+  });
+  const filter = h('div', { class: 'wd-filter' }, ...filterBtns.map((f) => f.b));
+  const paintFilter = () => {
+    for (const { b, only } of filterBtns) {
+      b.classList.toggle('on', ownedOnly === only);
+      b.replaceChildren(tx(only ? (tab === 'title' ? 'wdShowUnlocked' : 'wdShowOwned') : 'wdShowAll'));
+    }
+  };
 
   const body = h('div', { class: 'wd-body' });
 
   // ---- item grids
-  const items = (slot: Slot): Item[] =>
-    ITEMS.filter((i) => i.slot === slot && i.source !== 'grant' && (i.source !== 'event' || wallet.owns(i.id))).sort((a, b) => b.rarity - a.rarity || a.en.localeCompare(b.en));
-
   const visual = (it: Item): HTMLElement => {
     const look: Look = { [it.slot === 'badge' ? 'badges' : it.slot]: it.slot === 'badge' ? [it.id] : it.id };
     switch (it.slot) {
       case 'avatar':
         return h('span', { class: 'wd-v wd-v-av' }, h('img', { src: avatarSrc(it.id), alt: '', width: '56', height: '56', loading: 'lazy', draggable: 'false' }));
       case 'frame':
-        return h('span', { class: 'wd-v' }, renderIdentity(look, 'M', { title: titleById(p.profile.title) }));
+        // on the player's own avatar, so the frame is judged on the face it will go round
+        return h('span', { class: 'wd-v' }, renderIdentity({ avatar: currentLook().avatar, frame: it.id }, 'M', { title: titleById(p.profile.title) }));
       case 'nameFx': {
         const s = h('span', { class: 'wd-v wd-v-fx' }, t('wdSample'));
         applyNameFx(s, look, false);
@@ -117,8 +197,9 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
       'button',
       { class: `wd-tile ${own ? 'own' : 'lock'} ${on ? 'on' : ''}`, style: R ? `--rc:${R.color}` : '--rc:#cdbb9e', 'aria-pressed': String(on), 'aria-label': it ? it.en : t('wdDefault') },
       it ? visual(it) : h('span', { class: 'wd-v wd-v-none' }, slot === 'avatar' ? renderIdentity({}, 'M', { title: titleById(p.profile.title) }) : h('i', null, '∅')),
-      h('span', { class: 'wd-t-name' }, it ? it[i18n.lang] : t(slot === 'avatar' ? 'wdDefault' : 'wdNone')),
+      h('span', { class: 'wd-t-name' }, it ? h('i', { class: 'wd-rar', 'aria-hidden': 'true' }) : null, it ? it[i18n.lang] : t(slot === 'avatar' ? 'wdDefault' : 'wdNone')),
       it && copies > 1 ? h('span', { class: 'wd-copies' }, `×${copies}`) : null,
+      it && wallet.isNew(it.id) ? h('span', { class: 'wd-new' }, tx('wdNew')) : null,
       on ? h('span', { class: 'wd-check' }, '✓') : null,
       !own ? h('span', { class: 'wd-lock', html: ICON.lock }) : null,
     );
@@ -137,7 +218,7 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
         audio.pop(0.9);
       } else if (equipItem(it.id)) audio.reveal(Math.min(it.rarity, 2));
       paintPreview();
-      pop(avWrap, 0.5);
+      pop(view === 'card' ? avWrap : boardStage, 0.5);
       renderBody(false);
     });
     return b;
@@ -146,18 +227,31 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
   // ---- titles (moved from the Profile screen)
   const list = h('div', { class: 'ti-list' });
   const renderTitles = () => {
-    const row = (T: Title) => {
+    /** `near`: a row in the "Next up" strip, with a full-width bar under the text */
+    const row = (T: Title, near = false) => {
       const un = isUnlocked(T);
       const on = p.profile.title === T.id;
-      const prog = T.progress();
+      const { have, need } = T.count();
+      const prog = h('span', { class: 'ti-prog' }, h('span', { class: 'ti-prog-fill', style: `transform:scaleX(${T.progress()})` }));
+      const frac = h('span', { class: 'ti-frac' }, h('b', null, fmt(have)), `/${fmt(need)}`);
       const b = h(
         'button',
-        { class: `ti ${un ? 'un' : 'lock'} ${on ? 'on' : ''}`, 'data-t': String(T.tier), style: `--rc:${RARITIES[T.tier].color}` },
+        { class: `ti ${un ? 'un' : 'lock'}${on ? ' on' : ''}${near ? ' near' : ''}`, 'data-t': String(T.tier), style: `--rc:${RARITIES[T.tier].color}` },
         h('span', { class: 'ti-seal' }, T.zh[0]),
-        h('span', { class: 'ti-text' }, h('span', { class: 'ti-name' }, h('b', null, T.zh), ` ${T[i18n.lang]}`), h('span', { class: 'ti-req' }, T.req[i18n.lang])),
-        un
-          ? h('span', { class: 'ti-state' }, tx(on ? 'equipped' : 'equip'))
-          : h('span', { class: 'ti-prog' }, h('span', { class: 'ti-prog-fill', style: `transform:scaleX(${prog})` }), h('span', { class: 'ti-lock', html: ICON.lock })),
+        h(
+          'span',
+          { class: 'ti-text' },
+          h('span', { class: 'ti-name' }, h('b', null, T.zh), ` ${T[i18n.lang]}`),
+          h('span', { class: 'ti-req' }, T.req[i18n.lang]),
+          near ? h('span', { class: 'ti-near-bar' }, prog, frac) : null,
+        ),
+        on
+          ? h('span', { class: 'ti-check', role: 'img', 'aria-label': t('equipped') }, '✓')
+          : un
+            ? h('span', { class: 'ti-state' }, tx('equip'))
+            : near
+              ? h('span', { class: 'ti-lock', html: ICON.lock })
+              : h('span', { class: 'ti-side' }, frac, prog),
       );
       pressable(b, () => {
         if (!un) {
@@ -171,8 +265,9 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
         audio.reveal(Math.min(T.tier, 2));
         paintPreview();
         renderTitles();
-        pop(titleRib, 1.2);
-        const c = center(titleRib);
+        const target = view === 'card' ? titleRib : boardStage;
+        pop(target, 1.2);
+        const c = center(target);
         particles.burst(c.x, c.y, { count: 18 + T.tier * 6, sprite: SPARK[T.tier], speed: [200, 520], size: [12, 22], g: 300, drag: 2, life: [0.4, 0.8], add: true, stretch: true });
         particles.ring(c.x, c.y, 120, RARITIES[T.tier].color, 8);
         shake(0.2 + T.tier * 0.05);
@@ -186,45 +281,77 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
       .sort((a, b) => b.f - a.f)
       .slice(0, 3)
       .map((x) => x.T);
-    const section = (zh: string, name: string, items: Title[], count?: string) =>
-      h('div', { class: 'ti-fam' }, h('h4', { class: 'ti-fam-h' }, h('b', null, zh), ` ${name}`, count ? h('small', null, ` ${count}`) : null), ...items.map(row));
-    list.replaceChildren(
-      ...(next.length ? [section('近', t('titlesNextUp'), next)] : []),
-      ...TITLE_FAMILIES.map((F) => {
-        const items = TITLES.filter((T) => T.family === F.id);
-        return section(F.zh, F[i18n.lang], items, `${items.filter(isUnlocked).length}/${items.length}`);
-      }),
-    );
+    const section = (zh: string, name: string, items: Title[], count?: string, near = false) =>
+      h(
+        'div',
+        { class: `ti-fam${near ? ' ti-next' : ''}` },
+        h('h4', { class: 'ti-fam-h' }, h('b', null, zh), ` ${name}`, count ? h('small', null, ` ${count}`) : null),
+        ...items.map((T) => row(T, near)),
+      );
+    const fams = TITLE_FAMILIES.map((F) => {
+      const all = TITLES.filter((T) => T.family === F.id);
+      const shown = ownedOnly ? all.filter(isUnlocked) : all;
+      return shown.length ? section(F.zh, F[i18n.lang], shown, `${all.filter(isUnlocked).length}/${all.length}`) : null;
+    }).filter((x): x is HTMLDivElement => !!x);
+    list.replaceChildren(...(next.length && !ownedOnly ? [section('近', t('titlesNextUp'), next, undefined, true)] : []), ...fams);
   };
 
   // ---- body
   function renderBody(animate: boolean) {
-    for (const b of tabBtns) b.classList.toggle('on', b.dataset.tab === tab);
+    paintTabs();
+    paintFilter();
     let kids: HTMLElement[];
     if (tab === 'title') {
       renderTitles();
-      kids = [list];
+      kids = [h('div', { class: 'wd-bar' }, filter), list];
     } else {
       const slot: Slot = tab;
       const empty = Object.values(wallet.inventory).every((n) => !(n > 0));
+      const shown = items(slot).filter((it) => !ownedOnly || wallet.owns(it.id));
       kids = [
         ...(empty ? [h('p', { class: 'wd-note wd-empty' }, t('wdEmpty'))] : []),
-        ...(slot === 'badge' ? [h('p', { class: 'wd-note' }, t('wdBadgesWorn').replace('{n}', String(currentLook().badges?.length ?? 0)).replace('{max}', String(LOOK_MAX_BADGES)))] : []),
-        h('div', { class: 'wd-grid' }, ...(slot === 'badge' ? [] : [tile(null, slot)]), ...items(slot).map((it) => tile(it, slot))),
+        h(
+          'div',
+          { class: 'wd-bar' },
+          filter,
+          slot === 'badge' ? h('p', { class: 'wd-note' }, t('wdBadgesWorn').replace('{n}', String(currentLook().badges?.length ?? 0)).replace('{max}', String(LOOK_MAX_BADGES))) : null,
+        ),
+        h('div', { class: 'wd-grid' }, ...(slot === 'badge' ? [] : [tile(null, slot)]), ...shown.map((it) => tile(it, slot))),
+        ...(ownedOnly && !shown.length && !empty ? [h('p', { class: 'wd-note wd-empty' }, t('wdNoneOwned'))] : []),
       ];
     }
     body.replaceChildren(...kids);
     if (animate) gsap.from(tab === 'title' ? list.children : body.querySelectorAll('.wd-tile'), { y: 14, opacity: 0, duration: 0.3, stagger: 0.015, ease: 'back.out(2)' });
   }
 
-  const el = h('div', { class: 'screen profile wardrobe' }, top, h('div', { class: 'pf-scroll' }, preview, tabs, body));
+  // The preview shrinks to a slim bar once the list scrolls. It sits outside the scroller, so the list never jumps
+  // under the finger when it changes size.
+  const head = h('div', { class: 'wd-head' }, preview, tabs);
+  const scroll = h('div', { class: 'pf-scroll wd-scroll' }, body);
+  scroll.addEventListener(
+    'scroll',
+    () => {
+      const y = scroll.scrollTop;
+      if (y < 4 && preview.classList.contains('compact')) {
+        preview.classList.remove('compact');
+        body.style.paddingBottom = '';
+      } else if (y > 24 && !preview.classList.contains('compact')) {
+        // pad the list by what the card gives up, so the scroll range stays the same and a short list does not snap
+        // back to the top (which would expand the card again)
+        body.style.paddingBottom = `${preview.offsetHeight - COMPACT_H}px`;
+        preview.classList.add('compact');
+      }
+    },
+    { passive: true },
+  );
+  const el = h('div', { class: 'screen profile wardrobe' }, top, head, scroll);
   paintPreview();
   renderBody(false);
   const offLang = i18n.onChange(() => {
     paintPreview();
     renderBody(false);
   });
-  // the inventory changed (a pull landed, the first fetch finished): redraw from the cache
+  // the inventory changed (a pull landed, the first fetch finished, items were marked seen): redraw from the cache
   const offWallet = wallet.on(() => renderBody(false));
   void wallet.refresh();
 
@@ -238,6 +365,7 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
     leave() {
       offLang();
       offWallet();
+      leaveTab();
     },
     onKey(e) {
       if (e.key === 'Escape') back().then((sc) => app.go(() => sc));
