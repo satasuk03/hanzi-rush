@@ -83,27 +83,65 @@ const AVATARS: [id: string, zh: string, en: string, th: string, rarity: RarityId
 export const AVATAR_PREFIX = 'avatar_';
 
 /*
- * Frames, name effects and badges: one block per slot, so each can be edited on its own (phase C launch set: about
- * 14 frames, 12 name effects, 20 badges, weighted toward COMMON/RARE; docs/cosmetics-shop.md §8). The art is CSS keyed
- * by id: src/cosmetics/frames.css, namefx.css, badges.css. Ids are prefixed by slot (`frame_`, `fx_`, `badge_`).
- *
- * The `_ph_` entries are PLACEHOLDERS (`event` items, so no box pool picks them). Each slot's real set replaces them,
- * together with their CSS rules.
+ * Frames, name effects and badges: one block per slot, so each can be edited on its own (phase C launch set: 14
+ * frames, 12 name effects, 20 badges, weighted toward COMMON/RARE; docs/cosmetics-shop.md §8). The art is CSS keyed
+ * by id: src/cosmetics/frames.css, namefx.css, badges.css (previews in dev/preview-*.html, `npx vite`). Ids are
+ * prefixed by slot (`frame_`, `fx_`, `badge_`). Never rename or remove a released id: players own it.
  */
 
 const FRAMES: Item[] = [
-  item('frame_ph_bronze', 'frame', 0, '铜框', 'Bronze Frame', 'กรอบทองแดง', 'event'),
-  item('frame_ph_gold', 'frame', 3, '金框', 'Gold Frame', 'กรอบทอง', 'event'),
+  item('frame_bamboo', 'frame', 0, '竹节', 'Bamboo Ring', 'กรอบไผ่'),
+  item('frame_redstring', 'frame', 0, '红绳', 'Red String', 'ด้ายแดง'),
+  item('frame_jadering', 'frame', 0, '玉环', 'Jade Ring', 'แหวนหยก'),
+  item('frame_ink', 'frame', 0, '墨圈', 'Ink Circle', 'วงหมึก'),
+  item('frame_copper', 'frame', 0, '铜钱', 'Copper Coin', 'เหรียญทองแดง'),
+  item('frame_koi', 'frame', 1, '鱼鳞', 'Fish Scales', 'เกล็ดปลา'),
+  item('frame_plum', 'frame', 1, '梅花', 'Plum Blossom', 'ดอกเหมย'),
+  item('frame_cloud', 'frame', 1, '祥云', 'Auspicious Cloud', 'เมฆมงคล'),
+  item('frame_lantern', 'frame', 1, '灯穗', 'Lantern Tassel', 'พู่โคมไฟ'),
+  item('frame_lotus', 'frame', 2, '莲瓣', 'Lotus Petals', 'กลีบบัว'),
+  item('frame_goldleaf', 'frame', 2, '金叶', 'Gold Leaf', 'ใบไม้ทอง'),
+  item('frame_dragon', 'frame', 2, '龙鳞', 'Dragon Scale', 'เกล็ดมังกร'),
+  item('frame_phoenix', 'frame', 3, '凤焰', 'Phoenix Flame', 'เปลวหงส์'),
+  item('frame_heaven', 'frame', 4, '天命', 'Mandate of Heaven', 'บัญชาสวรรค์'),
 ];
 
 const NAME_FX: Item[] = [
-  item('fx_ph_red', 'nameFx', 1, '朱红', 'Vermilion', 'แดงชาด', 'event'),
-  item('fx_ph_gold', 'nameFx', 3, '流金', 'Gilded', 'ทองอร่าม', 'event'),
+  item('fx_zhuhong', 'nameFx', 0, '朱红', 'Vermilion', 'แดงชาด'),
+  item('fx_daiqing', 'nameFx', 0, '黛青', 'Slate Blue', 'น้ำเงินคราม'),
+  item('fx_hupo', 'nameFx', 0, '琥珀', 'Amber', 'สีอำพัน'),
+  item('fx_songlv', 'nameFx', 0, '松绿', 'Pine', 'เขียวสน'),
+  item('fx_wanxia', 'nameFx', 1, '晚霞', 'Sunset', 'อาทิตย์อัสดง'),
+  item('fx_bibo', 'nameFx', 1, '碧波', 'Teal Wave', 'คลื่นเขียวคราม'),
+  item('fx_zijin', 'nameFx', 1, '紫金', 'Violet Gold', 'ม่วงทอง'),
+  item('fx_moyun', 'nameFx', 2, '墨韵', 'Ink Wash', 'หมึกจีน'),
+  item('fx_chiyan', 'nameFx', 2, '赤焰', 'Crimson Flame', 'เปลวแดง'),
+  item('fx_cuiyu', 'nameFx', 2, '翠玉', 'Emerald Glow', 'หยกมรกต'),
+  item('fx_liujin', 'nameFx', 3, '流金', 'Gilded', 'ทองอร่าม'),
+  item('fx_fenghuang', 'nameFx', 4, '凤凰', 'Phoenix Glow', 'ประกายหงส์'),
 ];
 
 const BADGES: Item[] = [
-  item('badge_ph_star', 'badge', 0, '星', 'Star', 'ดาว', 'event'),
-  item('badge_ph_gem', 'badge', 2, '宝', 'Gem', 'อัญมณี', 'event'),
+  item('badge_fortune', 'badge', 0, '福运', 'Fortune', 'โชคลาภ'),
+  item('badge_joy', 'badge', 0, '喜气', 'Joy', 'ความยินดี'),
+  item('badge_study', 'badge', 0, '学者', 'Scholar', 'บัณฑิต'),
+  item('badge_letters', 'badge', 0, '文人', 'Letters', 'อักษร'),
+  item('badge_mountain', 'badge', 0, '山岳', 'Mountain', 'ภูเขา'),
+  item('badge_moon', 'badge', 0, '月光', 'Moonlight', 'แสงจันทร์'),
+  item('badge_fire', 'badge', 0, '火焰', 'Flame', 'เปลวไฟ'),
+  item('badge_wood', 'badge', 0, '木叶', 'Leaf', 'ใบไม้'),
+  item('badge_courage', 'badge', 1, '勇士', 'Courage', 'กล้าหาญ'),
+  item('badge_wisdom', 'badge', 1, '智者', 'Wisdom', 'ปัญญา'),
+  item('badge_spring', 'badge', 1, '春风', 'Spring', 'ฤดูใบไม้ผลิ'),
+  item('badge_wind', 'badge', 1, '风行', 'Wind', 'สายลม'),
+  item('badge_snow', 'badge', 1, '雪花', 'Snow', 'หิมะ'),
+  item('badge_star', 'badge', 1, '星辰', 'Starlight', 'แสงดาว'),
+  item('badge_dragon', 'badge', 2, '龙威', 'Dragon Might', 'อานุภาพมังกร'),
+  item('badge_pearl', 'badge', 2, '明珠', 'Pearl', 'ไข่มุก'),
+  item('badge_jade', 'badge', 2, '玉佩', 'Jade Pendant', 'จี้หยก'),
+  item('badge_gold', 'badge', 3, '金榜', 'Honor Roll', 'ทำเนียบทอง'),
+  item('badge_sage', 'badge', 3, '圣贤', 'Sage', 'ปราชญ์'),
+  item('badge_divine', 'badge', 4, '神明', 'Divine', 'เทพเจ้า'),
 ];
 
 export const ITEMS: readonly Item[] = [...AVATARS.map(([id, zh, en, th, r]) => item(AVATAR_PREFIX + id, 'avatar', r, zh, en, th)), ...FRAMES, ...NAME_FX, ...BADGES];
