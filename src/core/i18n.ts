@@ -187,7 +187,7 @@ const dict = {
   jadeDailyKicker: { en: 'Daily Jade', th: 'หยกรายวัน' },
   // ---- shop (phase C)
   shopName: { en: 'Shop', th: 'ร้านค้า' },
-  shopTitle: { en: 'Lucky Lantern Boxes', th: 'กล่องโคมนำโชค' },
+  shopTitle: { en: 'Treasure Chests', th: 'หีบสมบัตินำโชค' },
   shopConnect: { en: 'Connect to the internet to buy boxes', th: 'เชื่อมต่ออินเทอร์เน็ตเพื่อซื้อกล่อง' },
   shopConnecting: { en: 'Connecting…', th: 'กำลังเชื่อมต่อ…' },
   shopPoor: { en: 'Not enough Jade. Claim daily Jade on the home screen!', th: 'หยกไม่พอ รับหยกรายวันได้ที่หน้าแรก!' },

@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Chests preview</title>
+<style>
+body{margin:0;padding:16px;font:13px sans-serif;background:linear-gradient(170deg,#3a1628,#150a1f 70%);color:#f6e5c4;min-height:100vh}
+.row{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-end}
+.big{width:240px;--vglow:#ffe39a}.big .cab-svg{width:100%;height:auto;display:block;overflow:visible}
+.small{width:52px}.small svg{width:100%;height:auto;display:block;overflow:visible}
+button{font:inherit;padding:6px 12px;margin:10px 6px 10px 0;border-radius:8px}
+.face{position:relative}.face canvas{display:block;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,.5)}
+.light{background:#fff8ea;padding:10px;border-radius:12px}
+</style></head>
+<body>
+<div><button id="hop">Hop</button><button id="open">Open</button><button id="reset">Reset</button>
+glow <select id="glow"><option>#ffe39a</option><option>#b8c4d4</option><option>#4aa8ff</option><option>#c46bff</option><option>#ffb02e</option><option>#ff5fa2</option></select></div>
+<div class="row" id="big"></div>
+<p>Picker size</p><div class="row" id="small"></div>
+<p>Reward faces (all rarities) and backs</p><div class="row" id="faces"></div><div class="row" id="backs"></div>
+<p>On light</p><div class="row light" id="lite"></div>
+<script type="module" src="./preview-chests.ts"></script></body></html>
