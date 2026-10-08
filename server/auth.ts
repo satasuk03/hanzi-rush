@@ -8,6 +8,8 @@ export interface Player {
   id: string;
   tag: string;
   status: number;
+  /** public id (players.pub), matched against board rows' `pid` */
+  pub: string | null;
   tokenHash: string;
 }
 
@@ -26,10 +28,10 @@ export async function authenticate(ctx: Ctx, required: boolean): Promise<Player 
   if (!token) return required ? fail('unauthorized', 'Missing or malformed token') : null;
   const tokenHash = await sha256Hex(token);
   const row = await ctx.env.DB.prepare(
-    'SELECT s.player_id AS id, p.status AS status, p.tag AS tag FROM sessions s JOIN players p ON p.id = s.player_id WHERE s.token_hash = ?1',
+    'SELECT s.player_id AS id, p.status AS status, p.tag AS tag, p.pub AS pub FROM sessions s JOIN players p ON p.id = s.player_id WHERE s.token_hash = ?1',
   )
     .bind(tokenHash)
-    .first<{ id: string; status: number; tag: string }>();
+    .first<{ id: string; status: number; tag: string; pub: string | null }>();
   if (!row) return required ? fail('unauthorized', 'Invalid token') : null;
   if (row.status === 2) return required ? fail('banned', 'This account is disabled') : null;
   const now = Date.now();
@@ -43,7 +45,7 @@ export async function authenticate(ctx: Ctx, required: boolean): Promise<Player 
       () => undefined,
     ),
   );
-  return { id: row.id, tag: row.tag, status: row.status, tokenHash };
+  return { id: row.id, tag: row.tag, status: row.status, pub: row.pub, tokenHash };
 }
 
 export function parseDevice(x: unknown): DeviceInfo {

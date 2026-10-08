@@ -22,7 +22,8 @@
     "cap:sync": "npm run build && cap sync",
     "ios": "npm run build && cap sync ios && cap open ios",
     "android": "npm run build && cap sync android && cap open android",
-    "assets": "capacitor-assets generate --iconBackgroundColor '#2a1a3a' --iconBackgroundColorDark '#2a1a3a' --splashBackgroundColor '#1b6fd1' --splashBackgroundColorDark '#1b6fd1'"
+    "assets": "capacitor-assets generate --iconBackgroundColor '#2a1a3a' --iconBackgroundColorDark '#2a1a3a' --splashBackgroundColor '#1b6fd1' --splashBackgroundColorDark '#1b6fd1'",
+    "test:boards": "node scripts/test-boards.mjs"
   },
   "dependencies": {
     "@capacitor-community/text-to-speech": "^8.0.2",

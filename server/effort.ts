@@ -71,12 +71,15 @@ export async function totalEffort(env: Env, period: string): Promise<number> {
   return r?.n ?? 0;
 }
 
+/**
+ * Rank = 1 + rows ahead, as two range counts on effort_rank (reads only the rows ahead). No players join: shadow-banned
+ * players never get an effort row, so only admin-disabled (status 2) rows could count, the same as on score boards.
+ */
 export async function myEffort(env: Env, period: string, playerId: string): Promise<EffortEntry | null> {
   const r = await env.DB.prepare(
     `SELECT e.correct, e.runs, e.duration_ms, e.updated_at, e.player_id, p.name, p.tag, p.title, p.look, p.pub,
-       (SELECT COUNT(*) + 1 FROM effort o JOIN players op ON op.id = o.player_id
-          WHERE o.period = ?1 AND op.status = 0
-            AND (o.correct > e.correct OR (o.correct = e.correct AND o.updated_at < e.updated_at))) AS rank
+       (SELECT COUNT(*) FROM effort o WHERE o.period = ?1 AND o.correct > e.correct)
+       + (SELECT COUNT(*) FROM effort o WHERE o.period = ?1 AND o.correct = e.correct AND o.updated_at < e.updated_at) + 1 AS rank
      FROM effort e JOIN players p ON p.id = e.player_id
      WHERE e.period = ?1 AND e.player_id = ?2`,
   )
