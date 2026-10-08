@@ -13,6 +13,10 @@ const config: CapacitorConfig = {
       backgroundColor: '#1b6fd1',
       showSpinner: false,
     },
+    LocalNotifications: {
+      smallIcon: 'ic_stat_flame',
+      iconColor: '#ff7a1f',
+    },
     StatusBar: {
       overlaysWebView: true,
       style: 'DARK',

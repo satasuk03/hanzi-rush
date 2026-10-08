@@ -207,6 +207,17 @@ const dict = {
   slotNameFx: { en: 'Name style', th: 'สไตล์ชื่อ' },
   slotBadge: { en: 'Badge', th: 'ตรา' },
   itemUnknown: { en: 'New item: update the app to see it', th: 'ไอเท็มใหม่ อัปเดตแอปเพื่อดู' },
+  // ---- reminders (local notifications, native only)
+  remindDailyTitle: { en: 'Your red envelope is waiting 🧧', th: 'อั่งเปาวันนี้รออยู่นะ 🧧' },
+  remindDailyBody: { en: 'Claim today’s coins and Jade, then play a quick round.', th: 'มารับเหรียญกับหยกวันนี้ แล้วเล่นสักรอบกัน' },
+  remindStreakTitle: { en: '🔥 {n}-day streak on the line!', th: '🔥 สตรีค {n} วันกำลังจะหลุด!' },
+  remindStreakBody: { en: 'Open today’s envelope before midnight to keep it going.', th: 'เปิดอั่งเปาวันนี้ก่อนเที่ยงคืน เพื่อรักษาสตรีคไว้' },
+  remindMiss1Title: { en: 'Deng Deng misses you 🏮', th: 'เติงเติงคิดถึงนะ 🏮' },
+  remindMiss1Body: { en: 'Five minutes of Chinese today? Your words are waiting.', th: 'วันนี้ฝึกจีนสัก 5 นาทีไหม คำศัพท์รออยู่' },
+  remindMiss2Title: { en: 'Don’t let your Chinese go cold 🥟', th: 'อย่าปล่อยให้ภาษาจีนขึ้นสนิมนะ 🥟' },
+  remindMiss2Body: { en: 'A quick Rush is all it takes. 加油!', th: 'เล่น Rush สั้นๆ สักรอบก็พอ 加油!' },
+  remindMiss3Title: { en: 'A fresh streak starts today 🧧', th: 'เริ่มสตรีคใหม่ได้เลยวันนี้ 🧧' },
+  remindMiss3Body: { en: 'Day 1’s envelope is ready. Come back and claim it.', th: 'อั่งเปาวันที่ 1 พร้อมแล้ว กลับมารับกันเถอะ' },
 } as const;
 
 export type Key = keyof typeof dict;
