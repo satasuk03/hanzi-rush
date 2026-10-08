@@ -1,4 +1,4 @@
-import type { MeResponse } from '../../../shared/api';
+import type { IdentityProvider, MeResponse } from '../../../shared/api';
 import { authenticate, saveMeta } from '../../../server/auth';
 import type { Env } from '../../../server/env';
 import { byMethod, fail, json } from '../../../server/http';
@@ -13,7 +13,7 @@ export const onRequest: PagesFunction<Env> = async (ctx) =>
         .bind(me.id)
         .first<{ id: string; tag: string; name: string; title: string; created_at: number; has_code: number; recovery_created_at: number | null; card_public: number }>();
       if (!p) return fail('unauthorized', 'Account not found');
-      const ids = await db.prepare('SELECT provider, created_at FROM identities WHERE player_id = ?1').bind(me.id).all<{ provider: 'apple' | 'google' | 'email'; created_at: number }>();
+      const ids = await db.prepare('SELECT provider, created_at FROM identities WHERE player_id = ?1').bind(me.id).all<{ provider: IdentityProvider; created_at: number }>();
       const body: MeResponse = {
         playerId: p.id,
         tag: p.tag,

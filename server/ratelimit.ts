@@ -9,7 +9,7 @@ export function clientIp(req: Request): string {
 export const ipHash = (ctx: Ctx): Promise<string> => sha256Hex((ctx.env.IP_SALT ?? '') + clientIp(ctx.request));
 
 /** Fixed-window per-IP-hash counter (hourly). Counts every attempt, then rejects when over `max`. */
-export async function ipLimit(ctx: Ctx, kind: 'create' | 'recover', max: number): Promise<string> {
+export async function ipLimit(ctx: Ctx, kind: 'create' | 'recover' | 'signin', max: number): Promise<string> {
   const h = await ipHash(ctx);
   const now = Date.now();
   const bucket = Math.floor(now / 3_600_000);

@@ -48,6 +48,7 @@
       <li><b>ข้อมูลเกม:</b> เซฟความคืบหน้า คะแนน สถิติการเล่น (เช่น จำนวนข้อที่ตอบถูก คอมโบ เวลาที่ใช้) สกุลเงินและไอเทมในเกม</li>
       <li><b>ข้อมูลทางเทคนิค:</b> ประเภทแพลตฟอร์ม (web/android/ios) และเวอร์ชันแอป รวมถึงค่าแฮชของที่อยู่ IP ที่ผ่านการเข้ารหัสแบบทางเดียว ใช้เพื่อป้องกันสแปมและการโกงเท่านั้น เราไม่เก็บที่อยู่ IP แบบเต็ม</li>
       <li><b>รหัสกู้คืนบัญชี</b> (ถ้าคุณสร้าง) จะเก็บเป็นค่าแฮชเท่านั้น</li>
+      <li><b>การลงชื่อเข้าใช้ด้วย Google, Apple หรือ Google Play Games</b> (ไม่บังคับ): ถ้าคุณผูกบัญชีไว้ เราเก็บเฉพาะรหัสผู้ใช้ที่ผู้ให้บริการนั้นสร้างให้ เพื่อให้คุณลงชื่อเข้าใช้บัญชีเดิมในเครื่องอื่นได้ เราไม่เก็บอีเมล ชื่อ หรือรูปโปรไฟล์ เลิกผูกได้ทุกเมื่อในหน้าโปรไฟล์</li>
       <li><b>การดูโฆษณาแบบมีรางวัล:</b> เมื่อคุณเลือกดูโฆษณาเพื่อรับหัวใจเพิ่ม เราบันทึกว่าโฆษณานั้นดูจบแล้วสำหรับรอบการเล่นใด (รหัสธุรกรรมจาก Google) เพื่อมอบรางวัลและจำกัดจำนวนต่อวัน</li>
     </ul>
     <p>เราไม่เก็บตำแหน่งที่ตั้ง รายชื่อติดต่อ รูปภาพ ไมโครโฟน หรือข้อมูลการชำระเงิน และไม่มีการซื้อด้วยเงินจริง การอ่านออกเสียงใช้ระบบเสียงในเครื่องของคุณ</p>
@@ -73,6 +74,7 @@
       <li><b>Cloudflare</b>: โฮสต์เว็บไซต์ เซิร์ฟเวอร์ และฐานข้อมูลของเกม</li>
       <li><b>Google Fonts</b>: โหลดฟอนต์ ซึ่ง Google อาจได้รับที่อยู่ IP ของคุณตามปกติของการโหลดไฟล์</li>
       <li><b>Google Analytics</b>: ใช้<b>เฉพาะบนเว็บไซต์</b> เพื่อนับสถิติการเข้าชมแบบรวม (ไม่ใช้ในแอป Android/iOS)</li>
+      <li><b>Google Sign-In, Google Play Games Services และ Sign in with Apple</b>: เฉพาะเมื่อคุณเลือกผูกบัญชี การลงชื่อเข้าใช้ดำเนินการโดยผู้ให้บริการนั้นตามนโยบายความเป็นส่วนตัวของเขา</li>
     </ul>
 
     <h3>ระยะเวลาการเก็บข้อมูล</h3>
@@ -102,6 +104,7 @@
       <li><b>Game data:</b> your save/progress, scores, play statistics (e.g. correct answers, combos, time played), and in-game currency and items.</li>
       <li><b>Technical data:</b> platform (web/android/ios) and app version, and a salted one-way hash of your IP address, used only to prevent spam and cheating. We do not store your raw IP address.</li>
       <li><b>Recovery code</b> (if you create one), stored only as a hash.</li>
+      <li><b>Sign-in with Google, Apple or Google Play Games</b> (optional): if you link one, we store only the user ID that provider gives us, so you can sign in to the same account on another device. We do not store your email, name or profile picture. You can unlink it at any time in your profile.</li>
       <li><b>Rewarded ad views:</b> when you choose to watch an ad for an extra heart, we record that the ad was completed for that run (Google's transaction ID), to grant the reward and apply a daily limit.</li>
     </ul>
     <p>We do not collect location, contacts, photos, microphone audio or payment information, and there are no real-money purchases. Text-to-speech uses your device's built-in voices.</p>
@@ -127,6 +130,7 @@
       <li><b>Cloudflare</b>: hosts the website, game server and database.</li>
       <li><b>Google Fonts</b>: serves fonts; Google may receive your IP address as part of the request.</li>
       <li><b>Google Analytics</b>: used <b>on the website only</b>, for aggregate visit statistics. It is not used in the Android/iOS app.</li>
+      <li><b>Google Sign-In, Google Play Games Services and Sign in with Apple</b>: only if you choose to link one. The sign-in itself is handled by that provider under its own privacy policy.</li>
     </ul>
 
     <h3>Retention</h3>

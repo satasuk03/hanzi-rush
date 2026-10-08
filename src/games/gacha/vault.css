@@ -583,3 +583,23 @@ body.lang-th .pf-show b { font-family: var(--f-thai); font-weight: 700; font-siz
 }
 body.lang-th .pf-custom { font-family: var(--f-thai); font-weight: 700; font-size: 17px; }
 .pf-custom b { font: 400 24px/1 var(--f-brush); color: #8a1220; }
+
+/* Profile: sign-in options (src/ui/signin.ts). Provider buttons keep each brand's own colours. */
+.si-wrap { display: flex; flex-direction: column; gap: 12px; }
+.si-wrap[hidden] { display: none; }
+.si { display: flex; flex-direction: column; gap: 8px; padding: 12px; border-radius: 16px; background: rgba(255, 255, 255, .05); box-shadow: inset 0 0 0 1.5px rgba(242, 193, 78, .22); }
+.si-hint, .si-msg { margin: 0; font-weight: 700; font-size: 13px; line-height: 1.35; color: #cdbb9e; }
+.si-msg:empty { display: none; }
+.si-msg { color: #f3e3c3; }
+.si-rows { display: flex; flex-direction: column; gap: 8px; }
+.si-btn { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 44px; padding: 10px 14px; border: 0; border-radius: 12px; font: 600 15px/1.1 system-ui, -apple-system, 'Roboto', sans-serif; }
+.si-logo { display: inline-flex; flex: none; width: 20px; height: 20px; }
+.si-logo svg { width: 100%; height: 100%; }
+.si-btn.si-google { background: #fff; color: #1f1f1f; box-shadow: inset 0 0 0 1px #747775; }
+.si-btn.si-apple { background: #000; color: #fff; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .35); }
+.si-btn.si-play_games { background: #01875f; color: #fff; }
+.si-row { display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 6px 4px; color: #f3e3c3; font-weight: 800; }
+.si-row.si-google .si-logo { padding: 2px; border-radius: 50%; background: #fff; }
+.si-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.si-ok { flex: none; font-size: 13px; color: #5be35b; }
+.si-unlink { flex: none; padding: 6px 4px; border: 0; background: none; color: #cdbb9e; font-size: 13px; font-weight: 700; text-decoration: underline; }

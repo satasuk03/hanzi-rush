@@ -17,6 +17,11 @@ const config: CapacitorConfig = {
       smallIcon: 'ic_stat_flame',
       iconColor: '#ff7a1f',
     },
+    // sign-in (src/core/signin.ts): only bundle the providers we use
+    SocialLogin: {
+      providers: { google: true, apple: true, facebook: false, twitter: false },
+      logLevel: 1,
+    },
     StatusBar: {
       overlaysWebView: true,
       style: 'DARK',

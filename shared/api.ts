@@ -179,11 +179,35 @@ export interface MeResponse {
   recoveryCreatedAt: number | null;
   /** "Show my card" (players.card_public); absent on servers that predate cards */
   cardPublic?: boolean;
-  /** linked third-party identities (always [] until sign-in ships) */
+  /** linked sign-in providers (POST /auth/:provider) */
   identities: { provider: IdentityProvider; linkedAt: number }[];
 }
 
-export type IdentityProvider = 'apple' | 'google' | 'email';
+/** 'email' is reserved (identities.provider); only SIGNIN_PROVIDERS are accepted by POST /auth/:provider */
+export type IdentityProvider = 'apple' | 'google' | 'play_games' | 'email';
+export const SIGNIN_PROVIDERS = ['google', 'apple', 'play_games'] as const;
+export type SignInProvider = (typeof SIGNIN_PROVIDERS)[number];
+
+/**
+ * POST /auth/:provider: sign in with, or link, a provider account. Auth is optional.
+ *  - the provider account is already linked to some player → a new session for THAT player (`signedIn`). This is how
+ *    a new device gets into an account; it may differ from the caller's account (the client then reconciles saves
+ *    the same way as POST /recover).
+ *  - not linked yet and the request is authenticated → it gets linked to the caller (`linked`)
+ *  - not linked yet and no auth → 404 not_found
+ * 409 identity_conflict (reason 'provider_linked'): the caller already has a different account of this provider.
+ */
+export interface SignInRequest {
+  /** google / apple: the OpenID Connect ID token (JWT). play_games: a one-time server auth code. */
+  credential: string;
+  device: DeviceInfo;
+}
+
+export type SignInResponse =
+  | { result: 'linked'; provider: SignInProvider; linkedAt: number }
+  | { result: 'signedIn'; auth: AuthResponse };
+
+/** DELETE /me/identities/:provider → 204 (also when nothing was linked). */
 
 /** POST /me/recovery-code: (re)generates the transfer code. The previous code stops working. */
 export interface RecoveryCodeRequest {
@@ -640,6 +664,7 @@ export type ErrorCode =
   | 'insufficient_jade' // 402 POST /shop/pull: the balance does not cover the box
   | 'ad_unverified' // 409 POST /runs/continue: no verified ad reward for this run (yet)
   | 'continue_refused' // 409 POST /runs/continue: reason in error.reason
+  | 'identity_conflict' // 409 POST /auth/:provider: reason in error.reason
   | 'rate_limited' // 429 (+ Retry-After header and error.retryAfter seconds)
   | 'server_error'; // 500
 
@@ -668,6 +693,7 @@ export const STATUS: Record<ErrorCode, number> = {
   insufficient_jade: 402,
   ad_unverified: 409,
   continue_refused: 409,
+  identity_conflict: 409,
   rate_limited: 429,
   server_error: 500,
 };
@@ -700,6 +726,8 @@ export const LIMITS = {
   /** per IP hash per hour */
   createPerIpPerHour: 30,
   recoverPerIpPerHour: 10,
+  /** POST /auth/:provider, every attempt counts (each one costs the server a provider round trip) */
+  signInPerIpPerHour: 30,
   /** client offline run queue */
   queueMax: 20,
   queueMaxAgeMs: 7 * 86400_000,

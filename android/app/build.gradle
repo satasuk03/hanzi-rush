@@ -21,6 +21,10 @@ android {
         // AdMob app id (rewarded continues, src/core/ads.ts). Set ADMOB_APP_ID in android/gradle.properties or
         // with -PADMOB_APP_ID=…; the default is Google's sample app id, which only serves test ads.
         manifestPlaceholders = [admobAppId: project.findProperty('ADMOB_APP_ID') ?: 'ca-app-pub-3940256099942544~3347511713']
+        // Play Games Services project id (Play Console > Play Games Services > Configuration), for sign-in with Play
+        // Games (PlayGamesPlugin.java). Set PLAY_GAMES_APP_ID in android/gradle.properties or with -PPLAY_GAMES_APP_ID=…;
+        // empty = the Play Games button is hidden.
+        resValue "string", "game_services_project_id", (project.findProperty('PLAY_GAMES_APP_ID') ?: '').toString()
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
              // Default: https://android.googlesource.com/platform/frameworks/base/+/282e181b58cf72b6ca770dc7ca5f91f135444502/tools/aapt/AaptAssets.cpp#61
@@ -60,6 +64,7 @@ dependencies {
     implementation "androidx.coordinatorlayout:coordinatorlayout:$androidxCoordinatorLayoutVersion"
     implementation "androidx.core:core-splashscreen:$coreSplashScreenVersion"
     implementation project(':capacitor-android')
+    implementation "com.google.android.gms:play-services-games-v2:21.0.0"
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"

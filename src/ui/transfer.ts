@@ -12,7 +12,7 @@ import { pressable } from '../engine/juice';
 
 const overlay = () => document.getElementById('overlay')!;
 
-function toast(msg: string) {
+export function toast(msg: string) {
   const el = h('div', { class: 'toast' }, msg);
   overlay().append(el);
   gsap.timeline({ onComplete: () => el.remove() })
@@ -21,7 +21,7 @@ function toast(msg: string) {
 }
 
 /** builds the modal shell; `close()` fades it out */
-function modal(...content: Node[]) {
+export function modal(...content: Node[]) {
   const card = h('div', { class: 'modal-card tf-card' }, ...content);
   const el = h('div', { class: 'modal' }, card);
   overlay().append(el);
@@ -36,7 +36,7 @@ function modal(...content: Node[]) {
   return { el, card, close };
 }
 
-const button = (label: Key, cls: string, onTap: () => void) => {
+export const button = (label: Key, cls: string, onTap: () => void) => {
   const b = h('button', { class: `tf-btn ${cls}` }, tx(label));
   pressable(b, () => {
     audio.pop();
@@ -116,7 +116,7 @@ export function showTransferCode() {
 }
 
 /** asks how to treat this device's own progress when restoring over it */
-function askCombine(): Promise<'combine' | 'cloud' | 'cancel'> {
+export function askCombine(): Promise<'combine' | 'cloud' | 'cancel'> {
   return new Promise((resolve) => {
     const m = modal(h('h2', { class: 'modal-title' }, tx('restore')), h('p', { class: 'daily-hint' }, tx('restoreAsk')));
     m.card.append(
