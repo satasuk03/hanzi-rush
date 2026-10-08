@@ -12,7 +12,7 @@
     "db:local": "wrangler d1 migrations apply hanzi-rush --local",
     "db:remote": "wrangler d1 migrations apply hanzi-rush --remote",
     "prepare": "git config core.hooksPath .githooks || true",
-    "test": "npm run test:wallet && npm run test:shop && npm run test:deals && npm run test:ownership && npm run test:card && npm run test:titles && npm run test:boards",
+    "test": "npm run test:wallet && npm run test:shop && npm run test:deals && npm run test:ownership && npm run test:card && npm run test:titles && npm run test:boards && npm run test:continue",
     "test:wallet": "node scripts/test-wallet.mjs",
     "test:shop": "node scripts/test-shop.mjs",
     "test:deals": "node scripts/test-deals.mjs",
@@ -25,9 +25,11 @@
     "ios": "npm run build && cap sync ios && cap open ios",
     "android": "npm run build && cap sync android && cap open android",
     "assets": "capacitor-assets generate --iconBackgroundColor '#2a1a3a' --iconBackgroundColorDark '#2a1a3a' --splashBackgroundColor '#1b6fd1' --splashBackgroundColorDark '#1b6fd1'",
-    "test:boards": "node scripts/test-boards.mjs"
+    "test:boards": "node scripts/test-boards.mjs",
+    "test:continue": "node scripts/test-continue.mjs"
   },
   "dependencies": {
+    "@capacitor-community/admob": "8.1.0",
     "@capacitor-community/text-to-speech": "^8.0.2",
     "@capacitor/android": "^8.5.2",
     "@capacitor/app": "^8.1.2",

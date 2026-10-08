@@ -1,7 +1,7 @@
 # 汉字 Hanzi Rush
 
 A juicy, cartoon-style platform of mini games for learning Chinese (HSK 1–6), in Thai 🇹🇭 and English 🇬🇧.
-Static site: no backend. Runs at 60fps on mobile.
+Web (Cloudflare Pages) and Android/iOS (Capacitor), with a small Pages Functions + D1 backend for cloud saves, leaderboards and the Jade wallet. Runs at 60fps on mobile.
 
 ## Games
 | Game | Status |
@@ -13,6 +13,7 @@ Static site: no backend. Runs at 60fps on mobile.
 
 **Meaning Rush modes**
 - **Rush**: 3 lives, a timer on every question, endless. Speed bonus × combo multiplier.
+  Out of hearts, you can **keep going** with one more heart, up to 3 times a run: the first by watching a rewarded ad (Android app) or 10 Jade, then 10 and 20 Jade. Runs with continues still rank on the boards.
 - **Practice**: 20 questions with no timer.
 
 **Juice loop:** combo builds heat stages at 5, 10, 20 and 30. Each stage adds music layers, spins the sunburst faster, shifts the colours hotter and brings bigger particle bursts and praise banners. The FEVER gauge fills as you answer, and at full it triggers **FEVER TIME**: ×2 points, a gold world and falling coins (古钱) and yuanbao (元宝).
@@ -44,9 +45,34 @@ npm run data       # rebuild public/data/hsk*.json from data/raw + data/override
 ```
 Keyboard: `1`–`4` answer, `Enter`/`Space` continue, `Esc` pause.
 
+Backend and tests:
+```bash
+npm run db:local   # apply migrations/ to the local D1
+npm run dev:api    # Pages Functions on :8788 (Vite proxies /api there); secrets in .dev.vars
+npm test           # server test scripts (wallet, shop, deals, ownership, card, titles, boards, continue)
+npm run android    # build, sync and open Android Studio (npm run ios likewise)
+```
+`.dev.vars` (git-ignored): `IP_SALT=dev`, plus `ADS_SSV_BYPASS=1` so ad continues work without AdMob's callback.
+
+## Rewarded ads (AdMob)
+The server grants an ad continue only after AdMob's server-side verification (SSV) callback reaches `GET /api/v1/ads/admob-ssv`. The ad carries the run ticket as custom data. Code: `src/core/ads.ts` (client), `server/continues.ts` (server). Migration: `0008`.
+
+| Setting | Where |
+| --- | --- |
+| Android app id `ca-app-pub-1129023958286783~9260862551` | `ADMOB_APP_ID` in `android/gradle.properties` |
+| Android rewarded unit `ca-app-pub-1129023958286783/5443625214` | `VITE_ADMOB_REWARDED_ANDROID` in `.env.production` |
+| Accepted ad units for SSV | `ADMOB_AD_UNITS` in `wrangler.toml` |
+| iOS | not set up: iOS continues cost Jade. Add `VITE_ADMOB_REWARDED_IOS` and `GADApplicationIdentifier` in `ios/App/App/Info.plist` (it holds Google's sample id) |
+
+- SSV callback URL on the ad unit: `https://hanzi-rush.zeze.app/api/v1/ads/admob-ssv`.
+- Dev builds and `VITE_ADMOB_TEST=1 npm run android` always use Google's test units. Never tap your own live ads. Test ads send no SSV callback, so on the production server they fall back to Jade.
+- Real ads serve only after the Play listing is linked in AdMob and the app passes review. `app-ads.txt` must be hosted on the developer website named in the store listing.
+- Consent (UMP, EEA/UK) and the iOS tracking prompt are shown the first time a player taps "Watch an ad".
+
 ## Deploy (Cloudflare Pages)
 - Dashboard: Framework preset **None** · Build command `npm run build` · Output directory `dist`
 - CLI: `npm run build && npx wrangler pages deploy`
+- Every merge to `main` deploys through `.github/workflows/deploy.yml`, which applies D1 migrations to production first.
 
 `public/_headers` sets long-lived caching for hashed assets and the vocab JSON.
 

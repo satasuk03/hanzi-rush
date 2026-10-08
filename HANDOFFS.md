@@ -108,6 +108,17 @@ D2 (PR `feat/d2-deals-titles`; decisions made 2026-10-08):
 - The card's title count now comes from the save (shared evaluator) plus inventory, not `profile.seen`.
 - To verify by hand: Deals tab and Boxes|Deals switch at 360 px, the Jade chip next to long title names, a first claim on an account with many titles (one toast, 100 Jade), Thai copy of the D2 strings.
 
+## Continues: one more heart in rush (branch `feat/continue-ads`, migration `0008`)
+
+- Out of hearts in rush → "Keep going?" modal. Continue 1 = rewarded ad (native, AdMob) or 10 Jade where no ad; continue 2 = 10, 3 = 20 Jade; max 3 per run. Runs with continues count on the boards. Needs a ticket (online).
+- `shared/api.ts` `CONTINUE`, `continueCost`; `checkRun` accepts `wrong === 3 + continues` (continues only on ticketed rush). No scoring bump: an absent `continues` is 0, old clients unchanged.
+- `server/continues.ts`: `POST /runs/continue` (`runs.continues` counter, Jade ledger reason `continue`, ref `ticket:n`), AdMob SSV verification (`GET /ads/admob-ssv`, ECDSA P-256, `ad_rewards` table, custom data = ticket), 20 ad continues per player per Bangkok day. `POST /runs` rejects more continues than the ticket paid (`continues_unpaid`).
+- Client: `src/core/ads.ts` (consent + ATT on first "Watch an ad"), `QuizGame.offerContinue`, `wallet.continueRun`. Test: `npm run test:continue`.
+- AdMob (Android): app `ca-app-pub-1129023958286783~9260862551` (`android/gradle.properties`), rewarded unit `…/5443625214` (`.env.production`, `ADMOB_AD_UNITS` in `wrangler.toml`). SSV callback `https://hanzi-rush.zeze.app/api/v1/ads/admob-ssv`. Real ads only after the Play listing is linked in AdMob and reviewed. iOS: none yet (Jade only; `Info.plist` holds the sample id).
+- `public/app-ads.txt` (served at `https://hanzi-rush.zeze.app/app-ads.txt`) and `public/privacy.html` (AdMob section, 13+) cover the store listing.
+- Testing: dev builds and `VITE_ADMOB_TEST=1 npm run android` use Google test units. A local server needs `ADS_SSV_BYPASS=1` in `.dev.vars` (test ads never call back).
+- To verify by hand: the modal at 360 px, an ad on a real Android and iOS device, the consent form from the EEA (UMP debug geography), Thai copy of the `cont*` strings.
+
 ## Phase E: Prestige and expansion
 
 - [ ] `player_grants` for server-given items (rank and season badges, Founder), `background` and `banner` slots on the card, limited-time boxes, server-granted titles.

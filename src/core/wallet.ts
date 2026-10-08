@@ -4,6 +4,9 @@
  */
 import {
   bangkokDay,
+  type ContinueRequest,
+  type ContinueResponse,
+  type ContinueVia,
   type JadeDailyResponse,
   type JadeStarterResponse,
   type ShopDealBuyRequest,
@@ -231,6 +234,17 @@ export const wallet = {
     // set-completion seals granted by this pull (absent from an old server)
     for (const id of r.bonuses ?? []) inventory[id] = Math.max(inventory[id] ?? 0, 1);
     setHoldings(inventory, { ...c.pity, ...r.pity });
+    setJade(r.jade);
+    return r;
+  },
+
+  /**
+   * Pays continue `n` of a rush run (online only). Throws ApiError: `insufficient_jade`, `ad_unverified` (AdMob has
+   * not called back yet: retry), `continue_refused`, `offline`, ... Retrying the same (ticket, n) never charges twice.
+   */
+  async continueRun(ticket: string, n: number, via: ContinueVia): Promise<ContinueResponse> {
+    const body: ContinueRequest = { ticket, n, via };
+    const r = await cloud.authed<ContinueResponse>('POST', '/runs/continue', body);
     setJade(r.jade);
     return r;
   },

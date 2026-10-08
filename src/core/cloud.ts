@@ -696,6 +696,13 @@ export const cloud = {
     return handle;
   },
 
+  /** the run's ticket once the server issued it (null: offline, cloud off, or no ticket yet after `waitMs`) */
+  async runTicket(h: RunHandle, waitMs = TICKET_WAIT_MS): Promise<string | null> {
+    const rec = runs.get(h.id);
+    if (!rec) return null;
+    return Promise.race([rec.ticket, new Promise<null>((res) => setTimeout(() => res(null), waitMs))]);
+  },
+
   /** the handle for a RunStats.runId (RunStats itself stays serializable) */
   handle(id: string | undefined): RunHandle | undefined {
     return id ? runs.get(id)?.handle : undefined;
@@ -723,6 +730,7 @@ export const cloud = {
       durationMs: r.durationMs ?? Math.round(performance.now() - h.startedAt),
       playedAt: Date.now(),
       scoring: SCORING_VERSION,
+      ...(r.continues ? { continues: r.continues } : {}),
       profile: { name: sanitizeName(store.progress.profile.name), title: store.progress.profile.title },
     };
     const bad = checkRun(req, ticket !== null);

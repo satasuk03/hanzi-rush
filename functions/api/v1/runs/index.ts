@@ -31,6 +31,7 @@ interface RunRow {
   reason: string | null;
   verified: number;
   score: number | null;
+  continues: number;
 }
 
 const rankResponse = async (ctx: Ctx, me: Player, board: string, t: number, verified: boolean, improvedBy: Record<Period, boolean>) => {
@@ -56,7 +57,7 @@ export const onRequest: PagesFunction<Env> = async (ctx) =>
 
       // 2. idempotency
       const prev = await db
-        .prepare('SELECT id, player_id, board, created_at, status, reason, verified, score FROM runs WHERE player_id = ?1 AND client_run_id = ?2')
+        .prepare('SELECT id, player_id, board, created_at, status, reason, verified, score, continues FROM runs WHERE player_id = ?1 AND client_run_id = ?2')
         .bind(me.id, req.clientRunId)
         .first<RunRow>();
       if (prev) {
@@ -84,9 +85,15 @@ export const onRequest: PagesFunction<Env> = async (ctx) =>
       let claim;
       if (req.ticket !== null) {
         // 4. ticketed
-        const tk = await db.prepare('SELECT id, player_id, board, created_at, status, reason, verified, score FROM runs WHERE id = ?1').bind(req.ticket).first<RunRow>();
+        const tk = await db.prepare('SELECT id, player_id, board, created_at, status, reason, verified, score, continues FROM runs WHERE id = ?1').bind(req.ticket).first<RunRow>();
         if (!tk || tk.player_id !== me.id || tk.board !== req.board || tk.status !== 'open' || now - tk.created_at > LIMITS.ticketTtlMs) {
           return fail('ticket_invalid', 'Ticket is not valid for this run');
+        }
+        // more continues than were paid for on this ticket. Fewer is fine: a paid continue whose answer never
+        // reached the client ends the run there.
+        if ((req.continues ?? 0) > tk.continues) {
+          await db.prepare("UPDATE runs SET client_run_id = ?1, submitted_at = ?2, status = 'rejected', reason = 'continues_unpaid' WHERE id = ?3 AND status = 'open'").bind(req.clientRunId, now, req.ticket).run();
+          return fail('implausible', 'Run failed plausibility check', { reason: 'continues_unpaid' });
         }
         // The ticket was requested after the run started, so a server-measured duration below the floor means
         // the ticket arrived late (slow network at run start), not that the run is fake. Still claim the ticket
