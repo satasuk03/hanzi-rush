@@ -10,7 +10,7 @@
 import { featuredSet } from '../shared/cosmetics';
 import { JADE_DAILY, JADE_STARTER, bangkokDay, dayNumber, type JadeDailyResponse, type JadeGrantResponse, type WalletDaily, type WalletResponse } from '../shared/api';
 
-export type JadeReason = 'starter' | 'daily' | 'pull' | 'dupe_refund' | 'iap' | 'ad' | 'admin' | 'deal' | 'title';
+export type JadeReason = 'starter' | 'daily' | 'pull' | 'dupe_refund' | 'iap' | 'ad' | 'admin' | 'deal' | 'title' | 'continue';
 
 export interface JadeWrite {
   status: 'applied' | 'replay' | 'insufficient';

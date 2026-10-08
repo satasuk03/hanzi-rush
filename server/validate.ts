@@ -108,6 +108,7 @@ export function validateSubmit(x: unknown): SubmitRunRequest {
   for (const k of ['score', 'correct', 'asked', 'maxCombo', 'durationMs', 'playedAt', 'scoring']) {
     if (typeof x[k] !== 'number' || !Number.isFinite(x[k] as number)) bad(k);
   }
+  if (x.continues !== undefined && (typeof x.continues !== 'number' || !Number.isSafeInteger(x.continues))) bad('continues');
   if (x.profile !== undefined) {
     if (!isObj(x.profile)) bad('profile');
     else {

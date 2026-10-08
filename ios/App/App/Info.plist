@@ -66,5 +66,18 @@
 	<false/>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<!-- AdMob (rewarded continues, src/core/ads.ts). Replace with the real app id before release: this is Google's
+	     sample id, which only serves test ads. -->
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-3940256099942544~1458002511</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>This lets ads you choose to watch be more relevant to you. Hanzi Rush works the same either way.</string>
+	<key>SKAdNetworkItems</key>
+	<array>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>cstr6suwn9.skadnetwork</string>
+		</dict>
+	</array>
 </dict>
 </plist>

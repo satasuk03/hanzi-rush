@@ -292,6 +292,8 @@ export interface SubmitRunRequest {
   playedAt: number;
   /** must be in the server's SUPPORTED_SCORING list */
   scoring: number;
+  /** hearts bought back with POST /runs/continue (rush, ticketed runs only); absent = 0 */
+  continues?: number;
   /** current display identity, applied to players.name/title (sanitized server side) */
   profile?: { name: string; title: string };
 }
@@ -380,6 +382,49 @@ export interface EffortResponse {
   entries: EffortEntry[];
   me: EffortEntry | null;
   serverTime: number;
+}
+
+// ====================================================================== continues (an extra heart in rush)
+
+/**
+ * When a rush run loses its last heart it may continue with one heart, at most CONTINUE.max times per run.
+ * Continue 1 costs a rewarded ad (native apps) or `jade[0]`; continue n ≥ 2 costs `jade[n - 1]`. Needs a ticket:
+ * the server counts the continues on the run and POST /runs checks the submitted count against it.
+ */
+export const CONTINUE = {
+  max: 3,
+  jade: [10, 10, 20] as readonly number[],
+  /** only this continue can be paid with an ad */
+  adSlot: 1,
+  /** per player per Bangkok day: continues paid with an ad */
+  adsPerDay: 20,
+} as const;
+
+export const continueCost = (n: number): number => CONTINUE.jade[n - 1] ?? Infinity;
+
+export type ContinueVia = 'ad' | 'jade';
+
+/**
+ * POST /runs/continue. Replaying the same (ticket, n) returns the first answer and charges nothing.
+ * 402 insufficient_jade. 409 ad_unverified: AdMob has not confirmed the ad yet (retry for a few seconds).
+ * 409 continue_refused, reason: closed (the run is submitted or expired), sequence (n is not the next continue),
+ * max, ad_slot (an ad pays continue 1 only), ad_cap (CONTINUE.adsPerDay reached).
+ */
+export interface ContinueRequest {
+  ticket: string;
+  /** 1-based number of this continue in the run */
+  n: number;
+  via: ContinueVia;
+}
+
+export interface ContinueResponse {
+  n: number;
+  via: ContinueVia;
+  /** Jade charged (0 for an ad) */
+  cost: number;
+  /** balance after the charge */
+  jade: number;
+  replay: boolean;
 }
 
 // ====================================================================== player card (docs/cosmetics-shop.md §12)
@@ -593,6 +638,8 @@ export type ErrorCode =
   | 'implausible' // 422 run failed checkRun() (reason in error.reason)
   | 'ticket_invalid' // 422 ticket unknown / other player / board mismatch / expired / reused by another run
   | 'insufficient_jade' // 402 POST /shop/pull: the balance does not cover the box
+  | 'ad_unverified' // 409 POST /runs/continue: no verified ad reward for this run (yet)
+  | 'continue_refused' // 409 POST /runs/continue: reason in error.reason
   | 'rate_limited' // 429 (+ Retry-After header and error.retryAfter seconds)
   | 'server_error'; // 500
 
@@ -619,6 +666,8 @@ export const STATUS: Record<ErrorCode, number> = {
   implausible: 422,
   ticket_invalid: 422,
   insufficient_jade: 402,
+  ad_unverified: 409,
+  continue_refused: 409,
   rate_limited: 429,
   server_error: 500,
 };
@@ -802,6 +851,8 @@ export interface RunFacts {
   asked: number;
   maxCombo: number;
   durationMs: number;
+  /** absent = 0 */
+  continues?: number;
 }
 
 /**
@@ -819,8 +870,13 @@ export function checkRun(r: RunFacts, ticketed = true): string | null {
   if (r.maxCombo > r.correct) return 'combo_gt_correct';
   const wrong = r.asked - r.correct;
   const rush = b.mode === 'rush';
-  // rush ends exactly when the 3rd life is lost (QuizGame.ts:595, :682); quitting never submits (:194-198)
-  if (rush && wrong !== SCORING.rushLives) return 'rush_lives';
+  const cont = r.continues ?? 0;
+  if (!Number.isSafeInteger(cont) || cont < 0 || cont > CONTINUE.max) return 'continues_range';
+  // continues are counted on the ticket; practice has no hearts to buy back
+  if (cont > 0 && (!rush || !ticketed)) return 'continues_scope';
+  // rush ends exactly when the last life is lost (QuizGame.ts:595, :682); quitting never submits (:194-198).
+  // Each continue gives back one heart.
+  if (rush && wrong !== SCORING.rushLives + cont) return 'rush_lives';
   // practice is exactly 20 questions (QuizGame.ts:319)
   if (!rush && r.asked !== SCORING.zenTotal) return 'zen_total';
   // correct answers fall into at most wrong+1 streaks

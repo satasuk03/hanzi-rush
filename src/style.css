@@ -542,6 +542,19 @@ body.lang-th .end-banner { font-family: var(--f-thai); font-weight: 700; }
 .modal-title { margin: 0 0 4px; text-align: center; font: 400 36px/1 var(--f-display); color: var(--ink); }
 body.lang-th .modal-title { font-family: var(--f-thai); font-weight: 700; }
 
+/* keep going? (QuizGame.offerContinue) */
+.cont-card { gap: 12px; align-items: stretch; text-align: center; }
+.cont-heart { width: 64px; height: 64px; margin: -54px auto 0; filter: drop-shadow(0 4px 0 var(--ink)); }
+.cont-heart svg { width: 100%; height: 100%; }
+.cont-desc, .cont-have, .cont-status { margin: 0; color: var(--ink); font-size: 15px; line-height: 1.35; }
+.cont-have { opacity: .7; font-size: 13px; }
+.cont-have:empty, .cont-status:empty { display: none; }
+.cont-status { color: var(--red); font-weight: 700; }
+.cont-actions { display: flex; flex-direction: column; gap: 14px; margin-top: 4px; }
+.cont-actions.busy { opacity: .6; pointer-events: none; }
+.cont-actions .big-btn { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 22px; }
+.cont-actions .mini-coin { position: relative; width: 28px; height: 28px; vertical-align: 0; }
+
 /* ------------------------------------------------------------------ results */
 .results { gap: 10px; }
 .r-buddy { display: flex; justify-content: center; margin-bottom: -46px; position: relative; z-index: 1; pointer-events: none; }

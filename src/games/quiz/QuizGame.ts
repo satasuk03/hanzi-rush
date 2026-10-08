@@ -22,7 +22,10 @@ import { drawFront, drawPatternBack, drawAnswerBack, F_HANZI } from './cardFace'
 import { resultsScreen, type RunStats } from '../../screens/results';
 import { awardRun } from '../../core/meta';
 import { cloud, type RunHandle } from '../../core/cloud';
-import { boardKey, checkRun, type RankedGame } from '../../../shared/api';
+import { CONTINUE, boardKey, checkRun, continueCost, type RankedGame } from '../../../shared/api';
+import { ApiError } from '../../core/api';
+import { ads } from '../../core/ads';
+import { wallet } from '../../core/wallet';
 
 type Phase = 'intro' | 'ask' | 'lock' | 'reveal' | 'over';
 
@@ -49,6 +52,10 @@ export class QuizGame {
   protected correct = 0;
   protected asked = 0;
   protected lives = 3;
+  /** hearts bought back (POST /runs/continue) */
+  protected continues = 0;
+  /** the "keep going?" modal is up */
+  protected offering = false;
   protected stage = 0;
   protected feverGauge = 0;
   protected feverT = 0;
@@ -599,6 +606,10 @@ export class QuizGame {
     this.missed.includes(this.word) || this.missed.push(this.word);
     this.retry.push({ w: this.word, due: this.asked + 4 });
     if (this.rush) this.lives--;
+    // the ad for a first continue loads while the last heart is in play (only once the player has seen consent)
+    if (this.rush && this.lives === 1 && this.continues === 0 && ads.available && this.run) {
+      void cloud.runTicket(this.run).then((tk) => tk && ads.preload(tk));
+    }
     audio.wrong();
     audio.duck();
     shake(0.55);
@@ -685,9 +696,145 @@ export class QuizGame {
     stopLoop('quiz:hint');
     this.contHint.classList.remove('show');
     gsap.to(this.contHint, { opacity: 0, duration: 0.15 });
-    if (this.rush && this.lives <= 0) return this.finish();
+    if (this.rush && this.lives <= 0) return void this.offerContinue();
     gsap.to(this.buttons, { scale: 0, duration: 0.2, stagger: 0.03, ease: 'back.in(2)' });
     this.next(true);
+  }
+
+  // ------------------------------------------------------------------ continue (one more heart)
+  /** out of hearts: offer a continue when the run has a ticket and continues left, else finish */
+  protected async offerContinue() {
+    const n = this.continues + 1;
+    const ticket = n <= CONTINUE.max && this.run && wallet.enabled ? await cloud.runTicket(this.run, 1500) : null;
+    if (!ticket || this.isOver()) return this.finish();
+    this.offering = true;
+    audio.stopMusic();
+    let useAd = n === CONTINUE.adSlot && ads.available;
+    let busy = false;
+
+    const status = h('p', { class: 'cont-status' });
+    const have = h('p', { class: 'cont-have' });
+    const actions = h('div', { class: 'cont-actions' });
+    const card = h(
+      'div',
+      { class: 'modal-card cont-card' },
+      h('div', { class: 'cont-heart', html: ICON.heart }),
+      h('h2', { class: 'modal-title' }, tx('contTitle')),
+      h('p', { class: 'cont-desc' }, tx('contDesc')),
+      actions,
+      have,
+      status,
+    );
+    const modal = h('div', { class: 'modal cont-modal' }, card);
+    this.el.append(modal);
+    gsap.fromTo(card, { scale: 0.4, rotation: -8 }, { scale: 1, rotation: 0, duration: 0.5, ease: 'elastic.out(1,0.5)' });
+
+    const close = () => {
+      this.offering = false;
+      modal.remove();
+    };
+    const say = (msg: string) => {
+      status.textContent = msg;
+    };
+    const btn = (label: string, color: string, onTap: () => Promise<void> | void, icon?: string) => {
+      const b = h('button', { class: 'big-btn', style: `--c:${color}` }, icon ? h('span', { class: 'mini-coin', html: icon }) : '', h('span', { class: 'big-btn-label' }, label));
+      pressable(b, async () => {
+        if (busy) return;
+        busy = true;
+        audio.pop();
+        actions.classList.add('busy');
+        try {
+          await onTap();
+        } finally {
+          busy = false;
+          actions.classList.remove('busy');
+        }
+      });
+      return b;
+    };
+    const fill = (k: string, n: number) => k.replace('{n}', String(n)).replace('{max}', String(CONTINUE.max));
+
+    const render = () => {
+      const cost = continueCost(n);
+      const bal = wallet.jade;
+      const short = bal !== null && bal < cost;
+      actions.replaceChildren(
+        useAd
+          ? btn(t('contAd'), '#5be35b', payAd, ICON.play)
+          : btn(fill(t('contJade'), cost), short ? '#9a8fa8' : '#3ec9a0', payJade, ICON.jade),
+        btn(t('contNo'), '#ff4757', decline),
+      );
+      have.textContent = useAd ? (n > 1 ? fill(t('contLeft'), n - 1) : '') : bal === null ? '' : fill(t('contHave'), bal);
+    };
+
+    const resume = () => {
+      close();
+      this.continues = n;
+      this.lives = 1;
+      const heart = this.hearts[0];
+      heart.classList.remove('lost');
+      const hc = center(heart);
+      gsap.fromTo(heart, { scale: 0 }, { scale: 1, duration: 0.6, ease: 'elastic.out(1,0.4)' });
+      particles.burst(hc.x, hc.y, { count: 12, sprite: 'heart', speed: [120, 320], size: [12, 20], g: -200, life: [0.5, 0.9] });
+      this.floatText(t('contBack'), hc.x + 40, hc.y + 20);
+      audio.coin();
+      audio.startMusic();
+      gsap.to(this.buttons, { scale: 0, duration: 0.2, stagger: 0.03, ease: 'back.in(2)' });
+      this.next(true);
+    };
+
+    const decline = () => {
+      close();
+      this.finish();
+    };
+
+    /** a refusal that ends the offer (run closed, already used, no continues left) */
+    const fatal = (e: unknown) => e instanceof ApiError && (e.code === 'continue_refused' || e.code === 'ticket_invalid');
+
+    const payJade = async () => {
+      const cost = continueCost(n);
+      if (wallet.jade !== null && wallet.jade < cost) return say(t('contNoJade'));
+      say('');
+      try {
+        await wallet.continueRun(ticket, n, 'jade');
+        resume();
+      } catch (e) {
+        if (fatal(e)) return decline();
+        if (e instanceof ApiError && e.code === 'insufficient_jade') {
+          say(t('contNoJade'));
+          void wallet.refresh().then(render);
+          return;
+        }
+        say(t('contOffline'));
+      }
+    };
+
+    const payAd = async () => {
+      say('');
+      const r = await ads.show(ticket);
+      if (r === 'skipped') return;
+      if (r === 'failed') {
+        useAd = false;
+        render();
+        return say(t('contNoAd'));
+      }
+      // AdMob's callback to the server usually lands within seconds of the reward
+      for (let i = 0; i < 8; i++) {
+        try {
+          await wallet.continueRun(ticket, n, 'ad');
+          return resume();
+        } catch (e) {
+          if (fatal(e)) return decline();
+          if (!(e instanceof ApiError && (e.code === 'ad_unverified' || e.transient))) break;
+          await new Promise((res) => setTimeout(res, 1500));
+        }
+      }
+      useAd = false;
+      render();
+      say(t('contAdUnverified'));
+    };
+
+    render();
   }
 
   // ------------------------------------------------------------------ end
@@ -709,10 +856,11 @@ export class QuizGame {
       rush: this.rush,
       runId: this.run?.id,
       durationMs: this.run ? Math.round(performance.now() - this.run.startedAt) : undefined,
+      continues: this.continues,
     };
     if (import.meta.env.DEV && this.run) {
       // a failure here means SCORING in shared/api.ts drifted from this file's scoring
-      const why = checkRun({ board: this.run.board, score: stats.score, correct: stats.correct, asked: stats.asked, maxCombo: stats.maxCombo, durationMs: stats.durationMs! });
+      const why = checkRun({ board: this.run.board, score: stats.score, correct: stats.correct, asked: stats.asked, maxCombo: stats.maxCombo, durationMs: stats.durationMs!, continues: stats.continues });
       if (why) console.error('[cloud] checkRun failed:', why, stats);
     }
     stats.reward = awardRun(stats);
@@ -789,7 +937,7 @@ export class QuizGame {
   }
 
   protected setPaused(p: boolean) {
-    if (this.isOver() || this.phase === 'intro' || this.paused === p) return;
+    if (this.isOver() || this.phase === 'intro' || this.offering || this.paused === p) return;
     this.paused = p;
     this.pauseModal.classList.toggle('hidden', !p);
     if (p) {
@@ -801,6 +949,7 @@ export class QuizGame {
   }
 
   protected onKey(e: KeyboardEvent) {
+    if (this.offering) return;
     if (e.key === 'Escape') return this.setPaused(!this.paused);
     if (this.paused) return;
     const n = Number(e.key);

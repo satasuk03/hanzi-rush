@@ -20,7 +20,7 @@ Jade is the server-held premium currency (see §11 of the design doc). The first
 ### Sources of Jade
 
 - [ ] Real-money packs: store receipt verification endpoint, `iap` ledger rows (iOS, Android). Web needs a separate payment path.
-- [ ] Rewarded ads: server-side verification, a daily cap, `ad` ledger rows.
+- [x] Rewarded ads for continues (server-side verification, daily cap): see HANDOFFS.md "Continues". Ads that pay Jade directly are not built.
 - [ ] One-time Jade reward for unlocking a title, tier-scaled 0/5/10/20/40 (design doc §11.4). Needs server-side verification of the requirement. Decide how retroactive unlocks are handled.
 - [ ] Limited events and season rewards, granted through `player_grants`.
 
