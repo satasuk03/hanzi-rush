@@ -13,7 +13,7 @@ Read this first, then [`docs/cosmetics-shop.md`](docs/cosmetics-shop.md) (the fu
 | — | Home screen rework, Jade shown in the Daily login cells | **Merged and deployed** (`ed4dbef`) |
 | C | Box pulls (server), 46 frames / name effects / badges, Shop, chest ceremony, Wardrobe | Server and art **merged and deployed** (PRs #13, #14, migration `0006`); UI **merged** (PR #16, then #17, #18) |
 | C2 | Player card modal: `pid` on boards, card snapshot on save, `GET /players/:pid/card`, modal, "Show my card" | **Merged** (PR #20, no migration) |
-| D | Depth. **D1** sets, set badges, 6 animated name effects, featured Set Box, `fullset`: PR #21 (no migration). **D2** daily deals + title Jade rewards (`0007`): next, branch from `main` after D1 merges | D1 in review |
+| D | Depth. **D1** sets, set badges, 6 animated name effects, featured Set Box, `fullset`: **merged** (PR #21). **D2** daily deals + title Jade rewards: PR `feat/d2-deals-titles`, migration `0007` | D2 in review |
 | E | Prestige: grants, background and banner slots, real money | Not started |
 
 Every merge to `main` deploys through `.github/workflows/deploy.yml`: typecheck, build, **apply D1 migrations to production**, then deploy Pages. So merging a migration changes the production database immediately. Keep migrations additive and backward compatible.
@@ -64,8 +64,8 @@ Nobody has checked these by hand yet:
 | Generic opening ceremony: `Reveal`, `RevealBatch`, `Machine`, `Price`, async `again` | `src/games/gacha/opening.ts`; word cards `wordReveal.ts` + `cabinet.ts`; cosmetics `cosmeticReveal.ts` + `chest.ts` (treasure chests) + `treasureArt.ts` (display-case faces, chest-lid backs); preview `dev/preview-chests.html` |
 | Shop screen and purchase flow (one ref per purchase, kept across retries) | `src/games/gacha/ShopScreen.ts`, `shopBuy.ts` |
 | Wardrobe screen (tabs, preview card, titles list) | `src/games/gacha/wardrobe.ts` |
-| `players.pub`, `card`, `card_public` (for C2, not yet used) | `migrations/0004_look.sql` |
-| Tests (run from the repo root) | `npm run test:wallet`, `npm run test:shop`, `npm run test:ownership` |
+| `players.pub`, `card`, `card_public` (player card, C2) | `migrations/0004_look.sql` |
+| Tests (run from the repo root) | `npm run test:wallet`, `test:shop`, `test:ownership`, `test:card`, `test:deals`, `test:titles` |
 
 ## Phase C: First release (done, 2026-10-07)
 
@@ -94,16 +94,19 @@ To verify by hand: the modal at 360 px, Android back closes the card, a hidden c
 - [ ] Animated name effects beyond the launch set, themed set boxes and set bonuses, the Exchange (spend duplicates to craft a chosen item) if players ask, rotating direct-buy deals.
 - [ ] Title Jade rewards (0 / 5 / 10 / 20 / 40 by tier) once the server can verify title requirements; decide how retroactive unlocks are paid.
 
-D1 (done in PR `feat/d-depth`):
+D1 (merged, PR #21):
 - [x] `SETS` (8 sets of 4 existing items, one per slot) fills `Item.set`; completing one grants a `badge_set_*` seal (source `'set'`, never in a box) inside the pull batch, also retroactively on the next pull. Title `fullset` (requirement kind `sets`).
 - [x] 6 animated name effects (`fx_yinguang`, `fx_yinghuo`, `fx_jiguang`, `fx_leiting`, `fx_xinghe`, `fx_tianguang`). Motion only under `prefers-reduced-motion: no-preference`; keyframes use literal values (old iOS WebKit ignores `var()` in keyframes).
 - [x] Featured Set Box (`set`): Standard price, odds and pity, 50% rate-up on the featured set, rotates Monday 00:00 Bangkok (`SET_ROTATION`, append-only, week 0 = `jade` from 2026-10-05). A stale `set` is refused with reason `rotated` after the replay check. Shop strip, Wardrobe Sets tab.
 - To verify by hand: Shop with 4 tabs and Wardrobe with 6 tabs at 360 px (labels ellipsize), name effects on iOS/Android, `fx_xinghe` stars are faint at 14 px, set-complete toast after the ceremony (not inside the reveal yet). Native-speaker copy for set names and the new strings.
 
-D2 (next; decisions made 2026-10-08):
-- [ ] Daily deals: 3 per player per Bangkok day, items unowned at day start, one buy per slot per day, 60 / 150 / 400 / 1,200 Jade (COMMON to LEGENDARY), never MYTHIC. `shop_deals` table in `0007`; same ref + batch + `pull_seq` pattern as pulls.
-- [ ] Title Jade rewards for **all** titles, verified against the stored cloud save (plus inventory for `cosmetics`/`sets`). Shared evaluator for client and server; `POST /titles/claim`; ledger reason `'title'`, ref = title id. Retroactive: an account's first claim pays min(sum, 100); later unlocks pay in full.
+D2 (PR `feat/d2-deals-titles`; decisions made 2026-10-08):
+- [x] Daily deals: 3 per player per Bangkok day, items unowned at day start, one buy per slot per day, 60 / 150 / 400 / 1,200 Jade (COMMON to LEGENDARY), never MYTHIC. `shop_deals` table in `0007`; same ref + batch + `pull_seq` pattern as pulls.
+- [x] Title Jade rewards for **all** titles, verified against the stored cloud save (plus inventory for `cosmetics`/`sets`). Shared evaluator for client and server; `POST /titles/claim`; ledger reason `'title'`, ref = title id. Retroactive: an account's first claim pays min(sum, 100); later unlocks pay in full.
 - Exchange: deferred (no pull data yet; duplicates already refund Jade).
+- D2 code: `server/deals.ts` (`GET/POST /shop/deals`; offer seeded by player and day, owned-at-day-start = `inventory.first_at < dayStart`; shares `pull_at` with pulls), `shared/titles.ts` (`TitleFacts`, `titleCount`, `TITLE_REWARD`; client `meta.ts` and server both use it), `server/titleFacts.ts`, `server/titles.ts` (`POST /titles/claim`; guard `title_claim_at`; first claim over 100 writes 0-Jade marker rows plus one `retro` row), `src/core/titleRewards.ts` (claims after a sync; asks again only when the pending set changes), `src/games/gacha/shopDeals.ts`. Tests: `npm run test:deals`, `npm run test:titles`.
+- The card's title count now comes from the save (shared evaluator) plus inventory, not `profile.seen`.
+- To verify by hand: Deals tab and Boxes|Deals switch at 360 px, the Jade chip next to long title names, a first claim on an account with many titles (one toast, 100 Jade), Thai copy of the D2 strings.
 
 ## Phase E: Prestige and expansion
 

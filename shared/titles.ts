@@ -117,3 +117,63 @@ export const TITLE_DEFS: TitleDef[] = [
   T('fullset', '套装', 'Full Set', 'ครบเซ็ต', 3, 'fortune', { k: 'sets', n: 1 }),
   T('rich', '富翁', 'Tycoon', 'เศรษฐีเหรียญ', 4, 'fortune', { k: 'stat', key: 'maxCoins', n: 20000 }),
 ];
+
+// ====================================================================== evaluation (client + server)
+
+/** Jade paid once per title, by tier 0..4 (docs: phase D2; server/titles.ts) */
+export const TITLE_REWARD = [0, 5, 10, 20, 40] as const;
+/** the first claim of an account pays at most this much for the titles it already holds */
+export const TITLE_RETRO_CAP = 100;
+/** words per HSK level; must equal src/core/data.ts LEVELS[i].count (npm run test:titles checks it) */
+export const HSK_WORD_COUNTS = [150, 147, 298, 598, 1298, 2500] as const;
+
+/**
+ * Everything a requirement can ask about. Built from the client store (src/core/meta.ts) or from a stored cloud save
+ * (server/titleFacts.ts), so both evaluate a title identically.
+ */
+export interface TitleFacts {
+  level(): number;
+  /** distinct words collected */
+  owned(): number;
+  /** words collected in one HSK level (1..6) */
+  ownedIn(hsk: number): number;
+  mastered(): number;
+  streakBest(): number;
+  /** distinct known cosmetics owned */
+  cosmetics(): number;
+  /** completed cosmetic sets */
+  sets(): number;
+  stat(k: TitleStat): number;
+}
+
+/** where the player stands on a requirement; `have` is capped at `need` */
+export function titleCount(r: TitleReq, f: TitleFacts): { have: number; need: number } {
+  const c = (have: number, need: number) => ({ have: Math.min(have, need), need });
+  switch (r.k) {
+    case 'none':
+      return c(1, 1);
+    case 'level':
+      return c(f.level(), r.n);
+    case 'owned':
+      return c(f.owned(), r.n);
+    case 'hsk':
+      return c(f.ownedIn(r.n), HSK_WORD_COUNTS[r.n - 1]);
+    case 'all':
+      return c(f.owned(), HSK_WORD_COUNTS.reduce((s, n) => s + n, 0));
+    case 'streak':
+      return c(f.streakBest(), r.n);
+    case 'mastered':
+      return c(f.mastered(), r.n);
+    case 'cosmetics':
+      return c(f.cosmetics(), r.n);
+    case 'sets':
+      return c(f.sets(), r.n);
+    case 'stat':
+      return c(f.stat(r.key), r.n);
+  }
+}
+
+export const titleUnlocked = (d: TitleDef, f: TitleFacts): boolean => {
+  const c = titleCount(d.req, f);
+  return c.have >= c.need;
+};

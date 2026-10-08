@@ -41,7 +41,8 @@ assert.equal(c.correct, 80);
 assert.equal(c.questions, 100);
 assert.equal(c.bestCombo, 17);
 assert.equal(c.bestStreak, 9);
-assert.equal(c.titles, 1, 'duplicates and unknown ids are not counted');
+// the shared evaluator: novice, inkling (level 3), sharp (1 perfect), combo15 (17), streak3 + streak7 (best 9); `seen` is ignored
+  assert.equal(c.titles, 6, 'titles unlocked per the shared evaluator, not profile.seen');
 ok('stats come from the save');
 
 assert.deepEqual(parseCard(JSON.stringify(c)), c);

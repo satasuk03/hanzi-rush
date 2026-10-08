@@ -3,11 +3,10 @@
  * and titles (称号) unlocked by level or achievements and worn on the profile card.
  */
 import { store } from './store';
-import { LEVELS } from './data';
 import { wallet } from './wallet';
 import { completedSets, itemById } from '../../shared/cosmetics';
 import { levelOf, xpToNext, type LevelInfo } from '../../shared/level';
-import { TITLE_DEFS, TITLE_FAMILIES, type TitleReq, type TitleStat, type TitleFamily } from '../../shared/titles';
+import { TITLE_DEFS, TITLE_FAMILIES, titleCount, type TitleFacts, type TitleReq, type TitleStat, type TitleFamily } from '../../shared/titles';
 
 // ------------------------------------------------------------------ level curve
 // the curve itself is shared with the server (player cards)
@@ -39,7 +38,6 @@ const ownedIn = (lv: number) => {
   for (const k in store.progress.cards) if (k.startsWith(pre)) n++;
   return n;
 };
-const totalWords = () => LEVELS.reduce((s, L) => s + L.count, 0);
 /** words seen 5+ times and answered right 80%+ of the time */
 const mastered = () => {
   let n = 0;
@@ -108,32 +106,20 @@ function reqText(r: TitleReq): { en: string; th: string } {
   }
 }
 
+/** the client store seen through the shared title evaluator (shared/titles.ts), which the server also uses */
+const clientFacts: TitleFacts = {
+  level: () => playerLevel().level,
+  owned,
+  ownedIn,
+  mastered,
+  streakBest: () => store.progress.daily.best,
+  cosmetics,
+  sets,
+  stat: (k) => STAT[k](),
+};
+
 /** current value and goal of a requirement */
-function countOf(r: TitleReq): { have: number; need: number } {
-  const c = (have: number, need: number) => ({ have: Math.min(have, need), need });
-  switch (r.k) {
-    case 'none':
-      return c(1, 1);
-    case 'level':
-      return c(playerLevel().level, r.n);
-    case 'owned':
-      return c(owned(), r.n);
-    case 'hsk':
-      return c(ownedIn(r.n), LEVELS[r.n - 1].count);
-    case 'all':
-      return c(owned(), totalWords());
-    case 'streak':
-      return c(store.progress.daily.best, r.n);
-    case 'mastered':
-      return c(mastered(), r.n);
-    case 'cosmetics':
-      return c(cosmetics(), r.n);
-    case 'sets':
-      return c(sets(), r.n);
-    case 'stat':
-      return c(STAT[r.key](), r.n);
-  }
-}
+const countOf = (r: TitleReq): { have: number; need: number } => titleCount(r, clientFacts);
 
 /** 0..1 progress toward a requirement */
 function progressOf(r: TitleReq): number {

@@ -2,7 +2,18 @@
  * Jade wallet, client side (docs/cosmetics-shop.md §11). The server owns the balance; this module only caches it so
  * the home chip works offline, claims the one-time starter grant, and sends the daily claim (queued until it lands).
  */
-import { bangkokDay, type JadeDailyResponse, type JadeStarterResponse, type ShopPullRequest, type ShopPullResponse, type WalletResponse } from '../../shared/api';
+import {
+  bangkokDay,
+  type JadeDailyResponse,
+  type JadeStarterResponse,
+  type ShopDealBuyRequest,
+  type ShopDealBuyResponse,
+  type ShopDealsResponse,
+  type ShopPullRequest,
+  type ShopPullResponse,
+  type TitleClaimResponse,
+  type WalletResponse,
+} from '../../shared/api';
 import { API_OFF, ApiError } from './api';
 import { cloud, uuid } from './cloud';
 import { storage } from './storage';
@@ -25,6 +36,8 @@ interface Cache {
   seen: string[] | null;
   /** the Set Box's featured set and when it rotates (epoch ms), as last seen from the server; null = unknown */
   featured: { set: string; endsAt: number } | null;
+  /** title ids already paid their Jade reward, as last seen from the server */
+  titlesPaid: string[];
 }
 
 export interface PendingPull {
@@ -36,7 +49,7 @@ export interface PendingPull {
 }
 
 const KEY = 'hanzi-rush:wallet:v1';
-const empty = (): Cache => ({ playerId: null, jade: null, pendingDay: null, inventory: {}, pity: {}, pending: null, seen: null, featured: null });
+const empty = (): Cache => ({ playerId: null, jade: null, pendingDay: null, inventory: {}, pity: {}, pending: null, seen: null, featured: null, titlesPaid: [] });
 
 function load(): Cache {
   try {
@@ -51,6 +64,8 @@ function load(): Cache {
 let c = load();
 let inited = false;
 let inflight: Promise<void> | null = null;
+/** an old server (no /titles/claim): stop asking until the app restarts */
+let titlesOff = false;
 const listeners = new Set<() => void>();
 const persist = () => storage.set(KEY, JSON.stringify(c));
 const emit = () => listeners.forEach((f) => f());
@@ -156,6 +171,14 @@ export const wallet = {
     persist();
     emit();
   },
+  /** title ids whose Jade reward is already paid */
+  get titlesPaid(): readonly string[] {
+    return c.titlesPaid ?? [];
+  },
+  /** an old server (no `titlesPaid` in /wallet, or a 404 to a claim) this session: rewards are not on offer */
+  get titlesOff(): boolean {
+    return titlesOff;
+  },
   /** box id → pulls since the last LEGENDARY+ */
   get pity(): Readonly<Record<string, number>> {
     return c.pity;
@@ -179,6 +202,9 @@ export const wallet = {
         const w = await cloud.authed<WalletResponse>('GET', '/wallet');
         bind();
         c.featured = w.featured ?? null;
+        c.titlesPaid = w.titlesPaid ?? [];
+        // an old server has no title rewards: no chips, no claims
+        if (!w.titlesPaid) titlesOff = true;
         setHoldings(w.inventory, w.pity);
         setJade(w.jade);
         if (!w.starterClaimed) setJade((await cloud.authed<JadeStarterResponse>('POST', '/jade/starter')).jade);
@@ -207,6 +233,51 @@ export const wallet = {
     setHoldings(inventory, { ...c.pity, ...r.pity });
     setJade(r.jade);
     return r;
+  },
+
+  /** today's three direct-buy deals (online only). Throws ApiError. */
+  deals(): Promise<ShopDealsResponse> {
+    return cloud.authed<ShopDealsResponse>('GET', '/shop/deals');
+  },
+
+  /**
+   * Buys one deal (online only). Throws ApiError: `insufficient_jade` (402), 400 with reason `rotated` / `owned` /
+   * `bought` / `no_deal`, `rate_limited`, ... Retrying after a network failure must reuse the same `ref`.
+   */
+  async buyDeal(day: string, slot: number, ref: string): Promise<ShopDealBuyResponse> {
+    const body: ShopDealBuyRequest = { day, slot, ref };
+    const r = await cloud.authed<ShopDealBuyResponse>('POST', '/shop/deals', body);
+    bind();
+    const inventory = { ...c.inventory, [r.itemId]: Math.max(c.inventory[r.itemId] ?? 0, r.copies) };
+    for (const id of r.bonuses ?? []) inventory[id] = Math.max(inventory[id] ?? 0, 1);
+    setHoldings(inventory, c.pity);
+    setJade(r.jade);
+    return r;
+  },
+
+  /**
+   * Asks the server to pay the Jade of every title unlocked and not yet paid. Resolves to the result, or null (offline,
+   * rate limited, old server): the next trigger tries again. A 404 stops the attempts for this session.
+   */
+  async claimTitles(): Promise<TitleClaimResponse | null> {
+    if (API_OFF || titlesOff) return null;
+    try {
+      const r = await cloud.authed<TitleClaimResponse>('POST', '/titles/claim');
+      bind();
+      const paid = new Set(c.titlesPaid ?? []);
+      for (const p of r.paid) paid.add(p.id);
+      c.titlesPaid = [...paid];
+      setJade(r.jade);
+      persist();
+      emit();
+      return r;
+    } catch (e) {
+      if (e instanceof ApiError && e.status === 404) {
+        titlesOff = true;
+        emit();
+      }
+      return null;
+    }
   },
 
   /**
