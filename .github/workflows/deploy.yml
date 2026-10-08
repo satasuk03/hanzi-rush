@@ -1,6 +1,6 @@
 name: Deploy
 
-# On every merge to main: typecheck, apply pending D1 migrations to production, then deploy Pages (site + API).
+# On every merge to main: typecheck, run the server tests, apply pending D1 migrations to production, then deploy Pages (site + API).
 # Needs repo secrets CLOUDFLARE_API_TOKEN (Pages:Edit + D1:Edit) and CLOUDFLARE_ACCOUNT_ID.
 # If the Pages project is also connected to GitHub in the Cloudflare dashboard, disconnect it or every merge deploys twice.
 on:
@@ -23,6 +23,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run typecheck:api
+      - run: npm test # server invariants against a throwaway local D1; a failure stops migrations and deploy
       - run: npm run build # runs tsc --noEmit for the client, then vite build
       - name: Apply D1 migrations (production)
         run: npm run db:remote
