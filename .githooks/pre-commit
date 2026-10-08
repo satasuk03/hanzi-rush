@@ -1,0 +1,7 @@
+#!/bin/sh
+# Runs the server tests when a commit touches what they cover. Skip once with `git commit --no-verify`.
+# Installed by `npm install` (the prepare script points core.hooksPath here).
+if git diff --cached --name-only | grep -qE '^(server|shared|functions|migrations)/|^scripts/test-|^(package(-lock)?\.json|wrangler\.toml)$'; then
+  echo "pre-commit: server code changed, running npm test (~20 s)"
+  npm test --silent || { echo "pre-commit: tests failed, commit aborted (bypass: git commit --no-verify)"; exit 1; }
+fi

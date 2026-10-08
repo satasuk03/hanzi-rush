@@ -11,6 +11,7 @@
     "dev:api": "wrangler pages dev dist --port 8788",
     "db:local": "wrangler d1 migrations apply hanzi-rush --local",
     "db:remote": "wrangler d1 migrations apply hanzi-rush --remote",
+    "prepare": "git config core.hooksPath .githooks || true",
     "test": "npm run test:wallet && npm run test:shop && npm run test:deals && npm run test:ownership && npm run test:card && npm run test:titles && npm run test:boards",
     "test:wallet": "node scripts/test-wallet.mjs",
     "test:shop": "node scripts/test-shop.mjs",
