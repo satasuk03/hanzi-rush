@@ -36,9 +36,61 @@ input.nfx { background-image: none !important; color: var(--a, #fff7e6); }
   --a: #b3122f; --b: #a1177a; --c: #5b21b6; --da: #ff6b8a; --db: #ff8ae6; --dc: #b69cff;
   --f: drop-shadow(0 0 4px rgba(255, 61, 99, .6)); --df: drop-shadow(0 0 8px rgba(255, 61, 99, .85));
 }
+/* Phase D effects. Each has a readable static look (reduced motion, rows 11+). Extra variables: --d fourth stop,
+   --s accent (sweep band or stars; saturated mid-tone on light rows, never white). Their light-row values are set here,
+   the dark ones through --ds/--dd and the remap below. The breathing and flashing glows animate `filter` with literal
+   values, one keyframes pair (light row, dark card) per id: var() inside @keyframes is unreliable before Safari 16.4. */
+.nfx[data-fx='fx_yinguang'] { --a: #475569; --b: #64748b; --c: #334155; --s: #2f6fe0; --da: #9fb0c6; --db: #b9c6d9; --dc: #8ea0b8; --ds: #fff; }
+.nfx[data-fx='fx_yinghuo'] {
+  --a: #4f6b00; --b: #6a8a00; --c: #4f6b00; --da: #e4ff7a; --db: #c6f23c; --dc: #e4ff7a;
+  --f: drop-shadow(0 0 1px rgba(150, 200, 0, .45)); --df: drop-shadow(0 0 2px rgba(214, 255, 60, .5));
+}
+.nfx[data-fx='fx_jiguang'] {
+  --a: #047857; --b: #0e7490; --c: #6d28d9; --d: #be185d; --da: #5ef2b0; --db: #67e8f9; --dc: #b69cff; --dd: #ff8ae0;
+  background-image: linear-gradient(100deg, var(--a), var(--b), var(--c), var(--d, var(--c)));
+}
+.nfx[data-fx='fx_leiting'] {
+  --a: #1e3a8a; --b: #3730a3; --c: #1e3a8a; --da: #bcd7ff; --db: #e3eeff; --dc: #bcd7ff;
+  --f: drop-shadow(0 0 1px rgba(37, 99, 235, .4)); --df: drop-shadow(0 0 3px rgba(125, 180, 255, .55));
+}
+.nfx[data-fx='fx_xinghe'] {
+  --a: #1e1b4b; --b: #3b2a8c; --c: #1e1b4b; --s: #ffd76a; --da: #9a89fb; --db: #b7a8ff; --dc: #9a89fb; --ds: #ffe08a;
+  --f: drop-shadow(0 0 1px rgba(30, 27, 75, .35)); --df: drop-shadow(0 0 5px rgba(169, 155, 255, .5));
+  background-image: radial-gradient(circle, var(--s) 0 1.2px, transparent 1.8px), radial-gradient(circle at 40% 60%, var(--s) 0 1px, transparent 1.5px), linear-gradient(100deg, var(--a), var(--b), var(--c));
+  background-size: 13px 11px, 19px 15px, 100% 100%;
+}
+.nfx[data-fx='fx_tianguang'] {
+  --a: #8a5a00; --b: #047857; --c: #8a5a00; --s: #f0a800; --da: #f2c24d; --db: #3fe0a0; --dc: #f2c24d; --ds: #fff;
+  --f: drop-shadow(0 0 3px rgba(240, 168, 0, .55)); --df: drop-shadow(0 0 4px rgba(255, 224, 138, .6));
+}
 /* the Wardrobe's board-row preview sits inside the card but is a light row */
-.pf-card .nfx:not(.wd-board *) { --a: var(--da, #fff7e6); --b: var(--db, var(--a)); --c: var(--dc, var(--a)); --f: var(--df, none); }
+.pf-card .nfx:not(.wd-board *) {
+  --a: var(--da, #fff7e6); --b: var(--db, var(--a)); --c: var(--dc, var(--a)); --d: var(--dd, var(--c)); --f: var(--df, none);
+  --s: var(--ds, transparent);
+}
 @keyframes nfxFlow { to { background-position: 200% 0; } }
+/* breathing glows (from = the static --f / --df of the id); D = the dark card */
+@keyframes nfxYinghuo { from { filter: drop-shadow(0 0 1px rgba(150, 200, 0, .45)); } to { filter: drop-shadow(0 0 6px rgba(150, 205, 0, .95)); } }
+@keyframes nfxYinghuoD { from { filter: drop-shadow(0 0 2px rgba(214, 255, 60, .5)); } to { filter: drop-shadow(0 0 9px rgba(214, 255, 60, .95)); } }
+@keyframes nfxTianguang { from { filter: drop-shadow(0 0 3px rgba(240, 168, 0, .55)); } to { filter: drop-shadow(0 0 7px rgba(240, 168, 0, .95)); } }
+@keyframes nfxTianguangD { from { filter: drop-shadow(0 0 4px rgba(255, 224, 138, .6)); } to { filter: drop-shadow(0 0 10px rgba(255, 224, 138, 1)); } }
+/* highlight band crosses once (55% of the cycle), then rests; only layer 1 moves */
+@keyframes nfxSweep { 0% { background-position: 130% 0, 0 0; } 55%, 100% { background-position: -30% 0, 0 0; } }
+/* Sweep and flow in one animation, so the two layers do not fight over background-position (period = 200% of the flow tile) */
+@keyframes nfxHeaven { 0% { background-position: 130% 0, 0 0; } 55% { background-position: -30% 0, 110% 0; } 100% { background-position: -30% 0, 200% 0; } }
+@keyframes nfxAurora { to { background-position: 100% 100%; } }
+/* idle, then two short flashes (88-90% and 93-94%): at most 2 per 4 s, under the WCAG 2.3.1 limit of 3 */
+@keyframes nfxThunder {
+  0%, 87.9%, 90.5%, 92.9%, 95%, 100% { filter: drop-shadow(0 0 1px rgba(37, 99, 235, .4)) drop-shadow(0 0 0 transparent); }
+  88%, 89.5%, 93%, 94% { filter: drop-shadow(0 0 3px #38bdf8) drop-shadow(0 0 7px rgba(37, 120, 255, .9)); }
+}
+/* the dark card also brightens on the flash */
+@keyframes nfxThunderD {
+  0%, 87.9%, 90.5%, 92.9%, 95%, 100% { filter: drop-shadow(0 0 3px rgba(125, 180, 255, .55)) drop-shadow(0 0 0 transparent) brightness(1); }
+  88%, 89.5%, 93%, 94% { filter: drop-shadow(0 0 4px #7db4ff) drop-shadow(0 0 9px rgba(110, 170, 255, .95)) brightness(1.4); }
+}
+/* two star layers drift at different speeds; the offsets are whole tiles, so the loop is seamless */
+@keyframes nfxStars { to { background-position: 52px 33px, -38px -30px, 0 0; } }
 @media (prefers-reduced-motion: no-preference) {
   .nfx-anim:is([data-fx='fx_wanxia'], [data-fx='fx_bibo'], [data-fx='fx_zijin'], [data-fx='fx_moyun'], [data-fx='fx_chiyan'], [data-fx='fx_cuiyu'], [data-fx='fx_liujin'], [data-fx='fx_fenghuang']) {
     background-image: linear-gradient(100deg, var(--a), var(--b), var(--c), var(--a)); background-size: 200% 100%;
@@ -46,4 +98,23 @@ input.nfx { background-image: none !important; color: var(--a, #fff7e6); }
   }
   .nfx-anim[data-fx='fx_liujin'] { animation-duration: 3.2s; }
   .nfx-anim[data-fx='fx_fenghuang'] { animation-duration: 2.6s; }
+  .nfx-anim[data-fx='fx_yinguang'] {
+    background-image: linear-gradient(110deg, transparent 42%, var(--s) 50%, transparent 58%), linear-gradient(100deg, var(--a), var(--b), var(--c));
+    background-size: 250% 100%, 100% 100%; background-repeat: no-repeat; animation: nfxSweep 4s ease-in-out infinite;
+  }
+  .nfx-anim[data-fx='fx_yinghuo'] { animation: nfxYinghuo 2.4s ease-in-out infinite alternate; }
+  .pf-card .nfx-anim[data-fx='fx_yinghuo']:not(.wd-board *) { animation-name: nfxYinghuoD; }
+  .nfx-anim[data-fx='fx_jiguang'] {
+    background-image: linear-gradient(135deg, var(--a), var(--b), var(--c), var(--d, var(--c)));
+    background-size: 300% 300%; animation: nfxAurora 8s ease-in-out infinite alternate;
+  }
+  .nfx-anim[data-fx='fx_leiting'] { animation: nfxThunder 4s linear infinite; }
+  .pf-card .nfx-anim[data-fx='fx_leiting']:not(.wd-board *) { animation-name: nfxThunderD; }
+  .nfx-anim[data-fx='fx_xinghe'] { animation: nfxStars 10s linear infinite; }
+  .nfx-anim[data-fx='fx_tianguang'] {
+    background-image: linear-gradient(110deg, transparent 42%, var(--s) 50%, transparent 58%), linear-gradient(100deg, var(--a), var(--b), var(--c), var(--a));
+    background-size: 250% 100%, 200% 100%; background-repeat: no-repeat, repeat;
+    animation: nfxHeaven 6s linear infinite, nfxTianguang 2.4s ease-in-out infinite alternate;
+  }
+  .pf-card .nfx-anim[data-fx='fx_tianguang']:not(.wd-board *) { animation-name: nfxHeaven, nfxTianguangD; }
 }

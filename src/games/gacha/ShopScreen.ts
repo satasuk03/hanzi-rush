@@ -9,7 +9,8 @@ import './vault.css';
 import './shop.css';
 import type { Screen } from '../../core/app';
 import { app } from '../../core/app';
-import { BOXES, BOX_MULTI, boxPrice, type BoxDef } from '../../../shared/cosmetics';
+import type { ShopPullResponse } from '../../../shared/api';
+import { BOXES, BOX_MULTI, SETS, boxPrice, featuredSet, itemById, setById, type BoxDef } from '../../../shared/cosmetics';
 import { h, center, formatNum } from '../../core/util';
 import { t, tx, i18n } from '../../core/i18n';
 import { RARITIES } from '../../core/rarity';
@@ -18,11 +19,13 @@ import { audio } from '../../engine/audio';
 import { particles } from '../../engine/particles';
 import { shake } from '../../engine/shake';
 import { pop, pressable, nope, popIn } from '../../engine/juice';
+import { notify } from '../../ui/notify';
 import { langToggle, muteButton, iconButton, ICON } from '../../ui/widgets';
 import { chestMachine, chestSVG, lidHop } from './chest';
 import { Opening, type AgainResult } from './opening';
 import { cosmeticBatch, jadePrice } from './cosmeticReveal';
 import { buy, BuyError, resumePending } from './shopBuy';
+import { featureStrip } from './shopFeature';
 
 let lastBox: BoxDef['id'] = 'standard';
 
@@ -36,7 +39,7 @@ export function toast(msg: string) {
 
 const failText = (e: unknown) => {
   const k = e instanceof BuyError ? e.kind : 'error';
-  return t(k === 'poor' ? 'shopPoor' : k === 'offline' ? 'shopConnect' : k === 'net' ? 'shopNetFail' : k === 'busy' ? 'tooMany' : 'shopFail');
+  return t(k === 'poor' ? 'shopPoor' : k === 'offline' ? 'shopConnect' : k === 'net' ? 'shopNetFail' : k === 'busy' ? 'tooMany' : k === 'rotated' ? 'shopRotated' : 'shopFail');
 };
 
 export function create(from: 'home' | 'vault' = 'home'): Screen {
@@ -48,6 +51,30 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
 
   const back = () => (from === 'vault' ? import('./VaultScreen').then((m) => m.create()) : import('../../screens/home').then((m) => m.homeScreen()));
   const jade = () => jadeHint ?? wallet.jade;
+  /** the Set Box's featured set: the server's word (cached); a dev build without the API uses the local clock */
+  const featured = (): { set: string; endsAt: number } | null => {
+    if (wallet.featured || wallet.enabled) return wallet.featured;
+    const f = featuredSet(Date.now());
+    return { set: f.set.id, endsAt: f.endsAt };
+  };
+  /** set-completion seals granted while a ceremony ran: announced when it closes */
+  let bonusQ: string[] = [];
+  const flushBonuses = () => {
+    const ids = [...new Set(bonusQ)];
+    bonusQ = [];
+    ids.forEach((id, i) => {
+      const it = itemById(id);
+      const set = SETS.find((x) => x.bonus === id);
+      if (it && set) notify({ kicker: t('setComplete'), title: set[i18n.lang], seal: it.zh[0], tier: it.rarity }, 0.35 + i * 0.5);
+    });
+  };
+  /** the ceremony's batch, remembering any set seal the purchase granted */
+  const batchFor = (b: BoxDef, res: ShopPullResponse) => {
+    bonusQ.push(...(res.bonuses ?? []));
+    return cosmeticBatch(b, res);
+  };
+  /** the featured set id to send with a Set Box purchase */
+  const setFor = (b: BoxDef) => (b.featured ? featured()?.set : undefined);
 
   // ---- top bar
   const jadeV = h('span', { class: 'coin-v' });
@@ -97,8 +124,10 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
     return { qty, el, label, price };
   };
   const buys = [buyBtn(1), buyBtn(BOX_MULTI)];
+  const strip = featureStrip();
+  const rateUp = h('div', { class: 'shop-rateup' });
   const note = h('div', { class: 'deal shop-note' });
-  const panel = h('div', { class: 'vault-panel shop-panel' }, rates, floor, pity, h('div', { class: 'shop-buys' }, ...buys.map((b) => b.el)), note);
+  const panel = h('div', { class: 'vault-panel shop-panel' }, strip.el, rates, rateUp, floor, pity, h('div', { class: 'shop-buys' }, ...buys.map((b) => b.el)), note);
 
   const el = h('div', { class: 'screen vault shop' }, top, head, picker, stage, panel);
 
@@ -108,11 +137,21 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
     jadeV.textContent = j === null ? '–' : formatNum(j);
   };
   const syncBox = () => {
-    el.dataset.box = box.id;
+    // the Set Box exists only while the server has named a featured set (an old server never does)
+    const fs = featured();
+    if (box.featured && !fs) {
+      box = BOXES[0];
+      drawStage(false);
+    }
     tabs.forEach((x) => {
+      x.el.hidden = !!x.b.featured && !fs;
       x.el.classList.toggle('on', x.b === box);
-      x.name.textContent = x.b[i18n.lang];
+      x.name.textContent = x.b.featured && fs ? (setById(fs.set)?.[i18n.lang] ?? x.b[i18n.lang]) : x.b[i18n.lang];
     });
+    el.dataset.box = box.id;
+    strip.sync(box.featured ? fs : null);
+    rateUp.textContent = box.featured ? t('setRateUp') : '';
+    rateUp.hidden = !box.featured;
     rates.replaceChildren(
       ...RARITIES.slice().reverse().map((R) => h('span', { class: `tier-chip rate${box.rates[R.i] ? '' : ' zero'}`, 'data-r': String(R.i) }, R.name, h('b', null, `${box.rates[R.i]}%`))),
     );
@@ -198,7 +237,7 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
 
   const select = (i: number) => {
     const x = tabs[i];
-    if (!x || busy) return;
+    if (!x || busy || x.el.hidden) return;
     if (x.b === box) {
       audio.rattle(3);
       poke();
@@ -235,9 +274,9 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
       return 'poor';
     }
     try {
-      const res = await buy(b.id, qty);
+      const res = await buy(b.id, qty, setFor(b));
       jadeHint = null;
-      return cosmeticBatch(b, res);
+      return batchFor(b, res);
     } catch (e) {
       if (e instanceof BuyError && e.jade !== undefined) jadeHint = e.jade;
       toast(failText(e));
@@ -254,12 +293,13 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
     new Opening({
       host: el,
       machine: chestMachine(bx),
-      batch: cosmeticBatch(bx, demoPull(bx, qty)),
+      batch: batchFor(bx, demoPull(bx, qty)),
       qty,
       price: jadePrice(boxPrice(bx, qty)),
-      again: () => cosmeticBatch(bx, demoPull(bx, qty)),
+      again: () => batchFor(bx, demoPull(bx, qty)),
       onClose: () => {
         busy = false;
+        flushBonuses();
         startKnock();
         thud();
       },
@@ -291,7 +331,7 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
     b.el.classList.add('is-loading');
     let res;
     try {
-      res = await buy(bx.id, b.qty);
+      res = await buy(bx.id, b.qty, setFor(bx));
     } catch (e) {
       busy = false;
       b.el.classList.remove('is-loading');
@@ -317,12 +357,13 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
     new Opening({
       host: el,
       machine: chestMachine(bx),
-      batch: cosmeticBatch(bx, res),
+      batch: batchFor(bx, res),
       qty: b.qty,
       price: jadePrice(boxPrice(bx, b.qty)),
       again: againFor(bx, b.qty),
       onClose: () => {
         busy = false;
+        flushBonuses();
         setJade(true);
         syncBox();
         startKnock();
@@ -348,12 +389,13 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
     new Opening({
       host: el,
       machine: chestMachine(bx),
-      batch: cosmeticBatch(bx, r.res),
+      batch: batchFor(bx, r.res),
       qty: r.qty,
       price: jadePrice(boxPrice(bx, r.qty)),
       again: againFor(bx, r.qty),
       onClose: () => {
         busy = false;
+        flushBonuses();
         setJade(true);
         syncBox();
         startKnock();

@@ -6,7 +6,11 @@ import { ITEMS } from '../shared/cosmetics';
 import { applyNameFx } from '../src/cosmetics/render';
 
 const NAMES = ['Panda Ken', 'น้องหมีแพนด้า', '小熊猫王'];
-const fxs = ITEMS.filter((i) => i.slot === 'nameFx');
+// ?new = only the phase D effects (fx_yin*, fx_ji*, fx_lei*, fx_xing*, fx_tian*); ?t=3.6 = freeze the animated columns at 3.6 s
+const q = new URLSearchParams(location.search);
+const NEW = ['fx_yinguang', 'fx_yinghuo', 'fx_jiguang', 'fx_leiting', 'fx_xinghe', 'fx_tianguang'];
+const fxs = ITEMS.filter((i) => i.slot === 'nameFx' && (!q.has('new') || NEW.includes(i.id)));
+if (q.has('t')) document.head.append(Object.assign(document.createElement('style'), { textContent: `.nfx-anim { animation-delay: -${Number(q.get('t'))}s !important; animation-play-state: paused !important; }` }));
 const root = document.getElementById('app')!;
 root.style.cssText = 'padding:12px;font-family:Nunito,Mitr,sans-serif';
 

@@ -36,12 +36,19 @@
  * its re-read and answers it as a replay. Anything else that writes `inventory` later (grants, exchange) must bump
  * players.pull_seq in its own batch, or a concurrent pull could mislabel a duplicate as new.
  *
+ * Sets (phase D): the `set` box passes a `feature` set of item ids to rollPull; when the rolled rarity has a featured
+ * item, SET_RATE_UP of the drops come from it (the extra rng() is only drawn then, so every other roll is unchanged).
+ * The client names the featured set it saw (`opts.set`); a stale one is refused ('rotated') AFTER the replay lookup, so
+ * a retried ref from last week still gets its result. Set bonuses (the 'set'-source badge of every completed set not
+ * yet owned, also sets completed before they existed) are inserted in the same batch, guarded by `mine`; the pull
+ * already bumps pull_seq. A replay returns `bonuses: []` (the badge is in the inventory already).
+ *
  * Rate limit: LIMITS.pullMinIntervalSec between APPLIED pulls (players.pull_at), checked after the replay lookup so
  * a retried ref always gets its answer. A pull that lost a version race re-checks it on the re-read, so concurrent
  * different refs from one player end in at most one success per interval in production.
  */
 import { LIMITS, type ShopDrop, type ShopPullResponse } from '../shared/api';
-import { BOXES, BOX_MULTI, DUPLICATE_REFUND, PITY_RARITY, boxById, boxPrice, gachaPool, type BoxDef, type Item, type RarityIdx } from '../shared/cosmetics';
+import { BOXES, BOX_MULTI, DUPLICATE_REFUND, PITY_RARITY, SET_RATE_UP, bonusesDue, boxById, boxPrice, featuredSet, gachaPool, type BoxDef, type Item, type RarityIdx } from '../shared/cosmetics';
 import { randomTicket } from './crypto';
 import { fail } from './http';
 import { minInterval } from './ratelimit';
@@ -120,7 +127,7 @@ export interface Roll {
 }
 
 /** the whole roll of one pull, from a snapshot: `pityBefore` of this box, `inventory` item id → copies */
-export function rollPull(box: BoxDef, qty: number, pityBefore: number, inventory: ReadonlyMap<string, number>, rng: Rng, pool: PoolFn = defaultPool): Roll {
+export function rollPull(box: BoxDef, qty: number, pityBefore: number, inventory: ReadonlyMap<string, number>, rng: Rng, pool: PoolFn = defaultPool, feature?: ReadonlySet<string>): Roll {
   const copies = new Map(inventory);
   let pity = Math.max(0, pityBefore);
   let epic = false;
@@ -130,7 +137,9 @@ export function rollPull(box: BoxDef, qty: number, pityBefore: number, inventory
     if (pity >= box.pity - 1) floor = maxR(floor, PITY_RARITY);
     if (qty === BOX_MULTI && i === qty - 1 && !epic) floor = maxR(floor, MULTI_RARITY);
     const rarity = resolveRarity(rollRarity(box.rates, floor, rng), box.minRarity, pool);
-    const it = pickItem(pool(rarity), copies, rng);
+    const all = pool(rarity);
+    const feat = feature ? all.filter((x) => feature.has(x.id)) : [];
+    const it = pickItem(feat.length && rng() < SET_RATE_UP ? feat : all, copies, rng);
     const before = copies.get(it.id) ?? 0;
     copies.set(it.id, before + 1);
     drops.push({ itemId: it.id, rarity: it.rarity, isNew: before === 0, copies: before + 1, refund: before > 0 ? DUPLICATE_REFUND[it.rarity] : 0 });
@@ -144,6 +153,10 @@ export interface PullOptions {
   now?: number;
   /** default LIMITS.pullMinIntervalSec; tests pass 0 */
   minIntervalMs?: number;
+  /** the featured set id the client saw (required for the featured box) */
+  set?: unknown;
+  /** test only: the gacha pool per rarity */
+  pool?: PoolFn;
 }
 
 interface PullRow {
@@ -163,6 +176,7 @@ const replayOf = (r: PullRow, jade: number): ShopPullResponse => ({
   refund: r.refund,
   jade,
   pity: JSON.parse(r.pity) as Record<string, number>,
+  bonuses: [],
   replay: true,
 });
 
@@ -193,17 +207,27 @@ export async function pull(db: D1Database, playerId: string, boxId: unknown, qty
     if (priorR.results[0]) return replayOf(priorR.results[0] as PullRow, p.jade);
     // a 'pull' ledger row without a stored result (written outside this module): the ref is taken, never charge it
     if (spentR.results.length) return fail('bad_request', 'ref already used');
+    let feature: ReadonlySet<string> | undefined;
+    let featSet: string | undefined;
+    if (box.featured) {
+      const f = featuredSet(now);
+      if (opts.set !== f.set.id) return fail('bad_request', 'The featured set changed', { reason: 'rotated', body: { set: f.set.id, endsAt: f.endsAt } });
+      feature = new Set(f.set.items);
+      featSet = f.set.id;
+    }
     minInterval(p.pull_at, minMs, now);
     if (p.jade < cost) return fail('insufficient_jade', 'Not enough Jade', { body: { jade: p.jade, cost } });
 
     const inventory = new Map<string, number>(invR.results.map((r) => [r.item_id as string, r.copies as number]));
     const pitySnap = new Map<string, number>(pityR.results.map((r) => [r.banner_id as string, r.pulls_since as number]));
-    const roll = rollPull(box, qty, pitySnap.get(box.id) ?? 0, inventory, rng);
+    const roll = rollPull(box, qty, pitySnap.get(box.id) ?? 0, inventory, rng, opts.pool, feature);
     const refund = roll.drops.reduce((s, d) => s + d.refund, 0);
     const pityAfter: Record<string, number> = Object.fromEntries(BOXES.map((b) => [b.id, pitySnap.get(b.id) ?? 0]));
     pityAfter[box.id] = roll.pity;
     const gained = new Map<string, number>();
     for (const d of roll.drops) gained.set(d.itemId, (gained.get(d.itemId) ?? 0) + 1);
+    // set bonuses: judged on the inventory after this pull; never granted twice (due = not owned yet)
+    const bonuses = bonusesDue((id) => (inventory.get(id) ?? 0) + (gained.get(id) ?? 0) > 0);
 
     const tx = randomTicket();
     // ?1 player, ?2 ref, ?3 tx in every guarded statement
@@ -247,6 +271,16 @@ export async function pull(db: D1Database, playerId: string, boxId: unknown, qty
           .bind(playerId, ref, tx, itemId, n, now),
       );
     }
+    for (const itemId of bonuses) {
+      stmts.push(
+        db
+          .prepare(
+            `INSERT INTO inventory (player_id, item_id, copies, first_at) SELECT ?1, ?4, 1, ?5 WHERE ${mine}
+             ON CONFLICT (player_id, item_id) DO NOTHING`,
+          )
+          .bind(playerId, ref, tx, itemId, now),
+      );
+    }
     stmts.push(
       db
         .prepare(
@@ -259,7 +293,7 @@ export async function pull(db: D1Database, playerId: string, boxId: unknown, qty
 
     const res = await db.batch<Record<string, any>>(stmts);
     if (res[0].meta.changes > 0) {
-      return { box: box.id, qty, drops: roll.drops, cost, refund, jade: res[res.length - 1].results[0]?.jade ?? 0, pity: pityAfter, replay: false };
+      return { box: box.id, qty, drops: roll.drops, cost, refund, jade: res[res.length - 1].results[0]?.jade ?? 0, pity: pityAfter, bonuses, ...(featSet ? { set: featSet } : {}), replay: false };
     }
     // nothing written: a twin with the same ref, a newer pull_seq or a balance that moved. Re-read and decide again.
   }

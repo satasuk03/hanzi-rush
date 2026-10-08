@@ -134,7 +134,8 @@ function setStatus(s: CloudStatus) {
   emit('status');
 }
 
-const uuid = () =>
+/** crypto.randomUUID needs a secure context and Chrome 92+: missing on http:// LAN dev and in old Android WebViews */
+export const uuid = (): string =>
   typeof crypto.randomUUID === 'function'
     ? crypto.randomUUID()
     : 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {

@@ -618,7 +618,7 @@ body.lang-th .r-best { font-family: var(--f-thai); font-weight: 700; }
 .pc-seal[data-t='3'] { background: linear-gradient(135deg, #f2c14e, #b47a1c); }
 .pc-seal[data-t='4'] { background: #120a18; color: #f6d77a; }
 .pc-lv {
-  position: absolute; right: -6px; bottom: -4px; min-width: 20px; height: 20px; padding: 0 4px; border-radius: 99px;
+  position: absolute; z-index: 1; right: -6px; bottom: -4px; min-width: 20px; height: 20px; padding: 0 4px; border-radius: 99px;
   background: var(--gold); color: var(--ink); border: 2.5px solid var(--ink); font: 400 12px/15px var(--f-display); text-align: center;
 }
 .pc-text { display: flex; flex-direction: column; min-width: 0; line-height: 1.05; }
@@ -627,7 +627,8 @@ body.lang-th .pc-name { font-weight: 600; }
 .pc-coins { display: flex; align-items: center; gap: 3px; font: 400 15px/1 var(--f-display); color: var(--gold-d); }
 .pc-jade { display: flex; align-items: center; gap: 3px; margin-left: 5px; color: #1f9b79; }
 .pc-jade[hidden] { display: none; }
-.pc-xp { position: absolute; left: 48px; right: 14px; bottom: 5px; height: 3px; border-radius: 9px; background: rgba(42, 26, 58, .12); overflow: hidden; }
+/* in the text column, under the currencies */
+.pc-xp { display: block; height: 3px; margin-top: 5px; border-radius: 9px; background: rgba(42, 26, 58, .12); overflow: hidden; }
 .pc-xp span { display: block; height: 100%; background: var(--gold); transform-origin: left; }
 
 .game-card.vault-card {

@@ -7,6 +7,7 @@
  *  - Never negative: the ledger row is only inserted `WHERE jade + delta >= 0`. Two concurrent spends are serialized
  *    by D1; the second sees the lower balance and inserts nothing. (`players.jade` also has CHECK (jade >= 0).)
  */
+import { featuredSet } from '../shared/cosmetics';
 import { JADE_DAILY, JADE_STARTER, bangkokDay, dayNumber, type JadeDailyResponse, type JadeGrantResponse, type WalletDaily, type WalletResponse } from '../shared/api';
 
 export type JadeReason = 'starter' | 'daily' | 'pull' | 'dupe_refund' | 'iap' | 'ad' | 'admin';
@@ -104,6 +105,7 @@ export async function walletState(db: D1Database, playerId: string, now = Date.n
     db.prepare('SELECT item_id, copies FROM inventory WHERE player_id = ?1').bind(playerId),
     db.prepare('SELECT banner_id, pulls_since FROM banner_pity WHERE player_id = ?1').bind(playerId),
   ]);
+  const f = featuredSet(now);
   return {
     jade: p.results[0]?.jade ?? 0,
     starterClaimed: starter.results.length > 0,
@@ -111,5 +113,6 @@ export async function walletState(db: D1Database, playerId: string, now = Date.n
     inventory: Object.fromEntries(inv.results.map((r) => [r.item_id, r.copies])),
     pity: Object.fromEntries(pity.results.map((r) => [r.banner_id, r.pulls_since])),
     serverTime: now,
+    featured: { set: f.set.id, endsAt: f.endsAt },
   };
 }

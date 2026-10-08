@@ -9,6 +9,9 @@ import assert from 'node:assert/strict';
 
 const tmp = mkdtempSync(join(tmpdir(), 'hr-own-'));
 const out = join(tmp, 'inventory.mjs');
+const cosOut = join(tmp, 'cosmetics.mjs');
+await build({ entryPoints: ['shared/cosmetics.ts'], bundle: true, format: 'esm', platform: 'node', outfile: cosOut, logLevel: 'error' });
+const C = await import(pathToFileURL(cosOut).href);
 await build({ entryPoints: ['server/inventory.ts'], bundle: true, format: 'esm', platform: 'node', outfile: out, logLevel: 'error' });
 const I = await import(pathToFileURL(out).href);
 
@@ -55,6 +58,16 @@ try {
     const id = await player('avatar_panda');
     assert.deepEqual(await I.ownedLook(db, id, { avatar: 'avatar_dragon' }), {});
     ok("another player's inventory does not count");
+  }
+  {
+    const bonus = 'badge_set_bamboo';
+    assert.deepEqual(C.sanitizeLook({ badges: [bonus] }), { badges: [bonus] }, 'sanitizeLook keeps set bonus badges');
+    const look = C.sanitizeLook({ badges: [bonus] });
+    const none = await player();
+    assert.deepEqual(await I.ownedLook(db, none, look), {});
+    const has = await player(bonus);
+    assert.deepEqual(await I.ownedLook(db, has, look), look);
+    ok('set bonus badges survive sanitizeLook and need ownership');
   }
   console.log('ownership: all ok');
 } finally {

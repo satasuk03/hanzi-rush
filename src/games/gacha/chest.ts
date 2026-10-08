@@ -59,6 +59,17 @@ const TINTS: Record<BoxDef['id'], Tint> = {
     gem: ['#9dffd0', '#16a36a'],
     glyph: '金',
   },
+  /** 套匣: jade-green lacquer with gold mounts */
+  set: {
+    body: ['#7be0b0', '#1f9e6e', '#0b5a3c'],
+    panel: ['#178a5e', '#07402a'],
+    trim: ['#1d4a3a', '#0a241b'],
+    metal: ['#fffbe0', '#ffe07a', '#e3a22a', '#94560b'],
+    etch: '#94560b',
+    inner: '#06331f',
+    gem: ['#ffe08a', '#d1921f'],
+    glyph: '套',
+  },
 };
 
 export const boxTint = (id: string): Tint => TINTS[id as BoxDef['id']] ?? TINTS.standard;

@@ -153,8 +153,13 @@ export function homeScreen(): Screen {
     'button',
     { class: 'profile-chip', 'aria-label': 'Profile' },
     seal,
-    h('span', { class: 'pc-text' }, chipName, h('span', { class: 'pc-coins' }, h('span', { class: 'mini-coin', html: ICON.coin }), coinsText, jadeChip())),
-    h('span', { class: 'pc-xp' }, xpFillEl),
+    h(
+      'span',
+      { class: 'pc-text' },
+      chipName,
+      h('span', { class: 'pc-coins' }, h('span', { class: 'mini-coin', html: ICON.coin }), coinsText, jadeChip()),
+      h('span', { class: 'pc-xp' }, xpFillEl),
+    ),
   );
   pressable(chip, (e) => {
     audio.unlock();

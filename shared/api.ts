@@ -418,9 +418,8 @@ export interface PlayerCardResponse {
 export const JADE_DAILY = [10, 10, 15, 15, 20, 20, 50] as const;
 export const JADE_STARTER = 100;
 /** The "day" of the Jade daily claim is the Asia/Bangkok calendar day (UTC+7, no DST). */
-export const bangkokDay = (ms: number): string => new Date(ms + 7 * 3600_000).toISOString().slice(0, 10);
+export { bangkokDay, dayNumber } from './day';
 export const DAY_RE = /^\d{4}-\d{2}-\d{2}$/;
-export const dayNumber = (day: string): number => Date.parse(day + 'T00:00:00Z') / 86_400_000;
 
 export interface WalletDaily {
   /** today's Bangkok day */
@@ -443,6 +442,8 @@ export interface WalletResponse {
   inventory: Record<string, number>;
   /** box id → pulls since the last LEGENDARY+ */
   pity: Record<string, number>;
+  /** the featured set of the Set Box now and when it rotates (epoch ms), see featuredSet in shared/cosmetics.ts */
+  featured?: { set: string; endsAt: number };
   serverTime: number;
 }
 
@@ -481,6 +482,8 @@ export interface ShopPullRequest {
   qty: number;
   /** client idempotency key (uuid). A retry with the same ref returns the original result and charges nothing. */
   ref: string;
+  /** featured set id the client saw (Set Box only). A stale one is refused with reason `rotated`. */
+  set?: string;
 }
 
 export interface ShopDrop {
@@ -509,6 +512,10 @@ export interface ShopPullResponse {
   pity: Record<string, number>;
   /** true when `ref` had already been applied: this is the stored original result, nothing was charged now */
   replay: boolean;
+  /** 'set'-source bonus items granted by this pull (completed sets); always [] on a replay, they show on the next wallet refresh */
+  bonuses?: string[];
+  /** the featured set this pull used (Set Box only) */
+  set?: string;
 }
 
 // ====================================================================== errors
