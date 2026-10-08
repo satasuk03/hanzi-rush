@@ -6,6 +6,7 @@
 import {
   LIMITS,
   SCORING_VERSION,
+  SIGNIN_PROVIDERS,
   checkRun,
   formatRecoveryCode,
   normalizeRecoveryCode,
@@ -28,6 +29,9 @@ import {
   type SaveConflictBody,
   type SaveDoc,
   type SaveResponse,
+  type SignInProvider,
+  type SignInRequest,
+  type SignInResponse,
   type StartRunResponse,
   type SubmitRunRequest,
   type SubmitRunResponse,
@@ -583,6 +587,68 @@ async function drainQueue(): Promise<boolean> {
 // ------------------------------------------------------------------ public surface
 const isEmpty = (d: SaveDoc) => d.progress.stats.games === 0 && d.progress.stats.pulls === 0 && d.progress.xp === 0;
 
+/**
+ * Switch this device to `auth` (POST /recover or a provider sign-in) and bring its save over. `choose` is asked
+ * (outside the sync chain) only when this device has its own progress to reconcile with a different account's save.
+ * `code` = the transfer code that was typed in (cached so the profile can show it), if any.
+ */
+async function adopt(auth: AuthResponse, choose: () => Promise<'combine' | 'cloud' | 'cancel'>, code?: string): Promise<'ok' | 'offline' | 'cancelled'> {
+  let S: SaveResponse | null = null;
+  try {
+    S = await api<SaveResponse>('GET', '/save', { token: auth.token, ...SAVE_OPTS });
+  } catch (e) {
+    if (!(e instanceof ApiError && e.status === 404)) return 'offline';
+  }
+  const sameAccount = (st.auth?.playerId ?? st.prev?.playerId) === auth.playerId;
+  // ask before taking the sync chain: a modal left open must not stall syncing
+  let pick: 'combine' | 'cloud' = 'cloud';
+  if (S && !sameAccount && !isEmpty(store.snapshot())) {
+    try {
+      const c = await choose();
+      if (c === 'cancel') return 'cancelled';
+      pick = c;
+    } catch {
+      return 'cancelled';
+    }
+  }
+  return exclusive(async () => {
+    const local = store.snapshot();
+    const prev = st.prev;
+    st.disabled = false;
+    st.signedOut = false;
+    st.signedOutSeen = false;
+    st.prev = null;
+    st.recovery = code && auth.recoveryCreatedAt != null ? { code: formatRecoveryCode(code), createdAt: auth.recoveryCreatedAt } : null;
+    if (sameAccount) {
+      // already this account (e.g. its own code typed in, or signed out of it): the normal 3-way merge, never a
+      // second "combine" against a base of nothing, which would double every additive field
+      if (!st.auth && prev) ({ rev: st.rev, base: st.base, inflight: st.inflight } = prev);
+      st.auth = { playerId: auth.playerId, token: auth.token, tag: auth.tag };
+      if (S) {
+        reconcile(S);
+        applyMerged(merge(st.base ?? freshSave(), local, S.data), S, local);
+      } else {
+        st.rev = 0;
+        st.base = null;
+        st.inflight = null;
+        persist();
+      }
+    } else {
+      // from here on this device belongs to the restored account; the old guest is orphaned
+      st.auth = { playerId: auth.playerId, token: auth.token, tag: auth.tag };
+      st.inflight = null;
+      st.rev = S ? S.revision : 0;
+      st.base = S ? S.data : null;
+      if (S) applyMerged(isEmpty(local) || pick === 'cloud' ? S.data : merge(freshSave(), local, S.data), S, local);
+      else persist();
+    }
+    setStatus('offline');
+    emit('status');
+    sync(false); // pushes whatever differs from the server copy
+    return 'ok' as const;
+  });
+}
+
 export const cloud = {
   init() {
     if (API_OFF || inited) return;
@@ -860,59 +926,58 @@ export const cloud = {
       }
       return 'offline';
     }
-    let S: SaveResponse | null = null;
+    return adopt(auth, choose, norm);
+  },
+
+  /** the providers linked to this account (GET /me); null = unknown (no account, offline) */
+  async identities(): Promise<SignInProvider[] | null> {
+    if (!st.auth) return null;
     try {
-      S = await api<SaveResponse>('GET', '/save', { token: auth.token, ...SAVE_OPTS });
+      const me = await api<MeResponse>('GET', '/me', { token: st.auth.token });
+      return me.identities.map((i) => i.provider).filter((p): p is SignInProvider => (SIGNIN_PROVIDERS as readonly string[]).includes(p));
+    } catch {
+      return null;
+    }
+  },
+
+  /**
+   * POST /auth/:provider with a provider credential (src/core/signin.ts).
+   *   linked     the provider account was new: it now signs in to THIS device's account (a guest is made first if needed)
+   *   ok         it was linked to an account already: this device switched to it, like a transfer-code restore
+   *   notLinked  new provider account, but this device has no account to link it to (cloud save off / signed out)
+   *   conflict   this account already has another account of this provider
+   */
+  async signIn(
+    provider: SignInProvider,
+    credential: string,
+    choose: () => Promise<'combine' | 'cloud' | 'cancel'>,
+  ): Promise<'linked' | 'ok' | 'notLinked' | 'conflict' | 'invalid' | 'offline' | 'rate_limited' | 'cancelled'> {
+    try {
+      await ensureAccount();
+    } catch {
+      return 'offline';
+    }
+    const body: SignInRequest = { credential, device: DEVICE };
+    let r: SignInResponse;
+    try {
+      r = await api<SignInResponse>('POST', `/auth/${provider}`, { body, token: st.auth?.token });
     } catch (e) {
-      if (!(e instanceof ApiError && e.status === 404)) return 'offline';
-    }
-    const sameAccount = (st.auth?.playerId ?? st.prev?.playerId) === auth.playerId;
-    // ask before taking the sync chain: a modal left open must not stall syncing
-    let pick: 'combine' | 'cloud' = 'cloud';
-    if (S && !sameAccount && !isEmpty(store.snapshot())) {
-      try {
-        const c = await choose();
-        if (c === 'cancel') return 'cancelled';
-        pick = c;
-      } catch {
-        return 'cancelled';
+      if (e instanceof ApiError) {
+        if (e.status === 404) return 'notLinked';
+        if (e.status === 409) return 'conflict';
+        if (e.status === 400 || e.status === 401) return 'invalid';
+        if (e.status === 429) return 'rate_limited';
       }
+      return 'offline';
     }
-    return exclusive(async () => {
-      const local = store.snapshot();
-      st.disabled = false;
-      st.signedOut = false;
-      st.signedOutSeen = false;
-      st.prev = null;
-      st.recovery = auth.recoveryCreatedAt != null ? { code: formatRecoveryCode(norm), createdAt: auth.recoveryCreatedAt } : null;
-      if (sameAccount) {
-        // already this account (e.g. its own code typed in, or signed out of it): the normal 3-way merge, never a
-        // second "combine" against a base of nothing, which would double every additive field
-        if (!st.auth && st.prev) ({ rev: st.rev, base: st.base, inflight: st.inflight } = st.prev);
-        st.auth = { playerId: auth.playerId, token: auth.token, tag: auth.tag };
-        if (S) {
-          reconcile(S);
-          applyMerged(merge(st.base ?? freshSave(), local, S.data), S, local);
-        } else {
-          st.rev = 0;
-          st.base = null;
-          st.inflight = null;
-          persist();
-        }
-      } else {
-        // from here on this device belongs to the restored account; the old guest is orphaned
-        st.auth = { playerId: auth.playerId, token: auth.token, tag: auth.tag };
-        st.inflight = null;
-        st.rev = S ? S.revision : 0;
-        st.base = S ? S.data : null;
-        if (S) applyMerged(isEmpty(local) || pick === 'cloud' ? S.data : merge(freshSave(), local, S.data), S, local);
-        else persist();
-      }
-      setStatus('offline');
-      emit('status');
-      sync(false); // pushes whatever differs from the server copy
-      return 'ok' as const;
-    });
+    if (r.result === 'linked') return 'linked';
+    return adopt(r.auth, choose);
+  },
+
+  /** DELETE /me/identities/:provider (throws ApiError) */
+  async unlink(provider: SignInProvider): Promise<void> {
+    if (!st.auth) throw new ApiError(0, 'offline');
+    await api('DELETE', `/me/identities/${provider}`, { token: st.auth.token });
   },
 
   /** DELETE /me, then forget the account and keep cloud save OFF until `enable()`. Local progress stays. */

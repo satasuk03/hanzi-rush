@@ -45,7 +45,9 @@ functions/                       # WP-A: Pages file-based routes only (thin hand
       players.ts                 #   POST
       me.ts                      #   GET, DELETE
       me/recovery-code.ts        #   POST
+      me/identities/[provider].ts #  DELETE (unlink)
       recover.ts                 #   POST
+      auth/[provider].ts         #   POST (sign in with / link Google, Apple, Play Games)
       save.ts                    #   GET, PUT
       runs/index.ts              #   POST (submit)
       runs/start.ts              #   POST
@@ -56,6 +58,8 @@ server/                          # WP-A: logic (kept out of functions/ so no fil
   cors.ts                        #   allowlist + headers
   crypto.ts                      #   randomToken(), sha256Hex(), randomCode(alphabet, n), uuid()
   auth.ts                        #   authenticate(ctx, required) → Player | null; issueSession()
+  oidc.ts                        #   verifyCredential(): Google/Apple ID tokens (JWKS), Play Games auth code exchange
+  identity.ts                    #   signInOrLink(), unlink()
   validate.ts                    #   validateSaveDoc(), validateSubmit()
   ratelimit.ts                   #   ipLimit(), per-player interval checks
   boards.ts                      #   upsertScores(), rankOf(), top()
@@ -97,7 +101,11 @@ Ownership: WP-A owns `functions/`, `server/`, `migrations/`, `wrangler.toml`, `f
 - **Player** = one account (UUID v4, server-generated). It has a public 4-char `tag` (for "Player#7KQ2"), plus `name` and `title` copied from the save/runs for leaderboard display.
 - **Session** = one device login. The token is `hr1.` + 32 random bytes base64url. The server stores only `sha256(token)`. A player can have many sessions (one per device). Tokens don't expire; deleting the row revokes one.
 - **Recovery (transfer) code**: 12 chars from `RECOVERY_ALPHABET`, 60 bits, shown as `XXXX-XXXX-XXXX`. The server stores only `sha256(code)`. Calling `POST /me/recovery-code` rotates it, and the old code dies. The client caches the plain code locally so the profile can show it again. Redeeming does **not** consume the code and does not revoke other sessions. That fits a transfer flow where the old phone may be lost or kept. Brute force is impractical: 60 bits against 10 tries/hour/IP.
-- **Identities** (future Apple/Google/email): the row `(provider, subject) → player_id`. Linking later means: an authenticated player calls `POST /me/identities/{provider}` with the provider token and the server inserts a row. Signing in on a new device means `POST /auth/{provider}`, which finds the row and issues a session. These are not built now; the table and `MeResponse.identities` exist so nothing needs to migrate.
+- **Identities** (Google, Apple, Play Games; `email` is reserved): the row `(provider, subject) → player_id`, at most one per provider per player (`0009`). Only the provider's user id is stored, no email or profile. One endpoint, `POST /auth/:provider` with a provider credential, does both jobs (`server/identity.ts`):
+  - the provider account is already linked → a new session (`via = provider`) for **that** player. A new device signs in this way; the client then reconciles saves exactly like a transfer-code restore (§5.5).
+  - not linked and the request carries a valid token → it is linked to the caller. No session is issued.
+  - not linked and no token → 404. Sign-in never creates a player.
+  One endpoint (rather than link + sign-in) because a Play Games server auth code works only once. Credentials (`server/oidc.ts`): Google and Apple send an OpenID Connect ID token, checked locally against the provider's JWKS (RS256, `iss`, `aud` in `GOOGLE_CLIENT_IDS` / `APPLE_CLIENT_IDS`, `exp`). Play Games sends a server auth code, which the server exchanges with Google (`PLAY_GAMES_CLIENT_ID` + secret) and then reads `games/v1/players/me` for the player id. `DELETE /me/identities/:provider` unlinks. Linking is optional: guests and transfer codes work as before.
 - **Delete**: `DELETE /me` cascades everything. This is needed for App Store guideline 5.1.1(v) once the Capacitor app ships.
 
 ---
@@ -223,6 +231,8 @@ Auth: `Authorization: Bearer <token>` (`AUTH_HEADER`, `authValue()`). All reques
 | `DELETE /me` | required | – | 204 | 401 |
 | `POST /me/recovery-code` | required | `RecoveryCodeRequest` (`{}` or `{ signOutOthers: true }`) | `RecoveryCodeResponse` (rotates; `signOutOthers` also deletes every other session of the player) | 401, 429 (≥10 s between calls) |
 | `POST /recover` | – | `RecoverRequest` | `RecoverResponse` (new session for that player; `save` meta and `recoveryCreatedAt` included) | 400 (malformed code), 401 (unknown code), 429 (10/h/IP, failed **and** successful attempts count) |
+| `POST /auth/:provider` | optional | `SignInRequest` (`provider` ∈ `SIGNIN_PROVIDERS`) | `SignInResponse`: `linked` (linked to the caller) or `signedIn` (new session for the linked player) | 400, 401 (bad credential, disabled player), 404 (unknown provider / not configured / not linked and no caller), 409 `identity_conflict` (`reason: provider_linked`), 429 (30/h/IP) |
+| `DELETE /me/identities/:provider` | required | – | 204 | 401, 404 (unknown provider) |
 | `GET /save` | required | – | `SaveResponse` (+ `pushIds`) | 401, 404 `not_found` (never uploaded) |
 | `PUT /save` | required | `PutSaveRequest` (≤ 512 KiB, optional `pushId`) | `PutSaveResponse` | 400 / `unsupported_version` (`data.v` ≠ 1), 401, 409 `SaveConflictBody`, 413, 429 (≥10 s since `saves.updated_at`) |
 | `POST /runs/start` | required | `StartRunRequest` | `StartRunResponse` | 400 (bad board), 401, 429 (≥2 s since the player's last run row; ≤500 rows per board-day) |
@@ -404,7 +414,10 @@ A sync that starts with an unresolved `inflight` always pulls first. `inflight` 
 
 Invariant: `store.replaceAll(M)` and `base := S` are persisted together. Write the cloud state with `storage.set` right after `store.save()`. If the app dies in between, the worst case is one extra merge of the same delta. To make the double-apply window negligible, persist the cloud state **first** with `{base: S, rev}` and `pendingMerged: M`, then apply M to the store and clear `pendingMerged`. On boot, if `pendingMerged` exists, apply it.
 
-### 5.5 Restoring on a new device (`cloud.recover(code)`)
+### 5.5 Restoring on a new device (`cloud.recover(code)`, `cloud.signIn(provider, …)`)
+
+Both go through `adopt(auth, choose)` in `cloud.ts`; a provider sign-in only differs in step 1 (`POST /auth/:provider` answering `signedIn`).
+
 
 1. `POST /recover` → new auth for the target player. Keep the old auth in memory until the restore completes.
 2. `GET /save` → S (or 404 → nothing to restore; adopt the account and push local).
@@ -498,6 +511,7 @@ Concrete ceilings (verified by running `maxScore`):
 | --- | --- | --- |
 | `POST /players` | 30 / hour / IP | `rate_limits` upsert `count = count + 1 … RETURNING count` (1 write) |
 | `POST /recover` | 10 / hour / IP | same |
+| `POST /auth/:provider` | 30 / hour / IP | same |
 | `PUT /save` | ≥ 10 s apart / player | `saves.updated_at` |
 | `POST /me/recovery-code` | ≥ 10 s apart / player | `players.recovery_created_at` |
 | `POST /runs/start` | ≥ 2 s apart; ≤ 500 runs rows / player / board-day | `runs_player_time` index (`MAX(created_at)`, `COUNT(*)`) |

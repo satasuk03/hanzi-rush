@@ -18,6 +18,7 @@ import { sanitizeName } from '../../../shared/api';
 import { cloud } from '../../core/cloud';
 import { applyNameFx, paintIdentity, renderIdentity } from '../../cosmetics/render';
 import { showTransferCode, showRestore, showDeleteAccount } from '../../ui/transfer';
+import { signInSection } from '../../ui/signin';
 import { invalidatePlayerCards } from '../../ui/playerCard';
 import { ring } from './collection';
 
@@ -125,7 +126,16 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
     cloudTag.textContent = cloud.tag ? `#${cloud.tag}` : '';
   };
   syncCloud();
-  const offStatus = cloud.on('status', syncCloud);
+  // ---- sign-in options (linked providers live on the account, so re-read them when the account changes)
+  const signIn = signInSection(h('h3', { class: 'pf-h' }, h('span', { class: 'pf-h-zh' }, '登'), tx('signInTitle')), reload);
+  let signInFor = cloud.tag;
+  const offStatus = cloud.on('status', () => {
+    syncCloud();
+    if (cloud.tag !== signInFor) {
+      signInFor = cloud.tag;
+      void signIn.refresh();
+    }
+  });
   const offApplied = cloud.on('applied', () => (name.value = p.profile.name));
 
   const custom = h('button', { class: 'pf-custom' }, h('b', null, '衣'), tx('wdCustomize'));
@@ -164,7 +174,8 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
       rarRow,
       stats,
       cloud.status === 'off' ? null : h('h3', { class: 'pf-h' }, h('span', { class: 'pf-h-zh' }, '云'), tx('cloudSave')),
-      cloud.status === 'off' ? null : cloudBox),
+      cloud.status === 'off' ? null : cloudBox,
+      cloud.status === 'off' ? null : signIn.el),
   );
   syncTitle();
   const offLang = i18n.onChange(() => {

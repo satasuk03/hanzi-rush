@@ -69,6 +69,27 @@ The server grants an ad continue only after AdMob's server-side verification (SS
 - Real ads serve only after the Play listing is linked in AdMob and the app passes review. `app-ads.txt` must be hosted on the developer website named in the store listing.
 - Consent (UMP, EEA/UK) and the iOS tracking prompt are shown the first time a player taps "Watch an ad".
 
+## Sign-in (Google, Apple, Play Games)
+Players stay guests by default. Profile → **Sign-in options** links a provider to the cloud account. On another device, the same button signs into that account, and saves are reconciled like a transfer-code restore. Code: `src/core/signin.ts`, `src/ui/signin.ts` (client); `server/oidc.ts`, `server/identity.ts`, `POST /api/v1/auth/:provider` (server); `PlayGamesPlugin.java` (Android). Migration: `0009`. Spec: `docs/backend.md` §2.
+
+Each provider shows up only once its ids are set. With none set, the section is hidden.
+
+| Provider | Platforms | Client build (`.env.production`) | Server (`wrangler.toml` vars / secrets) |
+| --- | --- | --- | --- |
+| Google | web, Android, iOS | `VITE_GOOGLE_WEB_CLIENT_ID`; iOS also `VITE_GOOGLE_IOS_CLIENT_ID` | `GOOGLE_CLIENT_IDS` = web id, iOS id |
+| Apple | iOS, web | web: `VITE_APPLE_SERVICE_ID` (+ `VITE_APPLE_REDIRECT_URL`, default the site root) | `APPLE_CLIENT_IDS` = `app.zeze.hanzirush`, Services ID |
+| Play Games | Android | `VITE_GOOGLE_WEB_CLIENT_ID`; `PLAY_GAMES_APP_ID` in `android/gradle.properties` | `PLAY_GAMES_CLIENT_ID` = web id; secret `PLAY_GAMES_CLIENT_SECRET` |
+
+Setup checklist:
+1. **Google Cloud console** (one project, OAuth consent screen published):
+   - a **Web** client with authorized JavaScript origin `https://hanzi-rush.zeze.app` and redirect URI `https://hanzi-rush.zeze.app/` (the web popup returns to the site root). Its secret is `PLAY_GAMES_CLIENT_SECRET`.
+   - an **Android** client for `app.zeze.hanzirush`, one for each SHA-1 (debug keystore, upload key, and the Play App Signing key).
+   - an **iOS** client for bundle id `app.zeze.hanzirush`. Add its reversed client id (`com.googleusercontent.apps.…`) as a URL scheme in `ios/App/App/Info.plist`.
+2. **Play Console → Play Games Services**: create the game, link the same Cloud project, and add credentials (an Android credential with the SHA-1s, plus a "Game server" credential pointing to the Web client). The project id goes into `PLAY_GAMES_APP_ID`. Add testers while it is unpublished.
+3. **Apple Developer**: enable "Sign in with Apple" on the App ID and add the capability in Xcode (Signing & Capabilities). For web, create a Services ID with domain `hanzi-rush.zeze.app` and return URL `https://hanzi-rush.zeze.app/`.
+4. Set the server vars, then `npx wrangler pages secret put PLAY_GAMES_CLIENT_SECRET`. Run `npm run db:remote` to apply `0009`.
+5. Store forms: declare "User IDs" (app functionality, linked to the user) in Play's Data safety form and in the App Store privacy section.
+
 ## Deploy (Cloudflare Pages)
 - Dashboard: Framework preset **None** · Build command `npm run build` · Output directory `dist`
 - CLI: `npm run build && npx wrangler pages deploy`
