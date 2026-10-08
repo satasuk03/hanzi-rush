@@ -13,7 +13,7 @@ ALLOWED_ORIGINS = "capacitor://localhost,https://localhost,http://localhost,http
 # AdMob ad units whose rewarded-ad callbacks are accepted (GET /ads/admob-ssv): Android "Continue heart"
 ADMOB_AD_UNITS = "5443625214"
 # Sign-in (POST /auth/:provider, server/oidc.ts). Unset = that provider is off. See README "Sign-in".
-# GOOGLE_CLIENT_IDS = "<web client id>,<iOS client id>"
+GOOGLE_CLIENT_IDS = "835044888289-f1gfmbisadve711vbog0asa0euf29mjn.apps.googleusercontent.com"
 # APPLE_CLIENT_IDS = "app.zeze.hanzirush,<web Services ID>"
 # PLAY_GAMES_CLIENT_ID = "<web client id>"
 
@@ -25,6 +25,7 @@ database_id = "25969929-12ce-4ef2-8bb2-29100ef3156c"
 migrations_dir = "migrations"
 
 [env.preview.vars]
+GOOGLE_CLIENT_IDS = "835044888289-f1gfmbisadve711vbog0asa0euf29mjn.apps.googleusercontent.com"
 ALLOWED_ORIGINS = "capacitor://localhost,https://localhost,http://localhost,http://localhost:5173,http://127.0.0.1:5173"
 ADMOB_AD_UNITS = "5443625214"
 
