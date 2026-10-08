@@ -48,15 +48,25 @@
       <li><b>ข้อมูลเกม:</b> เซฟความคืบหน้า คะแนน สถิติการเล่น (เช่น จำนวนข้อที่ตอบถูก คอมโบ เวลาที่ใช้) สกุลเงินและไอเทมในเกม</li>
       <li><b>ข้อมูลทางเทคนิค:</b> ประเภทแพลตฟอร์ม (web/android/ios) และเวอร์ชันแอป รวมถึงค่าแฮชของที่อยู่ IP ที่ผ่านการเข้ารหัสแบบทางเดียว ใช้เพื่อป้องกันสแปมและการโกงเท่านั้น เราไม่เก็บที่อยู่ IP แบบเต็ม</li>
       <li><b>รหัสกู้คืนบัญชี</b> (ถ้าคุณสร้าง) จะเก็บเป็นค่าแฮชเท่านั้น</li>
+      <li><b>การดูโฆษณาแบบมีรางวัล:</b> เมื่อคุณเลือกดูโฆษณาเพื่อรับหัวใจเพิ่ม เราบันทึกว่าโฆษณานั้นดูจบแล้วสำหรับรอบการเล่นใด (รหัสธุรกรรมจาก Google) เพื่อมอบรางวัลและจำกัดจำนวนต่อวัน</li>
     </ul>
-    <p>เราไม่เก็บตำแหน่งที่ตั้ง รายชื่อติดต่อ รูปภาพ ไมโครโฟน หรือข้อมูลการชำระเงิน แอปไม่มีโฆษณา และไม่มีการซื้อด้วยเงินจริง การอ่านออกเสียงใช้ระบบเสียงในเครื่องของคุณ</p>
+    <p>เราไม่เก็บตำแหน่งที่ตั้ง รายชื่อติดต่อ รูปภาพ ไมโครโฟน หรือข้อมูลการชำระเงิน และไม่มีการซื้อด้วยเงินจริง การอ่านออกเสียงใช้ระบบเสียงในเครื่องของคุณ</p>
 
     <h3>เราใช้ข้อมูลอย่างไร</h3>
     <ul>
       <li>เพื่อบันทึกและซิงก์ความคืบหน้าของคุณ และแสดงกระดานผู้นำ</li>
       <li>เพื่อป้องกันการโกง สแปม และการใช้งานในทางที่ผิด</li>
     </ul>
-    <p>เราไม่ขายข้อมูลของคุณ และไม่แชร์ข้อมูลกับบุคคลที่สามเพื่อการโฆษณา</p>
+    <p>เราไม่ขายข้อมูลของคุณ พาร์ทเนอร์โฆษณาเพียงรายเดียวคือ Google AdMob ตามรายละเอียดด้านล่าง</p>
+
+    <h3>โฆษณา (เฉพาะแอป Android/iOS)</h3>
+    <p>แอปมี<b>โฆษณาแบบมีรางวัล</b>ที่แสดงเฉพาะเมื่อคุณกด “ดูโฆษณา” เพื่อเล่นต่อหลังหัวใจหมด จะไม่มีโฆษณาแสดงขึ้นเองระหว่างเล่น และเว็บไซต์ไม่มีโฆษณา โฆษณาให้บริการโดย <b>Google AdMob</b> ซึ่งอาจเก็บและใช้ข้อมูลต่อไปนี้ตาม<a href="https://policies.google.com/technologies/partner-sites?hl=th">นโยบายของ Google</a>:</p>
+    <ul>
+      <li>รหัสโฆษณาของอุปกรณ์ (Android Advertising ID / IDFA บน iOS เมื่อคุณอนุญาต)</li>
+      <li>ข้อมูลอุปกรณ์ ที่อยู่ IP ตำแหน่งโดยประมาณจาก IP และการโต้ตอบกับโฆษณา</li>
+      <li>ข้อมูลการวินิจฉัยและประสิทธิภาพของโฆษณา</li>
+    </ul>
+    <p>ผู้ใช้ในเขตเศรษฐกิจยุโรป (EEA) และสหราชอาณาจักรจะได้รับแบบฟอร์มขอความยินยอมของ Google ก่อนแสดงโฆษณาที่ปรับตามบุคคล บน iOS แอปจะขออนุญาตติดตาม (App Tracking Transparency) และคุณปฏิเสธได้ โดยยังดูโฆษณาแบบไม่ปรับตามบุคคลได้ คุณรีเซ็ตหรือปิดการปรับโฆษณาตามบุคคลได้ในการตั้งค่าของอุปกรณ์ (Android: การตั้งค่า → Google → โฆษณา, iOS: การตั้งค่า → ความเป็นส่วนตัวและความปลอดภัย → การติดตาม) และจะใช้หยกแทนการดูโฆษณาก็ได้</p>
 
     <h3>บริการภายนอก</h3>
     <ul>
@@ -66,7 +76,7 @@
     </ul>
 
     <h3>ระยะเวลาการเก็บข้อมูล</h3>
-    <p>บันทึกการเล่นแต่ละรอบจะถูกลบหลัง 30 วัน คะแนนรายวันและรายสัปดาห์ถูกลบเมื่อหมดรอบ ข้อมูลบัญชีและเซฟเก็บไว้จนกว่าคุณจะลบบัญชี</p>
+    <p>บันทึกการเล่นแต่ละรอบและบันทึกการดูโฆษณาจะถูกลบหลัง 30 วัน คะแนนรายวันและรายสัปดาห์ถูกลบเมื่อหมดรอบ ข้อมูลบัญชีและเซฟเก็บไว้จนกว่าคุณจะลบบัญชี</p>
 
     <h3>การลบบัญชีและข้อมูล</h3>
     <ul>
@@ -75,7 +85,7 @@
     </ul>
 
     <h3>เด็ก</h3>
-    <p>เกมนี้เหมาะสำหรับผู้เรียนทุกวัย และไม่ได้เก็บข้อมูลส่วนบุคคลที่ระบุตัวตนได้ หากคุณเป็นผู้ปกครองและต้องการให้ลบข้อมูลของบุตรหลาน โปรดติดต่อเรา</p>
+    <p>แอปนี้มีโฆษณา จึงมีไว้สำหรับผู้ใช้อายุ 13 ปีขึ้นไป และไม่ได้ออกแบบมาสำหรับเด็ก เราไม่ได้เก็บข้อมูลส่วนบุคคลที่ระบุตัวตนได้โดยเจตนา หากคุณเป็นผู้ปกครองและต้องการให้ลบข้อมูลของบุตรหลาน โปรดติดต่อเรา</p>
 
     <h3>การเปลี่ยนแปลงและการติดต่อ</h3>
     <p>หากมีการเปลี่ยนแปลงนโยบาย เราจะอัปเดตหน้านี้และวันที่ด้านบน ติดต่อ: <a href="mailto:satasuk03@gmail.com">satasuk03@gmail.com</a></p>
@@ -92,15 +102,25 @@
       <li><b>Game data:</b> your save/progress, scores, play statistics (e.g. correct answers, combos, time played), and in-game currency and items.</li>
       <li><b>Technical data:</b> platform (web/android/ios) and app version, and a salted one-way hash of your IP address, used only to prevent spam and cheating. We do not store your raw IP address.</li>
       <li><b>Recovery code</b> (if you create one), stored only as a hash.</li>
+      <li><b>Rewarded ad views:</b> when you choose to watch an ad for an extra heart, we record that the ad was completed for that run (Google's transaction ID), to grant the reward and apply a daily limit.</li>
     </ul>
-    <p>We do not collect location, contacts, photos, microphone audio or payment information. The app has no ads and no real-money purchases. Text-to-speech uses your device's built-in voices.</p>
+    <p>We do not collect location, contacts, photos, microphone audio or payment information, and there are no real-money purchases. Text-to-speech uses your device's built-in voices.</p>
 
     <h3>How we use it</h3>
     <ul>
       <li>To save and sync your progress and show leaderboards.</li>
       <li>To prevent cheating, spam and abuse.</li>
     </ul>
-    <p>We do not sell your data or share it with third parties for advertising.</p>
+    <p>We do not sell your data. Our only advertising partner is Google AdMob, described below.</p>
+
+    <h3>Ads (Android/iOS app only)</h3>
+    <p>The app has <b>rewarded ads</b> that play only when you tap “Watch an ad” to keep going after losing your last heart. No ad ever appears on its own during play, and the website has no ads. Ads are served by <b>Google AdMob</b>, which may collect and use the following under <a href="https://policies.google.com/technologies/partner-sites">Google's policies</a>:</p>
+    <ul>
+      <li>your device's advertising identifier (Android Advertising ID; on iOS, the IDFA only if you allow tracking)</li>
+      <li>device information, IP address, approximate location derived from it, and ad interactions</li>
+      <li>ad diagnostics and performance data</li>
+    </ul>
+    <p>Users in the European Economic Area and the UK are shown Google's consent form before any personalised ads. On iOS the app asks for tracking permission (App Tracking Transparency); you can decline and still watch non-personalised ads. You can reset your advertising ID or turn off ad personalisation in your device settings (Android: Settings → Google → Ads; iOS: Settings → Privacy &amp; Security → Tracking), and you can always use Jade instead of watching an ad.</p>
 
     <h3>Third-party services</h3>
     <ul>
@@ -110,7 +130,7 @@
     </ul>
 
     <h3>Retention</h3>
-    <p>Individual run records are deleted after 30 days. Daily and weekly leaderboard entries are deleted when their period ends. Your account and save are kept until you delete your account.</p>
+    <p>Individual run records and ad-view records are deleted after 30 days. Daily and weekly leaderboard entries are deleted when their period ends. Your account and save are kept until you delete your account.</p>
 
     <h3>Deleting your account and data</h3>
     <ul>
@@ -119,7 +139,7 @@
     </ul>
 
     <h3>Children</h3>
-    <p>The game is suitable for learners of all ages and does not collect personally identifying information. If you are a parent and want your child's data deleted, contact us.</p>
+    <p>Because the app shows ads, it is intended for users aged 13 and over and is not designed for children. We do not knowingly collect personally identifying information. If you are a parent and want your child's data deleted, contact us.</p>
 
     <h3>Changes and contact</h3>
     <p>If this policy changes, we will update this page and the date above. Contact: <a href="mailto:satasuk03@gmail.com">satasuk03@gmail.com</a></p>

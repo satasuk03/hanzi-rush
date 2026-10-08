@@ -115,6 +115,7 @@ D2 (PR `feat/d2-deals-titles`; decisions made 2026-10-08):
 - `server/continues.ts`: `POST /runs/continue` (`runs.continues` counter, Jade ledger reason `continue`, ref `ticket:n`), AdMob SSV verification (`GET /ads/admob-ssv`, ECDSA P-256, `ad_rewards` table, custom data = ticket), 20 ad continues per player per Bangkok day. `POST /runs` rejects more continues than the ticket paid (`continues_unpaid`).
 - Client: `src/core/ads.ts` (consent + ATT on first "Watch an ad"), `QuizGame.offerContinue`, `wallet.continueRun`. Test: `npm run test:continue`.
 - AdMob (Android): app `ca-app-pub-1129023958286783~9260862551` (`android/gradle.properties`), rewarded unit `…/5443625214` (`.env.production`, `ADMOB_AD_UNITS` in `wrangler.toml`). SSV callback `https://hanzi-rush.zeze.app/api/v1/ads/admob-ssv`. Real ads only after the Play listing is linked in AdMob and reviewed. iOS: none yet (Jade only; `Info.plist` holds the sample id).
+- `public/app-ads.txt` (served at `https://hanzi-rush.zeze.app/app-ads.txt`) and `public/privacy.html` (AdMob section, 13+) cover the store listing.
 - Testing: dev builds and `VITE_ADMOB_TEST=1 npm run android` use Google test units. A local server needs `ADS_SSV_BYPASS=1` in `.dev.vars` (test ads never call back).
 - To verify by hand: the modal at 360 px, an ad on a real Android and iOS device, the consent form from the EEA (UMP debug geography), Thai copy of the `cont*` strings.
 
