@@ -238,6 +238,24 @@ const dict = {
   setBonusHint: { en: 'Complete the set: get this seal', th: 'สะสมครบเซ็ต รับตรานี้' },
   setBonusGot: { en: 'Seal earned', th: 'ได้รับตราแล้ว' },
   shopRotated: { en: 'This week’s set just changed. Check the new one and try again.', th: 'เซ็ตประจำสัปดาห์เพิ่งเปลี่ยน ดูเซ็ตใหม่แล้วลองอีกครั้ง' },
+  // ---- phase D2 (daily deals, title rewards)
+  shopTabBoxes: { en: 'Boxes', th: 'กล่อง' },
+  shopTabDeals: { en: 'Deals', th: 'ดีลวันนี้' },
+  dealsTitle: { en: 'Today’s Deals', th: 'ดีลประจำวัน' },
+  dealsEndsIn: { en: 'New deals in {h}h {m}m', th: 'ดีลใหม่ใน {h} ชม. {m} น.' },
+  dealsEndsSoon: { en: 'New deals in under a minute', th: 'ดีลใหม่ในอีกไม่ถึงนาที' },
+  dealBuy: { en: 'Buy', th: 'ซื้อ' },
+  dealConfirm: { en: 'Confirm', th: 'ยืนยัน' },
+  dealBought: { en: 'Bought', th: 'ซื้อแล้ว' },
+  dealOwned: { en: 'Owned', th: 'มีแล้ว' },
+  dealsEmpty: { en: 'You own everything on offer today', th: 'วันนี้คุณมีของที่เสนอครบทุกชิ้นแล้ว' },
+  dealsFail: { en: 'Couldn’t load today’s deals. Try again later.', th: 'โหลดดีลวันนี้ไม่ได้ ลองใหม่ภายหลัง' },
+  dealsLoading: { en: 'Loading deals…', th: 'กำลังโหลดดีล…' },
+  dealsRotated: { en: 'New deals just arrived. Take a look!', th: 'ดีลใหม่มาแล้ว ลองดูสิ!' },
+  dealsGone: { en: 'That deal is no longer available.', th: 'ดีลนี้ไม่มีแล้ว' },
+  titleJadeKicker: { en: 'Title reward', th: 'รางวัลจากฉายา' },
+  titleJadeRetro: { en: 'Jade for the titles you already hold', th: 'หยกสำหรับฉายาที่คุณมีอยู่แล้ว' },
+  titleJadePaid: { en: 'Reward paid', th: 'รับรางวัลแล้ว' },
 } as const;
 
 export type Key = keyof typeof dict;

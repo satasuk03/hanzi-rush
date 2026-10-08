@@ -1,15 +1,17 @@
 import type { PlayerCardStats, SaveDoc } from '../shared/api';
 import { levelOf } from '../shared/level';
-import { TITLE_DEFS } from '../shared/titles';
-
-const KNOWN_TITLES = new Set(TITLE_DEFS.map((d) => d.id));
+import { TITLE_DEFS, titleUnlocked } from '../shared/titles';
+import { factsFromSave } from './titleFacts';
 
 /**
- * `players.card`: the display-only numbers of a player card, derived from a validated save. Titles unlocked are
- * evaluated on the client, so the server counts the ones the player has already been told about (`profile.seen`).
+ * `players.card`: the display-only numbers of a player card, derived from a validated save. Titles unlocked use the
+ * shared evaluator. Pass the server inventory (item id -> copies) for exact `cosmetics` / `sets` titles; without it
+ * those two kinds count only when the player was already told about them (`profile.seen`).
  */
-export function buildCard(doc: SaveDoc): PlayerCardStats {
+export function buildCard(doc: SaveDoc, inventory?: ReadonlyMap<string, number>): PlayerCardStats {
   const p = doc.progress;
+  const facts = factsFromSave(doc, inventory ?? new Map());
+  const seen = new Set(p.profile.seen);
   return {
     level: levelOf(p.xp).level,
     words: Object.keys(p.cards).length,
@@ -18,7 +20,7 @@ export function buildCard(doc: SaveDoc): PlayerCardStats {
     questions: p.stats.questions,
     bestCombo: p.stats.bestCombo,
     bestStreak: p.daily.best,
-    titles: new Set(p.profile.seen.filter((id) => KNOWN_TITLES.has(id))).size,
+    titles: TITLE_DEFS.filter((d) => titleUnlocked(d, facts) || (!inventory && (d.req.k === 'cosmetics' || d.req.k === 'sets') && seen.has(d.id))).length,
   };
 }
 

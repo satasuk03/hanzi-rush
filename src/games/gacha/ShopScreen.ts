@@ -26,8 +26,10 @@ import { Opening, type AgainResult } from './opening';
 import { cosmeticBatch, jadePrice } from './cosmeticReveal';
 import { buy, BuyError, resumePending } from './shopBuy';
 import { featureStrip } from './shopFeature';
+import { dealsView } from './shopDeals';
 
 let lastBox: BoxDef['id'] = 'standard';
+let lastTab: 'boxes' | 'deals' = 'boxes';
 
 export function toast(msg: string) {
   const el = h('div', { class: 'toast shop-toast' }, msg);
@@ -91,6 +93,13 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
   const head = h('div', { class: 'vault-head' }, h('h1', { class: 'vault-title' }, '商店'), tx('shopTitle', 'span'));
   head.lastElementChild!.classList.add('vault-sub');
 
+  // ---- Boxes | Deals switch
+  let tab: 'boxes' | 'deals' = lastTab;
+  const tabBtn = (id: typeof tab, key: 'shopTabBoxes' | 'shopTabDeals', zh: string) =>
+    h('button', { class: 'shop-tab', 'data-tab': id, role: 'tab' }, h('b', null, zh), tx(key, 'span'));
+  const tabBtns = [tabBtn('boxes', 'shopTabBoxes', '宝匣'), tabBtn('deals', 'shopTabDeals', '今日')];
+  const switcher = h('div', { class: 'shop-tabs', role: 'tablist' }, ...tabBtns);
+
   // ---- box picker
   const tabs = BOXES.map((b) => {
     const name = h('span', { class: 'sb-name' });
@@ -129,7 +138,8 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
   const note = h('div', { class: 'deal shop-note' });
   const panel = h('div', { class: 'vault-panel shop-panel' }, strip.el, rates, rateUp, floor, pity, h('div', { class: 'shop-buys' }, ...buys.map((b) => b.el)), note);
 
-  const el = h('div', { class: 'screen vault shop' }, top, head, picker, stage, panel);
+  const deals = dealsView({ toast, jadePill });
+  const el = h('div', { class: 'screen vault shop' }, top, head, switcher, picker, stage, panel, deals.el);
 
   // ---- sync
   const syncJade = () => {
@@ -185,6 +195,28 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
     note.textContent = msg;
     note.dataset.s = state;
     note.classList.toggle('hot', !state);
+  };
+  /** Boxes shows picker + chest + panel, Deals shows the deal cards */
+  const showTab = (animate: boolean) => {
+    tabBtns.forEach((b) => {
+      const on = b.dataset.tab === tab;
+      b.classList.toggle('on', on);
+      b.setAttribute('aria-selected', String(on));
+    });
+    el.dataset.tab = tab;
+    const isDeals = tab === 'deals';
+    picker.hidden = stage.hidden = panel.hidden = isDeals;
+    deals.el.hidden = !isDeals;
+    if (isDeals) {
+      stopKnock();
+      deals.enter();
+      if (animate) gsap.from(deals.el, { y: 40, opacity: 0, duration: 0.4, ease: 'back.out(1.4)' });
+    } else {
+      deals.leave();
+      drawStage(false);
+      sync();
+      if (animate) gsap.from([picker, stage, panel], { y: 30, opacity: 0, duration: 0.35, stagger: 0.05, ease: 'power2.out' });
+    }
   };
   const sync = () => {
     syncJade();
@@ -251,6 +283,18 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
     syncBox();
   };
   tabs.forEach((_, i) => pressable(tabs[i].el, () => select(i)));
+  tabBtns.forEach((b) =>
+    pressable(b, () => {
+      const to = b.dataset.tab as typeof tab;
+      if (busy || to === tab) return;
+      tab = lastTab = to;
+      audio.pop(1.1);
+      pop(b, 0.6);
+      showTab(true);
+      // a box purchase left unanswered waits for the Boxes tab (recover skips Deals)
+      if (tab === 'boxes') void recover();
+    }),
+  );
   pressable(stageArt, () => {
     audio.rattle(4);
     shake(0.12);
@@ -376,7 +420,7 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
   /** a purchase the app never saw the answer to (killed mid-buy): re-send it with its ref and show what it gave */
   let left = false;
   const recover = async () => {
-    if (busy || !wallet.pending) return;
+    if (busy || tab !== 'boxes' || !wallet.pending) return;
     busy = true;
     const r = await resumePending();
     const bx = r && BOXES.find((x) => x.id === r.box);
@@ -404,7 +448,9 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
   };
 
   const offWallet = wallet.on(() => {
-    if (!busy) sync();
+    if (busy) return;
+    if (tab === 'deals') syncJade();
+    else sync();
   });
   const offLang = i18n.onChange(syncBox);
 
@@ -413,11 +459,12 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
     theme: 'vault',
     enter() {
       left = false;
-      drawStage(false);
-      sync();
+      showTab(false);
       refresh();
       void wallet.refresh().then(recover);
       gsap.from(head.children, { y: -30, opacity: 0, stagger: 0.08, duration: 0.6, ease: 'back.out(2)' });
+      gsap.from(switcher, { y: -20, opacity: 0, duration: 0.5, delay: 0.1, ease: 'back.out(2)' });
+      if (tab === 'deals') return gsap.from(deals.el, { y: 60, opacity: 0, duration: 0.5, delay: 0.1, ease: 'back.out(1.4)' }), undefined;
       popIn(tabs.map((x) => x.el), 0.1, 0.07);
       gsap.from(stageArt, { y: -innerHeight * 0.35, opacity: 0, duration: 0.45, delay: 0.2, ease: 'power3.in', onComplete: () => {
         thud();
@@ -430,6 +477,7 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
     },
     leave() {
       left = true;
+      deals.leave();
       stopKnock();
       offLang();
       offWallet();
@@ -438,6 +486,7 @@ export function create(from: 'home' | 'vault' = 'home'): Screen {
     onKey(e) {
       if (Opening.current) return Opening.current.onKey(e);
       const i = BOXES.indexOf(box);
+      if (tab === 'deals') return void (e.key === 'Escape' && back().then((s) => app.go(() => s)));
       if (e.key === 'ArrowLeft') select(i - 1);
       if (e.key === 'ArrowRight') select(i + 1);
       if (e.key === 'Escape') back().then((s) => app.go(() => s));

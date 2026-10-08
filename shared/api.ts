@@ -444,6 +444,8 @@ export interface WalletResponse {
   pity: Record<string, number>;
   /** the featured set of the Set Box now and when it rotates (epoch ms), see featuredSet in shared/cosmetics.ts */
   featured?: { set: string; endsAt: number };
+  /** title ids already paid their Jade reward (ledger reason 'title', 'retro' excluded); absent from an old server */
+  titlesPaid?: string[];
   serverTime: number;
 }
 
@@ -516,6 +518,65 @@ export interface ShopPullResponse {
   bonuses?: string[];
   /** the featured set this pull used (Set Box only) */
   set?: string;
+}
+
+// ---------------------------------------------------------------------- daily deals (phase D2)
+
+/** One of today's offers. The server derives them from the player id and the Bangkok day. */
+export interface ShopDeal {
+  slot: number;
+  itemId: string;
+  rarity: number;
+  price: number;
+  /** this slot was bought today */
+  bought: boolean;
+  /** the item is in the inventory now (copies > 0) */
+  owned: boolean;
+}
+
+/** GET /shop/deals */
+export interface ShopDealsResponse {
+  /** Bangkok day 'YYYY-MM-DD' of the offers */
+  day: string;
+  /** next Bangkok midnight, epoch ms */
+  endsAt: number;
+  deals: ShopDeal[];
+  serverTime: number;
+}
+
+/** POST /shop/deals. 400 reasons: rotated (day is not today), no_deal, bought, owned. 402 insufficient_jade. */
+export interface ShopDealBuyRequest {
+  day: string;
+  slot: number;
+  /** client idempotency key, same shape as ShopPullRequest.ref */
+  ref: string;
+}
+
+export interface ShopDealBuyResponse {
+  day: string;
+  slot: number;
+  itemId: string;
+  price: number;
+  /** balance after the purchase */
+  jade: number;
+  /** copies of itemId after the purchase */
+  copies: number;
+  /** 'set'-source bonus items granted by this purchase; always [] on a replay */
+  bonuses: string[];
+  /** true when `ref` had already been applied: stored original result, nothing charged now */
+  replay: boolean;
+}
+
+// ---------------------------------------------------------------------- title Jade rewards (phase D2)
+
+/** POST /titles/claim (no body). 429 rate_limited within 10 s of the last claim. */
+export interface TitleClaimResponse {
+  /** titles settled by this call; a retroactive settle lists each with jade 0 and pays `retro` instead */
+  paid: { id: string; jade: number }[];
+  /** Jade paid as the one-off retroactive lump on the first claim (0 when none) */
+  retro: number;
+  /** balance after the claim */
+  jade: number;
 }
 
 // ====================================================================== errors

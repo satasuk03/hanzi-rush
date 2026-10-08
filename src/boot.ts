@@ -17,6 +17,7 @@ import { homeScreen } from './screens/home';
 import { cloud } from './core/cloud';
 import { showSignedOut } from './ui/transfer';
 import { reminders } from './core/reminders';
+import { initTitleRewards } from './core/titleRewards';
 
 const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
 
@@ -34,6 +35,7 @@ i18n.set(i18n.lang);
 app.mount($('app'), $('iris'));
 app.show(homeScreen());
 cloud.init();
+initTitleRewards();
 
 // a revoked session is announced once, never mid-run (endRun re-emits 'status' when the run is over)
 const announceSignedOut = () => {

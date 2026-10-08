@@ -10,7 +10,7 @@
 import { featuredSet } from '../shared/cosmetics';
 import { JADE_DAILY, JADE_STARTER, bangkokDay, dayNumber, type JadeDailyResponse, type JadeGrantResponse, type WalletDaily, type WalletResponse } from '../shared/api';
 
-export type JadeReason = 'starter' | 'daily' | 'pull' | 'dupe_refund' | 'iap' | 'ad' | 'admin';
+export type JadeReason = 'starter' | 'daily' | 'pull' | 'dupe_refund' | 'iap' | 'ad' | 'admin' | 'deal' | 'title';
 
 export interface JadeWrite {
   status: 'applied' | 'replay' | 'insufficient';
@@ -98,12 +98,13 @@ export async function claimDaily(db: D1Database, playerId: string, claimDay?: st
 }
 
 export async function walletState(db: D1Database, playerId: string, now = Date.now()): Promise<WalletResponse> {
-  const [p, starter, daily, inv, pity] = await db.batch<Record<string, any>>([
+  const [p, starter, daily, inv, pity, titles] = await db.batch<Record<string, any>>([
     db.prepare('SELECT jade FROM players WHERE id = ?1').bind(playerId),
     db.prepare("SELECT 1 AS x FROM jade_ledger WHERE player_id = ?1 AND reason = 'starter' AND ref = 'starter'").bind(playerId),
     db.prepare('SELECT last_day, streak FROM jade_daily WHERE player_id = ?1').bind(playerId),
     db.prepare('SELECT item_id, copies FROM inventory WHERE player_id = ?1').bind(playerId),
     db.prepare('SELECT banner_id, pulls_since FROM banner_pity WHERE player_id = ?1').bind(playerId),
+    db.prepare("SELECT ref FROM jade_ledger WHERE player_id = ?1 AND reason = 'title' AND ref != 'retro'").bind(playerId),
   ]);
   const f = featuredSet(now);
   return {
@@ -112,6 +113,7 @@ export async function walletState(db: D1Database, playerId: string, now = Date.n
     daily: dailyState((daily.results[0] as DailyRow | undefined) ?? null, bangkokDay(now)),
     inventory: Object.fromEntries(inv.results.map((r) => [r.item_id, r.copies])),
     pity: Object.fromEntries(pity.results.map((r) => [r.banner_id, r.pulls_since])),
+    titlesPaid: titles.results.map((r) => r.ref as string),
     serverTime: now,
     featured: { set: f.set.id, endsAt: f.endsAt },
   };

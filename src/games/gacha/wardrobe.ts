@@ -14,6 +14,7 @@ import { store } from '../../core/store';
 import { RARITIES } from '../../core/rarity';
 import { TITLES, TITLE_FAMILIES, isUnlocked, titleById, type Title } from '../../core/meta';
 import { wallet } from '../../core/wallet';
+import { titleReward } from '../../core/titleRewards';
 import { audio } from '../../engine/audio';
 import { particles } from '../../engine/particles';
 import { shake } from '../../engine/shake';
@@ -230,6 +231,18 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
 
   // ---- titles (moved from the Profile screen)
   const list = h('div', { class: 'ti-list' });
+  /** the Jade a title pays: "+10" until it is paid, then a muted tick. Nothing for tier 0 or on a server without rewards. */
+  const jadeChip = (T: Title, un: boolean) => {
+    const n = titleReward(T);
+    if (!n || wallet.titlesOff) return null;
+    const paid = wallet.titlesPaid.includes(T.id);
+    return h(
+      'span',
+      { class: `ti-jade${paid ? ' paid' : un ? ' due' : ''}`, 'aria-label': paid ? t('titleJadePaid') : `+${n} ${t('jade')}` },
+      paid ? '✓' : `+${n}`,
+      h('span', { class: 'mini-coin', html: ICON.jade }),
+    );
+  };
   const renderTitles = () => {
     /** `near`: a row in the "Next up" strip, with a full-width bar under the text */
     const row = (T: Title, near = false) => {
@@ -245,7 +258,7 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
         h(
           'span',
           { class: 'ti-text' },
-          h('span', { class: 'ti-name' }, h('b', null, T.zh), ` ${T[i18n.lang]}`),
+          h('span', { class: 'ti-name' }, h('b', null, T.zh), ` ${T[i18n.lang]}`, jadeChip(T, un)),
           h('span', { class: 'ti-req' }, T.req[i18n.lang]),
           near ? h('span', { class: 'ti-near-bar' }, prog, frac) : null,
         ),

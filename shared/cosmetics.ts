@@ -275,6 +275,15 @@ export const boxPrice = (b: BoxDef, qty: number): number => b.price * (qty >= BO
 /** Jade refunded for a duplicate, by item rarity (not by box price) */
 export const DUPLICATE_REFUND: readonly number[] = [5, 10, 25, 50, 100];
 
+/** Jade price of a direct-buy daily deal by item rarity (C..M). MYTHIC is never offered */
+export const DEAL_PRICE: readonly number[] = [60, 150, 400, 1200, 0];
+/** rarity weights (C..M, %) of each daily deal slot */
+export const DEAL_SLOTS: readonly (readonly [number, number, number, number, number])[] = [
+  [70, 30, 0, 0, 0],
+  [0, 60, 40, 0, 0],
+  [0, 0, 75, 25, 0],
+];
+
 // ====================================================================== sanitizing
 
 /**

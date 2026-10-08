@@ -40,7 +40,15 @@ export const onRequest: PagesFunction<Env> = async (ctx) =>
       // display-only numbers for the player card; a failure here never fails the save
       let card: string | null = null;
       try {
-        card = JSON.stringify(buildCard(req.data));
+        // the inventory makes the cosmetics/sets titles exact; without it the card still builds
+        let inv: Map<string, number> | undefined;
+        try {
+          const rows = await db.prepare('SELECT item_id, copies FROM inventory WHERE player_id = ?1').bind(me.id).all<{ item_id: string; copies: number }>();
+          inv = new Map(rows.results.map((r) => [r.item_id, r.copies]));
+        } catch {
+          /* fall back to the inventory-less card */
+        }
+        card = JSON.stringify(buildCard(req.data, inv));
       } catch {
         /* keep the previous card */
       }
