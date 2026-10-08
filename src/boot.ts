@@ -16,6 +16,7 @@ import { sprites } from './engine/sprites';
 import { homeScreen } from './screens/home';
 import { cloud } from './core/cloud';
 import { showSignedOut } from './ui/transfer';
+import { reminders } from './core/reminders';
 
 const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
 
@@ -73,6 +74,7 @@ if (Capacitor.isNativePlatform()) {
   App.addListener('pause', () => {
     store.save();
     audio.suspend();
+    void reminders.sync();
   });
   App.addListener('resume', () => audio.resume());
   if (Capacitor.getPlatform() === 'android') {
@@ -83,4 +85,5 @@ if (Capacitor.isNativePlatform()) {
   StatusBar.setStyle({ style: Style.Dark }).catch(() => {});
   StatusBar.setOverlaysWebView({ overlay: true }).catch(() => {});
   SplashScreen.hide().catch(() => {});
+  void reminders.sync();
 }
