@@ -12,7 +12,7 @@ Read this first, then [`docs/cosmetics-shop.md`](docs/cosmetics-shop.md) (the fu
 | B2 | Jade wallet: ledger, starter grant, daily claim, client cache, Jade in the home chip | **Merged and deployed** (`c1dd915`) |
 | — | Home screen rework, Jade shown in the Daily login cells | **Merged and deployed** (`ed4dbef`) |
 | C | Box pulls (server), 46 frames / name effects / badges, Shop, chest ceremony, Wardrobe | Server and art **merged and deployed** (PRs #13, #14, migration `0006`); UI in PR `feat/c-shop-ui` |
-| C2 | Player card modal | **Next**. Not started (its DB columns already exist in `0004_look.sql`) |
+| C2 | Player card modal: `pid` on boards, card snapshot on save, `GET /players/:pid/card`, modal, "Show my card" | PR `feat/c2-player-card` (no migration) |
 | D | Depth: animated effects, set boxes, Exchange, deals | Not started |
 | E | Prestige: grants, background and banner slots, real money | Not started |
 
@@ -79,10 +79,14 @@ Players buy boxes with Jade, get cosmetics, equip them, and others see them on t
 
 ## Phase C2: Player card modal
 
-- [ ] Expose `players.pub` on board and effort entries as `pid` (never expose `players.id`).
-- [ ] Rebuild `players.card` (level, words, games, accuracy, best combo, best streak, titles unlocked) on every accepted `PUT /save` (`functions/api/v1/save.ts`).
-- [ ] `GET /players/:pid/card` (auth optional; 404 for hidden players).
-- [ ] The modal: opens instantly from the row, fills the stats when they arrive, 60 s cache; "Show my card" toggle on Profile sets `card_public` via `PATCH /me/profile`.
+- [x] Expose `players.pub` on board and effort entries as `pid` (never expose `players.id`).
+- [x] Rebuild `players.card` (level, words, games, accuracy, best combo, best streak, titles unlocked) on every accepted `PUT /save` (`functions/api/v1/save.ts`).
+- [x] `GET /players/:pid/card` (auth optional; 404 for hidden players).
+- [x] The modal: opens instantly from the row, fills the stats when they arrive, 60 s cache; "Show my card" toggle on Profile sets `card_public` via `PATCH /me/profile`.
+
+Notes: titles unlocked = known title ids in `profile.seen` (title evaluation is client-only). `players.card` is NULL until a player's first save after deploy ("No stats yet"). The card endpoint is `no-store`; the client caches 60 s per pid. `app.back()` now dispatches Escape through the DOM so an open modal closes first. `cardPublic` shares the `PATCH /me/profile` rate limit and retries once on 429. Code: `server/card.ts`, `functions/api/v1/players/[pid]/card.ts`, `src/ui/playerCard.ts`, `shared/level.ts`; test `npm run test:card`.
+
+To verify by hand: the modal at 360 px, Android back closes the card, a hidden card shows the private line, the toggle right after equipping in the Wardrobe.
 
 ## Phase D: Depth
 

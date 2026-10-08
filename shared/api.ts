@@ -177,6 +177,8 @@ export interface MeResponse {
   hasRecoveryCode: boolean;
   /** epoch ms the current transfer code was generated; null = none */
   recoveryCreatedAt: number | null;
+  /** "Show my card" (players.card_public); absent on servers that predate cards */
+  cardPublic?: boolean;
   /** linked third-party identities (always [] until sign-in ships) */
   identities: { provider: IdentityProvider; linkedAt: number }[];
 }
@@ -212,6 +214,8 @@ export interface PatchProfileRequest {
   name?: string;
   title?: string;
   look?: Look;
+  /** "Show my card": false makes GET /players/:pid/card answer 404 */
+  cardPublic?: boolean;
 }
 
 /** the stored (sanitized) values after a PATCH /me/profile */
@@ -219,6 +223,7 @@ export interface PatchProfileResponse {
   name: string;
   title: string;
   look: Look;
+  cardPublic?: boolean;
 }
 
 /** DELETE /me → 204. Deletes the player, sessions, save, runs and scores (App Store 5.1.1(v)). */
@@ -332,6 +337,8 @@ export interface BoardEntry {
   verified: boolean;
   /** equipped cosmetics; absent = the default look */
   look?: Look;
+  /** public player id (`players.pub`): opens the player card. Absent on servers that predate cards */
+  pid?: string;
 }
 
 export interface BoardResponse {
@@ -362,6 +369,7 @@ export interface EffortEntry {
   durationMs: number;
   isMe: boolean;
   look?: Look;
+  pid?: string;
 }
 
 export interface EffortResponse {
@@ -372,6 +380,36 @@ export interface EffortResponse {
   entries: EffortEntry[];
   me: EffortEntry | null;
   serverTime: number;
+}
+
+// ====================================================================== player card (docs/cosmetics-shop.md §12)
+
+/** Lifetime numbers shown on a player card, rebuilt by the server from the validated save on every PUT /save. */
+export interface PlayerCardStats {
+  level: number;
+  /** distinct words collected */
+  words: number;
+  games: number;
+  correct: number;
+  questions: number;
+  bestCombo: number;
+  /** best daily-login streak */
+  bestStreak: number;
+  /** titles the player has been told about (`profile.seen`) that this build knows */
+  titles: number;
+}
+
+/**
+ * GET /players/:pid/card (auth optional, `Cache-Control: public, max-age=30`). 404 for an unknown pid, a player who
+ * is hidden from the boards, or one who turned "Show my card" off. `card` is null until the player's first save.
+ */
+export interface PlayerCardResponse {
+  pid: string;
+  name: string;
+  tag: string;
+  title: string;
+  look?: Look;
+  card: PlayerCardStats | null;
 }
 
 // ====================================================================== Jade wallet (docs/cosmetics-shop.md §11)

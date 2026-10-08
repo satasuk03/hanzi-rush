@@ -1002,6 +1002,7 @@ body.lang-th .lb-tab { font-family: var(--f-thai); font-weight: 700; font-size: 
   flex: none; display: flex; align-items: center; gap: 8px; padding: 6px 10px 6px 8px;
   border-radius: 14px; background: #fff; border: 3px solid var(--ink);
 }
+.lb-row.tap { cursor: pointer; }
 .lb-row.me { background: #fff2b8; box-shadow: 0 3px 0 var(--ink); }
 .lb-row.pinned { box-shadow: 0 -2px 0 rgba(42,26,58,.15), 0 3px 0 var(--ink); }
 .lb-rank { flex: none; min-width: 30px; text-align: center; font: 400 18px/1 var(--f-display); color: #6b5a78; }

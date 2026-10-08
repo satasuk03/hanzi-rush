@@ -6,28 +6,12 @@ import { store } from './store';
 import { LEVELS } from './data';
 import { wallet } from './wallet';
 import { itemById } from '../../shared/cosmetics';
+import { levelOf, xpToNext, type LevelInfo } from '../../shared/level';
 import { TITLE_DEFS, TITLE_FAMILIES, type TitleReq, type TitleStat, type TitleFamily } from '../../shared/titles';
 
 // ------------------------------------------------------------------ level curve
-export interface LevelInfo {
-  level: number;
-  /** XP earned inside the current level */
-  into: number;
-  /** XP needed to clear the current level */
-  need: number;
-}
-
-export const xpToNext = (L: number) => Math.round(60 * L ** 1.35 + 40);
-
-export function levelOf(xp: number): LevelInfo {
-  let level = 1;
-  let rest = xp;
-  while (rest >= xpToNext(level)) {
-    rest -= xpToNext(level);
-    level++;
-  }
-  return { level, into: rest, need: xpToNext(level) };
-}
+// the curve itself is shared with the server (player cards)
+export { levelOf, xpToNext, type LevelInfo };
 
 export const playerLevel = () => levelOf(store.progress.xp);
 

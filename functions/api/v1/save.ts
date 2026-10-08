@@ -1,4 +1,5 @@
 import { LIMITS, PUSH_IDS_KEPT, SAVE_FORMAT, sanitizeLook, sanitizeName, sanitizeTitle, type PutSaveResponse, type SaveConflictBody, type SaveDoc, type SaveResponse } from '../../../shared/api';
+import { buildCard } from '../../../server/card';
 import { authenticate } from '../../../server/auth';
 import { ownedLook } from '../../../server/inventory';
 import type { Ctx, Env } from '../../../server/env';
@@ -36,6 +37,13 @@ export const onRequest: PagesFunction<Env> = async (ctx) =>
       // saves from builds that predate looks carry none: keep what the player has
       const rawLook = req.data.progress.profile.look;
       const look = rawLook === undefined ? null : JSON.stringify(await ownedLook(db, me.id, sanitizeLook(rawLook)));
+      // display-only numbers for the player card; a failure here never fails the save
+      let card: string | null = null;
+      try {
+        card = JSON.stringify(buildCard(req.data));
+      } catch {
+        /* keep the previous card */
+      }
       // No row yet: insert at revision 1 regardless of baseRevision (also recovers a client whose server row vanished).
       const write = cur
         ? db
@@ -47,8 +55,8 @@ export const onRequest: PagesFunction<Env> = async (ctx) =>
       const newRev = cur ? req.baseRevision + 1 : 1;
       // name/title only follow a save that this very request wrote
       const profile = db
-        .prepare('UPDATE players SET name = ?1, title = ?2, look = COALESCE(?6, look) WHERE id = ?3 AND EXISTS (SELECT 1 FROM saves WHERE player_id = ?3 AND revision = ?4 AND updated_at = ?5)')
-        .bind(name, title, me.id, newRev, now, look);
+        .prepare('UPDATE players SET name = ?1, title = ?2, look = COALESCE(?6, look), card = COALESCE(?7, card) WHERE id = ?3 AND EXISTS (SELECT 1 FROM saves WHERE player_id = ?3 AND revision = ?4 AND updated_at = ?5)')
+        .bind(name, title, me.id, newRev, now, look, card);
       const [w] = await db.batch([write, profile]);
       if (w.meta.changes === 0) {
         const current = await readSave(ctx, me.id);

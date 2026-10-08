@@ -9,9 +9,9 @@ export const onRequest: PagesFunction<Env> = async (ctx) =>
       const me = await authenticate(ctx, true);
       const db = ctx.env.DB;
       const p = await db
-        .prepare('SELECT id, tag, name, title, created_at, recovery_hash IS NOT NULL AS has_code, recovery_created_at FROM players WHERE id = ?1')
+        .prepare('SELECT id, tag, name, title, created_at, recovery_hash IS NOT NULL AS has_code, recovery_created_at, card_public FROM players WHERE id = ?1')
         .bind(me.id)
-        .first<{ id: string; tag: string; name: string; title: string; created_at: number; has_code: number; recovery_created_at: number | null }>();
+        .first<{ id: string; tag: string; name: string; title: string; created_at: number; has_code: number; recovery_created_at: number | null; card_public: number }>();
       if (!p) return fail('unauthorized', 'Account not found');
       const ids = await db.prepare('SELECT provider, created_at FROM identities WHERE player_id = ?1').bind(me.id).all<{ provider: 'apple' | 'google' | 'email'; created_at: number }>();
       const body: MeResponse = {
@@ -23,6 +23,7 @@ export const onRequest: PagesFunction<Env> = async (ctx) =>
         save: await saveMeta(ctx.env, me.id),
         hasRecoveryCode: !!p.has_code,
         recoveryCreatedAt: p.recovery_created_at ?? null,
+        cardPublic: p.card_public !== 0,
         identities: ids.results.map((r) => ({ provider: r.provider, linkedAt: r.created_at })),
       };
       return json(body);

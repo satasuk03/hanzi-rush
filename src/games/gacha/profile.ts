@@ -18,6 +18,7 @@ import { sanitizeName } from '../../../shared/api';
 import { cloud } from '../../core/cloud';
 import { applyNameFx, paintIdentity, renderIdentity } from '../../cosmetics/render';
 import { showTransferCode, showRestore, showDeleteAccount } from '../../ui/transfer';
+import { invalidatePlayerCards } from '../../ui/playerCard';
 import { ring } from './collection';
 
 export function create(from: 'home' | 'vault' = 'vault'): Screen {
@@ -132,6 +133,26 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
     audio.pop(1.2);
     import('./wardrobe').then((m) => app.go(() => m.create(from), { x: e.clientX, y: e.clientY }));
   });
+  // ---- "Show my card": the server's flag (players.card_public), changed through PATCH /me/profile
+  const showBox = h('input', { type: 'checkbox', disabled: '' }) as HTMLInputElement;
+  const showRow = h('label', { class: 'pf-show' }, showBox, h('span', null, h('b', null, tx('pcShow')), h('small', null, tx('pcShowHint'))));
+  showRow.hidden = cloud.status === 'off' || cloud.status === 'disabled' || cloud.status === 'signedOut';
+  showBox.checked = true;
+  void cloud.cardPublic().then((on) => {
+    if (on === null) return;
+    showBox.checked = on;
+    showBox.disabled = false;
+  });
+  showBox.addEventListener('change', () => {
+    const on = showBox.checked;
+    audio.pop(1.2);
+    showBox.disabled = true;
+    cloud.setCardPublic(on).then(
+      () => invalidatePlayerCards(),
+      () => (showBox.checked = !on), // offline or too soon after another change: back to what the server has
+    ).finally(() => (showBox.disabled = false));
+  });
+
   const el = h(
     'div',
     { class: 'screen profile' },
@@ -139,6 +160,7 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
     h('div', { class: 'pf-scroll' },
       card,
       custom,
+      showRow,
       rarRow,
       stats,
       cloud.status === 'off' ? null : h('h3', { class: 'pf-h' }, h('span', { class: 'pf-h-zh' }, '云'), tx('cloudSave')),
