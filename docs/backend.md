@@ -295,11 +295,11 @@ Competition ranking: equal scores share a rank only if `achieved_at` is equal to
 `me` (if authenticated): read the player's row, then
 
 ```sql
-SELECT COUNT(*) + 1 FROM scores
-WHERE board=?1 AND period=?2 AND (score > ?3 OR (score = ?3 AND achieved_at < ?4));
+SELECT (SELECT COUNT(*) FROM scores WHERE board=?1 AND period=?2 AND score > ?3)
+     + (SELECT COUNT(*) FROM scores WHERE board=?1 AND period=?2 AND score = ?3 AND achieved_at < ?4) + 1;
 ```
 
-These are range scans on `scores_rank`. Rows read ≈ the player's rank, which is fine at this scale.
+Two range scans on `scores_rank`, so rows read ≈ the player's rank. Keep them separate: a single `a OR b` cannot use the index range and scans the whole board/period. The total's `COUNT(*)` reads every row, which is why it sits in the 20 s cache.
 
 ### CORS (`server/cors.ts`, applied in `_middleware.ts`)
 
