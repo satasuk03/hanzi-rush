@@ -1,6 +1,17 @@
 import { PERIODS, sanitizeLook, type BoardEntry, type Look, type Period, type PeriodKeys, type RankInfo } from '../shared/api';
 import { isLookEmpty } from '../shared/cosmetics';
+import { cachedJson } from './cache';
 import type { Env } from './env';
+
+/** seconds a board snapshot / total may be served from the edge cache */
+export const BOARD_TTL_S = 20;
+
+/**
+ * 1 + players ahead of `s` (higher score, or same score reached earlier). Two range counts instead of one `a OR b`, so
+ * each walks scores_rank from the top and reads only the rows ahead, not the whole board.
+ */
+const RANK = `(SELECT COUNT(*) FROM scores o WHERE o.board = ?1 AND o.period = ?2 AND o.score > s.score)
+       + (SELECT COUNT(*) FROM scores o WHERE o.board = ?1 AND o.period = ?2 AND o.score = s.score AND o.achieved_at < s.achieved_at) + 1`;
 
 /** `players.look` → the optional `look` field of a board row (absent when it is the default look) */
 export function lookField(json: string | null | undefined): { look?: Look } {
@@ -55,26 +66,29 @@ export async function bestsOf(env: Env, board: string, keys: PeriodKeys, playerI
   return out;
 }
 
-/** rank/best/total per period (improved filled by caller). */
-export async function ranksOf(env: Env, board: string, keys: PeriodKeys, playerId: string): Promise<Record<Period, Omit<RankInfo, 'improved'>>> {
-  const stmts = PERIODS.flatMap((p) => {
-    const period = periodKeyOf(keys, p);
-    return [
-      env.DB.prepare(
-        `SELECT s.score AS score,
-           (SELECT COUNT(*) + 1 FROM scores o WHERE o.board = ?1 AND o.period = ?2
-              AND (o.score > s.score OR (o.score = s.score AND o.achieved_at < s.achieved_at))) AS rank
-         FROM scores s WHERE s.board = ?1 AND s.period = ?2 AND s.player_id = ?3`,
-      ).bind(board, period, playerId),
-      env.DB.prepare('SELECT COUNT(*) AS n FROM scores WHERE board = ?1 AND period = ?2').bind(board, period),
-    ];
-  });
-  const res = await env.DB.batch(stmts);
+/** Number of rows on a board. COUNT(*) reads every row, so it is shared through the edge cache for BOARD_TTL_S. */
+export const cachedTotal = (env: Env, origin: string, board: string, period: string, waitUntil?: (p: Promise<unknown>) => void): Promise<number> =>
+  cachedJson(origin, `total/${encodeURIComponent(board)}/${period}`, BOARD_TTL_S, () => total(env, board, period), waitUntil);
+
+/** rank/best/total per period (improved filled by caller). `total` may lag by BOARD_TTL_S, but is never below `rank`. */
+export async function ranksOf(
+  env: Env,
+  board: string,
+  keys: PeriodKeys,
+  playerId: string,
+  origin: string,
+  waitUntil?: (p: Promise<unknown>) => void,
+): Promise<Record<Period, Omit<RankInfo, 'improved'>>> {
+  const [res, totals] = await Promise.all([
+    env.DB.batch<{ score: number; rank: number }>(
+      PERIODS.map((p) => env.DB.prepare(`SELECT s.score AS score, ${RANK} AS rank FROM scores s WHERE s.board = ?1 AND s.period = ?2 AND s.player_id = ?3`).bind(board, periodKeyOf(keys, p), playerId)),
+    ),
+    Promise.all(PERIODS.map((p) => cachedTotal(env, origin, board, periodKeyOf(keys, p), waitUntil))),
+  ]);
   const out = {} as Record<Period, Omit<RankInfo, 'improved'>>;
   PERIODS.forEach((p, i) => {
-    const mine = res[i * 2].results[0] as { score: number; rank: number } | undefined;
-    const total = (res[i * 2 + 1].results[0] as { n: number }).n;
-    out[p] = { rank: mine?.rank ?? null, best: mine?.score ?? 0, total };
+    const mine = res[i].results[0];
+    out[p] = { rank: mine?.rank ?? null, best: mine?.score ?? 0, total: Math.max(totals[i], mine?.rank ?? 0) };
   });
   return out;
 }
@@ -111,9 +125,7 @@ export async function total(env: Env, board: string, period: string): Promise<nu
 /** The caller's own entry (rank by score desc, achieved_at asc). */
 export async function myEntry(env: Env, board: string, period: string, playerId: string): Promise<BoardEntry | null> {
   const r = await env.DB.prepare(
-    `SELECT s.score, s.achieved_at, s.verified, p.name, p.tag, p.title, p.look, p.pub,
-       (SELECT COUNT(*) + 1 FROM scores o WHERE o.board = ?1 AND o.period = ?2
-          AND (o.score > s.score OR (o.score = s.score AND o.achieved_at < s.achieved_at))) AS rank
+    `SELECT s.score, s.achieved_at, s.verified, p.name, p.tag, p.title, p.look, p.pub, ${RANK} AS rank
      FROM scores s JOIN players p ON p.id = s.player_id
      WHERE s.board = ?1 AND s.period = ?2 AND s.player_id = ?3`,
   )

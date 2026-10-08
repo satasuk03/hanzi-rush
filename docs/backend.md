@@ -278,7 +278,7 @@ The client never gets a 422 for unverified (ticketless) runs if they are plausib
 **GET /boards/:board**:
 - `period` defaults to `all`. `limit` defaults to 50, maximum 100.
 - Every entry (and `me`) carries `verified` (`scores.verified`): false = unverified run, clients show a small mark.
-- Response headers: `Vary: Authorization`; `Cache-Control: public, max-age=20` when unauthenticated, `private, max-age=5` when authenticated. Unauthenticated responses are also kept in `caches.default` keyed by the full URL for 20 s, so a burst of anonymous readers costs D1 one query set per board/period per 20 s per colo.
+- Response headers: `Vary: Authorization`; `Cache-Control: public, max-age=20` when unauthenticated, `private, max-age=5` when authenticated. The shared part (top rows + `total`) is kept in `caches.default` for 20 s per board/period/limit and served to everyone, signed in or not (`server/boardRoute.ts`); only the caller's own row (`me`) is a per-request query, and `isMe` is set by matching `pid`. So the top rows may lag a fresh run by up to 20 s, `me` never does, and `total` is never below `me.rank`. The post-run `ranks[*].total` comes from the same kind of 20 s cache.
 
 Top N:
 

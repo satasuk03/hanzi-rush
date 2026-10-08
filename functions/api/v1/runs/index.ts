@@ -35,7 +35,7 @@ interface RunRow {
 
 const rankResponse = async (ctx: Ctx, me: Player, board: string, t: number, verified: boolean, improvedBy: Record<Period, boolean>) => {
   const keys = periodKeys(t);
-  const ranks = await ranksOf(ctx.env, board, keys, me.id);
+  const ranks = await ranksOf(ctx.env, board, keys, me.id, new URL(ctx.request.url).origin, (p) => ctx.waitUntil(p));
   const out = {} as Record<Period, RankInfo>;
   for (const p of PERIODS) out[p] = { ...ranks[p], improved: improvedBy[p] };
   const body: SubmitRunResponse = { accepted: true, verified, ranks: out };
