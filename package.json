@@ -14,6 +14,7 @@
     "test:wallet": "node scripts/test-wallet.mjs",
     "test:shop": "node scripts/test-shop.mjs",
     "test:ownership": "node scripts/test-ownership.mjs",
+    "test:card": "node scripts/test-card.mjs",
     "typecheck:api": "tsc -p functions/tsconfig.json",
     "deploy": "npm run build && wrangler pages deploy",
     "cap:sync": "npm run build && cap sync",

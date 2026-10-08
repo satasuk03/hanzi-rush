@@ -13,6 +13,7 @@ import { pop, pressable, popIn } from '../engine/juice';
 import { langToggle, muteButton, iconButton, ICON } from '../ui/widgets';
 import { GAMES } from '../games/registry';
 import { boardKey, parseBoardKey, PERIODS, type BoardEntry, type BoardResponse, type Mode, type Period, type RankedGame } from '../../shared/api';
+import { showPlayerCard } from '../ui/playerCard';
 import { homeScreen } from './home';
 import { levelsScreen } from './levels';
 
@@ -127,7 +128,7 @@ export function leaderboardScreen(opts: { board: ReturnType<typeof boardKey>; pe
     const medal = e.rank <= 3 ? ` m${e.rank}` : '';
     const nm = h('span', { class: 'lb-nm' }, e.name || `${t('playerName')}#${e.tag}`);
     applyNameFx(nm, e.look, e.rank <= 10 || e.isMe);
-    return h(
+    const row = h(
       'div',
       { class: `lb-row${e.isMe ? ' me' : ''}${medal}${pinned ? ' pinned' : ''}` },
       h('span', { class: 'lb-rank' }, e.rank <= 99999 ? String(e.rank) : '99k+'),
@@ -135,6 +136,18 @@ export function leaderboardScreen(opts: { board: ReturnType<typeof boardKey>; pe
       h('span', { class: 'lb-who' }, h('span', { class: 'lb-name' }, nm, renderBadges(e.look, 'S'), e.isMe ? h('em', null, '\u00a0', tx('lbYou')) : null), h('span', { class: 'lb-title-t' }, T[i18n.lang])),
       h('span', { class: 'lb-score' }, formatNum(e.score), e.verified ? null : h('span', { class: 'lb-unv', title: t('lbUnverified'), 'aria-label': t('lbUnverified') }, '?')),
     );
+    // rows from a server that predates cards carry no pid and are not tappable
+    const pid = e.pid;
+    if (pid) {
+      row.classList.add('tap');
+      row.setAttribute('role', 'button');
+      row.addEventListener('click', () => {
+        audio.pop(1.1);
+        const g = `HSK ${level} ${t(mode === 'rush' ? 'modeRush' : 'modeZen')}`;
+        showPlayerCard({ pid, name: e.name, tag: e.tag, title: e.title, look: e.look, isMe: e.isMe, context: `#${e.rank} · ${g} · ${formatNum(e.score)}` });
+      });
+    }
+    return row;
   };
 
   const render = (animate: boolean) => {

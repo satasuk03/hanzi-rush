@@ -7,7 +7,7 @@ import { byMethod, fail, isObj, json, readJson } from '../../../../server/http';
 import { validateLook } from '../../../../server/validate';
 
 /**
- * PATCH /me/profile { name?, title?, look? }: push the display identity right away (the run and save piggybacks only
+ * PATCH /me/profile { name?, title?, look?, cardPublic? }: push the display identity right away (the run and save piggybacks only
  * carry it with the next run or sync). Rate limited by players.profile_at, claimed in the same statement as the write.
  */
 export const onRequest: PagesFunction<Env> = async (ctx) =>
@@ -30,6 +30,10 @@ export const onRequest: PagesFunction<Env> = async (ctx) =>
         validateLook(value.look, 'look');
         sets.push(`look = ?${args.push(JSON.stringify(await ownedLook(ctx.env.DB, me.id, sanitizeLook(value.look))))}`);
       }
+      if (value.cardPublic !== undefined) {
+        if (typeof value.cardPublic !== 'boolean') return fail('bad_request', 'Invalid cardPublic');
+        sets.push(`card_public = ?${args.push(value.cardPublic ? 1 : 0)}`);
+      }
       if (!sets.length) return fail('bad_request', 'Nothing to update');
 
       const now = Date.now();
@@ -40,9 +44,9 @@ export const onRequest: PagesFunction<Env> = async (ctx) =>
         .run();
       if (upd.meta.changes === 0) return fail('rate_limited', 'Slow down', { retryAfter: LIMITS.profileMinIntervalSec });
 
-      const p = await db.prepare('SELECT name, title, look FROM players WHERE id = ?1').bind(me.id).first<{ name: string; title: string; look: string }>();
+      const p = await db.prepare('SELECT name, title, look, card_public FROM players WHERE id = ?1').bind(me.id).first<{ name: string; title: string; look: string; card_public: number }>();
       if (!p) return fail('unauthorized', 'Account not found');
-      const body: PatchProfileResponse = { name: p.name, title: p.title, look: lookField(p.look).look ?? {} };
+      const body: PatchProfileResponse = { name: p.name, title: p.title, look: lookField(p.look).look ?? {}, cardPublic: p.card_public !== 0 };
       return json(body);
     },
   });

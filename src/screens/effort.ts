@@ -11,6 +11,7 @@ import { audio } from '../engine/audio';
 import { pressable, popIn } from '../engine/juice';
 import { langToggle, muteButton, iconButton, ICON } from '../ui/widgets';
 import { PERIODS, type EffortEntry, type EffortResponse, type Period } from '../../shared/api';
+import { showPlayerCard } from '../ui/playerCard';
 import { homeScreen } from './home';
 
 const CACHE_MS = 30_000;
@@ -80,7 +81,7 @@ export function effortScreen(opts: { period?: Period } = {}): Screen {
     const medal = e.rank <= 3 ? ` m${e.rank}` : '';
     const nm = h('span', { class: 'lb-nm' }, e.name || `${t('playerName')}#${e.tag}`);
     applyNameFx(nm, e.look, e.rank <= 10 || e.isMe);
-    return h(
+    const row = h(
       'div',
       { class: `lb-row${e.isMe ? ' me' : ''}${medal}${pinned ? ' pinned' : ''}` },
       h('span', { class: 'lb-rank' }, e.rank <= 99999 ? String(e.rank) : '99k+'),
@@ -88,6 +89,16 @@ export function effortScreen(opts: { period?: Period } = {}): Screen {
       h('span', { class: 'lb-who' }, h('span', { class: 'lb-name' }, nm, renderBadges(e.look, 'S'), e.isMe ? h('em', null, ' ', tx('lbYou')) : null), h('span', { class: 'lb-title-t' }, `${formatNum(e.runs)} ${t('effortRuns')}`)),
       h('span', { class: 'lb-score' }, formatNum(e.correct)),
     );
+    const pid = e.pid;
+    if (pid) {
+      row.classList.add('tap');
+      row.setAttribute('role', 'button');
+      row.addEventListener('click', () => {
+        audio.pop(1.1);
+        showPlayerCard({ pid, name: e.name, tag: e.tag, title: e.title, look: e.look, isMe: e.isMe, context: `#${e.rank} · ${t('effortTitle')} · ${formatNum(e.correct)}` });
+      });
+    }
+    return row;
   };
 
   const render = (animate: boolean) => {

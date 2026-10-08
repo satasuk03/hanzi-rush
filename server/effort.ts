@@ -1,6 +1,6 @@
 import type { EffortEntry, PeriodKeys } from '../shared/api';
 import { PERIODS } from '../shared/api';
-import { lookField, periodKeyOf } from './boards';
+import { lookField, periodKeyOf, pidField } from './boards';
 import type { Env } from './env';
 
 export interface EffortRun {
@@ -36,6 +36,7 @@ interface Row {
   tag: string;
   title: string;
   look: string;
+  pub: string | null;
 }
 
 const entry = (r: Row, rank: number, meId: string | null): EffortEntry => ({
@@ -48,12 +49,13 @@ const entry = (r: Row, rank: number, meId: string | null): EffortEntry => ({
   durationMs: r.duration_ms,
   isMe: meId !== null && r.player_id === meId,
   ...lookField(r.look),
+  ...pidField(r.pub),
 });
 
 /** shadow-banned players (status 1) never get an effort row (see runs/index.ts), so no status filter is needed here */
 export async function topEffort(env: Env, period: string, limit: number, meId: string | null): Promise<EffortEntry[]> {
   const { results } = await env.DB.prepare(
-    `SELECT e.correct, e.runs, e.duration_ms, e.updated_at, e.player_id, p.name, p.tag, p.title, p.look
+    `SELECT e.correct, e.runs, e.duration_ms, e.updated_at, e.player_id, p.name, p.tag, p.title, p.look, p.pub
      FROM effort e JOIN players p ON p.id = e.player_id
      WHERE e.period = ?1 AND p.status = 0
      ORDER BY e.correct DESC, e.updated_at ASC
@@ -71,7 +73,7 @@ export async function totalEffort(env: Env, period: string): Promise<number> {
 
 export async function myEffort(env: Env, period: string, playerId: string): Promise<EffortEntry | null> {
   const r = await env.DB.prepare(
-    `SELECT e.correct, e.runs, e.duration_ms, e.updated_at, e.player_id, p.name, p.tag, p.title, p.look,
+    `SELECT e.correct, e.runs, e.duration_ms, e.updated_at, e.player_id, p.name, p.tag, p.title, p.look, p.pub,
        (SELECT COUNT(*) + 1 FROM effort o JOIN players op ON op.id = o.player_id
           WHERE o.period = ?1 AND op.status = 0
             AND (o.correct > e.correct OR (o.correct = e.correct AND o.updated_at < e.updated_at))) AS rank

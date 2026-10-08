@@ -78,11 +78,14 @@ class App {
     this.busy = false;
   }
 
-  /** Hardware back: every screen already maps Escape to back/pause/skip. False on the home screen. */
+  /**
+   * Hardware back: every screen already maps Escape to back/pause/skip. False on the home screen. Dispatched through
+   * the DOM (reaching onKey via the listener in mount), so an open modal can catch it first (src/ui/playerCard.ts).
+   */
   back() {
     const s = this.current;
     if (!s || s.home) return false;
-    s.onKey?.(new KeyboardEvent('keydown', { key: 'Escape' }));
+    document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
     return true;
   }
 

@@ -20,6 +20,7 @@ import {
   type MeResponse,
   type PatchProfileRequest,
   type PatchProfileResponse,
+  type PlayerCardResponse,
   type PutSaveRequest,
   type PutSaveResponse,
   type RecoveryCodeRequest,
@@ -762,6 +763,39 @@ export const cloud = {
     } catch (e) {
       if (e instanceof ApiError && e.status === 401 && st.auth) return api<EffortResponse>('GET', path);
       throw e;
+    }
+  },
+
+  /** GET /players/:pid/card, anonymous (the answer is the same for everyone). 404 → ApiError 'not_found' */
+  playerCard(pid: string): Promise<PlayerCardResponse> {
+    return api<PlayerCardResponse>('GET', `/players/${encodeURIComponent(pid)}/card`);
+  },
+
+  /** the "Show my card" flag as the server has it; null = unknown (no account, offline, old server) */
+  async cardPublic(): Promise<boolean | null> {
+    if (!st.auth) return null;
+    try {
+      const me = await api<MeResponse>('GET', '/me', { token: st.auth.token });
+      return me.cardPublic ?? null;
+    } catch {
+      return null;
+    }
+  },
+
+  /**
+   * PATCH /me/profile { cardPublic }; throws ApiError. It shares the players.profile_at gap with the look push, so a
+   * toggle right after equipping meets a 429: wait it out once instead of failing the tap.
+   */
+  async setCardPublic(on: boolean): Promise<void> {
+    if (!st.auth) await ensureAccount();
+    if (!st.auth) throw new ApiError(0, 'offline');
+    const body: PatchProfileRequest = { cardPublic: on };
+    try {
+      await api<PatchProfileResponse>('PATCH', '/me/profile', { token: st.auth.token, body });
+    } catch (e) {
+      if (!(e instanceof ApiError) || e.status !== 429 || !st.auth) throw e;
+      await new Promise((r) => setTimeout(r, (e.retryAfter ?? LIMITS.profileMinIntervalSec) * 1000 + 300));
+      await api<PatchProfileResponse>('PATCH', '/me/profile', { token: st.auth.token, body });
     }
   },
 
