@@ -4,7 +4,7 @@
  */
 import { bangkokDay, type JadeDailyResponse, type JadeStarterResponse, type ShopPullRequest, type ShopPullResponse, type WalletResponse } from '../../shared/api';
 import { API_OFF, ApiError } from './api';
-import { cloud } from './cloud';
+import { cloud, uuid } from './cloud';
 import { storage } from './storage';
 
 interface Cache {
@@ -223,4 +223,4 @@ export const wallet = {
 };
 
 /** idempotency key for one purchase (keep it across retries of that purchase) */
-export const newPullRef = (): string => crypto.randomUUID();
+export const newPullRef = (): string => uuid();

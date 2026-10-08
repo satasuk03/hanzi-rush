@@ -18,7 +18,7 @@ import type { Reward } from '../core/meta';
 import { t } from '../core/i18n';
 import { announceTitles } from '../ui/notify';
 import { levelsScreen } from './levels';
-import { cloud } from '../core/cloud';
+import { cloud, uuid } from '../core/cloud';
 import { boardKey, RANKED_GAMES, type RankedGame, type SubmitRunResponse } from '../../shared/api';
 import { invalidateBoard, leaderboardScreen } from './leaderboard';
 import { invalidateEffort } from './effort';
@@ -119,7 +119,7 @@ export function resultsScreen(r: RunStats): Screen {
     }
   };
   if (r.score > 0 && board) {
-    const handle = cloud.handle(r.runId) ?? { id: r.runId ?? crypto.randomUUID(), board, startedAt: performance.now() - (r.durationMs ?? 0) };
+    const handle = cloud.handle(r.runId) ?? { id: r.runId ?? uuid(), board, startedAt: performance.now() - (r.durationMs ?? 0) };
     cloud
       .submitRun(handle, r)
       .then((res) => {
