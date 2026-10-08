@@ -19,17 +19,18 @@ import { particles } from '../../engine/particles';
 import { shake } from '../../engine/shake';
 import { pop, pressable, nope } from '../../engine/juice';
 import { langToggle, muteButton, iconButton, ICON } from '../../ui/widgets';
-import { ITEMS, LOOK_MAX_BADGES, type Item, type Look, type Slot } from '../../../shared/cosmetics';
+import { ITEMS, LOOK_MAX_BADGES, SETS, itemById, type SetDef, type Item, type Look, type Slot } from '../../../shared/cosmetics';
 import { applyNameFx, avatarSrc, paintIdentity, renderBadges, renderIdentity } from '../../cosmetics/render';
 import { currentLook, equipItem, isEquipped, unequipItem } from '../../cosmetics/equip';
 import { SPARK } from './fx';
 
-type Tab = Slot | 'title';
+type Tab = Slot | 'set' | 'title';
 const TABS: { id: Tab; zh: string; k: Key }[] = [
   { id: 'frame', zh: '框', k: 'wdFrame' },
   { id: 'avatar', zh: '像', k: 'wdAvatar' },
   { id: 'nameFx', zh: '名', k: 'wdName' },
   { id: 'badge', zh: '章', k: 'wdBadges' },
+  { id: 'set', zh: '套', k: 'wdSets' },
   { id: 'title', zh: '称', k: 'wdTitle' },
 ];
 
@@ -111,16 +112,16 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
 
   // ---- tabs: how much of each slot you own, and a dot for items you have not looked at yet
   const items = (slot: Slot): Item[] =>
-    ITEMS.filter((i) => i.slot === slot && i.source !== 'grant' && (i.source !== 'event' || wallet.owns(i.id))).sort((a, b) => b.rarity - a.rarity || a.en.localeCompare(b.en));
+    ITEMS.filter((i) => i.slot === slot && (i.source === 'gacha' || wallet.owns(i.id))).sort((a, b) => b.rarity - a.rarity || a.en.localeCompare(b.en));
   const hasNew = (slot: Slot) => items(slot).some((i) => wallet.isNew(i.id));
 
   // open on the first slot with something new in it
-  let tab: Tab = TABS.find((T) => T.id !== 'title' && hasNew(T.id))?.id ?? 'frame';
+  let tab: Tab = TABS.find((T): T is { id: Slot; zh: string; k: Key } => T.id !== 'title' && T.id !== 'set' && hasNew(T.id))?.id ?? 'frame';
   let ownedOnly = false;
   /** the player has now seen everything in the tab they are leaving */
-  const leaveTab = () => {
-    if (tab !== 'title') wallet.markSeen(items(tab).map((i) => i.id));
-  };
+  const seenIn = (T: Tab) => (T === 'title' ? [] : T === 'set' ? SETS.flatMap((x) => [...x.items, x.bonus]) : items(T).map((i) => i.id));
+  const hasNewIn = (T: Tab) => seenIn(T).some((id) => wallet.isNew(id));
+  const leaveTab = () => wallet.markSeen(seenIn(tab));
   const tabCounts = new Map<Tab, HTMLElement>();
   const tabBtns = TABS.map((T) => {
     const ct = h('span', { class: 'wd-tab-ct' });
@@ -131,7 +132,7 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
       audio.pop(1.1);
       const prev = tab;
       tab = T.id;
-      if (prev !== 'title') wallet.markSeen(items(prev).map((i) => i.id));
+      wallet.markSeen(seenIn(prev));
       renderBody(true);
       scroll.scrollTop = 0;
     });
@@ -142,11 +143,14 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
     for (const b of tabBtns) {
       const id = b.dataset.tab as Tab;
       b.classList.toggle('on', id === tab);
-      b.classList.toggle('new', id !== 'title' && id !== tab && hasNew(id));
-      const [have, all] = id === 'title' ? [TITLES.filter(isUnlocked).length, TITLES.length] : [items(id).filter((i) => wallet.owns(i.id)).length, items(id).length];
+      b.classList.toggle('new', id !== tab && hasNewIn(id));
+      const [have, all] = id === 'title' ? [TITLES.filter(isUnlocked).length, TITLES.length] : id === 'set' ? [SETS.filter(setDone).length, SETS.length] : [items(id).filter((i) => wallet.owns(i.id)).length, items(id).length];
       tabCounts.get(id)!.textContent = `${have}/${all}`;
     }
   };
+
+  const setDone = (x: SetDef) => x.items.every((id) => wallet.owns(id));
+  const setHave = (x: SetDef) => x.items.filter((id) => wallet.owns(id)).length;
 
   // ---- All / Owned
   const filterBtns = ([false, true] as const).map((only) => {
@@ -163,7 +167,7 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
   const paintFilter = () => {
     for (const { b, only } of filterBtns) {
       b.classList.toggle('on', ownedOnly === only);
-      b.replaceChildren(tx(only ? (tab === 'title' ? 'wdShowUnlocked' : 'wdShowOwned') : 'wdShowAll'));
+      b.replaceChildren(tx(only ? (tab === 'title' || tab === 'set' ? 'wdShowUnlocked' : 'wdShowOwned') : 'wdShowAll'));
     }
   };
 
@@ -296,6 +300,27 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
     list.replaceChildren(...(next.length && !ownedOnly ? [section('近', t('titlesNextUp'), next, undefined, true)] : []), ...fams);
   };
 
+  // ---- sets: each set's four members (equip in place) and the seal for completing it
+  const setsList = h('div', { class: 'wd-sets' });
+  const renderSets = () => {
+    const sorted = SETS.map((x, i) => ({ x, i, r: setHave(x) / x.items.length }))
+      .filter((o) => !ownedOnly || o.r === 1)
+      .sort((a, b) => b.r - a.r || a.i - b.i);
+    setsList.replaceChildren(
+      ...sorted.map(({ x }) => {
+        const bonus = itemById(x.bonus);
+        const done = setDone(x);
+        return h(
+          'section',
+          { class: `wd-set${done ? ' done' : ''}` },
+          h('h4', { class: 'wd-set-h' }, h('b', null, x.zh), ` ${x[i18n.lang]}`, h('small', null, `${setHave(x)}/${x.items.length}`)),
+          h('div', { class: 'wd-grid wd-set-grid' }, ...x.items.map((id) => itemById(id)).filter((it): it is Item => !!it).map((it) => tile(it, it.slot)), ...(bonus ? [tile(bonus, 'badge')] : [])),
+          done ? null : h('p', { class: 'wd-note wd-set-note' }, t('wdSetBonus')),
+        );
+      }),
+    );
+  };
+
   // ---- body
   function renderBody(animate: boolean) {
     paintTabs();
@@ -304,6 +329,9 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
     if (tab === 'title') {
       renderTitles();
       kids = [h('div', { class: 'wd-bar' }, filter), list];
+    } else if (tab === 'set') {
+      renderSets();
+      kids = [h('div', { class: 'wd-bar' }, filter), setsList];
     } else {
       const slot: Slot = tab;
       const empty = Object.values(wallet.inventory).every((n) => !(n > 0));
@@ -321,7 +349,7 @@ export function create(from: 'home' | 'vault' = 'vault'): Screen {
       ];
     }
     body.replaceChildren(...kids);
-    if (animate) gsap.from(tab === 'title' ? list.children : body.querySelectorAll('.wd-tile'), { y: 14, opacity: 0, duration: 0.3, stagger: 0.015, ease: 'back.out(2)' });
+    if (animate) gsap.from(tab === 'title' ? list.children : tab === 'set' ? setsList.children : body.querySelectorAll('.wd-tile'), { y: 14, opacity: 0, duration: 0.3, stagger: 0.015, ease: 'back.out(2)' });
   }
 
   // The preview shrinks to a slim bar once the list scrolls. It sits outside the scroller, so the list never jumps

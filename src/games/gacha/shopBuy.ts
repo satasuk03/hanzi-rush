@@ -9,8 +9,8 @@ import { ApiError } from '../../core/api';
 import { wait } from '../../core/util';
 import { newPullRef, wallet } from '../../core/wallet';
 
-/** poor: not enough Jade · offline: no backend / no connection · net: transient failure (retry is safe) · busy: rate limited · error: refused */
-export type BuyFail = 'poor' | 'offline' | 'net' | 'busy' | 'error';
+/** poor: not enough Jade · offline: no backend / no connection · net: transient failure (retry is safe) · busy: rate limited · rotated: the featured set changed (Set Box) · error: refused */
+export type BuyFail = 'poor' | 'offline' | 'net' | 'busy' | 'rotated' | 'error';
 
 export class BuyError extends Error {
   constructor(
@@ -24,11 +24,13 @@ export class BuyError extends Error {
 
 const RETRIES = 3;
 
-export async function buy(box: string, qty: number): Promise<ShopPullResponse> {
+export async function buy(box: string, qty: number, set?: string): Promise<ShopPullResponse> {
   if (!wallet.enabled || !navigator.onLine) throw new BuyError('offline');
   let un = wallet.pending;
-  if (!un || un.box !== box || un.qty !== qty) wallet.setPending((un = { box, qty, ref: newPullRef() }));
-  return send(un.box, un.qty, un.ref);
+  // an unresolved Set Box purchase keeps its ref and its set even if the week turned since: the server replays it if it
+  // was applied, else refuses it as `rotated` (nothing charged) and the next tap starts a fresh one with the new set
+  if (!un || un.box !== box || un.qty !== qty) wallet.setPending((un = { box, qty, ref: newPullRef(), ...(set ? { set } : {}) }));
+  return send(un.box, un.qty, un.ref, un.set);
 }
 
 /**
@@ -39,16 +41,16 @@ export async function resumePending(): Promise<{ box: string; qty: number; res: 
   const p = wallet.pending;
   if (!p || !wallet.enabled || !navigator.onLine) return null;
   try {
-    return { box: p.box, qty: p.qty, res: await send(p.box, p.qty, p.ref) };
+    return { box: p.box, qty: p.qty, res: await send(p.box, p.qty, p.ref, p.set) };
   } catch {
     return null;
   }
 }
 
-async function send(box: string, qty: number, ref: string): Promise<ShopPullResponse> {
+async function send(box: string, qty: number, ref: string, set?: string): Promise<ShopPullResponse> {
   for (let attempt = 0; ; attempt++) {
     try {
-      const r = await wallet.pull(box, qty, ref);
+      const r = await wallet.pull(box, qty, ref, set);
       wallet.setPending(null);
       // a replay carries the balance from the original pull: fetch the current one
       if (r.replay) void wallet.refresh();
@@ -63,6 +65,13 @@ async function send(box: string, qty: number, ref: string): Promise<ShopPullResp
           const j = (e.body as { jade?: unknown } | null)?.jade;
           void wallet.refresh();
           throw new BuyError('poor', typeof j === 'number' ? j : undefined);
+        }
+        if (e.body?.error.reason === 'rotated') {
+          // the refusal names the current featured set: { set, endsAt, error }
+          const { set, endsAt } = e.body as { set?: unknown; endsAt?: unknown };
+          if (typeof set === 'string' && typeof endsAt === 'number') wallet.setFeatured({ set, endsAt });
+          void wallet.refresh();
+          throw new BuyError('rotated');
         }
         throw new BuyError('error');
       }

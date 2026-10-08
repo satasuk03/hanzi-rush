@@ -41,7 +41,7 @@ body.lang-th .wd-name-t { font-family: var(--f-thai); font-weight: 700; }
 .wd-badges .id-badges { margin-left: 8px; gap: 5px; }
 .wd-badges .id-badge { width: 22px; height: 22px; font-size: 15px; }
 
-.wd-tabs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.wd-tabs { display: grid; grid-template-columns: repeat(6, 1fr); gap: 5px; }
 .wd-tab {
   position: relative; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 7px 2px 6px; border-radius: 14px; min-width: 0;
   background: #33243f; box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .1); color: #e8dcc6; transition: background .2s;
@@ -49,7 +49,7 @@ body.lang-th .wd-name-t { font-family: var(--f-thai); font-weight: 700; }
 .wd-tab-ct { font: 400 10px/1 var(--f-display); letter-spacing: .3px; opacity: .7; }
 .wd-tab-dot { display: none; position: absolute; top: -3px; right: -3px; width: 10px; height: 10px; border-radius: 50%; background: #ff5d73; box-shadow: 0 0 0 2px #1d1426; }
 .wd-tab.new .wd-tab-dot { display: block; }
-.wd-tab b { font: 400 20px/1 var(--f-brush); }
+.wd-tab b { font: 400 19px/1 var(--f-brush); }
 .wd-tab small { font-size: 10.5px; font-weight: 900; opacity: .8; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 body.lang-th .wd-tab small { font-weight: 600; }
 .wd-tab.on { background: var(--gold-grad); color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink), 0 4px 0 var(--ink); }
@@ -108,3 +108,20 @@ body.lang-th .wd-new { font-family: var(--f-thai); font-weight: 700; }
 .ti.near .ti-lock { position: static; flex: none; opacity: .7; }
 .ti-near-bar { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
 .ti-near-bar .ti-prog { flex: 1; width: auto; }
+
+/* sets: one block per set, four members plus the seal */
+.wd-sets { display: flex; flex-direction: column; gap: 14px; }
+.wd-set { display: flex; flex-direction: column; gap: 8px; padding: 10px 8px 8px; border-radius: 18px; background: #2a1d38; box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, .1); }
+.wd-set.done { box-shadow: inset 0 0 0 2px var(--gold-2), 0 0 14px rgba(242, 193, 78, .25); }
+.wd-set-h { display: flex; align-items: baseline; gap: 6px; margin: 0; padding: 0 4px; font-weight: 800; font-size: 13.5px; color: #f6ead2; }
+body.lang-th .wd-set-h { font-weight: 600; }
+.wd-set-h b { font: 400 20px/1 var(--f-brush); color: #f3cf73; }
+.wd-set-h small { margin-left: auto; font: 400 12px/1 var(--f-display); color: #a893b5; }
+.wd-set.done .wd-set-h small { color: var(--gold-2); }
+.wd-set-grid { grid-template-columns: repeat(5, 1fr); gap: 4px; padding-top: 4px; }
+.wd-set-grid .wd-tile { padding: 8px 2px 6px; border-radius: 12px; }
+.wd-set-grid .wd-v { height: 46px; }
+.wd-set-grid .wd-v-av img { width: 44px; height: 44px; }
+.wd-set-grid .wd-v .id-badge { width: 32px; height: 32px; font-size: 21px; }
+.wd-set-grid .wd-t-name { font-size: 10px; }
+.wd-set-note { font-size: 11.5px; }

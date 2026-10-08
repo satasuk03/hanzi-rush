@@ -5,7 +5,7 @@
 import { store } from './store';
 import { LEVELS } from './data';
 import { wallet } from './wallet';
-import { itemById } from '../../shared/cosmetics';
+import { completedSets, itemById } from '../../shared/cosmetics';
 import { levelOf, xpToNext, type LevelInfo } from '../../shared/level';
 import { TITLE_DEFS, TITLE_FAMILIES, type TitleReq, type TitleStat, type TitleFamily } from '../../shared/titles';
 
@@ -56,6 +56,8 @@ const cosmetics = () => {
   for (const id in inv) if (inv[id] > 0 && itemById(id)) n++;
   return n;
 };
+/** completed cosmetic sets in the cached inventory (gacha members only; 0 while it is unknown) */
+const sets = () => completedSets((id) => (wallet.inventory[id] ?? 0) > 0).length;
 const STAT: Record<TitleStat, () => number> = {
   perfect: () => store.progress.stats.perfect,
   bestCombo: () => store.progress.stats.bestCombo,
@@ -99,6 +101,8 @@ function reqText(r: TitleReq): { en: string; th: string } {
       return { en: `Master ${fmt(r.n)} words (seen 5+ times, 80%+ right)`, th: `จำได้แม่น ${fmt(r.n)} คำ (เจอ 5 ครั้งขึ้นไป ตอบถูก 80%+)` };
     case 'cosmetics':
       return { en: `Own ${fmt(r.n)} cosmetics`, th: `สะสมของตกแต่งครบ ${fmt(r.n)} ชิ้น` };
+    case 'sets':
+      return { en: `Complete ${fmt(r.n)} cosmetic ${r.n === 1 ? 'set' : 'sets'}`, th: `สะสมของตกแต่งครบชุด ${fmt(r.n)} ชุด` };
     case 'stat':
       return STAT_REQ[r.key](r.n);
   }
@@ -124,6 +128,8 @@ function countOf(r: TitleReq): { have: number; need: number } {
       return c(mastered(), r.n);
     case 'cosmetics':
       return c(cosmetics(), r.n);
+    case 'sets':
+      return c(sets(), r.n);
     case 'stat':
       return c(STAT[r.key](), r.n);
   }

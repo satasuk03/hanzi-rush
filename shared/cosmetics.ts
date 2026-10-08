@@ -6,6 +6,8 @@
  * inventory can be keyed by id alone, and match ITEM_ID_RE.
  */
 
+import { bangkokDay, dayNumber } from './day';
+
 export const SLOTS = ['frame', 'avatar', 'nameFx', 'badge'] as const;
 export type Slot = (typeof SLOTS)[number];
 
@@ -26,14 +28,17 @@ export const ITEM_ID_RE = /^[a-z0-9_-]{1,24}$/;
 /** 0 COMMON .. 4 MYTHIC, same indexes as RARITIES in src/core/rarity.ts */
 export type RarityIdx = 0 | 1 | 2 | 3 | 4;
 
-/** `gacha` drops from boxes; `grant` is server-verified (rank badges, Founder); `event` is limited or not yet released */
-export type ItemSource = 'gacha' | 'grant' | 'event';
+/**
+ * `gacha` drops from boxes; `grant` is server-verified (rank badges, Founder); `event` is limited or not yet released;
+ * `set` is the bonus for completing a set: never in a pool, granted by the server (sanitizeLook keeps it, ownedLook gates it)
+ */
+export type ItemSource = 'gacha' | 'grant' | 'event' | 'set';
 
 export interface Item {
   id: string;
   slot: Slot;
   rarity: RarityIdx;
-  /** themed collection (set boxes, phase D) */
+  /** themed collection (SETS is the source of truth; filled below, not in the item rows) */
   set: string | null;
   source: ItemSource;
   zh: string;
@@ -119,6 +124,13 @@ const NAME_FX: Item[] = [
   item('fx_cuiyu', 'nameFx', 2, '翠玉', 'Emerald Glow', 'หยกมรกต'),
   item('fx_liujin', 'nameFx', 3, '流金', 'Gilded', 'ทองอร่าม'),
   item('fx_fenghuang', 'nameFx', 4, '凤凰', 'Phoenix Glow', 'ประกายหงส์'),
+  // animated (phase D): src/cosmetics/namefx.css
+  item('fx_yinguang', 'nameFx', 1, '银光', 'Silver Gleam', 'ประกายเงิน'),
+  item('fx_yinghuo', 'nameFx', 1, '萤火', 'Firefly', 'แสงหิ่งห้อย'),
+  item('fx_jiguang', 'nameFx', 2, '极光', 'Aurora', 'แสงออโรรา'),
+  item('fx_leiting', 'nameFx', 2, '雷霆', 'Thunder', 'อัสนีบาต'),
+  item('fx_xinghe', 'nameFx', 3, '星河', 'Milky Way', 'ทางช้างเผือก'),
+  item('fx_tianguang', 'nameFx', 4, '天光', 'Heavenly Radiance', 'แสงสวรรค์'),
 ];
 
 const BADGES: Item[] = [
@@ -144,7 +156,19 @@ const BADGES: Item[] = [
   item('badge_divine', 'badge', 4, '神明', 'Divine', 'เทพเจ้า'),
 ];
 
-export const ITEMS: readonly Item[] = [...AVATARS.map(([id, zh, en, th, r]) => item(AVATAR_PREFIX + id, 'avatar', r, zh, en, th)), ...FRAMES, ...NAME_FX, ...BADGES];
+/** set-completion bonus seals, one per set (SETS[].bonus); rarity = the highest in the set. The board shows zh[0] as the glyph. */
+const SET_BADGES: Item[] = [
+  item('badge_set_bamboo', 'badge', 0, '竹韵', 'Bamboo Seal', 'ตราป่าไผ่', 'set'),
+  item('badge_set_scholar', 'badge', 2, '砚池', 'Inkstone Seal', 'ตราแท่นฝนหมึก', 'set'),
+  item('badge_set_koi', 'badge', 2, '锦鳞', 'Koi Seal', 'ตราปลาคาร์ปมงคล', 'set'),
+  item('badge_set_lantern', 'badge', 2, '元夕', 'Lantern Night Seal', 'ตราคืนโคมไฟ', 'set'),
+  item('badge_set_jade', 'badge', 3, '玉玺', 'Imperial Jade Seal', 'ตราหยกจักรพรรดิ', 'set'),
+  item('badge_set_fortune', 'badge', 3, '聚宝', 'Treasure Seal', 'ตราขุมทรัพย์', 'set'),
+  item('badge_set_phoenix', 'badge', 4, '凤鸣', 'Phoenix Song Seal', 'ตราหงส์ขาน', 'set'),
+  item('badge_set_dragon', 'badge', 4, '腾龙', 'Soaring Dragon Seal', 'ตรามังกรทะยาน', 'set'),
+];
+
+export const ITEMS: readonly Item[] = [...AVATARS.map(([id, zh, en, th, r]) => item(AVATAR_PREFIX + id, 'avatar', r, zh, en, th)), ...FRAMES, ...NAME_FX, ...BADGES, ...SET_BADGES];
 
 /** the items a box can drop (any slot), by rarity index */
 export const gachaPool = (rarity: RarityIdx): Item[] => ITEMS.filter((i) => i.source === 'gacha' && i.rarity === rarity);
@@ -159,11 +183,50 @@ export const itemInSlot = (id: unknown, slot: Slot): Item | undefined => {
   return it && it.slot === slot ? it : undefined;
 };
 
+// ====================================================================== sets
+
+export interface SetDef {
+  /** ^[a-z0-9_-]{1,16}$ */
+  id: string;
+  zh: string;
+  en: string;
+  th: string;
+  /** gacha item ids, one per slot; completing = owning all of them */
+  items: readonly string[];
+  /** the 'set'-source badge granted on completion */
+  bonus: string;
+}
+
+/** Built from existing items, so current players already have progress. An item belongs to at most one set. */
+export const SETS: readonly SetDef[] = [
+  { id: 'bamboo', zh: '竹林', en: 'Bamboo Grove', th: 'ป่าไผ่', items: ['avatar_bamboo', 'frame_bamboo', 'fx_songlv', 'badge_wood'], bonus: 'badge_set_bamboo' },
+  { id: 'scholar', zh: '文房', en: "Scholar's Study", th: 'ห้องบัณฑิต', items: ['avatar_brush', 'frame_ink', 'fx_moyun', 'badge_study'], bonus: 'badge_set_scholar' },
+  { id: 'koi', zh: '锦鲤', en: 'Koi Pond', th: 'สระปลาคาร์ป', items: ['avatar_koi', 'frame_koi', 'fx_bibo', 'badge_pearl'], bonus: 'badge_set_koi' },
+  { id: 'lantern', zh: '元宵', en: 'Lantern Festival', th: 'เทศกาลโคมไฟ', items: ['avatar_lantern', 'frame_lantern', 'fx_zhuhong', 'badge_joy'], bonus: 'badge_set_lantern' },
+  { id: 'jade', zh: '美玉', en: 'Fine Jade', th: 'หยกงาม', items: ['avatar_jaderabbit', 'frame_jadering', 'fx_cuiyu', 'badge_jade'], bonus: 'badge_set_jade' },
+  { id: 'fortune', zh: '招财', en: 'Fortune', th: 'โชคลาภ', items: ['avatar_wealth', 'frame_copper', 'fx_liujin', 'badge_fortune'], bonus: 'badge_set_fortune' },
+  { id: 'phoenix', zh: '凤凰', en: 'Phoenix', th: 'หงส์', items: ['avatar_phoenix', 'frame_phoenix', 'fx_fenghuang', 'badge_fire'], bonus: 'badge_set_phoenix' },
+  { id: 'dragon', zh: '神龙', en: 'Dragon', th: 'มังกร', items: ['avatar_dragon', 'frame_dragon', 'fx_chiyan', 'badge_dragon'], bonus: 'badge_set_dragon' },
+];
+
+for (const s of SETS) for (const id of s.items) {
+  const it = BY_ID.get(id);
+  if (it) it.set = s.id;
+}
+
+export const setById = (id: string): SetDef | undefined => SETS.find((s) => s.id === id);
+
+/** every set whose items are all owned */
+export const completedSets = (owns: (id: string) => boolean): SetDef[] => SETS.filter((s) => s.items.every(owns));
+
+/** bonus ids of completed sets whose bonus is not owned yet */
+export const bonusesDue = (owns: (id: string) => boolean): string[] => completedSets(owns).filter((s) => !owns(s.bonus)).map((s) => s.bonus);
+
 // ====================================================================== boxes
 
 /** rates are percentages for COMMON..MYTHIC and add up to 100 */
 export interface BoxDef {
-  id: 'standard' | 'select' | 'supreme';
+  id: 'standard' | 'select' | 'supreme' | 'set';
   zh: string;
   en: string;
   th: string;
@@ -174,6 +237,8 @@ export interface BoxDef {
   pity: number;
   /** the box never drops anything below this rarity */
   minRarity: RarityIdx;
+  /** drops favour the featured set of the week (SET_RATE_UP) */
+  featured?: boolean;
 }
 
 /** the rarity index the hard pity guarantees (LEGENDARY) */
@@ -183,7 +248,23 @@ export const BOXES: readonly BoxDef[] = [
   { id: 'standard', zh: '漆匣', en: 'Standard Box', th: 'กล่องธรรมดา', price: 100, rates: [55, 28, 12, 4, 1], pity: 30, minRarity: 0 },
   { id: 'select', zh: '银匣', en: 'Select Box', th: 'กล่องเงิน', price: 250, rates: [0, 60, 27, 10, 3], pity: 12, minRarity: 1 },
   { id: 'supreme', zh: '金匣', en: 'Supreme Box', th: 'กล่องทอง', price: 600, rates: [0, 0, 60, 30, 10], pity: 5, minRarity: 2 },
+  // last, so existing indexes and keyboard order hold. Standard numbers; the set rate-up is economy-neutral.
+  { id: 'set', zh: '套匣', en: 'Set Box', th: 'กล่องชุด', price: 100, rates: [55, 28, 12, 4, 1], pity: 30, minRarity: 0, featured: true },
 ];
+
+/** share of drops taken from the featured set when the rolled rarity has a set item */
+export const SET_RATE_UP = 0.5;
+/** rotation order; week 0 starts SET_ROTATION_FROM (a Monday, Bangkok). Append-only: a change takes effect at deploy. */
+export const SET_ROTATION: readonly string[] = ['jade', 'bamboo', 'koi', 'lantern', 'scholar', 'fortune', 'phoenix', 'dragon'];
+export const SET_ROTATION_FROM = '2026-10-05';
+
+/** the featured set at `ms` and when it ends (next Monday 00:00 Asia/Bangkok, epoch ms) */
+export function featuredSet(ms: number): { set: SetDef; endsAt: number } {
+  const week = Math.floor((dayNumber(bangkokDay(ms)) - dayNumber(SET_ROTATION_FROM)) / 7);
+  const n = SET_ROTATION.length;
+  const set = setById(SET_ROTATION[((week % n) + n) % n])!;
+  return { set, endsAt: Date.parse(SET_ROTATION_FROM + 'T00:00:00Z') - 7 * 3600_000 + (week + 1) * 7 * 86_400_000 };
+}
 
 export const boxById = (id: string): BoxDef | undefined => BOXES.find((b) => b.id === id);
 
@@ -199,7 +280,8 @@ export const DUPLICATE_REFUND: readonly number[] = [5, 10, 25, 50, 100];
 /**
  * Canonical look cleanup, run on the server (authoritative) and by the renderer. Known slots only; every id must exist
  * in the catalog for its slot; badges are deduped and capped; anything invalid falls back to the default (dropped).
- * `grant` items are kept out until a grants table can vouch for them (phase E).
+ * `grant` items are kept out until a grants table can vouch for them (phase E); `set` bonuses are kept (ownership is
+ * enforced by ownedLook, as for every item).
  */
 export function sanitizeLook(raw: unknown): Look {
   const out: Look = {};

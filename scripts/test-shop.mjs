@@ -230,7 +230,7 @@ try {
 
     // every rarity refunds DUPLICATE_REFUND[rarity] when everything is already owned
     const id2 = await player(600 * 9 * 2 + 100 * 9 * 4);
-    for (const it of C.ITEMS.filter((i) => i.source === 'gacha')) await db.prepare('INSERT INTO inventory (player_id, item_id, copies, first_at) VALUES (?1, ?2, 1, 0)').bind(id2, it.id).run();
+    for (const it of C.ITEMS.filter((i) => i.source === 'gacha' || i.source === 'set')) await db.prepare('INSERT INTO inventory (player_id, item_id, copies, first_at) VALUES (?1, ?2, 1, 0)').bind(id2, it.id).run();
     const before = await invOf(id2);
     let start = await jadeOf(id2);
     const seenR = new Set();
@@ -365,6 +365,165 @@ try {
     assert.deepEqual([await count('shop_pulls', id), await count('jade_ledger', id, "AND reason = 'pull'")], [1, 1]);
     await noDrift(id);
     ok('6 concurrent requests with one ref: charged once, all see the same drops');
+  }
+
+  // ---- D1: catalog invariants, featured set rotation
+  {
+    const ids = new Set();
+    const memberOf = new Map();
+    for (const st of C.SETS) {
+      assert.ok(!ids.has(st.id), `duplicate set id ${st.id}`);
+      ids.add(st.id);
+      for (const m of st.items) {
+        const it = C.itemById(m);
+        assert.ok(it && it.source === 'gacha', `${st.id} member ${m} is a gacha item`);
+        assert.ok(!memberOf.has(m), `${m} is in two sets`);
+        memberOf.set(m, st.id);
+        assert.equal(it.set, st.id, `${m}.set`);
+      }
+      const b = C.itemById(st.bonus);
+      assert.ok(b && b.slot === 'badge' && b.source === 'set', `${st.bonus} is a set badge`);
+      assert.ok(![0, 1, 2, 3, 4].some((r) => C.gachaPool(r).some((i) => i.id === st.bonus)), `${st.bonus} is in no gacha pool`);
+    }
+    assert.deepEqual([...C.SET_ROTATION].sort(), [...ids].sort(), 'SET_ROTATION is a permutation of the set ids');
+    for (const id of ['fx_yinguang', 'fx_yinghuo', 'fx_jiguang', 'fx_leiting', 'fx_xinghe', 'fx_tianguang']) assert.equal(C.itemById(id)?.source, 'gacha', id);
+    const H7 = 7 * 3600_000;
+    const mon = (d) => Date.parse(`${d}T00:00:00Z`) - H7; // Bangkok midnight
+    assert.equal(C.featuredSet(mon('2026-10-12') - 1000).set.id !== C.featuredSet(mon('2026-10-12')).set.id, true, 'Sunday 23:59:59 vs Monday 00:00 differ');
+    assert.equal(C.featuredSet(mon('2026-10-12') - 1000).endsAt, mon('2026-10-12'));
+    assert.equal(C.featuredSet(mon('2026-10-12')).endsAt, mon('2026-10-19'));
+    assert.equal(C.featuredSet(mon('2026-10-14')).endsAt, mon('2026-10-19'));
+    const seen = new Set();
+    for (let w = 0; w < 8; w++) seen.add(C.featuredSet(mon('2026-10-12') + w * 7 * 86_400_000 + 5000).set.id);
+    assert.equal(seen.size, C.SETS.length, '8 consecutive weeks cover every set once');
+    assert.doesNotThrow(() => C.featuredSet(Date.parse('2020-01-01T00:00:00Z')));
+    assert.doesNotThrow(() => C.featuredSet(0));
+    ok('sets: catalog invariants hold; featuredSet rotates on Bangkok Mondays and covers every set');
+  }
+
+  // ---- D1: rate-up (pure)
+  {
+    const jade = C.setById('jade');
+    const feature = new Set(jade.items);
+    const b = box('set');
+    const N = 20_000;
+    const rng = mulberry(11);
+    let hit = 0;
+    let tot = 0;
+    let mythicFeat = 0;
+    for (let i = 0; i < N; i++) {
+      const d = S.rollPull(b, 1, 0, new Map(), rng, undefined, feature).drops[0];
+      if (pools[d.rarity].some((x) => feature.has(x.id))) {
+        tot++;
+        if (feature.has(d.itemId)) hit++;
+      }
+      if (d.rarity === 4 && feature.has(d.itemId)) mythicFeat++;
+    }
+    let num = 0;
+    let den = 0;
+    for (let r = 0; r < 5; r++) {
+      const m = pools[r].filter((x) => feature.has(x.id)).length;
+      if (!m) continue;
+      num += b.rates[r] * (C.SET_RATE_UP + (1 - C.SET_RATE_UP) * (m / pools[r].length));
+      den += b.rates[r];
+    }
+    assert.ok(Math.abs(hit / tot - num / den) < 0.03, `featured share ${(hit / tot).toFixed(3)} vs ${(num / den).toFixed(3)}`);
+    assert.equal(mythicFeat, 0, 'no featured MYTHIC when the set has none');
+    // no feature: identical to the plain roll, same rng stream
+    for (let i = 0; i < 200; i++) assert.deepEqual(S.rollPull(b, 10, 3, new Map(), mulberry(i)), S.rollPull(b, 10, 3, new Map(), mulberry(i), undefined, undefined));
+    ok(`rate-up: ${(hit / tot).toFixed(3)} of drops at rarities with a jade item are jade (expected ${(num / den).toFixed(3)}); none at MYTHIC`);
+  }
+
+  // ---- D1: the set box through D1 (rotation, replay before rotation, pity row)
+  {
+    const wk0 = Date.parse('2026-10-07T05:00:00Z'); // week 0: jade
+    const wk1 = wk0 + 7 * 86_400_000;
+    const f0 = C.featuredSet(wk0);
+    const f1 = C.featuredSet(wk1);
+    assert.notEqual(f0.set.id, f1.set.id);
+    const id = await player(1000);
+    const seq = async () => (await one('SELECT pull_seq FROM players WHERE id = ?1', id)).pull_seq;
+    for (const bad of [undefined, 'nope', f1.set.id]) {
+      const e = await S.pull(db, id, 'set', 1, newRef(), zero, { ...FAST, now: wk0, set: bad }).catch((x) => x);
+      assert.equal(e.code, 'bad_request');
+      assert.equal(e.opts.reason, 'rotated');
+      assert.deepEqual(e.opts.body, { set: f0.set.id, endsAt: f0.endsAt });
+    }
+    assert.deepEqual([await jadeOf(id), await count('jade_ledger', id), await count('shop_pulls', id), await seq()], [1000, 1, 0, 0]);
+    // a non-featured box ignores `set`
+    assert.equal((await S.pull(db, id, 'standard', 1, newRef(), zero, { ...FAST, now: wk0 })).set, undefined);
+    const ref = newRef();
+    const a = await S.pull(db, id, 'set', 1, ref, zero, { ...FAST, now: wk0, set: f0.set.id });
+    assert.deepEqual([a.cost, a.set, a.replay, a.bonuses], [100, f0.set.id, false, []]);
+    assert.equal(typeof a.pity.set, 'number');
+    assert.equal(await pityOf(id, 'set'), a.pity.set);
+    // replay after the week turned (and with a stale set): the stored result, before the rotation check
+    const r = await S.pull(db, id, 'set', 1, ref, zero, { ...FAST, now: wk1, set: f0.set.id });
+    assert.deepEqual([r.replay, r.drops, r.bonuses], [true, a.drops, []]);
+    const r2 = await S.pull(db, id, 'set', 1, ref, zero, { ...FAST, now: wk1 });
+    assert.equal(r2.replay, true);
+    // a new ref in the new week with the old set is refused, with the new one it works
+    assert.equal(await codeOf(S.pull(db, id, 'set', 1, newRef(), zero, { ...FAST, now: wk1, set: f0.set.id })), 'bad_request');
+    assert.equal((await S.pull(db, id, 'set', 1, newRef(), zero, { ...FAST, now: wk1, set: f1.set.id })).set, f1.set.id);
+    await noDrift(id);
+    ok('set box: stale/missing set is refused with reason rotated and writes nothing; replay beats rotation; pity row is "set"');
+  }
+
+  // ---- D1: set bonuses
+  {
+    const now = Date.parse('2026-10-07T05:00:00Z');
+    const give = async (id, items) => {
+      for (const it of items) await db.prepare('INSERT INTO inventory (player_id, item_id, copies, first_at) VALUES (?1, ?2, 1, 0)').bind(id, it).run();
+    };
+    const seq = async (id) => (await one('SELECT pull_seq FROM players WHERE id = ?1', id)).pull_seq;
+    // retroactive: a set completed before the bonus existed pays on the next pull of any box
+    const bamboo = C.setById('bamboo');
+    const id = await player(1000);
+    await give(id, bamboo.items);
+    assert.equal((await invOf(id))[bamboo.bonus], undefined);
+    const a = await S.pull(db, id, 'standard', 1, newRef(), zero, FAST);
+    assert.deepEqual(a.bonuses, [bamboo.bonus]);
+    assert.equal((await invOf(id))[bamboo.bonus], 1);
+    assert.equal(await seq(id), 1);
+    const b = await S.pull(db, id, 'standard', 1, newRef(), zero, FAST);
+    assert.deepEqual(b.bonuses, [], 'never granted twice');
+    assert.equal((await invOf(id))[bamboo.bonus], 1);
+    // completion by the pull itself
+    const jade = C.setById('jade');
+    const id2 = await player(1000);
+    await give(id2, jade.items.slice(0, 3));
+    const missing = C.itemById(jade.items[3]);
+    const only = (r) => (r === missing.rarity ? [missing] : []);
+    const ref = newRef();
+    const c = await S.pull(db, id2, 'set', 1, ref, zero, { ...FAST, now, set: 'jade', pool: only });
+    assert.equal(c.drops[0].itemId, missing.id);
+    assert.deepEqual(c.bonuses, [jade.bonus]);
+    const inv = await invOf(id2);
+    assert.deepEqual([inv[missing.id], inv[jade.bonus]], [1, 1]);
+    assert.equal(await seq(id2), 1);
+    const d = await S.pull(db, id2, 'set', 1, ref, zero, { ...FAST, now, set: 'jade' });
+    assert.deepEqual([d.replay, d.bonuses], [true, []]);
+    assert.deepEqual(await invOf(id2), inv, 'replay leaves the inventory alone');
+    // the bonus does not repeat when the set item is pulled again (duplicate)
+    const e = await S.pull(db, id2, 'set', 1, newRef(), zero, { ...FAST, now, set: 'jade', pool: only });
+    assert.deepEqual([e.bonuses, e.drops[0].isNew], [[], false]);
+    assert.equal((await invOf(id2))[jade.bonus], 1);
+    // an incomplete set grants nothing
+    const id3 = await player(100);
+    await give(id3, bamboo.items.slice(0, 3));
+    assert.deepEqual((await S.pull(db, id3, 'standard', 1, newRef(), zero, FAST)).bonuses.includes(bamboo.bonus), false);
+    for (const p of [id, id2, id3]) await noDrift(p);
+    ok('set bonuses: granted in the pull batch (retroactive too), once, never on replay, pull_seq bumped once');
+  }
+
+  // ---- wallet exposes the featured set
+  {
+    const id = await player();
+    const now = Date.parse('2026-10-07T05:00:00Z');
+    const w = await W.walletState(db, id, now);
+    const f = C.featuredSet(now);
+    assert.deepEqual(w.featured, { set: f.set.id, endsAt: f.endsAt });
+    ok('walletState carries the featured set');
   }
   console.log('all shop checks passed');
 } finally {

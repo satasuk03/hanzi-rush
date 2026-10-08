@@ -23,16 +23,20 @@ interface Cache {
   /** owned item ids the player has already looked at in the Wardrobe; null until the first inventory arrives, which
    *  marks everything owned then as seen (device-local, so a new device shows no "new" dots) */
   seen: string[] | null;
+  /** the Set Box's featured set and when it rotates (epoch ms), as last seen from the server; null = unknown */
+  featured: { set: string; endsAt: number } | null;
 }
 
 export interface PendingPull {
   box: string;
   qty: number;
   ref: string;
+  /** the featured set the buyer saw (Set Box only): a resumed purchase sends the same one */
+  set?: string;
 }
 
 const KEY = 'hanzi-rush:wallet:v1';
-const empty = (): Cache => ({ playerId: null, jade: null, pendingDay: null, inventory: {}, pity: {}, pending: null, seen: null });
+const empty = (): Cache => ({ playerId: null, jade: null, pendingDay: null, inventory: {}, pity: {}, pending: null, seen: null, featured: null });
 
 function load(): Cache {
   try {
@@ -141,6 +145,17 @@ export const wallet = {
     persist();
     emit();
   },
+  /** the Set Box's featured set and rotation time (null until the server has said, or on an old server) */
+  get featured(): Readonly<{ set: string; endsAt: number }> | null {
+    return c.featured;
+  },
+  /** a `rotated` refusal names the current featured set: take it without a wallet round-trip */
+  setFeatured(f: { set: string; endsAt: number }) {
+    bind();
+    c.featured = f;
+    persist();
+    emit();
+  },
   /** box id → pulls since the last LEGENDARY+ */
   get pity(): Readonly<Record<string, number>> {
     return c.pity;
@@ -163,6 +178,7 @@ export const wallet = {
       try {
         const w = await cloud.authed<WalletResponse>('GET', '/wallet');
         bind();
+        c.featured = w.featured ?? null;
         setHoldings(w.inventory, w.pity);
         setJade(w.jade);
         if (!w.starterClaimed) setJade((await cloud.authed<JadeStarterResponse>('POST', '/jade/starter')).jade);
@@ -180,12 +196,14 @@ export const wallet = {
    * Retrying after a network failure must reuse the same `ref`, so the server returns the original result instead of
    * charging twice; `newPullRef()` makes one per purchase.
    */
-  async pull(box: string, qty: number, ref: string): Promise<ShopPullResponse> {
-    const body: ShopPullRequest = { box, qty, ref };
+  async pull(box: string, qty: number, ref: string, set?: string): Promise<ShopPullResponse> {
+    const body: ShopPullRequest = set ? { box, qty, ref, set } : { box, qty, ref };
     const r = await cloud.authed<ShopPullResponse>('POST', '/shop/pull', body);
     bind();
     const inventory = { ...c.inventory };
     for (const d of r.drops) inventory[d.itemId] = Math.max(inventory[d.itemId] ?? 0, d.copies);
+    // set-completion seals granted by this pull (absent from an old server)
+    for (const id of r.bonuses ?? []) inventory[id] = Math.max(inventory[id] ?? 0, 1);
     setHoldings(inventory, { ...c.pity, ...r.pity });
     setJade(r.jade);
     return r;

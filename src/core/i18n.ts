@@ -227,6 +227,17 @@ const dict = {
   remindMiss2Body: { en: 'A quick Rush is all it takes. 加油!', th: 'เล่น Rush สั้นๆ สักรอบก็พอ 加油!' },
   remindMiss3Title: { en: 'A fresh streak starts today 🧧', th: 'เริ่มสตรีคใหม่ได้เลยวันนี้ 🧧' },
   remindMiss3Body: { en: 'Day 1’s envelope is ready. Come back and claim it.', th: 'อั่งเปาวันที่ 1 พร้อมแล้ว กลับมารับกันเถอะ' },
+  // ---- phase D (sets, deals, title rewards)
+  wdSets: { en: 'Sets', th: 'เซ็ต' },
+  wdSetBonus: { en: 'Complete the set to unlock', th: 'สะสมครบเซ็ตเพื่อปลดล็อก' },
+  setComplete: { en: 'Set complete!', th: 'สะสมครบเซ็ต!' },
+  setRateUp: { en: '50% of drops at a rarity that has a set item come from this week’s set.', th: 'ไอเท็มที่ได้ในระดับที่มีของเซ็ตนี้ 50% จะมาจากเซ็ตประจำสัปดาห์' },
+  setEndsIn: { en: 'Changes in {d}d {h}h', th: 'เปลี่ยนใน {d} วัน {h} ชม.' },
+  setEndsSoon: { en: 'Changes within the hour', th: 'เปลี่ยนภายในชั่วโมงนี้' },
+  setWeek: { en: 'Set of the week', th: 'เซ็ตประจำสัปดาห์' },
+  setBonusHint: { en: 'Complete the set: get this seal', th: 'สะสมครบเซ็ต รับตรานี้' },
+  setBonusGot: { en: 'Seal earned', th: 'ได้รับตราแล้ว' },
+  shopRotated: { en: 'This week’s set just changed. Check the new one and try again.', th: 'เซ็ตประจำสัปดาห์เพิ่งเปลี่ยน ดูเซ็ตใหม่แล้วลองอีกครั้ง' },
 } as const;
 
 export type Key = keyof typeof dict;

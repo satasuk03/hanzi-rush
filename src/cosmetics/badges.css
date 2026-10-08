@@ -37,3 +37,30 @@
 }
 @keyframes id-b-shine { 50% { background-position: 100% 100%; } }
 @keyframes id-b-glow { 50% { box-shadow: inset 0 0 0 1.5px #ff3d63, 0 0 7px #ff3d63; } }
+
+/* SET seals (source 'set', granted on completing a set): a square gold-bordered seal, its own family next to the round
+   rarity badges. Overrides the rarity ring; rarity still shows as shine (LEGENDARY) and glow (MYTHIC). */
+.id-badges .id-badge[data-b^='badge_set_'] {
+  position: relative; overflow: hidden; border-radius: 2px; color: #fff3d6;
+  box-shadow: inset 0 0 0 1px #f2d27a, inset 0 0 0 2px rgba(0, 0, 0, .3), inset 0 0 0 3px rgba(242, 210, 122, .55);
+}
+.id-badges .id-badge[data-b='badge_set_bamboo'] { background: #3f8f3a; }
+.id-badges .id-badge[data-b='badge_set_scholar'] { background: #2a1a3a; }
+.id-badges .id-badge[data-b='badge_set_koi'] { background: #e2552b; }
+.id-badges .id-badge[data-b='badge_set_lantern'] { background: #c8203a; }
+.id-badges .id-badge[data-b='badge_set_jade'] { background: #1f9e6e; }
+.id-badges .id-badge[data-b='badge_set_fortune'] { background: #b36a00; }
+.id-badges .id-badge[data-b='badge_set_phoenix'] { background: linear-gradient(135deg, #ff6a1a, #c8203a); }
+.id-badges .id-badge[data-b='badge_set_dragon'] { background: #7a0f2a; color: #ffd870; }
+.id-badges .id-badge[data-b^='badge_set_'][data-r='4'] { box-shadow: inset 0 0 0 1px #f2d27a, inset 0 0 0 2px rgba(0, 0, 0, .3), inset 0 0 0 3px rgba(242, 210, 122, .55), 0 0 4px rgba(255, 200, 80, .75); }
+@media (prefers-reduced-motion: no-preference) {
+  /* a diagonal glint crosses the seal (transform only) */
+  .id-badges .id-badge[data-b^='badge_set_'][data-r='3']::after, .id-badges .id-badge[data-b^='badge_set_'][data-r='4']::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(110deg, transparent 40%, rgba(255, 255, 255, .6) 50%, transparent 60%);
+    transform: translateX(-120%); animation: id-b-glint 3.6s ease-in-out infinite;
+  }
+  .id-badges .id-badge[data-b^='badge_set_'][data-r='4'] { animation: id-b-setglow 2.6s ease-in-out infinite; }
+}
+@keyframes id-b-glint { 0%, 55% { transform: translateX(-120%); } 85%, 100% { transform: translateX(120%); } }
+@keyframes id-b-setglow { 50% { box-shadow: inset 0 0 0 1px #f2d27a, inset 0 0 0 2px rgba(0, 0, 0, .3), inset 0 0 0 3px rgba(242, 210, 122, .55), 0 0 7px rgba(255, 200, 80, 1); } }
