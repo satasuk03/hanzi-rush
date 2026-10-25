@@ -2,8 +2,6 @@
  * Provider credential checks for POST /auth/:provider (docs/backend.md §2). Each returns the provider's stable user id.
  *  - google / apple: an OpenID Connect ID token, verified locally (RS256 signature against the provider's JWKS, iss,
  *    aud, exp). No secrets needed.
- *  - play_games: a one-time server auth code, exchanged with Google (needs the web client secret) for an access token,
- *    then GET games/v1/players/me gives the Play Games player id.
  */
 import type { SignInProvider } from '../shared/api';
 import type { Env } from './env';
@@ -93,30 +91,11 @@ async function verifyIdToken(provider: 'google' | 'apple', token: string, audien
   return { subject: claims.sub as string };
 }
 
-async function verifyPlayGames(env: Env, code: string): Promise<VerifiedIdentity> {
-  if (!env.PLAY_GAMES_CLIENT_ID || !env.PLAY_GAMES_CLIENT_SECRET) return fail('not_found', 'Play Games sign-in is not configured');
-  const tok = await fetch('https://oauth2.googleapis.com/token', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams({ code, client_id: env.PLAY_GAMES_CLIENT_ID, client_secret: env.PLAY_GAMES_CLIENT_SECRET, grant_type: 'authorization_code', redirect_uri: '' }),
-  });
-  if (tok.status >= 500) return fail('server_error', 'Google token endpoint failed');
-  const t = (await tok.json().catch(() => null)) as { access_token?: string } | null;
-  if (!tok.ok || !t?.access_token) return fail('unauthorized', 'Invalid Play Games auth code');
-  const me = await fetch('https://games.googleapis.com/games/v1/players/me', { headers: { Authorization: `Bearer ${t.access_token}` } });
-  if (!me.ok) return me.status >= 500 ? fail('server_error', 'Play Games API failed') : fail('unauthorized', 'Play Games rejected the token');
-  const p = (await me.json().catch(() => null)) as { playerId?: string } | null;
-  if (!p || typeof p.playerId !== 'string' || !p.playerId || p.playerId.length > 255) return fail('unauthorized', 'No Play Games player id');
-  return { subject: p.playerId };
-}
-
 export function verifyCredential(env: Env, provider: SignInProvider, credential: string): Promise<VerifiedIdentity> {
   switch (provider) {
     case 'google':
       return verifyIdToken('google', credential, csv(env.GOOGLE_CLIENT_IDS));
     case 'apple':
       return verifyIdToken('apple', credential, csv(env.APPLE_CLIENT_IDS));
-    case 'play_games':
-      return verifyPlayGames(env, credential);
   }
 }

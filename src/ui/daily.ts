@@ -17,7 +17,6 @@ import { mascot, setMood } from './mascot';
 import { wallet } from '../core/wallet';
 import { JADE_DAILY } from '../../shared/api';
 import { chestSVG } from '../games/gacha/chest';
-import { reminders } from '../core/reminders';
 
 const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -116,10 +115,8 @@ export function maybeShowDaily(onClaim: () => void, onClose: () => void = () => 
     void wallet.claimDaily().then((j) => {
       if (j && j.granted > 0 && !j.replay) notify({ kicker: t('jadeDailyKicker'), title: `+${j.granted} ${t('jade')}`, seal: '玉', tier: 2 }, 0.5);
     });
-    // the first claim is the natural moment to offer a "come back tomorrow" reminder
     gsap.to(el, { opacity: 0, duration: 0.3, delay: 1.25, onComplete: () => {
         el.remove();
-        void reminders.askOnce();
         onClose();
       },
     });

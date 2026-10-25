@@ -1,6 +1,5 @@
 /**
  * Web install (PWA). Decides which install path this browser has and whether today's offer is due.
- *   native     the Capacitor app: never offered
  *   installed  running from the home screen, or installed earlier from this browser: never offered again
  *   prompt     Chrome/Edge/Samsung on Android fired beforeinstallprompt: one tap installs
  *   android    Android without the prompt (Firefox, prompt not ready yet): menu steps
@@ -10,9 +9,7 @@
  * Android's installed app shares this browser's storage, so marking it installed from inside the app also silences
  * the offer in the browser. An iOS home-screen app has its own storage and can't tell Safari.
  */
-import { Capacitor } from '@capacitor/core';
-
-export type InstallPath = 'native' | 'installed' | 'prompt' | 'android' | 'ios' | 'inApp' | 'none';
+export type InstallPath = 'installed' | 'prompt' | 'android' | 'ios' | 'inApp' | 'none';
 
 interface InstallPromptEvent extends Event {
   prompt(): Promise<void>;
@@ -59,7 +56,6 @@ const ready = new Set<() => void>();
 export const pwa = {
   /** call at boot, before beforeinstallprompt can fire */
   init() {
-    if (Capacitor.isNativePlatform()) return;
     if (standalone()) ls.set(INSTALLED, '1');
     addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
@@ -78,7 +74,6 @@ export const pwa = {
   },
 
   path(): InstallPath {
-    if (Capacitor.isNativePlatform()) return 'native';
     if (standalone() || ls.get(INSTALLED)) return 'installed';
     if (deferred) return 'prompt';
     if (isInApp && (isIOS || isAndroid)) return 'inApp';

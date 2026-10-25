@@ -239,8 +239,7 @@ export const wallet = {
   },
 
   /**
-   * Pays continue `n` of a rush run (online only). Throws ApiError: `insufficient_jade`, `ad_unverified` (AdMob has
-   * not called back yet: retry), `continue_refused`, `offline`, ... Retrying the same (ticket, n) never charges twice.
+   * Pays continue `n` of a rush run (online only). Throws ApiError: `insufficient_jade`, `continue_refused`, `offline`, ... Retrying the same (ticket, n) never charges twice.
    */
   async continueRun(ticket: string, n: number, via: ContinueVia): Promise<ContinueResponse> {
     const body: ContinueRequest = { ticket, n, via };

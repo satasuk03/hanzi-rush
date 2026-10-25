@@ -90,7 +90,7 @@ export function showPlayerCard(row: CardRow) {
     removeEventListener('keydown', onKey, true);
     gsap.to(el, { opacity: 0, duration: 0.15, onComplete: () => el.remove() });
   }
-  // capture + stop, so Escape (and hardware back, see app.back) closes the card and not the screen underneath
+  // capture + stop, so Escape closes the card and not the screen underneath
   function onKey(e: KeyboardEvent) {
     if (e.key !== 'Escape') return;
     e.stopImmediatePropagation();

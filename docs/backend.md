@@ -47,7 +47,7 @@ functions/                       # WP-A: Pages file-based routes only (thin hand
       me/recovery-code.ts        #   POST
       me/identities/[provider].ts #  DELETE (unlink)
       recover.ts                 #   POST
-      auth/[provider].ts         #   POST (sign in with / link Google, Apple, Play Games)
+      auth/[provider].ts         #   POST (sign in with / link Google, Apple)
       save.ts                    #   GET, PUT
       runs/index.ts              #   POST (submit)
       runs/start.ts              #   POST
@@ -58,7 +58,7 @@ server/                          # WP-A: logic (kept out of functions/ so no fil
   cors.ts                        #   allowlist + headers
   crypto.ts                      #   randomToken(), sha256Hex(), randomCode(alphabet, n), uuid()
   auth.ts                        #   authenticate(ctx, required) → Player | null; issueSession()
-  oidc.ts                        #   verifyCredential(): Google/Apple ID tokens (JWKS), Play Games auth code exchange
+  oidc.ts                        #   verifyCredential(): Google/Apple ID tokens (JWKS)
   identity.ts                    #   signInOrLink(), unlink()
   validate.ts                    #   validateSaveDoc(), validateSubmit()
   ratelimit.ts                   #   ipLimit(), per-player interval checks
@@ -66,7 +66,7 @@ server/                          # WP-A: logic (kept out of functions/ so no fil
   prune.ts                       #   maybePrune()
 
 src/                             # WP-B
-  core/storage.ts                #   NEW shim (see §7.0). Replaced by the feat/capacitor version at merge
+  core/storage.ts                #   NEW shim (see §7.0).
   core/api.ts                    #   NEW fetch wrapper: base URL, auth header, timeout, ApiError
   core/cloud.ts                  #   NEW sync engine + public API (§7.2)
   core/merge.ts                  #   NEW pure 3-way merge (§5.3)
@@ -74,7 +74,7 @@ src/                             # WP-B
   core/store.ts                  #   CHANGED: types from shared, onSave(), snapshot(), replaceAll(), freshSave()
   core/i18n.ts                   #   CHANGED: new keys (§8.4)
   vite-env.d.ts                  #   NEW: ImportMetaEnv { VITE_API_BASE?: string }
-  main.ts                        #   CHANGED: one line, see §7.1 (moves to src/boot.ts after the capacitor merge)
+  main.ts                        #   CHANGED: one line, see §7.1
   games/quiz/QuizGame.ts         #   CHANGED: run handle at start(), durationMs/runId at finish(), dev checkRun
   games/registry.ts              #   CHANGED: `export type { Mode } from '../../shared/api'`
   screens/results.ts             #   CHANGED: RunStats fields, submitRun, rank chip, trophy button
@@ -101,12 +101,12 @@ Ownership: WP-A owns `functions/`, `server/`, `migrations/`, `wrangler.toml`, `f
 - **Player** = one account (UUID v4, server-generated). It has a public 4-char `tag` (for "Player#7KQ2"), plus `name` and `title` copied from the save/runs for leaderboard display.
 - **Session** = one device login. The token is `hr1.` + 32 random bytes base64url. The server stores only `sha256(token)`. A player can have many sessions (one per device). Tokens don't expire; deleting the row revokes one.
 - **Recovery (transfer) code**: 12 chars from `RECOVERY_ALPHABET`, 60 bits, shown as `XXXX-XXXX-XXXX`. The server stores only `sha256(code)`. Calling `POST /me/recovery-code` rotates it, and the old code dies. The client caches the plain code locally so the profile can show it again. Redeeming does **not** consume the code and does not revoke other sessions. That fits a transfer flow where the old phone may be lost or kept. Brute force is impractical: 60 bits against 10 tries/hour/IP.
-- **Identities** (Google, Apple, Play Games; `email` is reserved): the row `(provider, subject) → player_id`, at most one per provider per player (`0009`). Only the provider's user id is stored, no email or profile. One endpoint, `POST /auth/:provider` with a provider credential, does both jobs (`server/identity.ts`):
+- **Identities** (Google, Apple; `email` is reserved; `play_games` rows from the dropped Android app may remain but cannot be signed into): the row `(provider, subject) → player_id`, at most one per provider per player (`0009`). Only the provider's user id is stored, no email or profile. One endpoint, `POST /auth/:provider` with a provider credential, does both jobs (`server/identity.ts`):
   - the provider account is already linked → a new session (`via = provider`) for **that** player. A new device signs in this way; the client then reconciles saves exactly like a transfer-code restore (§5.5).
   - not linked and the request carries a valid token → it is linked to the caller. No session is issued.
   - not linked and no token → 404. Sign-in never creates a player.
-  One endpoint (rather than link + sign-in) because a Play Games server auth code works only once. Credentials (`server/oidc.ts`): Google and Apple send an OpenID Connect ID token, checked locally against the provider's JWKS (RS256, `iss`, `aud` in `GOOGLE_CLIENT_IDS` / `APPLE_CLIENT_IDS`, `exp`). Play Games sends a server auth code, which the server exchanges with Google (`PLAY_GAMES_CLIENT_ID` + secret) and then reads `games/v1/players/me` for the player id. `DELETE /me/identities/:provider` unlinks. Linking is optional: guests and transfer codes work as before.
-- **Delete**: `DELETE /me` cascades everything. This is needed for App Store guideline 5.1.1(v) once the Capacitor app ships.
+  Credentials (`server/oidc.ts`): Google and Apple send an OpenID Connect ID token, checked locally against the provider's JWKS (RS256, `iss`, `aud` in `GOOGLE_CLIENT_IDS` / `APPLE_CLIENT_IDS`, `exp`). `DELETE /me/identities/:provider` unlinks. Linking is optional: guests and transfer codes work as before.
+- **Delete**: `DELETE /me` cascades everything.
 
 ---
 
@@ -314,10 +314,10 @@ Two range scans on `scores_rank`, so rows read ≈ the player's rank. Keep them 
 ### CORS (`server/cors.ts`, applied in `_middleware.ts`)
 
 - Allowed origins: the exact strings in `env.ALLOWED_ORIGINS` (comma-separated) plus the regex `^https://([a-z0-9-]+\.)?hanzi-rush\.pages\.dev$` (production and branch previews). Defaults in `wrangler.toml`:
-  `capacitor://localhost` (iOS, app id `app.zeze.hanzirush`), `https://localhost` (Android), `http://localhost`, `http://localhost:5173`, `http://127.0.0.1:5173`, and the production custom domain when one exists.
+  `http://localhost:5173`, `http://127.0.0.1:5173`, and the production custom domain when one exists.
 - If the request's `Origin` is allowed, echo it: `Access-Control-Allow-Origin: <origin>` with `Vary: Origin`. Never use `*`, and never send `Allow-Credentials` (no cookies; auth is a header).
 - Preflight `OPTIONS` → 204 with `Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS`, `Access-Control-Allow-Headers: Authorization, Content-Type`, `Access-Control-Max-Age: 86400`.
-- Requests with a disallowed or missing `Origin` are still served without CORS headers. Same-origin web requests and native HTTP clients work, and browsers block cross-origin reads. CORS is not a security boundary here; the bearer token is.
+- Requests with a disallowed or missing `Origin` are still served without CORS headers. Same-origin web requests and non-browser HTTP clients work, and browsers block cross-origin reads. CORS is not a security boundary here; the bearer token is.
 
 ---
 
@@ -526,10 +526,10 @@ IP hashing: `sha256(IP_SALT + CF-Connecting-IP)`. `IP_SALT` is a Pages secret.
 
 ### 7.0 Persistence: `src/core/storage.ts` (shim)
 
-The parallel `feat/capacitor` branch adds `src/core/storage.ts`, a synchronous get/set backed by an in-memory cache. It uses Capacitor Preferences on native and localStorage on web. **All new persisted client state goes through it, never `localStorage` directly.** On this branch, create a shim with the same name and API so the merge is a straight file replacement:
+`src/core/storage.ts` is a synchronous get/set wrapper. **All new persisted client state goes through it, never `localStorage` directly.** The native Capacitor builds it was designed for are gone; today it is a thin `localStorage` shim:
 
 ```ts
-// src/core/storage.ts: shim; replaced by the feat/capacitor implementation at merge
+// src/core/storage.ts: shim
 export const storage = {
   get(key: string): string | null {
     try { return localStorage.getItem(key); } catch { return null; }
@@ -540,15 +540,15 @@ export const storage = {
 };
 ```
 
-`cloud.ts` stores `CloudState` under `hanzi-rush:cloud:v1` via `storage`. Leave `store.ts`'s own `localStorage` use alone; the capacitor branch owns that change. Only add the new store methods below.
+`cloud.ts` stores `CloudState` under `hanzi-rush:cloud:v1` via `storage`. Leave `store.ts`'s own `localStorage` use alone. Only add the new store methods below.
 
 ### 7.1 Config and boot
 
 - `src/core/api.ts`: `const BASE = (import.meta.env.VITE_API_BASE ?? '').replace(/\/$/, '') + API_PREFIX;`. An empty value means same-origin, which is the web default.
-- Native builds must use an absolute URL, because a relative fetch from `capacitor://localhost` would hit the app bundle. `src/core/api.ts` defaults native builds to `https://hanzi-rush.zeze.app`; set `VITE_API_BASE` at build time to override it. `VITE_API_BASE=off` disables cloud entirely: `cloud.init()` becomes a no-op and the UI hides the cloud features.
+- Set `VITE_API_BASE` at build time to point the client at another origin. `VITE_API_BASE=off` disables cloud entirely: `cloud.init()` becomes a no-op and the UI hides the cloud features.
 - `src/vite-env.d.ts`: `interface ImportMetaEnv { readonly VITE_API_BASE?: string }`.
-- **`main.ts`: the only change is** `import { cloud } from './core/cloud';` and `cloud.init();` right after `app.show(homeScreen())` (line 27). On `feat/capacitor`, `main.ts`'s body moved to `src/boot.ts`, so at merge these two lines go to the same spot in `boot.ts`. Make no other `main.ts` edits.
-- `api.ts` details: 8 s `AbortController` timeout. Parse error bodies into `class ApiError { status; code; body }`; a network failure is `ApiError` with `status 0, code 'offline'`. Send `DeviceInfo` with `platform` `'web'` for now (the capacitor branch can detect native) and `appVersion` from `package.json` via `define`/`import.meta.env`.
+- **`main.ts`: the only change is** `import { cloud } from './core/cloud';` and `cloud.init();` right after `app.show(homeScreen())` (line 27). Make no other `main.ts` edits.
+- `api.ts` details: 8 s `AbortController` timeout. Parse error bodies into `class ApiError { status; code; body }`; a network failure is `ApiError` with `status 0, code 'offline'`. Send `DeviceInfo` with `platform` `'web'` and `appVersion` from `package.json` via `define`/`import.meta.env`.
 
 ### 7.2 `src/core/cloud.ts` public surface
 
@@ -700,7 +700,7 @@ database_id = "<paste from `wrangler d1 create hanzi-rush`>"
 migrations_dir = "migrations"
 
 [vars]
-ALLOWED_ORIGINS = "capacitor://localhost,https://localhost,http://localhost,http://localhost:5173,http://127.0.0.1:5173"
+ALLOWED_ORIGINS = "http://localhost:5173,http://127.0.0.1:5173"
 
 # Preview deployments get their own DB so branch testing never touches prod data
 [[env.preview.d1_databases]]
@@ -710,7 +710,7 @@ database_id = "<paste from `wrangler d1 create hanzi-rush-preview`>"
 migrations_dir = "migrations"
 
 [env.preview.vars]
-ALLOWED_ORIGINS = "capacitor://localhost,https://localhost,http://localhost,http://localhost:5173,http://127.0.0.1:5173"
+ALLOWED_ORIGINS = "http://localhost:5173,http://127.0.0.1:5173"
 ```
 
 Secret: `IP_SALT`. Set it with `npx wrangler pages secret put IP_SALT` (prod) and in `.dev.vars` locally (`IP_SALT=dev`; `.dev.vars` must be added to `.gitignore`).
@@ -736,7 +736,7 @@ npm run db:local                 # creates .wrangler/state D1 and applies migrat
 npm run build                    # pages dev serves dist/ + functions/
 npm run dev:api                  # API on http://127.0.0.1:8788
 npm run dev                      # Vite on :5173; vite.config proxies /api → 8788 (same-origin, like prod)
-# exercise the cross-origin/CORS path, as Capacitor will:
+# exercise the cross-origin/CORS path:
 VITE_API_BASE=http://localhost:8788 npm run dev
 npx wrangler d1 execute hanzi-rush --local --command "SELECT * FROM scores LIMIT 20"
 ```
@@ -771,7 +771,7 @@ Both packages code against `shared/api.ts` from day one and can run fully in par
 6. Done when `npm run typecheck:api` passes and a curl script against `wrangler pages dev` passes:
    - create → PUT save rev 0 → PUT with a stale rev gets 409 → start run → submit → board shows the run
    - an implausible score gets 422
-   - CORS preflight from `capacitor://localhost` returns 204 with the echoed origin
+   - CORS preflight from `http://localhost:5173` returns 204 with the echoed origin
    - an unknown `/api/x` returns a JSON 404
 
 ### WP-B: client (`src/`, `vite.config.ts`, root `tsconfig.json`, `package.json` scripts)
@@ -788,7 +788,7 @@ Both packages code against `shared/api.ts` from day one and can run fully in par
    - DEV `checkRun` stays silent across a full rush and practice run of each game
 
 ### Contract-change protocol
-Any change to `shared/api.ts` gets a one-line note in the PR description. If `SCORING` changes because game balance changed, bump `SCORING_VERSION` and add it to `SUPPORTED_SCORING`. Keep the old version during the app-store rollout window: native clients update slowly. For the old version, the server must keep the old `SCORING` table, so at that point move `SCORING` into a `Record<version, …>`.
+Any change to `shared/api.ts` gets a one-line note in the PR description. If `SCORING` changes because game balance changed, bump `SCORING_VERSION` and add it to `SUPPORTED_SCORING`. Keep the old version for a rollout window: installed PWAs update slowly. For the old version, the server must keep the old `SCORING` table, so at that point move `SCORING` into a `Record<version, …>`.
 
 ---
 

@@ -12,7 +12,7 @@ The first draft assumed coins pay for cosmetics and that a client-trusting save 
 | Decision | Effect on the design |
 | --- | --- |
 | Cosmetic boxes cost a **new premium currency, Jade coin (玉币)**, not coins | New wallet; the old "300 coins per pull" is dropped. See §11 |
-| Jade will later be sold for real money or earned by watching ads | **Jade, the box pulls and the inventory must be server-authoritative from day one.** A client-held balance in the save file can be edited to infinite Jade. This overrides the "trust the client" model in §4.5 for anything that touches Jade |
+| Jade will later be sold for real money | **Jade, the box pulls and the inventory must be server-authoritative from day one.** A client-held balance in the save file can be edited to infinite Jade. This overrides the "trust the client" model in §4.5 for anything that touches Jade |
 | Daily login pays Jade; new players get a starter grant worth exactly one box; duplicates refund a little Jade | §11.3 to §11.5 |
 | Avatars are 30 WebP images | §6.2: replaces the "seal glyph" idea. Needs an asset pipeline and a size budget (§11.8) |
 | Jade will later buy other in-game cosmetics (progress bar skins etc.) | Not designed now; recorded in `TODO.md` |
@@ -151,7 +151,7 @@ It must also be added to the explicit child-delete list in `functions/api/v1/me.
 
 `sanitizeLook(raw)`: keep known slots only; each id must match the pattern **and exist in the catalog for that slot**; `badges` deduped and capped at 3; anything invalid is dropped to "default". Total size capped (~200 bytes). Also validate `title` against the catalog instead of only the pattern.
 
-Because Pages ships the site and API together, the catalog and the server are always in step. Rule for releases: **deploy the server before (or with) any native build that uses new ids.**
+Because Pages ships the site and API together, the catalog and the server are always in step. Rule for releases: **deploy the server before (or with) any client build that uses new ids.**
 
 ### 4.3 Getting the look to the server
 
@@ -405,7 +405,7 @@ Nothing is open at the design level. Remaining work is implementation.
 | `src/core/cloud.ts` (~667) | Profile only reaches the server with a run, so a new look would lag until the next game |
 | Leaderboard/effort/home chip/profile | Four separate places draw the avatar seal by hand today; they must share one renderer or they drift |
 | `functions/api/v1/me.ts` | Account deletion uses an explicit child-table list; `player_grants` must be added |
-| Native builds | Old app builds will meet new ids; they must render the default, never crash |
+| Old clients | Cached or installed PWA versions will meet new ids; they must render the default, never crash |
 
 ---
 
@@ -415,7 +415,7 @@ Nothing is open at the design level. Remaining work is implementation.
 
 | | Coins (金币) | Jade (玉币) |
 | --- | --- | --- |
-| Earned by | Playing games, daily login | Daily login, starter grant, duplicates; later real money and ads |
+| Earned by | Playing games, daily login | Daily login, starter grant, duplicates; later real money |
 | Spent on | Word cards (the learning gacha) | Cosmetic boxes; later other cosmetics (see `TODO.md`) |
 | Where it lives | The save file, client-merged | **Server (D1)**, because it will be sold |
 | Works offline | Yes | Balance is shown from cache; buying needs a connection |
@@ -443,7 +443,7 @@ Endpoints (all authenticated, all idempotent through `ref`):
 
 D1 batches are transactional, so a pull either happens fully or not at all. A cached balance can never go negative: the `UPDATE ... WHERE jade >= cost` guard fails the batch.
 
-Later, `POST /jade/iap` (store receipt verification) and `POST /jade/ad` (server-side ad verification) write `iap` and `ad` ledger rows through the same path. Nothing about the model changes when they arrive.
+Later, a payment endpoint such as `POST /jade/iap` writes `iap` ledger rows through the same path. Nothing about the model changes when it arrives. (The `ad` reason is unused since the rewarded ads were removed.)
 
 ### 11.3 Starter grant
 
@@ -554,7 +554,7 @@ Reading it: for the **same Jade**, the tiers give almost the same number of EPIC
 ### 11.8 Avatar images (30 WebP)
 
 - 30 avatars, 256×256 WebP, target under 20 KB each (about 600 KB total). Shown at 34 px on a board row, 112 px on the profile card, so 256 px covers 2× screens.
-- Served from `public/avatars/`, one `<img>` per row with `loading="lazy"`, `decoding="async"` and explicit width/height so a board does not jump. Bundled into the native builds, so avatars work offline.
+- Served from `public/avatars/`, one `<img>` per row with `loading="lazy"`, `decoding="async"` and explicit width/height so a board does not jump.
 - Rarity split for 30 images that matches the rates: 10 COMMON, 8 RARE, 6 EPIC, 4 LEGENDARY, 2 MYTHIC. The art can reuse the rarity colours for background tint.
 - **Style: match the game.** The look is the Deng Deng mascot (`src/ui/mascot.ts`): a thick dark-ink outline (`#2a1a3a`), flat saturated colours, pink blush cheeks, big eyes with a white highlight, a soft white gloss on the head, and a small red seal with the hanzi of the animal in the corner. The background is a radial gradient tinted by the rarity colour, so the rarity is readable at a glance. MYTHIC adds light rays, sparkles and gold.
 - **All 30 are drawn** (`public/avatars/*.webp`, sources in `assets/avatars/*.svg`). Sizes run from 6.1 KB (brush) to 16.0 KB (baize), about 270 KB in total, all under the 20 KB cap. Weakest at small sizes, worth a second look before launch: crane (reads a little like a woodpecker), horse (a bit cow-like), lion dancer (spiky mane reads like a sea urchin), baize (gold mane reads like wings), qilin (close to a horned dragon).

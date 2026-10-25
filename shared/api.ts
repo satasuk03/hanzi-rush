@@ -1,6 +1,6 @@
 /**
  * Hanzi Rush HTTP API contract, shared by the backend (functions/ + server/, Cloudflare Pages Functions + D1)
- * and the client (src/, web + Capacitor). See docs/backend.md for the full spec.
+ * and the client (src/, web + PWA). See docs/backend.md for the full spec.
  *
  * Rules for this file:
  *  - Pure TypeScript only. No DOM, Workers, or Node APIs (it is compiled into both runtimes).
@@ -183,9 +183,9 @@ export interface MeResponse {
   identities: { provider: IdentityProvider; linkedAt: number }[];
 }
 
-/** 'email' is reserved (identities.provider); only SIGNIN_PROVIDERS are accepted by POST /auth/:provider */
+/** 'email' is reserved and 'play_games' is legacy (identities.provider rows only); only SIGNIN_PROVIDERS are accepted by POST /auth/:provider */
 export type IdentityProvider = 'apple' | 'google' | 'play_games' | 'email';
-export const SIGNIN_PROVIDERS = ['google', 'apple', 'play_games'] as const;
+export const SIGNIN_PROVIDERS = ['google', 'apple'] as const;
 export type SignInProvider = (typeof SIGNIN_PROVIDERS)[number];
 
 /**
@@ -198,7 +198,7 @@ export type SignInProvider = (typeof SIGNIN_PROVIDERS)[number];
  * 409 identity_conflict (reason 'provider_linked'): the caller already has a different account of this provider.
  */
 export interface SignInRequest {
-  /** google / apple: the OpenID Connect ID token (JWT). play_games: a one-time server auth code. */
+  /** the OpenID Connect ID token (JWT) from google / apple. */
   credential: string;
   device: DeviceInfo;
 }
@@ -412,27 +412,23 @@ export interface EffortResponse {
 
 /**
  * When a rush run loses its last heart it may continue with one heart, at most CONTINUE.max times per run.
- * Continue 1 costs a rewarded ad (native apps) or `jade[0]`; continue n ≥ 2 costs `jade[n - 1]`. Needs a ticket:
+ * Continue n costs `jade[n - 1]`. Needs a ticket:
  * the server counts the continues on the run and POST /runs checks the submitted count against it.
  */
 export const CONTINUE = {
   max: 3,
   jade: [10, 10, 20] as readonly number[],
-  /** only this continue can be paid with an ad */
-  adSlot: 1,
-  /** per player per Bangkok day: continues paid with an ad */
-  adsPerDay: 20,
 } as const;
 
 export const continueCost = (n: number): number => CONTINUE.jade[n - 1] ?? Infinity;
 
-export type ContinueVia = 'ad' | 'jade';
+export type ContinueVia = 'jade';
 
 /**
  * POST /runs/continue. Replaying the same (ticket, n) returns the first answer and charges nothing.
- * 402 insufficient_jade. 409 ad_unverified: AdMob has not confirmed the ad yet (retry for a few seconds).
+ * 402 insufficient_jade.
  * 409 continue_refused, reason: closed (the run is submitted or expired), sequence (n is not the next continue),
- * max, ad_slot (an ad pays continue 1 only), ad_cap (CONTINUE.adsPerDay reached).
+ * max.
  */
 export interface ContinueRequest {
   ticket: string;
@@ -444,7 +440,7 @@ export interface ContinueRequest {
 export interface ContinueResponse {
   n: number;
   via: ContinueVia;
-  /** Jade charged (0 for an ad) */
+  /** Jade charged */
   cost: number;
   /** balance after the charge */
   jade: number;
@@ -662,7 +658,6 @@ export type ErrorCode =
   | 'implausible' // 422 run failed checkRun() (reason in error.reason)
   | 'ticket_invalid' // 422 ticket unknown / other player / board mismatch / expired / reused by another run
   | 'insufficient_jade' // 402 POST /shop/pull: the balance does not cover the box
-  | 'ad_unverified' // 409 POST /runs/continue: no verified ad reward for this run (yet)
   | 'continue_refused' // 409 POST /runs/continue: reason in error.reason
   | 'identity_conflict' // 409 POST /auth/:provider: reason in error.reason
   | 'rate_limited' // 429 (+ Retry-After header and error.retryAfter seconds)
@@ -691,7 +686,6 @@ export const STATUS: Record<ErrorCode, number> = {
   implausible: 422,
   ticket_invalid: 422,
   insufficient_jade: 402,
-  ad_unverified: 409,
   continue_refused: 409,
   identity_conflict: 409,
   rate_limited: 429,
