@@ -469,7 +469,7 @@ The aim is to stop casual tampering such as edited requests or a console `fetch`
 | Rush has 3 lives, every wrong/timeout costs one, ends at 0 → exactly 3 wrong | `QuizGame.ts:92`, `:595`, `:682`, `:753-757` |
 | Quit from pause sets phase over without `finish()`, so it never submits | `QuizGame.ts:194-198` |
 | Cloze inherits all scoring (only timer +5 s) | `src/games/cloze/ClozeGame.ts:8`, `:51` |
-| Ranked games: `quiz`, `cloze`; modes `rush`/`zen`; key format | `src/games/registry.ts:9`, `:30-31`, `:38` |
+| Ranked games: `quiz`, `cloze`, `stroke` (HSK 1–3 only, `RANKED_LEVELS`); modes `rush`/`zen`; key format | `src/games/registry.ts:9`, `:30-31`, `:38` |
 | Results only submit bests when `score > 0` | `src/screens/results.ts:44` |
 | Countdown 3 × 560 ms + 420 ms = 2.1 s | `QuizGame.ts:264-282` |
 | Quiz correct path ≥ 0.8 s explode delay + 0.2 s burst + 0.62 s flip ≈ 1.6 s/question; wrong path ≥ 0.25 + 0.65 s flip + tap + 0.62 s | `QuizGame.ts:481`, `:500-501`, `:376`, `:651-654` |
@@ -478,7 +478,7 @@ The aim is to stop casual tampering such as edited requests or a console `fetch`
 
 ### 6.2 Rules in `checkRun()` (reason codes)
 
-1. `board` parses and the game is ranked, level 1–6, mode rush|zen → `board`
+1. `board` parses and the game is ranked, level 1–6 (stroke: 1–3, `RANKED_LEVELS`), mode rush|zen → `board`
 2. All of `score, correct, asked, maxCombo, durationMs` are non-negative safe integers → `not_int`
 3. `1 ≤ asked ≤ 2000` → `asked_range`; `correct ≤ asked` → `correct_gt_asked`; `maxCombo ≤ correct` → `combo_gt_correct`
 4. Rush: `asked − correct == 3` → `rush_lives`. Practice: `asked == 20` → `zen_total`
@@ -487,8 +487,9 @@ The aim is to stop casual tampering such as edited requests or a console `fetch`
 7. `score ≥ correct · base` (each correct pays ≥ round(1.05·base) ≥ base) → `score_too_low`
 8. `score ≤ maxScore(level, rush, correct, maxCombo) = Σ_{i=1..correct} round((base + 100·rush) · (1 + 0.05·min(i, maxCombo, 40)) · 2 / 10) · 10` → `score_too_high`. This assumes FEVER on every answer and the full speed bonus, using the game's exact formula, so a legit run can never exceed it.
 9. `durationMs ≥ 0.8 · (2100 + asked · minQ)`, with `minQ` = 1000 ms (quiz) / 600 ms (cloze) → `too_fast`
-10. Without a ticket: `asked ≤ 300` (stricter than rule 3's 2000) → `asked_range`.
-11. Server only, with a ticket: `serverNow − ticket.created_at ≥ 0.8 · (2100 + asked · minQ)`. This cannot be bypassed by editing `durationMs`, but failing it is **not a rejection**: the ticket may simply have arrived late. The run is accepted as `verified=0` (ticket claimed).
+10. Stroke runs (`stroke:*` boards) replace rules 5, 7 and 8 and the duration floor of rule 9 (see 6.2a). `strokeWords` on any other board → `words_scope`. Continues on stroke → `continues_scope`.
+11. Without a ticket: `asked ≤ 300` (stricter than rule 3's 2000) → `asked_range`.
+12. Server only, with a ticket: `serverNow − ticket.created_at ≥ 0.8 · (2100 + asked · minQ)`. This cannot be bypassed by editing `durationMs`, but failing it is **not a rejection**: the ticket may simply have arrived late. The run is accepted as `verified=0` (ticket claimed).
 
 Concrete ceilings (verified by running `maxScore`):
 
@@ -498,6 +499,23 @@ Concrete ceilings (verified by running `maxScore`):
 | Rush, best possible single answer (combo ≥ 40) | 1,200 | 1,800 |
 | Rush, 50 correct with ×50 combo | 44,400 | — |
 | Rush, minimum wall time for 50 asked (quiz) | 0.8 · (2.1 + 53·1.0) s ≈ 44 s | |
+
+### 6.2a Stroke Master (`stroke:*` boards)
+
+The score is a pure function of one `[strokes, combo, perfect]` tuple per destroyed word (`strokeWords`, in destroy order), so the server recomputes it exactly and needs no stroke data. `STROKE` and `strokeWordPoints` live in `shared/api.ts` and must track `StrokeGame.ts`. `SCORING_VERSION` is not bumped; a future formula change needs a bump and a version-aware `checkRun`.
+
+`strokeWordPoints(s, c, p) = round(7·s·(100 + 15·min(c,20))·(p ? 3 : 2) / 200) · 10` (integer form of `round(70·s·(1 + 0.15·min(c,20))·(p ? 1.5 : 1) / 10) · 10`; exact .5 ties round up, which float math can miss).
+
+Rules, after the shared ones (`not_int`, `asked_range` with cap `STROKE.maxWords` = 1000 ticketed / 300 unticketed, `correct_gt_asked`, `combo_gt_correct`, `rush_lives`, `zen_total`, `score_rounding`):
+
+1. `strokeWords` missing → `words_missing`; `length ≠ correct` → `words_len`
+2. each tuple: safe ints, `1 ≤ s ≤ 80`, `c ≥ 1`, `p ∈ {0,1}` → `word_shape`
+3. `c_i ≤ c_{i-1} + 1`, `c_0 = 0` → `combo_seq`
+4. `maxCombo == max c_i` (0 when `correct = 0`) → `max_combo`
+5. `score == Σ strokeWordPoints` → `score_mismatch`
+6. `durationMs ≥ 0.8 · (2100 + Σ s · 150)` → `too_fast` (the server-measured ticket age uses the same floor and downgrades to `verified=0`)
+
+`validateSubmit` rejects a non-array `strokeWords`, more than 1000 items, or a tuple that is not 3 finite numbers (`bad_request`).
 
 ### 6.3 Payload and name rules
 

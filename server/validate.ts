@@ -1,4 +1,4 @@
-import { LIMITS, SAVE_FORMAT, type PutSaveRequest, type SaveDoc, type SubmitRunRequest } from '../shared/api';
+import { LIMITS, SAVE_FORMAT, STROKE, type PutSaveRequest, type SaveDoc, type SubmitRunRequest } from '../shared/api';
 import { fail, isObj } from './http';
 
 const ID_RE = /^[A-Za-z0-9_-]{8,64}$/;
@@ -109,6 +109,11 @@ export function validateSubmit(x: unknown): SubmitRunRequest {
     if (typeof x[k] !== 'number' || !Number.isFinite(x[k] as number)) bad(k);
   }
   if (x.continues !== undefined && (typeof x.continues !== 'number' || !Number.isSafeInteger(x.continues))) bad('continues');
+  if (x.strokeWords !== undefined) {
+    const w = x.strokeWords;
+    if (!Array.isArray(w) || w.length > STROKE.maxWords) bad('strokeWords');
+    else if (!w.every((t) => Array.isArray(t) && t.length === 3 && t.every((n) => typeof n === 'number' && Number.isFinite(n)))) bad('strokeWords');
+  }
   if (x.profile !== undefined) {
     if (!isObj(x.profile)) bad('profile');
     else {

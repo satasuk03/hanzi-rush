@@ -6,7 +6,7 @@
  *  - Pure TypeScript only. No DOM, Workers, or Node APIs (it is compiled into both runtimes).
  *  - It is the single source of truth: neither side redeclares these shapes.
  *  - Breaking changes need a new path prefix (/api/v2). Additive optional fields are fine.
- *  - SCORING must track src/games/quiz/QuizGame.ts. If game scoring changes, update SCORING
+ *  - SCORING/STROKE must track QuizGame.ts / StrokeGame.ts. If game scoring changes, update SCORING
  *    and bump SCORING_VERSION, or the server will reject legitimate runs.
  */
 
@@ -21,8 +21,11 @@ export const API_PREFIX = '/api/v1';
 // ====================================================================== game identity
 
 /** Games that have leaderboards (playable entries in src/games/registry.ts:30-31). */
-export const RANKED_GAMES = ['quiz', 'cloze'] as const;
+export const RANKED_GAMES = ['quiz', 'cloze', 'stroke'] as const;
 export type RankedGame = (typeof RANKED_GAMES)[number];
+
+/** Highest HSK level with a board, per game (stroke data covers HSK 1-3 only). */
+export const RANKED_LEVELS: Record<RankedGame, number> = { quiz: 6, cloze: 6, stroke: 3 };
 
 export const MODES = ['rush', 'zen'] as const;
 export type Mode = (typeof MODES)[number];
@@ -49,6 +52,7 @@ export function parseBoardKey(s: string): ParsedBoard | null {
   const level = Number(m[2]);
   const mode = m[3] as Mode;
   if (!RANKED_GAMES.includes(game) || !MODES.includes(mode) || level < MIN_LEVEL || level > MAX_LEVEL) return null;
+  if (level > RANKED_LEVELS[game]) return null;
   return { game, level, mode };
 }
 
@@ -318,6 +322,8 @@ export interface SubmitRunRequest {
   scoring: number;
   /** hearts bought back with POST /runs/continue (rush, ticketed runs only); absent = 0 */
   continues?: number;
+  /** stroke only: one [strokes, combo, perfect] tuple per destroyed word, in destroy order */
+  strokeWords?: [strokes: number, combo: number, perfect: 0 | 1][];
   /** current display identity, applied to players.name/title (sanitized server side) */
   profile?: { name: string; title: string };
 }
@@ -834,7 +840,7 @@ export const SCORING = {
   /** QuizGame.ts:264-282, 3 × 560 ms + 420 ms */
   countdownMs: 2100,
   /** conservative floor of real seconds per question (see docs/backend.md §6) */
-  minQuestionMs: { quiz: 1000, cloze: 600 } as Record<RankedGame, number>,
+  minQuestionMs: { quiz: 1000, cloze: 600, stroke: 0 } as Record<RankedGame, number>,
   /** durations are accepted down to 80% of the floor (frame timing, clock jitter) */
   durationSlack: 0.8,
   /** hard sanity cap on questions in one rush run */
@@ -842,6 +848,23 @@ export const SCORING = {
   /** tighter cap for ticketless (unverified) submissions: nobody gets 300 right in a row by accident */
   maxAskedUnticketed: 300,
 } as const;
+
+/** Stroke Master scoring (StrokeGame.ts); the server recomputes the score from per-word tuples. */
+export const STROKE = {
+  strokePts: 70,
+  comboCap: 20,
+  comboStep: 0.15,
+  perfectMult: 1.5,
+  /** words with more strokes are never spawned */
+  maxWordStrokes: 80,
+  /** conservative floor of real ms per stroke drawn */
+  minStrokeMs: 150,
+  maxWords: 1000,
+} as const;
+
+/** Exact integer form of round(70·s·(1+min(c,20)·0.15)·(p?1.5:1) / 10) · 10 (no float drift). */
+export const strokeWordPoints = (s: number, c: number, p: 0 | 1) =>
+  Math.round((7 * s * (100 + 15 * Math.min(c, 20)) * (p ? 3 : 2)) / 200) * 10;
 
 export const baseFor = (level: number) => SCORING.baseStart + (level - 1) * SCORING.basePerLevel;
 
@@ -864,7 +887,12 @@ export function maxScore(level: number, rush: boolean, correct: number, maxCombo
 /** Every correct answer pays at least round(1.05·base) ≥ base (combo ≥ 1, no fever, no speed bonus). */
 export const minScore = (level: number, correct: number) => correct * baseFor(level);
 
-export const minDurationMs = (game: RankedGame, asked: number) => SCORING.countdownMs + asked * SCORING.minQuestionMs[game];
+export type StrokeWords = [strokes: number, combo: number, perfect: 0 | 1][];
+
+export const minDurationMs = (game: RankedGame, r: { asked: number; strokeWords?: StrokeWords }) =>
+  game === 'stroke'
+    ? SCORING.countdownMs + (r.strokeWords ?? []).reduce((a, w) => a + (Number(w[0]) || 0), 0) * STROKE.minStrokeMs
+    : SCORING.countdownMs + r.asked * SCORING.minQuestionMs[game];
 
 export interface RunFacts {
   board: string;
@@ -875,6 +903,8 @@ export interface RunFacts {
   durationMs: number;
   /** absent = 0 */
   continues?: number;
+  /** stroke only */
+  strokeWords?: StrokeWords;
 }
 
 /**
@@ -887,7 +917,10 @@ export function checkRun(r: RunFacts, ticketed = true): string | null {
   if (!b) return 'board';
   const ints = [r.score, r.correct, r.asked, r.maxCombo, r.durationMs];
   if (!ints.every((n) => Number.isSafeInteger(n) && n >= 0)) return 'not_int';
-  if (r.asked < 1 || r.asked > (ticketed ? SCORING.maxAsked : SCORING.maxAskedUnticketed)) return 'asked_range';
+  const stroke = b.game === 'stroke';
+  if (r.strokeWords !== undefined && !stroke) return 'words_scope';
+  const askedCap = stroke ? STROKE.maxWords : SCORING.maxAsked;
+  if (r.asked < 1 || r.asked > (ticketed ? askedCap : SCORING.maxAskedUnticketed)) return 'asked_range';
   if (r.correct > r.asked) return 'correct_gt_asked';
   if (r.maxCombo > r.correct) return 'combo_gt_correct';
   const wrong = r.asked - r.correct;
@@ -895,17 +928,38 @@ export function checkRun(r: RunFacts, ticketed = true): string | null {
   const cont = r.continues ?? 0;
   if (!Number.isSafeInteger(cont) || cont < 0 || cont > CONTINUE.max) return 'continues_range';
   // continues are counted on the ticket; practice has no hearts to buy back
-  if (cont > 0 && (!rush || !ticketed)) return 'continues_scope';
+  if (cont > 0 && (!rush || !ticketed || stroke)) return 'continues_scope';
   // rush ends exactly when the last life is lost (QuizGame.ts:595, :682); quitting never submits (:194-198).
   // Each continue gives back one heart.
   if (rush && wrong !== SCORING.rushLives + cont) return 'rush_lives';
   // practice is exactly 20 questions (QuizGame.ts:319)
   if (!rush && r.asked !== SCORING.zenTotal) return 'zen_total';
-  // correct answers fall into at most wrong+1 streaks
-  if (r.correct > 0 && r.maxCombo < Math.ceil(r.correct / (wrong + 1))) return 'combo_too_low';
-  if (r.score % SCORING.roundTo !== 0) return 'score_rounding';
-  if (r.score < minScore(b.level, r.correct)) return 'score_too_low';
-  if (r.score > maxScore(b.level, rush, r.correct, r.maxCombo)) return 'score_too_high';
-  if (r.durationMs < minDurationMs(b.game, r.asked) * SCORING.durationSlack) return 'too_fast';
+  if (stroke) {
+    const w = r.strokeWords;
+    if (!Array.isArray(w)) return 'words_missing';
+    if (w.length !== r.correct) return 'words_len';
+    let prev = 0;
+    let max = 0;
+    let total = 0;
+    for (const t of w) {
+      if (!Array.isArray(t) || t.length !== 3) return 'word_shape';
+      const [s, c, p] = t;
+      if (!Number.isSafeInteger(s) || !Number.isSafeInteger(c) || s < 1 || s > STROKE.maxWordStrokes || c < 1 || (p !== 0 && p !== 1)) return 'word_shape';
+      if (c > prev + 1) return 'combo_seq';
+      prev = c;
+      if (c > max) max = c;
+      total += strokeWordPoints(s, c, p);
+    }
+    if (r.maxCombo !== max) return 'max_combo';
+    if (r.score % SCORING.roundTo !== 0) return 'score_rounding';
+    if (r.score !== total) return 'score_mismatch';
+  } else {
+    // correct answers fall into at most wrong+1 streaks
+    if (r.correct > 0 && r.maxCombo < Math.ceil(r.correct / (wrong + 1))) return 'combo_too_low';
+    if (r.score % SCORING.roundTo !== 0) return 'score_rounding';
+    if (r.score < minScore(b.level, r.correct)) return 'score_too_low';
+    if (r.score > maxScore(b.level, rush, r.correct, r.maxCombo)) return 'score_too_high';
+  }
+  if (r.durationMs < minDurationMs(b.game, r) * SCORING.durationSlack) return 'too_fast';
   return null;
 }

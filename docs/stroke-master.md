@@ -17,7 +17,7 @@ The prototype writes **single characters** (35 HSK 1 characters). The real mode 
 | D3 | **Outline on by default**, with a toggle in the pane. The setting is remembered. | Without it, high-stroke characters become a memory test. With it on, the mode teaches stroke order rather than recall. |
 | D4 | **Own matcher**, ported from the prototype (`dev/stroke-prototype/matcher.js`). Do not use Hanzi Writer's `quiz()`. | `quiz()` grades one character in its own SVG target. We grade one stroke against every falling word at once, on our own canvas. The matcher reuses Hanzi Writer's rules: average distance, start and end gates, direction, Fréchet shape, and "a later stroke fits better". |
 | D5 | **Stroke data:** `hanzi-writer-data@2.0.1` (from Make Me a Hanzi), pinned as a **devDependency** and baked by a build script into one JSON file per level. No CDN fetch at runtime. | Reproducible offline builds. The existing service worker caches same-origin `/data/*` on first fetch. |
-| D6 | **Unranked at launch.** Local best only (`bestKey`), with coins and XP through `awardRun`. Ranked is phase 6. | Ranked needs its own `SCORING` constants plus server checks (`shared/api.ts:813-867`). Do that once the scoring is tuned. |
+| D6 | **Ranked at launch (HSK 1–3, rush and zen).** The client sends one `[strokes, combo, perfect]` tuple per destroyed word; the server recomputes the score exactly with `strokeWordPoints` and checks a per-stroke time floor. No stroke data on the server, no migration, no `SCORING_VERSION` bump, no continues. | The score is a pure function of the tuples, so it is verifiable without the glyph data. A later formula change needs a version bump and a version-aware `checkRun`. |
 | D7 | **Keep the prototype's look:** a dark ink-night scene (moon, ink-wash ranges, fog, embers), gold for success, vermilion for danger, a 米字格 pane. | The user approved the draft. It is the one dark game in a cartoon app, which is fine because the scene is self-contained. HUD buttons use the app's existing widgets. |
 | D8 | **Credit the data.** The Arphic Public License text ships next to the data, with a credit line in the app. | License condition of `hanzi-writer-data` / Make Me a Hanzi graphics. |
 
@@ -64,11 +64,14 @@ word pool: start with words of ≤ 6 total strokes, raise the cap by 2 every 3 w
 
 The prototype's character-level numbers are `fallTime = max(10, 25 - 0.45 * cleared)`, `spawnGap = max(2.4, 6.4 - 0.17 * cleared)`, `maxOnScreen = min(5, 2 + floor(cleared/4))` and leniency `1.15`.
 
-### Scoring (unranked)
-- Per correct stroke: `10 * (1 + min(combo, 20) * 0.1)`.
-- Per word: `strokes * 60 * (1 + min(combo, 20) * 0.15) * (perfect ? 1.5 : 1)`, where perfect means no misses on that word.
-- A wrong stroke on a locked target resets the combo. A landing resets the combo.
-- `RunStats`: `correct` = words written, `asked` = words spawned and resolved, `missed` = words that landed.
+### Scoring (ranked, verifiable)
+- Only word awards add to the score. Per-stroke points are cosmetic (pitch, floaters).
+- Word combo `c`: +1 when a word is destroyed (the tuple holds the value after the increment); reset to 0 on a landing and on a wrong stroke against a locked target. A stroke that matches nothing with nothing locked has no effect.
+- `perfect` = no wrong strokes were graded against that word.
+- Per word: `strokeWordPoints(s, c, p) = round(7·s·(100 + 15·min(c,20))·(p ? 3 : 2) / 200) · 10` (`shared/api.ts`), the exact integer form of `round(70·s·(1 + min(c,20)·0.15)·(perfect ? 1.5 : 1) / 10) · 10`. Golden: s=10, c=1, p=1 → 1210; s=10, c=20, p=1 → 4200.
+- `RunStats`: `correct` = words destroyed, `asked` = destroyed + landed, `maxCombo` = max `c`, `strokeWords` = the tuples in destroy order, `missed` = words that landed.
+- Rush ends on the landing that takes the last heart; other words landing in the same frame are not counted (`rush_lives` needs exactly 3 landed). Zen never spawns more than 20 words and ends when all 20 are resolved.
+- Words with more than `STROKE.maxWordStrokes` (80) strokes are never spawned. The server rejects a run whose duration is below `0.8 · (2100 + Σ strokes · 150)` ms.
 
 ## 3. Data
 
@@ -142,7 +145,7 @@ Keep `StrokeGame.ts` under about 600 lines. `QuizGame.ts` is 958 lines. Do not s
 - **Pinyin setting:** `store.settings.pinyin` (toggled on the level picker). When it is on, draw pinyin above each falling word, small and dim.
 - **Outline setting:** add `strokeOutline: boolean` to `Settings` in `src/core/store.ts:12`, default `true`.
 - **Progress:** `store.recordWord(word.h, ok)` when a word is destroyed (ok) or lands (not ok).
-- **End of run:** build `RunStats` with `game: 'stroke'` and call `app.go(() => resultsScreen(stats))`. `src/screens/results.ts:55` already skips leaderboard submission for games outside `RANKED_GAMES`.
+- **End of run:** build `RunStats` with `game: 'stroke'` and call `app.go(() => resultsScreen(stats))`. include `strokeWords` and `runId` (from `cloud.startRun(boardKey('stroke', level, mode))` in `start()`); `src/screens/results.ts:55` submits because `stroke` is in `RANKED_GAMES`.
 - **Theme:** `Screen.theme` must be a `ThemeName` (`src/engine/background.ts:8-15`). Use `vault`, the existing dark theme, or add an `ink` theme. The game paints its own full-screen scene canvas over it anyway.
 - **Shared engine:** use `engine/shake.ts` for shake and the app's `muteButton` and `langToggle` widgets in the HUD. The prototype's particle and FX code stays local to the game, because it draws into the game's own canvas and depends on the glyph geometry. Only reuse `engine/particles` if it can draw into that canvas.
 
@@ -176,7 +179,7 @@ The prototype's quick version of 2–4 is `dev/stroke-prototype/test-matcher.cjs
 | **P3 Polish + performance** | Glyph caching, reduced motion, sounds through the app's mute setting, countdown, intro card with a stroke-by-stroke 笔 seal, credit line | 60 fps with 4 words on a mid-range Android phone (or 6× CPU throttle in DevTools), no long tasks over 50 ms during play |
 | **P4 Device tuning** | Leniency, pacing and hint threshold tuned on a real iPhone (Safari) and Android (Chrome PWA) | Notes below in §8: false rejects under about 1 in 20 strokes for a careful player, and HSK 3 is finishable for 2+ minutes |
 | **P5 HSK 4–6** | Unlock with slower pacing (Zen by default, or a "Calm" rush), cap words at about 25 strokes, and show "outline recommended" | Measured on device, as in P4 |
-| **P6 Ranked (optional)** | `'stroke'` in `RANKED_GAMES`, its own constants in `SCORING`, `minQuestionMs.stroke`, server plausibility in `server/validate.ts`, `SCORING_VERSION` bump | `npm test` passes, including a new run-validation case |
+| **P6 Ranked** (ships with P2) | `'stroke'` in `RANKED_GAMES`, `RANKED_LEVELS`, `STROKE` + `strokeWordPoints`, `strokeWords` payload, stroke branch of `checkRun`, `scripts/test-runs.mjs` (no `SCORING_VERSION` bump) | `npm test` passes, including `test:runs` |
 
 ## 7. Risks
 

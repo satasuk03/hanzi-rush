@@ -12,7 +12,7 @@ import { audio } from '../engine/audio';
 import { pop, pressable, popIn } from '../engine/juice';
 import { langToggle, muteButton, iconButton, ICON } from '../ui/widgets';
 import { GAMES } from '../games/registry';
-import { boardKey, parseBoardKey, PERIODS, type BoardEntry, type BoardResponse, type Mode, type Period, type RankedGame } from '../../shared/api';
+import { boardKey, parseBoardKey, PERIODS, RANKED_LEVELS, type BoardEntry, type BoardResponse, type Mode, type Period, type RankedGame } from '../../shared/api';
 import { showPlayerCard } from '../ui/playerCard';
 import { homeScreen } from './home';
 import { levelsScreen } from './levels';
@@ -75,7 +75,7 @@ export function leaderboardScreen(opts: { board: ReturnType<typeof boardKey>; pe
   const modeOpts = (['rush', 'zen'] as Mode[]).map((m) => h('button', { class: 'seg-opt', 'data-m': m }, h('span', { class: 'seg-name' }, tx(m === 'rush' ? 'modeRush' : 'modeZen'))));
   seg.append(segKnob, ...modeOpts);
 
-  const pills = LEVELS.map((L) => {
+  const pills = LEVELS.filter((L) => L.n <= RANKED_LEVELS[game.id as RankedGame]).map((L) => {
     const b = h('button', { class: 'lb-lv', style: `--c:${L.color};--d:${L.dark}`, 'data-n': String(L.n) }, String(L.n));
     pressable(b, () => {
       if (level === L.n) return;

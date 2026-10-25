@@ -98,7 +98,7 @@ export const onRequest: PagesFunction<Env> = async (ctx) =>
         // The ticket was requested after the run started, so a server-measured duration below the floor means
         // the ticket arrived late (slow network at run start), not that the run is fake. Still claim the ticket
         // (it must not be reusable) but rank the run as unverified.
-        const tooFast = now - tk.created_at < minDurationMs(parsed.game, req.asked) * SCORING.durationSlack;
+        const tooFast = now - tk.created_at < minDurationMs(parsed.game, req) * SCORING.durationSlack;
         if (!tooFast) {
           t = tk.created_at;
           verified = 1;
