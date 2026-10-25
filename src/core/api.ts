@@ -1,16 +1,13 @@
 /** Thin fetch wrapper for the Hanzi Rush backend (shared/api.ts is the contract). */
-import { Capacitor } from '@capacitor/core';
-import { API_PREFIX, AUTH_HEADER, LIMITS, authValue, type ApiErrorBody, type DeviceInfo, type ErrorCode, type Platform } from '../../shared/api';
+import { API_PREFIX, AUTH_HEADER, LIMITS, authValue, type ApiErrorBody, type DeviceInfo, type ErrorCode } from '../../shared/api';
 
-/** the production deploy; the native shell has no same-origin server to fall back to */
-const NATIVE_DEFAULT = 'https://hanzi-rush.zeze.app';
-const RAW = (import.meta.env.VITE_API_BASE ?? '').trim() || (Capacitor.isNativePlatform() ? NATIVE_DEFAULT : '');
+const RAW = (import.meta.env.VITE_API_BASE ?? '').trim();
 /** `VITE_API_BASE=off` disables every cloud feature */
 export const API_OFF = RAW === 'off';
 /** '' = same-origin (the web default) */
 const BASE = (API_OFF ? '' : RAW.replace(/\/$/, '')) + API_PREFIX;
 
-export const DEVICE: DeviceInfo = { platform: Capacitor.getPlatform() as Platform, appVersion: import.meta.env.VITE_APP_VERSION ?? '0.1.0' };
+export const DEVICE: DeviceInfo = { platform: 'web', appVersion: import.meta.env.VITE_APP_VERSION ?? '0.1.0' };
 
 /** `status 0` + code 'offline' = the request never produced a usable answer (network, timeout, wrong content) */
 export class ApiError extends Error {

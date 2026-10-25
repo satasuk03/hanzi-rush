@@ -15,8 +15,6 @@ export interface Screen {
   update?(dt: number): void;
   onKey?(e: KeyboardEvent): void;
   onHidden?(): void;
-  /** root screen: hardware back exits the app here */
-  home?: boolean;
 }
 
 class App {
@@ -76,17 +74,6 @@ class App {
     await gsap.to(this.iris, { clipPath: `circle(0px at ${cx}px ${cy}px)`, duration: 0.5, ease: 'power3.inOut', delay: 0.08 });
     gsap.set(this.iris, { display: 'none' });
     this.busy = false;
-  }
-
-  /**
-   * Hardware back: every screen already maps Escape to back/pause/skip. False on the home screen. Dispatched through
-   * the DOM (reaching onKey via the listener in mount), so an open modal can catch it first (src/ui/playerCard.ts).
-   */
-  back() {
-    const s = this.current;
-    if (!s || s.home) return false;
-    document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
-    return true;
   }
 
   update(dt: number) {

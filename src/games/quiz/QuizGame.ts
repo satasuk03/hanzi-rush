@@ -24,7 +24,6 @@ import { awardRun } from '../../core/meta';
 import { cloud, type RunHandle } from '../../core/cloud';
 import { CONTINUE, boardKey, checkRun, continueCost, type RankedGame } from '../../../shared/api';
 import { ApiError } from '../../core/api';
-import { ads } from '../../core/ads';
 import { wallet } from '../../core/wallet';
 
 type Phase = 'intro' | 'ask' | 'lock' | 'reveal' | 'over';
@@ -606,10 +605,6 @@ export class QuizGame {
     this.missed.includes(this.word) || this.missed.push(this.word);
     this.retry.push({ w: this.word, due: this.asked + 4 });
     if (this.rush) this.lives--;
-    // the ad for a first continue loads while the last heart is in play (only once the player has seen consent)
-    if (this.rush && this.lives === 1 && this.continues === 0 && ads.available && this.run) {
-      void cloud.runTicket(this.run).then((tk) => tk && ads.preload(tk));
-    }
     audio.wrong();
     audio.duck();
     shake(0.55);
@@ -709,7 +704,6 @@ export class QuizGame {
     if (!ticket || this.isOver()) return this.finish();
     this.offering = true;
     audio.stopMusic();
-    let useAd = n === CONTINUE.adSlot && ads.available;
     let busy = false;
 
     const status = h('p', { class: 'cont-status' });
@@ -759,12 +753,10 @@ export class QuizGame {
       const bal = wallet.jade;
       const short = bal !== null && bal < cost;
       actions.replaceChildren(
-        useAd
-          ? btn(t('contAd'), '#5be35b', payAd, ICON.play)
-          : btn(fill(t('contJade'), cost), short ? '#9a8fa8' : '#3ec9a0', payJade, ICON.jade),
+        btn(fill(t('contJade'), cost), short ? '#9a8fa8' : '#3ec9a0', payJade, ICON.jade),
         btn(t('contNo'), '#ff4757', decline),
       );
-      have.textContent = useAd ? (n > 1 ? fill(t('contLeft'), n - 1) : '') : bal === null ? '' : fill(t('contHave'), bal);
+      have.textContent = bal === null ? '' : fill(t('contHave'), bal);
     };
 
     const resume = () => {
@@ -807,31 +799,6 @@ export class QuizGame {
         }
         say(t('contOffline'));
       }
-    };
-
-    const payAd = async () => {
-      say('');
-      const r = await ads.show(ticket);
-      if (r === 'skipped') return;
-      if (r === 'failed') {
-        useAd = false;
-        render();
-        return say(t('contNoAd'));
-      }
-      // AdMob's callback to the server usually lands within seconds of the reward
-      for (let i = 0; i < 8; i++) {
-        try {
-          await wallet.continueRun(ticket, n, 'ad');
-          return resume();
-        } catch (e) {
-          if (fatal(e)) return decline();
-          if (!(e instanceof ApiError && (e.code === 'ad_unverified' || e.transient))) break;
-          await new Promise((res) => setTimeout(res, 1500));
-        }
-      }
-      useAd = false;
-      render();
-      say(t('contAdUnverified'));
     };
 
     render();

@@ -1,11 +1,6 @@
 import gsap from 'gsap';
-import { Capacitor } from '@capacitor/core';
-import { App } from '@capacitor/app';
-import { StatusBar, Style } from '@capacitor/status-bar';
-import { SplashScreen } from '@capacitor/splash-screen';
 import './style.css';
 import { app } from './core/app';
-import { store } from './core/store';
 import { i18n } from './core/i18n';
 import { audio } from './engine/audio';
 import { background } from './engine/background';
@@ -16,7 +11,6 @@ import { sprites } from './engine/sprites';
 import { homeScreen } from './screens/home';
 import { cloud } from './core/cloud';
 import { showSignedOut } from './ui/transfer';
-import { reminders } from './core/reminders';
 import { initTitleRewards } from './core/titleRewards';
 
 const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
@@ -70,22 +64,3 @@ addEventListener('keydown', unlock);
 // block iOS double-tap zoom / context menus on long-press during fast play
 document.addEventListener('dblclick', (e) => e.preventDefault());
 document.addEventListener('contextmenu', (e) => e.preventDefault());
-
-// native shell: save on background, silence audio, hardware back, system chrome
-if (Capacitor.isNativePlatform()) {
-  App.addListener('pause', () => {
-    store.save();
-    audio.suspend();
-    void reminders.sync();
-  });
-  App.addListener('resume', () => audio.resume());
-  if (Capacitor.getPlatform() === 'android') {
-    App.addListener('backButton', () => {
-      if (!app.back()) App.exitApp();
-    });
-  }
-  StatusBar.setStyle({ style: Style.Dark }).catch(() => {});
-  StatusBar.setOverlaysWebView({ overlay: true }).catch(() => {});
-  SplashScreen.hide().catch(() => {});
-  void reminders.sync();
-}

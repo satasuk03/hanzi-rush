@@ -1,4 +1,3 @@
-import { storage } from './core/storage';
 import { isSignInPopup } from './core/signin';
 import { pwa } from './core/pwa';
 
@@ -9,7 +8,5 @@ if (isSignInPopup()) {
 } else {
   // before the big boot chunk loads, or Chrome's install prompt can fire with nobody listening
   pwa.init();
-  // the store reads saved progress at import time, so native storage must hydrate first
-  await storage.init();
   await import('./boot');
 }

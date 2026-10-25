@@ -55,11 +55,11 @@ const sign = async (key, claims, header = { alg: 'RS256', kid: key.kid }) => {
   const base = { iss: 'https://accounts.google.com', aud: 'web-client', sub: 'g-123', email: 'A@x.io', email_verified: true, iat: now - 10, exp: now + 3600 };
   let published = [k1.jwk];
   let fetches = 0;
-  const opts = { getKeys: async () => (fetches++, published), issuers: ['https://accounts.google.com'], audiences: ['web-client', 'ios-client'], now: NOW };
+  const opts = { getKeys: async () => (fetches++, published), issuers: ['https://accounts.google.com'], audiences: ['web-client'], now: NOW };
 
   const c = await O.verifyJwt(await sign(k1, base), opts);
   assert.equal(c.sub, 'g-123');
-  assert.equal(await errOf(O.verifyJwt(await sign(k1, { ...base, aud: ['other', 'ios-client'] }), opts)), null);
+  assert.equal(await errOf(O.verifyJwt(await sign(k1, { ...base, aud: ['other', 'web-client'] }), opts)), null);
   ok('a genuine token verifies (aud may be a list)');
 
   const good = await sign(k1, base);
@@ -101,7 +101,7 @@ try {
     await db.prepare('INSERT INTO players (id, tag, created_at, last_seen_at, status) VALUES (?1, ?2, 0, 0, ?3)').bind(id, `T${n}`, status).run();
     return { id, tag: `T${n}`, status, pub: null, tokenHash: 'x' };
   };
-  const device = { platform: 'android', appVersion: '1.0.0' };
+  const device = { platform: 'web', appVersion: '1.0.0' };
   const sessionsOf = async (id) => (await db.prepare('SELECT COUNT(*) AS c FROM sessions WHERE player_id = ?1').bind(id).first()).c;
   const go = (caller, provider, subject, now = 1000) => I.signInOrLink(env, caller, provider, { subject }, device, now);
 
@@ -130,7 +130,7 @@ try {
   ok('an unlinked provider account without a caller is a 404 (no player is created)');
 
   assert.equal(await errOf(go(a, 'google', 'g-A2')), 'identity_conflict');
-  assert.deepEqual(await go(a, 'play_games', 'pg-A'), { result: 'linked', provider: 'play_games', linkedAt: 1000 });
+  assert.deepEqual(await go(a, 'apple', 'ap-A'), { result: 'linked', provider: 'apple', linkedAt: 1000 });
   assert.deepEqual(await go(a, 'google', 'g-A', 3000), { result: 'linked', provider: 'google', linkedAt: 1000 });
   ok('one account per provider per player; other providers still link');
 
@@ -146,8 +146,9 @@ try {
   ok('a disabled player cannot be signed into');
 
   assert.equal(await errOf(Promise.resolve().then(() => I.parseProvider('email'))), 'not_found');
-  assert.equal(I.parseProvider(['play_games']), 'play_games');
-  ok('only google / apple / play_games are routable');
+  assert.equal(await errOf(Promise.resolve().then(() => I.parseProvider('play_games'))), 'not_found');
+  assert.equal(I.parseProvider(['apple']), 'apple');
+  ok('only google / apple are routable');
 } finally {
   await dispose();
   rmSync(tmp, { recursive: true, force: true });

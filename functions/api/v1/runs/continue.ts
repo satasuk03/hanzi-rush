@@ -11,7 +11,7 @@ export const onRequest: PagesFunction<Env> = async (ctx) =>
       const me = await authenticate(ctx, true);
       const { value } = await readJson(ctx.request, LIMITS.maxBodyBytes);
       if (!isObj(value)) return fail('bad_request', 'Invalid body');
-      const body: ContinueResponse = await continueRun(ctx.env.DB, me.id, value.ticket, value.n, value.via, { trustAds: ctx.env.ADS_SSV_BYPASS === '1' });
+      const body: ContinueResponse = await continueRun(ctx.env.DB, me.id, value.ticket, value.n, value.via);
       return json(body);
     },
   });

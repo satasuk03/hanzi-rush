@@ -32,12 +32,12 @@ Nobody has checked these by hand yet:
 - [ ] Phase C on a real phone (iOS Safari and Android WebView): the chest ceremony, the Shop at 360 px, the Wardrobe, name effects with `background-clip: text` on Thai, the frames at 34 px on the board.
 - [ ] A first real pull in production: starter Jade buys one Standard box, the result shows on the leaderboard from another device.
 - [ ] Native-speaker copy for the launch cosmetics. Thai: แหวนหยก (frame_jadering, maybe วงหยก), หมึกจีน, น้ำเงินคราม, อานุภาพมังกร, จี้หยก, บัณฑิต, เทพเจ้า, ประกายหงส์, plus the Shop and Wardrobe strings in `src/core/i18n.ts`. Chinese: 灯穗, 木叶, 明珠.
-- [ ] Old native builds against the new server: unknown frame / name-effect / badge ids must render the default.
+- [ ] Old cached clients against the new server: unknown frame / name-effect / badge ids must render the default.
 
 ## Decisions already made (do not reopen without a reason)
 
 - Titles are earned, never random. Cosmetics are bought with **Jade coin**; coins and Jade never convert.
-- **Jade, pulls and inventory are server-authoritative** (real money and ads are coming). The shop is online-only. Equipping works from a cached inventory.
+- **Jade, pulls and inventory are server-authoritative** (real money is coming). The shop is online-only. Equipping works from a cached inventory.
 - One box machine that drops any slot, three tiers: **Standard 100 / Select 250 / Supreme 600 Jade**, ×10 costs 9. Already encoded in `shared/cosmetics.ts` (`BOXES`, `boxPrice`, `PITY_RARITY`). Pity costs 3,000 Jade in every box.
 - Starter grant **100 Jade**. Daily Jade **10, 10, 15, 15, 20, 20, 50**, Asia/Bangkok day. Both live.
 - Duplicate refunds by **item rarity**, not box price: 5 / 10 / 25 / 50 / 100 Jade (`DUPLICATE_REFUND`).
@@ -119,17 +119,19 @@ D2 (PR `feat/d2-deals-titles`; decisions made 2026-10-08):
 - Testing: dev builds and `VITE_ADMOB_TEST=1 npm run android` use Google test units. A local server needs `ADS_SSV_BYPASS=1` in `.dev.vars` (test ads never call back).
 - To verify by hand: the modal at 360 px, an ad on a real Android and iOS device, the consent form from the EEA (UMP debug geography), Thai copy of the `cont*` strings.
 
+> **2026-10-25: native Android/iOS apps removed; Web + PWA only.** The rewarded-ad path above (AdMob SSV, `/ads/admob-ssv`, `src/core/ads.ts`, `ADMOB_AD_UNITS`, `ADS_SSV_BYPASS`, the ad daily cap) and Play Games sign-in are gone. Continues cost Jade only (`via: 'jade'`). The `ad_rewards` table stays in the DB, unused; account delete and the 30-day prune still clear any old rows. `identities` rows with provider `play_games` may remain.
+
 ## Phase E: Prestige and expansion
 
 - [ ] `player_grants` for server-given items (rank and season badges, Founder), `background` and `banner` slots on the card, limited-time boxes, server-granted titles.
-- [ ] Real-money packs and rewarded ads (`iap` and `ad` ledger rows). See `TODO.md` "Before real money ships".
+- [ ] Real-money packs (`iap` ledger rows). See `TODO.md` "Before real money ships".
 
 ## Things that will bite
 
 - Merging to `main` migrates production (see above).
 - `server/validate.ts`: any failure rejects the whole save push. `progress.pity` must stay a single int; box pity has its own table.
 - `src/core/merge.ts`: unknown keys fall back to last-writer-wins; register new save keys.
-- Old native app builds will meet new item ids: render the default, never crash. Ship a native build that uses new ids only after the server has them.
+- Old cached clients will meet new item ids: render the default, never crash. Deploy the server before (or with) a client that uses new ids.
 - Anything that writes `inventory` outside `server/shop.ts` (grants, Exchange) **must bump `players.pull_seq` in the same batch**, or a concurrent pull can label a duplicate as new.
 - Per-badge CSS must be scoped `.id-badges .id-badge[data-b=…]` (identity.css loads after badges.css). Never rename or remove a released item id: players own it.
 - The `wardrobe` title is evaluated live from the cached inventory, so on a new device it shows locked until the first wallet refresh.
