@@ -1,31 +1,39 @@
-// Stroke Master scoring: pure, no DOM. Kept in one place so a server-verifiable
-// formula can replace it later (the ranked submission needs per-word facts).
-export const COMBO_CAP = 20;
+// Stroke Master run accounting: pure, no DOM. The score is ONLY the sum of strokeWordPoints over the
+// destroyed words, so the server can recompute it from the `strokeWords` tuples (shared/api.ts checkRun).
+import { strokeWordPoints, type StrokeWords } from '../../../shared/api';
 
-/** Per-word facts recorded during the run. */
-export interface WordFact {
-  /** word hanzi (Word.h) */
-  h: string;
-  /** total strokes in the word */
-  strokes: number;
-  /** no wrong strokes while writing it */
-  perfect: boolean;
-  /** milliseconds from spawn to resolution (game time, pauses excluded) */
-  ms: number;
-  /** true = reached the ground, false = written */
-  landed: boolean;
-  /** combo right after completion (0 when landed) */
-  combo: number;
-  /** points the word itself paid (0 when landed) */
-  points: number;
-}
+export { strokeWordPoints };
 
-/** Points for one correct stroke, from the combo before the stroke. */
-export function strokePoints(combo: number): number {
-  return Math.round(10 * (1 + Math.min(combo, COMBO_CAP) * 0.1));
-}
+export class RunAccount {
+  score = 0;
+  combo = 0;
+  maxCombo = 0;
+  destroyed = 0;
+  landed = 0;
+  /** one [strokes, combo after increment, perfect] per destroyed word, in destroy order */
+  words: StrokeWords = [];
 
-/** Points for finishing a word; `combo` is the combo including this word. */
-export function wordPoints(f: { strokes: number; perfect: boolean; combo: number }): number {
-  return Math.round(f.strokes * 60 * (1 + Math.min(f.combo, COMBO_CAP) * 0.15) * (f.perfect ? 1.5 : 1));
+  /** a word was written completely */
+  destroy(strokes: number, perfect: boolean) {
+    this.combo++;
+    this.maxCombo = Math.max(this.maxCombo, this.combo);
+    this.destroyed++;
+    const p = perfect ? 1 : 0;
+    const pts = strokeWordPoints(strokes, this.combo, p);
+    this.score += pts;
+    this.words.push([strokes, this.combo, p]);
+    return pts;
+  }
+  /** a word reached the ground */
+  land() {
+    this.landed++;
+    this.combo = 0;
+  }
+  /** a wrong stroke graded against a locked target */
+  wrong() {
+    this.combo = 0;
+  }
+  get asked() {
+    return this.destroyed + this.landed;
+  }
 }

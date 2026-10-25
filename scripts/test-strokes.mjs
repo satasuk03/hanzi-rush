@@ -16,11 +16,12 @@ const tmp = mkdtempSync(join(tmpdir(), 'hr-strokes-'));
 let failed = false;
 try {
   await build({
-    entryPoints: { matcher: 'src/games/stroke/matcher.ts', strokes: 'src/core/strokes.ts' },
+    entryPoints: { matcher: 'src/games/stroke/matcher.ts', api: 'shared/api.ts', strokes: 'src/core/strokes.ts' },
     bundle: true, format: 'esm', platform: 'node', outdir: tmp, outExtension: { '.js': '.mjs' }, logLevel: 'error',
   });
   const M = await import(pathToFileURL(join(tmp, 'matcher.mjs')).href);
   const S = await import(pathToFileURL(join(tmp, 'strokes.mjs')).href);
+  const API = await import(pathToFileURL(join(tmp, 'api.mjs')).href);
 
   const LV = 1.15;
   let seed = 3;
@@ -53,6 +54,17 @@ try {
     for (const w of words) for (const c of w.h.match(HAN) ?? []) assert.ok(S.glyphOf(c, data), `${c} has a glyph`);
   }
   ok('coverage: every HSK 1-3 word has stroke data for all its characters');
+
+  // ---- 1b. stroke cap (checkRun rejects words above STROKE.maxWordStrokes; StrokeGame also filters them)
+  let maxStrokes = 0, maxWord = '';
+  for (const { n, words, data } of levels) {
+    for (const w of words) {
+      const total = (w.h.match(HAN) ?? []).reduce((a, c) => a + S.glyphOf(c, data).n, 0);
+      assert.ok(total <= API.STROKE.maxWordStrokes, `hsk${n} ${w.h}: ${total} strokes > ${API.STROKE.maxWordStrokes}`);
+      if (total > maxStrokes) [maxStrokes, maxWord] = [total, w.h];
+    }
+  }
+  ok(`every playable HSK 1-3 word <= ${API.STROKE.maxWordStrokes} strokes (max ${maxStrokes}: ${maxWord})`);
 
   // ---- 2-4 per level (unique characters of the level)
   const t2 = [], t3 = [], t4 = [];

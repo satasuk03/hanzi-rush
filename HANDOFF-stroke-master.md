@@ -13,7 +13,7 @@ Read this first, then [`docs/stroke-master.md`](docs/stroke-master.md) (the full
 | P3 | Polish and performance (glyph cache, reduced motion, sound, credits) | Not started |
 | P4 | Tuning on real phones | Not started |
 | P5 | HSK 4–6 at a slower pace | Not started |
-| P6 | Ranked (ships with P2) | Server and shared side done; StrokeGame scoring pending |
+| P6 | Ranked (ships with P2) | Done: server, shared and client (`RunAccount` in `score.ts`, startRun/runId/durationMs/strokeWords, 80-stroke word cap, levels trophy clamp, registry `maxLevel` derives from `RANKED_LEVELS`). Remaining: docs updates, real-backend check |
 
 No database migration is needed for P1–P5.
 
@@ -75,7 +75,7 @@ See §1 for the reasons.
 | Word data and `loadLevel` (pattern for the strokes loader) | `src/core/data.ts:1-40` |
 | Level picker that loads words and the game module | `src/screens/levels.ts:98-109` |
 | Run-end flow to copy (results, rewards, progress) | `src/games/quiz/QuizGame.ts` (`awardRun`, `recordWord`, `resultsScreen`); `src/screens/results.ts:23-41` (`RunStats`) |
-| Ranked flag on results (`stroke` is in `RANKED_GAMES`; `RunStats` needs `runId`, `strokeWords`) | `src/screens/results.ts:55` |
+| Ranked flag on results (`stroke` is in `RANKED_GAMES`; `RunStats` carries `runId`, `strokeWords`, filled by StrokeGame) | `src/screens/results.ts:55` |
 | Settings (`pinyin` toggle, add `strokeOutline`) | `src/core/store.ts:12` |
 | Name string | `src/core/i18n.ts:65` (`strokeName`) |
 | Shake, juice, audio, widgets | `src/engine/shake.ts`, `src/engine/juice.ts`, `src/engine/audio.ts`, `src/ui/widgets.ts` |

@@ -8,7 +8,7 @@ import assert from 'node:assert/strict';
 
 const tmp = mkdtempSync(join(tmpdir(), 'hr-runs-'));
 await build({
-  entryPoints: { validate: 'server/validate.ts', api: 'shared/api.ts' },
+  entryPoints: { validate: 'server/validate.ts', api: 'shared/api.ts', score: 'src/games/stroke/score.ts' },
   bundle: true,
   format: 'esm',
   platform: 'node',
@@ -19,6 +19,7 @@ await build({
 const imp = (n) => import(pathToFileURL(join(tmp, n + '.mjs')).href);
 const A = await imp('api');
 const V = await imp('validate');
+const { RunAccount } = await imp('score');
 const ok = (name) => console.log('ok  ' + name);
 
 const sum = (t) => t.reduce((a, [s, c, p]) => a + A.strokeWordPoints(s, c, p), 0);
@@ -124,4 +125,32 @@ ok('board keys');
   assert.notEqual(code({ ...base, strokeWords: [[1, 1]] }), 'ok');
   assert.notEqual(code({ ...base, strokeWords: [[1, 1, NaN]] }), 'ok');
   ok('validateSubmit strokeWords');
+}
+// 12: runs produced by the game's own accounting (src/games/stroke/score.ts) pass checkRun
+{
+  const run = (mode, script) => {
+    const a = new RunAccount();
+    for (const e of script) {
+      if (e === 'L') a.land();
+      else if (e === 'X') a.wrong();
+      else a.destroy(e[0], e[1]);
+    }
+    return {
+      board: A.boardKey('stroke', 1, mode),
+      score: a.score,
+      correct: a.destroyed,
+      asked: a.asked,
+      maxCombo: a.maxCombo,
+      durationMs: A.SCORING.countdownMs + a.words.reduce((t, w) => t + w[0], 0) * 150 + 30_000,
+      strokeWords: a.words,
+    };
+  };
+  const rush = run('rush', [[5, true], [8, false], 'X', [3, true], [4, true], 'L', [6, true], 'L', [2, false], 'L']);
+  assert.equal(A.checkRun(rush), null);
+  assert.equal(A.checkRun(rush, false), null);
+  assert.equal(rush.asked - rush.correct, 3);
+  const zen = run('zen', [...Array.from({ length: 17 }, (_, i) => [3 + (i % 4), i % 3 === 0]), 'L', 'L', 'L']);
+  assert.equal(A.checkRun(zen), null);
+  assert.equal(A.checkRun({ ...zen, score: zen.score + 10 }), 'score_mismatch');
+  ok('RunAccount runs pass checkRun');
 }

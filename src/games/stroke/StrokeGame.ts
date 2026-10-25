@@ -1,8 +1,8 @@
 /**
  * Stroke Master (笔): HSK words fall; write them character by character in the right stroke order.
  * Rush: 3 hearts, endless. Zen: 20 words, slow, landing is free.
- * Scoring lives in ./score.ts; per-word facts are recorded in `facts` (and exported via `lastRun`)
- * so a ranked submission can be built from them later.
+ * Ranked: the score is only the sum of strokeWordPoints per destroyed word (./score.ts); the run's
+ * [strokes, combo, perfect] tuples go to the server, which recomputes it (shared/api.ts checkRun).
  */
 import gsap from 'gsap';
 import type { Screen } from '../../core/app';
@@ -22,7 +22,9 @@ import { grade, length, type WhyNot } from './matcher';
 import { Scene, clamp, type FallWord } from './scene';
 import { Pane, type PaneView, type RawPt } from './pane';
 import { sfx } from './sfx';
-import { strokePoints, wordPoints, type WordFact } from './score';
+import { RunAccount } from './score';
+import { cloud, type RunHandle } from '../../core/cloud';
+import { STROKE, boardKey, checkRun } from '../../../shared/api';
 
 type Phase = 'loading' | 'intro' | 'count' | 'play' | 'paused' | 'ending' | 'over';
 
@@ -36,17 +38,6 @@ interface Entry {
   chars: Glyph[];
   strokes: number;
 }
-
-/** what the last finished run recorded, for a future ranked submission */
-export interface RunRecord {
-  level: number;
-  mode: string;
-  score: number;
-  startedAt: number;
-  durationMs: number;
-  facts: WordFact[];
-}
-export let lastRun: RunRecord | null = null;
 
 export function create(ctx: GameContext): Screen {
   return new StrokeGame(ctx).screen;
@@ -78,19 +69,12 @@ class StrokeGame {
   private data: StrokeLevel | null = null;
 
   // run state
-  private score = 0;
-  private combo = 0;
-  private maxCombo = 0;
+  private acc = new RunAccount();
+  private run: RunHandle | null = null;
   private lives = 3;
-  private cleared = 0;
-  private landed = 0;
   private spawned = 0;
   private spawnT = 0;
-  private facts: WordFact[] = [];
   private missed: Word[] = [];
-  private startedAt = 0;
-  private pausedMs = 0;
-  private pauseAt = 0;
   private msg: { text: string; t0: number } | null = null;
   private chipKey = '';
   private reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -229,7 +213,9 @@ class StrokeGame {
             if (!g) break;
             chars.push(g);
           }
-          if (chars.length === w.h.length) this.pool.push({ w, chars, strokes: chars.reduce((a, g) => a + g.n, 0) });
+          if (chars.length !== w.h.length) continue;
+          const strokes = chars.reduce((a, g) => a + g.n, 0);
+          if (strokes <= STROKE.maxWordStrokes) this.pool.push({ w, chars, strokes });
         }
         this.sealGlyph = glyphOf('笔', data);
         this.phase = 'intro';
@@ -254,6 +240,8 @@ class StrokeGame {
     audio.pop(1.2);
     this.intro.style.display = 'none';
     this.phase = 'count';
+    // the ticket request and the duration clock start here, like QuizGame.start(); the countdown that follows is >= SCORING.countdownMs
+    this.run = cloud.startRun(boardKey('stroke', this.ctx.level, this.ctx.mode as 'rush' | 'zen'));
     this.countdown().then(() => !this.dead && this.phase === 'count' && this.begin());
   }
 
@@ -268,21 +256,19 @@ class StrokeGame {
         .timeline({ onComplete: () => el.remove() })
         .fromTo(el, { scale: 3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: 'back.out(2.5)' })
         .to(el, { scale: 0.6, opacity: 0, y: -40, duration: 0.25, delay: n ? 0.2 : 0.35, ease: 'power2.in' });
-      await new Promise((r) => setTimeout(r, n ? 560 : 420));
+      await new Promise((r) => setTimeout(r, n ? 600 : 460));
     }
   }
 
   private begin() {
     this.scene.clear();
-    this.score = this.combo = this.maxCombo = this.cleared = this.landed = this.spawned = 0;
+    this.acc = new RunAccount();
+    this.spawned = 0;
     this.lives = 3;
-    this.facts = [];
     this.missed = [];
     this.seen.clear();
-    this.pausedMs = 0;
     this.spawnT = 0.5;
     this.msg = null;
-    this.startedAt = performance.now();
     this.scene.playing = true;
     this.pane.enabled = true;
     this.pane.prompt.style.opacity = '1';
@@ -291,8 +277,11 @@ class StrokeGame {
   }
 
   // ------------------------------------------------------------------ pacing
+  private get cleared() {
+    return this.acc.destroyed;
+  }
   private get resolved() {
-    return this.cleared + this.landed;
+    return this.acc.asked;
   }
   private fallTime(strokes: number) {
     const base = clamp(6 + 1.5 * strokes - 0.25 * this.cleared, 5 + 0.9 * strokes, 60);
@@ -357,7 +346,6 @@ class StrokeGame {
     pane.fxOk(raw, now);
     const end = raw[raw.length - 1];
     scene.strokeFx(f, f.ci, i, [pane.box.px + end[0], pane.box.py + 6]);
-    this.score += strokePoints(this.combo);
     sfx.stroke(i);
     if (f.done >= g.n) {
       pane.fxClear(g, now);
@@ -378,7 +366,7 @@ class StrokeGame {
       f.misses++;
       f.missStroke++;
       f.badT = this.scene.t;
-      this.combo = 0;
+      this.acc.wrong();
     }
     this.msg = { text: !f ? t('strokeNoMatch') : why === 'order' ? t('strokeWrongOrder') : why === 'backwards' ? t('strokeWrongDir') : t('strokeRetry'), t0: this.scene.t };
     if (!this.reduced) this.pane.shakePane();
@@ -388,28 +376,23 @@ class StrokeGame {
   private complete(f: FallWord) {
     f.dead = true;
     this.scene.target = null;
-    this.combo++;
-    this.maxCombo = Math.max(this.maxCombo, this.combo);
-    this.cleared++;
+    const points = this.acc.destroy(f.total, f.misses === 0);
     const perfect = f.misses === 0;
-    const points = wordPoints({ strokes: f.total, perfect, combo: this.combo });
-    this.score += points;
-    this.facts.push({ h: f.w.h, strokes: f.total, perfect, ms: Math.round(f.age * 1000), landed: false, combo: this.combo, points });
     store.recordWord(f.w.h, true);
     this.scene.completeFx(f, points, perfect);
-    sfx.done(this.combo);
+    sfx.done(this.acc.combo);
     this.hud();
     gsap.fromTo(this.comboEl, { scale: 1.5 }, { scale: 1, duration: 0.35, ease: 'back.out(3)' });
     this.checkEnd();
   }
 
   private land(f: FallWord) {
+    // the run already ended (e.g. the 3rd heart went this frame): this word must not count
+    if (this.phase !== 'play') return;
     f.dead = true;
     if (this.scene.target === f) this.scene.target = null;
-    this.landed++;
-    this.combo = 0;
+    this.acc.land();
     this.missed.push(f.w);
-    this.facts.push({ h: f.w.h, strokes: f.total, perfect: false, ms: Math.round(f.age * 1000), landed: true, combo: 0, points: 0 });
     store.recordWord(f.w.h, false);
     this.scene.landFx(f);
     sfx.hurt();
@@ -429,12 +412,12 @@ class StrokeGame {
 
   // ------------------------------------------------------------------ HUD / chip
   private hud() {
-    this.scoreEl.textContent = formatNum(this.score);
+    this.scoreEl.textContent = formatNum(this.acc.score);
     this.updateCombo();
   }
   private updateCombo() {
-    this.comboEl.textContent = `×${this.combo} ${t('combo')}`;
-    this.comboEl.classList.toggle('on', this.combo >= 2);
+    this.comboEl.textContent = `×${this.acc.combo} ${t('combo')}`;
+    this.comboEl.classList.toggle('on', this.acc.combo >= 2);
   }
 
   private renderChip() {
@@ -465,12 +448,10 @@ class StrokeGame {
   private setPaused(on: boolean) {
     if (on && this.phase === 'play') {
       this.phase = 'paused';
-      this.pauseAt = performance.now();
       this.pane.cancel();
       this.pane.enabled = false;
       this.pauseModal.classList.remove('hidden');
     } else if (!on && this.phase === 'paused') {
-      this.pausedMs += performance.now() - this.pauseAt;
       this.phase = 'play';
       this.pane.enabled = true;
       this.pauseModal.classList.add('hidden');
@@ -486,21 +467,25 @@ class StrokeGame {
     this.pane.enabled = false;
     this.pane.cancel();
     for (const f of this.scene.words) f.fadeOut = this.scene.t;
-    const durationMs = Math.round(performance.now() - this.startedAt - this.pausedMs);
     store.save();
     const stats: RunStats = {
       game: 'stroke',
       level: this.ctx.level,
       mode: this.ctx.mode,
-      score: this.score,
-      correct: this.cleared,
-      asked: this.resolved,
-      maxCombo: this.maxCombo,
+      score: this.acc.score,
+      correct: this.acc.destroyed,
+      asked: this.acc.asked,
+      maxCombo: this.acc.maxCombo,
       missed: this.missed.slice(0, 30),
       rush: this.rush,
-      durationMs,
+      runId: this.run?.id,
+      durationMs: this.run ? Math.round(performance.now() - this.run.startedAt) : undefined,
+      strokeWords: this.acc.words,
     };
-    lastRun = { level: this.ctx.level, mode: this.ctx.mode, score: this.score, startedAt: this.startedAt, durationMs, facts: this.facts.slice() };
+    if (import.meta.env.DEV && this.run) {
+      const why = checkRun({ board: this.run.board, score: stats.score, correct: stats.correct, asked: stats.asked, maxCombo: stats.maxCombo, durationMs: stats.durationMs!, strokeWords: stats.strokeWords });
+      if (why) console.error('[cloud] checkRun failed:', why, stats);
+    }
     stats.reward = awardRun(stats);
     const el = h('div', { class: `end-banner ${this.rush ? 'over' : 'done'}` }, this.rush ? t('gameOver') : t('finished'));
     document.getElementById('overlay')!.append(el);
