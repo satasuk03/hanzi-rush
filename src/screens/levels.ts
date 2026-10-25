@@ -94,7 +94,17 @@ export function levelsScreen(game: GameDef): Screen {
       h('span', { class: 'lv-count' }, `${formatNum(L.count)} `, tx('words')),
       h('span', { class: 'lv-best', html: ICON.crown }, best),
     );
+    const soon = L.n > (game.maxLevel ?? 6);
+    if (soon) {
+      btn.classList.add('soon');
+      btn.append(h('span', { class: 'lv-soon' }, h('span', { class: 'lock', html: ICON.lock }), tx('comingSoon')));
+    }
     pressable(btn, async (e) => {
+      if (soon) {
+        audio.tick(true);
+        nope(btn);
+        return;
+      }
       if (loading || !game.load) return;
       loading = true;
       lastLevel = L.n;

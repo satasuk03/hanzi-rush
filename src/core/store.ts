@@ -8,8 +8,11 @@ const KEY = 'hanzi-rush:v1';
 /** welcome gift so the vault can be tried before the first run */
 export const STARTING_COINS = 500;
 
-const defaults = (): { settings: Settings; progress: Progress } => ({
-  settings: { lang: 'th', sound: true, pinyin: true, voice: true },
+/** Settings plus client-only keys (the server accepts extra settings keys) */
+export type LocalSettings = Settings & { strokeOutline: boolean };
+
+const defaults = (): { settings: LocalSettings; progress: Progress } => ({
+  settings: { lang: 'th', sound: true, pinyin: true, voice: true, strokeOutline: true },
   progress: {
     best: {},
     words: {},
