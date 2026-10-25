@@ -1,0 +1,160 @@
+<title>Stroke Master</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Mitr:wght@400;500&family=Nunito:wght@600;700;800;900&family=Noto+Sans+SC:wght@500;700&display=swap">
+<style>
+/* Layout: one phone-width column (HUD, falling sky, writing pane) over a full-bleed ink-night landscape. Single dark look by design. */
+:root{
+  --night:#0a0d1d; --night-2:#141a36; --ink:#2a1a3a;
+  --ivory:#f3ead7; --ivory-dim:rgba(243,234,215,.62); --ivory-faint:rgba(243,234,215,.14);
+  --gold:#ffc93c; --gold-d:#c9921a; --gold-hi:#ffe6a1; --red:#ff5a4e; --jade:#6fe3c1;
+  --glass:rgba(14,18,40,.72);
+  --f-display:'Lilita One','Nunito',system-ui,sans-serif;
+  --f-body:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-th:'Mitr','Nunito',system-ui,sans-serif;
+  --f-hanzi:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+  color-scheme:dark;
+}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{background:var(--night);color:var(--ivory);font-family:var(--f-body);overflow:hidden;overscroll-behavior:none;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+#scene{position:fixed;inset:0;width:100%;height:100%;display:block}
+#app{position:relative;height:100%;max-width:520px;margin:0 auto;box-sizing:border-box;display:grid;grid-template-rows:auto 1fr auto;gap:10px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:10px 14px}
+
+/* HUD */
+.hud{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;min-height:48px}
+.score{display:flex;flex-direction:column;line-height:1}
+.lbl{font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--ivory-dim)}
+.score b{font-family:var(--f-display);font-weight:400;font-size:30px;color:var(--ivory);font-variant-numeric:tabular-nums;text-shadow:0 2px 0 rgba(0,0,0,.4)}
+.combo{display:flex;flex-direction:column;align-items:center;line-height:1;opacity:0;transform:scale(.6);transition:opacity .2s,transform .2s}
+.combo.on{opacity:1;transform:scale(1)}
+.combo b{font-family:var(--f-display);font-weight:400;font-size:28px;color:var(--gold);text-shadow:0 0 18px rgba(255,201,60,.55),0 2px 0 var(--gold-d)}
+.combo span{font-size:10px;font-weight:900;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-hi)}
+.combo.pop{animation:pop .35s cubic-bezier(.2,1.8,.4,1)}
+@keyframes pop{0%{transform:scale(1.5)}100%{transform:scale(1)}}
+.hud-r{display:flex;justify-content:flex-end;align-items:center;gap:10px}
+.hearts{display:flex;gap:4px}
+.hearts svg{width:22px;height:22px;transition:transform .3s,opacity .3s,filter .3s;filter:drop-shadow(0 0 6px rgba(255,90,78,.6))}
+.hearts svg.gone{opacity:.22;filter:none;transform:scale(.8)}
+.hearts svg.break{animation:breakH .5s ease-out}
+@keyframes breakH{0%{transform:scale(1.4) rotate(-12deg)}40%{transform:scale(.7) rotate(10deg)}100%{transform:scale(.8)}}
+.icon-btn{appearance:none;border:1px solid var(--ivory-faint);background:var(--glass);color:var(--ivory);width:36px;height:36px;border-radius:12px;display:grid;place-items:center;cursor:pointer;padding:0}
+.icon-btn svg{width:18px;height:18px}
+.icon-btn:focus-visible,.btn:focus-visible,.toggle:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+#sky{position:relative;min-height:0;touch-action:manipulation}
+
+/* Writing pane */
+.pane{position:relative;height:min(41vh,440px);height:min(41dvh,440px);border-radius:22px;touch-action:none;overflow:hidden;cursor:crosshair;
+  background:radial-gradient(120% 90% at 50% 0%,rgba(40,48,96,.55),transparent 60%),linear-gradient(180deg,rgba(18,23,50,.86),rgba(8,10,24,.94));
+  border:1px solid var(--ivory-faint);box-shadow:0 -18px 50px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.07);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.pane.nope{animation:nope .32s}
+@keyframes nope{20%{transform:translateX(-7px)}45%{transform:translateX(6px)}70%{transform:translateX(-3px)}100%{transform:none}}
+#ink{position:absolute;inset:0;width:100%;height:100%;display:block}
+.pane-top{position:absolute;left:12px;right:12px;top:10px;display:flex;justify-content:space-between;align-items:flex-start;gap:8px;pointer-events:none;z-index:1}
+.chip{display:flex;align-items:center;gap:8px;padding:5px 10px 5px 6px;border-radius:12px;background:rgba(10,13,29,.7);border:1px solid var(--ivory-faint);font-size:12px;font-weight:800;min-height:24px;transition:border-color .2s}
+.chip .g{font-family:var(--f-hanzi);font-weight:700;font-size:18px;width:26px;height:26px;display:grid;place-items:center;border-radius:8px;background:rgba(255,201,60,.14);color:var(--gold)}
+.chip .dots{display:flex;gap:3px}
+.chip .dots i{width:6px;height:6px;border-radius:50%;background:var(--ivory-faint)}
+.chip .dots i.on{background:var(--gold);box-shadow:0 0 6px var(--gold)}
+.chip.idle{color:var(--ivory-dim);padding-left:10px}
+.chip.bad{border-color:rgba(255,90,78,.7);color:#ffb3ad}
+.toggle{pointer-events:auto;appearance:none;border:1px solid var(--ivory-faint);background:rgba(10,13,29,.7);color:var(--ivory-dim);font:800 11px var(--f-body);letter-spacing:.08em;text-transform:uppercase;border-radius:10px;padding:7px 10px;cursor:pointer}
+.toggle[aria-pressed="true"]{color:var(--gold-hi);border-color:rgba(255,201,60,.45)}
+.prompt{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;color:var(--ivory-dim);font-weight:800;font-size:12px;letter-spacing:.18em;text-transform:uppercase;transition:opacity .4s}
+
+/* Overlays */
+.overlay{position:fixed;inset:0;z-index:5;display:grid;place-items:center;overflow-y:auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-bottom,0px));
+  background:radial-gradient(80% 60% at 50% 45%,rgba(6,8,21,.35),rgba(6,8,21,.78))}
+.card{width:100%;max-width:380px;box-sizing:border-box;padding:26px 22px 20px;border-radius:26px;background:linear-gradient(180deg,rgba(24,30,64,.9),rgba(10,13,29,.94));
+  border:1px solid rgba(255,201,60,.28);box-shadow:0 30px 80px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.08);display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;animation:rise .5s cubic-bezier(.2,1.2,.4,1)}
+@keyframes rise{from{transform:translateY(24px) scale(.96);opacity:.0}to{transform:none;opacity:1}}
+#seal{width:116px;height:116px}
+.title{font-family:var(--f-display);font-weight:400;font-size:40px;line-height:1;margin:0;letter-spacing:.01em;color:var(--ivory);text-shadow:0 3px 0 rgba(0,0,0,.45),0 0 30px rgba(255,201,60,.25)}
+.lead{margin:0;font-size:15px;font-weight:700;line-height:1.45;color:var(--ivory);max-width:30ch;text-wrap:balance}
+.lead-th{margin:-6px 0 0;font-family:var(--f-th);font-size:13px;color:var(--ivory-dim);max-width:34ch;text-wrap:balance}
+.rules{list-style:none;margin:2px 0 0;padding:0;display:grid;gap:8px;width:100%;text-align:left}
+.rules li{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:center;font-size:13px;font-weight:700;color:var(--ivory-dim)}
+.rules li b{color:var(--ivory)}
+.rules .k{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-family:var(--f-hanzi);font-weight:700;font-size:16px;color:var(--gold);background:rgba(255,201,60,.12);border:1px solid rgba(255,201,60,.25)}
+.btn{appearance:none;border:0;cursor:pointer;font-family:var(--f-display);font-size:22px;letter-spacing:.02em;color:var(--ink);background:linear-gradient(180deg,var(--gold-hi),var(--gold));padding:13px 38px 12px;border-radius:16px;box-shadow:0 5px 0 var(--gold-d),0 12px 30px rgba(255,201,60,.3);transition:transform .08s,box-shadow .08s;margin-top:4px}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 var(--gold-d),0 6px 16px rgba(255,201,60,.25)}
+.fine{font-size:10.5px;line-height:1.45;color:rgba(243,234,215,.4);margin:2px 0 0;max-width:36ch}
+.big{font-family:var(--f-display);font-size:56px;line-height:1;color:var(--gold);text-shadow:0 0 30px rgba(255,201,60,.4),0 3px 0 var(--gold-d);font-variant-numeric:tabular-nums}
+.statrow{display:flex;gap:18px;justify-content:center;font-size:12px;font-weight:800;color:var(--ivory-dim);letter-spacing:.06em;text-transform:uppercase}
+.statrow b{color:var(--ivory);font-family:var(--f-display);font-weight:400;font-size:18px;letter-spacing:0;display:block}
+.learned{display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:6px;width:100%;max-height:34vh;overflow-y:auto}
+.learned div{display:flex;flex-direction:column;align-items:center;gap:1px;padding:7px 4px;border-radius:12px;background:rgba(243,234,215,.05);border:1px solid var(--ivory-faint);min-width:0}
+.learned div.p{border-color:rgba(255,201,60,.4)}
+.learned .h{font-family:var(--f-hanzi);font-weight:700;font-size:22px;line-height:1.1}
+.learned .py{font-size:11px;font-weight:800;color:var(--gold-hi)}
+.learned .th{font-family:var(--f-th);font-size:10.5px;color:var(--ivory-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.empty{font-size:13px;color:var(--ivory-dim)}
+@media (prefers-reduced-motion:reduce){.card,.combo.pop,.pane.nope,.hearts svg.break{animation:none}}
+</style>
+
+<canvas id="scene" aria-hidden="true"></canvas>
+<div id="app">
+  <header class="hud">
+    <div class="score"><span class="lbl">Score</span><b id="score">0</b></div>
+    <div class="combo" id="combo"><b id="comboN">0</b><span>combo</span></div>
+    <div class="hud-r">
+      <div class="hearts" id="hearts" aria-label="3 lives left"></div>
+      <button class="icon-btn" id="mute" aria-label="Mute sound" aria-pressed="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor" stroke="none"/><path id="waves" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+      </button>
+    </div>
+  </header>
+  <div id="sky" aria-label="Falling characters. Tap one to target it."></div>
+  <section class="pane" id="pane" aria-label="Writing pane">
+    <canvas id="ink"></canvas>
+    <div class="pane-top">
+      <div class="chip idle" id="chip">Write any falling character</div>
+      <button class="toggle" id="outline" aria-pressed="true">Outline</button>
+    </div>
+    <div class="prompt" id="prompt">Draw here</div>
+  </section>
+</div>
+
+<div class="overlay" id="intro">
+  <div class="card">
+    <canvas id="seal" width="232" height="232" aria-hidden="true"></canvas>
+    <h1 class="title">Stroke Master</h1>
+    <p class="lead">Write the falling characters in the right stroke order before they land.</p>
+    <p class="lead-th">เขียนตัวอักษรที่ตกลงมาให้ถูกลำดับขีด ก่อนที่มันจะถึงพื้น</p>
+    <ul class="rules">
+      <li><span class="k">一</span><span><b>Your first stroke picks a target.</b> The lowest match locks on.</span></li>
+      <li><span class="k">丨</span><span><b>Tap a character</b> to switch targets.</span></li>
+      <li><span class="k">丿</span><span><b>Miss twice</b> and the next stroke is shown.</span></li>
+    </ul>
+    <button class="btn" id="startBtn">Start</button>
+    <p class="fine">HSK 1 draft · Stroke data from Make Me a Hanzi via hanzi-writer-data, Arphic Public License</p>
+  </div>
+</div>
+
+<div class="overlay" id="over" hidden>
+  <div class="card">
+    <span class="lbl">Final score</span>
+    <div class="big" id="finalScore">0</div>
+    <div class="statrow">
+      <div><b id="fBest">0</b>Best</div>
+      <div><b id="fChars">0</b>Written</div>
+      <div><b id="fPerfect">0</b>Perfect</div>
+    </div>
+    <div class="learned" id="learned"></div>
+    <button class="btn" id="againBtn">Play again</button>
+  </div>
+</div>
+
+<script>
+/*DATA*/
+</script>
+<script>
+/*MATCHER*/
+</script>
+<script>
+/*GAME*/
+</script>

@@ -5,7 +5,7 @@
 import type { Key } from '../core/i18n';
 import type { Screen } from '../core/app';
 import type { Word } from '../core/data';
-import type { Mode } from '../../shared/api';
+import { RANKED_LEVELS, type Mode } from '../../shared/api';
 export type { Mode };
 
 export interface GameContext {
@@ -23,6 +23,8 @@ export interface GameDef {
   color: string;
   dark: string;
   /** lazy-loaded so each game is its own chunk */
+  /** highest playable level (the rest show as coming soon) */
+  maxLevel?: number;
   load?: () => Promise<{ create: (ctx: GameContext) => Screen }>;
 }
 
@@ -31,7 +33,7 @@ export const GAMES: GameDef[] = [
   { id: 'cloze', name: 'clozeName', desc: 'clozeDesc', glyph: '填', color: '#12b886', dark: '#0b8a65', load: () => import('./cloze/ClozeGame') },
   { id: 'pinyin', name: 'pinyinName', glyph: 'ā', color: '#3da5ff', dark: '#1c6fd1' },
   { id: 'tone', name: 'toneName', glyph: 'ˇ', color: '#9b6bff', dark: '#6a3fd6' },
-  { id: 'stroke', name: 'strokeName', glyph: '笔', color: '#1fd1c1', dark: '#0e9488' },
+  { id: 'stroke', name: 'strokeName', desc: 'strokeDesc', glyph: '笔', color: '#1fd1c1', dark: '#0e9488', maxLevel: RANKED_LEVELS.stroke, load: () => import('./stroke/StrokeGame') },
   { id: 'listen', name: 'listenName', glyph: '听', color: '#ff9a1f', dark: '#d9650a' },
 ];
 

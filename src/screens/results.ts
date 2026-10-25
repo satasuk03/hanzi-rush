@@ -41,6 +41,8 @@ export interface RunStats {
   durationMs?: number;
   /** hearts bought back during the run (POST /runs/continue) */
   continues?: number;
+  /** stroke only: [strokes, combo, perfect] per destroyed word, for server score verification */
+  strokeWords?: [number, number, 0 | 1][];
 }
 
 const STAR_SVG = `<svg viewBox="0 0 100 100"><path d="M50 6l13 28 30 4-22 21 6 30-27-15-27 15 6-30L7 38l30-4z" fill="currentColor" stroke="#2a1a3a" stroke-width="7" stroke-linejoin="round"/><ellipse cx="38" cy="36" rx="7" ry="4" fill="#fff" opacity=".7" transform="rotate(-35 38 36)"/></svg>`;
