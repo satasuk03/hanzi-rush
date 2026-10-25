@@ -13,7 +13,7 @@ Read this first, then [`docs/stroke-master.md`](docs/stroke-master.md) (the full
 | P3 | Polish and performance (glyph cache, reduced motion, sound, credits) | Not started |
 | P4 | Tuning on real phones | Not started |
 | P5 | HSK 4–6 at a slower pace | Not started |
-| P6 | Ranked (ships with P2) | Done: server, shared and client (`RunAccount` in `score.ts`, startRun/runId/durationMs/strokeWords, 80-stroke word cap, levels trophy clamp, registry `maxLevel` derives from `RANKED_LEVELS`). Remaining: docs updates, real-backend check |
+| P6 | Ranked (ships with P2) | Done: server, shared and client (`RunAccount` in `score.ts`, startRun/runId/durationMs/strokeWords, 80-stroke word cap, levels trophy clamp, registry `maxLevel` derives from `RANKED_LEVELS`). Docs updated (`docs/stroke-master.md` Scoring, `docs/backend.md` 6.2a). Remaining: real-backend check |
 
 No database migration is needed for P1–P5.
 
@@ -26,7 +26,7 @@ See §1 for the reasons.
 - **Outline on by default**, with a toggle that is remembered.
 - **Own matcher** (port `dev/stroke-prototype/matcher.js`). Do not use Hanzi Writer's `quiz()`.
 - **`hanzi-writer-data@2.0.1`** as a pinned devDependency, baked into `public/data/strokes/hsk{n}.json`. No runtime CDN.
-- **Ranked at launch** (HSK 1–3, rush and zen): the client sends one `[strokes, combo, perfect]` tuple per destroyed word and the server recomputes the score with `strokeWordPoints` and checks a per-stroke time floor. See `docs/stroke-master.md` D6 and "Scoring". No migration, no `SCORING_VERSION` bump.
+- **Ranked at launch** (HSK 1–3, rush and zen): the client sends one `[strokes, combo, perfect]` tuple per destroyed word and the server recomputes the score with `strokeWordPoints` and checks a per-stroke and per-word time floor. See `docs/stroke-master.md` D6 and "Scoring". No migration, no `SCORING_VERSION` bump.
 - **Keep the prototype's dark ink-night look**, gold and vermilion FX, and the 米字格 pane.
 - **Ship `ARPHICPL.txt`** and a credit line.
 

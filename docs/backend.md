@@ -489,7 +489,7 @@ The aim is to stop casual tampering such as edited requests or a console `fetch`
 9. `durationMs ≥ 0.8 · (2100 + asked · minQ)`, with `minQ` = 1000 ms (quiz) / 600 ms (cloze) → `too_fast`
 10. Stroke runs (`stroke:*` boards) replace rules 5, 7 and 8 and the duration floor of rule 9 (see 6.2a). `strokeWords` on any other board → `words_scope`. Continues on stroke → `continues_scope`.
 11. Without a ticket: `asked ≤ 300` (stricter than rule 3's 2000) → `asked_range`.
-12. Server only, with a ticket: `serverNow − ticket.created_at ≥ 0.8 · (2100 + asked · minQ)`. This cannot be bypassed by editing `durationMs`, but failing it is **not a rejection**: the ticket may simply have arrived late. The run is accepted as `verified=0` (ticket claimed).
+12. Server only, with a ticket: `serverNow − ticket.created_at ≥ 0.8 · minDurationMs` (quiz/cloze: `2100 + asked · minQ`; stroke: 6.2a rule 6). This cannot be bypassed by editing `durationMs`, but failing it is **not a rejection**: the ticket may simply have arrived late. The run is accepted as `verified=0` (ticket claimed).
 
 Concrete ceilings (verified by running `maxScore`):
 
@@ -506,6 +506,8 @@ The score is a pure function of one `[strokes, combo, perfect]` tuple per destro
 
 `strokeWordPoints(s, c, p) = round(7·s·(100 + 15·min(c,20))·(p ? 3 : 2) / 200) · 10` (integer form of `round(70·s·(1 + 0.15·min(c,20))·(p ? 1.5 : 1) / 10) · 10`; exact .5 ties round up, which float math can miss).
 
+`score = Σ strokeWordPoints(s_i, c_i, p_i)` over the destroyed words; per-stroke points are cosmetic. The combo is a word combo: `c` is the value after +1 for the destroyed word, and it resets to 0 on a landing or on a wrong stroke against the locked target. `correct` = words destroyed, `asked` = destroyed + landed, `maxCombo` = max `c`.
+
 Rules, after the shared ones (`not_int`, `asked_range` with cap `STROKE.maxWords` = 1000 ticketed / 300 unticketed, `correct_gt_asked`, `combo_gt_correct`, `rush_lives`, `zen_total`, `score_rounding`):
 
 1. `strokeWords` missing → `words_missing`; `length ≠ correct` → `words_len`
@@ -513,7 +515,7 @@ Rules, after the shared ones (`not_int`, `asked_range` with cap `STROKE.maxWords
 3. `c_i ≤ c_{i-1} + 1`, `c_0 = 0` → `combo_seq`
 4. `maxCombo == max c_i` (0 when `correct = 0`) → `max_combo`
 5. `score == Σ strokeWordPoints` → `score_mismatch`
-6. `durationMs ≥ 0.8 · (2100 + Σ s · 150)` → `too_fast` (the server-measured ticket age uses the same floor and downgrades to `verified=0`)
+6. `durationMs ≥ 0.8 · (2100 + max(Σ s · 150, asked · 500))` → `too_fast` (the server-measured ticket age uses the same floor and downgrades to `verified=0`). Strokes are drawn one at a time (≥ 150 ms each) and words spawn ≥ 0.6 s apart, but drawing overlaps the spawn waits, so the floor is the larger of the two, not the sum. The per-word term keeps crafted runs of 1-stroke words from farming the effort board.
 
 `validateSubmit` rejects a non-array `strokeWords`, more than 1000 items, or a tuple that is not 3 finite numbers (`bad_request`).
 

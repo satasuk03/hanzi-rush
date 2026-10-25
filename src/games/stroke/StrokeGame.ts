@@ -501,6 +501,7 @@ class StrokeGame {
   private teardown() {
     this.dead = true;
     this.phase = 'over';
+    cloud.endRun();
     this.ro.disconnect();
     removeEventListener('resize', this.onResize);
     this.offLang();

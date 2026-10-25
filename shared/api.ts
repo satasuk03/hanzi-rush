@@ -859,6 +859,8 @@ export const STROKE = {
   maxWordStrokes: 80,
   /** conservative floor of real ms per stroke drawn */
   minStrokeMs: 150,
+  /** floor of real ms per resolved word: spawns are >= 0.6 s apart (StrokeGame.update: first at 0.5 s, empty sky waits 0.6 s) */
+  minWordMs: 500,
   maxWords: 1000,
 } as const;
 
@@ -889,9 +891,11 @@ export const minScore = (level: number, correct: number) => correct * baseFor(le
 
 export type StrokeWords = [strokes: number, combo: number, perfect: 0 | 1][];
 
+/** stroke: strokes are drawn one at a time and words spawn one at a time, but the two overlap, so the floor is the larger */
 export const minDurationMs = (game: RankedGame, r: { asked: number; strokeWords?: StrokeWords }) =>
   game === 'stroke'
-    ? SCORING.countdownMs + (r.strokeWords ?? []).reduce((a, w) => a + (Number(w[0]) || 0), 0) * STROKE.minStrokeMs
+    ? SCORING.countdownMs +
+      Math.max((r.strokeWords ?? []).reduce((a, w) => a + (Number(w[0]) || 0), 0) * STROKE.minStrokeMs, r.asked * STROKE.minWordMs)
     : SCORING.countdownMs + r.asked * SCORING.minQuestionMs[game];
 
 export interface RunFacts {

@@ -71,9 +71,16 @@ ok('word_shape');
 {
   const r = mkRun(rushT, 3);
   const floor = A.minDurationMs('stroke', r);
-  assert.equal(floor, A.SCORING.countdownMs + 26 * 150);
+  // 26 strokes · 150 = 3900 < 8 asked · 500 = 4000: the word floor wins
+  assert.equal(floor, A.SCORING.countdownMs + 8 * 500);
   assert.equal(A.checkRun({ ...r, durationMs: Math.ceil(floor * 0.8) }), null);
   assert.equal(A.checkRun({ ...r, durationMs: Math.floor(floor * 0.8) - 1 }), 'too_fast');
+  // heavy words: the stroke floor wins
+  const heavy = mkRun([[30, 1, 1], [30, 2, 1]], 3);
+  assert.equal(A.minDurationMs('stroke', heavy), A.SCORING.countdownMs + 60 * 150);
+  // many 1-stroke words (effort board farming) are held to the per-word floor
+  const ones = mkRun(Array.from({ length: 200 }, () => [1, 1, 0]), 3);
+  assert.equal(A.checkRun({ ...ones, durationMs: Math.floor((A.SCORING.countdownMs + 203 * 500) * 0.8) - 1 }), 'too_fast');
   assert.equal(A.minDurationMs('quiz', { asked: 5 }), 2100 + 5000);
   ok('duration floor');
 }
