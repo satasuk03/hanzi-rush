@@ -55,6 +55,7 @@ const dict = {
   home: { en: 'Home', th: 'หน้าแรก' },
   sound: { en: 'Sound', th: 'เสียง' },
   pinyin: { en: 'Pinyin', th: 'พินอิน' },
+  showPinyin: { en: 'Show pinyin', th: 'แสดงพินอิน' },
   voice: { en: 'Voice', th: 'เสียงอ่าน' },
   settings: { en: 'Settings', th: 'ตั้งค่า' },
   quizName: { en: 'Meaning Rush', th: 'ทายความหมาย' },
