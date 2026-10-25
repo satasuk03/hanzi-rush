@@ -12,6 +12,7 @@ import { store } from '../core/store';
 import { formatNum } from '../core/util';
 import { playerLevel, titleById, dailyStatus } from '../core/meta';
 import { maybeShowDaily } from '../ui/daily';
+import { maybeOfferInstall } from '../ui/install';
 import { i18n } from '../core/i18n';
 import { mascot, setMood } from '../ui/mascot';
 import { GAMES } from '../games/registry';
@@ -236,11 +237,15 @@ export function homeScreen(): Screen {
       gsap.from(subrow, { x: -40, opacity: 0, delay: 0.3, duration: 0.5, ease: 'back.out(1.6)' });
       popIn([...minis, ...locked], 0.7, 0.07);
       gsap.delayedCall(0.3, () => audio.drum(0, 0.4));
+      // the install offer waits its turn behind the daily pop-up
       dailyCall = gsap.delayedCall(1.2, () =>
-        maybeShowDaily(() => {
-          syncStreak();
-          coinsText.textContent = formatNum(store.progress.coins);
-        }),
+        maybeShowDaily(
+          () => {
+            syncStreak();
+            coinsText.textContent = formatNum(store.progress.coins);
+          },
+          () => gsap.delayedCall(0.6, maybeOfferInstall),
+        ) || maybeOfferInstall(),
       );
       // idle loops — registered so leaving the screen resets them cleanly
       lg.tiles.forEach((t, i) => loop(`home:tile${i}`, t, () => gsap.to(t, { y: -6, rotation: i ? 8 : -8, duration: 1.2 + i * 0.2, yoyo: true, repeat: -1, ease: 'sine.inOut', delay: i * 0.3 }), { y: 0, rotation: i ? 6 : -6 }));

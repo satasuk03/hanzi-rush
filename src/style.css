@@ -1078,3 +1078,13 @@ body.lang-th .shop-chip { font-family: var(--f-thai); font-weight: 700; font-siz
 .home-sub .shop-chip { margin-left: auto; }
 .vault-head { position: relative; align-self: stretch; }
 .vault-head .shop-chip { position: absolute; right: 2px; top: 50%; translate: 0 -50%; }
+
+/* install (PWA) offer */
+.pwa-card { align-items: stretch; }
+.pwa-icon { align-self: center; width: 76px; height: 76px; margin-bottom: -4px; border: 4px solid var(--ink); border-radius: 20px; box-shadow: 0 4px 0 var(--ink); }
+.pwa-body { display: flex; flex-direction: column; gap: 12px; }
+.pwa-steps { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.pwa-steps li { display: flex; align-items: center; gap: 10px; font-weight: 800; color: var(--ink); line-height: 1.3; }
+.pwa-n { flex: none; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--gold); border: 3px solid var(--ink); font: 400 16px/1 var(--f-display); }
+.pwa-share { flex: none; display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; background: #fff; border: 3px solid var(--ink); color: #1b6fd1; }
+.pwa-note { margin: 0; padding: 10px 12px; border-radius: 14px; background: #fff3d1; border: 3px dashed #e0b44a; font-size: 13px; font-weight: 800; color: #6b5a78; }
