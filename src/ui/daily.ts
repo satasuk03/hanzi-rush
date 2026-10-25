@@ -21,10 +21,11 @@ import { reminders } from '../core/reminders';
 
 const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/** Shows the pop-up when today's reward is unclaimed. `onClaim` fires after the coins are paid. */
-export function maybeShowDaily(onClaim: () => void) {
+/** Shows the pop-up when today's reward is unclaimed and returns whether it showed. `onClaim` fires after the coins
+ * are paid, `onClose` once the pop-up is gone. */
+export function maybeShowDaily(onClaim: () => void, onClose: () => void = () => {}) {
   const s = dailyStatus();
-  if (!s.claimable) return;
+  if (!s.claimable) return false;
 
   const rewards = (i: number) =>
     h(
@@ -77,7 +78,7 @@ export function maybeShowDaily(onClaim: () => void) {
     if (done) return;
     done = true;
     const r = claimDaily();
-    if (!r) return el.remove();
+    if (!r) return (el.remove(), onClose());
     idle.forEach((a) => a.kill());
     gsap.set([today, buddy], { rotation: 0 });
     audio.pop(1.3);
@@ -119,7 +120,9 @@ export function maybeShowDaily(onClaim: () => void) {
     gsap.to(el, { opacity: 0, duration: 0.3, delay: 1.25, onComplete: () => {
         el.remove();
         void reminders.askOnce();
+        onClose();
       },
     });
   });
+  return true;
 }

@@ -47,6 +47,23 @@ export function levelsScreen(game: GameDef): Screen {
   );
   seg.append(segKnob, ...opts);
 
+  // pinyin under the characters; the games read store.settings.pinyin when they draw
+  const pyKnob = h('span', { class: 'py-knob' });
+  const pyRow = h('button', { class: 'py-row', role: 'switch' }, h('span', { class: 'py-glyph' }, 'pīn'), tx('showPinyin'), h('span', { class: 'py-switch' }, pyKnob));
+  const syncPinyin = (animate: boolean) => {
+    const on = store.settings.pinyin;
+    pyRow.classList.toggle('on', on);
+    pyRow.setAttribute('aria-checked', String(on));
+    gsap.to(pyKnob, { xPercent: on ? 100 : 0, duration: animate ? 0.45 : 0, ease: 'elastic.out(1.1,0.55)' });
+  };
+  pressable(pyRow, () => {
+    store.settings.pinyin = !store.settings.pinyin;
+    store.save();
+    audio.pop(store.settings.pinyin ? 1.2 : 0.9);
+    syncPinyin(true);
+    pop(pyKnob, 1.2);
+  });
+
   const bestLabels: HTMLElement[] = [];
   const syncMode = (animate: boolean) => {
     opts.forEach((o) => o.classList.toggle('on', o.dataset.m === mode));
@@ -103,7 +120,7 @@ export function levelsScreen(game: GameDef): Screen {
   });
 
   const grid = h('div', { class: 'level-grid' }, ...buttons);
-  const el = h('div', { class: 'screen levels' }, top, title, seg, grid);
+  const el = h('div', { class: 'screen levels' }, top, title, seg, pyRow, grid);
   const offLang = i18n.onChange(() => syncMode(false));
 
   return {
@@ -111,8 +128,9 @@ export function levelsScreen(game: GameDef): Screen {
     theme: 'home',
     enter() {
       syncMode(false);
+      syncPinyin(false);
       gsap.from(title, { scale: 0.3, opacity: 0, duration: 0.6, ease: 'elastic.out(1,0.5)' });
-      gsap.from(seg, { y: 30, opacity: 0, duration: 0.5, delay: 0.1, ease: 'back.out(2)' });
+      gsap.from([seg, pyRow], { y: 30, opacity: 0, duration: 0.5, delay: 0.1, stagger: 0.06, ease: 'back.out(2)' });
       popIn(buttons, 0.15, 0.06);
       // prefetch the most likely level
       loadLevel(1).catch(() => {});

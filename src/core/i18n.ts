@@ -55,6 +55,7 @@ const dict = {
   home: { en: 'Home', th: 'หน้าแรก' },
   sound: { en: 'Sound', th: 'เสียง' },
   pinyin: { en: 'Pinyin', th: 'พินอิน' },
+  showPinyin: { en: 'Show pinyin', th: 'แสดงพินอิน' },
   voice: { en: 'Voice', th: 'เสียงอ่าน' },
   settings: { en: 'Settings', th: 'ตั้งค่า' },
   quizName: { en: 'Meaning Rush', th: 'ทายความหมาย' },
@@ -281,6 +282,22 @@ const dict = {
   titleJadeKicker: { en: 'Title reward', th: 'รางวัลจากฉายา' },
   titleJadeRetro: { en: 'Jade for the titles you already hold', th: 'หยกสำหรับฉายาที่คุณมีอยู่แล้ว' },
   titleJadePaid: { en: 'Reward paid', th: 'รับรางวัลแล้ว' },
+  // ---- install (PWA)
+  pwaTitle: { en: 'Get the app', th: 'ติดตั้งแอป' },
+  pwaPitch: { en: 'Add Hanzi Rush to your home screen. It opens full screen in one tap, like a real app. Free, no store.', th: 'เพิ่ม Hanzi Rush ไว้ที่หน้าจอโฮม เปิดเต็มจอได้ในแตะเดียวเหมือนแอปจริง ฟรี ไม่ต้องโหลดจากสโตร์' },
+  pwaInstall: { en: 'Install', th: 'ติดตั้ง' },
+  pwaLater: { en: 'Maybe later', th: 'ไว้ทีหลัง' },
+  pwaGotIt: { en: 'Got it', th: 'เข้าใจแล้ว' },
+  pwaIos1: { en: 'Tap the Share button in Safari', th: 'แตะปุ่มแชร์ใน Safari' },
+  pwaIos2: { en: 'Scroll down and tap “Add to Home Screen”', th: 'เลื่อนลงแล้วแตะ “เพิ่มไปยังหน้าจอโฮม”' },
+  pwaIos3: { en: 'Tap “Add”, then open Hanzi Rush from your home screen', th: 'แตะ “เพิ่ม” แล้วเปิด Hanzi Rush จากหน้าจอโฮม' },
+  pwaIosSave: { en: 'The home screen app starts with its own save. Link Google or Apple in Profile (or copy your transfer code) first, then use it there to bring your progress.', th: 'แอปบนหน้าจอโฮมจะเริ่มเซฟใหม่ ผูกบัญชี Google หรือ Apple ในโปรไฟล์ (หรือคัดลอกรหัสย้ายเครื่อง) ไว้ก่อน แล้วใช้ในแอปเพื่อย้ายความคืบหน้ามา' },
+  pwaAndroid1: { en: 'Tap the ⋮ menu in your browser', th: 'แตะเมนู ⋮ ของเบราว์เซอร์' },
+  pwaAndroid2: { en: 'Tap “Install app” or “Add to Home screen”', th: 'แตะ “ติดตั้งแอป” หรือ “เพิ่มลงในหน้าจอหลัก”' },
+  pwaAndroid3: { en: 'Open Hanzi Rush from your home screen', th: 'เปิด Hanzi Rush จากหน้าจอหลัก' },
+  pwaInApp1: { en: 'Tap ⋯ or the share icon in this app', th: 'แตะ ⋯ หรือไอคอนแชร์ในแอปนี้' },
+  pwaInApp2: { en: 'Choose “Open in browser” (Safari or Chrome)', th: 'เลือก “เปิดในเบราว์เซอร์” (Safari หรือ Chrome)' },
+  pwaInApp3: { en: 'Come back here and follow the install steps', th: 'กลับมาที่หน้านี้แล้วทำตามขั้นตอนติดตั้ง' },
 } as const;
 
 export type Key = keyof typeof dict;
