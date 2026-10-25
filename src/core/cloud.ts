@@ -797,6 +797,7 @@ export const cloud = {
       playedAt: Date.now(),
       scoring: SCORING_VERSION,
       ...(r.continues ? { continues: r.continues } : {}),
+      ...(r.strokeWords ? { strokeWords: r.strokeWords } : {}),
       profile: { name: sanitizeName(store.progress.profile.name), title: store.progress.profile.title },
     };
     const bad = checkRun(req, ticket !== null);

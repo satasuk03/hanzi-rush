@@ -12,7 +12,7 @@
     "db:local": "wrangler d1 migrations apply hanzi-rush --local",
     "db:remote": "wrangler d1 migrations apply hanzi-rush --remote",
     "prepare": "git config core.hooksPath .githooks || true",
-    "test": "npm run test:wallet && npm run test:shop && npm run test:deals && npm run test:ownership && npm run test:card && npm run test:titles && npm run test:boards && npm run test:continue && npm run test:signin && npm run test:strokes",
+    "test": "npm run test:wallet && npm run test:shop && npm run test:deals && npm run test:ownership && npm run test:card && npm run test:titles && npm run test:boards && npm run test:continue && npm run test:runs && npm run test:signin && npm run test:strokes",
     "test:wallet": "node scripts/test-wallet.mjs",
     "test:shop": "node scripts/test-shop.mjs",
     "test:deals": "node scripts/test-deals.mjs",
@@ -23,6 +23,7 @@
     "deploy": "npm run build && wrangler pages deploy",
     "test:boards": "node scripts/test-boards.mjs",
     "test:continue": "node scripts/test-continue.mjs",
+    "test:runs": "node scripts/test-runs.mjs",
     "test:signin": "node scripts/test-signin.mjs",
     "data:strokes": "node scripts/build-strokes.mjs",
     "test:strokes": "node scripts/test-strokes.mjs"

@@ -1100,3 +1100,50 @@ body.lang-th .shop-chip { font-family: var(--f-thai); font-weight: 700; font-siz
 .pwa-n { flex: none; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--gold); border: 3px solid var(--ink); font: 400 16px/1 var(--f-display); }
 .pwa-share { flex: none; display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; background: #fff; border: 3px solid var(--ink); color: #1b6fd1; }
 .pwa-note { margin: 0; padding: 10px 12px; border-radius: 14px; background: #fff3d1; border: 3px dashed #e0b44a; font-size: 13px; font-weight: 800; color: #6b5a78; }
+
+/* ------------------------------------------------------------------ levels: coming soon (per game) */
+.level-btn.soon { filter: saturate(.3) brightness(.85); }
+.level-btn .lv-soon { display: flex; align-items: center; gap: 4px; font-weight: 900; font-size: 12px; margin-top: 2px; }
+.level-btn .lv-soon .lock svg { width: 14px; height: 14px; display: block; }
+.level-btn.soon .lv-best { display: none; }
+
+/* ------------------------------------------------------------------ stroke master (self-contained dark scene) */
+.stroke { gap: 8px; color: #f3ead7; }
+.stroke > * { position: relative; z-index: 1; }
+.stroke > .sk-scene { position: fixed; inset: 0; width: 100%; height: 100%; display: block; z-index: 0; }
+.stroke .sk-row { display: flex; align-items: center; gap: 10px; }
+.stroke .sk-combo { font: 400 24px/1 var(--f-display); color: #ffc93c; text-shadow: 0 0 18px rgba(255,201,60,.55), 0 2px 0 #c9921a; opacity: 0; transform: scale(.6); transition: opacity .2s, transform .2s; }
+.stroke .sk-combo.on { opacity: 1; transform: scale(1); }
+.stroke .sk-sky { flex: 1; min-height: 0; touch-action: manipulation; }
+.sk-pane { position: relative; flex: none; height: min(41vh, 440px); height: min(41dvh, 440px); border-radius: 22px; touch-action: none; overflow: hidden; cursor: crosshair; -webkit-user-select: none; user-select: none;
+  background: radial-gradient(120% 90% at 50% 0%, rgba(40,48,96,.55), transparent 60%), linear-gradient(180deg, rgba(18,23,50,.86), rgba(8,10,24,.94));
+  border: 1px solid rgba(243,234,215,.14); box-shadow: 0 -18px 50px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.07); }
+.sk-pane.nope { animation: sk-nope .32s; }
+@keyframes sk-nope { 20% { transform: translateX(-7px); } 45% { transform: translateX(6px); } 70% { transform: translateX(-3px); } 100% { transform: none; } }
+.sk-ink { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+.sk-pane-top { position: absolute; left: 12px; right: 12px; top: 10px; display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; pointer-events: none; z-index: 1; }
+.sk-chip { display: flex; align-items: center; gap: 8px; padding: 5px 10px 5px 6px; border-radius: 12px; background: rgba(10,13,29,.7); border: 1px solid rgba(243,234,215,.14); font-size: 12px; font-weight: 800; min-height: 24px; min-width: 0; color: #f3ead7; }
+.sk-chip .sk-w { display: flex; gap: 1px; font-family: var(--f-hanzi); font-weight: 700; font-size: 17px; color: rgba(243,234,215,.5); white-space: nowrap; }
+.sk-chip .sk-w b { font-weight: 700; border-radius: 6px; padding: 0 3px; }
+.sk-chip .sk-w b.cur { color: #ffc93c; background: rgba(255,201,60,.16); }
+.sk-chip .sk-w b.fin { color: #ffe6a1; }
+.sk-chip .sk-dots { display: flex; flex-wrap: wrap; gap: 3px; max-width: 150px; }
+.sk-chip .sk-dots i { width: 6px; height: 6px; border-radius: 50%; background: rgba(243,234,215,.2); }
+.sk-chip .sk-dots i.on { background: #ffc93c; box-shadow: 0 0 6px #ffc93c; }
+.sk-chip.idle { color: rgba(243,234,215,.62); padding-left: 10px; }
+.sk-chip.bad { border-color: rgba(255,90,78,.7); color: #ffb3ad; }
+.sk-toggle { pointer-events: auto; appearance: none; flex: none; border: 1px solid rgba(243,234,215,.14); background: rgba(10,13,29,.7); color: rgba(243,234,215,.62); font: 800 11px var(--f-body); letter-spacing: .08em; text-transform: uppercase; border-radius: 10px; padding: 7px 10px; cursor: pointer; }
+.sk-toggle[aria-pressed="true"] { color: #ffe6a1; border-color: rgba(255,201,60,.45); }
+.sk-prompt { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; color: rgba(243,234,215,.5); font-weight: 800; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; transition: opacity .4s; }
+.sk-intro { position: absolute; inset: 0; z-index: 6; display: grid; place-items: center; padding: 16px; overflow-y: auto; background: radial-gradient(80% 60% at 50% 45%, rgba(6,8,21,.35), rgba(6,8,21,.8)); }
+.sk-card { width: 100%; max-width: 360px; box-sizing: border-box; padding: 22px 20px 16px; border-radius: 26px; background: linear-gradient(180deg, rgba(24,30,64,.92), rgba(10,13,29,.96)); border: 1px solid rgba(255,201,60,.28); box-shadow: 0 30px 80px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.08); display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+.sk-seal { width: 116px; height: 116px; }
+.sk-card h1 { margin: 0; font: 400 34px/1.05 var(--f-display); color: #f3ead7; text-shadow: 0 3px 0 rgba(0,0,0,.45), 0 0 30px rgba(255,201,60,.25); }
+body.lang-th .sk-card h1 { font-family: var(--f-thai); font-weight: 700; font-size: 30px; }
+.sk-card p { margin: 0; font-size: 14px; font-weight: 700; line-height: 1.4; color: rgba(243,234,215,.8); }
+.sk-card ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; text-align: left; font-size: 13px; font-weight: 700; color: rgba(243,234,215,.68); }
+.sk-card .sk-go { appearance: none; border: 0; cursor: pointer; font: 400 22px var(--f-display); color: #2a1a3a; background: linear-gradient(180deg, #ffe6a1, #ffc93c); padding: 12px 38px 11px; border-radius: 16px; box-shadow: 0 5px 0 #c9921a, 0 12px 30px rgba(255,201,60,.3); }
+body.lang-th .sk-card .sk-go { font-family: var(--f-thai); font-weight: 700; }
+.sk-card .sk-go:disabled { opacity: .5; filter: grayscale(.5); }
+.sk-card .sk-fine { font-size: 10.5px; font-weight: 600; color: rgba(243,234,215,.4); max-width: 36ch; }
+@media (prefers-reduced-motion: reduce) { .sk-pane.nope { animation: none; } }
