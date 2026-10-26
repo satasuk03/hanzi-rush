@@ -2,7 +2,7 @@
 import { h } from '../../core/util';
 import type { Glyph } from '../../core/strokes';
 import type { Pt } from './matcher';
-import { COL, ease } from './scene';
+import { COL, TIER, ease } from './scene';
 
 /** pane-local pixel point + timestamp */
 export type RawPt = [number, number, number];
@@ -16,6 +16,9 @@ export interface PaneView {
   hint: boolean;
   outline: boolean;
 }
+
+/** seconds for an accepted stroke to settle from the raw brush path into the glyph's true stroke */
+const MORPH = 0.22;
 
 interface PFx {
   k: 'ok' | 'bad' | 'clear';
@@ -33,6 +36,8 @@ export class Pane {
   onStroke: (raw: RawPt[]) => void = () => {};
   onOutline: (on: boolean) => void = () => {};
   enabled = false;
+  /** combo tier (0..3): tints the brush and the settled strokes */
+  tier = 0;
   box = { x: 0, y: 0, B: 1, px: 0, py: 0 };
   private cv: HTMLCanvasElement;
   private c: CanvasRenderingContext2D;
@@ -159,7 +164,7 @@ export class Pane {
   draw(t: number, view: PaneView | null) {
     this.fx = this.fx.filter((e) => t - e.t0 < 1);
     const lastLit = view ? Math.max(-9, ...view.lit) : -9;
-    const key = view ? `${view.g.ch}:${view.done}:${view.outline}` : '';
+    const key = view ? `${view.g.ch}:${view.done}:${view.outline}:${this.tier}` : `${this.tier}`;
     const live = this.drawing || this.fx.length || view?.hint || t - lastLit < 0.8;
     if (!live && key === this.lastKey && !this.force) return;
     this.lastKey = key;
@@ -195,12 +200,14 @@ export class Pane {
         c.fillStyle = 'rgba(243,234,215,.075)';
         for (const p of g.paths) c.fill(p);
       }
+      const T = TIER[this.tier];
       for (let i = 0; i < view.done; i++) {
+        // the raw brush path fades out (see 'ok' below) while the true stroke shape flashes in
         const lt = t - view.lit[i];
-        c.globalAlpha = lt < 0.3 ? Math.max(0, lt / 0.3) : 1;
-        c.fillStyle = lt < 0.35 ? '#fff6dc' : COL.goldHi;
-        c.shadowColor = COL.gold;
-        c.shadowBlur = (lt < 0.6 ? 30 * (1 - lt / 0.6) : 0) * d;
+        c.globalAlpha = lt < MORPH ? ease(Math.max(0, lt / MORPH)) : 1;
+        c.fillStyle = lt < 0.3 ? '#fff6dc' : T.fill;
+        c.shadowColor = T.glow;
+        c.shadowBlur = (lt < 0.6 ? 34 * (1 - lt / 0.6) : 0) * d;
         c.fill(g.paths[i]);
       }
       c.shadowBlur = 0;
@@ -245,7 +252,7 @@ export class Pane {
     c.setTransform(d, 0, 0, d, 0, 0);
     for (const e of this.fx) {
       const tt = t - e.t0;
-      if (e.k === 'ok' && tt < 0.35) this.brush(e.raw!, COL.goldHi, B * 0.05, 1 - tt / 0.35, 14);
+      if (e.k === 'ok' && tt < MORPH) this.brush(e.raw!, TIER[this.tier].fill, B * 0.05 * (1 - 0.35 * (tt / MORPH)), 1 - ease(tt / MORPH), 14);
       if (e.k === 'bad' && tt < 0.6) {
         const jit = tt < 0.25 ? Math.sin(tt * 80) * 4 : 0;
         this.brush(e.raw!.map((p): RawPt => [p[0] + jit, p[1] + (tt > 0.25 ? (tt - 0.25) * 60 : 0), p[2]]), COL.red, B * 0.05, 1 - tt / 0.6, 10);
@@ -262,6 +269,6 @@ export class Pane {
         c.setTransform(d, 0, 0, d, 0, 0);
       }
     }
-    if (this.drawing) this.brush(this.drawing.pts, COL.ivory, B * 0.05, 1, 10);
+    if (this.drawing) this.brush(this.drawing.pts, this.tier ? TIER[this.tier].fill : COL.ivory, B * 0.05, 1, 10);
   }
 }

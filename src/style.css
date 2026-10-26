@@ -1114,6 +1114,9 @@ body.lang-th .shop-chip { font-family: var(--f-thai); font-weight: 700; font-siz
 .stroke .sk-row { display: flex; align-items: center; gap: 10px; }
 .stroke .sk-combo { font: 400 24px/1 var(--f-display); color: #ffc93c; text-shadow: 0 0 18px rgba(255,201,60,.55), 0 2px 0 #c9921a; opacity: 0; transform: scale(.6); transition: opacity .2s, transform .2s; }
 .stroke .sk-combo.on { opacity: 1; transform: scale(1); }
+.stroke .sk-combo.t1 { color: #ffb347; text-shadow: 0 0 18px rgba(255,159,46,.6), 0 2px 0 #b8650f; }
+.stroke .sk-combo.t2 { color: #ff9a5c; text-shadow: 0 0 20px rgba(255,122,43,.7), 0 2px 0 #a33f0c; }
+.stroke .sk-combo.t3 { color: #ff7a5c; text-shadow: 0 0 22px rgba(255,74,28,.8), 0 2px 0 #8f2208; }
 .stroke .sk-sky { flex: 1; min-height: 0; touch-action: manipulation; }
 .sk-pane { position: relative; flex: none; height: min(41vh, 440px); height: min(41dvh, 440px); border-radius: 22px; touch-action: none; overflow: hidden; cursor: crosshair; -webkit-user-select: none; user-select: none;
   background: radial-gradient(120% 90% at 50% 0%, rgba(40,48,96,.55), transparent 60%), linear-gradient(180deg, rgba(18,23,50,.86), rgba(8,10,24,.94));
