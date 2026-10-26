@@ -12,6 +12,17 @@ export const rand = (a: number, b: number) => a + Math.random() * (b - a);
 const TAU = Math.PI * 2;
 /** particle count multiplier (reduced motion keeps ~30%) */
 const PK = RM ? 0.3 : 1;
+/** depth (0..1 of the sky) past which a word counts as in danger */
+export const DANGER = 0.72;
+/** combo tiers (>=5, >=10, >=20): brush / accepted-stroke colours and sky tint strength */
+export const TIER = [
+  { fill: '#ffe6a1', glow: '#ffc93c', tint: 0 },
+  { fill: '#ffd08a', glow: '#ff9f2e', tint: 0.4 },
+  { fill: '#ffb27a', glow: '#ff7a2b', tint: 0.7 },
+  { fill: '#ff9c80', glow: '#ff4a1c', tint: 1 },
+];
+export const tierOf = (combo: number) => (combo >= 20 ? 3 : combo >= 10 ? 2 : combo >= 5 ? 1 : 0);
+const MAX_SPLATS = 12;
 
 export interface FallWord {
   w: Word;
@@ -43,7 +54,7 @@ export interface FallWord {
 }
 
 interface Fx {
-  k: 'spark' | 'ring' | 'flash' | 'bolt' | 'shatter' | 'label';
+  k: 'spark' | 'ring' | 'flash' | 'bolt' | 'shatter' | 'label' | 'tag';
   t0: number;
   life: number;
   [key: string]: any;
@@ -73,6 +84,11 @@ export class Scene {
   private stars: { x: number; y: number; a: number; f: number; p: number; z: number }[] = [];
   private embers: { x: number; y: number; v: number; r: number; p: number; w: number }[] = [];
   private so: [number, number] = [0, 0];
+  private warm!: HTMLCanvasElement;
+  /** combo tier (0..3) and its smoothed sky tint */
+  tier = 0;
+  private tintA = 0;
+  private splats: { x: number; r: number; t0: number; path: Path2D }[] = [];
 
   constructor() {
     this.cv = document.createElement('canvas');
@@ -179,6 +195,21 @@ export class Scene {
       g.fillStyle = mist;
       g.fillRect(0, yb - a * 0.2, W, a * 1.1);
     }
+    this.warm = document.createElement('canvas');
+    this.warm.width = Math.ceil(W / 4);
+    this.warm.height = Math.ceil(H / 4);
+    const wg = this.warm.getContext('2d')!;
+    wg.scale(this.warm.width / W, this.warm.height / H);
+    const wv = wg.createRadialGradient(W / 2, H * 0.55, Math.min(W, H) * 0.25, W / 2, H * 0.55, Math.max(W, H) * 0.8);
+    wv.addColorStop(0, 'rgba(255,120,40,0)');
+    wv.addColorStop(1, 'rgba(255,100,30,.26)');
+    wg.fillStyle = wv;
+    wg.fillRect(0, 0, W, H);
+    const wb = wg.createLinearGradient(0, H * 0.45, 0, H);
+    wb.addColorStop(0, 'rgba(255,110,40,0)');
+    wb.addColorStop(1, 'rgba(255,110,40,.22)');
+    wg.fillStyle = wb;
+    wg.fillRect(0, H * 0.45, W, H * 0.55);
     this.fog = document.createElement('canvas');
     this.fog.width = 256;
     this.fog.height = 96;
@@ -252,6 +283,7 @@ export class Scene {
       dt *= 0.1;
     }
     this.shake *= Math.pow(0.0015, dt);
+    this.tintA += (TIER[this.tier].tint - this.tintA) * Math.min(1, dt * 2.5);
     const { t } = this;
     for (const f of this.words) {
       f.age += dt;
@@ -285,7 +317,12 @@ export class Scene {
   clear() {
     this.words = [];
     this.fx = [];
+    this.splats = [];
     this.target = null;
+  }
+
+  inDanger(f: FallWord) {
+    return (f.y - this.sky.y) / this.sky.h > DANGER;
   }
 
   // ------------------------------------------------------------------ FX spawners
@@ -333,6 +370,48 @@ export class Scene {
     this.shake = RM ? 0 : 7;
   }
 
+  /** floating text callout; `rise` px over its life */
+  tagFx(text: string, x: number, y: number, col: string, size: number, life = 1.1, rise = 24) {
+    this.fx.push({ k: 'tag', text, x, y, col, size, rise, t0: this.t, life });
+  }
+
+  tierFx(text: string, tier: number) {
+    const { sky } = this;
+    const col = TIER[tier].glow;
+    const x = sky.x + sky.w / 2;
+    const y = sky.y + 24;
+    this.tagFx(text, x, y, TIER[tier].fill, 34, 1.2, 18);
+    this.fx.push({ k: 'ring', x, y, r0: 14, r1: 90 + tier * 20, t0: this.t, life: 0.5, col });
+    for (let k = 0; k < Math.round(16 * PK); k++) {
+      const a = rand(0, TAU);
+      const v = rand(60, 200);
+      this.fx.push({ k: 'spark', x, y, vx: Math.cos(a) * v, vy: Math.sin(a) * v, t0: this.t, life: rand(0.4, 0.8), r: rand(1.2, 2.6), col });
+    }
+  }
+
+  private newSplat(x: number, r: number) {
+    const path = new Path2D();
+    const n = 14;
+    const rs = Array.from({ length: n }, () => r * rand(0.65, 1.2));
+    const pt = (i: number): [number, number] => [Math.cos((i / n) * TAU) * rs[i % n] * 1.35, Math.sin((i / n) * TAU) * rs[i % n]];
+    const [x0, y0] = pt(0);
+    const [x1, y1] = pt(1);
+    path.moveTo((x0 + x1) / 2, (y0 + y1) / 2);
+    for (let i = 1; i <= n; i++) {
+      const [ax, ay] = pt(i);
+      const [bx, by] = pt(i + 1);
+      path.quadraticCurveTo(ax, ay, (ax + bx) / 2, (ay + by) / 2);
+    }
+    for (let k = 0; k < 7; k++) {
+      const a = rand(0, TAU);
+      const d = r * rand(1.5, 2.6);
+      const dr = r * rand(0.06, 0.17);
+      path.moveTo(Math.cos(a) * d * 1.35 + dr, Math.sin(a) * d);
+      path.arc(Math.cos(a) * d * 1.35, Math.sin(a) * d, dr, 0, TAU);
+    }
+    return { x, r, t0: this.t, path };
+  }
+
   landFx(f: FallWord) {
     const gy = this.groundY;
     for (let k = 0; k < Math.round(34 * PK); k++) {
@@ -340,6 +419,13 @@ export class Scene {
       const v = rand(60, 260);
       this.fx.push({ k: 'spark', x: f.dx + rand(-f.s * 0.3, f.s * 0.3), y: gy, vx: Math.cos(a) * v, vy: Math.sin(a) * v, t0: this.t, life: rand(0.5, 0.9), r: rand(1.5, 3.5), col: Math.random() < 0.6 ? COL.red : COL.ivory, g: 520 });
     }
+    for (let k = 0; k < Math.round(16 * PK); k++) {
+      const a = rand(-Math.PI * 0.9, -Math.PI * 0.1);
+      const v = rand(80, 300);
+      this.fx.push({ k: 'spark', ink: true, x: f.dx + rand(-f.s * 0.25, f.s * 0.25), y: gy - 2, vx: Math.cos(a) * v, vy: Math.sin(a) * v, t0: this.t, life: rand(0.45, 0.8), r: rand(1.6, 3.6), col: Math.random() < 0.5 ? '#05060e' : '#2a0f1c', g: 760 });
+    }
+    this.splats.push(this.newSplat(clamp(f.dx, this.sky.x + 20, this.sky.x + this.sky.w - 20), f.s * 0.5));
+    if (this.splats.length > MAX_SPLATS) this.splats.shift();
     this.fx.push({ k: 'label', x: f.dx, y: gy - f.s * 0.6, w: f.w, miss: true, t0: this.t, life: 2.2 });
     this.hurtT = this.t;
     this.shake = RM ? 0 : 14;
@@ -380,6 +466,10 @@ export class Scene {
       c.fill();
     }
     c.globalCompositeOperation = 'source-over';
+    if (this.tintA > 0.01) {
+      c.globalAlpha = this.tintA * (RM ? 1 : 0.85 + 0.15 * Math.sin(t * 3));
+      c.drawImage(this.warm, 0, 0, W, H);
+    }
     c.globalAlpha = 1;
     this.drawGround();
     for (const f of this.words) this.drawWord(f);
@@ -408,6 +498,21 @@ export class Scene {
     g.addColorStop(1, 'rgba(255,90,78,0)');
     c.fillStyle = g;
     c.fillRect(sky.x, gy - 1, sky.w, 2);
+    for (const sp of this.splats) {
+      const age = t - sp.t0;
+      const k = ease(Math.min(1, age / 0.18));
+      c.save();
+      c.translate(sp.x, gy - 2);
+      c.scale(k, k * 0.36);
+      c.globalAlpha = 0.9 - Math.min(0.35, age * 0.006);
+      c.fillStyle = '#05060e';
+      c.fill(sp.path);
+      c.lineWidth = 1.5 / k;
+      c.strokeStyle = 'rgba(255,90,78,.35)';
+      c.stroke(sp.path);
+      c.restore();
+    }
+    c.globalAlpha = 1;
     if (danger > 0) {
       const up = c.createLinearGradient(0, gy - 70, 0, gy);
       up.addColorStop(0, 'rgba(255,90,78,0)');
@@ -455,7 +560,7 @@ export class Scene {
     const isT = f === this.target;
     const fade = Math.min(1, f.age / 0.6) * (f.fadeOut != null ? clamp(1 - (t - f.fadeOut) / 0.6, 0, 1) : 1);
     const depth = clamp((y - sky.y) / sky.h, 0, 1);
-    const danger = this.playing && depth > 0.72;
+    const danger = this.playing && depth > DANGER;
     const bad = t - f.badT < 0.4;
     const cw = cellW(f);
     const pw = plateW(f);
@@ -520,7 +625,7 @@ export class Scene {
       this.base();
       switch (e.k) {
         case 'spark':
-          c.globalCompositeOperation = 'lighter';
+          c.globalCompositeOperation = e.ink ? 'source-over' : 'lighter';
           c.globalAlpha = 1 - p;
           c.fillStyle = e.col;
           c.beginPath();
@@ -593,6 +698,20 @@ export class Scene {
             c.translate(-q.cx, -(900 - q.cy));
             c.fill(f.chars[q.ci].paths[q.i]);
           }
+          c.shadowBlur = 0;
+          break;
+        }
+        case 'tag': {
+          const a = p < 0.12 ? p / 0.12 : p > 0.65 ? 1 - (p - 0.65) / 0.35 : 1;
+          const pop = 1 + 0.5 * Math.max(0, 1 - p / 0.2);
+          c.globalAlpha = a;
+          c.textAlign = 'center';
+          c.textBaseline = 'middle';
+          c.font = `400 ${Math.round(e.size * pop)}px "Lilita One", Mitr, sans-serif`;
+          c.shadowColor = 'rgba(0,0,0,.8)';
+          c.shadowBlur = 6 * dpr;
+          c.fillStyle = e.col;
+          c.fillText(e.text, clamp(e.x, sky.x + 70, sky.x + sky.w - 70), e.y - ease(Math.min(1, p * 2)) * e.rise);
           c.shadowBlur = 0;
           break;
         }

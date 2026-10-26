@@ -70,6 +70,7 @@ const dict = {
   strokeWrongDir: { en: 'Wrong direction', th: 'ทิศทางขีดผิด' },
   strokeRetry: { en: 'Try that stroke again', th: 'ลองขีดนี้อีกครั้ง' },
   strokeNoMatch: { en: 'No match on screen', th: 'ไม่ตรงกับคำไหนเลย' },
+  strokeClutch: { en: 'Close call!', th: 'เฉียดฉิว!' },
   strokeOutline: { en: 'Outline', th: 'โครงร่าง' },
   strokeTip1: { en: 'Your first stroke picks a word. Then write it in order.', th: 'ขีดแรกจะเลือกคำเอง แล้วเขียนตามลำดับ' },
   strokeTip2: { en: 'Tap a word to switch to it.', th: 'แตะคำเพื่อสลับไปคำนั้น' },

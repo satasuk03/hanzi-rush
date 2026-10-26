@@ -83,6 +83,18 @@ export const sfx = {
     tone(120, 0.6, 'sawtooth', 0.12, 0, 0.35);
     noise(0.5, 0.35, 260);
   },
+  tier(n: number) {
+    const root = 523.25 * 2 ** (n * 3 / 12);
+    [0, 7, 12, 19].forEach((st, k) => tone(root * 2 ** (st / 12), 0.5, 'triangle', 0.13, k * 0.06));
+    tone(root * 4, 0.7, 'sine', 0.05, 0.2);
+    noise(0.25, 0.1, 4000, 'highpass');
+  },
+  clutch() {
+    tone(260, 0.3, 'sawtooth', 0.06, 0, 4);
+    noise(0.3, 0.14, 2500, 'highpass');
+    tone(1568, 0.35, 'sine', 0.1, 0.14);
+    tone(2093, 0.5, 'sine', 0.08, 0.2);
+  },
   tick() {
     tone(1046, 0.08, 'sine', 0.08);
   },

@@ -19,7 +19,7 @@ import { resultsScreen, type RunStats } from '../../screens/results';
 import { awardRun } from '../../core/meta';
 import { loadStrokes, glyphOf, type Glyph, type StrokeLevel } from '../../core/strokes';
 import { grade, length, type WhyNot } from './matcher';
-import { Scene, clamp, type FallWord } from './scene';
+import { Scene, clamp, tierOf, TIER, type FallWord } from './scene';
 import { Pane, type PaneView, type RawPt } from './pane';
 import { sfx } from './sfx';
 import { RunAccount } from './score';
@@ -32,6 +32,9 @@ const LENIENCY = 1.15;
 const ZEN_TOTAL = 20;
 const MAX_CHARS = 4;
 const MIN_STROKE_LEN = 18;
+const TIER_AT = [0, 5, 10, 20];
+const SLOWMO_T = 0.25;
+const SLOWMO_K = 0.35;
 
 interface Entry {
   w: Word;
@@ -59,6 +62,11 @@ class StrokeGame {
   private sealGlyph: Glyph | null = null;
   private scoreEl: HTMLElement;
   private comboEl: HTMLElement;
+  private pillEl: HTMLElement;
+  private shown = { v: 0 };
+  private scoreTo = 0;
+  private tier = 0;
+  private slowT = 0;
   private hearts: HTMLElement[] = [];
   private pauseModal: HTMLElement;
   private ro: ResizeObserver;
@@ -104,7 +112,8 @@ class StrokeGame {
     } else lifeBox.append(h('span', { class: 'zen-badge' }, tx('modeZen')));
 
     const top = h('div', { class: 'topbar game-top' }, iconButton(ICON.pause, 'Pause', () => this.setPaused(true)), lifeBox, h('div', { class: 'spacer' }), muteButton(), langToggle());
-    const scoreRow = h('div', { class: 'sk-row' }, h('div', { class: 'score-pill' }, h('span', { class: 'score-ic', html: ICON.blossom }), this.scoreEl), this.comboEl);
+    this.pillEl = h('div', { class: 'score-pill' }, h('span', { class: 'score-ic', html: ICON.blossom }), this.scoreEl);
+    const scoreRow = h('div', { class: 'sk-row' }, this.pillEl, this.comboEl);
     this.skyEl = h('div', { class: 'sk-sky', 'aria-label': 'Falling words. Tap one to target it.' });
     this.skyEl.addEventListener('pointerdown', (e) => {
       if (this.phase !== 'play') return;
@@ -269,6 +278,10 @@ class StrokeGame {
     this.seen.clear();
     this.spawnT = 0.5;
     this.msg = null;
+    this.slowT = 0;
+    this.killHud();
+    this.shown.v = this.scoreTo = 0;
+    this.scoreEl.textContent = formatNum(0);
     this.scene.playing = true;
     this.pane.enabled = true;
     this.pane.prompt.style.opacity = '1';
@@ -376,13 +389,20 @@ class StrokeGame {
   private complete(f: FallWord) {
     f.dead = true;
     this.scene.target = null;
+    const clutch = this.scene.inDanger(f);
     const points = this.acc.destroy(f.total, f.misses === 0);
     const perfect = f.misses === 0;
     store.recordWord(f.w.h, true);
     this.scene.completeFx(f, points, perfect);
     sfx.done(this.acc.combo);
-    this.hud();
-    gsap.fromTo(this.comboEl, { scale: 1.5 }, { scale: 1, duration: 0.35, ease: 'back.out(3)' });
+    if (clutch) {
+      const { sky } = this.scene;
+      this.scene.tagFx(t('strokeClutch'), f.dx, Math.max(sky.y + 24, f.y - f.s * 0.5 - 56), '#ff8a70', 28, 1.4, 20);
+      sfx.clutch();
+      if (!this.reduced) this.slowT = SLOWMO_T;
+    }
+    const up = this.hud();
+    gsap.fromTo(this.comboEl, { scale: up ? 2.2 : 1.5 }, { scale: 1, duration: up ? 0.55 : 0.35, ease: 'back.out(3)' });
     this.checkEnd();
   }
 
@@ -411,13 +431,45 @@ class StrokeGame {
   }
 
   // ------------------------------------------------------------------ HUD / chip
+  /** returns true when the combo just entered a higher tier */
   private hud() {
-    this.scoreEl.textContent = formatNum(this.acc.score);
+    this.setScore(this.acc.score);
+    const tier = tierOf(this.acc.combo);
+    const up = tier > this.tier;
+    if (tier !== this.tier) {
+      this.tier = this.scene.tier = this.pane.tier = tier;
+      if (up && this.phase === 'play') {
+        this.scene.tierFx(`×${TIER_AT[tier]}!`, tier);
+        sfx.tier(tier);
+      }
+    }
     this.updateCombo();
+    return up;
   }
   private updateCombo() {
     this.comboEl.textContent = `×${this.acc.combo} ${t('combo')}`;
     this.comboEl.classList.toggle('on', this.acc.combo >= 2);
+    for (let i = 1; i < TIER.length; i++) this.comboEl.classList.toggle(`t${i}`, this.tier === i);
+  }
+
+  /** count the pill up to `v` (always lands exactly on it) and bounce the pill when points land */
+  private setScore(v: number) {
+    if (v === this.scoreTo) return;
+    this.scoreTo = v;
+    const from = this.shown.v;
+    const sync = () => (this.scoreEl.textContent = formatNum(Math.round(this.shown.v)));
+    gsap.killTweensOf(this.shown);
+    if (this.reduced || v <= from) {
+      this.shown.v = v;
+      sync();
+      return;
+    }
+    gsap.to(this.shown, { v, duration: 0.5, ease: 'power2.out', onUpdate: sync, onComplete: () => ((this.shown.v = v), sync()) });
+    gsap.fromTo(this.pillEl, { scale: 1.14 }, { scale: 1, duration: 0.4, ease: 'back.out(3)', overwrite: true });
+  }
+  private killHud() {
+    gsap.killTweensOf([this.shown, this.pillEl, this.comboEl]);
+    gsap.set([this.pillEl, this.comboEl], { clearProps: 'transform' });
   }
 
   private renderChip() {
@@ -468,6 +520,9 @@ class StrokeGame {
     this.pane.cancel();
     for (const f of this.scene.words) f.fadeOut = this.scene.t;
     store.save();
+    gsap.killTweensOf(this.shown);
+    this.shown.v = this.scoreTo = this.acc.score;
+    this.scoreEl.textContent = formatNum(this.acc.score);
     const stats: RunStats = {
       game: 'stroke',
       level: this.ctx.level,
@@ -506,13 +561,18 @@ class StrokeGame {
     removeEventListener('resize', this.onResize);
     this.offLang();
     this.scene.clear();
+    this.killHud();
     document.getElementById('overlay')!.replaceChildren();
   }
 
   // ------------------------------------------------------------------ per frame
   private update(rawDt: number) {
     if (this.dead || this.phase === 'paused') return;
-    const dt = Math.min(rawDt, 0.05);
+    let dt = Math.min(rawDt, 0.05);
+    if (this.slowT > 0) {
+      this.slowT -= dt;
+      dt *= SLOWMO_K;
+    }
     const { scene } = this;
     const play = this.phase === 'play';
     scene.step(dt, play);
