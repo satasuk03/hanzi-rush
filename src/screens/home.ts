@@ -38,7 +38,7 @@ export function homeScreen(): Screen {
     const card = h(
       'button',
       { class: 'game-card tall', style: `--c:${g.color};--d:${g.dark}` },
-      h('span', { class: 'gc-glyph' }, g.glyph),
+      h('span', { class: 'gc-glyph gc-icon', html: g.icon }),
       h('span', { class: 'gc-name' }, tx(g.name)),
       g.desc ? h('span', { class: 'gc-desc' }, tx(g.desc)) : null,
     );
@@ -61,7 +61,7 @@ export function homeScreen(): Screen {
     const card = h(
       'button',
       { class: 'game-card mini', style: `--c:${g.color};--d:${g.dark}` },
-      h('span', { class: 'gc-glyph' }, g.glyph),
+      h('span', { class: 'gc-glyph gc-icon', html: g.icon }),
       h('span', { class: 'gc-name' }, tx(g.name)),
       h('span', { class: 'mini-new' }, 'NEW'),
     );
@@ -73,7 +73,7 @@ export function homeScreen(): Screen {
     const card = h(
       'button',
       { class: 'game-card locked', style: `--c:${g.color};--d:${g.dark}` },
-      h('span', { class: 'gc-glyph' }, g.glyph),
+      h('span', { class: 'gc-glyph gc-icon', html: g.icon }),
       h('span', { class: 'gc-name' }, tx(g.name)),
       h('span', { class: 'gc-soon' }, h('span', { class: 'lock', html: ICON.lock }), tx('comingSoon')),
     );
