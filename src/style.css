@@ -249,6 +249,7 @@ body.lang-th .game-shelf .game-card .gc-name { font-size: 12px; }
   font: 900 38px/1 var(--f-hanzi);
   -webkit-text-stroke: 2px var(--ink); paint-order: stroke fill;
 }
+.gc-icon svg { width: 76%; height: 76%; }
 .gc-text { display: flex; flex-direction: column; min-width: 0; flex: 1; }
 .gc-name { font: 400 24px/1.05 var(--f-display); -webkit-text-stroke: 5px var(--ink); paint-order: stroke fill; }
 body.lang-th .gc-name { font-family: var(--f-thai); font-weight: 700; font-size: 21px; }
