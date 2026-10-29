@@ -86,7 +86,7 @@ export function effortScreen(opts: { period?: Period } = {}): Screen {
       { class: `lb-row${e.isMe ? ' me' : ''}${medal}${pinned ? ' pinned' : ''}` },
       h('span', { class: 'lb-rank' }, e.rank <= 99999 ? String(e.rank) : '99k+'),
       renderIdentity(e.look, 'S', { title: T }),
-      h('span', { class: 'lb-who' }, h('span', { class: 'lb-name' }, nm, renderBadges(e.look, 'S'), e.isMe ? h('em', null, ' ', tx('lbYou')) : null), h('span', { class: 'lb-title-t' }, `${formatNum(e.runs)} ${t('effortRuns')}`)),
+      h('span', { class: 'lb-who' }, h('span', { class: 'lb-name' }, nm, renderBadges(e.look, 'S'), e.isMe ? h('em', null, ' ', tx('lbYou')) : null), h('span', { class: 'lb-title-t' }, T[i18n.lang])),
       h('span', { class: 'lb-score' }, formatNum(e.correct)),
     );
     const pid = e.pid;
@@ -95,7 +95,7 @@ export function effortScreen(opts: { period?: Period } = {}): Screen {
       row.setAttribute('role', 'button');
       row.addEventListener('click', () => {
         audio.pop(1.1);
-        showPlayerCard({ pid, name: e.name, tag: e.tag, title: e.title, look: e.look, isMe: e.isMe, context: `#${e.rank} · ${t('effortTitle')} · ${formatNum(e.correct)}` });
+        showPlayerCard({ pid, name: e.name, tag: e.tag, title: e.title, look: e.look, isMe: e.isMe, context: `#${e.rank} · ${t('effortTitle')} · ${formatNum(e.correct)} · ${formatNum(e.runs)} ${t('effortRuns')}` });
       });
     }
     return row;
