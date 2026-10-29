@@ -21,7 +21,7 @@ let lastMode: Mode = 'rush';
 let lastLevel = 1;
 
 export function levelsScreen(game: GameDef): Screen {
-  let mode: Mode = lastMode;
+  let mode: Mode = game.practiceOnly ? 'zen' : lastMode;
   let loading = false;
 
   const title = h('h1', { class: 'screen-title' }, tx('chooseLevel'));
@@ -130,7 +130,7 @@ export function levelsScreen(game: GameDef): Screen {
   });
 
   const grid = h('div', { class: 'level-grid' }, ...buttons);
-  const el = h('div', { class: 'screen levels' }, top, title, seg, pyRow, grid);
+  const el = h('div', { class: 'screen levels' }, top, title, game.practiceOnly ? null : seg, pyRow, grid);
   const offLang = i18n.onChange(() => syncMode(false));
 
   return {
