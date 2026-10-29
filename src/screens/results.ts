@@ -43,6 +43,8 @@ export interface RunStats {
   continues?: number;
   /** stroke only: [strokes, combo, perfect] per destroyed word, for server score verification */
   strokeWords?: [number, number, 0 | 1][];
+  /** detective only: the words this run taught, shown instead of the review list */
+  cases?: { w: Word; guessed: boolean; misses: number }[];
 }
 
 const STAR_SVG = `<svg viewBox="0 0 100 100"><path d="M50 6l13 28 30 4-22 21 6 30-27-15-27 15 6-30L7 38l30-4z" fill="currentColor" stroke="#2a1a3a" stroke-width="7" stroke-linejoin="round"/><ellipse cx="38" cy="36" rx="7" ry="4" fill="#fff" opacity=".7" transform="rotate(-35 38 36)"/></svg>`;
@@ -66,26 +68,33 @@ export function resultsScreen(r: RunStats): Screen {
   const missedList = h('div', { class: 'r-missed' });
   const renderMissed = () => {
     missedList.replaceChildren();
+    if (r.cases) {
+      missedList.append(h('h3', { class: 'r-missed-title' }, tx('detCases')));
+      for (const c of r.cases) missedList.append(wordRow(c.w, c.guessed ? tx('detSolved') : c.misses ? `${t('detMisses')} ${c.misses}` : null));
+      return;
+    }
     if (!r.missed.length) {
       missedList.append(h('p', { class: 'r-perfect' }, tx('perfectRun')));
       return;
     }
     missedList.append(h('h3', { class: 'r-missed-title' }, tx('missed')));
-    for (const w of r.missed) {
-      const row = h(
-        'button',
-        { class: 'r-word' },
-        h('span', { class: 'rw-h' }, w.h),
-        h('span', { class: 'rw-mid' }, h('span', { class: 'rw-p' }, w.p), h('span', { class: 'rw-m' }, i18n.lang === 'th' ? w.th : w.en)),
-        h('span', { class: 'rw-say', html: ICON.speaker }),
-      );
-      pressable(row, () => {
-        audio.pop(1.2);
-        speak(w.h, true);
-      });
-      missedList.append(row);
-    }
+    for (const w of r.missed) missedList.append(wordRow(w));
   };
+  function wordRow(w: Word, tag: Node | string | null = null) {
+    const row = h(
+      'button',
+      { class: 'r-word' },
+      h('span', { class: 'rw-h' }, w.h),
+      h('span', { class: 'rw-mid' }, h('span', { class: 'rw-p' }, w.p), h('span', { class: 'rw-m' }, i18n.lang === 'th' ? w.th : w.en)),
+      tag ? h('span', { class: 'rw-tag' }, tag) : null,
+      h('span', { class: 'rw-say', html: ICON.speaker }),
+    );
+    pressable(row, () => {
+      audio.pop(1.2);
+      speak(w.h, true);
+    });
+    return row;
+  }
   renderMissed();
   const offLang = i18n.onChange(renderMissed);
 
