@@ -1,0 +1,210 @@
+/* Word Detective: a case file on a night desk. Paper card with a paper clip and a coloured index tab
+   (amber 猜 / blue 听 / pink 认), five folders above it, red seals for right answers. */
+.detective .q-meta { display: none; }
+.detective .stage-area { justify-content: flex-start; padding-top: 4px; gap: 14px; overflow-y: auto; overflow-x: hidden; }
+
+/* ---------------------------------------------------------------- docket: five folders */
+.dt-files { display: flex; gap: 8px; justify-content: center; padding-top: 8px; flex: none; }
+.dt-file {
+  position: relative; width: 50px; height: 46px; padding-bottom: 9px;
+  display: grid; place-items: center;
+  background: #c9b48a; color: var(--ink);
+  border: 3px solid var(--ink); border-radius: 4px 10px 9px 9px;
+  box-shadow: 0 4px 0 var(--ink);
+  font: 900 18px/1 var(--f-hanzi);
+  transition: transform .25s cubic-bezier(.3, 1.6, .5, 1), background-color .2s;
+}
+.dt-file::before {
+  content: ''; position: absolute; top: -9px; left: -3px; width: 24px; height: 9px;
+  background: inherit; border: 3px solid var(--ink); border-bottom: 0; border-radius: 6px 6px 0 0;
+}
+.dt-file:not(.open) .dt-file-h { color: rgba(42,26,58,.45); font-family: var(--f-display); font-weight: 400; font-size: 20px; }
+.dt-file.open { background: #ffe9b8; }
+.dt-file.now { transform: translateY(-6px); background: #fff3d6; box-shadow: 0 4px 0 var(--ink), 0 0 0 3px var(--gold), 0 0 18px 4px rgba(255,201,60,.7); }
+.dt-file.closed { background: #fff7e6; }
+.dt-file.closed::after {
+  content: '结'; position: absolute; right: -9px; top: -12px; width: 26px; height: 26px;
+  display: grid; place-items: center; border-radius: 6px; transform: rotate(12deg);
+  background: var(--red); color: #fff; border: 3px solid var(--ink);
+  font: 400 17px/1 'Ma Shan Zheng', var(--f-hanzi);
+}
+.dt-file-h { font-size: 16px; white-space: nowrap; }
+.dt-pips { position: absolute; left: 0; right: 0; bottom: 5px; display: flex; justify-content: center; gap: 4px; }
+.dt-pips i { width: 8px; height: 8px; border-radius: 50%; background: rgba(42,26,58,.2); }
+.dt-pips i.on { background: var(--gold-d); box-shadow: inset 0 0 0 1.5px var(--ink); }
+.dt-file.closed .dt-pips i { background: var(--green-d); }
+
+/* ---------------------------------------------------------------- the case file */
+.dt-card {
+  --sc: #ffb020; --sd: #d97b06;
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column;
+  padding: 40px 16px 14px; min-height: 230px;
+  background-color: #fff7e6;
+  background-image: repeating-linear-gradient(180deg, transparent 0 31px, rgba(61,165,255,.13) 31px 33px);
+  background-position: 0 40px;
+  border: 5px solid var(--ink); border-radius: 12px 28px 28px 28px;
+  box-shadow: 0 8px 0 var(--ink), inset 0 -12px 0 #f3e2bd;
+  perspective: 900px;
+  transition: box-shadow .3s;
+}
+.dt-card.ok { box-shadow: 0 8px 0 var(--ink), 0 0 26px 6px rgba(91,227,91,.65), inset 0 -12px 0 #f3e2bd; }
+.dt-card.bad { box-shadow: 0 8px 0 var(--ink), 0 0 26px 6px rgba(255,71,87,.6), inset 0 -12px 0 #f3e2bd; }
+.dt-clip { position: absolute; left: 38%; top: -22px; width: 22px; height: 44px; z-index: 3; transform: rotate(8deg); }
+.dt-clip svg { width: 100%; height: 100%; display: block; }
+.dt-tab {
+  position: absolute; left: 14px; top: -5px; z-index: 2;
+  display: flex; align-items: center; gap: 7px;
+  padding: 6px 14px 8px 8px; white-space: nowrap;
+  background: var(--sc); border: 4px solid var(--ink); border-top: 0; border-radius: 0 0 14px 14px;
+  box-shadow: inset 0 -4px 0 var(--sd);
+  font: 400 15px/1 var(--f-display); letter-spacing: 1px; color: #fff;
+  -webkit-text-stroke: 3px var(--ink); paint-order: stroke fill;
+}
+body.lang-th .dt-tab { font-family: var(--f-thai); font-weight: 700; letter-spacing: 0; }
+.dt-tab-hz {
+  width: 28px; height: 28px; display: grid; place-items: center; border-radius: 8px;
+  background: #fff; color: var(--ink); -webkit-text-stroke: 0; border: 3px solid var(--ink);
+  font: 900 17px/1 var(--f-hanzi); transform: rotate(-6deg);
+}
+
+.dt-body { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.dt-card.revealed .dt-body { display: none; }
+.dt-ask { margin: 0; font-weight: 900; font-size: 15px; color: #6b5a78; text-align: center; }
+body.lang-th .dt-ask { font-family: var(--f-thai); font-weight: 600; }
+
+.dt-cover { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 18px 0; font: 400 26px/1 var(--f-display); color: var(--ink); }
+body.lang-th .dt-cover { font-family: var(--f-thai); font-weight: 700; }
+.dt-cover-seal {
+  width: 92px; height: 92px; display: grid; place-items: center; border-radius: 18px; transform: rotate(-8deg);
+  background: var(--red); color: #fff7e6; border: 5px solid var(--ink); box-shadow: 0 6px 0 var(--ink);
+  font: 400 64px/1 'Ma Shan Zheng', var(--f-hanzi);
+}
+
+/* sentence tiles */
+.dt-sent {
+  --fs: 40px;
+  display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: center; row-gap: 8px;
+  font: 700 var(--fs)/1.2 var(--f-hanzi); color: var(--ink);
+}
+.dt-c { display: inline-block; }
+.dt-c.p { opacity: .7; }
+.dt-tgt {
+  position: relative; display: inline-block; margin: 0 5px; padding: 2px 8px 4px;
+  background: var(--gold); border: 4px solid var(--ink); border-radius: 14px;
+  box-shadow: 0 5px 0 var(--ink), 0 0 22px 8px rgba(255,201,60,.65);
+  animation: dt-glow 1.4s ease-in-out infinite alternate;
+}
+@keyframes dt-glow { to { box-shadow: 0 5px 0 var(--ink), 0 0 10px 3px rgba(255,201,60,.35); } }
+.dt-card.ok .dt-tgt { background: var(--green); animation: none; }
+.dt-gap {
+  display: inline-grid; place-items: center; margin: 0 5px;
+  min-width: calc(var(--n) * 1em + 10px); min-height: 1.25em; padding: 0 4px;
+  border: 4px dashed var(--sd); border-radius: 14px; background: rgba(255,255,255,.7);
+  color: var(--sd); font-family: var(--f-display); font-weight: 400;
+}
+.dt-gap.filled { border-style: solid; border-color: var(--ink); background: var(--green); color: var(--ink); font-family: var(--f-hanzi); font-weight: 700; }
+.dt-known { position: relative; display: inline-flex; border-radius: 8px; transition: background-color .25s; }
+.dt-known.lit { background: rgba(61,165,255,.22); box-shadow: inset 0 -4px 0 var(--blue); }
+.dt-g { display: inline-flex; white-space: nowrap; }
+.dt-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+.dt-chips:empty { display: none; }
+.dt-chip {
+  display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px 3px 4px; border-radius: 99px;
+  background: var(--blue); color: #fff; border: 3px solid var(--ink);
+  font: 600 14px/1.2 var(--f-thai);
+}
+.dt-chip b { padding: 2px 6px; border-radius: 99px; background: #fff; color: var(--ink); font: 700 15px/1.1 var(--f-hanzi); }
+
+.dt-trans {
+  position: relative; width: 100%; padding: 16px 14px 12px; border-radius: 14px;
+  background: #fff; border: 3px dashed #c9b48a; text-align: center;
+  font-weight: 800; font-size: 17px; line-height: 1.4; color: var(--ink);
+}
+.dt-trans.th { font-family: var(--f-thai); font-weight: 500; }
+.dt-trans-k {
+  position: absolute; left: 12px; top: -11px; padding: 2px 8px; border-radius: 99px;
+  background: var(--ink); color: #fff; font: 700 11px/1.3 var(--f-thai); letter-spacing: .5px;
+}
+.dt-clue {
+  display: inline-flex; align-items: center; gap: 6px; height: 38px; padding: 0 14px 0 6px;
+  border-radius: 99px; background: var(--blue); color: #fff; border: 3px solid var(--ink); box-shadow: 0 4px 0 var(--ink);
+  font-weight: 900; font-size: 14px;
+}
+body.lang-th .dt-clue { font-family: var(--f-thai); font-weight: 600; }
+.dt-clue:disabled { background: #b9aec4; box-shadow: 0 2px 0 var(--ink); transform: translateY(2px); cursor: default; }
+.dt-clue-ic { width: 28px; height: 28px; display: grid; place-items: center; color: var(--ink); }
+.dt-clue-ic svg { width: 24px; height: 24px; }
+
+/* listen */
+.dt-ear {
+  position: relative; width: 112px; height: 112px; border-radius: 50%; margin: 6px 0;
+  display: grid; place-items: center; color: #fff;
+  background: var(--blue); border: 5px solid var(--ink); box-shadow: 0 7px 0 var(--ink), inset 0 -9px 0 #1c6fd1;
+}
+.dt-ear svg { width: 56px; height: 56px; }
+.dt-ring { position: absolute; inset: -5px; border-radius: 50%; border: 4px solid var(--blue); pointer-events: none; }
+.dt-peek { font-weight: 900; font-size: 13px; color: #8a7a98; text-decoration: underline dotted; padding: 6px; }
+body.lang-th .dt-peek { font-family: var(--f-thai); font-weight: 500; }
+.dt-py { font: 800 24px/1 var(--f-hanzi); color: var(--red); padding: 4px 0; }
+
+/* recall */
+.dt-meaning { margin: 0; text-align: center; font: 900 32px/1.15 var(--f-body); color: var(--ink); text-wrap: balance; }
+.dt-meaning.th { font-family: var(--f-thai); font-weight: 600; }
+.dt-body .dt-sent:has(.dt-gap) { --fs: 26px !important; opacity: .9; }
+
+/* seal for right answers */
+.dt-seal {
+  position: absolute; right: 16px; bottom: 16px; z-index: 4; opacity: 0;
+  width: 62px; height: 62px; display: grid; place-items: center; border-radius: 12px;
+  background: var(--red); color: #fff7e6; border: 4px solid var(--ink); box-shadow: 0 5px 0 var(--ink);
+  font: 400 42px/1 'Ma Shan Zheng', var(--f-hanzi); pointer-events: none;
+}
+
+/* ---------------------------------------------------------------- reveal sheet */
+.dt-sheet { display: none; flex-direction: column; gap: 12px; position: relative; }
+.dt-card.revealed .dt-sheet { display: flex; }
+.dt-stamp {
+  position: absolute; right: 2px; top: -40px; z-index: 2;
+  padding: 6px 10px; border-radius: 10px; border: 4px solid currentColor;
+  background: rgba(255,255,255,.75); transform: rotate(8deg);
+  font: 400 18px/1 var(--f-display); letter-spacing: 1px;
+}
+body.lang-th .dt-stamp { font-family: var(--f-thai); font-weight: 700; letter-spacing: 0; }
+.dt-stamp.solved { color: var(--red-d); }
+.dt-stamp.lead { color: #1c6fd1; }
+.dt-stamp.mixed { color: #7a6a86; }
+.dt-word { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.dt-big { font: 400 72px/1 'Ma Shan Zheng', var(--f-hanzi); color: var(--ink); white-space: nowrap; }
+.dt-wmeta { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.dt-wpy { font: 800 22px/1.1 var(--f-hanzi); color: var(--red); }
+.dt-wm { font: 900 20px/1.2 var(--f-body); color: var(--ink); }
+.dt-wm.th { font-family: var(--f-thai); font-weight: 600; }
+.dt-ex {
+  position: relative; padding: 10px 52px 10px 12px; border-radius: 14px;
+  background: #fff; border: 3px solid var(--ink);
+}
+.dt-ex-zh { font: 700 21px/1.4 var(--f-hanzi); color: var(--ink); }
+.dt-ex-zh mark { background: var(--gold); color: var(--ink); border-radius: 6px; padding: 0 3px; box-shadow: inset 0 -3px 0 var(--gold-d); }
+.dt-ex-py { font: 700 13px/1.35 var(--f-hanzi); color: var(--red-d); margin-top: 2px; }
+.dt-ex-tr { font-weight: 800; font-size: 14px; color: #4b3a5a; margin-top: 4px; }
+.dt-ex-tr.th { font-family: var(--f-thai); font-weight: 500; }
+.dt-say {
+  position: absolute; right: 8px; top: 8px; width: 36px; height: 36px; border-radius: 50%;
+  display: grid; place-items: center; color: #fff; background: var(--blue); border: 3px solid var(--ink);
+}
+.dt-say svg { width: 20px; height: 20px; }
+.dt-note { margin: 0; font-size: 13px; font-weight: 800; color: #8a7a98; text-align: center; }
+body.lang-th .dt-note { font-family: var(--f-thai); font-weight: 500; }
+
+@media (max-height: 700px) {
+  .dt-card { padding-top: 38px; min-height: 0; }
+  .dt-ear { width: 92px; height: 92px; }
+  .dt-big { font-size: 58px; }
+  .dt-ask { display: none; }
+  .dt-trans { padding: 12px 12px 8px; font-size: 15px; }
+  .dt-body { gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dt-tgt { animation: none; }
+}

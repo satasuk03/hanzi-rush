@@ -111,6 +111,14 @@ export class QuizGame {
   protected get baseTheme(): ThemeName {
     return 'play';
   }
+  /** has a leaderboard: runs get a cloud ticket and are submitted */
+  protected get ranked() {
+    return true;
+  }
+  /** practice-mode length */
+  protected get zenTotal() {
+    return ZEN_TOTAL;
+  }
 
   /** two-phase construction: subclasses override hooks that touch their own fields after super() */
   init(): Screen {
@@ -255,7 +263,7 @@ export class QuizGame {
 
   // ------------------------------------------------------------------ flow
   protected async start() {
-    this.run = cloud.startRun(boardKey(this.gid as RankedGame, this.ctx.level, this.ctx.mode));
+    if (this.ranked) this.run = cloud.startRun(boardKey(this.gid as RankedGame, this.ctx.level, this.ctx.mode));
     this.layoutCard();
     this.introCard();
     this.renderHud();
@@ -327,14 +335,14 @@ export class QuizGame {
   }
 
   protected async next(fromReveal: boolean) {
-    if (!this.rush && this.asked >= ZEN_TOTAL) return this.finish();
+    if (!this.rush && this.asked >= this.zenTotal) return this.finish();
     this.phase = 'lock';
     this.word = this.pickWord();
     this.used.add(this.word.h);
     this.choices = this.pickChoices(this.word);
     this.answerIdx = this.choices.indexOf(this.word);
     this.asked++;
-    this.qMeta.textContent = this.rush ? `${t('question')} ${this.asked}` : `${this.asked} / ${ZEN_TOTAL}`;
+    this.qMeta.textContent = this.rush ? `${t('question')} ${this.asked}` : `${this.asked} / ${this.zenTotal}`;
 
     this.buttons.forEach((b) => b.classList.remove('is-correct', 'is-wrong', 'is-dim'));
     this.renderLabels();
@@ -824,6 +832,7 @@ export class QuizGame {
       runId: this.run?.id,
       durationMs: this.run ? Math.round(performance.now() - this.run.startedAt) : undefined,
       continues: this.continues,
+      ...this.extraStats(),
     };
     if (import.meta.env.DEV && this.run) {
       // a failure here means SCORING in shared/api.ts drifted from this file's scoring
@@ -843,6 +852,11 @@ export class QuizGame {
       .to(el, { opacity: 0, scale: 0.7, duration: 0.3, delay: 0.9 });
     gsap.to(this.buttons, { scale: 0, duration: 0.3, stagger: 0.04, ease: 'back.in(2)' });
     gsap.delayedCall(1.4, () => app.go(() => resultsScreen(stats)));
+  }
+
+  /** game-specific fields for the results screen */
+  protected extraStats(): Partial<RunStats> {
+    return {};
   }
 
   protected teardown() {

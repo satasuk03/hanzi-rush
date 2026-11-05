@@ -614,6 +614,7 @@ body.lang-th .r-best { font-family: var(--f-thai); font-weight: 700; }
 .rw-m { font-weight: 700; font-size: 14px; color: #4b3a5a; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .rw-say { width: 36px; height: 36px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--blue); color: #fff; border: 3px solid var(--ink); }
 .rw-say svg { width: 20px; height: 20px; }
+.rw-tag { flex: none; font-size: 12px; font-weight: 900; padding: 4px 8px; border-radius: 99px; background: var(--gold); border: 2px solid var(--ink); white-space: nowrap; }
 .r-actions { display: grid; grid-template-columns: 1fr 1.3fr 1fr; gap: 10px; }
 .r-actions .big-btn { padding: 0 8px; font-size: 20px; }
 .r-actions .r-retry { font-size: 24px; }
